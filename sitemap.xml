@@ -1,6 +1,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
+            <loc>https://piinalpin.github.io/blog/tags/anaconda/</loc>
+            
+                <lastmod>2019-08-25T16:22:42+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://piinalpin.github.io/blog/categories/</loc>
             
                 <lastmod>2019-08-25T16:22:42+08:00</lastmod>
@@ -29,21 +43,7 @@
         </url>
     
         <url>
-            <loc>https://piinalpin.github.io/blog/tags/hugo/</loc>
-            
-                <lastmod>2019-08-25T16:22:42+08:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://piinalpin.github.io/blog/2019/08/loveit-preview/</loc>
+            <loc>https://piinalpin.github.io/blog/tags/jupyter-notebooks/</loc>
             
                 <lastmod>2019-08-25T16:22:42+08:00</lastmod>
             
@@ -85,7 +85,7 @@
         </url>
     
         <url>
-            <loc>https://piinalpin.github.io/blog/tags/</loc>
+            <loc>https://piinalpin.github.io/blog/tags/python/</loc>
             
                 <lastmod>2019-08-25T16:22:42+08:00</lastmod>
             
@@ -99,7 +99,21 @@
         </url>
     
         <url>
-            <loc>https://piinalpin.github.io/blog/tags/theme/</loc>
+            <loc>https://piinalpin.github.io/blog/2019/08/research-collection/</loc>
+            
+                <lastmod>2019-08-25T16:22:42+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://piinalpin.github.io/blog/tags/</loc>
             
                 <lastmod>2019-08-25T16:22:42+08:00</lastmod>
             
