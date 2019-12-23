@@ -1,7 +1,4 @@
-# Research Collection Which Used Python
-
-
-Collection of Any Research of Jupyter Notebook Sampling on Data and Text Mining
+# List Research Which Used Python
 
 #### List of Research
 - [Search The Mpasi Menu with The Dice Coefficient Method](https://github.com/piinalpin/research-collection/tree/master/dice-distance/Search%20The%20Mpasi%20Menu%20with%20The%20Dice%20Coefficient%20Method) ([Luthvi Rizkawati](https://github.com/whatyourdream), 2019)
