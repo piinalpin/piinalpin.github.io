@@ -1,7 +1,7 @@
 # Simple Build Flask Restful Based
 
 
-### Prerequisites
+## How To Build
 
 Make sure you have installed Python 3 on your device
 

@@ -18,7 +18,7 @@
       <pubDate>Tue, 24 Dec 2019 01:27:15 +0700</pubDate>
       
       <guid>http://piinalpin.com/blog/2019/12/flask-rest-api/</guid>
-      <description>&lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
+      <description>&lt;h2 id=&#34;how-to-build&#34;&gt;How To Build&lt;/h2&gt;
 &lt;p&gt;Make sure you have installed Python 3 on your device&lt;/p&gt;
 &lt;h3 id=&#34;project-structure&#34;&gt;Project structure&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
