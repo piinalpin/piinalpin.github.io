@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Fri, 02 Aug 2019 11:04:49 +0800</lastBuildDate>
+            <lastBuildDate>Tue, 24 Dec 2019 00:34:28 +0700</lastBuildDate>
         
         <atom:link href="http://piinalpin.com/blog/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Posts</title>
+                <link>http://piinalpin.com/blog/posts/</link>
+                <pubDate>Tue, 24 Dec 2019 00:34:28 +0700</pubDate>
+                
+                <guid>http://piinalpin.com/blog/posts/</guid>
+                <description></description>
+            </item>
         
             <item>
                 <title>About Me</title>
@@ -25,15 +34,6 @@
                 <description>&lt;p&gt;Hello! I am &lt;strong&gt;Alvinditya Saputra&lt;/strong&gt;. Backend Developer.&lt;/p&gt;
 &lt;p&gt;I like new things, interested in data science and have a high curiosity. Familiar with agile development and system development with Restful using &lt;strong&gt;Object Relational Mapping&lt;/strong&gt;. If I have spare time I would rather research about &lt;strong&gt;machine learning&lt;/strong&gt; in the Python forum.&lt;/p&gt;
 </description>
-            </item>
-        
-            <item>
-                <title>Posts</title>
-                <link></link>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-                
-                <guid></guid>
-                <description></description>
             </item>
         
     </channel>
