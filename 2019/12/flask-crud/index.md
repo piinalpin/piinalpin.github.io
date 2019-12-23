@@ -1,6 +1,5 @@
 # Simple CRUD App with Flask And SQL-Alchemy
 
-
 ### Prerequisites
 
 Make sure you have installed Python 3 on your device
@@ -201,140 +200,9 @@ def index():
     print(listMhs)
     return render_template("home.html", data=enumerate(listMhs,1))
 ```
-21. The statement of `data=enumerate(listMhs,1)` mean data will show from 1 and so on, not from the id
+21. The statement of `data=enumerate(listMhs,1)` mean data will show from 1 and so on, not from the id, see __https://github.com/piinalpin/flask-crud/blob/master/README.md#step-to-create-flask-crud__
 
-22. Then modify `home.html` file to show that data is already inputed on database from input form
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Flask Crud</title>
-</head>
-<body>
-<h3>Form Add Mahasiswa</h3>
-<form action="/" method="POST">
-    <table>
-        <tr>
-            <td>Nama Lengkap</td>
-            <td>:</td>
-            <td><input type="text" name="name"></td>
-        </tr>
-        <tr>
-            <td>Nomor Induk Mahasiswa</td>
-            <td>:</td>
-            <td><input type="text" name="nim"></td>
-        </tr>
-        <tr>
-            <td><button type="submit">Save</button></td>
-        </tr>
-    </table>
-</form>
-
-<h3>Data Mahasiswa</h3>
-<table border="1">
-    <tr>
-        <th>No</th>
-        <th>Nomor Induk Mahasiswa</th>
-        <th>Nama</th>
-    </tr>
-    {% for no, x in data %}
-        <tr>
-            <td>{{ no }}</td>
-            <td>{{ x.nim }}</td>
-            <td>{{ x.name }}</td>
-        </tr>
-    {% endfor %}
-</table>
-</body>
-</html>
-```
-![Sample 6](https://raw.githubusercontent.com/piinalpin/flask-crud/master/Image-6.PNG)
-
-23. Then modify `home.html` to add action button that will __UPDATE__ and __DELETE__ data from database using id from collection. On `href="form-update/{{ x.id }}"` it will be route to `/form-update/1` to GET parameters.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Flask Crud</title>
-</head>
-<body>
-<h3>Form Add Mahasiswa</h3>
-<form action="/" method="POST">
-    <table>
-        <tr>
-            <td>Nama Lengkap</td>
-            <td>:</td>
-            <td><input type="text" name="name"></td>
-        </tr>
-        <tr>
-            <td>Nomor Induk Mahasiswa</td>
-            <td>:</td>
-            <td><input type="text" name="nim"></td>
-        </tr>
-        <tr>
-            <td><button type="submit">Save</button></td>
-        </tr>
-    </table>
-</form>
-
-<h3>Data Mahasiswa</h3>
-<table border="1">
-    <tr>
-        <th>No</th>
-        <th>Nomor Induk Mahasiswa</th>
-        <th>Nama</th>
-        <th>Action</th>
-    </tr>
-    {% for no, x in data %}
-        <tr>
-            <td>{{ no }}</td>
-            <td>{{ x.nim }}</td>
-            <td>{{ x.name }}</td>
-            <td><a href="form-update/{{ x.id }}">Edit</a> | <a href="delete/{{ x.id }}">Delete</a></td>
-        </tr>
-    {% endfor %}
-</table>
-</body>
-</html>
-```
-![Sample 7](https://raw.githubusercontent.com/piinalpin/flask-crud/master/Image-7.PNG)
-
-24. Then create `form-update.html` for the input form on update
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Flask Crud</title>
-</head>
-<body>
-<h3>Form Update Mahasiswa</h3>
-<form action="/form-update" method="POST">
-    <table>
-        <tr>
-            <td>Nama Lengkap</td>
-            <td>:</td>
-            <td><input type="text" name="name" value="{{ data.name }}"></td>
-            <input type="hidden" name="id" value="{{ data.id }}">
-        </tr>
-        <tr>
-            <td>Nomor Induk Mahasiswa</td>
-            <td>:</td>
-            <td><input type="text" name="nim" value="{{ data.nim }}"></td>
-        </tr>
-        <tr>
-            <td><button type="submit">Update</button></td>
-        </tr>
-    </table>
-</form>
-</body>
-</html>
-```
-![Sample 8](https://raw.githubusercontent.com/piinalpin/flask-crud/master/Image-8.PNG)
-
-25. Then create function to __UPDATE__ data from the collections in `controller.py`, on __UPDATE__ you should create two function to load or render form input and update to database from method __POST__ on form input using `Mahasiswa.query.filter_by(id=id).first()` to find data filter by id and `db.session.commit()` to save the data
+23. Then create function to __UPDATE__ data from the collections in `controller.py`, on __UPDATE__ you should create two function to load or render form input and update to database from method __POST__ on form input using `Mahasiswa.query.filter_by(id=id).first()` to find data filter by id and `db.session.commit()` to save the data
 ```python
 @app.route('/form-update/<int:id>')
 def updateForm(id):
@@ -357,9 +225,9 @@ def update():
             print(e)
         return redirect("/")
 ```
-26. And modify import flask on top line change to `from flask import render_template, request, redirect`
+24. And modify import flask on top line change to `from flask import render_template, request, redirect`
 
-27. Then create the __DELETE__ function to delete data from the collections in `controller.py` using filter by id and `db.session.delete(mhs)` function
+25. Then create the __DELETE__ function to delete data from the collections in `controller.py` using filter by id and `db.session.delete(mhs)` function
 ```python
 @app.route('/delete/<int:id>')
 def delete(id):
