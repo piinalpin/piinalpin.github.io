@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation on PIINALPIN</title>
-    <link>https://piinalpin.github.io/blog/categories/documentation/</link>
+    <link>http://piinalpin.com/blog/categories/documentation/</link>
     <description>Recent content in Documentation on PIINALPIN</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sun, 25 Aug 2019 16:22:42 +0800</lastBuildDate>
     
-	<atom:link href="https://piinalpin.github.io/blog/categories/documentation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://piinalpin.com/blog/categories/documentation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Research Collection Which Used Python</title>
-      <link>https://piinalpin.github.io/blog/2019/08/research-collection/</link>
+      <link>http://piinalpin.com/blog/2019/08/research-collection/</link>
       <pubDate>Sun, 25 Aug 2019 16:22:42 +0800</pubDate>
       
-      <guid>https://piinalpin.github.io/blog/2019/08/research-collection/</guid>
+      <guid>http://piinalpin.com/blog/2019/08/research-collection/</guid>
       <description>Collection of Any Research of Jupyter Notebook Sampling on Data and Text Mining
 List of Research  Search The Mpasi Menu with The Dice Coefficient Method (Luthvi Rizkawati, 2019) Data Mining Analysis on Pharmacy Transaction Data Uses The Eclat Algorithm (Utami Merdekawati, 2019) Clustering Times Series Student Portal Data Logs (Siti Aniszah, 2019) Grouping Trend Research Title Using K-Means Clustering (Nila Hutami Putri, 2018) Classification of Lecturers&amp;rsquo; Research Titles Using the K-Medoid Method (Ade Antika, 2019) Grouping of Waste Banks Using the K-Medoid Method (Mugi Astuti, 2019) Sentiment Analysis Index Performance of Lecturer Using Multinomial Naive Bayes (Alvinditya Saputra, 2018) Grouping Topic Titles Trend Using The Single Linkage Method with Manhattan Distance Similarity (Tsani Elvia Nita, 2018)  Would you want to contribute?</description>
     </item>

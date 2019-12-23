@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://piinalpin.github.io/blog/sitemap.xml
+Sitemap: http://piinalpin.com/blog/sitemap.xml

@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>PIINALPIN on PIINALPIN</title>
-        <link>https://piinalpin.github.io/blog/</link>
+        <link>http://piinalpin.com/blog/</link>
         <description>Recent content in PIINALPIN on PIINALPIN</description>
         <generator>Hugo -- gohugo.io</generator>
         
@@ -14,24 +14,24 @@
         
             <lastBuildDate>Sun, 25 Aug 2019 16:22:42 +0800</lastBuildDate>
         
-        <atom:link href="https://piinalpin.github.io/blog/" rel="self" type="application/rss+xml" />
+        <atom:link href="http://piinalpin.com/blog/" rel="self" type="application/rss+xml" />
         
             <item>
                 <title>Posts</title>
-                <link>https://piinalpin.github.io/blog/posts/</link>
+                <link>http://piinalpin.com/blog/posts/</link>
                 <pubDate>Sun, 25 Aug 2019 16:22:42 +0800</pubDate>
                 
-                <guid>https://piinalpin.github.io/blog/posts/</guid>
+                <guid>http://piinalpin.com/blog/posts/</guid>
                 <description></description>
             </item>
         
             <item>
-                <title>About LoveIt</title>
-                <link>https://piinalpin.github.io/blog/about/</link>
+                <title>About Me</title>
+                <link>http://piinalpin.com/blog/about/</link>
                 <pubDate>Fri, 02 Aug 2019 11:04:49 +0800</pubDate>
                 
-                <guid>https://piinalpin.github.io/blog/about/</guid>
-                <description>&lt;p&gt;Hello! I am Alvinditya Saputra. Backend Developer.&lt;/p&gt;
+                <guid>http://piinalpin.com/blog/about/</guid>
+                <description>&lt;p&gt;Hello! I am &lt;strong&gt;Alvinditya Saputra&lt;/strong&gt;. Backend Developer.&lt;/p&gt;
 &lt;p&gt;I like new things, interested in data science and have a high curiosity. Familiar with agile development and system development with Restful using &lt;strong&gt;Object Relational Mapping&lt;/strong&gt;. If I have spare time I would rather research about &lt;strong&gt;machine learning&lt;/strong&gt; in the Python forum.&lt;/p&gt;
 </description>
             </item>
