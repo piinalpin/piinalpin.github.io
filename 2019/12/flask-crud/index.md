@@ -1,11 +1,11 @@
 # Simple CRUD App with Flask And SQL-Alchemy
 
 
-#### Prerequisites
+### Prerequisites
 
 Make sure you have installed Python 3 on your device
 
-#### Project structure
+### Project structure
 ```
 * flask-project/
   |--- app/
@@ -19,7 +19,7 @@ Make sure you have installed Python 3 on your device
   |--- run.py
 ```
 
-#### Step to create flask crud
+### Step to create flask crud
 
 A step by step series of examples that tell you how to get a development env running
 
@@ -373,7 +373,7 @@ def delete(id):
     return redirect("/")
 ```
 
-#### After change structure of flask project
+### After change structure of flask project
 ```
 * flask-project/
   |--- app/
@@ -399,7 +399,7 @@ def delete(id):
 * [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.3/) - Flask and SQL Alchemy connector
 
 ### Want to demo online?
-##### [Flask Crud With SQL Alchemy Built in Python 3](https://flask-crud-sample.herokuapp.com)
+#### [Flask Crud With SQL Alchemy Built in Python 3](https://flask-crud-sample.herokuapp.com)
 
 ### Clone or Download
 
