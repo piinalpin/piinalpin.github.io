@@ -3,7 +3,7 @@
         <url>
             <loc>http://piinalpin.com/blog/categories/</loc>
             
-                <lastmod>2019-12-24T00:34:28+07:00</lastmod>
+                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -17,7 +17,7 @@
         <url>
             <loc>http://piinalpin.com/blog/categories/documentation/</loc>
             
-                <lastmod>2019-12-24T00:34:28+07:00</lastmod>
+                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -31,7 +31,7 @@
         <url>
             <loc>http://piinalpin.com/blog/tags/flask/</loc>
             
-                <lastmod>2019-12-24T00:34:28+07:00</lastmod>
+                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -45,7 +45,7 @@
         <url>
             <loc>http://piinalpin.com/blog/</loc>
             
-                <lastmod>2019-12-24T00:34:28+07:00</lastmod>
+                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -59,7 +59,7 @@
         <url>
             <loc>http://piinalpin.com/blog/posts/</loc>
             
-                <lastmod>2019-12-24T00:34:28+07:00</lastmod>
+                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -73,7 +73,7 @@
         <url>
             <loc>http://piinalpin.com/blog/tags/python/</loc>
             
-                <lastmod>2019-12-24T00:34:28+07:00</lastmod>
+                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -85,9 +85,23 @@
         </url>
     
         <url>
-            <loc>http://piinalpin.com/blog/2019/12/flask-crud/</loc>
+            <loc>http://piinalpin.com/blog/tags/restful/</loc>
             
-                <lastmod>2019-12-24T00:34:28+07:00</lastmod>
+                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/2019/12/flask-rest-api/</loc>
+            
+                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -101,7 +115,7 @@
         <url>
             <loc>http://piinalpin.com/blog/tags/sql-alchemy/</loc>
             
-                <lastmod>2019-12-24T00:34:28+07:00</lastmod>
+                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -114,6 +128,20 @@
     
         <url>
             <loc>http://piinalpin.com/blog/tags/</loc>
+            
+                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/2019/12/flask-crud/</loc>
             
                 <lastmod>2019-12-24T00:34:28+07:00</lastmod>
             
