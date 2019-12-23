@@ -399,7 +399,7 @@ def delete(id):
 * [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.3/) - Flask and SQL Alchemy connector
 
 ### Want to demo online?
-#### [Flask Crud With SQL Alchemy Built in Python 3](https://flask-crud-sample.herokuapp.com)
+__[Flask Crud With SQL Alchemy Built in Python 3](https://flask-crud-sample.herokuapp.com)__
 
 ### Clone or Download
 

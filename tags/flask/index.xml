@@ -827,7 +827,7 @@
 &lt;li&gt;&lt;a href=&#34;http://flask-sqlalchemy.pocoo.org/2.3/&#34;&gt;Flask-SQLAlchemy&lt;/a&gt; - Flask and SQL Alchemy connector&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;want-to-demo-online&#34;&gt;Want to demo online?&lt;/h3&gt;
-&lt;h4 id=&#34;flask-crud-with-sql-alchemy-built-in-python-3httpsflask-crud-sampleherokuappcom&#34;&gt;&lt;a href=&#34;https://flask-crud-sample.herokuapp.com&#34;&gt;Flask Crud With SQL Alchemy Built in Python 3&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://flask-crud-sample.herokuapp.com&#34;&gt;Flask Crud With SQL Alchemy Built in Python 3&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;clone-or-download&#34;&gt;Clone or Download&lt;/h3&gt;
 &lt;p&gt;You can clone or download this project&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
