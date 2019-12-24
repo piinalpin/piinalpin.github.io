@@ -166,30 +166,6 @@ urlpatterns = [
   |--- venv/
 ```
 11. Create file `app/templates/app/student_list.html` to display or parsing student list data with `ListView` library
-```html
-<h1>Student List</h1>
-<a href="{% url 'student_new' %}">Create New Student</a><br><br>
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Identity Number</th>
-        <th>Action</th>
-    </tr>
-    {% for student in object_list %}
-    <tr>
-        <td>{{ student.name }}</td>
-        <td>{{ student.identityNumber }}</td>
-        <td>
-            <a href="{% url 'student_detail' student.id %}">Detail</a>
-            <a href="{% url 'student_edit' student.id %}">Edit</a>
-            <a href="{% url 'student_delete' student.id %}">Delete</a>
-        </td>
-    </tr>
-    {% empty %}
-    <tr><td colspan="3"><b>Data is empty! Please, add data first.</b></td></tr>
-    {% endfor %}
-</table>
-```
 12. Create file `app/templates/app/student_detail.html` to display or parsing data of each student and will used by `DetailView` library
 ```html
 <h1>Student Detail</h1>
@@ -199,43 +175,7 @@ urlpatterns = [
 <h3>Department : {{ object.department }}</h3>
 ```
 13. Create file `app/templates/app/student_form.html` to display form input and edit views
-```html
-<h1>Student Form</h1>
-<form method="POST">{% csrf_token %}
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>:</td>
-            <td>{{ form.name }}</td>
-        </tr>
-        <tr>
-            <td>Identity Number</td>
-            <td>:</td>
-            <td>{{ form.identityNumber }}</td>
-        </tr>
-        <tr>
-            <td>Department</td>
-            <td>:</td>
-            <td>{{ form.department }}</td>
-        </tr>
-        <tr>
-            <td>Address</td>
-            <td>:</td>
-            <td>{{ form.address }}</td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Save"></td>
-        </tr>
-    </table>
-</form>
-```
 14. Create file `app/templates/app/student_confirm_delete.html` to display promt or alert confirmation to delete the object view
-```html
-<form method="post">{% csrf_token %}
-    Are you sure you want to delete "{{ object }}" ?
-    <input type="submit" value="Submit" />
-</form>
-```
 15. Test the project
 ```
 manage.py runserver
