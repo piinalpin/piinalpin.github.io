@@ -309,9 +309,5 @@ You can clone or download this project
 > Clone : git clone https://github.com/piinalpin/flask-rest-api.git
 ```
 
-## Authors
-
-* **Alvinditya Saputra** - *Initial work* - [DSS Consulting](https://dssconsulting.id/) - [LinkedIn](https://linkedin.com/in/piinalpin) [Instagram](https://www.instagram.com/piinalpin) [Twitter](https://www.twitter.com/piinalpin)
-
 
 <!--more-->

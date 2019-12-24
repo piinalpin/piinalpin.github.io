@@ -3,7 +3,7 @@
         <url>
             <loc>http://piinalpin.com/blog/categories/</loc>
             
-                <lastmod>2019-12-24T20:32:49+07:00</lastmod>
+                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -15,9 +15,23 @@
         </url>
     
         <url>
-            <loc>http://piinalpin.com/blog/2019/12/my-first-workshop/</loc>
+            <loc>http://piinalpin.com/blog/tags/django/</loc>
             
-                <lastmod>2019-12-24T20:32:49+07:00</lastmod>
+                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/categories/documentation/</loc>
+            
+                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -31,7 +45,7 @@
         <url>
             <loc>http://piinalpin.com/blog/</loc>
             
-                <lastmod>2019-12-24T20:32:49+07:00</lastmod>
+                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -44,6 +58,76 @@
     
         <url>
             <loc>http://piinalpin.com/blog/posts/</loc>
+            
+                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/python/</loc>
+            
+                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/2019/12/django-crud-sqlite/</loc>
+            
+                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/sqlite/</loc>
+            
+                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/</loc>
+            
+                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/2019/12/my-first-workshop/</loc>
             
                 <lastmod>2019-12-24T20:32:49+07:00</lastmod>
             
@@ -85,20 +169,6 @@
         </url>
     
         <url>
-            <loc>http://piinalpin.com/blog/tags/</loc>
-            
-                <lastmod>2019-12-24T20:32:49+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>http://piinalpin.com/blog/tags/workshop/</loc>
             
                 <lastmod>2019-12-24T20:32:49+07:00</lastmod>
@@ -113,35 +183,7 @@
         </url>
     
         <url>
-            <loc>http://piinalpin.com/blog/categories/documentation/</loc>
-            
-                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>http://piinalpin.com/blog/tags/flask/</loc>
-            
-                <lastmod>2019-12-24T01:27:15+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>http://piinalpin.com/blog/tags/python/</loc>
             
                 <lastmod>2019-12-24T01:27:15+07:00</lastmod>
             

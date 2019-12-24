@@ -623,10 +623,7 @@ flask db upgrade
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&amp;gt; Clone : git clone https://github.com/piinalpin/flask-rest-api.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;authors&#34;&gt;Authors&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Alvinditya Saputra&lt;/strong&gt; - &lt;em&gt;Initial work&lt;/em&gt; - &lt;a href=&#34;https://dssconsulting.id/&#34;&gt;DSS Consulting&lt;/a&gt; - &lt;a href=&#34;https://linkedin.com/in/piinalpin&#34;&gt;LinkedIn&lt;/a&gt; &lt;a href=&#34;https://www.instagram.com/piinalpin&#34;&gt;Instagram&lt;/a&gt; &lt;a href=&#34;https://www.twitter.com/piinalpin&#34;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -1193,10 +1190,7 @@ flask db upgrade
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&amp;gt; Clone : git clone https://github.com/piinalpin/flask-crud.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;authors&#34;&gt;Authors&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Alvinditya Saputra&lt;/strong&gt; - &lt;em&gt;Initial work&lt;/em&gt; - &lt;a href=&#34;https://dssconsulting.id/&#34;&gt;DSS Consulting&lt;/a&gt; - &lt;a href=&#34;https://linkedin.com/in/piinalpin&#34;&gt;LinkedIn&lt;/a&gt; &lt;a href=&#34;https://www.instagram.com/piinalpin&#34;&gt;Instagram&lt;/a&gt; &lt;a href=&#34;https://www.twitter.com/piinalpin&#34;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;/div&gt;</description>
     </item>
     
   </channel>
