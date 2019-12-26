@@ -1,4 +1,4 @@
-# Simple Django CRUD App With SQLite 1
+# Simple Django CRUD App With SQLite
 
 
 #### Codename : Rattlesnake

@@ -1,6 +1,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
+            <loc>http://piinalpin.com/blog/</loc>
+            
+                <lastmod>2019-12-26T16:46:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/posts/</loc>
+            
+                <lastmod>2019-12-26T16:46:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/2019/12/flask-mysql/</loc>
+            
+                <lastmod>2019-12-26T16:46:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>http://piinalpin.com/blog/categories/</loc>
             
                 <lastmod>2019-12-24T21:06:33+07:00</lastmod>
@@ -30,34 +72,6 @@
     
         <url>
             <loc>http://piinalpin.com/blog/categories/documentation/</loc>
-            
-                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>http://piinalpin.com/blog/</loc>
-            
-                <lastmod>2019-12-24T21:06:33+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>http://piinalpin.com/blog/posts/</loc>
             
                 <lastmod>2019-12-24T21:06:33+07:00</lastmod>
             
