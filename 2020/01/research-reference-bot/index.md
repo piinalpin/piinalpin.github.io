@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ```
 2. Install `punkt` with `nltk.download()`
 ```
->>> import nlit
+>>> import nltk
 >>> nltk.download("punkt")
 ```
 3. Run `server.py`
