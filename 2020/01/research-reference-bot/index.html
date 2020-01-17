@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Research Reference Bot | PiinAlpin</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="This project will create search engine bot on telegram using TF IDF and Cosine Similarity">
+<link rel="prev" href="http://piinalpin.com/blog/2019/12/flask-mysql/" />
+<link rel="canonical" href="http://piinalpin.com/blog/2020/01/research-reference-bot/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Research Reference Bot"/>
+<meta name="twitter:description" content="This project will create search engine bot on telegram using TF IDF and Cosine Similarity"/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Research Reference Bot",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http:\/\/piinalpin.com\/blog\/2020\/01\/research-reference-bot\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:\/\/piinalpin.com\/blog\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "Python, Chat Bot, NLP, Machine Learning, Tensorflow, TF-IDF, Cosine Similarity",
+    
+    "wordcount":  243 ,
+    "url": "http:\/\/piinalpin.com\/blog\/2020\/01\/research-reference-bot\/",
+    
+        "datePublished": "2020-01-17T12:00:22\x2b07:00",
+    
+    
+        "dateModified": "2020-01-17T12:00:22\x2b07:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "XXXX",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "http:\/\/piinalpin.com\/blog\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": "This project will create search engine bot on telegram using TF IDF and Cosine Similarity"
+    }
+    </script>
+<link rel="stylesheet" href="/blog/css/style.min.css">
+<link rel="stylesheet" href="/blog/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/blog/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            window.localStorage.getItem('theme') === 'dark';
+            document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="http://piinalpin.com/blog/">PiinAlpin</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="http://piinalpin.com/blog/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="http://piinalpin.com/blog/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="http://piinalpin.com/blog/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="http://piinalpin.com/blog/about" title="">About</a>
+            
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="http://piinalpin.com/blog/">PiinAlpin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Research Reference Bot</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="http://piinalpin.com/blog/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="http://piinalpin.com/blog/categories/documentation/">Documentation</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-01-17>2020-01-17</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 243 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title">Table of Contents</h2>
+                <div class="post-toc-content">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#file-structure">File Structure</a></li>
+        <li><a href="#step-for-get-dataset">Step for get dataset</a></li>
+        <li><a href="#how-to-run">How To Run</a></li>
+      </ul>
+    </li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#clone-or-download">Clone or Download</a></li>
+    <li><a href="#chat-his">Chat His</a></li>
+    <li><a href="#authors">Authors</a></li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Table of Contents</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li><a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#file-structure">File Structure</a></li>
+        <li><a href="#step-for-get-dataset">Step for get dataset</a></li>
+        <li><a href="#how-to-run">How To Run</a></li>
+      </ul>
+    </li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#clone-or-download">Clone or Download</a></li>
+    <li><a href="#chat-his">Chat His</a></li>
+    <li><a href="#authors">Authors</a></li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p><img src="https://raw.githubusercontent.com/piinalpin/research-references-bot/master/docs/chatbot.gif" alt="Chat Bot"></p>
+<a class="post-dummy-target" id="getting-started"></a><h2>Getting Started</h2>
+<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.</p>
+<a class="post-dummy-target" id="prerequisites"></a><h3>Prerequisites</h3>
+<p>Make sure you have installed Python 3 on your device</p>
+<a class="post-dummy-target" id="file-structure"></a><h3>File Structure</h3>
+<ol>
+<li><a href="https://github.com/piinalpin/research-references-bot/blob/master/bot.py">bot.py</a> this file to serve get updates and send message from request</li>
+<li><a href="https://github.com/piinalpin/research-references-bot/blob/master/config.cfg">config.cfg</a> token telegram bot from Bot Father</li>
+<li><a href="https://github.com/piinalpin/research-references-bot/blob/master/database.py">database.py</a> define database structure with object oriented mapping</li>
+<li><a href="https://github.com/piinalpin/research-references-bot/blob/master/search_engine.py">search_engine.py</a> custom library to get result of cosine similarity document</li>
+<li><a href="https://github.com/piinalpin/research-references-bot/blob/master/server.py">server.py</a> serve message and result from engine</li>
+<li><a href="https://github.com/piinalpin/research-references-bot/blob/master/tensor_flow.py">tensor_flow.py</a> natural language processing for greeting response</li>
+<li><a href="https://github.com/piinalpin/research-references-bot/blob/master/docs/intents.json">intents.json</a> greeting or intents json data</li>
+</ol>
+<a class="post-dummy-target" id="step-for-get-dataset"></a><h3>Step for get dataset</h3>
+<ol>
+<li>Scraping data from <a href="http://digilib.uad.ac.id/penelitian/Penelitian/index">http://digilib.uad.ac.id/penelitian/Penelitian/index</a> see on <a href="https://github.com/piinalpin/research-references-bot/blob/master/docs/Scrapping.ipynb">Scrapping.ipynb</a></li>
+<li>Update dataset</li>
+</ol>
+<a class="post-dummy-target" id="how-to-run"></a><h3>How To Run</h3>
+<ol>
+<li>Install requirement</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip install -r requirements.txt
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>Install <code>punkt</code> with <code>nltk.download()</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; import nlit
+&gt;&gt;&gt; nltk.download(&#34;punkt&#34;)
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>Run <code>server.py</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">python server.py
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>Go to Telegram Application or access from Telegram Web, then chat with this bot.</li>
+</ol>
+<a class="post-dummy-target" id="built-with"></a><h2>Built With</h2>
+<ul>
+<li><a href="https://www.python.org/download/releases/3.0/">Python 3</a> - The language programming used</li>
+<li><a href="https://virtualenv.pypa.io/en/latest/">Virtualenv</a> - The virtual environment used</li>
+<li><a href="https://www.sqlalchemy.org/">SQL Alchemy</a> - The database library</li>
+<li><a href="https://pypi.org/project/nltk/">NLTK</a> - Natural Language Toolkit</li>
+<li><a href="https://pypi.org/project/tensorflow/">Tensor Flow</a> - Tensor Flow</li>
+<li><a href="https://pypi.org/project/tflearn/">Tf Learn</a> - Tensor flow for learning</li>
+<li><a href="https://pypi.org/project/sklearn/">Scikit Learn</a> - Scikit Learn use Cosine Similarity</li>
+</ul>
+<a class="post-dummy-target" id="clone-or-download"></a><h2>Clone or Download</h2>
+<p>You can clone or download this project</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; Clone : git clone https://github.com/piinalpin/research-references-bot.git
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="chat-his"></a><h2>Chat His</h2>
+<ul>
+<li>Telegram Bot Chat : https://t.me/research_references_bot</li>
+<li>LINE Bot Chat : <a href="http://line.me/ti/p/@437nryhw">http://line.me/ti/p/@437nryhw</a></li>
+</ul>
+<a class="post-dummy-target" id="authors"></a><h2>Authors</h2>
+<ul>
+<li><strong>Alvinditya Saputra</strong> - <a href="https://linkedin.com/in/piinalpin">LinkedIn</a> <a href="https://www.instagram.com/piinalpin">Instagram</a> <a href="https://www.twitter.com/piinalpin">Twitter</a></li>
+</ul>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2020-01-17</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="http://piinalpin.com/blog/2020/01/research-reference-bot/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=http%3a%2f%2fpiinalpin.com%2fblog%2f2020%2f01%2fresearch-reference-bot%2f&amp;text=Research%20Reference%20Bot&amp;via=piinalpin" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fpiinalpin.com%2fblog%2f2020%2f01%2fresearch-reference-bot%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=http%3a%2f%2fpiinalpin.com%2fblog%2f2020%2f01%2fresearch-reference-bot%2f&amp;title=Research%20Reference%20Bot" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="http://piinalpin.com/blog/tags/python/"><i class="fas fa-tag fa-fw"></i>Python</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="http://piinalpin.com/blog/tags/chat-bot/"><i class="fas fa-tag fa-fw"></i>Chat Bot</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="http://piinalpin.com/blog/tags/nlp/"><i class="fas fa-tag fa-fw"></i>NLP</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="http://piinalpin.com/blog/tags/machine-learning/"><i class="fas fa-tag fa-fw"></i>Machine Learning</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="http://piinalpin.com/blog/tags/tensorflow/"><i class="fas fa-tag fa-fw"></i>Tensorflow</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="http://piinalpin.com/blog/tags/tf-idf/"><i class="fas fa-tag fa-fw"></i>TF-IDF</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="http://piinalpin.com/blog/tags/cosine-similarity/"><i class="fas fa-tag fa-fw"></i>Cosine Similarity</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="http://piinalpin.com/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="http://piinalpin.com/blog/2019/12/flask-mysql/" class="prev" rel="prev" title="Simple Flask App with Mysql"><i class="fas fa-angle-left fa-fw"></i>Simple Flask App with Mysql</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://piinalpin.com/blog/">piinalpin</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/blog/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/blog/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/blog/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/blog/css/lib/katex/katex.min.min.css"><script src="/blog/js/lib/katex/katex.min.min.js"></script><script defer src="/blog/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/blog/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

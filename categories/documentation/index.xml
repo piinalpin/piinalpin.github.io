@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 26 Dec 2019 16:46:49 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jan 2020 12:00:22 +0700</lastBuildDate>
     
 	<atom:link href="http://piinalpin.com/blog/categories/documentation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Research Reference Bot</title>
+      <link>http://piinalpin.com/blog/2020/01/research-reference-bot/</link>
+      <pubDate>Fri, 17 Jan 2020 12:00:22 +0700</pubDate>
+      
+      <guid>http://piinalpin.com/blog/2020/01/research-reference-bot/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Simple Flask App with Mysql</title>

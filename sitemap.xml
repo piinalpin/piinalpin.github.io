@@ -3,7 +3,35 @@
         <url>
             <loc>http://piinalpin.com/blog/categories/</loc>
             
-                <lastmod>2019-12-26T16:46:49+07:00</lastmod>
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/chat-bot/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/cosine-similarity/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -17,7 +45,133 @@
         <url>
             <loc>http://piinalpin.com/blog/categories/documentation/</loc>
             
-                <lastmod>2019-12-26T16:46:49+07:00</lastmod>
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/machine-learning/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/nlp/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/posts/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/python/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/2020/01/research-reference-bot/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/tensorflow/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>http://piinalpin.com/blog/tags/tf-idf/</loc>
+            
+                <lastmod>2020-01-17T12:00:22+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -57,63 +211,7 @@
         </url>
     
         <url>
-            <loc>http://piinalpin.com/blog/</loc>
-            
-                <lastmod>2019-12-26T16:46:49+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>http://piinalpin.com/blog/posts/</loc>
-            
-                <lastmod>2019-12-26T16:46:49+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>http://piinalpin.com/blog/tags/python/</loc>
-            
-                <lastmod>2019-12-26T16:46:49+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>http://piinalpin.com/blog/2019/12/flask-mysql/</loc>
-            
-                <lastmod>2019-12-26T16:46:49+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>http://piinalpin.com/blog/tags/</loc>
             
                 <lastmod>2019-12-26T16:46:49+07:00</lastmod>
             
