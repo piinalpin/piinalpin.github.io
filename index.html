@@ -331,6 +331,22 @@
         </div>
       </div>
     </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>June 2015 - May 2018</p>
+            <div class="h5">Universitas Ahmad Dahlan</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Computer Lab Assistant</div>
+            <p>As a computer lab assistant I learned to speak in public and explain practicum material as much as possible so that it can be understood by the practitioner. So that makes myself like discussion and sharing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -350,7 +366,7 @@
           <div class="card-body">
             <div class="h5">Bachelor of Computer Science</div>
             <p class="category">Universitas Ahmad Dahlan</p>
-            <p>I was a laboratory assistant and a campus organization activist. I am also active in several study groups such as the Web Study Groups and Linux Study Group.</p>
+            <p>I was a laboratory assistant and a campus organization activist. I am also active in several study groups such as the Web Study Groups and Linux Study Group. My research topic is Sentiment Analysis on Lecturer Performance Index System using Naive Bayes. This research build by micro framework Flask.</p>
           </div>
         </div>
       </div>
@@ -514,8 +530,17 @@
     <script src="js/aos.js"></script>
     <script src="scripts/main.js"></script>
     <script type="text/javascript">
-      var d = new Date();
-      document.getElementById("age").innerHTML = d.getFullYear() - 1996;
+      function getAge(dateString) {
+          var today = new Date();
+          var birthDate = new Date(dateString);
+          var age = today.getFullYear() - birthDate.getFullYear();
+          var m = today.getMonth() - birthDate.getMonth();
+          if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+              age--;
+          }
+          return age;
+      }
+      document.getElementById("age").innerHTML = getAge("1996/11/10")
 
       function myFunction(type) {
         // Get the snackbar DIV
