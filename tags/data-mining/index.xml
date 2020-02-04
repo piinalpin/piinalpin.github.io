@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Mining on PiinAlpin</title>
+    <link>http://piinalpin.com/blog/tags/data-mining/</link>
+    <description>Recent content in Data Mining on PiinAlpin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 04 Feb 2020 10:22:45 +0700</lastBuildDate>
+    
+	<atom:link href="http://piinalpin.com/blog/tags/data-mining/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Get Twitter Trending with World of Earth Identity (WOEID)</title>
+      <link>http://piinalpin.com/blog/2020/02/get-twitter-trending/</link>
+      <pubDate>Tue, 04 Feb 2020 10:22:45 +0700</pubDate>
+      
+      <guid>http://piinalpin.com/blog/2020/02/get-twitter-trending/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
