@@ -1,9 +1,9 @@
-# Get Twitter Trending with World of Earth Identity (WOEID) Test 2
+# Get Twitter Trending with World of Earth Identity (WOEID)
 
 
 <!--more-->
 
-### Prerequisites Update Test
+### Prerequisites
 
 Make sure you have installed [Python 3](https://www.python.org/downloads/) or [Anaconda](https://www.anaconda.com/) on your device.
 
