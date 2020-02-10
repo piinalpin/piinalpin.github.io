@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Django on PiinAlpin</title>
-    <link>http://piinalpin.com/blog/tags/django/</link>
+    <link>https://blog.piinalpin.com/tags/django/</link>
     <description>Recent content in Django on PiinAlpin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 24 Dec 2019 21:06:33 +0700</lastBuildDate>
     
-	<atom:link href="http://piinalpin.com/blog/tags/django/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.piinalpin.com/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Simple Django CRUD App With SQLite</title>
-      <link>http://piinalpin.com/blog/2019/12/django-crud-sqlite/</link>
+      <link>https://blog.piinalpin.com/2019/12/django-crud-sqlite/</link>
       <pubDate>Tue, 24 Dec 2019 21:06:33 +0700</pubDate>
       
-      <guid>http://piinalpin.com/blog/2019/12/django-crud-sqlite/</guid>
+      <guid>https://blog.piinalpin.com/2019/12/django-crud-sqlite/</guid>
       <description>&lt;h4 id=&#34;codename--rattlesnake&#34;&gt;Codename : Rattlesnake&lt;/h4&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;Make sure you have installed Python 3 and virtual environment on your device&lt;/p&gt;

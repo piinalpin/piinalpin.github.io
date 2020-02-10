@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL on PiinAlpin</title>
-    <link>http://piinalpin.com/blog/tags/mysql/</link>
+    <link>https://blog.piinalpin.com/tags/mysql/</link>
     <description>Recent content in MySQL on PiinAlpin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Thu, 26 Dec 2019 16:46:49 +0700</lastBuildDate>
     
-	<atom:link href="http://piinalpin.com/blog/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.piinalpin.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Simple Flask App with Mysql</title>
-      <link>http://piinalpin.com/blog/2019/12/flask-mysql/</link>
+      <link>https://blog.piinalpin.com/2019/12/flask-mysql/</link>
       <pubDate>Thu, 26 Dec 2019 16:46:49 +0700</pubDate>
       
-      <guid>http://piinalpin.com/blog/2019/12/flask-mysql/</guid>
+      <guid>https://blog.piinalpin.com/2019/12/flask-mysql/</guid>
       <description>&lt;p&gt;These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;Make sure you have installed Python 3 on your device&lt;/p&gt;

@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>PiinAlpin on PiinAlpin</title>
-        <link>http://piinalpin.com/blog/</link>
+        <link>https://blog.piinalpin.com/</link>
         <description>Recent content in PiinAlpin on PiinAlpin</description>
         <generator>Hugo -- gohugo.io</generator>
         
@@ -14,23 +14,23 @@
         
             <lastBuildDate>Tue, 04 Feb 2020 10:22:45 +0700</lastBuildDate>
         
-        <atom:link href="http://piinalpin.com/blog/" rel="self" type="application/rss+xml" />
+        <atom:link href="https://blog.piinalpin.com/" rel="self" type="application/rss+xml" />
         
             <item>
                 <title>Posts</title>
-                <link>http://piinalpin.com/blog/posts/</link>
+                <link>https://blog.piinalpin.com/posts/</link>
                 <pubDate>Tue, 04 Feb 2020 10:22:45 +0700</pubDate>
                 
-                <guid>http://piinalpin.com/blog/posts/</guid>
+                <guid>https://blog.piinalpin.com/posts/</guid>
                 <description></description>
             </item>
         
             <item>
                 <title>About Me</title>
-                <link>http://piinalpin.com/blog/about/</link>
+                <link>https://blog.piinalpin.com/about/</link>
                 <pubDate>Fri, 02 Aug 2019 11:04:49 +0800</pubDate>
                 
-                <guid>http://piinalpin.com/blog/about/</guid>
+                <guid>https://blog.piinalpin.com/about/</guid>
                 <description>&lt;p&gt;Hello! I am &lt;strong&gt;Alvinditya Saputra&lt;/strong&gt;. Backend Developer.&lt;/p&gt;
 &lt;p&gt;I like new things, interested in data science and have a high curiosity. Familiar with agile development and system development with Restful using &lt;strong&gt;Object Relational Mapping&lt;/strong&gt;. If I have spare time I would rather research about &lt;strong&gt;machine learning&lt;/strong&gt; in the Python forum.&lt;/p&gt;
 </description>

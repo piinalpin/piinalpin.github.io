@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on PiinAlpin</title>
-    <link>http://piinalpin.com/blog/tags/python/</link>
+    <link>https://blog.piinalpin.com/tags/python/</link>
     <description>Recent content in Python on PiinAlpin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 04 Feb 2020 10:22:45 +0700</lastBuildDate>
     
-	<atom:link href="http://piinalpin.com/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.piinalpin.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Get Twitter Trending with World of Earth Identity (WOEID)</title>
-      <link>http://piinalpin.com/blog/2020/02/get-twitter-trending/</link>
+      <link>https://blog.piinalpin.com/2020/02/get-twitter-trending/</link>
       <pubDate>Tue, 04 Feb 2020 10:22:45 +0700</pubDate>
       
-      <guid>http://piinalpin.com/blog/2020/02/get-twitter-trending/</guid>
+      <guid>https://blog.piinalpin.com/2020/02/get-twitter-trending/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Research Reference Bot</title>
-      <link>http://piinalpin.com/blog/2020/01/research-reference-bot/</link>
+      <link>https://blog.piinalpin.com/2020/01/research-reference-bot/</link>
       <pubDate>Fri, 17 Jan 2020 12:00:22 +0700</pubDate>
       
-      <guid>http://piinalpin.com/blog/2020/01/research-reference-bot/</guid>
+      <guid>https://blog.piinalpin.com/2020/01/research-reference-bot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Simple Flask App with Mysql</title>
-      <link>http://piinalpin.com/blog/2019/12/flask-mysql/</link>
+      <link>https://blog.piinalpin.com/2019/12/flask-mysql/</link>
       <pubDate>Thu, 26 Dec 2019 16:46:49 +0700</pubDate>
       
-      <guid>http://piinalpin.com/blog/2019/12/flask-mysql/</guid>
+      <guid>https://blog.piinalpin.com/2019/12/flask-mysql/</guid>
       <description>&lt;p&gt;These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;Make sure you have installed Python 3 on your device&lt;/p&gt;
@@ -369,10 +369,10 @@ flask db upgrade
     
     <item>
       <title>Simple Django CRUD App With SQLite</title>
-      <link>http://piinalpin.com/blog/2019/12/django-crud-sqlite/</link>
+      <link>https://blog.piinalpin.com/2019/12/django-crud-sqlite/</link>
       <pubDate>Tue, 24 Dec 2019 21:06:33 +0700</pubDate>
       
-      <guid>http://piinalpin.com/blog/2019/12/django-crud-sqlite/</guid>
+      <guid>https://blog.piinalpin.com/2019/12/django-crud-sqlite/</guid>
       <description>&lt;h4 id=&#34;codename--rattlesnake&#34;&gt;Codename : Rattlesnake&lt;/h4&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;Make sure you have installed Python 3 and virtual environment on your device&lt;/p&gt;
@@ -826,10 +826,10 @@ manage.py migrate
     
     <item>
       <title>Simple Build Flask Restful Based</title>
-      <link>http://piinalpin.com/blog/2019/12/flask-rest-api/</link>
+      <link>https://blog.piinalpin.com/2019/12/flask-rest-api/</link>
       <pubDate>Tue, 24 Dec 2019 01:27:15 +0700</pubDate>
       
-      <guid>http://piinalpin.com/blog/2019/12/flask-rest-api/</guid>
+      <guid>https://blog.piinalpin.com/2019/12/flask-rest-api/</guid>
       <description>&lt;h2 id=&#34;how-to-build&#34;&gt;How To Build&lt;/h2&gt;
 &lt;p&gt;Make sure you have installed Python 3 on your device&lt;/p&gt;
 &lt;h3 id=&#34;project-structure&#34;&gt;Project structure&lt;/h3&gt;
@@ -1440,10 +1440,10 @@ flask db upgrade
     
     <item>
       <title>Simple CRUD App with Flask And SQL-Alchemy</title>
-      <link>http://piinalpin.com/blog/2019/12/flask-crud/</link>
+      <link>https://blog.piinalpin.com/2019/12/flask-crud/</link>
       <pubDate>Tue, 24 Dec 2019 00:34:28 +0700</pubDate>
       
-      <guid>http://piinalpin.com/blog/2019/12/flask-crud/</guid>
+      <guid>https://blog.piinalpin.com/2019/12/flask-crud/</guid>
       <description>&lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
 &lt;p&gt;Make sure you have installed Python 3 on your device&lt;/p&gt;
 &lt;h3 id=&#34;project-structure&#34;&gt;Project structure&lt;/h3&gt;
@@ -2007,10 +2007,10 @@ flask db upgrade
     
     <item>
       <title>List Research Which Used Python</title>
-      <link>http://piinalpin.com/blog/2019/08/research-collection/</link>
+      <link>https://blog.piinalpin.com/2019/08/research-collection/</link>
       <pubDate>Sun, 25 Aug 2019 16:22:42 +0800</pubDate>
       
-      <guid>http://piinalpin.com/blog/2019/08/research-collection/</guid>
+      <guid>https://blog.piinalpin.com/2019/08/research-collection/</guid>
       <description>List of Research  Search The Mpasi Menu with The Dice Coefficient Method (Luthvi Rizkawati, 2019) Data Mining Analysis on Pharmacy Transaction Data Uses The Eclat Algorithm (Utami Merdekawati, 2019) Clustering Times Series Student Portal Data Logs (Siti Aniszah, 2019) Grouping Trend Research Title Using K-Means Clustering (Nila Hutami Putri, 2018) Classification of Lecturers&amp;rsquo; Research Titles Using the K-Medoid Method (Ade Antika, 2019) Grouping of Waste Banks Using the K-Medoid Method (Mugi Astuti, 2019) Sentiment Analysis Index Performance of Lecturer Using Multinomial Naive Bayes (Alvinditya Saputra, 2018) Grouping Topic Titles Trend Using The Single Linkage Method with Manhattan Distance Similarity (Tsani Elvia Nita, 2018)  Would you want to contribute?</description>
     </item>
     

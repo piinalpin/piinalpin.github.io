@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SQL-Alchemy on PiinAlpin</title>
-    <link>http://piinalpin.com/blog/tags/sql-alchemy/</link>
+    <link>https://blog.piinalpin.com/tags/sql-alchemy/</link>
     <description>Recent content in SQL-Alchemy on PiinAlpin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 24 Dec 2019 01:27:15 +0700</lastBuildDate>
     
-	<atom:link href="http://piinalpin.com/blog/tags/sql-alchemy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.piinalpin.com/tags/sql-alchemy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Simple Build Flask Restful Based</title>
-      <link>http://piinalpin.com/blog/2019/12/flask-rest-api/</link>
+      <link>https://blog.piinalpin.com/2019/12/flask-rest-api/</link>
       <pubDate>Tue, 24 Dec 2019 01:27:15 +0700</pubDate>
       
-      <guid>http://piinalpin.com/blog/2019/12/flask-rest-api/</guid>
+      <guid>https://blog.piinalpin.com/2019/12/flask-rest-api/</guid>
       <description>&lt;h2 id=&#34;how-to-build&#34;&gt;How To Build&lt;/h2&gt;
 &lt;p&gt;Make sure you have installed Python 3 on your device&lt;/p&gt;
 &lt;h3 id=&#34;project-structure&#34;&gt;Project structure&lt;/h3&gt;
@@ -628,10 +628,10 @@ flask db upgrade
     
     <item>
       <title>Simple CRUD App with Flask And SQL-Alchemy</title>
-      <link>http://piinalpin.com/blog/2019/12/flask-crud/</link>
+      <link>https://blog.piinalpin.com/2019/12/flask-crud/</link>
       <pubDate>Tue, 24 Dec 2019 00:34:28 +0700</pubDate>
       
-      <guid>http://piinalpin.com/blog/2019/12/flask-crud/</guid>
+      <guid>https://blog.piinalpin.com/2019/12/flask-crud/</guid>
       <description>&lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
 &lt;p&gt;Make sure you have installed Python 3 on your device&lt;/p&gt;
 &lt;h3 id=&#34;project-structure&#34;&gt;Project structure&lt;/h3&gt;
