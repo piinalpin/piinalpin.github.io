@@ -70,6 +70,22 @@ I like new things, interested in data science and have a high curiosity. Familia
 
 <link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
 
+
+<script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/service-worker.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
     </head>
     <body>
         <script>
