@@ -258,6 +258,7 @@ def configure_logging(sender=None, **kwargs):
 ```
 
 9. Create test send message to broker with pika. Create new file outside the project and then create new virtual environtment. Install `pika` to create connection with broker.
+
 ```bash
 pip install pika
 ```
