@@ -16,7 +16,7 @@ yarn add cypress --dev
 
 ### Step to create test case
 
-1. Open cypress to get examples of test case from cypress module.
+1. Open cypress to get examples of test case from cypress module
 
 using npx :
 ```bash

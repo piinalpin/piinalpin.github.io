@@ -20,7 +20,7 @@
       <guid>https://blog.piinalpin.com/2020/02/automation-test-cypress/</guid>
       <description>Prerequisites Install Cypress using NPM :
 1 2  cd /your/project/path npm install cypress --save-dev   or using Yarn :
-1 2  cd /your/project/path yarn add cypress --dev   Step to create test case  Open cypress to get examples of test case from cypress module.  using npx :
+1 2  cd /your/project/path yarn add cypress --dev   Step to create test case  Open cypress to get examples of test case from cypress module  using npx :
 1  npx cypress open   using yarn
 1  yarn run cypress open   Cypress should be like image below Create test case data, in this case I will use my simple CRUP web app which is deployed on heroku https://github.</description>
     </item>
