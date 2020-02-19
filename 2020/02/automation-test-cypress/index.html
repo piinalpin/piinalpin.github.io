@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Automation Test Using Cypress Example | PiinAlpin</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="This automation test is used as an example of testing applications automatically from `https://github.com/piinalpin/FE-flask-rest-api.git` making it easier for users to check whether the application is running according to business flow or not.">
+<link rel="prev" href="https://blog.piinalpin.com/2020/02/django-mail-sender/" />
+<link rel="canonical" href="https://blog.piinalpin.com/2020/02/automation-test-cypress/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Automation Test Using Cypress Example"/>
+<meta name="twitter:description" content="This automation test is used as an example of testing applications automatically from `https://github.com/piinalpin/FE-flask-rest-api.git` making it easier for users to check whether the application is running according to business flow or not."/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Automation Test Using Cypress Example",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/blog.piinalpin.com\/2020\/02\/automation-test-cypress\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/blog.piinalpin.com\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "Cypress, Automation Test, End to End Test",
+    
+    "wordcount":  586 ,
+    "url": "https:\/\/blog.piinalpin.com\/2020\/02\/automation-test-cypress\/",
+    
+        "datePublished": "2020-02-19T21:39:31\x2b07:00",
+    
+    
+        "dateModified": "2020-02-19T21:39:31\x2b07:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya Saputra",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/blog.piinalpin.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": "This automation test is used as an example of testing applications automatically from `https:\/\/github.com\/piinalpin\/FE-flask-rest-api.git` making it easier for users to check whether the application is running according to business flow or not."
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+
+<script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/service-worker.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
+    </head>
+    <body>
+        <script>
+            window.localStorage.getItem('theme') === 'dark';
+            document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://blog.piinalpin.com/">PiinAlpin</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/about" title="">About</a>
+            
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://blog.piinalpin.com/">PiinAlpin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Automation Test Using Cypress Example</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-02-19>2020-02-19</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 586 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title">Table of Contents</h2>
+                <div class="post-toc-content">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#step-to-create-test-case">Step to create test case</a></li>
+        <li><a href="#thankyou">Thankyou</a></li>
+        <li><a href="#clone-or-download">Clone or Download</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Table of Contents</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#step-to-create-test-case">Step to create test case</a></li>
+        <li><a href="#thankyou">Thankyou</a></li>
+        <li><a href="#clone-or-download">Clone or Download</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="prerequisites"></a><h3>Prerequisites</h3>
+<p>Install Cypress using NPM :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /your/project/path
+npm install cypress --save-dev
+</code></pre></td></tr></table>
+</div>
+</div><p>or using Yarn :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /your/project/path
+yarn add cypress --dev
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="step-to-create-test-case"></a><h3>Step to create test case</h3>
+<ol>
+<li>Open cypress to get examples of test case from cypress module.</li>
+</ol>
+<p>using npx :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">npx cypress open
+</code></pre></td></tr></table>
+</div>
+</div><p>using yarn</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">yarn run cypress open
+</code></pre></td></tr></table>
+</div>
+</div><p>Cypress should be like image below
+<img src="https://raw.githubusercontent.com/piinalpin/cypress-example/master/screenshot/default-cypress.png" alt="Default Cypress"></p>
+<ol start="2">
+<li>Create test case data, in this case I will use my simple CRUP web app which is deployed on heroku <code>https://github.com/piinalpin/FE-flask-rest-api.git</code>. Create new file <code>student-data.json</code> at <code>/my-project/cypress/integration/my-app</code>. This file will be use for add new record and update record in the application.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+	<span class="nt">&#34;student&#34;</span><span class="p">:</span> <span class="p">{</span>
+		<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kirito&#34;</span><span class="p">,</span>
+		<span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;2483483&#34;</span>
+	<span class="p">}</span><span class="p">,</span>
+	<span class="nt">&#34;editStudent&#34;</span><span class="p">:</span> <span class="p">{</span>
+		<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kirigaya Kazuto&#34;</span><span class="p">,</span>
+		<span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;8374323&#34;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>Create test case <code>student.spec.js</code> inside <code>/my-project/cypress/integration/myapp</code> extension should be <code>.spec.js</code> because legible automatically on cypress as test case. Lets start with get list student.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;Student CRUD Test&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="c1">// Define variable of new record and update record
+</span><span class="c1"></span>	<span class="kd">let</span> <span class="nx">student</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
+	<span class="kd">let</span> <span class="nx">editStudent</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
+
+	<span class="c1">// Before each will be run automatically when run a test case
+</span><span class="c1"></span>	<span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">// Visit website with follow url
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">visit</span><span class="p">(</span><span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/&#39;</span><span class="p">)</span>
+
+		<span class="c1">// Read sudent-data.json which is use for add record
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;cypress/integration/fe-flask-rest-api/student-data.json&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">its</span><span class="p">(</span><span class="s1">&#39;student&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">student</span> <span class="o">=</span> <span class="p">{</span>
+            	<span class="nx">name</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+            	<span class="nx">identityNumber</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">identityNumber</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="p">)</span>
+
+		<span class="c1">// Read sudent-data.json which is use for update record
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;cypress/integration/fe-flask-rest-api/student-data.json&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">its</span><span class="p">(</span><span class="s1">&#39;editStudent&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">editStudent</span> <span class="o">=</span> <span class="p">{</span>
+            	<span class="nx">name</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+            	<span class="nx">identityNumber</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">identityNumber</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="p">)</span>
+	<span class="p">}</span><span class="p">)</span>
+
+	<span class="c1">// Create function get list student case
+</span><span class="c1"></span>	<span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Get List Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">// Find class nav-link on htmnl where text contains List Student then click it
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;List Student&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+
+		<span class="c1">// Assertion url should be equals
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+
+		<span class="c1">// Assertion table of list student has table&gt;thead&gt;tr
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;thead&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have&#39;</span><span class="p">,</span> <span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+	<span class="p">}</span><span class="p">)</span>
+
+<span class="p">}</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>You can see on Cypress application then click <code>Run all spec</code>.</li>
+<li>Create case for Add Student below get list student function. Then see this run spec. You can remove all data from my web app before run spec at <a href="https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa">FE Flask Rest API</a></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Add New Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Add Student&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa/add&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;name&#34;]&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;nim&#34;]&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="nx">student</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Submit&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Yes, save it!&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;tbody&gt;tr&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;contain&#39;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>Create update test case, before you run this spec please remove all data from web application. Because cypress run all spec of <code>student.spec.js</code> automatically.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Edit Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;List Student&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button.btn.btn-warning.btn-secondary&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.class&#39;</span><span class="p">,</span> <span class="s1">&#39;fa-pencil&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;name&#34;]&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">clear</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="p">.</span><span class="nx">clear</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;nim&#34;]&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">clear</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">)</span><span class="p">.</span><span class="nx">clear</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">editStudent</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Submit&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Yes, save it!&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;tbody&gt;tr&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;contain&#39;</span><span class="p">,</span> <span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>Create delete test case, like step 6th please remove all data manually.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Delete Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;List Student&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button.btn.btn-danger.btn-secondary&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.class&#39;</span><span class="p">,</span> <span class="s1">&#39;fa-trash&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Yes, save it!&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;thead&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have&#39;</span><span class="p">,</span> <span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+<span class="p">}</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="8">
+<li>
+<p>Result all spec should be like image below.
+<img src="https://raw.githubusercontent.com/piinalpin/cypress-example/master/screenshot/student-test.png" alt="Student Test Result"></p>
+</li>
+<li>
+<p>Finally you can see <code>student.spec.js</code> run from get list, add data, update data and then delete data. So there is no duplicate data. Thankyou for reading my documentation.</p>
+</li>
+</ol>
+<a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>
+<p><a href="https://docs.cypress.io/guides/getting-started/installing-cypress.html#Advanced">Cypress</a> - The official site of Cypress and Documentation</p>
+<a class="post-dummy-target" id="clone-or-download"></a><h3>Clone or Download</h3>
+<p>You can clone or download then run all test case</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/piinalpin/cypress-example.git
+<span class="nb">cd</span> cypress-example
+npm i
+npx cypress open
+</code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2020-02-19</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://blog.piinalpin.com/2020/02/automation-test-cypress/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fblog.piinalpin.com%2f2020%2f02%2fautomation-test-cypress%2f&amp;text=Automation%20Test%20Using%20Cypress%20Example&amp;via=piinalpin" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.piinalpin.com%2f2020%2f02%2fautomation-test-cypress%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=https%3a%2f%2fblog.piinalpin.com%2f2020%2f02%2fautomation-test-cypress%2f&amp;title=Automation%20Test%20Using%20Cypress%20Example" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/cypress/"><i class="fas fa-tag fa-fw"></i>Cypress</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/automation-test/"><i class="fas fa-tag fa-fw"></i>Automation Test</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/end-to-end-test/"><i class="fas fa-tag fa-fw"></i>End to End Test</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://blog.piinalpin.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://blog.piinalpin.com/2020/02/django-mail-sender/" class="prev" rel="prev" title="Django Mail Sender With Rabbit-MQ and Celery Worker"><i class="fas fa-angle-left fa-fw"></i>Django Mail Sender With Rabbit-MQ and Celery Worker</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.piinalpin.com/">piinalpin</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
