@@ -2,42 +2,14 @@ const CACHE_VERSION = 1;
 
 const BASE_CACHE_FILES = [
     '/css/style.min.css',
-    '/css/lib/animate/animate.min.min.css',
-    '/css/lib/aplayer/APlayer.min.min.css',
-    '/css/lib/fontawesome-free/all.min.min.css',
-    '/css/lib/katex/katex.min.min.css',
     '/images/alvinditya.png',
-    '/js/blog.min.js',
-    '/js/lib/aplayer/APlayer.min.min.js',
-    '/js/lib/jquery/jquery.slim.min.min.js',
-    '/js/lib/katex/auto-render.min.min.js',
-    '/js/lib/katex/katex.min.min.js',
-    '/js/lib/lazysizes/lazysizes.min.min.js',
-    '/js/lib/mermaid/mermaid.min.min.js',
-    '/js/lib/meting/Meting.min.min.js',
-    '/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js',
-    '/js/lib/typeit/typeit.modern.min.min.js',
     '/manifest.json',
     '/favicon.ico',
 ];
 
 const OFFLINE_CACHE_FILES = [
     '/css/style.min.css',
-    '/css/lib/animate/animate.min.min.css',
-    '/css/lib/aplayer/APlayer.min.min.css',
-    '/css/lib/fontawesome-free/all.min.min.css',
-    '/css/lib/katex/katex.min.min.css',
     '/images/alvinditya.png',
-    '/js/blog.min.js',
-    '/js/lib/aplayer/APlayer.min.min.js',
-    '/js/lib/jquery/jquery.slim.min.min.js',
-    '/js/lib/katex/auto-render.min.min.js',
-    '/js/lib/katex/katex.min.min.js',
-    '/js/lib/lazysizes/lazysizes.min.min.js',
-    '/js/lib/mermaid/mermaid.min.min.js',
-    '/js/lib/meting/Meting.min.min.js',
-    '/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js',
-    '/js/lib/typeit/typeit.modern.min.min.js',
     '/manifest.json',
     '/favicon.ico',
 ];
@@ -45,7 +17,6 @@ const OFFLINE_CACHE_FILES = [
 const NOT_FOUND_CACHE_FILES = [
     '/css/style.min.css',
     '/js/lib/jquery/jquery.slim.min.min.js',
-    '/js/lib/typeit/typeit.modern.min.min.js',
     '/404.html',
 ];
 
