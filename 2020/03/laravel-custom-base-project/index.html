@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Laravel Custom Base Project | PiinAlpin</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API.">
+<link rel="prev" href="https://blog.piinalpin.com/2020/02/automation-test-cypress/" />
+<link rel="canonical" href="https://blog.piinalpin.com/2020/03/laravel-custom-base-project/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Laravel Custom Base Project"/>
+<meta name="twitter:description" content="Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API."/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Laravel Custom Base Project",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/blog.piinalpin.com\/2020\/03\/laravel-custom-base-project\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/blog.piinalpin.com\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "PHP, Laravel",
+    
+    "wordcount":  285 ,
+    "url": "https:\/\/blog.piinalpin.com\/2020\/03\/laravel-custom-base-project\/",
+    
+        "datePublished": "2020-03-06T23:34:23\x2b07:00",
+    
+    
+        "dateModified": "2020-03-06T23:34:23\x2b07:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya Saputra",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/blog.piinalpin.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": "Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API."
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+
+<script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/service-worker.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
+    </head>
+    <body>
+        <script>
+            window.localStorage.getItem('theme') === 'dark';
+            document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://blog.piinalpin.com/">PiinAlpin</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/about" title="">About</a>
+            
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://blog.piinalpin.com/">PiinAlpin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Laravel Custom Base Project</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-06>2020-03-06</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 285 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title">Table of Contents</h2>
+                <div class="post-toc-content">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#documentation">Documentation</a></li>
+        <li><a href="#api-documentation">API Documentation</a></li>
+        <li><a href="#license">License</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Table of Contents</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#documentation">Documentation</a></li>
+        <li><a href="#api-documentation">API Documentation</a></li>
+        <li><a href="#license">License</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="features"></a><h3>Features</h3>
+<ul>
+<li>Basic Authentication</li>
+<li>Json Web Token</li>
+<li>Custom Error Handling</li>
+<li>CORS Filter</li>
+<li>Authority Access</li>
+<li>Custom Middleware</li>
+<li>Soft Deletes Service</li>
+<li>Custom Form Validation</li>
+</ul>
+<a class="post-dummy-target" id="documentation"></a><h3>Documentation</h3>
+<ol>
+<li>Clone this project <code>https://github.com/piinalpin/laravel-base.git</code>.</li>
+<li>Change <code>.env</code> file to change database configuration to your database configuration and add basic auth configuration.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">AUTH_USERNAME=&lt;BASIC_AUTH_USERNAME&gt;
+AUTH_PASSWORD=&lt;BASIC_AUTH_PASSWORD&gt;
+
+DB_CONNECTION=mysql
+DB_HOST=&lt;DATABASE_HOST&gt;
+DB_PORT=&lt;DATABASE_PORT&gt;
+DB_DATABASE=&lt;DATABASE_NAME&gt;
+DB_USERNAME=&lt;DATABASE_USERNAME&gt;
+DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>Run <code>php artisan migrate</code> to migrate table on database.</li>
+<li>Change <code>database/AppUserSeeder.php</code> according what do you want (optional), for this case I have two default user.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">DB::table(&#39;APP_USER&#39;)-&gt;insert([ 
+	&#39;created_at&#39; =&gt; DB::raw(&#39;CURRENT_TIMESTAMP&#39;),
+	&#39;created_by&#39; =&gt; 0,
+	&#39;username&#39; =&gt; &#39;admin&#39;,
+    &#39;full_name&#39; =&gt; &#39;Administrator&#39;,
+    &#39;email&#39; =&gt; &#39;admin@test.com&#39;,
+    &#39;password&#39; =&gt; Hash::make(&#39;password&#39;),
+    &#39;enabled&#39; =&gt; true,
+    &#39;role&#39; =&gt; &#39;ADMINISTRATOR&#39;
+]);
+</code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>Run <code>php artisan db:seed</code> to seed data in database.</li>
+<li>Run <code>php artisan serve</code> to run this project.</li>
+</ol>
+<a class="post-dummy-target" id="api-documentation"></a><h3>API Documentation</h3>
+<ul>
+<li>Login <code>/api/v1/oauth/token POST</code>
+<ul>
+<li>Header <code>Authorization: Basic</code> username and password as same as value of basic auth on <code>.env</code></li>
+<li>Form Data <code>username: admin</code> and <code>password: password</code></li>
+</ul>
+</li>
+<li>User Currently Logged In <code>/api/vi/user/me GET</code>
+<ul>
+<li>Header <code>Authorization: Bearer Token</code></li>
+</ul>
+</li>
+<li>Get All User <code>/api/vi/user GET</code>
+<ul>
+<li>Header <code>Authorization: Bearer Token</code></li>
+</ul>
+</li>
+<li>Create New User <code>/api/vi/user/me POST</code>
+<ul>
+<li>Header <code>Authorization: Bearer Token</code></li>
+<li>Request: <code>application/json</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;someuser&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;someemail@test.com&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;fullName&#34;</span><span class="p">:</span> <span class="s2">&#34;Some Name&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;confirmPassword&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;SOME_ROLE&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Get Single User <code>/api/vi/user/{id} GET</code>
+<ul>
+<li>Header <code>Authorization: Bearer Token</code></li>
+</ul>
+</li>
+<li>Update User <code>/api/vi/user/{id} POST</code>
+<ul>
+<li>Header <code>Authorization: Bearer Token</code></li>
+<li>Request: <code>application/json</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;someuser&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;someemail@test.com&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;fullName&#34;</span><span class="p">:</span> <span class="s2">&#34;Some Name&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;confirmPassword&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;SOME_ROLE&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Delete User <code>/api/vi/user/{id} DELETE</code>
+<ul>
+<li>Header <code>Authorization: Bearer Token</code></li>
+</ul>
+</li>
+</ul>
+<a class="post-dummy-target" id="license"></a><h3>License</h3>
+<p>The Laravel framework is open-sourced software licensed under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2020-03-06</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://blog.piinalpin.com/2020/03/laravel-custom-base-project/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fblog.piinalpin.com%2f2020%2f03%2flaravel-custom-base-project%2f&amp;text=Laravel%20Custom%20Base%20Project&amp;via=piinalpin" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.piinalpin.com%2f2020%2f03%2flaravel-custom-base-project%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=https%3a%2f%2fblog.piinalpin.com%2f2020%2f03%2flaravel-custom-base-project%2f&amp;title=Laravel%20Custom%20Base%20Project" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/php/"><i class="fas fa-tag fa-fw"></i>PHP</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/laravel/"><i class="fas fa-tag fa-fw"></i>Laravel</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://blog.piinalpin.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://blog.piinalpin.com/2020/02/automation-test-cypress/" class="prev" rel="prev" title="Automation Test Using Cypress Example"><i class="fas fa-angle-left fa-fw"></i>Automation Test Using Cypress Example</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.piinalpin.com/">piinalpin</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
