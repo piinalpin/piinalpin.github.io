@@ -11,6 +11,7 @@
 - Custom Middleware
 - Soft Deletes Service
 - Custom Form Validation
+- Auto Refresh Token Every 1 Hour
 
 ### Documentation
 1. Clone this project `https://github.com/piinalpin/laravel-base.git`.
