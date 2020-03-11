@@ -40,7 +40,7 @@
     
         "keywords": "PHP, Laravel",
     
-    "wordcount":  294 ,
+    "wordcount":  550 ,
     "url": "https:\/\/blog.piinalpin.com\/2020\/03\/laravel-custom-base-project\/",
     
         "datePublished": "2020-03-06T23:34:23\x2b07:00",
@@ -146,8 +146,8 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-06>2020-03-06</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 294 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>about 550 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
         
@@ -161,6 +161,7 @@
       <ul>
         <li><a href="#features">Features</a></li>
         <li><a href="#documentation">Documentation</a></li>
+        <li><a href="#run-using-docker">Run Using Docker</a></li>
         <li><a href="#api-documentation">API Documentation</a></li>
         <li><a href="#license">License</a></li>
       </ul>
@@ -181,6 +182,7 @@
       <ul>
         <li><a href="#features">Features</a></li>
         <li><a href="#documentation">Documentation</a></li>
+        <li><a href="#run-using-docker">Run Using Docker</a></li>
         <li><a href="#api-documentation">API Documentation</a></li>
         <li><a href="#license">License</a></li>
       </ul>
@@ -233,7 +235,7 @@
 <a class="post-dummy-target" id="documentation"></a><h3>Documentation</h3>
 <ol>
 <li>Clone this project <code>https://github.com/piinalpin/laravel-base.git</code>.</li>
-<li>Change <code>.env</code> file to change database configuration to your database configuration and add basic auth configuration.</li>
+<li>Change<code>.env.docker</code> file to change database configuration to your database configuration and add basic auth configuration. Then copy <code>.env.docker</code> to <code>.env</code></li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -292,6 +294,172 @@ DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;
 </div><ol start="5">
 <li>Run <code>php artisan db:seed</code> to seed data in database.</li>
 <li>Run <code>php artisan serve</code> to run this project.</li>
+</ol>
+<a class="post-dummy-target" id="run-using-docker"></a><h3>Run Using Docker</h3>
+<ol>
+<li>Install Docker desktop from <a href="https://hub.docker.com/search?q=&amp;type=edition&amp;offering=community&amp;sort=updated_at&amp;order=desc">Docker Hub</a></li>
+<li>Install MySQL Docker if you want to use MySQL as container</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -p 3306:3306 --name mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw -d mysql:latest
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>Create database and add user for laravel docker, default IP Address for docker is <em>172.17.0.1</em></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">shell&gt; docker <span class="nb">exec</span> -it mysql mysql -u root -p
+
+mysql&gt; CREATE DATABASE database_name<span class="p">;</span>
+mysql&gt; CREATE USER <span class="s1">&#39;newuser&#39;</span>@<span class="s1">&#39;172.17.0.1&#39;</span> IDENTIFIED BY <span class="s1">&#39;user_password&#39;</span><span class="p">;</span>
+mysql&gt; GRANT ALL PRIVILEGES ON database_name.* TO <span class="s1">&#39;newuser&#39;</span>@<span class="s1">&#39;172.17.0.1&#39;</span><span class="p">;</span>
+mysql&gt; FLUSH PRIVILEGES<span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>Change <code>.env.docker</code> to change database connection for mysql docker</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">DB_CONNECTION=mysql
+DB_HOST=172.17.0.1
+DB_PORT=3306
+DB_DATABASE=database_name
+DB_USERNAME=new_user
+DB_PASSWORD=user_password
+</code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>Run migration and seed data <code>php artisan migrate &amp;&amp; php artisan db:seed</code></li>
+<li>Build web server on docker, you can see Dockerfile for web server at <a href="https://github.com/piinalpin/laravel-base/blob/master/web.dockerfile">web.dockerfile</a></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker build -t laravel_web:latest -f web.dockerfile .
+</code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>Build laravel application on docker, you can see Dockerfile for laravel application at <a href="https://github.com/piinalpin/laravel-base/blob/master/app.dockerfile">app.dockerfile</a></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker build -t laravel_app:latest -f app.dockerfile .
+</code></pre></td></tr></table>
+</div>
+</div><ol start="8">
+<li>Create network on docker and create connection for mysql docker on your network.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+docker network connect my-network mysql
+</code></pre></td></tr></table>
+</div>
+</div><ol start="9">
+<li>Adjust <code>docker-compose.yml</code> to run web server, application and connect to external mysql container.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml">version<span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>services<span class="p">:</span><span class="w">
+</span><span class="w">  </span>web<span class="p">:</span><span class="w">
+</span><span class="w">    </span>image<span class="p">:</span><span class="w"> </span>laravel_web<span class="p">:</span>latest<span class="w">
+</span><span class="w">    </span>volumes<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>./<span class="p">:</span>/var/www<span class="w">
+</span><span class="w">    </span>restart<span class="p">:</span><span class="w"> </span>always<span class="w">
+</span><span class="w">    </span>ports<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span><span class="s2">&#34;8080:80&#34;</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span><span class="s2">&#34;443:443&#34;</span><span class="w">
+</span><span class="w">    </span>links<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>app<span class="w">
+</span><span class="w">    </span>networks<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>my-network<span class="w">
+</span><span class="w">
+</span><span class="w">  </span>app<span class="p">:</span><span class="w">
+</span><span class="w">    </span>image<span class="p">:</span><span class="w"> </span>laravel_app<span class="p">:</span>latest<span class="w">
+</span><span class="w">    </span>env_file<span class="p">:</span><span class="w"> </span><span class="s1">&#39;.env.docker&#39;</span><span class="w">
+</span><span class="w">    </span>environment<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span><span class="s2">&#34;DB_HOST=172.17.0.1&#34;</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span><span class="s2">&#34;APP_URL=http://localhost:8080/api/v1&#34;</span><span class="w">
+</span><span class="w">    </span>volumes<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>./<span class="p">:</span>/var/www<span class="w">
+</span><span class="w">    </span>restart<span class="p">:</span><span class="w"> </span>always<span class="w">
+</span><span class="w">    </span>networks<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>my-network<span class="w">
+</span><span class="w">
+</span><span class="w"></span>networks<span class="p">:</span><span class="w">
+</span><span class="w">  </span>my-network<span class="p">:</span><span class="w">
+</span><span class="w">    </span>external<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="10">
+<li>Run <code>docker-compose up -d</code> to deploy docker image to container and <code>docker-compose down</code> to stop it.</li>
+<li>Application should be can access at <code>localhost:8080</code></li>
 </ol>
 <a class="post-dummy-target" id="api-documentation"></a><h3>API Documentation</h3>
 <ul>
