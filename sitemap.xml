@@ -1,9 +1,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
+            <loc>https://blog.piinalpin.com/2020/09/auto-start-ssh-tunneling-mac/</loc>
+            
+                <lastmod>2020-09-14T09:55:52+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/auto-startup/</loc>
+            
+                <lastmod>2020-09-14T09:55:52+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/bash/</loc>
+            
+                <lastmod>2020-09-14T09:55:52+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://blog.piinalpin.com/categories/</loc>
             
-                <lastmod>2020-03-06T23:34:23+07:00</lastmod>
+                <lastmod>2020-09-14T09:55:52+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -17,7 +59,49 @@
         <url>
             <loc>https://blog.piinalpin.com/categories/documentation/</loc>
             
-                <lastmod>2020-03-06T23:34:23+07:00</lastmod>
+                <lastmod>2020-09-14T09:55:52+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/</loc>
+            
+                <lastmod>2020-09-14T09:55:52+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/posts/</loc>
+            
+                <lastmod>2020-09-14T09:55:52+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/</loc>
+            
+                <lastmod>2020-09-14T09:55:52+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -58,48 +142,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/php/</loc>
-            
-                <lastmod>2020-03-06T23:34:23+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/</loc>
-            
-                <lastmod>2020-03-06T23:34:23+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/posts/</loc>
-            
-                <lastmod>2020-03-06T23:34:23+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/</loc>
             
                 <lastmod>2020-03-06T23:34:23+07:00</lastmod>
             
