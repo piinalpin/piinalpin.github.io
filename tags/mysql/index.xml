@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 26 Dec 2019 16:46:49 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 04 Dec 2020 15:49:11 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.piinalpin.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Create Sequence Like Oracle in MySQL</title>
+      <link>https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/</link>
+      <pubDate>Fri, 04 Dec 2020 15:49:11 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Simple Flask App with Mysql</title>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Create Sequence Like Oracle in MySQL | PiinAlpin</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="My Personal Blog">
+<link rel="prev" href="https://blog.piinalpin.com/2020/11/simple-rest-golang/" />
+<link rel="canonical" href="https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Create Sequence Like Oracle in MySQL"/>
+<meta name="twitter:description" content=""/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Create Sequence Like Oracle in MySQL",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/blog.piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/blog.piinalpin.com\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "Sequence, SQL, MySQL, Nextval, Sequence MySQL, Custom Sequence",
+    
+    "wordcount":  338 ,
+    "url": "https:\/\/blog.piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/",
+    
+        "datePublished": "2020-12-04T15:49:11\x2b07:00",
+    
+    
+        "dateModified": "2020-12-04T15:49:11\x2b07:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya Saputra",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/blog.piinalpin.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+
+<script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/service-worker.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
+    </head>
+    <body>
+        <script>
+            window.localStorage.getItem('theme') === 'dark';
+            document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://blog.piinalpin.com/">PiinAlpin</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/about" title="">About</a>
+            
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://blog.piinalpin.com/">PiinAlpin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Create Sequence Like Oracle in MySQL</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-12-04>2020-12-04</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 338 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title">Table of Contents</h2>
+                <div class="post-toc-content">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#step-to-create-a-custom-sequence-like-oracle-in-mysql">Step to create a custom sequence like Oracle in MySQL</a></li>
+        <li><a href="#thankyou">Thankyou</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Table of Contents</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#step-to-create-a-custom-sequence-like-oracle-in-mysql">Step to create a custom sequence like Oracle in MySQL</a></li>
+        <li><a href="#thankyou">Thankyou</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="prerequisites"></a><h3>Prerequisites</h3>
+<ul>
+<li><a href="https://www.mysql.com/">MySQL</a></li>
+</ul>
+<a class="post-dummy-target" id="step-to-create-a-custom-sequence-like-oracle-in-mysql"></a><h3>Step to create a custom sequence like Oracle in MySQL</h3>
+<ol>
+<li>Set global <code>log_bin_trust_function_creator</code> to 1</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="kt">SET</span> <span class="p"></span><span class="n">GLOBAL</span> <span class="n">log_bin_trust_function_creators</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>Create a sequence table</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nf">SEQUENCE</span> <span class="p">(</span><span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span> <span class="n">value</span> <span class="kt">INT</span> <span class="p"></span><span class="k">UNSIGNED</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>Drop function <code>nextval()</code> if exists on your database</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">DROP</span> <span class="n">FUNCTION</span> <span class="k">IF</span> <span class="k">EXISTS</span> <span class="n">nextval</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>Create a custom sequence
+Call <code>nextval('sequence_name')</code>, and will returns the next value. If name of sequence does not exists, it will created automatically by initial value 1.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">DELIMITER</span> <span class="o">/</span><span class="o">/</span>
+
+<span class="k">CREATE</span> <span class="n">FUNCTION</span> <span class="nf">nextval</span> <span class="p">(</span><span class="n">sequence_name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">)</span>
+<span class="n">RETURNS</span> <span class="kt">INT</span> <span class="p"></span><span class="k">UNSIGNED</span>
+<span class="n">BEGIN</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SEQUENCE</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">sequence_name</span><span class="p">,</span> <span class="nf">LAST_INSERT_ID</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="p">)</span>
+<span class="k">ON</span> <span class="n">DUPLICATE</span> <span class="k">KEY</span> <span class="k">UPDATE</span> <span class="n">value</span><span class="o">=</span><span class="nf">LAST_INSERT_ID</span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="p">;</span>
+<span class="k">RETURN</span> <span class="nf">LAST_INSERT_ID</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+<span class="n">END</span>
+<span class="o">/</span><span class="o">/</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>Changing back delimiter to semicolon</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">DELIMITER</span> <span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>Create table to test a custom sequence, default id defined by zero (0)</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nf">HUMAN</span>
+<span class="p">(</span><span class="n">id</span> <span class="kt">int</span> <span class="p"></span><span class="k">UNSIGNED</span> <span class="k">NOT</span> <span class="no">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span>
+<span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>Drop nextval trigger if exists.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">DROP</span> <span class="k">TRIGGER</span> <span class="k">IF</span> <span class="k">EXISTS</span> <span class="n">nextval</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="8">
+<li>Create a custom trigger for <code>nextval()</code> function
+The trigger only generated a new id if 0 is inserted. So, if you create a new table and field id with default value by zero (0) that makes it implicit.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">nextval_human</span> <span class="k">BEFORE</span> <span class="k">INSERT</span> <span class="k">ON</span> <span class="n">HUMAN</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="n">ROW</span> <span class="kt">SET</span> <span class="p"></span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="k">IF</span><span class="p">(</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nf">nextval</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">ID_HUMAN_SEQ</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="9">
+<li>Let's try a sample data on HUMAN table</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">HUMAN</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Maverick</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">John Doe</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Al Sah-Him</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="10">
+<li>Inserted data look likes</li>
+</ol>
+<p><img src="/images/human_data.png" alt="HUMAN Data"></p>
+<ol start="11">
+<li>Let's try another table <code>BOOK</code> to test a sequence</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nf">BOOK</span>
+<span class="p">(</span><span class="n">id</span> <span class="kt">int</span> <span class="p"></span><span class="k">UNSIGNED</span> <span class="k">NOT</span> <span class="no">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span>
+<span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="p">,</span> <span class="n">code</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="12">
+<li>Create <code>ID_BOOK_SEQ</code> trigger to a new sequence</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">nextval_book</span> <span class="k">BEFORE</span> <span class="k">INSERT</span> <span class="k">ON</span> <span class="n">BOOK</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="n">ROW</span> <span class="kt">SET</span> <span class="p"></span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="k">IF</span><span class="p">(</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nf">nextval</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">ID_BOOK_SEQ</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="13">
+<li>Insert data into <code>BOOK</code> table</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">BOOK</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Book 1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">BK-01</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Book 2</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">BK-02</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Book 3</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">BK-03</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="14">
+<li>Show the data</li>
+</ol>
+<p><img src="/images/book_data.png" alt="BOOK Data"></p>
+<ol start="15">
+<li>Let's check generated custom sequence</li>
+</ol>
+<p><img src="/images/custom_sequence.png" alt="Custom Sequence"></p>
+<a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>
+<p><a href="https://openquery.com.au/blog/implementing-sequences-using-a-stored-function-and-triggers">Open Query</a> - Implementing Sequences using a Stored Function and Triggers</p>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2020-12-04</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fblog.piinalpin.com%2f2020%2f12%2fcreate-sequence-like-oracle-in-mysql%2f&amp;text=Create%20Sequence%20Like%20Oracle%20in%20MySQL&amp;via=piinalpin" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.piinalpin.com%2f2020%2f12%2fcreate-sequence-like-oracle-in-mysql%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=https%3a%2f%2fblog.piinalpin.com%2f2020%2f12%2fcreate-sequence-like-oracle-in-mysql%2f&amp;title=Create%20Sequence%20Like%20Oracle%20in%20MySQL" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/sequence/"><i class="fas fa-tag fa-fw"></i>Sequence</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/sql/"><i class="fas fa-tag fa-fw"></i>SQL</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/mysql/"><i class="fas fa-tag fa-fw"></i>MySQL</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/nextval/"><i class="fas fa-tag fa-fw"></i>Nextval</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/sequence-mysql/"><i class="fas fa-tag fa-fw"></i>Sequence MySQL</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/custom-sequence/"><i class="fas fa-tag fa-fw"></i>Custom Sequence</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://blog.piinalpin.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://blog.piinalpin.com/2020/11/simple-rest-golang/" class="prev" rel="prev" title="Simple REST Application using Go/Golang"><i class="fas fa-angle-left fa-fw"></i>Simple REST Application using Go/Golang</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.piinalpin.com/">piinalpin</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
