@@ -23,8 +23,7 @@ CREATE TABLE IF NOT EXISTS SEQUENCE (name VARCHAR(255) PRIMARY KEY, value INT UN
 DROP FUNCTION IF EXISTS nextval;
 ```
 
-4. Create a custom sequence
-Call `nextval('sequence_name')`, and will returns the next value. If name of sequence does not exists, it will created automatically by initial value 1.
+4. Create a custom sequence call `nextval('sequence_name')`, and will returns the next value. If name of sequence does not exists, it will created automatically by initial value 1.
 
 ```mysql
 DELIMITER //
