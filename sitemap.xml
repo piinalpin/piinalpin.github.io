@@ -3,7 +3,7 @@
         <url>
             <loc>https://blog.piinalpin.com/categories/</loc>
             
-                <lastmod>2020-12-08T14:08:21+07:00</lastmod>
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -17,7 +17,7 @@
         <url>
             <loc>https://blog.piinalpin.com/categories/documentation/</loc>
             
-                <lastmod>2020-12-08T14:08:21+07:00</lastmod>
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -29,9 +29,9 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/tags/java/</loc>
+            <loc>https://blog.piinalpin.com/tags/mariadb/</loc>
             
-                <lastmod>2020-12-08T14:08:21+07:00</lastmod>
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -45,7 +45,21 @@
         <url>
             <loc>https://blog.piinalpin.com/tags/mysql/</loc>
             
-                <lastmod>2020-12-08T14:08:21+07:00</lastmod>
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/oracle/</loc>
+            
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -59,7 +73,21 @@
         <url>
             <loc>https://blog.piinalpin.com/</loc>
             
-                <lastmod>2020-12-08T14:08:21+07:00</lastmod>
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/postgresql/</loc>
+            
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -72,6 +100,90 @@
     
         <url>
             <loc>https://blog.piinalpin.com/posts/</loc>
+            
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/python/</loc>
+            
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/sql/</loc>
+            
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/2020/12/sql-generator/</loc>
+            
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/sql-server/</loc>
+            
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/</loc>
+            
+                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/java/</loc>
             
                 <lastmod>2020-12-08T14:08:21+07:00</lastmod>
             
@@ -114,20 +226,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
-            
-                <lastmod>2020-12-08T14:08:21+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/</loc>
             
                 <lastmod>2020-12-08T14:08:21+07:00</lastmod>
             
@@ -198,20 +296,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/sequence-mysql/</loc>
-            
-                <lastmod>2020-12-04T15:49:11+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/sql/</loc>
             
                 <lastmod>2020-12-04T15:49:11+07:00</lastmod>
             
@@ -492,20 +576,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/2020/02/django-mail-sender/</loc>
-            
-                <lastmod>2020-02-12T13:19:04+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/python/</loc>
             
                 <lastmod>2020-02-12T13:19:04+07:00</lastmod>
             
