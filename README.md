@@ -10,4 +10,4 @@ I like new things, interested in data science and have a high curiosity. Familia
 
 ## Authors
 
-* **Alvinditya Saputra** - *Middle Java Developer* - [Online CV](https://piinalpin.com/)
+* **Alvinditya Saputra** - *Middle Java Developer* - [Official Website](https://piinalpin.com/)
