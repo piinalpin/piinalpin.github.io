@@ -72,8 +72,8 @@ def main(generate, outputdir):
 		        for column in data.columns:
 		            rows.append(str(data[column][i]))
 		        row_values = "'" + "', '".join(rows) + "'"
-		        click.echo("INSERT INTO ({}) VALUES ({});".format(field_names, row_values))
-		        write_file.write("INSERT INTO ({}) VALUES ({});\n".format(field_names, row_values))
+		        click.echo("INSERT INTO {} ({}) VALUES ({});".format(sheet_name, field_names, row_values))
+		        write_file.write("INSERT INTO {} ({}) VALUES ({});\n".format(sheet_name, field_names, row_values))
 		    write_file.close()
 	except TypeError as e:
 		click.echo("Error: Unknown generate file! Type -h for help.")
@@ -86,6 +86,23 @@ This file will create command `sql_generator.py --generate filename.xlsx --outpu
 
 Type `sql_generator.py --help` to show help command
 
+3. Generator will be create a sql file according sheet name
+
+File `M_ACCOUNT.sql`
+
+```sql
+INSERT INTO M_ACCOUNT (ID, FULLNAME, ADDRESS, IDENTITY_NUMBER, IDENTITY_TYPE, COUNTRY) VALUES ('1', 'John Doe', 'Yogyakarta', '34754354986', 'KTP', 'Indonesia');
+INSERT INTO M_ACCOUNT (ID, FULLNAME, ADDRESS, IDENTITY_NUMBER, IDENTITY_TYPE, COUNTRY) VALUES ('2', 'Maverick', 'Jakarta', '43589743545', 'KTP', 'Indonesia');
+INSERT INTO M_ACCOUNT (ID, FULLNAME, ADDRESS, IDENTITY_NUMBER, IDENTITY_TYPE, COUNTRY) VALUES ('3', 'Al Sah-Him', 'Semarang', '58479846645', 'KTP', 'Indonesia');
+```
+
+File `M_USER.sql`
+
+```sql
+INSERT INTO M_USER (ID, USERNAME, PASSWORD, M_ACCOUNT_ID) VALUES ('1', 'johndoe', '$2y$12$tRgbrmjdyytEyv8ceakIc.7vUCjLfpEi6K/Ube0hB5X4c7vPcMMQC', '1');
+INSERT INTO M_USER (ID, USERNAME, PASSWORD, M_ACCOUNT_ID) VALUES ('2', 'maverick', '$2y$12$tRgbrmjdyytEyv8ceakIc.7vUCjLfpEi6K/Ube0hB5X4c7vPcMMQC', '2');
+INSERT INTO M_USER (ID, USERNAME, PASSWORD, M_ACCOUNT_ID) VALUES ('3', 'alsahhim', '$2y$12$tRgbrmjdyytEyv8ceakIc.7vUCjLfpEi6K/Ube0hB5X4c7vPcMMQC', '3');
+```
 
 ### Thankyou
 

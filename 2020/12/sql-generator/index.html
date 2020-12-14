@@ -40,7 +40,7 @@
     
         "keywords": "SQL, MySQL, Oracle, Postgresql, MariaDB, SQL Server, Python",
     
-    "wordcount":  323 ,
+    "wordcount":  433 ,
     "url": "https:\/\/blog.piinalpin.com\/2020\/12\/sql-generator\/",
     
         "datePublished": "2020-12-12T23:21:44\x2b07:00",
@@ -146,8 +146,8 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-12-12>2020-12-12</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 323 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>about 433 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
         
@@ -390,8 +390,8 @@
 		        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
 		            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="p">)</span><span class="p">)</span>
 		        <span class="n">row_values</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">&#39;</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">&#39;</span><span class="s2">, </span><span class="s2">&#39;</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">&#39;</span><span class="s2">&#34;</span>
-		        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">INSERT INTO ({}) VALUES ({});</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_names</span><span class="p">,</span> <span class="n">row_values</span><span class="p">)</span><span class="p">)</span>
-		        <span class="n">write_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">INSERT INTO ({}) VALUES ({});</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_names</span><span class="p">,</span> <span class="n">row_values</span><span class="p">)</span><span class="p">)</span>
+		        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">INSERT INTO {} ({}) VALUES ({});</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sheet_name</span><span class="p">,</span> <span class="n">field_names</span><span class="p">,</span> <span class="n">row_values</span><span class="p">)</span><span class="p">)</span>
+		        <span class="n">write_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">INSERT INTO {} ({}) VALUES ({});</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sheet_name</span><span class="p">,</span> <span class="n">field_names</span><span class="p">,</span> <span class="n">row_values</span><span class="p">)</span><span class="p">)</span>
 		    <span class="n">write_file</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="p">)</span>
 	<span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 		<span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Error: Unknown generate file! Type -h for help.</span><span class="s2">&#34;</span><span class="p">)</span>
@@ -402,7 +402,36 @@
 </div>
 </div><p>This file will create command <code>sql_generator.py --generate filename.xlsx --outputdir dir</code></p>
 <p>Type <code>sql_generator.py --help</code> to show help command</p>
-<a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>
+<ol start="3">
+<li>Generator will be create a sql file according sheet name</li>
+</ol>
+<p>File <code>M_ACCOUNT.sql</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">M_ACCOUNT</span> <span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">FULLNAME</span><span class="p">,</span> <span class="n">ADDRESS</span><span class="p">,</span> <span class="n">IDENTITY_NUMBER</span><span class="p">,</span> <span class="n">IDENTITY_TYPE</span><span class="p">,</span> <span class="n">COUNTRY</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">John Doe</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Yogyakarta</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">34754354986</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">KTP</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Indonesia</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">M_ACCOUNT</span> <span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">FULLNAME</span><span class="p">,</span> <span class="n">ADDRESS</span><span class="p">,</span> <span class="n">IDENTITY_NUMBER</span><span class="p">,</span> <span class="n">IDENTITY_TYPE</span><span class="p">,</span> <span class="n">COUNTRY</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">2</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Maverick</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Jakarta</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">43589743545</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">KTP</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Indonesia</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">M_ACCOUNT</span> <span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">FULLNAME</span><span class="p">,</span> <span class="n">ADDRESS</span><span class="p">,</span> <span class="n">IDENTITY_NUMBER</span><span class="p">,</span> <span class="n">IDENTITY_TYPE</span><span class="p">,</span> <span class="n">COUNTRY</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">3</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Al Sah-Him</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Semarang</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">58479846645</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">KTP</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Indonesia</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>File <code>M_USER.sql</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">M_USER</span> <span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">USERNAME</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">,</span> <span class="n">M_ACCOUNT_ID</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">johndoe</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">$2y$12$tRgbrmjdyytEyv8ceakIc.7vUCjLfpEi6K/Ube0hB5X4c7vPcMMQC</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">1</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">M_USER</span> <span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">USERNAME</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">,</span> <span class="n">M_ACCOUNT_ID</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">2</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">maverick</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">$2y$12$tRgbrmjdyytEyv8ceakIc.7vUCjLfpEi6K/Ube0hB5X4c7vPcMMQC</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">2</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">M_USER</span> <span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">USERNAME</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">,</span> <span class="n">M_ACCOUNT_ID</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">3</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">alsahhim</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">$2y$12$tRgbrmjdyytEyv8ceakIc.7vUCjLfpEi6K/Ube0hB5X4c7vPcMMQC</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">3</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>
 <p><a href="https://codeburst.io/building-beautiful-command-line-interfaces-with-python-26c7e1bb54df">codeburst.io</a> - Building Beautiful Command Line Interfaces with Python</p>
 <p><a href="https://click.palletsprojects.com/en/7.x/commands/">$ click_</a> - Commands and Groups</p>
         </div>
