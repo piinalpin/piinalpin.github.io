@@ -65,6 +65,7 @@ echo "Connection closed!"
     <key>StandardErrorPath</key>
     <string>/tmp/startup.stderr</string>
   </dict>
+</plist>
 ```
 
 5. Create file `~/reload.sh` to handle when disconnected from tunnel and type code like below.
