@@ -1,0 +1,2369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GraphQL Server with Spring Boot | PiinAlpin</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Build simple GraphQL server using Spring Boot with MySQL database and Flyway database migration from scratch.">
+<link rel="prev" href="https://blog.piinalpin.com/2020/12/sql-generator/" />
+<link rel="canonical" href="https://blog.piinalpin.com/2021/01/graphql-spring-boot/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GraphQL Server with Spring Boot"/>
+<meta name="twitter:description" content="Build simple GraphQL server using Spring Boot with MySQL database and Flyway database migration from scratch."/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "GraphQL Server with Spring Boot",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/blog.piinalpin.com\/2021\/01\/graphql-spring-boot\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/blog.piinalpin.com\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "Java, Spring Boot, GraphQL, GraphiQL, MySQL",
+    
+    "wordcount":  3064 ,
+    "url": "https:\/\/blog.piinalpin.com\/2021\/01\/graphql-spring-boot\/",
+    
+        "datePublished": "2021-01-05T09:17:49\x2b07:00",
+    
+    
+        "dateModified": "2021-01-05T09:17:49\x2b07:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya Saputra",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/blog.piinalpin.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": "Build simple GraphQL server using Spring Boot with MySQL database and Flyway database migration from scratch."
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+
+<script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/service-worker.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
+    </head>
+    <body>
+        <script>
+            window.localStorage.getItem('theme') === 'dark';
+            document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://blog.piinalpin.com/">PiinAlpin</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/about" title="">About</a>
+            
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://blog.piinalpin.com/">PiinAlpin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">GraphQL Server with Spring Boot</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-01-05>2021-01-05</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 3064 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>15 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title">Table of Contents</h2>
+                <div class="post-toc-content">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#what-is-graphql">What is GraphQL?</a></li>
+        <li><a href="#step-to-build-graphql-server-using-spring-boot">Step to build GraphQL server using Spring Boot</a></li>
+        <li><a href="#clone-or-download">Clone or Download</a></li>
+        <li><a href="#thankyou">Thankyou</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Table of Contents</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#what-is-graphql">What is GraphQL?</a></li>
+        <li><a href="#step-to-build-graphql-server-using-spring-boot">Step to build GraphQL server using Spring Boot</a></li>
+        <li><a href="#clone-or-download">Clone or Download</a></li>
+        <li><a href="#thankyou">Thankyou</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="prerequisites"></a><h3>Prerequisites</h3>
+<ul>
+<li><a href="https://www.mysql.com/">MySQL Database</a></li>
+<li><a href="https://start.spring.io/">Spring Initializr</a></li>
+<li><a href="https://mvnrepository.com/artifact/com.graphql-java-kickstart/graphql-spring-boot-starter">GraphQL Spring Boot Starter</a></li>
+<li><a href="https://flywaydb.org/">Flyway Database Migration</a></li>
+<li><a href="https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.22">MySQL-Connector</a></li>
+<li><a href="https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.16">Lombok Annotation</a></li>
+</ul>
+<a class="post-dummy-target" id="what-is-graphql"></a><h3>What is GraphQL?</h3>
+<p><img src="/images/graphql-model.png" alt="GraphQL Modelling"></p>
+<p>GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.</p>
+<p><strong>Note</strong>: This tutorial assumes that you are familiar with the Java programming language, the Spring Boot framework, and REST APIs in general. No prior GraphQL experience is required.</p>
+<p>GraphQL is a new specification (originally developed by Facebook for internal use, later open-sourced in 2015) that describes how to implement APIs. Unlike REST, which uses different endpoints to retrieve different types of data (e. g. users, comments, blog posts…), GraphQL exposes a single endpoint that receives a query from the front-end as part of the request, returning exactly the requested pieces of data in a single response. The server defines a schema describing what queries are available.</p>
+<p><strong>Note</strong>: Unlike REST, GraphQL as a specification is not tied to the HTTP protocol, however, HTTP is most commonly used. In this case, GraphQL queries are simple HTTP GET or POST requests with special query parameters or request bodies, respectively. You can use <a href="https://www.getpostman.com/">Postman</a> which recently received GraphQL support.</p>
+<a class="post-dummy-target" id="step-to-build-graphql-server-using-spring-boot"></a><h3>Step to build GraphQL server using Spring Boot</h3>
+<p><strong>Starting with spring initializr</strong></p>
+<p>For all Spring applications, you should start with the <a href="https://start.spring.io/">Spring Initializr</a>. The Initializr offers a fast way to pull in all the dependencies you need for an application and does a lot of the set up for you. This example needs the Spring Batch. And we will started with maven project.</p>
+<p>The following listing shows the <code>pom.xml</code> file created when you choose Maven. And here my <code>pom.xml</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+	<span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;modelVersion</span><span class="nt">&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+	<span class="nt">&lt;parent</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;version</span><span class="nt">&gt;</span>2.4.1<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;relativePath</span><span class="nt">/&gt;</span> <span class="c">&lt;!--</span><span class="c"> lookup parent from repository </span><span class="c">--&gt;</span>
+	<span class="nt">&lt;/parent&gt;</span>
+	<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>com.maverick<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>graphiql<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version</span><span class="nt">&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;name</span><span class="nt">&gt;</span>graphiql<span class="nt">&lt;/name&gt;</span>
+	<span class="nt">&lt;description</span><span class="nt">&gt;</span>Demo project for Spring Boot with GraphQL<span class="nt">&lt;/description&gt;</span>
+
+	<span class="nt">&lt;properties</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;java.version</span><span class="nt">&gt;</span>11<span class="nt">&lt;/java.version&gt;</span>
+	<span class="nt">&lt;/properties&gt;</span>
+
+	<span class="nt">&lt;dependencies</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;scope</span><span class="nt">&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;optional</span><span class="nt">&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;scope</span><span class="nt">&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-starter-data-jpa<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="c">&lt;!--</span><span class="c"> https://mvnrepository.com/artifact/com.graphql</span><span class="c">-</span><span class="c">java</span><span class="c">-</span><span class="c">kickstart/graphql</span><span class="c">-</span><span class="c">spring</span><span class="c">-</span><span class="c">boot</span><span class="c">-</span><span class="c">starter </span><span class="c">--&gt;</span>
+		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>com.graphql-java-kickstart<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>graphql-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version</span><span class="nt">&gt;</span>6.0.1<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="c">&lt;!--</span><span class="c"> https://mvnrepository.com/artifact/org.flywaydb/flyway</span><span class="c">-</span><span class="c">core </span><span class="c">--&gt;</span>
+		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.flywaydb<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>flyway-core<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;scope</span><span class="nt">&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+	<span class="nt">&lt;/dependencies&gt;</span>
+
+	<span class="nt">&lt;build</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;plugins</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;plugin</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+				<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;configuration</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;excludes</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;exclude</span><span class="nt">&gt;</span>
+							<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+							<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+						<span class="nt">&lt;/exclude&gt;</span>
+					<span class="nt">&lt;/excludes&gt;</span>
+				<span class="nt">&lt;/configuration&gt;</span>
+			<span class="nt">&lt;/plugin&gt;</span>
+		<span class="nt">&lt;/plugins&gt;</span>
+	<span class="nt">&lt;/build&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Edit <code>application.properties</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#Basic Spring Boot Config for Oracle
+spring.jmx.enabled=false
+info.app.name=GraphQL Example
+info.app.description=GraphQL Example
+info.app.version=1.0.0
+management.security.enabled=false
+spring.http.multipart.max-file-size=10485760
+spring.jackson.serialization.FAIL_ON_EMPTY_BEANS=false
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+graphql.servlet.enabled=true
+graphql.servlet.exception-handlers-enabled=true
+graphql.servlet.contextSetting= PER_REQUEST_WITH_INSTRUMENTATION
+spring.jpa.hibernate.use-new-id-generator-mappings=false
+</code></pre></td></tr></table>
+</div>
+</div><p>And here my <code>project/application.yml</code> for external configuration of database connection, flyway migration, etc.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="o">:</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Maverick GraphQL Example&#34;</span>
+  <span class="nx">website</span><span class="o">:</span> <span class="s2">&#34;blog.piinalpin.com&#34;</span>
+  <span class="nx">origin</span><span class="o">:</span> <span class="s2">&#34;http://localhost:3000&#34;</span>
+  <span class="nx">upload_dir</span><span class="o">:</span> <span class="s2">&#34;./tmp/&#34;</span>
+  <span class="nx">production</span><span class="o">:</span> <span class="kc">false</span>
+<span class="nx">spring</span><span class="o">:</span>
+  <span class="nx">datasource</span><span class="o">:</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s2">&#34;jdbc:mysql://localhost:3306/DB_NAME?allowPublicKeyRetrieval=true&amp;useSSL=false&#34;</span>
+    <span class="nx">username</span><span class="o">:</span> <span class="nx">DB_USERNAME</span>
+    <span class="nx">password</span><span class="o">:</span> <span class="nx">DB_PASSWORD</span>
+    <span class="nx">driverClassName</span><span class="o">:</span> <span class="nx">com</span><span class="p">.</span><span class="nx">mysql</span><span class="p">.</span><span class="nx">cj</span><span class="p">.</span><span class="nx">jdbc</span><span class="p">.</span><span class="nx">Driver</span>
+<span class="nx">flyway</span><span class="o">:</span>
+  <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="nx">baselineOnMigrate</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="nx">jdbc</span><span class="o">:</span><span class="nx">mysql</span><span class="o">:</span><span class="c1">//localhost:3306/DB_NAME?allowPublicKeyRetrieval=true&amp;useSSL=false
+</span><span class="c1"></span>  <span class="nx">user</span><span class="o">:</span> <span class="nx">DB_USERNAME</span>
+  <span class="nx">password</span><span class="o">:</span> <span class="nx">DB_PASSWORD</span>
+  <span class="nx">validateOnMigrate</span><span class="o">:</span> <span class="kc">false</span>
+<span class="nx">server</span><span class="o">:</span>
+  <span class="nx">port</span><span class="o">:</span> <span class="mi">8080</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Create <code>resource/db/migration/V1_1__Initial_Commit.sql</code> for initial migration script</p>
+<p>Edit project main application and add annotation <code>@EnableJpaRepositories</code>. The file should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
+<span class="nd">@EnableJpaRepositories</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GraphqlApplication</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">GraphqlApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span><span class="o">;</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Data Scalar</strong></p>
+<p>Create bean configuration <code>com.maverick.graphql.configuration.DataScalarConfiguration</code> to define scalar for GraphQL schema.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataScalarConfiguration</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">GraphQLScalarType</span> <span class="nf">dateScalar</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">GraphQLScalarType</span><span class="o">.</span><span class="na">newScalar</span><span class="o">(</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">name</span><span class="o">(</span><span class="s">&#34;Date&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="s">&#34;Java 8 LocalDate as Scalar&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">coercing</span><span class="o">(</span><span class="k">new</span> <span class="n">Coercing</span><span class="o">&lt;</span><span class="n">LocalDate</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="n">String</span> <span class="nf">serialize</span><span class="o">(</span><span class="n">Object</span> <span class="n">dataFetcherResult</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">CoercingSerializeException</span> <span class="o">{</span>
+                        <span class="k">if</span> <span class="o">(</span><span class="n">dataFetcherResult</span> <span class="k">instanceof</span> <span class="n">Timestamp</span><span class="o">)</span> <span class="k">return</span> <span class="n">dataFetcherResult</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+                        <span class="k">else</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">CoercingSerializeException</span><span class="o">(</span><span class="s">&#34;Expected a Timestamp object.&#34;</span><span class="o">)</span><span class="o">;</span>
+                    <span class="o">}</span>
+
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="n">LocalDate</span> <span class="nf">parseValue</span><span class="o">(</span><span class="n">Object</span> <span class="n">input</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">CoercingParseValueException</span> <span class="o">{</span>
+                        <span class="k">try</span> <span class="o">{</span>
+                            <span class="k">if</span> <span class="o">(</span><span class="n">input</span> <span class="k">instanceof</span> <span class="n">String</span><span class="o">)</span> <span class="k">return</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">input</span><span class="o">,</span> <span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">&#34;dd-MM-yyyy&#34;</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+                            <span class="k">else</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">CoercingParseValueException</span><span class="o">(</span><span class="s">&#34;Expected a String&#34;</span><span class="o">)</span><span class="o">;</span>
+                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">DateTimeParseException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="k">throw</span> <span class="k">new</span> <span class="n">CoercingParseValueException</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Not a valid date: %s&#34;</span><span class="o">,</span> <span class="n">input</span><span class="o">)</span><span class="o">,</span> <span class="n">e</span><span class="o">)</span><span class="o">;</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="n">LocalDate</span> <span class="nf">parseLiteral</span><span class="o">(</span><span class="n">Object</span> <span class="n">input</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">CoercingParseLiteralException</span> <span class="o">{</span>
+                        <span class="k">if</span> <span class="o">(</span><span class="n">input</span> <span class="k">instanceof</span> <span class="n">StringValue</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="k">try</span> <span class="o">{</span>
+                                <span class="k">return</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="o">(</span><span class="o">(</span><span class="n">StringValue</span><span class="o">)</span> <span class="n">input</span><span class="o">)</span><span class="o">.</span><span class="na">getValue</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+                            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">DateTimeParseException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="k">throw</span> <span class="k">new</span> <span class="n">CoercingParseLiteralException</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+                            <span class="o">}</span>
+                        <span class="o">}</span> <span class="k">else</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">CoercingParseLiteralException</span><span class="o">(</span><span class="s">&#34;Expected a StringValue&#34;</span><span class="o">)</span><span class="o">;</span>
+                    <span class="o">}</span>
+                <span class="o">}</span><span class="o">)</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Create Person</strong></p>
+<p>Create GraphQL schema on <code>resource/schema.graphqls</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
+
+<span class="nx">type</span> <span class="nx">Mutation</span> <span class="p">{</span>
+    <span class="nx">createPerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span><span class="o">!</span>
+<span class="p">}</span>
+
+<span class="nx">input</span> <span class="nx">PersonInput</span> <span class="p">{</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">dateOfBirth</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">identityType</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">address</span><span class="o">:</span> <span class="nb">String</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nx">Int</span><span class="o">!</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">dateOfBirth</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">identityType</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">address</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="nx">createdAt</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">createdBy</span><span class="o">:</span> <span class="nx">Int</span><span class="p">,</span>
+    <span class="nx">updatedAt</span><span class="o">:</span> <span class="nb">Date</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Create table on database migration <code>resource/db/migration/V2_1__Person.sql</code> see <a href="https://flywaydb.org/documentation/">Flyway Documentation</a> for versioning migration.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SET</span> <span class="n">AUTOCOMMIT</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+
+<span class="k">START</span> <span class="k">TRANSACTION</span><span class="p">;</span>
+    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">m_person</span> <span class="p">(</span>
+        <span class="n">id</span>                      <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+        <span class="n">created_at</span>              <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">created_by</span>              <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">updated_at</span>              <span class="n">DATETIME</span><span class="p">,</span>
+        <span class="n">deleted_at</span>              <span class="n">DATETIME</span><span class="p">,</span>
+        <span class="n">first_name</span>              <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">last_name</span>               <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">date_of_birth</span>           <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">identity_type</span>           <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">identity_number</span>         <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">address</span>                 <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="p">)</span><span class="p">;</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Create abstract class <code>com.maverick.graphql.model.BaseModel</code> first which aim can be inheritence for another model.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@NoArgsConstructor</span>
+<span class="nd">@MappedSuperclass</span>
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">BaseModel</span> <span class="o">{</span>
+
+    <span class="nd">@JsonProperty</span><span class="o">(</span><span class="s">&#34;created_at&#34;</span><span class="o">)</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;CREATED_AT&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">Timestamp</span> <span class="n">createdAt</span><span class="o">;</span>
+
+    <span class="nd">@JsonProperty</span><span class="o">(</span><span class="s">&#34;created_by&#34;</span><span class="o">)</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;CREATED_BY&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">createdBy</span><span class="o">;</span>
+
+    <span class="nd">@JsonProperty</span><span class="o">(</span><span class="s">&#34;updated_at&#34;</span><span class="o">)</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;UPDATED_AT&#34;</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">Timestamp</span> <span class="n">updatedAt</span><span class="o">;</span>
+
+    <span class="nd">@JsonIgnore</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;DELETED_AT&#34;</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">Timestamp</span> <span class="n">deleted_at</span><span class="o">;</span>
+
+    <span class="nd">@PrePersist</span>
+    <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">createdAt</span> <span class="o">=</span> <span class="n">Timestamp</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">createdBy</span> <span class="o">=</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">createdBy</span> <span class="o">=</span> <span class="n">0L</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@PreUpdate</span>
+    <span class="kt">void</span> <span class="nf">onUpdate</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">updatedAt</span> <span class="o">=</span> <span class="n">Timestamp</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Create person model <code>com.maverick.graphql.model.Person</code> which is inheritence from <code>BaseModel</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;M_PERSON&#34;</span><span class="o">)</span>
+<span class="nd">@Builder</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="nd">@AllArgsConstructor</span>
+<span class="nd">@Where</span><span class="o">(</span><span class="n">clause</span> <span class="o">=</span> <span class="s">&#34;deleted_at is null&#34;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonModel</span> <span class="kd">extends</span> <span class="n">BaseModel</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;FIRST_NAME&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;LAST_NAME&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;DATE_OF_BIRTH&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">Timestamp</span> <span class="n">dateOfBirth</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;IDENTITY_TYPE&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">identityType</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;IDENTITY_NUMBER&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">identityNumber</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;ADDRESS&#34;</span><span class="o">)</span>
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">address</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Create repository <code>com.maverick.graphql.repository.PersonRepository</code> for transactional query which extends from <code>JpaRepository</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PersonRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Create form <code>com.maverick.graphql.form.PersonForm</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonForm</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">LocalDate</span> <span class="n">dateOfBirth</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">identityType</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">identityNumber</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">address</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Create service <code>com.maverick.graphql.service.PersonService</code> to store person model into database using repository.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonService</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonRepository</span> <span class="n">personRepository</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">PersonService</span><span class="o">(</span><span class="n">PersonRepository</span> <span class="n">personRepository</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">personRepository</span> <span class="o">=</span> <span class="n">personRepository</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">save</span><span class="o">(</span><span class="n">PersonModel</span> <span class="n">person</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">personRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">person</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Create mutation service <code>com.maverick.graphql.mutation.PersonMutation</code> use for anychange data from GraphQL schema.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonMutation</span> <span class="kd">implements</span> <span class="n">GraphQLMutationResolver</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonService</span> <span class="n">personService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">PersonMutation</span><span class="o">(</span><span class="n">PersonService</span> <span class="n">personService</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">personService</span> <span class="o">=</span> <span class="n">personService</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">createPerson</span><span class="o">(</span><span class="n">PersonForm</span> <span class="n">form</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">PersonModel</span> <span class="n">person</span> <span class="o">=</span> <span class="n">PersonModel</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">address</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getAddress</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">dateOfBirth</span><span class="o">(</span><span class="n">Timestamp</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getDateOfBirth</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">atStartOfDay</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">firstName</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getFirstName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">lastName</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getLastName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">identityType</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getIdentityType</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">identityNumber</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getIdentityNumber</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">personService</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">person</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Try to run by typing <code>mvn spring-boot:run</code> then open Postman like below.</p>
+<p><code>URL: http://localhost:8080/graphql (POST)</code></p>
+<p>Query</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="nx">CreatePerson</span><span class="p">(</span><span class="nx">$input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">)</span><span class="p">{</span>
+    <span class="nx">createPerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">$input</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">id</span>
+        <span class="nx">firstName</span>
+        <span class="nx">identityNumber</span>
+        <span class="nx">address</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>GraphQL Variables</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;input&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Alvinditya&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;lastName&#34;</span><span class="p">:</span> <span class="s2">&#34;Saputra&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;dateOfBirth&#34;</span><span class="p">:</span> <span class="s2">&#34;10-11-1996&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;identityType&#34;</span><span class="p">:</span> <span class="s2">&#34;KTP&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;346343723744&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;Yogyakarta&#34;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Response should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;createPerson&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Alvinditya&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;346343723744&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;Yogyakarta&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Get Person Data</strong></p>
+<p>Edit <code>resource/schema.graphqls</code>, code should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
+
+<span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
+    <span class="nx">getAllPerson</span><span class="o">:</span> <span class="p">[</span><span class="nx">Person</span><span class="o">!</span><span class="p">]</span>
+    <span class="nx">getPersonById</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">Int</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span>
+    <span class="nx">getPersonByIdentityNumber</span><span class="p">(</span><span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">Mutation</span> <span class="p">{</span>
+    <span class="nx">createPerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span><span class="o">!</span>
+<span class="p">}</span>
+
+<span class="nx">input</span> <span class="nx">PersonInput</span> <span class="p">{</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">dateOfBirth</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">identityType</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">address</span><span class="o">:</span> <span class="nb">String</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nx">Int</span><span class="o">!</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">dateOfBirth</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">identityType</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">address</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="nx">createdAt</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">createdBy</span><span class="o">:</span> <span class="nx">Int</span><span class="p">,</span>
+    <span class="nx">updatedAt</span><span class="o">:</span> <span class="nb">Date</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Edit <code>com.maverick.graphql.repository.PersonRepository</code> add line to get person data by identity number.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
+<span class="nd">@Transactional</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PersonRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="o">{</span>
+
+    <span class="nd">@Query</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;SELECT * FROM m_person WHERE identity_number = ?1&#34;</span><span class="o">,</span> <span class="n">nativeQuery</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="n">PersonModel</span> <span class="nf">findByIdentityNumber</span><span class="o">(</span><span class="n">String</span> <span class="n">identityNumber</span><span class="o">)</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Edit <code>com.maverick.graphql.service.PersonService</code> to process logic get data from repository. Code should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonService</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonRepository</span> <span class="n">personRepository</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">PersonService</span><span class="o">(</span><span class="n">PersonRepository</span> <span class="n">personRepository</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">personRepository</span> <span class="o">=</span> <span class="n">personRepository</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">save</span><span class="o">(</span><span class="n">PersonModel</span> <span class="n">person</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">personRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">person</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">&gt;</span> <span class="nf">getAll</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">personRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">getByIdentityNumber</span><span class="o">(</span><span class="n">String</span> <span class="n">identityNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">personRepository</span><span class="o">.</span><span class="na">findByIdentityNumber</span><span class="o">(</span><span class="n">identityNumber</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">&gt;</span> <span class="nf">getById</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">personRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Create exception <code>com.maverick.graphql.exception.DataNotFoundException</code> to handle when record not found.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@ResponseStatus</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="na">NOT_FOUND</span><span class="o">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="s">&#34;data: not found&#34;</span><span class="o">)</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataNotFoundException</span> <span class="kd">extends</span> <span class="n">RuntimeException</span> <span class="o">{</span>
+
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&#34;data: not found&#34;</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">DataNotFoundException</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Create query resolver <code>com.maverick.graphql.resolver.PersonResolver</code> to handle query request.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonResolver</span> <span class="kd">implements</span> <span class="n">GraphQLQueryResolver</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonService</span> <span class="n">personService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">PersonResolver</span><span class="o">(</span><span class="n">PersonService</span> <span class="n">personService</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">personService</span> <span class="o">=</span> <span class="n">personService</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">&gt;</span> <span class="nf">getAllPerson</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">personService</span><span class="o">.</span><span class="na">getAll</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">getPersonById</span><span class="o">(</span><span class="kd">final</span> <span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">PersonModel</span> <span class="n">person</span> <span class="o">=</span> <span class="n">personService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">id</span><span class="o">)</span><span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="kc">null</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">person</span> <span class="o">=</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">DataNotFoundException</span><span class="o">(</span><span class="s">&#34;person record: not found&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">person</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">getPersonByIdentityNumber</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">identityNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">PersonModel</span> <span class="n">person</span> <span class="o">=</span> <span class="n">personService</span><span class="o">.</span><span class="na">getByIdentityNumber</span><span class="o">(</span><span class="n">identityNumber</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">person</span> <span class="o">=</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">DataNotFoundException</span><span class="o">(</span><span class="s">&#34;person record: not found&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">person</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Try to run by typing <code>mvn spring-boot:run</code> then open Postman like below. You can edit any field you want.</p>
+<p><code>URL: http://localhost:8080/graphql (POST)</code></p>
+<p>Query</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
+    <span class="nx">getAllPerson</span> <span class="p">{</span>
+        <span class="nx">id</span>
+        <span class="nx">firstName</span>
+        <span class="nx">identityNumber</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Response should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;getAllPerson&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Calvin&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;2263246348434&#34;</span>
+            <span class="p">}</span><span class="p">,</span>
+            <span class="p">{</span>
+                <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Calvin 2&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;237384374233&#34;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Query</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
+    <span class="nx">getPersonById</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">id</span>
+        <span class="nx">firstName</span>
+        <span class="nx">identityNumber</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Response should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;getPersonById&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Alvinditya&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;346343723744&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Query</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
+    <span class="nx">getPersonByIdentityNumber</span><span class="p">(</span><span class="nx">identityNumber</span><span class="o">:</span> <span class="s2">&#34;346343723744&#34;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">id</span>
+        <span class="nx">firstName</span>
+        <span class="nx">lastName</span>
+        <span class="nx">identityNumber</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Response should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;getPersonByIdentityNumber&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Alvinditya&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;lastName&#34;</span><span class="p">:</span> <span class="s2">&#34;Saputra&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;346343723744&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Update Person</strong></p>
+<p>Edit <code>resource/schema.graphqls</code>, code should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
+
+<span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
+    <span class="nx">getAllPerson</span><span class="o">:</span> <span class="p">[</span><span class="nx">Person</span><span class="o">!</span><span class="p">]</span>
+    <span class="nx">getPersonById</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">Int</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span>
+    <span class="nx">getPersonByIdentityNumber</span><span class="p">(</span><span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">Mutation</span> <span class="p">{</span>
+    <span class="nx">createPerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span><span class="o">!</span>
+    <span class="nx">updatePerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="nx">Int</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span><span class="o">!</span>
+<span class="p">}</span>
+
+<span class="nx">input</span> <span class="nx">PersonInput</span> <span class="p">{</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">dateOfBirth</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">identityType</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">address</span><span class="o">:</span> <span class="nb">String</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nx">Int</span><span class="o">!</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">dateOfBirth</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">identityType</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">address</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="nx">createdAt</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">createdBy</span><span class="o">:</span> <span class="nx">Int</span><span class="p">,</span>
+    <span class="nx">updatedAt</span><span class="o">:</span> <span class="nb">Date</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Edit mutation <code>com.maverick.graphql.mutation.PersonMutation</code> to process logic save updated data. Code should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonMutation</span> <span class="kd">implements</span> <span class="n">GraphQLMutationResolver</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonService</span> <span class="n">personService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">PersonMutation</span><span class="o">(</span><span class="n">PersonService</span> <span class="n">personService</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">personService</span> <span class="o">=</span> <span class="n">personService</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">createPerson</span><span class="o">(</span><span class="n">PersonForm</span> <span class="n">form</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">PersonModel</span> <span class="n">person</span> <span class="o">=</span> <span class="n">PersonModel</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">address</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getAddress</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">dateOfBirth</span><span class="o">(</span><span class="n">Timestamp</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getDateOfBirth</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">atStartOfDay</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">firstName</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getFirstName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">lastName</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getLastName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">identityType</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getIdentityType</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">identityNumber</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getIdentityNumber</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">personService</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">person</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">updatePerson</span><span class="o">(</span><span class="n">PersonForm</span> <span class="n">form</span><span class="o">,</span> <span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">PersonModel</span> <span class="n">person</span> <span class="o">=</span> <span class="n">personService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">id</span><span class="o">)</span><span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="kc">null</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">person</span> <span class="o">=</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">DataNotFoundException</span><span class="o">(</span><span class="s">&#34;person record: not found&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setAddress</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getAddress</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setDateOfBirth</span><span class="o">(</span><span class="n">Timestamp</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getDateOfBirth</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">atStartOfDay</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setFirstName</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getFirstName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setLastName</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getLastName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setIdentityNumber</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getIdentityNumber</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setIdentityType</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getIdentityType</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">personService</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">person</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Try to run by typing <code>mvn spring-boot:run</code> then open Postman like below. You can edit any field you want.</p>
+<p><code>URL: http://localhost:8080/graphql (POST)</code></p>
+<p>Query</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="nx">UpdatePerson</span><span class="p">(</span><span class="nx">$input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">)</span><span class="p">{</span>
+    <span class="nx">updatePerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">$input</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">id</span>
+        <span class="nx">firstName</span>
+        <span class="nx">lastName</span>
+        <span class="nx">createdAt</span>
+        <span class="nx">identityNumber</span>
+        <span class="nx">address</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>GraphQL Variables</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;input&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;lastName&#34;</span><span class="p">:</span> <span class="s2">&#34;Johnson&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;dateOfBirth&#34;</span><span class="p">:</span> <span class="s2">&#34;10-11-1996&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;identityType&#34;</span><span class="p">:</span> <span class="s2">&#34;KTP&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;346322723744&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;Yogyakarta&#34;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Response should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;updatePerson&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;lastName&#34;</span><span class="p">:</span> <span class="s2">&#34;Johnson&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-01-05 11:32:23.0&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;346322723744&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;Yogyakarta&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Delete Person</strong></p>
+<p>Edit <code>resource/schema.graphqls</code>, code should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
+<span class="nx">scalar</span> <span class="nx">Timestamp</span>
+
+<span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
+    <span class="nx">getAllPerson</span><span class="o">:</span> <span class="p">[</span><span class="nx">Person</span><span class="o">!</span><span class="p">]</span>
+    <span class="nx">getPersonById</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">Int</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span>
+    <span class="nx">getPersonByIdentityNumber</span><span class="p">(</span><span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">Mutation</span> <span class="p">{</span>
+    <span class="nx">createPerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span><span class="o">!</span>
+    <span class="nx">updatePerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="nx">Int</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span><span class="o">!</span>
+    <span class="nx">deletePerson</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">Int</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">OkMessage</span><span class="o">!</span>
+<span class="p">}</span>
+
+<span class="nx">input</span> <span class="nx">PersonInput</span> <span class="p">{</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">dateOfBirth</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">identityType</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">address</span><span class="o">:</span> <span class="nb">String</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nx">Int</span><span class="o">!</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">dateOfBirth</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">identityType</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">identityNumber</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span>
+    <span class="nx">address</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="nx">createdAt</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">createdBy</span><span class="o">:</span> <span class="nx">Int</span><span class="p">,</span>
+    <span class="nx">updatedAt</span><span class="o">:</span> <span class="nb">Date</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">OkMessage</span> <span class="p">{</span>
+    <span class="nx">message</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Edit <code>com.maverick.graphql.repository.PersonRepository</code> add line to update deleted_at for soft delete.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
+<span class="nd">@Transactional</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PersonRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="o">{</span>
+
+    <span class="nd">@Query</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;SELECT * FROM m_person WHERE identity_number = ?1&#34;</span><span class="o">,</span> <span class="n">nativeQuery</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="n">PersonModel</span> <span class="nf">findByIdentityNumber</span><span class="o">(</span><span class="n">String</span> <span class="n">identityNumber</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="nd">@Query</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;UPDATE m_person SET deleted_at = CURRENT_DATE WHERE id = ?1&#34;</span><span class="o">,</span> <span class="n">nativeQuery</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="nd">@Modifying</span>
+    <span class="kt">void</span> <span class="nf">softDelete</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Edit <code>com.maverick.graphql.service.PersonService</code> to process logic delete data from repository. Code should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonService</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonRepository</span> <span class="n">personRepository</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">PersonService</span><span class="o">(</span><span class="n">PersonRepository</span> <span class="n">personRepository</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">personRepository</span> <span class="o">=</span> <span class="n">personRepository</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">save</span><span class="o">(</span><span class="n">PersonModel</span> <span class="n">person</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">personRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">person</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">&gt;</span> <span class="nf">getAll</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">personRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">getByIdentityNumber</span><span class="o">(</span><span class="n">String</span> <span class="n">identityNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">personRepository</span><span class="o">.</span><span class="na">findByIdentityNumber</span><span class="o">(</span><span class="n">identityNumber</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">&gt;</span> <span class="nf">getById</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">personRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deletePerson</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">personRepository</span><span class="o">.</span><span class="na">softDelete</span><span class="o">(</span><span class="n">id</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Edit mutation <code>com.maverick.graphql.mutation.PersonMutation</code> to process logic save updated data. Code should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonMutation</span> <span class="kd">implements</span> <span class="n">GraphQLMutationResolver</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonService</span> <span class="n">personService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">PersonMutation</span><span class="o">(</span><span class="n">PersonService</span> <span class="n">personService</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">personService</span> <span class="o">=</span> <span class="n">personService</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">createPerson</span><span class="o">(</span><span class="n">PersonForm</span> <span class="n">form</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">PersonModel</span> <span class="n">person</span> <span class="o">=</span> <span class="n">PersonModel</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">address</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getAddress</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">dateOfBirth</span><span class="o">(</span><span class="n">Timestamp</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getDateOfBirth</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">atStartOfDay</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">firstName</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getFirstName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">lastName</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getLastName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">identityType</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getIdentityType</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">identityNumber</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getIdentityNumber</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">personService</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">person</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">updatePerson</span><span class="o">(</span><span class="n">PersonForm</span> <span class="n">form</span><span class="o">,</span> <span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">PersonModel</span> <span class="n">person</span> <span class="o">=</span> <span class="n">personService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">id</span><span class="o">)</span><span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="kc">null</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">person</span> <span class="o">=</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">DataNotFoundException</span><span class="o">(</span><span class="s">&#34;person record: not found&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setAddress</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getAddress</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setDateOfBirth</span><span class="o">(</span><span class="n">Timestamp</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getDateOfBirth</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">atStartOfDay</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setFirstName</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getFirstName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setLastName</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getLastName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setIdentityNumber</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getIdentityNumber</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setIdentityType</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">getIdentityType</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">personService</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">person</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">deletePerson</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">PersonModel</span> <span class="n">person</span> <span class="o">=</span> <span class="n">personService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">id</span><span class="o">)</span><span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="kc">null</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">person</span> <span class="o">=</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">DataNotFoundException</span><span class="o">(</span><span class="s">&#34;person record: not found&#34;</span><span class="o">)</span><span class="o">;</span>
+
+        <span class="n">personService</span><span class="o">.</span><span class="na">deletePerson</span><span class="o">(</span><span class="n">person</span><span class="o">.</span><span class="na">getId</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">,</span> <span class="s">&#34;ok&#34;</span><span class="o">)</span><span class="o">;</span>
+
+        <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Try to run by typing <code>mvn spring-boot:run</code> then open Postman like below. You can edit any field you want.</p>
+<p><code>URL: http://localhost:8080/graphql (POST)</code></p>
+<p>Query</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="p">{</span>
+    <span class="nx">deletePerson</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">message</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Response should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;deletePerson&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;ok&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>If data not found, should be like below.</p>
+<p>Query</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="p">{</span>
+    <span class="nx">deletePerson</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">message</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Response should be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;errors&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;person record: not found&#34;</span>
+        <span class="p">}</span>
+    <span class="p">]</span><span class="p">,</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="clone-or-download"></a><h3>Clone or Download</h3>
+<p>You can clone or download this project</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git@github.com:piinalpin/graphql-spring-boot.git
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>
+<p><a href="https://medium.com/supercharges-mobile-product-guide/graphql-server-using-spring-boot-part-i-722bdd715779">Medium</a> - GraphQL server using Spring Boot, Part I</p>
+<p><a href="https://www.baeldung.com/spring-graphql">Baeldung</a> - Getting Started with GraphQL and Spring Boot</p>
+<p><a href="https://github.com/team-supercharge/spring-boot-graphql-tutorial">Github</a> - Team Supercharge</p>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2021-01-05</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://blog.piinalpin.com/2021/01/graphql-spring-boot/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fblog.piinalpin.com%2f2021%2f01%2fgraphql-spring-boot%2f&amp;text=GraphQL%20Server%20with%20Spring%20Boot&amp;via=piinalpin" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.piinalpin.com%2f2021%2f01%2fgraphql-spring-boot%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=https%3a%2f%2fblog.piinalpin.com%2f2021%2f01%2fgraphql-spring-boot%2f&amp;title=GraphQL%20Server%20with%20Spring%20Boot" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/java/"><i class="fas fa-tag fa-fw"></i>Java</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/spring-boot/"><i class="fas fa-tag fa-fw"></i>Spring Boot</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/graphql/"><i class="fas fa-tag fa-fw"></i>GraphQL</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/graphiql/"><i class="fas fa-tag fa-fw"></i>GraphiQL</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/mysql/"><i class="fas fa-tag fa-fw"></i>MySQL</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://blog.piinalpin.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://blog.piinalpin.com/2020/12/sql-generator/" class="prev" rel="prev" title="SQL Insert Generator from Excel File using Python"><i class="fas fa-angle-left fa-fw"></i>SQL Insert Generator from Excel File using Python</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.piinalpin.com/">piinalpin</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

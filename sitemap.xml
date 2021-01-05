@@ -3,7 +3,7 @@
         <url>
             <loc>https://blog.piinalpin.com/categories/</loc>
             
-                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -17,7 +17,7 @@
         <url>
             <loc>https://blog.piinalpin.com/categories/documentation/</loc>
             
-                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -29,9 +29,51 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/tags/mariadb/</loc>
+            <loc>https://blog.piinalpin.com/tags/graphiql/</loc>
             
-                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/graphql/</loc>
+            
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/2021/01/graphql-spring-boot/</loc>
+            
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/java/</loc>
+            
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -44,6 +86,76 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/mysql/</loc>
+            
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/</loc>
+            
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/posts/</loc>
+            
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
+            
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/</loc>
+            
+                <lastmod>2021-01-05T09:17:49+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/mariadb/</loc>
             
                 <lastmod>2020-12-12T23:21:44+07:00</lastmod>
             
@@ -71,35 +183,7 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/</loc>
-            
-                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://blog.piinalpin.com/tags/postgresql/</loc>
-            
-                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/posts/</loc>
             
                 <lastmod>2020-12-12T23:21:44+07:00</lastmod>
             
@@ -169,34 +253,6 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/tags/</loc>
-            
-                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/java/</loc>
-            
-                <lastmod>2020-12-08T14:08:21+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://blog.piinalpin.com/2020/12/spring-batch-example/</loc>
             
                 <lastmod>2020-12-08T14:08:21+07:00</lastmod>
@@ -212,20 +268,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/spring-batch/</loc>
-            
-                <lastmod>2020-12-08T14:08:21+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
             
                 <lastmod>2020-12-08T14:08:21+07:00</lastmod>
             
