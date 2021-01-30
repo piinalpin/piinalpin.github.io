@@ -1,9 +1,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
-            <loc>https://blog.piinalpin.com/tags/apollo-react/</loc>
+            <loc>https://blog.piinalpin.com/categories/</loc>
             
-                <lastmod>2021-01-06T14:18:10+07:00</lastmod>
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -15,9 +15,9 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/categories/</loc>
+            <loc>https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/</loc>
             
-                <lastmod>2021-01-06T14:18:10+07:00</lastmod>
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -30,6 +30,160 @@
     
         <url>
             <loc>https://blog.piinalpin.com/categories/documentation/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/grpc/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/grpc-client/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/grpcserver/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/java/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/microservices/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/posts/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/python/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/</loc>
+            
+                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/apollo-react/</loc>
             
                 <lastmod>2021-01-06T14:18:10+07:00</lastmod>
             
@@ -99,49 +253,7 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/</loc>
-            
-                <lastmod>2021-01-06T14:18:10+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/posts/</loc>
-            
-                <lastmod>2021-01-06T14:18:10+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://blog.piinalpin.com/tags/react/</loc>
-            
-                <lastmod>2021-01-06T14:18:10+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/</loc>
             
                 <lastmod>2021-01-06T14:18:10+07:00</lastmod>
             
@@ -183,35 +295,7 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/tags/java/</loc>
-            
-                <lastmod>2021-01-06T09:30:18+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://blog.piinalpin.com/tags/mysql/</loc>
-            
-                <lastmod>2021-01-06T09:30:18+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
             
                 <lastmod>2021-01-06T09:30:18+07:00</lastmod>
             
@@ -268,20 +352,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/postgresql/</loc>
-            
-                <lastmod>2020-12-12T23:21:44+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/python/</loc>
             
                 <lastmod>2020-12-12T23:21:44+07:00</lastmod>
             

@@ -1062,7 +1062,7 @@ Response should be like below.
 
 You can clone or download this project
 ```bash
-git@github.com:piinalpin/graphql-spring-boot.git
+https://github.com/piinalpin/graphql-spring-boot.git
 ```
 
 ### Thankyou
