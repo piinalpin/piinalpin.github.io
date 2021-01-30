@@ -301,7 +301,9 @@ Once the proto file is created, we should package the project. It will generated
 mvn clean package -Dmaven.test.skip=true
 ```
 
-Create a service class `com.example.grpc.servertwo.client.GRPCClientService`
+Create a service class 
+
+`com.example.grpc.servertwo.client.GRPCClientService`
 
 ```java
 @Service
@@ -336,7 +338,9 @@ public class GRPCClientService {
 
 Lets make a rest service that we can request from postman to get response from gRPC Server-One.
 
-Create a request `com.example.grpc.servertwo.rest.dto.HelloClientRequest` we will use `dto` package (Data Transfer Object).
+Create a request 
+
+`com.example.grpc.servertwo.rest.dto.HelloClientRequest` we will use `dto` package (Data Transfer Object).
 
 ```java
 @Data
@@ -349,7 +353,9 @@ public class HelloClientRequest {
 }
 ```
 
-Create a response `com.example.grpc.servertwo.rest.dto.HelloClientResponse`
+Create a response 
+
+`com.example.grpc.servertwo.rest.dto.HelloClientResponse`
 
 ```java
 @Data
@@ -569,7 +575,9 @@ Once the proto file is created, we should package the project. It will generated
 mvn clean package -Dmaven.test.skip=true
 ```
 
-Create a service class `com.example.grpc.servertwo.client.GRPCClientService`
+Create a service class 
+
+`com.example.grpc.servertwo.client.GRPCClientService`
 
 ```java
 @Service
@@ -630,7 +638,9 @@ public class GRPCClientService {
 
 Lets make a rest service that we can request from postman to get response from gRPC Server-Two.
 
-Create a request `com.example.grpc.serverone.rest.dto.UserClientRequest` we will use `dto` package (Data Transfer Object).
+Create a request 
+
+`com.example.grpc.serverone.rest.dto.UserClientRequest` we will use `dto` package (Data Transfer Object).
 
 ```java
 @Data
