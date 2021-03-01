@@ -169,6 +169,15 @@ Enable management plugin
 rabbitmq-plugins enable rabbitmq_management
 ```
 
+### Install Composer
+
+```bash
+brew install composer
+```
+
+### Install Node.js and Yarn
+Go to [Node.js Org](https://nodejs.org/en/)
+
 Try to access `http://localhost:15672`
 
 ### References
