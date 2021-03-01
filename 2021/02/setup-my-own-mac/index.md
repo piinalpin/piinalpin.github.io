@@ -169,6 +169,8 @@ Enable management plugin
 rabbitmq-plugins enable rabbitmq_management
 ```
 
+Try to access `http://localhost:15672`
+
 ### Install Composer
 
 ```bash
@@ -176,9 +178,18 @@ brew install composer
 ```
 
 ### Install Node.js and Yarn
-Go to [Node.js Org](https://nodejs.org/en/)
+Go to [Node.js Org](https://nodejs.org/en/) download and install it.
 
-Try to access `http://localhost:15672`
+```bash
+sudo chown -R $USER /usr/local/lib/node_modules
+npm install --global yarn
+```
+
+### Install Hugo Blog
+
+```bash
+brew install hugo
+```
 
 ### References
 - [Make your terminal beautiful and fast with ZSH shell and PowerLevel10K](https://medium.com/@shivam1/make-your-terminal-beautiful-and-fast-with-zsh-shell-and-powerlevel10k-6484461c6efb)

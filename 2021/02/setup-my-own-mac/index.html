@@ -40,7 +40,7 @@
     
         "keywords": "Bash, Oh My Zsh, Powerlevel10k, Setup Mac",
     
-    "wordcount":  513 ,
+    "wordcount":  535 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/02\/setup-my-own-mac\/",
     
         "datePublished": "2021-02-28T14:04:16\x2b07:00",
@@ -146,7 +146,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-02-28>2021-02-28</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 513 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 535 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
@@ -167,6 +167,7 @@
         <li><a href="#configuring-rabbitmq-and-rabbitmq-management">Configuring RabbitMQ and RabbitMQ Management</a></li>
         <li><a href="#install-composer">Install Composer</a></li>
         <li><a href="#install-nodejs-and-yarn">Install Node.js and Yarn</a></li>
+        <li><a href="#install-hugo-blog">Install Hugo Blog</a></li>
         <li><a href="#references">References</a></li>
       </ul>
     </li>
@@ -192,6 +193,7 @@
         <li><a href="#configuring-rabbitmq-and-rabbitmq-management">Configuring RabbitMQ and RabbitMQ Management</a></li>
         <li><a href="#install-composer">Install Composer</a></li>
         <li><a href="#install-nodejs-and-yarn">Install Node.js and Yarn</a></li>
+        <li><a href="#install-hugo-blog">Install Hugo Blog</a></li>
         <li><a href="#references">References</a></li>
       </ul>
     </li>
@@ -464,7 +466,8 @@ pyenv global 3.9.1
 <pre class="chroma"><code class="language-bash" data-lang="bash">rabbitmq-plugins <span class="nb">enable</span> rabbitmq_management
 </code></pre></td></tr></table>
 </div>
-</div><a class="post-dummy-target" id="install-composer"></a><h3>Install Composer</h3>
+</div><p>Try to access <code>http://localhost:15672</code></p>
+<a class="post-dummy-target" id="install-composer"></a><h3>Install Composer</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -474,9 +477,27 @@ pyenv global 3.9.1
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="install-nodejs-and-yarn"></a><h3>Install Node.js and Yarn</h3>
-<p>Go to <a href="https://nodejs.org/en/">Node.js Org</a></p>
-<p>Try to access <code>http://localhost:15672</code></p>
-<a class="post-dummy-target" id="references"></a><h3>References</h3>
+<p>Go to <a href="https://nodejs.org/en/">Node.js Org</a> download and install it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo chown -R <span class="nv">$USER</span> /usr/local/lib/node_modules
+npm install --global yarn
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="install-hugo-blog"></a><h3>Install Hugo Blog</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">brew install hugo
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="references"></a><h3>References</h3>
 <ul>
 <li><a href="https://medium.com/@shivam1/make-your-terminal-beautiful-and-fast-with-zsh-shell-and-powerlevel10k-6484461c6efb">Make your terminal beautiful and fast with ZSH shell and PowerLevel10K</a></li>
 <li><a href="https://belajarinformatika.id/terminal-keren-dengan-oh-my-zsh-dan-powerlevel10k/">Terminal Keren dengan Oh My Zsh dan PowerLevel10k</a></li>
