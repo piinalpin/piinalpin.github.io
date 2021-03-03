@@ -191,6 +191,12 @@ npm install --global yarn
 brew install hugo
 ```
 
+### Install Maven 
+
+```bash
+brew install maven
+```
+
 ### References
 - [Make your terminal beautiful and fast with ZSH shell and PowerLevel10K](https://medium.com/@shivam1/make-your-terminal-beautiful-and-fast-with-zsh-shell-and-powerlevel10k-6484461c6efb)
 - [Terminal Keren dengan Oh My Zsh dan PowerLevel10k](https://belajarinformatika.id/terminal-keren-dengan-oh-my-zsh-dan-powerlevel10k/)
