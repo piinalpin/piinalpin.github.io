@@ -41,13 +41,13 @@
     
         "keywords": "PHP, Laravel",
     
-    "wordcount":  550 ,
+    "wordcount":  559 ,
     "url": "https:\/\/blog.piinalpin.com\/2020\/03\/laravel-custom-base-project\/",
     
-        "datePublished": "2020-03-06T23:34:23\x2b07:00",
+        "datePublished": "2020-03-06T23:34:23\u002b07:00",
     
     
-        "dateModified": "2020-03-06T23:34:23\x2b07:00",
+        "dateModified": "2020-03-06T23:34:23\u002b07:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -147,7 +147,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-06>2020-03-06</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 550 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 559 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
@@ -280,16 +280,16 @@ DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php">DB::table(&#39;APP_USER&#39;)-&gt;insert([ 
-	&#39;created_at&#39; =&gt; DB::raw(&#39;CURRENT_TIMESTAMP&#39;),
-	&#39;created_by&#39; =&gt; 0,
-	&#39;username&#39; =&gt; &#39;admin&#39;,
-    &#39;full_name&#39; =&gt; &#39;Administrator&#39;,
-    &#39;email&#39; =&gt; &#39;admin@test.com&#39;,
-    &#39;password&#39; =&gt; Hash::make(&#39;password&#39;),
-    &#39;enabled&#39; =&gt; true,
-    &#39;role&#39; =&gt; &#39;ADMINISTRATOR&#39;
-]);
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">DB</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;APP_USER&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">([</span> 
+	<span class="s1">&#39;created_at&#39;</span> <span class="o">=&gt;</span> <span class="nx">DB</span><span class="o">::</span><span class="na">raw</span><span class="p">(</span><span class="s1">&#39;CURRENT_TIMESTAMP&#39;</span><span class="p">),</span>
+	<span class="s1">&#39;created_by&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+	<span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;full_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Administrator&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin@test.com&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="nx">Hash</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="s1">&#39;role&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ADMINISTRATOR&#39;</span>
+<span class="p">]);</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="5">
@@ -425,37 +425,37 @@ docker network connect my-network mysql
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yml" data-lang="yml">version<span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span>services<span class="p">:</span><span class="w">
-</span><span class="w">  </span>web<span class="p">:</span><span class="w">
-</span><span class="w">    </span>image<span class="p">:</span><span class="w"> </span>laravel_web<span class="p">:</span>latest<span class="w">
-</span><span class="w">    </span>volumes<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>./<span class="p">:</span>/var/www<span class="w">
-</span><span class="w">    </span>restart<span class="p">:</span><span class="w"> </span>always<span class="w">
-</span><span class="w">    </span>ports<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span><span class="s2">&#34;8080:80&#34;</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span><span class="s2">&#34;443:443&#34;</span><span class="w">
-</span><span class="w">    </span>links<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>app<span class="w">
-</span><span class="w">    </span>networks<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>my-network<span class="w">
+</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">laravel_web:latest</span><span class="w">
+</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">./:/var/www</span><span class="w">
+</span><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;8080:80&#34;</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;443:443&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">links</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">app</span><span class="w">
+</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">my-network</span><span class="w">
 </span><span class="w">
-</span><span class="w">  </span>app<span class="p">:</span><span class="w">
-</span><span class="w">    </span>image<span class="p">:</span><span class="w"> </span>laravel_app<span class="p">:</span>latest<span class="w">
-</span><span class="w">    </span>env_file<span class="p">:</span><span class="w"> </span><span class="s1">&#39;.env.docker&#39;</span><span class="w">
-</span><span class="w">    </span>environment<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span><span class="s2">&#34;DB_HOST=172.17.0.1&#34;</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span><span class="s2">&#34;APP_URL=http://localhost:8080/api/v1&#34;</span><span class="w">
-</span><span class="w">    </span>volumes<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>./<span class="p">:</span>/var/www<span class="w">
-</span><span class="w">    </span>restart<span class="p">:</span><span class="w"> </span>always<span class="w">
-</span><span class="w">    </span>networks<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>my-network<span class="w">
+</span><span class="w">  </span><span class="nt">app</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">laravel_app:latest</span><span class="w">
+</span><span class="w">    </span><span class="nt">env_file</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;.env.docker&#39;</span><span class="w">
+</span><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;DB_HOST=172.17.0.1&#34;</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;APP_URL=http://localhost:8080/api/v1&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">./:/var/www</span><span class="w">
+</span><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">my-network</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span>networks<span class="p">:</span><span class="w">
-</span><span class="w">  </span>my-network<span class="p">:</span><span class="w">
-</span><span class="w">    </span>external<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">my-network</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="10">

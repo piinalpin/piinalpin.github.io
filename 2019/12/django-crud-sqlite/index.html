@@ -44,10 +44,10 @@
     "wordcount":  966 ,
     "url": "https:\/\/blog.piinalpin.com\/2019\/12\/django-crud-sqlite\/",
     
-        "datePublished": "2019-12-24T21:06:33\x2b07:00",
+        "datePublished": "2019-12-24T21:06:33\u002b07:00",
     
     
-        "dateModified": "2019-12-24T21:06:33\x2b07:00",
+        "dateModified": "2019-12-24T21:06:33\u002b07:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -337,10 +337,10 @@ cd rattlesnake
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">django.contrib.admin</span><span class="s1">&#39;</span><span class="p">,</span>
-    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">django.contrib.auth</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
     <span class="p">:</span>
-    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">app</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;app&#39;</span><span class="p">,</span>
     <span class="p">:</span>
 <span class="p">]</span>
 </code></pre></td></tr></table>
@@ -372,18 +372,18 @@ cd rattlesnake
 <span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
 
 <span class="c1"># Create your models here.</span>
-<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">)</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     <span class="n">identityNumber</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">department</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
     
     <span class="c1"># The absolute path to get the url then reverse into &#39;student_edit&#39; with keyword arguments (kwargs) primary key</span>
-    <span class="k">def</span> <span class="nf">get_absolute_url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">student_edit</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">pk</span><span class="s1">&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">}</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_absolute_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;student_edit&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">})</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="6">
@@ -447,27 +447,27 @@ manage.py migrate
 
 <span class="c1"># Create your views here.</span>
 
-<span class="k">class</span> <span class="nc">StudentList</span><span class="p">(</span><span class="n">ListView</span><span class="p">)</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">StudentList</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
 
-<span class="k">class</span> <span class="nc">StudentDetail</span><span class="p">(</span><span class="n">DetailView</span><span class="p">)</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">StudentDetail</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
 
-<span class="k">class</span> <span class="nc">StudentCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">)</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">StudentCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
     <span class="c1"># Field must be same as the model attribute</span>
-    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">identityNumber</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">address</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">department</span><span class="s1">&#39;</span><span class="p">]</span>
-    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">student_list</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;identityNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;department&#39;</span><span class="p">]</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">StudentUpdate</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">)</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">StudentUpdate</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
     <span class="c1"># Field must be same as the model attribute</span>
-    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">identityNumber</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">address</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">department</span><span class="s1">&#39;</span><span class="p">]</span>
-    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">student_list</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;identityNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;department&#39;</span><span class="p">]</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">StudentDelete</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">)</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">StudentDelete</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
-    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">student_list</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="8">
@@ -491,11 +491,11 @@ manage.py migrate
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">path</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentList</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">student_list</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="n">path</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">view/&lt;int:pk&gt;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentDetail</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">student_detail</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="n">path</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">new</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentCreate</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">student_new</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="n">path</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">edit/&lt;int:pk&gt;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentUpdate</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">student_edit</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="n">path</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">delete/&lt;int:pk&gt;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentDelete</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">student_delete</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentList</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_list&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;view/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentDetail</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_detail&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentCreate</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_new&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;edit/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentUpdate</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_edit&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;delete/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentDelete</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_delete&#39;</span><span class="p">),</span>
 <span class="p">]</span>
 </code></pre></td></tr></table>
 </div>
@@ -519,7 +519,7 @@ manage.py migrate
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">:</span>
-    <span class="n">path</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">student/</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">app.urls</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span><span class="p">,</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;student/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;app.urls&#39;</span><span class="p">)),</span>
     <span class="p">:</span>
 <span class="p">]</span>
 </code></pre></td></tr></table>
@@ -584,11 +584,11 @@ manage.py migrate
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">h1</span><span class="p"></span><span class="p">&gt;</span>Student Detail<span class="p">&lt;</span><span class="p">/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">h3</span><span class="p"></span><span class="p">&gt;</span>Name : {{ object.name }}<span class="p">&lt;</span><span class="p">/</span><span class="nt">h3</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">h3</span><span class="p"></span><span class="p">&gt;</span>Identity Number : {{ object.identityNumber }}<span class="p">&lt;</span><span class="p">/</span><span class="nt">h3</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">h3</span><span class="p"></span><span class="p">&gt;</span>Address : {{ object.address }}<span class="p">&lt;</span><span class="p">/</span><span class="nt">h3</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">h3</span><span class="p"></span><span class="p">&gt;</span>Department : {{ object.department }}<span class="p">&lt;</span><span class="p">/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Student Detail<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Name : {{ object.name }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Identity Number : {{ object.identityNumber }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Address : {{ object.address }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Department : {{ object.department }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="13">

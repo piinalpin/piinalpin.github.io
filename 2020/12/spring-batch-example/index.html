@@ -41,13 +41,13 @@
     
         "keywords": "Java, Spring Batch, Spring Boot, MySQL",
     
-    "wordcount":  1999 ,
+    "wordcount":  2002 ,
     "url": "https:\/\/blog.piinalpin.com\/2020\/12\/spring-batch-example\/",
     
-        "datePublished": "2020-12-08T14:08:21\x2b07:00",
+        "datePublished": "2020-12-08T14:08:21\u002b07:00",
     
     
-        "dateModified": "2020-12-08T14:08:21\x2b07:00",
+        "dateModified": "2020-12-08T14:08:21\u002b07:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -147,7 +147,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-12-08>2020-12-08</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1999 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 2002 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>10 min&nbsp;</div>
         </div>
 
@@ -277,7 +277,7 @@ Calvin Joe,25,M
     <span class="n">name</span>       <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>                        <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="n">age</span>        <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                          <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="n">gender</span>     <span class="nb">varchar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                          <span class="k">not</span> <span class="k">null</span>
-<span class="p">)</span><span class="p">;</span>
+<span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="2">
@@ -360,65 +360,65 @@ Calvin Joe,25,M
 <pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 	<span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;modelVersion</span><span class="nt">&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
-	<span class="nt">&lt;parent</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-		<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
-		<span class="nt">&lt;version</span><span class="nt">&gt;</span>2.4.0<span class="nt">&lt;/version&gt;</span>
-		<span class="nt">&lt;relativePath</span><span class="nt">/&gt;</span> <span class="c">&lt;!--</span><span class="c"> lookup parent from repository </span><span class="c">--&gt;</span>
+	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+	<span class="nt">&lt;parent&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;version&gt;</span>2.4.0<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;relativePath/&gt;</span> <span class="c">&lt;!-- lookup parent from repository --&gt;</span>
 	<span class="nt">&lt;/parent&gt;</span>
-	<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>com.maverick<span class="nt">&lt;/groupId&gt;</span>
-	<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-batch-example<span class="nt">&lt;/artifactId&gt;</span>
-	<span class="nt">&lt;version</span><span class="nt">&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
-	<span class="nt">&lt;name</span><span class="nt">&gt;</span>spring-batch-example<span class="nt">&lt;/name&gt;</span>
-	<span class="nt">&lt;description</span><span class="nt">&gt;</span>Demo project for Spring Boot<span class="nt">&lt;/description&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>com.maverick<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>spring-batch-example<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;name&gt;</span>spring-batch-example<span class="nt">&lt;/name&gt;</span>
+	<span class="nt">&lt;description&gt;</span>Demo project for Spring Boot<span class="nt">&lt;/description&gt;</span>
 
-	<span class="nt">&lt;properties</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;java.version</span><span class="nt">&gt;</span>11<span class="nt">&lt;/java.version&gt;</span>
+	<span class="nt">&lt;properties&gt;</span>
+		<span class="nt">&lt;java.version&gt;</span>11<span class="nt">&lt;/java.version&gt;</span>
 	<span class="nt">&lt;/properties&gt;</span>
 
-	<span class="nt">&lt;dependencies</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-starter-batch<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;dependencies&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-batch<span class="nt">&lt;/artifactId&gt;</span>
 		<span class="nt">&lt;/dependency&gt;</span>
 
-		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
-			<span class="nt">&lt;scope</span><span class="nt">&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
 		<span class="nt">&lt;/dependency&gt;</span>
-		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.batch<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-batch-test<span class="nt">&lt;/artifactId&gt;</span>
-			<span class="nt">&lt;scope</span><span class="nt">&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.batch<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-batch-test<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
 		<span class="nt">&lt;/dependency&gt;</span>
-		<span class="c">&lt;!--</span><span class="c"> https://mvnrepository.com/artifact/mysql/mysql</span><span class="c">-</span><span class="c">connector</span><span class="c">-</span><span class="c">java </span><span class="c">--&gt;</span>
-		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
-			<span class="nt">&lt;version</span><span class="nt">&gt;</span>8.0.22<span class="nt">&lt;/version&gt;</span>
+		<span class="c">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>8.0.22<span class="nt">&lt;/version&gt;</span>
 		<span class="nt">&lt;/dependency&gt;</span>
 
-		<span class="c">&lt;!--</span><span class="c"> https://mvnrepository.com/artifact/org.projectlombok/lombok </span><span class="c">--&gt;</span>
-		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-			<span class="nt">&lt;version</span><span class="nt">&gt;</span>1.18.16<span class="nt">&lt;/version&gt;</span>
-			<span class="nt">&lt;scope</span><span class="nt">&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+		<span class="c">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>1.18.16<span class="nt">&lt;/version&gt;</span>
+			<span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
 		<span class="nt">&lt;/dependency&gt;</span>
-		<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-starter-quartz<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-quartz<span class="nt">&lt;/artifactId&gt;</span>
 		<span class="nt">&lt;/dependency&gt;</span>
 
 	<span class="nt">&lt;/dependencies&gt;</span>
 
-	<span class="nt">&lt;build</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;plugins</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;plugin</span><span class="nt">&gt;</span>
-				<span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-				<span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;build&gt;</span>
+		<span class="nt">&lt;plugins&gt;</span>
+			<span class="nt">&lt;plugin&gt;</span>
+				<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+				<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
 			<span class="nt">&lt;/plugin&gt;</span>
 		<span class="nt">&lt;/plugins&gt;</span>
 	<span class="nt">&lt;/build&gt;</span>
@@ -510,11 +510,11 @@ Calvin Joe,25,M
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonItemProcessor</span> <span class="kd">implements</span> <span class="n">ItemProcessor</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="o">{</span>
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">PersonItemProcessor</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">PersonItemProcessor</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="n">Person</span> <span class="nf">process</span><span class="o">(</span><span class="n">Person</span> <span class="n">person</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-        <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### Process: &#34;</span> <span class="o">+</span> <span class="n">person</span><span class="o">.</span><span class="na">getName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### Process: &#34;</span> <span class="o">+</span> <span class="n">person</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
         <span class="k">return</span> <span class="n">person</span><span class="o">;</span>
     <span class="o">}</span>
 
@@ -601,18 +601,18 @@ Calvin Joe,25,M
 
     <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;MVRCKDatasource&#34;</span><span class="o">)</span>
     <span class="nd">@Primary</span>
-    <span class="kd">public</span> <span class="n">DataSource</span> <span class="nf">dataSource</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">DataSourceBuilder</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">DataSource</span> <span class="nf">dataSource</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">DataSourceBuilder</span><span class="o">.</span><span class="na">create</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="n">datasourceUrl</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">username</span><span class="o">(</span><span class="n">datasourceUsername</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="n">datasourcePassword</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">driverClassName</span><span class="o">(</span><span class="n">datasourceDriverClassName</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;MVRCKJdbcTemplate&#34;</span><span class="o">)</span>
     <span class="kd">public</span> <span class="n">JdbcTemplate</span> <span class="nf">jdbcTemplate</span><span class="o">(</span><span class="nd">@Qualifier</span><span class="o">(</span><span class="s">&#34;MVRCKDatasource&#34;</span><span class="o">)</span> <span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">JdbcTemplate</span><span class="o">(</span><span class="n">dataSource</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">JdbcTemplate</span><span class="o">(</span><span class="n">dataSource</span><span class="o">);</span>
     <span class="o">}</span>
 
 <span class="o">}</span>
@@ -705,13 +705,13 @@ Calvin Joe,25,M
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuartzJobLauncher</span> <span class="kd">extends</span> <span class="n">QuartzJobBean</span> <span class="o">{</span>
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">QuartzJobLauncher</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">QuartzJobLauncher</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
     <span class="kd">private</span> <span class="n">String</span> <span class="n">jobName</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">JobLauncher</span> <span class="n">jobLauncher</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">JobLocator</span> <span class="n">jobLocator</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getJobName</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getJobName</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">jobName</span><span class="o">;</span>
     <span class="o">}</span>
 
@@ -719,7 +719,7 @@ Calvin Joe,25,M
         <span class="k">this</span><span class="o">.</span><span class="na">jobName</span> <span class="o">=</span> <span class="n">jobName</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="n">JobLauncher</span> <span class="nf">getJobLauncher</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">JobLauncher</span> <span class="nf">getJobLauncher</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">jobLauncher</span><span class="o">;</span>
     <span class="o">}</span>
 
@@ -727,7 +727,7 @@ Calvin Joe,25,M
         <span class="k">this</span><span class="o">.</span><span class="na">jobLauncher</span> <span class="o">=</span> <span class="n">jobLauncher</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="n">JobLocator</span> <span class="nf">getJobLocator</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">JobLocator</span> <span class="nf">getJobLocator</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">jobLocator</span><span class="o">;</span>
     <span class="o">}</span>
 
@@ -738,15 +738,15 @@ Calvin Joe,25,M
     <span class="nd">@Override</span>
     <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">executeInternal</span><span class="o">(</span><span class="n">JobExecutionContext</span> <span class="n">jobExecutionContext</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">JobExecutionException</span> <span class="o">{</span>
         <span class="k">try</span> <span class="o">{</span>
-            <span class="n">Job</span> <span class="n">job</span> <span class="o">=</span> <span class="n">jobLocator</span><span class="o">.</span><span class="na">getJob</span><span class="o">(</span><span class="n">jobName</span><span class="o">)</span><span class="o">;</span>
-            <span class="n">JobParameters</span> <span class="n">jobParameters</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobParametersBuilder</span><span class="o">(</span><span class="o">)</span>
-                    <span class="o">.</span><span class="na">addLong</span><span class="o">(</span><span class="s">&#34;time&#34;</span><span class="o">,</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
-                    <span class="o">.</span><span class="na">toJobParameters</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-            <span class="n">JobExecution</span> <span class="n">jobExecution</span> <span class="o">=</span> <span class="n">jobLauncher</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">job</span><span class="o">,</span> <span class="n">jobParameters</span><span class="o">)</span><span class="o">;</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Job was completed successfully.&#34;</span><span class="o">,</span> <span class="n">job</span><span class="o">.</span><span class="na">getName</span><span class="o">(</span><span class="o">)</span><span class="o">,</span> <span class="n">jobExecution</span><span class="o">.</span><span class="na">getId</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+            <span class="n">Job</span> <span class="n">job</span> <span class="o">=</span> <span class="n">jobLocator</span><span class="o">.</span><span class="na">getJob</span><span class="o">(</span><span class="n">jobName</span><span class="o">);</span>
+            <span class="n">JobParameters</span> <span class="n">jobParameters</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobParametersBuilder</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">addLong</span><span class="o">(</span><span class="s">&#34;time&#34;</span><span class="o">,</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">())</span>
+                    <span class="o">.</span><span class="na">toJobParameters</span><span class="o">();</span>
+            <span class="n">JobExecution</span> <span class="n">jobExecution</span> <span class="o">=</span> <span class="n">jobLauncher</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">job</span><span class="o">,</span> <span class="n">jobParameters</span><span class="o">);</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Job was completed successfully.&#34;</span><span class="o">,</span> <span class="n">job</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">jobExecution</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JobParametersInvalidException</span> <span class="o">|</span> <span class="n">NoSuchJobException</span> <span class="o">|</span> <span class="n">JobExecutionAlreadyRunningException</span> <span class="o">|</span> <span class="n">JobInstanceAlreadyCompleteException</span> <span class="o">|</span> <span class="n">JobRestartException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Failed execute job !!!&#34;</span><span class="o">)</span><span class="o">;</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="n">ex</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Failed execute job !!!&#34;</span><span class="o">);</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="n">ex</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
@@ -920,7 +920,7 @@ Calvin Joe,25,M
 <span class="nd">@Configuration</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuartzConfiguration</span> <span class="o">{</span>
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">QuartzConfiguration</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">QuartzConfiguration</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">JobExplorer</span> <span class="n">jobExplorer</span><span class="o">;</span>
@@ -943,69 +943,69 @@ Calvin Joe,25,M
 
     <span class="nd">@Bean</span>
     <span class="kd">public</span> <span class="n">JobRegistryBeanPostProcessor</span> <span class="nf">jobRegistryBeanPostProcessor</span><span class="o">(</span><span class="n">JobRegistry</span> <span class="n">jobRegistry</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">JobRegistryBeanPostProcessor</span> <span class="n">jobRegistryBeanPostProcessor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobRegistryBeanPostProcessor</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">jobRegistryBeanPostProcessor</span><span class="o">.</span><span class="na">setJobRegistry</span><span class="o">(</span><span class="n">jobRegistry</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">JobRegistryBeanPostProcessor</span> <span class="n">jobRegistryBeanPostProcessor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobRegistryBeanPostProcessor</span><span class="o">();</span>
+        <span class="n">jobRegistryBeanPostProcessor</span><span class="o">.</span><span class="na">setJobRegistry</span><span class="o">(</span><span class="n">jobRegistry</span><span class="o">);</span>
         <span class="k">return</span> <span class="n">jobRegistryBeanPostProcessor</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;jobRepository&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">JobRepository</span> <span class="nf">jobRepository</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">JobRepositoryFactoryBean</span> <span class="n">factoryBean</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobRepositoryFactoryBean</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setDataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setTransactionManager</span><span class="o">(</span><span class="n">platformTransactionManager</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setIsolationLevelForCreate</span><span class="o">(</span><span class="s">&#34;ISOLATION_READ_COMMITTED&#34;</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setTablePrefix</span><span class="o">(</span><span class="s">&#34;BATCH_&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">JobRepository</span> <span class="nf">jobRepository</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">JobRepositoryFactoryBean</span> <span class="n">factoryBean</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobRepositoryFactoryBean</span><span class="o">();</span>
+        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setDataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">);</span>
+        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setTransactionManager</span><span class="o">(</span><span class="n">platformTransactionManager</span><span class="o">);</span>
+        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setIsolationLevelForCreate</span><span class="o">(</span><span class="s">&#34;ISOLATION_READ_COMMITTED&#34;</span><span class="o">);</span>
+        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setTablePrefix</span><span class="o">(</span><span class="s">&#34;BATCH_&#34;</span><span class="o">);</span>
         <span class="k">try</span> <span class="o">{</span>
-            <span class="n">factoryBean</span><span class="o">.</span><span class="na">afterPropertiesSet</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-            <span class="k">return</span> <span class="n">factoryBean</span><span class="o">.</span><span class="na">getObject</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+            <span class="n">factoryBean</span><span class="o">.</span><span class="na">afterPropertiesSet</span><span class="o">();</span>
+            <span class="k">return</span> <span class="n">factoryBean</span><span class="o">.</span><span class="na">getObject</span><span class="o">();</span>
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;JobRepository bean could not be initialized&#34;</span><span class="o">,</span> <span class="n">ex</span><span class="o">)</span><span class="o">;</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;JobRepository bean could not be initialized&#34;</span><span class="o">,</span> <span class="n">ex</span><span class="o">);</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">JobLauncher</span> <span class="nf">jobLauncher</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
-        <span class="n">SimpleJobLauncher</span> <span class="n">jobLauncher</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleJobLauncher</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">jobLauncher</span><span class="o">.</span><span class="na">setJobRepository</span><span class="o">(</span><span class="n">jobRepository</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">JobLauncher</span> <span class="nf">jobLauncher</span><span class="o">(){</span>
+        <span class="n">SimpleJobLauncher</span> <span class="n">jobLauncher</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleJobLauncher</span><span class="o">();</span>
+        <span class="n">jobLauncher</span><span class="o">.</span><span class="na">setJobRepository</span><span class="o">(</span><span class="n">jobRepository</span><span class="o">());</span>
         <span class="k">return</span> <span class="n">jobLauncher</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">JobOperator</span> <span class="nf">jobOperator</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">SimpleJobOperator</span> <span class="n">jobOperator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleJobOperator</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobExplorer</span><span class="o">(</span><span class="n">jobExplorer</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobLauncher</span><span class="o">(</span><span class="n">jobLauncher</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobRegistry</span><span class="o">(</span><span class="n">jobRegistry</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobRepository</span><span class="o">(</span><span class="n">jobRepository</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">JobOperator</span> <span class="nf">jobOperator</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">SimpleJobOperator</span> <span class="n">jobOperator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleJobOperator</span><span class="o">();</span>
+        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobExplorer</span><span class="o">(</span><span class="n">jobExplorer</span><span class="o">);</span>
+        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobLauncher</span><span class="o">(</span><span class="n">jobLauncher</span><span class="o">());</span>
+        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobRegistry</span><span class="o">(</span><span class="n">jobRegistry</span><span class="o">);</span>
+        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobRepository</span><span class="o">(</span><span class="n">jobRepository</span><span class="o">());</span>
         <span class="k">return</span> <span class="n">jobOperator</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">JobDetailFactoryBean</span> <span class="nf">jobDetailFactoryBean</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">JobDetailFactoryBean</span> <span class="n">factory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobDetailFactoryBean</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">factory</span><span class="o">.</span><span class="na">setJobClass</span><span class="o">(</span><span class="n">QuartzJobLauncher</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobName&#34;</span><span class="o">,</span> <span class="s">&#34;importPersonJob&#34;</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobLauncher&#34;</span><span class="o">,</span> <span class="n">jobLauncher</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobLocator&#34;</span><span class="o">,</span> <span class="n">jobLocator</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">factory</span><span class="o">.</span><span class="na">setJobDataAsMap</span><span class="o">(</span><span class="n">map</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">JobDetailFactoryBean</span> <span class="nf">jobDetailFactoryBean</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">JobDetailFactoryBean</span> <span class="n">factory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobDetailFactoryBean</span><span class="o">();</span>
+        <span class="n">factory</span><span class="o">.</span><span class="na">setJobClass</span><span class="o">(</span><span class="n">QuartzJobLauncher</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobName&#34;</span><span class="o">,</span> <span class="s">&#34;importPersonJob&#34;</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobLauncher&#34;</span><span class="o">,</span> <span class="n">jobLauncher</span><span class="o">());</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobLocator&#34;</span><span class="o">,</span> <span class="n">jobLocator</span><span class="o">);</span>
+        <span class="n">factory</span><span class="o">.</span><span class="na">setJobDataAsMap</span><span class="o">(</span><span class="n">map</span><span class="o">);</span>
         <span class="k">return</span> <span class="n">factory</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">CronTriggerFactoryBean</span> <span class="nf">cronTriggerFactoryBean</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">CronTriggerFactoryBean</span> <span class="n">stFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CronTriggerFactoryBean</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">stFactory</span><span class="o">.</span><span class="na">setJobDetail</span><span class="o">(</span><span class="n">jobDetailFactoryBean</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">getObject</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">stFactory</span><span class="o">.</span><span class="na">setCronExpression</span><span class="o">(</span><span class="n">schedulerMaverickCron</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">stFactory</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;cronTriggerFactoryBean&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">CronTriggerFactoryBean</span> <span class="nf">cronTriggerFactoryBean</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">CronTriggerFactoryBean</span> <span class="n">stFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CronTriggerFactoryBean</span><span class="o">();</span>
+        <span class="n">stFactory</span><span class="o">.</span><span class="na">setJobDetail</span><span class="o">(</span><span class="n">jobDetailFactoryBean</span><span class="o">().</span><span class="na">getObject</span><span class="o">());</span>
+        <span class="n">stFactory</span><span class="o">.</span><span class="na">setCronExpression</span><span class="o">(</span><span class="n">schedulerMaverickCron</span><span class="o">);</span>
+        <span class="n">stFactory</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;cronTriggerFactoryBean&#34;</span><span class="o">);</span>
         <span class="k">return</span> <span class="n">stFactory</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">SchedulerFactoryBean</span> <span class="nf">schedulerBean</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">SchedulerFactoryBean</span> <span class="n">scheduler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SchedulerFactoryBean</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">scheduler</span><span class="o">.</span><span class="na">setTriggers</span><span class="o">(</span><span class="n">cronTriggerFactoryBean</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">getObject</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">SchedulerFactoryBean</span> <span class="nf">schedulerBean</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">SchedulerFactoryBean</span> <span class="n">scheduler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SchedulerFactoryBean</span><span class="o">();</span>
+        <span class="n">scheduler</span><span class="o">.</span><span class="na">setTriggers</span><span class="o">(</span><span class="n">cronTriggerFactoryBean</span><span class="o">().</span><span class="na">getObject</span><span class="o">());</span>
         <span class="k">return</span> <span class="n">scheduler</span><span class="o">;</span>
     <span class="o">}</span>
 
@@ -1052,12 +1052,12 @@ Calvin Joe,25,M
 <span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JobCompletionNotificationListener</span> <span class="kd">extends</span> <span class="n">JobExecutionListenerSupport</span> <span class="o">{</span>
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">JobCompletionNotificationListener</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">JobCompletionNotificationListener</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterJob</span><span class="o">(</span><span class="n">JobExecution</span> <span class="n">jobExecution</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">jobExecution</span><span class="o">.</span><span class="na">getStatus</span><span class="o">(</span><span class="o">)</span> <span class="o">=</span><span class="o">=</span> <span class="n">BatchStatus</span><span class="o">.</span><span class="na">COMPLETED</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### JOB FINISHED!&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">jobExecution</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()</span> <span class="o">==</span> <span class="n">BatchStatus</span><span class="o">.</span><span class="na">COMPLETED</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### JOB FINISHED!&#34;</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -1208,41 +1208,41 @@ Calvin Joe,25,M
     <span class="o">}</span>
 
     <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">FlatFileItemReader</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="nf">reader</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">FlatFileItemReaderBuilder</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">FlatFileItemReader</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="nf">reader</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">FlatFileItemReaderBuilder</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;()</span>
                 <span class="o">.</span><span class="na">name</span><span class="o">(</span><span class="s">&#34;personItemReader&#34;</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">resource</span><span class="o">(</span><span class="k">new</span> <span class="n">ClassPathResource</span><span class="o">(</span><span class="n">sourceFile</span><span class="o">)</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">delimited</span><span class="o">(</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">names</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="o">]</span><span class="o">{</span><span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="s">&#34;age&#34;</span><span class="o">,</span> <span class="s">&#34;gender&#34;</span><span class="o">}</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">fieldSetMapper</span><span class="o">(</span><span class="k">new</span> <span class="n">BeanWrapperFieldSetMapper</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">{</span><span class="o">{</span>
-                    <span class="n">setTargetType</span><span class="o">(</span><span class="n">Person</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
-                <span class="o">}</span><span class="o">}</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+                <span class="o">.</span><span class="na">resource</span><span class="o">(</span><span class="k">new</span> <span class="n">ClassPathResource</span><span class="o">(</span><span class="n">sourceFile</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">delimited</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">names</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="s">&#34;age&#34;</span><span class="o">,</span> <span class="s">&#34;gender&#34;</span><span class="o">})</span>
+                <span class="o">.</span><span class="na">fieldSetMapper</span><span class="o">(</span><span class="k">new</span> <span class="n">BeanWrapperFieldSetMapper</span><span class="o">&lt;&gt;(){{</span>
+                    <span class="n">setTargetType</span><span class="o">(</span><span class="n">Person</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+                <span class="o">}})</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span>
     <span class="nd">@StepScope</span>
-    <span class="kd">public</span> <span class="n">PersonItemProcessor</span> <span class="nf">processor</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">PersonItemProcessor</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">PersonItemProcessor</span> <span class="nf">processor</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">PersonItemProcessor</span><span class="o">();</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span>
     <span class="kd">public</span> <span class="n">JdbcBatchItemWriter</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="nf">writer</span><span class="o">(</span><span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">JdbcBatchItemWriterBuilder</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">itemSqlParameterSourceProvider</span><span class="o">(</span><span class="k">new</span> <span class="n">BeanPropertyItemSqlParameterSourceProvider</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">JdbcBatchItemWriterBuilder</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;()</span>
+                <span class="o">.</span><span class="na">itemSqlParameterSourceProvider</span><span class="o">(</span><span class="k">new</span> <span class="n">BeanPropertyItemSqlParameterSourceProvider</span><span class="o">&lt;&gt;())</span>
                 <span class="o">.</span><span class="na">sql</span><span class="o">(</span><span class="s">&#34;INSERT INTO M_HUMAN (name, age, gender) VALUES (:name, :age, :gender)&#34;</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">dataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span>
     <span class="kd">public</span> <span class="n">Job</span> <span class="nf">importPersonJob</span><span class="o">(</span><span class="n">JobCompletionNotificationListener</span> <span class="n">listener</span><span class="o">,</span>
                                <span class="nd">@Qualifier</span><span class="o">(</span><span class="s">&#34;personImportStep&#34;</span><span class="o">)</span> <span class="n">Step</span> <span class="n">personImportStep</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">jobBuilderFactory</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;importPersonJob&#34;</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">incrementer</span><span class="o">(</span><span class="k">new</span> <span class="n">RunIdIncrementer</span><span class="o">(</span><span class="o">)</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">incrementer</span><span class="o">(</span><span class="k">new</span> <span class="n">RunIdIncrementer</span><span class="o">())</span>
                 <span class="o">.</span><span class="na">listener</span><span class="o">(</span><span class="n">listener</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="n">personImportStep</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
     <span class="o">}</span>
 
     <span class="nd">@Bean</span>
@@ -1250,11 +1250,11 @@ Calvin Joe,25,M
                                  <span class="n">PersonItemProcessor</span> <span class="n">processor</span><span class="o">,</span>
                                  <span class="n">JdbcBatchItemWriter</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">writer</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">stepBuilderFactory</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;personImportStep&#34;</span><span class="o">)</span>
-                <span class="o">.</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="nf">chunk</span><span class="o">(</span><span class="n">10</span><span class="o">)</span>
+                <span class="o">.&lt;</span><span class="n">Person</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="nf">chunk</span><span class="o">(</span><span class="n">10</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">reader</span><span class="o">(</span><span class="n">reader</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">processor</span><span class="o">(</span><span class="n">processor</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">writer</span><span class="o">(</span><span class="n">writer</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
     <span class="o">}</span>
 
 <span class="o">}</span>
@@ -1279,13 +1279,13 @@ Calvin Joe,25,M
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
-<span class="nd">@PropertySources</span><span class="o">(</span><span class="o">{</span>
+<span class="nd">@PropertySources</span><span class="o">({</span>
 		<span class="nd">@PropertySource</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;classpath:application.properties&#34;</span><span class="o">,</span> <span class="n">ignoreResourceNotFound</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-<span class="o">}</span><span class="o">)</span>
+<span class="o">})</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpringBatchExampleApplication</span> <span class="o">{</span>
 
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">SpringBatchExampleApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">)</span><span class="o">;</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">SpringBatchExampleApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
 	<span class="o">}</span>
 
 <span class="o">}</span>
@@ -1328,21 +1328,21 @@ spring.batch.job.enabled=false
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yml" data-lang="yml">app<span class="p">:</span><span class="w">
-</span><span class="w">  </span>name<span class="p">:</span><span class="w"> </span><span class="s2">&#34;Spring Batch Example&#34;</span><span class="w">
-</span><span class="w"></span>spring<span class="p">:</span><span class="w">
-</span><span class="w">  </span>profiles<span class="p">:</span><span class="w">
-</span><span class="w">    </span>active<span class="p">:</span><span class="w"> </span><span class="s2">&#34;dev&#34;</span><span class="w">
-</span><span class="w">  </span>datasource<span class="p">:</span><span class="w">
-</span><span class="w">    </span>url<span class="p">:</span><span class="w"> </span><span class="s2">&#34;jdbc:mysql://localhost:3306/DB_NAME?allowPublicKeyRetrieval=true&amp;useSSL=false&#34;</span><span class="w">
-</span><span class="w">    </span>username<span class="p">:</span><span class="w"> </span>DB_USERNAME<span class="w">
-</span><span class="w">    </span>password<span class="p">:</span><span class="w"> </span>DB_PASSWORD<span class="w">
-</span><span class="w">    </span>driverClassName<span class="p">:</span><span class="w"> </span>com.mysql.cj.jdbc.Driver<span class="w">
-</span><span class="w"></span>scheduler<span class="p">:</span><span class="w">
-</span><span class="w">  </span>maverick<span class="p">:</span><span class="w">
-</span><span class="w">    </span>cron<span class="p">:</span><span class="w"> </span><span class="s2">&#34;0 0 14 ? * TUE *&#34;</span><span class="w">
-</span><span class="w"></span>files<span class="p">:</span><span class="w">
-</span><span class="w">  </span>source-file<span class="p">:</span><span class="w"> </span><span class="s2">&#34;sample-data.csv&#34;</span><span class="w">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">app</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Spring Batch Example&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dev&#34;</span><span class="w">
+</span><span class="w">  </span><span class="nt">datasource</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;jdbc:mysql://localhost:3306/DB_NAME?allowPublicKeyRetrieval=true&amp;useSSL=false&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">DB_USERNAME</span><span class="w">
+</span><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">DB_PASSWORD</span><span class="w">
+</span><span class="w">    </span><span class="nt">driverClassName</span><span class="p">:</span><span class="w"> </span><span class="l">com.mysql.cj.jdbc.Driver</span><span class="w">
+</span><span class="w"></span><span class="nt">scheduler</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">maverick</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0 0 14 ? * TUE *&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">files</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">source-file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;sample-data.csv&#34;</span><span class="w">
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="13">

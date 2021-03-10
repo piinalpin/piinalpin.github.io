@@ -40,13 +40,13 @@
     
         "keywords": "Bash, Oh My Zsh, Powerlevel10k, Setup Mac",
     
-    "wordcount":  541 ,
+    "wordcount":  536 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/02\/setup-my-own-mac\/",
     
-        "datePublished": "2021-02-28T14:04:16\x2b07:00",
+        "datePublished": "2021-02-28T14:04:16\u002b07:00",
     
     
-        "dateModified": "2021-02-28T14:04:16\x2b07:00",
+        "dateModified": "2021-02-28T14:04:16\u002b07:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -146,7 +146,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-02-28>2021-02-28</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 541 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 536 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
@@ -316,26 +316,16 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="
 <pre class="chroma"><code class="language-bash" data-lang="bash">brew tap homebrew/cask-versions
 </code></pre></td></tr></table>
 </div>
-</div><p>Install JDK 11 and JDK 8</p>
+</div><p>Install JDK 11 and JDK 8 from <a href="https://www.azul.com/downloads/zulu-community/?package=jdk">Azul OpenJDK</a></p>
+<p>Add java11 and java8 into jenv</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install java11
-brew install openjdk@8
-</code></pre></td></tr></table>
-</div>
-</div><p>Add java11 and java8 into jenv</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">jenv add /usr/local/opt/openjdk@11
-jenv add /usr/local/opt/openjdk@8
+<pre class="chroma"><code class="language-bash" data-lang="bash">jenv add /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/ 
+jenv add /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/ 
 </code></pre></td></tr></table>
 </div>
 </div><p>See all installed versions java</p>

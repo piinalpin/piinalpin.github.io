@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 20 Nov 2020 13:43:51 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.piinalpin.com/tags/rest/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 20 Nov 2020 13:43:51 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/rest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Simple REST Application using Go/Golang</title>
       <link>https://blog.piinalpin.com/2020/11/simple-rest-golang/</link>
@@ -20,7 +16,7 @@
       <guid>https://blog.piinalpin.com/2020/11/simple-rest-golang/</guid>
       <description>Introduction Go is a statically typed language, The compiler produces optimized machine code, so CPU-intensive code is significantly more efficient than languages like Python or Ruby, which have byte-code compilers and use virtual machines for execution.
 Prerequisites Make sure you have installed Golang on your device
-Step to create a simple REST application using Golang  Importing packages or modules Install GorillaMux for it&#39;s efficiency and simplicity for learning go get github.</description>
+Step to create a simple REST application using Golang  Importing packages or modules Install GorillaMux for it&amp;rsquo;s efficiency and simplicity for learning go get github.</description>
     </item>
     
   </channel>

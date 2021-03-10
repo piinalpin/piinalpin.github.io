@@ -44,10 +44,10 @@
     "wordcount":  338 ,
     "url": "https:\/\/blog.piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/",
     
-        "datePublished": "2020-12-04T15:49:11\x2b07:00",
+        "datePublished": "2020-12-04T15:49:11\u002b07:00",
     
     
-        "dateModified": "2020-12-04T15:49:11\x2b07:00",
+        "dateModified": "2020-12-04T15:49:11\u002b07:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -229,7 +229,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="kt">SET</span> <span class="p"></span><span class="n">GLOBAL</span> <span class="n">log_bin_trust_function_creators</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="kt">SET</span> <span class="n">GLOBAL</span> <span class="n">log_bin_trust_function_creators</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="2">
@@ -240,7 +240,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nf">SEQUENCE</span> <span class="p">(</span><span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span> <span class="n">value</span> <span class="kt">INT</span> <span class="p"></span><span class="k">UNSIGNED</span><span class="p">)</span><span class="p">;</span>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nf">SEQUENCE</span> <span class="p">(</span><span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span> <span class="n">value</span> <span class="kt">INT</span> <span class="k">UNSIGNED</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="3">
@@ -271,16 +271,16 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">DELIMITER</span> <span class="o">/</span><span class="o">/</span>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">DELIMITER</span> <span class="o">//</span>
 
-<span class="k">CREATE</span> <span class="n">FUNCTION</span> <span class="nf">nextval</span> <span class="p">(</span><span class="n">sequence_name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">)</span>
-<span class="n">RETURNS</span> <span class="kt">INT</span> <span class="p"></span><span class="k">UNSIGNED</span>
+<span class="k">CREATE</span> <span class="n">FUNCTION</span> <span class="nf">nextval</span> <span class="p">(</span><span class="n">sequence_name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">RETURNS</span> <span class="kt">INT</span> <span class="k">UNSIGNED</span>
 <span class="n">BEGIN</span>
-<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SEQUENCE</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">sequence_name</span><span class="p">,</span> <span class="nf">LAST_INSERT_ID</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="p">)</span>
-<span class="k">ON</span> <span class="n">DUPLICATE</span> <span class="k">KEY</span> <span class="k">UPDATE</span> <span class="n">value</span><span class="o">=</span><span class="nf">LAST_INSERT_ID</span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="p">;</span>
-<span class="k">RETURN</span> <span class="nf">LAST_INSERT_ID</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SEQUENCE</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">sequence_name</span><span class="p">,</span> <span class="nf">LAST_INSERT_ID</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">ON</span> <span class="n">DUPLICATE</span> <span class="k">KEY</span> <span class="k">UPDATE</span> <span class="n">value</span><span class="o">=</span><span class="nf">LAST_INSERT_ID</span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">RETURN</span> <span class="nf">LAST_INSERT_ID</span><span class="p">();</span>
 <span class="n">END</span>
-<span class="o">/</span><span class="o">/</span>
+<span class="o">//</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="5">
@@ -305,8 +305,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nf">HUMAN</span>
-<span class="p">(</span><span class="n">id</span> <span class="kt">int</span> <span class="p"></span><span class="k">UNSIGNED</span> <span class="k">NOT</span> <span class="no">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span>
-<span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+<span class="p">(</span><span class="n">id</span> <span class="kt">int</span> <span class="k">UNSIGNED</span> <span class="k">NOT</span> <span class="no">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span>
+<span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">));</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="7">
@@ -331,18 +331,18 @@ The trigger only generated a new id if 0 is inserted. So, if you create a new ta
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">nextval_human</span> <span class="k">BEFORE</span> <span class="k">INSERT</span> <span class="k">ON</span> <span class="n">HUMAN</span>
-<span class="k">FOR</span> <span class="k">EACH</span> <span class="n">ROW</span> <span class="kt">SET</span> <span class="p"></span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="k">IF</span><span class="p">(</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nf">nextval</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">ID_HUMAN_SEQ</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="p">;</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="n">ROW</span> <span class="kt">SET</span> <span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="k">IF</span><span class="p">(</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nf">nextval</span><span class="p">(</span><span class="s1">&#39;ID_HUMAN_SEQ&#39;</span><span class="p">),</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="9">
-<li>Let's try a sample data on HUMAN table</li>
+<li>Let&rsquo;s try a sample data on HUMAN table</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">HUMAN</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Maverick</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">John Doe</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Al Sah-Him</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">HUMAN</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Maverick&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Al Sah-Him&#39;</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="10">
@@ -350,7 +350,7 @@ The trigger only generated a new id if 0 is inserted. So, if you create a new ta
 </ol>
 <p><img src="/images/human_data.png" alt="HUMAN Data"></p>
 <ol start="11">
-<li>Let's try another table <code>BOOK</code> to test a sequence</li>
+<li>Let&rsquo;s try another table <code>BOOK</code> to test a sequence</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -360,8 +360,8 @@ The trigger only generated a new id if 0 is inserted. So, if you create a new ta
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nf">BOOK</span>
-<span class="p">(</span><span class="n">id</span> <span class="kt">int</span> <span class="p"></span><span class="k">UNSIGNED</span> <span class="k">NOT</span> <span class="no">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span>
-<span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="p">,</span> <span class="n">code</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+<span class="p">(</span><span class="n">id</span> <span class="kt">int</span> <span class="k">UNSIGNED</span> <span class="k">NOT</span> <span class="no">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span>
+<span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">code</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">));</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="12">
@@ -374,7 +374,7 @@ The trigger only generated a new id if 0 is inserted. So, if you create a new ta
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">nextval_book</span> <span class="k">BEFORE</span> <span class="k">INSERT</span> <span class="k">ON</span> <span class="n">BOOK</span>
-<span class="k">FOR</span> <span class="k">EACH</span> <span class="n">ROW</span> <span class="kt">SET</span> <span class="p"></span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="k">IF</span><span class="p">(</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nf">nextval</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">ID_BOOK_SEQ</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="p">;</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="n">ROW</span> <span class="kt">SET</span> <span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="k">IF</span><span class="p">(</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nf">nextval</span><span class="p">(</span><span class="s1">&#39;ID_BOOK_SEQ&#39;</span><span class="p">),</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="13">
@@ -385,7 +385,7 @@ The trigger only generated a new id if 0 is inserted. So, if you create a new ta
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">BOOK</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Book 1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">BK-01</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Book 2</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">BK-02</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Book 3</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">BK-03</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">BOOK</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Book 1&#39;</span><span class="p">,</span> <span class="s1">&#39;BK-01&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Book 2&#39;</span><span class="p">,</span> <span class="s1">&#39;BK-02&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Book 3&#39;</span><span class="p">,</span> <span class="s1">&#39;BK-03&#39;</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="14">
@@ -393,7 +393,7 @@ The trigger only generated a new id if 0 is inserted. So, if you create a new ta
 </ol>
 <p><img src="/images/book_data.png" alt="BOOK Data"></p>
 <ol start="15">
-<li>Let's check generated custom sequence</li>
+<li>Let&rsquo;s check generated custom sequence</li>
 </ol>
 <p><img src="/images/custom_sequence.png" alt="Custom Sequence"></p>
 <a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>

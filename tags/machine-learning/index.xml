@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 17 Jan 2020 12:00:22 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.piinalpin.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 17 Jan 2020 12:00:22 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research Reference Bot</title>
       <link>https://blog.piinalpin.com/2020/01/research-reference-bot/</link>

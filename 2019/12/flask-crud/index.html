@@ -44,10 +44,10 @@
     "wordcount":  1041 ,
     "url": "https:\/\/blog.piinalpin.com\/2019\/12\/flask-crud\/",
     
-        "datePublished": "2019-12-24T00:34:28\x2b07:00",
+        "datePublished": "2019-12-24T00:34:28\u002b07:00",
     
     
-        "dateModified": "2019-12-24T00:34:28\x2b07:00",
+        "dateModified": "2019-12-24T00:34:28\u002b07:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -302,7 +302,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
-<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">127.0.0.1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="5">
@@ -321,9 +321,9 @@
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span>
 <span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">/</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">return</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">My CRUD Flask App</span><span class="s2">&#34;</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&#34;My CRUD Flask App&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="6">
@@ -395,32 +395,32 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p"></span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p"></span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p"></span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p"></span><span class="p">&gt;</span>Flask Crud<span class="p">&lt;</span><span class="p">/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="p">/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p"></span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">h3</span><span class="p"></span><span class="p">&gt;</span>Form Add Mahasiswa<span class="p">&lt;</span><span class="p">/</span><span class="nt">h3</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;/&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;POST&#34;</span><span class="p"></span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">table</span><span class="p"></span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>Nama Lengkap<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>:<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;name&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>Nomor Induk Mahasiswa<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>:<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;nim&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span><span class="p"></span><span class="p">&gt;</span>Save<span class="p">&lt;</span><span class="p">/</span><span class="nt">button</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="p">/</span><span class="nt">table</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="p">/</span><span class="nt">form</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="p">/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="p">/</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Flask Crud<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Form Add Mahasiswa<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;/&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;POST&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Nama Lengkap<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>:<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;name&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Nomor Induk Mahasiswa<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>:<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;nim&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span><span class="p">&gt;</span>Save<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="11">
@@ -439,9 +439,9 @@
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span>
 <span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">/</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">home.html</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&#34;home.html&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="https://raw.githubusercontent.com/piinalpin/flask-crud/master/Image-2.PNG" alt="Sample 2"></p>
@@ -457,11 +457,11 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app.route</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">/</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">GET</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">POST</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">POST</span><span class="s1">&#39;</span><span class="p">:</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
         <span class="k">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">home.html</span><span class="s2">&#34;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&#34;home.html&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="https://raw.githubusercontent.com/piinalpin/flask-crud/master/Image-3.PNG" alt="Sample 3">
@@ -487,12 +487,12 @@
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 
-<span class="n">project_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="p">)</span>
-<span class="n">database_file</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">sqlite:///{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">flaskcrud.db</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">project_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<span class="n">database_file</span> <span class="o">=</span> <span class="s2">&#34;sqlite:///{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="s2">&#34;flaskcrud.db&#34;</span><span class="p">))</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">SQLALCHEMY_DATABASE_URI</span><span class="s2">&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">database_file</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">SQLALCHEMY_TRACK_MODIFICATIONS</span><span class="s2">&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_DATABASE_URI&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">database_file</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_TRACK_MODIFICATIONS&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
 
 <span class="kn">from</span> <span class="nn">app.module.controller</span> <span class="kn">import</span> <span class="o">*</span>
 </code></pre></td></tr></table>
@@ -521,13 +521,13 @@
 
 <span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">Mahasiswa</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">)</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">Mahasiswa</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     <span class="n">nim</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">&lt;Name: {}&gt;</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&#34;&lt;Name: {}&gt;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="15">
@@ -602,7 +602,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><ol start="19">
-<li>Import database from <code>models.py</code> add this line <code>from .models import db, Mahasiswa</code> to the <code>controller.py</code>, it's mean import from <code>models.py</code> for <code>db</code> variable and class <code>Mahasiswa</code></li>
+<li>Import database from <code>models.py</code> add this line <code>from .models import db, Mahasiswa</code> to the <code>controller.py</code>, it&rsquo;s mean import from <code>models.py</code> for <code>db</code> variable and class <code>Mahasiswa</code></li>
 <li>Modify <code>controller.py</code> to create function to storing data of <code>Mahasiswa</code> then save to the database that is already made and retrieving data with <code>Mahasiswa.query.all()</code> it will be retrieving all data from database then made with <code>try</code> and <code>except</code> to handling an error</li>
 </ol>
 <div class="highlight"><div class="chroma">
@@ -624,21 +624,21 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app.route</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">/</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">GET</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">POST</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">POST</span><span class="s1">&#39;</span><span class="p">:</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">]</span>
-        <span class="n">nim</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">nim</span><span class="s1">&#39;</span><span class="p">]</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+        <span class="n">nim</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;nim&#39;</span><span class="p">]</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">mhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="p">(</span><span class="n">nim</span><span class="o">=</span><span class="n">nim</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
             <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mhs</span><span class="p">)</span>
-            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="p">)</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Failed to add data.</span><span class="s2">&#34;</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Failed to add data.&#34;</span><span class="p">)</span>
             <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-    <span class="n">listMhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">listMhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
     <span class="k">print</span><span class="p">(</span><span class="n">listMhs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">home.html</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">listMhs</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&#34;home.html&#34;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">listMhs</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="21">
@@ -673,26 +673,26 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app.route</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">/form-update/&lt;int:id&gt;</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">updateForm</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="p">:</span>
-    <span class="n">mhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">form-update.html</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mhs</span><span class="p">)</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/form-update/&lt;int:id&gt;&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">updateForm</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="n">mhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&#34;form-update.html&#34;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mhs</span><span class="p">)</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">/form-update</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">POST</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">POST</span><span class="s1">&#39;</span><span class="p">:</span>
-        <span class="nb">id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">id</span><span class="s1">&#39;</span><span class="p">]</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">]</span>
-        <span class="n">nim</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">nim</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/form-update&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+        <span class="n">nim</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;nim&#39;</span><span class="p">]</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">mhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="p">)</span>
+            <span class="n">mhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
             <span class="n">mhs</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
             <span class="n">mhs</span><span class="o">.</span><span class="n">nim</span> <span class="o">=</span> <span class="n">nim</span>
-            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="p">)</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Failed to update data</span><span class="s2">&#34;</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Failed to update data&#34;</span><span class="p">)</span>
             <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">/</span><span class="s2">&#34;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="24">
@@ -717,16 +717,16 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app.route</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">/delete/&lt;int:id&gt;</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="p">:</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/delete/&lt;int:id&gt;&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">mhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="p">)</span>
+        <span class="n">mhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
         <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">mhs</span><span class="p">)</span>
-        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Failed delete mahasiswa</span><span class="s2">&#34;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Failed delete mahasiswa&#34;</span><span class="p">)</span>
         <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">/</span><span class="s2">&#34;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="after-change-structure-of-flask-project"></a><h3>After change structure of flask project</h3>

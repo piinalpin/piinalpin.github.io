@@ -44,10 +44,10 @@
     "wordcount":  665 ,
     "url": "https:\/\/blog.piinalpin.com\/2019\/12\/flask-mysql\/",
     
-        "datePublished": "2019-12-26T16:46:49\x2b07:00",
+        "datePublished": "2019-12-26T16:46:49\u002b07:00",
     
     
-        "dateModified": "2019-12-26T16:46:49\x2b07:00",
+        "dateModified": "2019-12-26T16:46:49\u002b07:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -306,7 +306,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><ol start="4">
-<li>Install MySQL database if you don't have, but if you have MySQL you can skip this step</li>
+<li>Install MySQL database if you don&rsquo;t have, but if you have MySQL you can skip this step</li>
 <li>Create user and grant privilege for user was created</li>
 </ol>
 <div class="highlight"><div class="chroma">
@@ -316,8 +316,8 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">USER</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">newuser</span><span class="s1">&#39;</span><span class="o">@</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">localhost</span><span class="s1">&#39;</span> <span class="k">IDENTIFIED</span> <span class="k">BY</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">password</span><span class="s1">&#39;</span><span class="p">;</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="o">*</span> <span class="p">.</span> <span class="o">*</span> <span class="k">TO</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">newuser</span><span class="s1">&#39;</span><span class="o">@</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">localhost</span><span class="s1">&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">&#39;newuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="k">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;password&#39;</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="o">*</span> <span class="p">.</span> <span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;newuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
 <span class="n">mysql</span><span class="o">&gt;</span> <span class="k">FLUSH</span> <span class="k">PRIVILEGES</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
@@ -347,8 +347,8 @@
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">__main__</span><span class="s2">&#34;</span><span class="p">:</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">localhost</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&#34;localhost&#34;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="8">
@@ -371,15 +371,15 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">DbConfig</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">DB_USERNAME</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">&lt;YOUR_USERNAME&gt;</span><span class="s2">&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">DB_PASSWORD</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">&lt;YOUR_PASSWORD&gt;</span><span class="s2">&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">DB_HOST</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">localhost</span><span class="s2">&#34;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DB_USERNAME</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_USERNAME&gt;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DB_PASSWORD</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_PASSWORD&gt;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DB_HOST</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">DB_PORT</span> <span class="o">=</span> <span class="mi">3306</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">DB_NAME</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">&lt;YOUR_DATABASE_NAME&gt;</span><span class="s2">&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DB_NAME</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_DATABASE_NAME&gt;&#34;</span>
 
-    <span class="k">def</span> <span class="nf">getUri</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">mysql+mysqlconnector://{}:{}@{}:{}/{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DB_USERNAME</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_PASSWORD</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_HOST</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">getUri</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&#34;mysql+mysqlconnector://{}:{}@{}:{}/{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DB_USERNAME</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_PASSWORD</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_HOST</span><span class="p">,</span>
                                                               <span class="bp">self</span><span class="o">.</span><span class="n">DB_PORT</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_NAME</span><span class="p">)</span>
 
 </code></pre></td></tr></table>
@@ -409,8 +409,8 @@
 <span class="kn">from</span> <span class="nn">app.config.Database</span> <span class="kn">import</span> <span class="n">DbConfig</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">SQLALCHEMY_DATABASE_URI</span><span class="s2">&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DbConfig</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">getUri</span><span class="p">(</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">SQLALCHEMY_TRACK_MODIFICATIONS</span><span class="s2">&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_DATABASE_URI&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DbConfig</span><span class="p">()</span><span class="o">.</span><span class="n">getUri</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_TRACK_MODIFICATIONS&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
 <span class="n">migrate</span> <span class="o">=</span> <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
@@ -444,8 +444,8 @@
 <span class="kn">from</span> <span class="nn">app.config.Database</span> <span class="kn">import</span> <span class="n">DbConfig</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">SQLALCHEMY_DATABASE_URI</span><span class="s2">&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DbConfig</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">getUri</span><span class="p">(</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">SQLALCHEMY_TRACK_MODIFICATIONS</span><span class="s2">&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_DATABASE_URI&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DbConfig</span><span class="p">()</span><span class="o">.</span><span class="n">getUri</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_TRACK_MODIFICATIONS&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">app.model</span> <span class="kn">import</span> <span class="n">CoursesModel</span><span class="p">,</span> <span class="n">CollegerModel</span><span class="p">,</span> <span class="n">TakeCourseModel</span>

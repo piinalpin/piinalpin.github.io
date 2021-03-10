@@ -69,16 +69,12 @@ Add brew cask by adding `homebrew/cask`
 brew tap homebrew/cask-versions
 ```
 
-Install JDK 11 and JDK 8
-```bash
-brew install java11
-brew install openjdk@8
-```
+Install JDK 11 and JDK 8 from [Azul OpenJDK](https://www.azul.com/downloads/zulu-community/?package=jdk)
 
 Add java11 and java8 into jenv
 ```bash
-jenv add /usr/local/opt/openjdk@11
-jenv add /usr/local/opt/openjdk@8
+jenv add /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/ 
+jenv add /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/ 
 ```
 
 See all installed versions java
