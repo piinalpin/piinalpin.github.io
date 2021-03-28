@@ -1,6 +1,146 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
+            <loc>https://blog.piinalpin.com/tags/broker/</loc>
+            
+                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</loc>
+            
+                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/java/</loc>
+            
+                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/message-broker/</loc>
+            
+                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/messaging/</loc>
+            
+                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/</loc>
+            
+                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/posts/</loc>
+            
+                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/rabbitmq/</loc>
+            
+                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
+            
+                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/</loc>
+            
+                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://blog.piinalpin.com/tags/bash/</loc>
             
                 <lastmod>2021-02-28T14:04:16+07:00</lastmod>
@@ -57,34 +197,6 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/</loc>
-            
-                <lastmod>2021-02-28T14:04:16+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/posts/</loc>
-            
-                <lastmod>2021-02-28T14:04:16+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://blog.piinalpin.com/tags/powerlevel10k/</loc>
             
                 <lastmod>2021-02-28T14:04:16+07:00</lastmod>
@@ -114,20 +226,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/2021/02/setup-my-own-mac/</loc>
-            
-                <lastmod>2021-02-28T14:04:16+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/</loc>
             
                 <lastmod>2021-02-28T14:04:16+07:00</lastmod>
             
@@ -197,20 +295,6 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/tags/java/</loc>
-            
-                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://blog.piinalpin.com/tags/microservices/</loc>
             
                 <lastmod>2021-01-30T16:21:21+07:00</lastmod>
@@ -226,20 +310,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/python/</loc>
-            
-                <lastmod>2021-01-30T16:21:21+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
             
                 <lastmod>2021-01-30T16:21:21+07:00</lastmod>
             
@@ -828,20 +898,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/2020/02/django-mail-sender/</loc>
-            
-                <lastmod>2020-02-12T13:19:04+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/rabbitmq/</loc>
             
                 <lastmod>2020-02-12T13:19:04+07:00</lastmod>
             

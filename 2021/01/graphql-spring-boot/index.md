@@ -27,7 +27,7 @@ GraphQL is a new specification (originally developed by Facebook for internal us
 
 **Starting with spring initializr**
 
-For all Spring applications, you should start with the [Spring Initializr](https://start.spring.io/). The Initializr offers a fast way to pull in all the dependencies you need for an application and does a lot of the set up for you. This example needs the Spring Batch. And we will started with maven project.
+For all Spring applications, you should start with the [Spring Initializr](https://start.spring.io/). The Initializr offers a fast way to pull in all the dependencies you need for an application and does a lot of the set up for you. And we will started with maven project.
 	
 The following listing shows the `pom.xml` file created when you choose Maven. And here my `pom.xml`:
 
