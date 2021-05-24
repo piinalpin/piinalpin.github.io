@@ -510,6 +510,98 @@ We should get an output
 {"status":"success","message":"Hello World! This api from Node.js"}
 ```
 
+**Create Deployment, Service and Ingress with Load Balancer YAML**
+
+Create file `my-kubernetes.yaml` and fill like this:
+
+```yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+  labels:
+    app: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: hello-world
+          image: gcr.io/google-samples/hello-app:2.0
+          env:
+          - name: "PORT"
+            value: "50000"
+        - name: hello-kubernetes
+          image: piinalpin/sample-node-web-app
+          env:
+          - name: "PORT"
+            value: "8080"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-service
+  labels:
+    app: web
+spec:
+  selector:
+    app: web
+  ports:
+    - name: world-port
+      protocol: TCP
+      port: 8001
+      targetPort: 50000
+    - name: kubernetes-port
+      protocol: TCP
+      port: 8002
+      targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-world
+spec:
+  rules:
+    - http:
+        paths:
+        - path: /hello-world
+          pathType: Prefix
+          backend:
+            service:
+              name: hello-service
+              port: 
+                number: 8001
+        - path: /hello-kubernetes
+          pathType: Prefix
+          backend:
+            service:
+              name: hello-service
+              port: 
+                number: 8002
+```
+
+- `kubectl` create deployment `hello-deployment`
+- `kubectl` create 3 replica pods, you can change how many replicas you want
+- `kubectl` create deployment container from `gcr.io/google-samples/hello-app:2.0` images and expose container port `50000` to master
+- `kubectl` create deployment container from `piinalpin/sample-node-web-app` images and expose container port `8080` to master
+- `kubectl` create service name `hello-service`
+- `kubectl` expose deployment which is labeled web
+- `kubectl` create port name `world-port` expose port `50000` to `8001`
+- `kubectl` create port name `kubernetes-port` expose port `8080` to `8002`
+- `kubectl` create type `Load Balancer`
+- `kubectl` create `Ingress` named `hello-world`
+- `kubectl` expose external IP `localhost`
+- `kubectl` create path `/hello-world` on port `8001`
+- `kubectl` create path `/hello-kubernetes` on port `8002`
+
 ### Thankyou
 
 [Docker Labs](https://birthday.play-with-docker.com/kubernetes-docker-desktop/) - Getting Started with Kubernetes on Docker Desktop

@@ -40,7 +40,7 @@
     
         "keywords": "Kubernetes, Deployment, DevOps, Container, Cluster, Nodes, Pods, K8s, Cloud Computing",
     
-    "wordcount":  1738 ,
+    "wordcount":  1941 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/05\/why-should-learn-kubernetes\/",
     
         "datePublished": "2021-05-24T09:19:24\u002b07:00",
@@ -146,8 +146,8 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-05-24>2021-05-24</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1738 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>9 min&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1941 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>10 min&nbsp;</div>
         </div>
 
         
@@ -987,7 +987,172 @@ kubectl get svc
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>
+</div><p><strong>Create Deployment, Service and Ingress with Load Balancer YAML</strong></p>
+<p>Create file <code>my-kubernetes.yaml</code> and fill like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
+</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Deployment</span><span class="w">
+</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">hello-deployment</span><span class="w">
+</span><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">web</span><span class="w">
+</span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">web</span><span class="w">
+</span><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">web</span><span class="w">
+</span><span class="w">    </span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">containers</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">hello-world</span><span class="w">
+</span><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">gcr.io/google-samples/hello-app:2.0</span><span class="w">
+</span><span class="w">          </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;PORT&#34;</span><span class="w">
+</span><span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;50000&#34;</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">hello-kubernetes</span><span class="w">
+</span><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">piinalpin/sample-node-web-app</span><span class="w">
+</span><span class="w">          </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;PORT&#34;</span><span class="w">
+</span><span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;8080&#34;</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Service</span><span class="w">
+</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">hello-service</span><span class="w">
+</span><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">web</span><span class="w">
+</span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">web</span><span class="w">
+</span><span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">world-port</span><span class="w">
+</span><span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">TCP</span><span class="w">
+</span><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8001</span><span class="w">
+</span><span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="m">50000</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kubernetes-port</span><span class="w">
+</span><span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">TCP</span><span class="w">
+</span><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8002</span><span class="w">
+</span><span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="m">8080</span><span class="w">
+</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">LoadBalancer</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">networking.k8s.io/v1</span><span class="w">
+</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Ingress</span><span class="w">
+</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">hello-world</span><span class="w">
+</span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">http</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">paths</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/hello-world</span><span class="w">
+</span><span class="w">          </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l">Prefix</span><span class="w">
+</span><span class="w">          </span><span class="nt">backend</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">hello-service</span><span class="w">
+</span><span class="w">              </span><span class="nt">port</span><span class="p">:</span><span class="w"> 
+</span><span class="w">                </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="m">8001</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/hello-kubernetes</span><span class="w">
+</span><span class="w">          </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l">Prefix</span><span class="w">
+</span><span class="w">          </span><span class="nt">backend</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">hello-service</span><span class="w">
+</span><span class="w">              </span><span class="nt">port</span><span class="p">:</span><span class="w"> 
+</span><span class="w">                </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="m">8002</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>kubectl</code> create deployment <code>hello-deployment</code></li>
+<li><code>kubectl</code> create 3 replica pods, you can change how many replicas you want</li>
+<li><code>kubectl</code> create deployment container from <code>gcr.io/google-samples/hello-app:2.0</code> images and expose container port <code>50000</code> to master</li>
+<li><code>kubectl</code> create deployment container from <code>piinalpin/sample-node-web-app</code> images and expose container port <code>8080</code> to master</li>
+<li><code>kubectl</code> create service name <code>hello-service</code></li>
+<li><code>kubectl</code> expose deployment which is labeled web</li>
+<li><code>kubectl</code> create port name <code>world-port</code> expose port <code>50000</code> to <code>8001</code></li>
+<li><code>kubectl</code> create port name <code>kubernetes-port</code> expose port <code>8080</code> to <code>8002</code></li>
+<li><code>kubectl</code> create type <code>Load Balancer</code></li>
+<li><code>kubectl</code> create <code>Ingress</code> named <code>hello-world</code></li>
+<li><code>kubectl</code> expose external IP <code>localhost</code></li>
+<li><code>kubectl</code> create path <code>/hello-world</code> on port <code>8001</code></li>
+<li><code>kubectl</code> create path <code>/hello-kubernetes</code> on port <code>8002</code></li>
+</ul>
+<a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>
 <p><a href="https://birthday.play-with-docker.com/kubernetes-docker-desktop/">Docker Labs</a> - Getting Started with Kubernetes on Docker Desktop</p>
 <p><a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/">kubernetes.io</a> - What is Kubernetes?</p>
 <p><a href="https://www.katacoda.com/courses/kubernetes/launch-single-node-cluster">KataCoda</a> - Launch Single Node Kubernetes Cluster</p>
