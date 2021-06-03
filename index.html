@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.81.0" />
+	<meta name="generator" content="Hugo 0.83.1" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>PiinAlpin</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -206,6 +206,158 @@
     
     
     <h1 class="post-title post-list-title" itemprop="name headline">
+        <a href="https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes-pv-and-pvc/">Persistent Volume and Persistent Volume Claim in Kubernetes</a>
+    </h1>
+
+    <div class="post-meta">
+        <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
+        published on&nbsp;<time datetime=2021-05-28>2021-05-28</time>&nbsp;
+        <span class="post-category">
+                included in
+                <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
+                    
+            </span>
+    </div>
+    <div class="post-content">
+        
+            <p>Managing storage is a distinct problem from managing compute instances. The PersistentVolume subsystem provides an API for users and administrators that abstracts details of how storage is provided from how it is consumed. To do this, we introduce two new API resources: PersistentVolume and PersistentVolumeClaim.</p>
+        
+    </div>
+    <div class="post-footer">
+        <a href="https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes-pv-and-pvc/">Read More</a>
+        
+            <div class="post-tags">
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/kubernetes/"><i class="fas fa-tag fa-fw"></i>Kubernetes</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/deployment/"><i class="fas fa-tag fa-fw"></i>Deployment</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/devops/"><i class="fas fa-tag fa-fw"></i>DevOps</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/container/"><i class="fas fa-tag fa-fw"></i>Container</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/cluster/"><i class="fas fa-tag fa-fw"></i>Cluster</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/nodes/"><i class="fas fa-tag fa-fw"></i>Nodes</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/pods/"><i class="fas fa-tag fa-fw"></i>Pods</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/k8s/"><i class="fas fa-tag fa-fw"></i>K8s</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/cloud-computing/"><i class="fas fa-tag fa-fw"></i>Cloud Computing</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/persistence-volume/"><i class="fas fa-tag fa-fw"></i>Persistence Volume</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/persistence-volume-claim/"><i class="fas fa-tag fa-fw"></i>Persistence Volume Claim</a></span>
+                
+            </div>
+        
+    </div>
+</article><article class="post" itemscope itemtype="http://schema.org/Article">
+    
+    
+    
+
+    
+    
+    
+    <h1 class="post-title post-list-title" itemprop="name headline">
+        <a href="https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes/">Learning Kubernetes</a>
+    </h1>
+
+    <div class="post-meta">
+        <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
+        published on&nbsp;<time datetime=2021-05-24>2021-05-24</time>&nbsp;
+        <span class="post-category">
+                included in
+                <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
+                    
+            </span>
+    </div>
+    <div class="post-content">
+        
+            <p>Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.</p>
+        
+    </div>
+    <div class="post-footer">
+        <a href="https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes/">Read More</a>
+        
+            <div class="post-tags">
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/kubernetes/"><i class="fas fa-tag fa-fw"></i>Kubernetes</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/deployment/"><i class="fas fa-tag fa-fw"></i>Deployment</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/devops/"><i class="fas fa-tag fa-fw"></i>DevOps</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/container/"><i class="fas fa-tag fa-fw"></i>Container</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/cluster/"><i class="fas fa-tag fa-fw"></i>Cluster</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/nodes/"><i class="fas fa-tag fa-fw"></i>Nodes</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/pods/"><i class="fas fa-tag fa-fw"></i>Pods</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/k8s/"><i class="fas fa-tag fa-fw"></i>K8s</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/cloud-computing/"><i class="fas fa-tag fa-fw"></i>Cloud Computing</a></span>
+                
+            </div>
+        
+    </div>
+</article><article class="post" itemscope itemtype="http://schema.org/Article">
+    
+    
+    
+
+    
+    
+    
+    <h1 class="post-title post-list-title" itemprop="name headline">
+        <a href="https://blog.piinalpin.com/2021/05/why-should-learn-docker/">Why Should Learn Docker</a>
+    </h1>
+
+    <div class="post-meta">
+        <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
+        published on&nbsp;<time datetime=2021-05-20>2021-05-20</time>&nbsp;
+        <span class="post-category">
+                included in
+                <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
+                    
+            </span>
+    </div>
+    <div class="post-content">
+        
+            <p>Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development - desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.</p>
+        
+    </div>
+    <div class="post-footer">
+        <a href="https://blog.piinalpin.com/2021/05/why-should-learn-docker/">Read More</a>
+        
+            <div class="post-tags">
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/devops/"><i class="fas fa-tag fa-fw"></i>DevOps</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/deployment/"><i class="fas fa-tag fa-fw"></i>Deployment</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/container/"><i class="fas fa-tag fa-fw"></i>Container</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/docker/"><i class="fas fa-tag fa-fw"></i>Docker</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/docker-container/"><i class="fas fa-tag fa-fw"></i>Docker Container</a></span>
+                
+            </div>
+        
+    </div>
+</article><article class="post" itemscope itemtype="http://schema.org/Article">
+    
+    
+    
+
+    
+    
+    
+    <h1 class="post-title post-list-title" itemprop="name headline">
         <a href="https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/">iMessage on Android With AirMessage Server for macOS and Ngrok</a>
     </h1>
 
@@ -331,142 +483,6 @@
             </div>
         
     </div>
-</article><article class="post" itemscope itemtype="http://schema.org/Article">
-    
-    
-    
-
-    
-    
-    
-    <h1 class="post-title post-list-title" itemprop="name headline">
-        <a href="https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/">Create Simple Microservice With gRPC</a>
-    </h1>
-
-    <div class="post-meta">
-        <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
-        published on&nbsp;<time datetime=2021-01-30>2021-01-30</time>&nbsp;
-        <span class="post-category">
-                included in
-                <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
-                    
-            </span>
-    </div>
-    <div class="post-content">
-        
-            <p>Build a simple microservices gRPC server and client using Spring Boot</p>
-        
-    </div>
-    <div class="post-footer">
-        <a href="https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/">Read More</a>
-        
-            <div class="post-tags">
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/java/"><i class="fas fa-tag fa-fw"></i>Java</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/spring-boot/"><i class="fas fa-tag fa-fw"></i>Spring Boot</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/python/"><i class="fas fa-tag fa-fw"></i>Python</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/grpc/"><i class="fas fa-tag fa-fw"></i>gRPC</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/grpc-client/"><i class="fas fa-tag fa-fw"></i>gRPC Client</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/grpcserver/"><i class="fas fa-tag fa-fw"></i>gRPCServer</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/microservices/"><i class="fas fa-tag fa-fw"></i>Microservices</a></span>
-                
-            </div>
-        
-    </div>
-</article><article class="post" itemscope itemtype="http://schema.org/Article">
-    
-    
-    
-
-    
-    
-    
-    <h1 class="post-title post-list-title" itemprop="name headline">
-        <a href="https://blog.piinalpin.com/2021/01/consume-graphql-react/">GraphQL Client using React</a>
-    </h1>
-
-    <div class="post-meta">
-        <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
-        published on&nbsp;<time datetime=2021-01-06>2021-01-06</time>&nbsp;
-        <span class="post-category">
-                included in
-                <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
-                    
-            </span>
-    </div>
-    <div class="post-content">
-        
-            <p>A documentation for create React application to consume data from GraphQL server using Apollo Client</p>
-        
-    </div>
-    <div class="post-footer">
-        <a href="https://blog.piinalpin.com/2021/01/consume-graphql-react/">Read More</a>
-        
-            <div class="post-tags">
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/react/"><i class="fas fa-tag fa-fw"></i>React</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/apollo-react/"><i class="fas fa-tag fa-fw"></i>Apollo-React</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/javascript/"><i class="fas fa-tag fa-fw"></i>Javascript</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/graphql/"><i class="fas fa-tag fa-fw"></i>GraphQL</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/graphql-client/"><i class="fas fa-tag fa-fw"></i>GraphQL Client</a></span>
-                
-            </div>
-        
-    </div>
-</article><article class="post" itemscope itemtype="http://schema.org/Article">
-    
-    
-    
-
-    
-    
-    
-    <h1 class="post-title post-list-title" itemprop="name headline">
-        <a href="https://blog.piinalpin.com/2021/01/graphql-spring-boot-relation/">GraphQL Server using Spring Boot with Relational Mapping</a>
-    </h1>
-
-    <div class="post-meta">
-        <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
-        published on&nbsp;<time datetime=2021-01-06>2021-01-06</time>&nbsp;
-        <span class="post-category">
-                included in
-                <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
-                    
-            </span>
-    </div>
-    <div class="post-content">
-        
-            <p>Build simple GraphQL server using Spring Boot with relational mapping MySQL database and Flyway database migration from scratch.</p>
-        
-    </div>
-    <div class="post-footer">
-        <a href="https://blog.piinalpin.com/2021/01/graphql-spring-boot-relation/">Read More</a>
-        
-            <div class="post-tags">
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/java/"><i class="fas fa-tag fa-fw"></i>Java</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/spring-boot/"><i class="fas fa-tag fa-fw"></i>Spring Boot</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/graphql/"><i class="fas fa-tag fa-fw"></i>GraphQL</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/graphiql/"><i class="fas fa-tag fa-fw"></i>GraphiQL</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://blog.piinalpin.com/tags/mysql/"><i class="fas fa-tag fa-fw"></i>MySQL</a></span>
-                
-            </div>
-        
-    </div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -479,9 +495,10 @@
                     <span class="page-link">
                         <a href="/page/3/">3</a>
                     </span>
-                </li><li class="page-item ">
+                </li><li class="page-item "><span class="page-link" aria-hidden="true">&hellip;</span></li>
+            <li class="page-item ">
                     <span class="page-link">
-                        <a href="/page/4/">4</a>
+                        <a href="/page/5/">5</a>
                     </span>
                 </li></ul></div></div>
             </main>
