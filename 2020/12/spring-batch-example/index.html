@@ -41,7 +41,7 @@
     
         "keywords": "Java, Spring Batch, Spring Boot, MySQL",
     
-    "wordcount":  1966 ,
+    "wordcount":  2002 ,
     "url": "https:\/\/blog.piinalpin.com\/2020\/12\/spring-batch-example\/",
     
         "datePublished": "2020-12-08T14:08:21\u002b07:00",
@@ -147,7 +147,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-12-08>2020-12-08</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1966 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 2002 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>10 min&nbsp;</div>
         </div>
 
@@ -268,17 +268,17 @@ Calvin Joe,25,M
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">M_HUMAN</span><span class="w">
-</span><span class="w"></span><span class="p">(</span><span class="w">
-</span><span class="w">    </span><span class="n">id</span><span class="w">         </span><span class="nb">bigint</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">updated_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w">                           </span><span class="k">null</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">deleted_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w">                           </span><span class="k">null</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">name</span><span class="w">       </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">                        </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">age</span><span class="w">        </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">                          </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">gender</span><span class="w">     </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">                          </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w">
-</span><span class="w"></span><span class="p">);</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">M_HUMAN</span>
+<span class="p">(</span>
+    <span class="n">id</span>         <span class="nb">bigint</span> <span class="n">auto_increment</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+    <span class="n">created_at</span> <span class="k">timestamp</span> <span class="k">default</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">updated_at</span> <span class="k">timestamp</span>                           <span class="k">null</span> <span class="k">on</span> <span class="k">update</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+    <span class="n">deleted_at</span> <span class="k">timestamp</span>                           <span class="k">null</span><span class="p">,</span>
+    <span class="n">name</span>       <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>                        <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">age</span>        <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                          <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">gender</span>     <span class="nb">varchar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                          <span class="k">not</span> <span class="k">null</span>
+<span class="p">);</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>Starting with spring initializr</li>
