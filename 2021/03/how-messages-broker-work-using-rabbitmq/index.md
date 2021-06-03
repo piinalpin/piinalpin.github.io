@@ -204,7 +204,7 @@ public class QueueConstant {
 }
 ```
 
-Create bean configuration to register queue in package `com.example.rabbitmq.configuration`
+Create bean configuration to register queue in package `com.example.rabbitmq.configuration`.
 
 ```java
 @Configuration
@@ -412,7 +412,7 @@ public class QueueConstant {
 }
 ```
 
-Create bean configuration to register queue in package `com.example.rabbitmqlistener.configuration`
+Create bean configuration to register queue in package `com.example.rabbitmqlistener.configuration`.
 
 ```java
 @Configuration
