@@ -41,7 +41,7 @@
     
         "keywords": "Java, Spring Boot, Messaging, Broker, Message Broker, RabbitMQ",
     
-    "wordcount":  1493 ,
+    "wordcount":  1587 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/03\/how-messages-broker-work-using-rabbitmq\/",
     
         "datePublished": "2021-03-28T11:20:37\u002b07:00",
@@ -147,7 +147,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-03-28>2021-03-28</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1493 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1587 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>8 min&nbsp;</div>
         </div>
 
@@ -582,6 +582,41 @@ server.port=8080
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
+</div><p>Create bean configuration to register queue in package <code>com.example.rabbitmq.configuration</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueConfiguration</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">helloWorld</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">sendEmail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
 </div><p>Create message sender to send a message to RabbitMQ <code>com.example.rabbitmq.service</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -890,6 +925,41 @@ spring.rabbitmq.port=5672
 
     <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">HELLO_WORLD</span> <span class="o">=</span> <span class="s">&#34;hello-world&#34;</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">EMAIL</span> <span class="o">=</span> <span class="s">&#34;email-sender&#34;</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Create bean configuration to register queue in package <code>com.example.rabbitmqlistener.configuration</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueConfiguration</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">helloWorld</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">sendEmail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">);</span>
+    <span class="o">}</span>
 
 <span class="o">}</span>
 </code></pre></td></tr></table>
