@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 19 Jul 2021 15:57:12 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/categories/documentation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Jul 2021 20:04:22 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/categories/documentation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Messaging on Kafka-CLI With Spring Boot</title>
+      <link>https://blog.piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</link>
+      <pubDate>Fri, 23 Jul 2021 20:04:22 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</guid>
+      <description>Overview Kafka is a distributed system consisting of servers and clients that communicate via a high-performance TCP network protocol. It can be deployed on bare-metal hardware, virtual machines, and containers in on-premise as well as cloud environments.
+Servers: Kafka is run as a cluster of one or more servers that can span multiple datacenters or cloud regions. Some of these servers form the storage layer, called the brokers. Other servers run Kafka Connect to continuously import and export data as event streams to integrate Kafka with your existing systems such as relational databases as well as other Kafka clusters.</description>
+    </item>
+    
     <item>
       <title>Centralized Configuration with Spring Cloud Config</title>
       <link>https://blog.piinalpin.com/2021/07/centralized-configuration-with-spring-cloud-config/</link>
