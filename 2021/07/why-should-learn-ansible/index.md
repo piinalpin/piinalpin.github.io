@@ -286,7 +286,7 @@ What if we want to uninstall the nano on all server? Just change `state: latest`
         state: absent
 ```
 
-You can see my example on **[Github](https://github.com/piinalpin/learning-ansible/tree/master/basic-learn)**
+You can see my example on **[Github](https://github.com/piinalpin/learning-ansible/tree/master/01-basic-learn)**
 
 ### References
 
