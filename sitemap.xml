@@ -1,9 +1,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
+            <loc>https://blog.piinalpin.com/tags/ansible/</loc>
+            
+                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/ansible-playbook/</loc>
+            
+                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://blog.piinalpin.com/categories/</loc>
             
-                <lastmod>2021-05-28T09:37:50+07:00</lastmod>
+                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -17,7 +45,217 @@
         <url>
             <loc>https://blog.piinalpin.com/tags/cloud-computing/</loc>
             
-                <lastmod>2021-05-28T09:37:50+07:00</lastmod>
+                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/devops/</loc>
+            
+                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/categories/documentation/</loc>
+            
+                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/</loc>
+            
+                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/posts/</loc>
+            
+                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/</loc>
+            
+                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/2021/07/why-should-learn-ansible/</loc>
+            
+                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/apache-kafka/</loc>
+            
+                <lastmod>2021-07-23T20:04:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/java/</loc>
+            
+                <lastmod>2021-07-23T20:04:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/kafka/</loc>
+            
+                <lastmod>2021-07-23T20:04:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/message-broker/</loc>
+            
+                <lastmod>2021-07-23T20:04:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</loc>
+            
+                <lastmod>2021-07-23T20:04:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
+            
+                <lastmod>2021-07-23T20:04:22+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/2021/07/centralized-configuration-with-spring-cloud-config/</loc>
+            
+                <lastmod>2021-07-19T15:57:12+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot-configuration/</loc>
+            
+                <lastmod>2021-07-19T15:57:12+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/spring-cloud-config/</loc>
+            
+                <lastmod>2021-07-19T15:57:12+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -58,34 +296,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/deployment/</loc>
-            
-                <lastmod>2021-05-28T09:37:50+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/devops/</loc>
-            
-                <lastmod>2021-05-28T09:37:50+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/categories/documentation/</loc>
             
                 <lastmod>2021-05-28T09:37:50+07:00</lastmod>
             
@@ -183,49 +393,7 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/</loc>
-            
-                <lastmod>2021-05-28T09:37:50+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://blog.piinalpin.com/tags/pods/</loc>
-            
-                <lastmod>2021-05-28T09:37:50+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/posts/</loc>
-            
-                <lastmod>2021-05-28T09:37:50+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/</loc>
             
                 <lastmod>2021-05-28T09:37:50+07:00</lastmod>
             
@@ -421,34 +589,6 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/tags/java/</loc>
-            
-                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/message-broker/</loc>
-            
-                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://blog.piinalpin.com/tags/messaging/</loc>
             
                 <lastmod>2021-03-28T11:20:37+07:00</lastmod>
@@ -464,20 +604,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/rabbitmq/</loc>
-            
-                <lastmod>2021-03-28T11:20:37+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
             
                 <lastmod>2021-03-28T11:20:37+07:00</lastmod>
             

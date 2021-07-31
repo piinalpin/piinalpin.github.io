@@ -204,6 +204,25 @@ public class QueueConstant {
 }
 ```
 
+Create bean configuration to register queue in package `com.example.rabbitmq.configuration`.
+
+```java
+@Configuration
+public class QueueConfiguration {
+
+    @Bean
+    public Queue helloWorld() {
+        return new Queue(QueueConstant.HELLO_WORLD);
+    }
+
+    @Bean
+    public Queue sendEmail() {
+        return new Queue(QueueConstant.EMAIL);
+    }
+
+}
+```
+
 Create message sender to send a message to RabbitMQ `com.example.rabbitmq.service`.
 
 ```java
@@ -389,6 +408,25 @@ public class QueueConstant {
 
     public final static String HELLO_WORLD = "hello-world";
     public final static String EMAIL = "email-sender";
+
+}
+```
+
+Create bean configuration to register queue in package `com.example.rabbitmqlistener.configuration`.
+
+```java
+@Configuration
+public class QueueConfiguration {
+
+    @Bean
+    public Queue helloWorld() {
+        return new Queue(QueueConstant.HELLO_WORLD);
+    }
+
+    @Bean
+    public Queue sendEmail() {
+        return new Queue(QueueConstant.EMAIL);
+    }
 
 }
 ```
