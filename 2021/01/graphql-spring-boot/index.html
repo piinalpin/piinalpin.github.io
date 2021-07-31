@@ -41,7 +41,7 @@
     
         "keywords": "Java, Spring Boot, GraphQL, GraphiQL, MySQL",
     
-    "wordcount":  3061 ,
+    "wordcount":  3009 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/01\/graphql-spring-boot\/",
     
         "datePublished": "2021-01-05T09:17:49\u002b07:00",
@@ -147,7 +147,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-01-05>2021-01-05</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 3061 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 3009 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>15 min&nbsp;</div>
         </div>
 
@@ -685,24 +685,24 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SET</span> <span class="n">AUTOCOMMIT</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-
-<span class="k">START</span> <span class="k">TRANSACTION</span><span class="p">;</span>
-    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">m_person</span> <span class="p">(</span>
-        <span class="n">id</span>                      <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
-        <span class="n">created_at</span>              <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">created_by</span>              <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">updated_at</span>              <span class="n">DATETIME</span><span class="p">,</span>
-        <span class="n">deleted_at</span>              <span class="n">DATETIME</span><span class="p">,</span>
-        <span class="n">first_name</span>              <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">last_name</span>               <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">date_of_birth</span>           <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">identity_type</span>           <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">identity_number</span>         <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">address</span>                 <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-    <span class="p">);</span>
-<span class="k">COMMIT</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SET</span><span class="w"> </span><span class="n">AUTOCOMMIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">m_person</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">        </span><span class="n">id</span><span class="w">                      </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">created_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">created_by</span><span class="w">              </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">updated_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">deleted_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">first_name</span><span class="w">              </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">last_name</span><span class="w">               </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">date_of_birth</span><span class="w">           </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">identity_type</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">identity_number</span><span class="w">         </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">address</span><span class="w">                 </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="w">
+</span><span class="w">    </span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="k">COMMIT</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Create abstract class <code>com.maverick.graphql.model.BaseModel</code> first which aim can be inheritence for another model.</p>
 <div class="highlight"><div class="chroma">
