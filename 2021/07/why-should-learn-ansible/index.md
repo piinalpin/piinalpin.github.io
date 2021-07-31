@@ -15,7 +15,7 @@ It uses no agents and no additional custom security infrastructure, so it's easy
 
 **Installing Virtual Box**
 
-Intall virtual box from [Downloads - Oracle VM Virtualbox](https://www.virtualbox.org/wiki/Downloads) or with [Homebrew](https://formulae.brew.sh/cask/virtualbox).
+Install virtual box from [Downloads - Oracle VM Virtualbox](https://www.virtualbox.org/wiki/Downloads) or with [Homebrew](https://formulae.brew.sh/cask/virtualbox).
 
 ```bash
 brew install virtualbox
