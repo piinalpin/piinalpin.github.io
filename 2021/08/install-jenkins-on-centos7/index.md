@@ -389,3 +389,5 @@ You can see my example on **[Github](https://github.com/piinalpin/learning-ansib
 [Docker](https://docs.docker.com/engine/install/centos/) - Install Docker Engine on CentOS
 
 [Docker](https://docs.docker.com/engine/install/linux-postinstall/) - Post-installation steps for Linux
+
+[AdoptOpenJDK](https://adoptopenjdk.net/installation.html#linux-pkg) - Installation
