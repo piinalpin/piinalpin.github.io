@@ -1,6 +1,160 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
+            <loc>https://blog.piinalpin.com/categories/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/centos/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/centos7/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/continous-integration/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/devops/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/categories/documentation/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/jenkins/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/posts/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/</loc>
+            
+                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://blog.piinalpin.com/tags/ansible/</loc>
             
                 <lastmod>2021-07-31T19:26:29+07:00</lastmod>
@@ -29,91 +183,7 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/categories/</loc>
-            
-                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://blog.piinalpin.com/tags/cloud-computing/</loc>
-            
-                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/devops/</loc>
-            
-                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/categories/documentation/</loc>
-            
-                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/</loc>
-            
-                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/posts/</loc>
-            
-                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/</loc>
             
                 <lastmod>2021-07-31T19:26:29+07:00</lastmod>
             
@@ -1698,6 +1768,18 @@
             <loc>https://blog.piinalpin.com/about/</loc>
             
                 <lastmod>2019-08-02T11:04:49+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/ci/cd/</loc>
             
             
                 <changefreq>weekly</changefreq>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Continous Integration on PiinAlpin</title>
+    <link>https://blog.piinalpin.com/tags/continous-integration/</link>
+    <description>Recent content in Continous Integration on PiinAlpin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 01 Aug 2021 09:38:14 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/continous-integration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Jenkins on Centos7</title>
+      <link>https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/</link>
+      <pubDate>Sun, 01 Aug 2021 09:38:14 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/</guid>
+      <description>Overview Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
+Jenkins can be installed through native system packages, Docker, or even run standalone by any machine with a Java Runtime Environment (JRE) installed (Jenkins.io).
+Prerequisites  Vagrant, see how to install Vagrant here Add the following host entries on local device /etc/hosts : 1 2  192.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -296,6 +296,6 @@ You can see my example on **[Github](https://github.com/piinalpin/learning-ansib
 
 [HVOPS](https://hvops.com/articles/ansible-mac-osx/) - Install Ansible on Mac OSX
 
-[Youtube](https://www.youtube.com/watch?v=5hycyr-8EKs) - you need to learn Ansible RIGHT NOW!! (Linux Automation)
+[NetworkChuck](https://www.youtube.com/watch?v=5hycyr-8EKs) - you need to learn Ansible RIGHT NOW!! (Linux Automation)
 
 [TechTarget](https://searchitoperations.techtarget.com/definition/Ansible-playbook) - Ansible playbook
