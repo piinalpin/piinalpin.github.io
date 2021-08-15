@@ -20,6 +20,28 @@ Redis By default there are 16 databases (indexed from 0 to 15) and you can navig
     </item>
     
     <item>
+      <title>Install Jenkins on Centos7</title>
+      <link>https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/</link>
+      <pubDate>Sun, 01 Aug 2021 09:38:14 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/</guid>
+      <description>Overview Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
+Jenkins can be installed through native system packages, Docker, or even run standalone by any machine with a Java Runtime Environment (JRE) installed (Jenkins.io).
+Prerequisites  Vagrant, see how to install Vagrant here Add the following host entries on local device /etc/hosts : 1 2  192.</description>
+    </item>
+    
+    <item>
+      <title>Why Should Learn Ansible - Linux Automation</title>
+      <link>https://blog.piinalpin.com/2021/07/why-should-learn-ansible/</link>
+      <pubDate>Sat, 31 Jul 2021 19:26:29 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2021/07/why-should-learn-ansible/</guid>
+      <description>Overview Ansible is a radically simple IT automation engine that automates cloud provisioning, configuration management, application deployment, intra-service orchestration, and many other IT needs.
+Designed for multi-tier deployments since day one, Ansible models your IT infrastructure by describing how all of your systems inter-relate, rather than just managing one system at a time.
+It uses no agents and no additional custom security infrastructure, so it&amp;rsquo;s easy to deploy - and most importantly, it uses a very simple language (YAML, in the form of Ansible Playbooks) that allow you to describe your automation jobs in a way that approaches plain English.</description>
+    </item>
+    
+    <item>
       <title>Messaging on Kafka-CLI With Spring Boot</title>
       <link>https://blog.piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</link>
       <pubDate>Fri, 23 Jul 2021 20:04:22 +0700</pubDate>
