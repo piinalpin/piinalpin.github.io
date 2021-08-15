@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on PiinAlpin</title>
-    <link>https://blog.piinalpin.com/tags/docker/</link>
-    <description>Recent content in Docker on PiinAlpin</description>
+    <title>YAML on PiinAlpin</title>
+    <link>https://blog.piinalpin.com/tags/yaml/</link>
+    <description>Recent content in YAML on PiinAlpin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 15 Aug 2021 20:01:28 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Aug 2021 20:01:28 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/yaml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Docker Compose Collection</title>
       <link>https://blog.piinalpin.com/2021/08/docker-compose-collection/</link>
@@ -17,15 +17,6 @@
       <description>Basic command : 1 2  docker-compose -f $FILENAME up -d docker-compose -f $FILENAME down -v   Kafka CLI Download docker compose configuration using curl
 1  curl -o kafka-cli.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yml   This yaml kafka-cli.yaml will create a new container zookeeper and exposed port 2181 on host port. Also create a new container kafka and exposed port 29092, 9092 and 9101 on host port.
 Redis By default there are 16 databases (indexed from 0 to 15) and you can navigate between them using select command.</description>
-    </item>
-    
-    <item>
-      <title>Why Should Learn Docker</title>
-      <link>https://blog.piinalpin.com/2021/05/why-should-learn-docker/</link>
-      <pubDate>Thu, 20 May 2021 12:57:27 +0700</pubDate>
-      
-      <guid>https://blog.piinalpin.com/2021/05/why-should-learn-docker/</guid>
-      <description></description>
     </item>
     
   </channel>
