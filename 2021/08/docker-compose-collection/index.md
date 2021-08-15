@@ -8,6 +8,7 @@ docker-compose -f $FILENAME up -d
 docker-compose -f $FILENAME down -v
 ```
 
+
 ### Kafka CLI
 
 Download docker compose configuration using curl

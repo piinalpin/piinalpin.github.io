@@ -41,7 +41,7 @@
     
         "keywords": "Java, Spring Boot, GraphQL, GraphiQL, MySQL",
     
-    "wordcount":  1250 ,
+    "wordcount":  1303 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/01\/graphql-spring-boot-relation\/",
     
         "datePublished": "2021-01-06T09:30:18\u002b07:00",
@@ -147,8 +147,8 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-01-06>2021-01-06</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1250 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>6 min&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1303 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>7 min&nbsp;</div>
         </div>
 
         
@@ -247,24 +247,24 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SET</span><span class="w"> </span><span class="n">AUTOCOMMIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span><span class="w">
-</span><span class="w">    </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">m_book</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span><span class="w">        </span><span class="n">id</span><span class="w">                      </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="n">created_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="n">created_by</span><span class="w">              </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="n">updated_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="n">deleted_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="n">author_id</span><span class="w">               </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="n">title</span><span class="w">                   </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="n">publisher</span><span class="w">               </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="n">description</span><span class="w">             </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span><span class="w">
-</span><span class="w">        </span><span class="n">release_date</span><span class="w">            </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">author_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">m_person</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">
-</span><span class="w">    </span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">COMMIT</span><span class="p">;</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SET</span> <span class="n">AUTOCOMMIT</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+
+<span class="k">START</span> <span class="k">TRANSACTION</span><span class="p">;</span>
+    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">m_book</span> <span class="p">(</span>
+        <span class="n">id</span>                      <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+        <span class="n">created_at</span>              <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">created_by</span>              <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">updated_at</span>              <span class="n">DATETIME</span><span class="p">,</span>
+        <span class="n">deleted_at</span>              <span class="n">DATETIME</span><span class="p">,</span>
+        <span class="n">author_id</span>               <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">title</span>                   <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">publisher</span>               <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="n">description</span>             <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+        <span class="n">release_date</span>            <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">author_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">m_person</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+    <span class="p">);</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create book model <code>com.maverick.graphql.model.BookModel</code> which is inheritence from <code>BaseModel</code>.</p>
 <div class="highlight"><div class="chroma">

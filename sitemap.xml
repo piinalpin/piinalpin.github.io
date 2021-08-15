@@ -3,11 +3,7 @@
         <url>
             <loc>https://blog.piinalpin.com/categories/</loc>
             
-<<<<<<< HEAD
                 <lastmod>2021-08-15T20:01:28+07:00</lastmod>
-=======
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
             
                 <changefreq>weekly</changefreq>
@@ -19,7 +15,6 @@
         </url>
     
         <url>
-<<<<<<< HEAD
             <loc>https://blog.piinalpin.com/tags/collection/</loc>
             
                 <lastmod>2021-08-15T20:01:28+07:00</lastmod>
@@ -51,11 +46,6 @@
             <loc>https://blog.piinalpin.com/tags/docker-compose/</loc>
             
                 <lastmod>2021-08-15T20:01:28+07:00</lastmod>
-=======
-            <loc>https://blog.piinalpin.com/tags/centos/</loc>
-            
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
             
                 <changefreq>weekly</changefreq>
@@ -67,13 +57,9 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/tags/centos7/</loc>
+            <loc>https://blog.piinalpin.com/categories/documentation/</loc>
             
-<<<<<<< HEAD
                 <lastmod>2021-08-15T20:01:28+07:00</lastmod>
-=======
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
             
                 <changefreq>weekly</changefreq>
@@ -85,15 +71,9 @@
         </url>
     
         <url>
-<<<<<<< HEAD
             <loc>https://blog.piinalpin.com/2021/08/docker-compose-collection/</loc>
             
                 <lastmod>2021-08-15T20:01:28+07:00</lastmod>
-=======
-            <loc>https://blog.piinalpin.com/tags/continous-integration/</loc>
-            
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
             
                 <changefreq>weekly</changefreq>
@@ -105,15 +85,9 @@
         </url>
     
         <url>
-<<<<<<< HEAD
             <loc>https://blog.piinalpin.com/</loc>
             
                 <lastmod>2021-08-15T20:01:28+07:00</lastmod>
-=======
-            <loc>https://blog.piinalpin.com/tags/devops/</loc>
-            
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
             
                 <changefreq>weekly</changefreq>
@@ -125,15 +99,9 @@
         </url>
     
         <url>
-<<<<<<< HEAD
             <loc>https://blog.piinalpin.com/posts/</loc>
             
                 <lastmod>2021-08-15T20:01:28+07:00</lastmod>
-=======
-            <loc>https://blog.piinalpin.com/categories/documentation/</loc>
-            
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
             
                 <changefreq>weekly</changefreq>
@@ -145,29 +113,9 @@
         </url>
     
         <url>
-<<<<<<< HEAD
             <loc>https://blog.piinalpin.com/tags/</loc>
             
                 <lastmod>2021-08-15T20:01:28+07:00</lastmod>
-=======
-            <loc>https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/</loc>
-            
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/jenkins/</loc>
-            
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
             
                 <changefreq>weekly</changefreq>
@@ -181,11 +129,7 @@
         <url>
             <loc>https://blog.piinalpin.com/tags/yaml/</loc>
             
-<<<<<<< HEAD
                 <lastmod>2021-08-15T20:01:28+07:00</lastmod>
-=======
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
             
                 <changefreq>weekly</changefreq>
@@ -268,90 +212,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/jenkins/</loc>
-            
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/ansible/</loc>
-            
-                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/ansible-playbook/</loc>
-            
-                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/cloud-computing/</loc>
-            
-                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/2021/07/why-should-learn-ansible/</loc>
-            
-                <lastmod>2021-07-31T19:26:29+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/apache-kafka/</loc>
-            
-                <lastmod>2021-08-01T09:38:14+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/</loc>
             
                 <lastmod>2021-08-01T09:38:14+07:00</lastmod>
             
@@ -492,8 +352,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
-<<<<<<< HEAD
-=======
             
                 <lastmod>2021-07-23T20:04:22+07:00</lastmod>
             
@@ -508,9 +366,8 @@
     
         <url>
             <loc>https://blog.piinalpin.com/2021/07/centralized-configuration-with-spring-cloud-config/</loc>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
-                <lastmod>2021-07-23T20:04:22+07:00</lastmod>
+                <lastmod>2021-07-19T15:57:12+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -522,11 +379,7 @@
         </url>
     
         <url>
-<<<<<<< HEAD
-            <loc>https://blog.piinalpin.com/2021/07/centralized-configuration-with-spring-cloud-config/</loc>
-=======
             <loc>https://blog.piinalpin.com/tags/spring-boot-configuration/</loc>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
                 <lastmod>2021-07-19T15:57:12+07:00</lastmod>
             
@@ -540,11 +393,7 @@
         </url>
     
         <url>
-<<<<<<< HEAD
-            <loc>https://blog.piinalpin.com/tags/spring-boot-configuration/</loc>
-=======
             <loc>https://blog.piinalpin.com/tags/spring-cloud-config/</loc>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
                 <lastmod>2021-07-19T15:57:12+07:00</lastmod>
             
@@ -558,29 +407,7 @@
         </url>
     
         <url>
-<<<<<<< HEAD
-            <loc>https://blog.piinalpin.com/tags/spring-cloud-config/</loc>
-=======
             <loc>https://blog.piinalpin.com/tags/cluster/</loc>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
-            
-                <lastmod>2021-07-19T15:57:12+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-<<<<<<< HEAD
-            <loc>https://blog.piinalpin.com/tags/cluster/</loc>
-=======
-            <loc>https://blog.piinalpin.com/tags/container/</loc>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
                 <lastmod>2021-05-28T09:37:50+07:00</lastmod>
             
@@ -594,11 +421,7 @@
         </url>
     
         <url>
-<<<<<<< HEAD
             <loc>https://blog.piinalpin.com/tags/container/</loc>
-=======
-            <loc>https://blog.piinalpin.com/tags/deployment/</loc>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
             
                 <lastmod>2021-05-28T09:37:50+07:00</lastmod>
             

@@ -12,22 +12,14 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-<<<<<<< HEAD
             <lastBuildDate>Sun, 15 Aug 2021 20:01:28 +0700</lastBuildDate>
-=======
-            <lastBuildDate>Sun, 01 Aug 2021 09:38:14 +0700</lastBuildDate>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
         
         <atom:link href="https://blog.piinalpin.com/" rel="self" type="application/rss+xml" />
         
             <item>
                 <title>Posts</title>
                 <link>https://blog.piinalpin.com/posts/</link>
-<<<<<<< HEAD
                 <pubDate>Sun, 15 Aug 2021 20:01:28 +0700</pubDate>
-=======
-                <pubDate>Sun, 01 Aug 2021 09:38:14 +0700</pubDate>
->>>>>>> 10a6d2852eaf9143f5a2f170dad9096c31f6d150
                 
                 <guid>https://blog.piinalpin.com/posts/</guid>
                 <description></description>
