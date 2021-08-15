@@ -1,7 +1,7 @@
 # My Docker Compose Collection
 
 
-### Basic command :
+### Basic command
 
 ```bash
 docker-compose -f $FILENAME up -d
