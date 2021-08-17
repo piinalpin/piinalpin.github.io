@@ -13,7 +13,7 @@ docker-compose -f $FILENAME down -v
 Download docker compose configuration using curl
 
 ```bash
-curl -o kafka-cli.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yml
+curl -o kafka-cli.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yaml
 ```
 
 This yaml `kafka-cli.yaml` will create a new container `zookeeper` and exposed port `2181` on host port. Also create a new container `kafka` and exposed port `29092`, `9092` and `9101` on host port.
@@ -25,7 +25,7 @@ By default there are 16 databases (indexed from 0 to 15) and you can navigate be
 Download docker compose configuration using curl
 
 ```bash
-curl -o redis.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/redis.yml
+curl -o redis.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/redis.yaml
 ```
 
 This yaml `redis.yaml` will create a new container `redis` and exposed port `6379` on host port.
@@ -68,7 +68,7 @@ Redis Browser Dashboard
 Download docker compose configuration using curl
 
 ```bash
-curl -o mysql.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mysql.yml
+curl -o mysql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mysql.yaml
 ```
 
 This yaml `mysql.yaml` will create a new container `mysql` and exposed port `3306` on host port.
@@ -113,7 +113,7 @@ docker exec -it mysql bash
 Download docker compose configuration using curl
 
 ```bash
-curl -o postgresql.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/postgresql.yml
+curl -o postgresql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/postgresql.yaml
 ```
 
 This yaml `postgresql.yaml` will create a new container `postgresql` and exposed port `5432` on host port.
@@ -159,7 +159,7 @@ docker exec -it postgresql bash
 Download docker compose configuration using curl
 
 ```bash
-curl -o sqlserver.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sqlserver.yml
+curl -o sqlserver.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sqlserver.yaml
 ```
 
 This yaml `sqlserver.yaml` will create a new container `sqlserver` and exposed port `1433` on host port.
@@ -202,7 +202,7 @@ docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd -U sa -P SevenEightTwo782
 Download docker compose configuration using curl
 
 ```bash
-curl -o rabbitmq.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/rabbitmq.yml
+curl -o rabbitmq.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/rabbitmq.yaml
 ```
 
 This yaml `rabbitmq.yaml` will create a new container `rabbitmq` and exposed port `5672` and `15672` on host port.
@@ -230,7 +230,7 @@ Default RabbitMQ management user is `guest` and password is `guest`. Go to `loca
 Download docker compose configuration using curl
 
 ```bash
-curl -o sonarqube.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sonarqube.yml
+curl -o sonarqube.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sonarqube.yaml
 ```
 
 This yaml `sonarqube.yaml` will create a new container `sonarqube` and exposed port `9000` and `9002` on host port.

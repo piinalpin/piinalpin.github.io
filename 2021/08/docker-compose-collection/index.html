@@ -7,6 +7,7 @@
 <meta name="robots" content="noodp" />
 <meta name="Description" content="I created this docker configuration pool so that when I forget the configuration environment, I can reuse it.">
 <link rel="prev" href="https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/" />
+<link rel="next" href="https://blog.piinalpin.com/2021/08/bash-script-for-lazy-people/" />
 <link rel="canonical" href="https://blog.piinalpin.com/2021/08/docker-compose-collection/" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -243,7 +244,7 @@ docker-compose -f <span class="nv">$FILENAME</span> down -v
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o kafka-cli.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yml
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o kafka-cli.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>kafka-cli.yaml</code> will create a new container <code>zookeeper</code> and exposed port <code>2181</code> on host port. Also create a new container <code>kafka</code> and exposed port <code>29092</code>, <code>9092</code> and <code>9101</code> on host port.</p>
@@ -255,7 +256,7 @@ docker-compose -f <span class="nv">$FILENAME</span> down -v
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o redis.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/redis.yml
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o redis.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/redis.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>redis.yaml</code> will create a new container <code>redis</code> and exposed port <code>6379</code> on host port.</p>
@@ -302,7 +303,7 @@ get <span class="o">[</span>KEY_NAME<span class="o">]</span>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o mysql.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mysql.yml
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o mysql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mysql.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>mysql.yaml</code> will create a new container <code>mysql</code> and exposed port <code>3306</code> on host port.</p>
@@ -376,7 +377,7 @@ get <span class="o">[</span>KEY_NAME<span class="o">]</span>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o postgresql.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/postgresql.yml
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o postgresql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/postgresql.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>postgresql.yaml</code> will create a new container <code>postgresql</code> and exposed port <code>5432</code> on host port.</p>
@@ -450,7 +451,7 @@ get <span class="o">[</span>KEY_NAME<span class="o">]</span>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o sqlserver.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sqlserver.yml
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o sqlserver.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sqlserver.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>sqlserver.yaml</code> will create a new container <code>sqlserver</code> and exposed port <code>1433</code> on host port.</p>
@@ -516,7 +517,7 @@ get <span class="o">[</span>KEY_NAME<span class="o">]</span>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o rabbitmq.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/rabbitmq.yml
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o rabbitmq.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/rabbitmq.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>rabbitmq.yaml</code> will create a new container <code>rabbitmq</code> and exposed port <code>5672</code> and <code>15672</code> on host port.</p>
@@ -548,7 +549,7 @@ get <span class="o">[</span>KEY_NAME<span class="o">]</span>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o sonarqube.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sonarqube.yml
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o sonarqube.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sonarqube.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>sonarqube.yaml</code> will create a new container <code>sonarqube</code> and exposed port <code>9000</code> and <code>9002</code> on host port.</p>
@@ -660,6 +661,8 @@ get <span class="o">[</span>KEY_NAME<span class="o">]</span>
         
             <a href="https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/" class="prev" rel="prev" title="Install Jenkins on Centos7"><i class="fas fa-angle-left fa-fw"></i>Install Jenkins on Centos7</a>
         
+        
+            <a href="https://blog.piinalpin.com/2021/08/bash-script-for-lazy-people/" class="next" rel="next" title="Bash Script for Lazy People">Bash Script for Lazy People<i class="fas fa-angle-right fa-fw"></i></a>
         
     </div>
 </div>
