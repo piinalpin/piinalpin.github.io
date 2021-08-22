@@ -41,7 +41,7 @@
     
         "keywords": "Docker, Docker Compose, Collection, YAML",
     
-    "wordcount":  714 ,
+    "wordcount":  748 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/08\/docker-compose-collection\/",
     
         "datePublished": "2021-08-15T20:01:28\u002b07:00",
@@ -147,7 +147,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-08-15>2021-08-15</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 714 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 748 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>4 min&nbsp;</div>
         </div>
 
@@ -291,11 +291,24 @@ docker-compose -f <span class="nv">$FILENAME</span> down -v
 get <span class="o">[</span>KEY_NAME<span class="o">]</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><strong>Redis Browser</strong></p>
-<p>Go to <code>localhost:5001</code> fill host <code>redis</code> container. Default is <code>172.17.0.1</code>.</p>
-<p><img src="/images/redis1.png" alt="Redis Browser"></p>
-<p>Redis Browser Dashboard</p>
-<p><img src="/images/redis2.png" alt="Redis Browser Dashboard"></p>
+</div><p><strong>Another Redis Desktop Manager</strong></p>
+<p>Install <a href="https://formulae.brew.sh/cask/another-redis-desktop-manager">Another Redis Desktop Manager</a> with homebrew. You can run with following command on your terminal.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">brew install cask 
+brew install --cask another-redis-desktop-manager
+</code></pre></td></tr></table>
+</div>
+</div><p>Open the application, and should looks like below.</p>
+<p><img src="/images/redis1.png" alt="Another RDM"></p>
+<p>Another Redis Desktop Manager dashboard</p>
+<p><img src="/images/redis2.png" alt="Another RDM - Dashboard"></p>
+<p>Another Redis Desktop Manager add new key.</p>
+<p><img src="/images/redis3.png" alt="Another RDM - Add New Key"></p>
 <a class="post-dummy-target" id="mysql"></a><h3>MySQL</h3>
 <p>Download docker compose configuration using curl</p>
 <div class="highlight"><div class="chroma">
