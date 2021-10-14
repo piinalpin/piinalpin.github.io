@@ -41,7 +41,7 @@
     
         "keywords": "Kubernetes, Deployment, DevOps, Container, Cluster, Nodes, Pods, K8s, Cloud Computing, Persistence Volume, Persistence Volume Claim",
     
-    "wordcount":  1319 ,
+    "wordcount":  1233 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/05\/why-should-learn-kubernetes-pv-and-pvc\/",
     
         "datePublished": "2021-05-28T09:37:50\u002b07:00",
@@ -147,8 +147,8 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-05-28>2021-05-28</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1319 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>7 min&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1233 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>6 min&nbsp;</div>
         </div>
 
         
@@ -236,7 +236,7 @@
 <p>Create a <code>pv-example.yaml</code> configuration file for the hostPath PersistentVolume:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -252,7 +252,7 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">PersistentVolume</span><span class="w">
 </span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">pv-example</span><span class="w">
@@ -277,29 +277,29 @@
 <p>Create a persistent volume</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f pv-example.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f pv-example.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>Get PersistentVolume was created</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get pv pv-example
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get pv pv-example
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">NAME         CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">NAME         CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
 pv-example   10Gi       RWO            Retain           Available           manual                  7s
 </code></pre></td></tr></table>
 </div>
@@ -308,7 +308,7 @@ pv-example   10Gi       RWO            Retain           Available           manu
 <p>Create a <code>pvc-example.yaml</code> configuration file and fill with following code :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -323,7 +323,7 @@ pv-example   10Gi       RWO            Retain           Available           manu
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">PersistentVolumeClaim</span><span class="w">
 </span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">pv-claim-example</span><span class="w">
@@ -341,49 +341,49 @@ pv-example   10Gi       RWO            Retain           Available           manu
 </div><p>Create a persistent volume claim</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f pvc-example.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f pvc-example.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>Get PersistentVolume was created</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get pvc pv-claim-example
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get pvc pv-claim-example
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">NAME               STATUS   VOLUME       CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">NAME               STATUS   VOLUME       CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 pv-claim-example   Bound    pv-example   10Gi       RWO            manual         12s
 </code></pre></td></tr></table>
 </div>
 </div><p>Check if persistent volume was claimed</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get pv pv-example
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get pv pv-example
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output shows a <code>STATUS</code> of <code>Bound</code> and <code>CLAIM</code> of <code>default/pv-claim-example</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">NAME         CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                      STORAGECLASS   REASON   AGE
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">NAME         CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                      STORAGECLASS   REASON   AGE
 pv-example   10Gi       RWO            Retain           Bound    default/pv-claim-example   manual                  9m21s
 </code></pre></td></tr></table>
 </div>
@@ -391,7 +391,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 <p>Create a pod <code>pod-uses-pvc-example.yaml</code> configuration file that uses the PersistentVolumeClaim as a volume</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -411,7 +411,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Pod</span><span class="w">
 </span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">pv-example-pod</span><span class="w">
@@ -434,34 +434,34 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </div><p>Create the pod</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f pod-uses-pvc-example.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f pod-uses-pvc-example.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>Check pod is running</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get pods pv-example-pod
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get pods pv-example-pod
 </code></pre></td></tr></table>
 </div>
 </div><p>Get cluster where pods is running</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl describe pods pv-example-pod
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl describe pods pv-example-pod
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -471,7 +471,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Events:
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Events:
   Type    Reason     Age   From               Message
   ----    ------     ----  ----               -------
   Normal  Scheduled  10m   default-scheduler  Successfully assigned default/pv-example-pod to gke-rattlesnake-cluster-default-pool-5da13591-6wb4
@@ -484,37 +484,37 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </div><p>Get external IP for <code>gke-rattlesnake-cluster-default-pool-5da13591-6wb4</code> node pool</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get nodes gke-rattlesnake-cluster-default-pool-5da13591-6wb4 --output wide
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get nodes gke-rattlesnake-cluster-default-pool-5da13591-6wb4 --output wide
 </code></pre></td></tr></table>
 </div>
 </div><p>Then, ssh into cluster node, then create directory <code>/var/lib/data</code> and create file <code>index.html</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo mkdir /var/lib/data/ <span class="o">&amp;&amp;</span> sudo sh -c <span class="s2">&#34;echo &#39;Hello from Kubernetes storage&#39; &gt; /var/lib/data/index.html&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo mkdir /var/lib/data/ <span class="o">&amp;&amp;</span> sudo sh -c <span class="s2">&#34;echo &#39;Hello from Kubernetes storage&#39; &gt; /var/lib/data/index.html&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Go to a shell to the container running in your Pod :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl <span class="nb">exec</span> -it pv-example-pod  -- /bin/bash
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl <span class="nb">exec</span> -it pv-example-pod  -- /bin/bash
 </code></pre></td></tr></table>
 </div>
 </div><p>In your shell, verify that nginx is serving the index.html file from the hostPath volume :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl http://localhost/
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl http://localhost/
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output <code>Hello from Kubernetes storage</code></p>
@@ -526,7 +526,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -561,7 +561,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span><span class="c"># DB PERSISTENCE VOLUME</span><span class="w">
 </span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">PersistentVolume</span><span class="w">
@@ -601,7 +601,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -641,7 +641,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span><span class="c"># APP DEPLOYMENT</span><span class="w">
 </span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Deployment</span><span class="w">
@@ -686,7 +686,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -726,7 +726,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span><span class="c"># DB DEPLOYMENT</span><span class="w">
 </span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Deployment</span><span class="w">
@@ -771,7 +771,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -812,7 +812,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </span><span class="lnt">39
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span><span class="c"># APP SERVICE</span><span class="w">
 </span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Service</span><span class="w">
@@ -858,7 +858,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -876,7 +876,7 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">networking.k8s.io/v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Ingress</span><span class="w">
 </span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
@@ -897,26 +897,26 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </div><p>Apply configuration file</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f app-and-database.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f app-and-database.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Create database and table on running container</strong></p>
 <p>Run container with creating a pod</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl run -it --rm --image<span class="o">=</span>mysql:latest --restart<span class="o">=</span>Never mysql-client -- mysql -h &lt;DB_SVC_NAME&gt; -p&lt;YOUR_MYSQL_PASSWORD&gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl run -it --rm --image<span class="o">=</span>mysql:latest --restart<span class="o">=</span>Never mysql-client -- mysql -h &lt;DB_SVC_NAME&gt; -p&lt;YOUR_MYSQL_PASSWORD&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>Create database, table and insert value</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -953,89 +953,89 @@ pv-example   10Gi       RWO            Retain           Bound    default/pv-clai
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">programming_languages</span><span class="o">`</span>
-<span class="p">(</span>
-  <span class="o">`</span><span class="n">id</span><span class="o">`</span>            <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">auto_increment</span> <span class="p">,</span>
-  <span class="o">`</span><span class="n">name</span><span class="o">`</span>          <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="p">,</span>
-  <span class="o">`</span><span class="n">released_year</span><span class="o">`</span> <span class="nb">INT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="p">,</span>
-  <span class="o">`</span><span class="n">github_rank</span><span class="o">`</span>   <span class="nb">INT</span> <span class="k">NULL</span> <span class="p">,</span>
-  <span class="o">`</span><span class="n">pypl_rank</span><span class="o">`</span>     <span class="nb">INT</span> <span class="k">NULL</span> <span class="p">,</span>
-  <span class="o">`</span><span class="n">tiobe_rank</span><span class="o">`</span>    <span class="nb">INT</span> <span class="k">NULL</span> <span class="p">,</span>
-  <span class="o">`</span><span class="n">created_at</span><span class="o">`</span>    <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="p">,</span>
-  <span class="o">`</span><span class="n">updated_at</span><span class="o">`</span>    <span class="n">DATETIME</span> <span class="k">on</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="p">,</span>
-  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">),</span>
-  <span class="k">UNIQUE</span> <span class="o">`</span><span class="n">idx_name_unique</span><span class="o">`</span> <span class="p">(</span><span class="o">`</span><span class="n">name</span><span class="o">`</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span>
-<span class="p">)</span>
-<span class="n">engine</span> <span class="o">=</span> <span class="n">innodb</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_general_ci</span><span class="p">;</span>
-
-<span class="c1">---------------------------------
-</span><span class="c1"></span>
-<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">programming_languages</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">released_year</span><span class="p">,</span> <span class="n">github_rank</span><span class="p">,</span> <span class="n">pypl_rank</span><span class="p">,</span> <span class="n">tiobe_rank</span><span class="p">)</span> 
-<span class="k">VALUES</span> 
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;JavaScript&#39;</span><span class="p">,</span><span class="mi">1995</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span><span class="mi">1991</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Java&#39;</span><span class="p">,</span><span class="mi">1995</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;TypeScript&#39;</span><span class="p">,</span><span class="mi">2012</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">42</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;C#&#39;</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;PHP&#39;</span><span class="p">,</span><span class="mi">1995</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;C++&#39;</span><span class="p">,</span><span class="mi">1985</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="mi">1972</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;Ruby&#39;</span><span class="p">,</span><span class="mi">1995</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="mi">1993</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;Objective-C&#39;</span><span class="p">,</span><span class="mi">1984</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;Swift&#39;</span><span class="p">,</span><span class="mi">2015</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">13</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="s1">&#39;Kotlin&#39;</span><span class="p">,</span><span class="mi">2011</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">40</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;Go&#39;</span><span class="p">,</span><span class="mi">2009</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="s1">&#39;Rust&#39;</span><span class="p">,</span><span class="mi">2010</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">26</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;Scala&#39;</span><span class="p">,</span><span class="mi">2004</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">34</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">programming_languages</span><span class="o">`</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="w">
+</span><span class="w">  </span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="w">            </span><span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="o">`</span><span class="n">name</span><span class="o">`</span><span class="w">          </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="o">`</span><span class="n">released_year</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="o">`</span><span class="n">github_rank</span><span class="o">`</span><span class="w">   </span><span class="nb">INT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="o">`</span><span class="n">pypl_rank</span><span class="o">`</span><span class="w">     </span><span class="nb">INT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="o">`</span><span class="n">tiobe_rank</span><span class="o">`</span><span class="w">    </span><span class="nb">INT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="o">`</span><span class="n">created_at</span><span class="o">`</span><span class="w">    </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="o">`</span><span class="n">updated_at</span><span class="o">`</span><span class="w">    </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="k">UNIQUE</span><span class="w"> </span><span class="o">`</span><span class="n">idx_name_unique</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">name</span><span class="o">`</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span><span class="w">
+</span><span class="w"></span><span class="p">)</span><span class="w">
+</span><span class="w"></span><span class="n">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">innodb</span><span class="w"> </span><span class="n">charset</span><span class="o">=</span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_general_ci</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c1">---------------------------------
+</span><span class="c1"></span><span class="w">
+</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">programming_languages</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">released_year</span><span class="p">,</span><span class="w"> </span><span class="n">github_rank</span><span class="p">,</span><span class="w"> </span><span class="n">pypl_rank</span><span class="p">,</span><span class="w"> </span><span class="n">tiobe_rank</span><span class="p">)</span><span class="w"> 
+</span><span class="w"></span><span class="k">VALUES</span><span class="w"> 
+</span><span class="w"></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;JavaScript&#39;</span><span class="p">,</span><span class="mi">1995</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span><span class="mi">1991</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Java&#39;</span><span class="p">,</span><span class="mi">1995</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;TypeScript&#39;</span><span class="p">,</span><span class="mi">2012</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">42</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;C#&#39;</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;PHP&#39;</span><span class="p">,</span><span class="mi">1995</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;C++&#39;</span><span class="p">,</span><span class="mi">1985</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="mi">1972</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;Ruby&#39;</span><span class="p">,</span><span class="mi">1995</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="mi">1993</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;Objective-C&#39;</span><span class="p">,</span><span class="mi">1984</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;Swift&#39;</span><span class="p">,</span><span class="mi">2015</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">13</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="s1">&#39;Kotlin&#39;</span><span class="p">,</span><span class="mi">2011</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">40</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;Go&#39;</span><span class="p">,</span><span class="mi">2009</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="s1">&#39;Rust&#39;</span><span class="p">,</span><span class="mi">2010</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">26</span><span class="p">),</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;Scala&#39;</span><span class="p">,</span><span class="mi">2004</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">34</span><span class="p">);</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Get exposed address <code>Ingress</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get ingress
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get ingress
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">NAME                       CLASS    HOSTS   ADDRESS          PORTS   AGE
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">NAME                       CLASS    HOSTS   ADDRESS          PORTS   AGE
 app-learn-nodejs-ingress   &lt;none&gt;   *       XXX.XXX.XXX.XXX    <span class="m">80</span>      26h
 </code></pre></td></tr></table>
 </div>
 </div><p>Test deployment by hitting with <code>curl</code> to ingress address</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl &lt;INGRESS_ADDRESS&gt;/programming-languages
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl &lt;INGRESS_ADDRESS&gt;/programming-languages
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[{</span><span class="s2">&#34;id&#34;</span>:1,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;JavaScript&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1995,<span class="s2">&#34;githutRank&#34;</span>:1,<span class="s2">&#34;pyplRank&#34;</span>:3,<span class="s2">&#34;tiobeRank&#34;</span>:7,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:2,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Python&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1991,<span class="s2">&#34;githutRank&#34;</span>:2,<span class="s2">&#34;pyplRank&#34;</span>:1,<span class="s2">&#34;tiobeRank&#34;</span>:3,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:3,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Java&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1995,<span class="s2">&#34;githutRank&#34;</span>:3,<span class="s2">&#34;pyplRank&#34;</span>:2,<span class="s2">&#34;tiobeRank&#34;</span>:2,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:4,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;TypeScript&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2012,<span class="s2">&#34;githutRank&#34;</span>:7,<span class="s2">&#34;pyplRank&#34;</span>:10,<span class="s2">&#34;tiobeRank&#34;</span>:42,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:5,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;C#&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2000,<span class="s2">&#34;githutRank&#34;</span>:9,<span class="s2">&#34;pyplRank&#34;</span>:4,<span class="s2">&#34;tiobeRank&#34;</span>:5,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:6,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;PHP&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1995,<span class="s2">&#34;githutRank&#34;</span>:8,<span class="s2">&#34;pyplRank&#34;</span>:6,<span class="s2">&#34;tiobeRank&#34;</span>:8,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:7,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;C++&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1985,<span class="s2">&#34;githutRank&#34;</span>:5,<span class="s2">&#34;pyplRank&#34;</span>:5,<span class="s2">&#34;tiobeRank&#34;</span>:4,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:8,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;C&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1972,<span class="s2">&#34;githutRank&#34;</span>:10,<span class="s2">&#34;pyplRank&#34;</span>:5,<span class="s2">&#34;tiobeRank&#34;</span>:1,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:9,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Ruby&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1995,<span class="s2">&#34;githutRank&#34;</span>:6,<span class="s2">&#34;pyplRank&#34;</span>:15,<span class="s2">&#34;tiobeRank&#34;</span>:15,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:10,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;R&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1993,<span class="s2">&#34;githutRank&#34;</span>:33,<span class="s2">&#34;pyplRank&#34;</span>:7,<span class="s2">&#34;tiobeRank&#34;</span>:9,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:11,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Objective-C&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1984,<span class="s2">&#34;githutRank&#34;</span>:18,<span class="s2">&#34;pyplRank&#34;</span>:8,<span class="s2">&#34;tiobeRank&#34;</span>:18,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:12,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Swift&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2015,<span class="s2">&#34;githutRank&#34;</span>:16,<span class="s2">&#34;pyplRank&#34;</span>:9,<span class="s2">&#34;tiobeRank&#34;</span>:13,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:13,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Kotlin&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2011,<span class="s2">&#34;githutRank&#34;</span>:15,<span class="s2">&#34;pyplRank&#34;</span>:12,<span class="s2">&#34;tiobeRank&#34;</span>:40,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:14,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Go&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2009,<span class="s2">&#34;githutRank&#34;</span>:4,<span class="s2">&#34;pyplRank&#34;</span>:13,<span class="s2">&#34;tiobeRank&#34;</span>:14,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:15,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Rust&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2010,<span class="s2">&#34;githutRank&#34;</span>:14,<span class="s2">&#34;pyplRank&#34;</span>:16,<span class="s2">&#34;tiobeRank&#34;</span>:26,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:16,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Scala&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2004,<span class="s2">&#34;githutRank&#34;</span>:11,<span class="s2">&#34;pyplRank&#34;</span>:17,<span class="s2">&#34;tiobeRank&#34;</span>:34,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}]</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[{</span><span class="s2">&#34;id&#34;</span>:1,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;JavaScript&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1995,<span class="s2">&#34;githutRank&#34;</span>:1,<span class="s2">&#34;pyplRank&#34;</span>:3,<span class="s2">&#34;tiobeRank&#34;</span>:7,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:2,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Python&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1991,<span class="s2">&#34;githutRank&#34;</span>:2,<span class="s2">&#34;pyplRank&#34;</span>:1,<span class="s2">&#34;tiobeRank&#34;</span>:3,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:3,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Java&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1995,<span class="s2">&#34;githutRank&#34;</span>:3,<span class="s2">&#34;pyplRank&#34;</span>:2,<span class="s2">&#34;tiobeRank&#34;</span>:2,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:4,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;TypeScript&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2012,<span class="s2">&#34;githutRank&#34;</span>:7,<span class="s2">&#34;pyplRank&#34;</span>:10,<span class="s2">&#34;tiobeRank&#34;</span>:42,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:5,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;C#&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2000,<span class="s2">&#34;githutRank&#34;</span>:9,<span class="s2">&#34;pyplRank&#34;</span>:4,<span class="s2">&#34;tiobeRank&#34;</span>:5,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:6,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;PHP&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1995,<span class="s2">&#34;githutRank&#34;</span>:8,<span class="s2">&#34;pyplRank&#34;</span>:6,<span class="s2">&#34;tiobeRank&#34;</span>:8,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:7,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;C++&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1985,<span class="s2">&#34;githutRank&#34;</span>:5,<span class="s2">&#34;pyplRank&#34;</span>:5,<span class="s2">&#34;tiobeRank&#34;</span>:4,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:8,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;C&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1972,<span class="s2">&#34;githutRank&#34;</span>:10,<span class="s2">&#34;pyplRank&#34;</span>:5,<span class="s2">&#34;tiobeRank&#34;</span>:1,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:9,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Ruby&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1995,<span class="s2">&#34;githutRank&#34;</span>:6,<span class="s2">&#34;pyplRank&#34;</span>:15,<span class="s2">&#34;tiobeRank&#34;</span>:15,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:10,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;R&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1993,<span class="s2">&#34;githutRank&#34;</span>:33,<span class="s2">&#34;pyplRank&#34;</span>:7,<span class="s2">&#34;tiobeRank&#34;</span>:9,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:11,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Objective-C&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:1984,<span class="s2">&#34;githutRank&#34;</span>:18,<span class="s2">&#34;pyplRank&#34;</span>:8,<span class="s2">&#34;tiobeRank&#34;</span>:18,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:12,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Swift&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2015,<span class="s2">&#34;githutRank&#34;</span>:16,<span class="s2">&#34;pyplRank&#34;</span>:9,<span class="s2">&#34;tiobeRank&#34;</span>:13,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:13,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Kotlin&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2011,<span class="s2">&#34;githutRank&#34;</span>:15,<span class="s2">&#34;pyplRank&#34;</span>:12,<span class="s2">&#34;tiobeRank&#34;</span>:40,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:14,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Go&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2009,<span class="s2">&#34;githutRank&#34;</span>:4,<span class="s2">&#34;pyplRank&#34;</span>:13,<span class="s2">&#34;tiobeRank&#34;</span>:14,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:15,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Rust&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2010,<span class="s2">&#34;githutRank&#34;</span>:14,<span class="s2">&#34;pyplRank&#34;</span>:16,<span class="s2">&#34;tiobeRank&#34;</span>:26,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}</span>,<span class="o">{</span><span class="s2">&#34;id&#34;</span>:16,<span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Scala&#34;</span>,<span class="s2">&#34;releasedYear&#34;</span>:2004,<span class="s2">&#34;githutRank&#34;</span>:11,<span class="s2">&#34;pyplRank&#34;</span>:17,<span class="s2">&#34;tiobeRank&#34;</span>:34,<span class="s2">&#34;createdAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span>,<span class="s2">&#34;updatedAt&#34;</span>:<span class="s2">&#34;2021-05-27T02:15:37.000Z&#34;</span><span class="o">}]</span>
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="full-example-code"></a><h3>Full Example Code</h3>
 <p>You can see my example here</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">https://github.com/piinalpin/learning-kubernetes.git
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">https://github.com/piinalpin/learning-kubernetes.git
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>

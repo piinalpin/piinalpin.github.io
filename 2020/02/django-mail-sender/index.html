@@ -232,11 +232,11 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">virtualenv env
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virtualenv env
 . env/bin/activate
 </code></pre></td></tr></table>
 </div>
@@ -245,10 +245,10 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pip install <span class="nv">Django</span><span class="o">==</span>2.1.2
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pip install <span class="nv">Django</span><span class="o">==</span>2.1.2
 </code></pre></td></tr></table>
 </div>
 </div><ol start="3">
@@ -256,11 +256,11 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">django-admin startproject your_project_name
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">django-admin startproject your_project_name
 django-admin startapp your_apps_name
 </code></pre></td></tr></table>
 </div>
@@ -269,11 +269,11 @@ django-admin startapp your_apps_name
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pip install celery
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pip install celery
 pip install celery-message-consumer
 </code></pre></td></tr></table>
 </div>
@@ -283,14 +283,14 @@ pip install celery-message-consumer
 <p>Change DEBUG to False and ALLOWED_HOST to localhost</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
-<span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">False</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;localhost&#39;</span><span class="p">]</span>
 </code></pre></td></tr></table>
@@ -298,7 +298,7 @@ pip install celery-message-consumer
 </div><p>Add email configuration</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -307,19 +307,19 @@ pip install celery-message-consumer
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django.core.mail.backends.smtp.EmailBackend&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django.core.mail.backends.smtp.EmailBackend&#39;</span>
 <span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="s1">&#39;smtp.sendgrid.net&#39;</span>
 <span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">Your_Username</span><span class="o">&gt;</span>
 <span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">Your_Password</span><span class="o">&gt;</span>
 <span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">587</span>
-<span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">DEFAULT_FROM_EMAIL</span> <span class="o">=</span> <span class="s2">&#34;Info KS-Linux UAD &lt;info@kslinux.tif.uad.ac.id&gt;&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Add RabbitMQ configuration</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -329,7 +329,7 @@ pip install celery-message-consumer
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># RabbitMQ Configuration</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># RabbitMQ Configuration</span>
 <span class="n">RABBIT_HOST</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span>
 <span class="n">RABBIT_PORT</span> <span class="o">=</span> <span class="s2">&#34;5672&#34;</span>
 <span class="n">RABBIT_VIRTUAL_HOST</span> <span class="o">=</span> <span class="s2">&#34;/&#34;</span>
@@ -342,7 +342,7 @@ pip install celery-message-consumer
 </div><p>Add application at configuration</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -354,7 +354,7 @@ pip install celery-message-consumer
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
     <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
     <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
@@ -369,7 +369,7 @@ pip install celery-message-consumer
 </div><p>Create logging configuration and create <code>logs</code> directory</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -442,10 +442,10 @@ pip install celery-message-consumer
 </span><span class="lnt">71
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Logging Configuratino</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Logging Configuratino</span>
 <span class="n">LOGGING</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;disable_existing_loggers&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+    <span class="s1">&#39;disable_existing_loggers&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;require_debug_false&#39;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">&#39;()&#39;</span><span class="p">:</span> <span class="s1">&#39;django.utils.log.RequireDebugFalse&#39;</span>
@@ -499,7 +499,7 @@ pip install celery-message-consumer
         <span class="s1">&#39;django.request&#39;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mail_admins&#39;</span><span class="p">,</span> <span class="s1">&#39;console&#39;</span><span class="p">],</span>
             <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;propagate&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s1">&#39;propagate&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="s1">&#39;django&#39;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;null&#39;</span><span class="p">,</span> <span class="p">],</span>
@@ -518,7 +518,7 @@ pip install celery-message-consumer
 </div><p>Create queue name or exchange to RabbitMQ and Celery by-pass log</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -531,8 +531,8 @@ pip install celery-message-consumer
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># ADD CELERY BYPASS LOG</span>
-<span class="n">CELERYD_HIJACK_ROOT_LOGGER</span> <span class="o">=</span> <span class="bp">False</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># ADD CELERY BYPASS LOG</span>
+<span class="n">CELERYD_HIJACK_ROOT_LOGGER</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="c1"># CREATE QUEUE TO RABBITMQ</span>
 <span class="n">EXCHANGES</span> <span class="o">=</span> <span class="p">{</span>
@@ -549,7 +549,7 @@ pip install celery-message-consumer
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -568,7 +568,7 @@ pip install celery-message-consumer
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">trinity</span> <span class="kn">import</span> <span class="n">settings</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">trinity</span> <span class="kn">import</span> <span class="n">settings</span>
 <span class="kn">from</span> <span class="nn">django.core.mail</span> <span class="kn">import</span> <span class="n">EmailMultiAlternatives</span>
 
 <span class="k">def</span> <span class="nf">sender</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
@@ -582,9 +582,9 @@ pip install celery-message-consumer
         <span class="n">messages</span><span class="o">.</span><span class="n">attach_alternative</span><span class="p">(</span><span class="n">html_body</span><span class="p">,</span> <span class="s2">&#34;text/html&#34;</span><span class="p">)</span>
         <span class="n">messages</span><span class="o">.</span><span class="n">attach_file</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">],</span> <span class="s1">&#39;image/jpg&#39;</span><span class="p">)</span>
         <span class="n">messages</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Email has been sent!&#34;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Email has been sent!&#34;</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Can not sent email, something wrong!&#34;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Can not sent email, something wrong!&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="7">
@@ -592,7 +592,7 @@ pip install celery-message-consumer
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -609,18 +609,18 @@ pip install celery-message-consumer
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">json</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
 <span class="kn">from</span> <span class="nn">event_consumer</span> <span class="kn">import</span> <span class="n">message_handler</span>
 
 <span class="nd">@message_handler</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">RABBITMQ_ROUTING_KEY</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">listen_queue</span><span class="p">(</span><span class="n">body</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
     <span class="c1"># CREATE PAYLOAD FROM BODY</span>
     <span class="n">payload</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;==================================&#34;</span><span class="p">);</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;==================================&#34;</span><span class="p">);</span>
     <span class="c1"># PRINT PAYLOADS</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
     <span class="c1"># CALL FUNCTION SENDER FROM VIEWS</span>
     <span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="n">sender</span>
     <span class="n">sender</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
@@ -631,7 +631,7 @@ pip install celery-message-consumer
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -662,7 +662,7 @@ pip install celery-message-consumer
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># IMPORT LIBRARY TO CONNECT WITH RABBITMQ</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># IMPORT LIBRARY TO CONNECT WITH RABBITMQ</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
@@ -683,12 +683,12 @@ pip install celery-message-consumer
 <span class="n">app</span><span class="o">.</span><span class="n">autodiscover_tasks</span><span class="p">()</span>
 
 <span class="c1"># CREATE TASKS</span>
-<span class="nd">@app.task</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">debug_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Request: {0!r}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Request: </span><span class="si">{0!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">))</span>
 
-<span class="nd">@setup_logging.connect</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">configure_logging</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="nd">@setup_logging</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">configure_logging</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">logging.config</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">dictConfig</span><span class="p">(</span><span class="n">LOGGING</span><span class="p">)</span>
 </code></pre></td></tr></table>
@@ -698,10 +698,10 @@ pip install celery-message-consumer
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pip install pika
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pip install pika
 </code></pre></td></tr></table>
 </div>
 </div><ol start="10">
@@ -709,7 +709,7 @@ pip install celery-message-consumer
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -738,14 +738,14 @@ pip install celery-message-consumer
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pika</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pika</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="c1"># GET CONNECTION TO RABBITMQ</span>
 <span class="n">connection</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">BlockingConnection</span><span class="p">(</span><span class="n">pika</span><span class="o">.</span><span class="n">ConnectionParameters</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">))</span>
 <span class="n">channel</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
 
-<span class="n">channel</span><span class="o">.</span><span class="n">queue_declare</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;mail_consumer&#39;</span><span class="p">,</span> <span class="n">durable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">channel</span><span class="o">.</span><span class="n">queue_declare</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;mail_consumer&#39;</span><span class="p">,</span> <span class="n">durable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">{
@@ -763,7 +763,7 @@ pip install celery-message-consumer
                       <span class="n">properties</span><span class="o">=</span><span class="n">pika</span><span class="o">.</span><span class="n">BasicProperties</span><span class="p">(</span>
                          <span class="n">delivery_mode</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># make message persistent</span>
                       <span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34; [x] Sent </span><span class="si">%r</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">message</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34; [x] Sent </span><span class="si">%r</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">message</span><span class="p">)</span>
 <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
@@ -772,10 +772,10 @@ pip install celery-message-consumer
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">python test_send_email.py<span class="sb">`</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">python test_send_email.py<span class="sb">`</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="12">
@@ -788,10 +788,10 @@ pip install celery-message-consumer
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pip celery worker -A your_project_name.celery.app
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pip celery worker -A your_project_name.celery.app
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="built-with"></a><h3>Built With</h3>
@@ -805,10 +805,10 @@ pip install celery-message-consumer
 <p>You can clone or download this project</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/piinalpin/trinity.git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/piinalpin/trinity.git
 </code></pre></td></tr></table>
 </div>
 </div>

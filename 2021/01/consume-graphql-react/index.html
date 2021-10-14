@@ -230,45 +230,45 @@
 <p><strong>Installing React</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">npx create-react-app react-graphql-example
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npx create-react-app react-graphql-example
 </code></pre></td></tr></table>
 </div>
 </div><p>or if using yarn</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">create-react-app react-graphql-example
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">create-react-app react-graphql-example
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Installing Package</strong></p>
 <p>Install some package that we need, especially those related to GraphQL and we will use Apollo, a GraphQL wrapper that makes it easy to interact with GraphQL. And for user interface we will use Semantic UI.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">npm install --save graphql apollo-client-preset react-apollo graphql-tag semantic-ui-react semantic-ui-css
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm install --save graphql apollo-client-preset react-apollo graphql-tag semantic-ui-react semantic-ui-css
 </code></pre></td></tr></table>
 </div>
 </div><p>or</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yarn add graphql apollo-client-preset react-apollo graphql-tag semantic-ui-react semantic-ui-css
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yarn add graphql apollo-client-preset react-apollo graphql-tag semantic-ui-react semantic-ui-css
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Connect with GraphQL</strong></p>
 <p>Lets connect GraphQL server using ApolloClient that we add into <code>src/index.js</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -299,7 +299,7 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">ApolloClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;apollo-client&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpLink</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;apollo-link-http&#39;</span><span class="p">;</span>
@@ -334,7 +334,7 @@
 <p>Do query to GraphQL server from React component and makesure we have response from backend. So we first use <code>console.log</code> in <code>src/App.js</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -414,7 +414,7 @@
 </span><span class="lnt">78
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">graphql</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-apollo&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">gql</span> <span class="nx">from</span> <span class="s1">&#39;graphql-tag&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Container</span><span class="p">,</span> <span class="nx">Feed</span><span class="p">,</span> <span class="nx">Card</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;semantic-ui-react&#39;</span><span class="p">;</span>
@@ -498,7 +498,7 @@
 <p>After we got data from backend, then we will render it into React component <code>src/App.js</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -591,7 +591,7 @@
 </span><span class="lnt">91
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">graphql</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-apollo&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">gql</span> <span class="nx">from</span> <span class="s1">&#39;graphql-tag&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Container</span><span class="p">,</span> <span class="nx">Feed</span><span class="p">,</span> <span class="nx">Card</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;semantic-ui-react&#39;</span><span class="p">;</span>

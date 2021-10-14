@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cosine Similarity on PiinAlpin</title>
+    <link>https://blog.piinalpin.com/tags/cosine-similarity/</link>
+    <description>Recent content in Cosine Similarity on PiinAlpin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 17 Jan 2020 12:00:22 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/cosine-similarity/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Research Reference Bot</title>
+      <link>https://blog.piinalpin.com/2020/01/research-reference-bot/</link>
+      <pubDate>Fri, 17 Jan 2020 12:00:22 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2020/01/research-reference-bot/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

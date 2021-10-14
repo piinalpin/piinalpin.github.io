@@ -229,7 +229,7 @@ Install GorillaMux for it&rsquo;s efficiency and simplicity for learning <code>g
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -241,7 +241,7 @@ Install GorillaMux for it&rsquo;s efficiency and simplicity for learning <code>g
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
 	<span class="s">&#34;encoding/json&#34;</span>
@@ -259,7 +259,7 @@ On golang, model as known as struct like a class in Java or Python, so create a 
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -267,7 +267,7 @@ On golang, model as known as struct like a class in Java or Python, so create a 
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Create contact Model
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Create contact Model
 </span><span class="c1"></span><span class="kd">type</span> <span class="nx">Contact</span> <span class="kd">struct</span> <span class="p">{</span>
 	<span class="nx">Name</span>	<span class="kt">string</span> <span class="s">`json:&#34;name&#34;`</span>
 	<span class="nx">Phone</span>	<span class="kt">string</span> <span class="s">`json:&#34;phone&#34;`</span>
@@ -281,7 +281,7 @@ We will create an utilities for headers response and custom message.</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -296,7 +296,7 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Common header conforms to the http.HandlerFunc interface, and
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Common header conforms to the http.HandlerFunc interface, and
 </span><span class="c1">// adds the Content-Type: application/json header to each response.
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">handler</span> <span class="nx">http</span><span class="p">.</span><span class="nx">HandlerFunc</span><span class="p">)</span> <span class="nx">http</span><span class="p">.</span><span class="nx">HandlerFunc</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
@@ -316,7 +316,7 @@ We will create an utilities for headers response and custom message.</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -328,7 +328,7 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Construct contacts
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Construct contacts
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">constructContacts</span><span class="p">()</span> <span class="p">[]</span><span class="nx">Contact</span><span class="p">{</span>
 	 <span class="kd">var</span> <span class="nx">contacts</span> <span class="p">[]</span><span class="nx">Contact</span>
 	<span class="c1">// Hardcoded data - @todo: add database
@@ -345,7 +345,7 @@ We will create an utilities for headers response and custom message.</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -367,7 +367,7 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Get all contacts
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Get all contacts
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">getAllContacts</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
 	<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nf">constructContacts</span><span class="p">())</span>
 <span class="p">}</span>
@@ -394,7 +394,7 @@ We will create an utilities for headers response and custom message.</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -402,7 +402,7 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Create contact
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Create contact
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">createContact</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
 	<span class="kd">var</span> <span class="nx">contact</span> <span class="nx">Contact</span>
 	<span class="nx">_</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">NewDecoder</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Body</span><span class="p">).</span><span class="nf">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">contact</span><span class="p">)</span>
@@ -415,7 +415,7 @@ We will create an utilities for headers response and custom message.</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -432,7 +432,7 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang">	<span class="c1">// Update contact
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang">	<span class="c1">// Update contact
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">updateContact</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
 	<span class="c1">// Get params
 </span><span class="c1"></span>	<span class="nx">params</span> <span class="o">:=</span> <span class="nx">mux</span><span class="p">.</span><span class="nf">Vars</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
@@ -454,7 +454,7 @@ We will create an utilities for headers response and custom message.</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -464,7 +464,7 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Delete contact
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Delete contact
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">deleteContact</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
 	<span class="kd">var</span> <span class="nx">msg</span> <span class="nx">OkMessage</span>
 	<span class="nx">msg</span><span class="p">.</span><span class="nx">Message</span> <span class="p">=</span> <span class="s">&#34;ok&#34;</span>
@@ -480,7 +480,7 @@ Firstly we initialize the router variable as r and the GorillaMux is used by cal
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -497,7 +497,7 @@ Firstly we initialize the router variable as r and the GorillaMux is used by cal
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 	
 	<span class="c1">// Init router
 </span><span class="c1"></span>	<span class="nx">route</span> <span class="o">:=</span> <span class="nx">mux</span><span class="p">.</span><span class="nf">NewRouter</span><span class="p">()</span>

@@ -234,10 +234,10 @@
 <p>Install virtual box from <a href="https://www.virtualbox.org/wiki/Downloads">Downloads - Oracle VM Virtualbox</a> or with <a href="https://formulae.brew.sh/cask/virtualbox">Homebrew</a>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install virtualbox
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install virtualbox
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Installing Vagrant</strong></p>
@@ -245,10 +245,10 @@
 <p>We will use <code>vagrant</code> for virtualization server on our machine. Install vagrant with <code>homebrew</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install vagrant
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install vagrant
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Setup Host Only Adapter</strong></p>
@@ -258,17 +258,17 @@
 <p>Install ansible using Homebrew.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install ansible
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install ansible
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="create-virtual-machine"></a><h3>Create Virtual Machine</h3>
 <p>Create <code>Vagrantfile</code> and fill like following code. We will use <code>Centos 8</code> on our virtual machine.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -297,7 +297,7 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Vagrant.configure<span class="o">(</span>2<span class="o">)</span> <span class="k">do</span> <span class="p">|</span>config<span class="p">|</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Vagrant.configure<span class="o">(</span>2<span class="o">)</span> <span class="k">do</span> <span class="p">|</span>config<span class="p">|</span>
     config.vm.box <span class="o">=</span> <span class="s2">&#34;bento/centos-8&#34;</span>
   
     config.vm.define <span class="s2">&#34;server1&#34;</span> <span class="k">do</span> <span class="p">|</span>server1<span class="p">|</span>
@@ -329,7 +329,7 @@
 </div><p>Running up the machine with typing <code>vagrant up</code> on terminal. And if all machine are running, we can check the status on our machines with <code>vagrant status</code> on terminal. And we get an output like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -339,7 +339,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Current machine states:
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Current machine states:
 
 server1                   running <span class="o">(</span>virtualbox<span class="o">)</span>
 server2                   running <span class="o">(</span>virtualbox<span class="o">)</span>
@@ -352,13 +352,13 @@ VM, run <span class="sb">`</span>vagrant status NAME<span class="sb">`</span>.
 </div><a class="post-dummy-target" id="add-ansible-inventory"></a><h3>Add Ansible Inventory</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">learn-ansible/
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">learn-ansible/
 └───inventory/
 │   │   vagrant.hosts
 └───Vagrantfile
@@ -367,7 +367,7 @@ VM, run <span class="sb">`</span>vagrant status NAME<span class="sb">`</span>.
 </div><p>Create file in <code>inventory/vagrant.hosts</code> to register server host to ansible hosts and fill like following code.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -375,7 +375,7 @@ VM, run <span class="sb">`</span>vagrant status NAME<span class="sb">`</span>.
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>all:vars<span class="o">]</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>all:vars<span class="o">]</span>
 <span class="nv">ansible_ssh_common_args</span><span class="o">=</span><span class="s1">&#39;-o StrictHostKeyChecking=no&#39;</span>
 
 <span class="o">[</span>linux<span class="o">]</span>
@@ -388,7 +388,7 @@ server2 <span class="nv">ansible_ssh_host</span><span class="o">=</span>192.168.
 <p>Test to ping the linux server on ansible hosts by command <code>ansible -i inventory/vagrant.hosts linux -m ping </code>. And we should get an output. If we get <code>SUCCESS</code> response, that means the ping was successful and we can access our servers from ansible.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -404,7 +404,7 @@ server2 <span class="nv">ansible_ssh_host</span><span class="o">=</span>192.168.
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">server2 <span class="p">|</span> <span class="nv">SUCCESS</span> <span class="o">=</span>&gt; <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">server2 <span class="p">|</span> <span class="nv">SUCCESS</span> <span class="o">=</span>&gt; <span class="o">{</span>
     <span class="s2">&#34;ansible_facts&#34;</span>: <span class="o">{</span>
         <span class="s2">&#34;discovered_interpreter_python&#34;</span>: <span class="s2">&#34;/usr/libexec/platform-python&#34;</span>
     <span class="o">}</span>,
@@ -424,7 +424,7 @@ server1 <span class="p">|</span> <span class="nv">SUCCESS</span> <span class="o"
 <p>We will run a linux command to see the OS Release on our virtual machine using ansible with <code>ansible -i inventory/vagrant.hosts linux -a &quot;cat /etc/os-release&quot;</code> and we should get and output.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -454,7 +454,7 @@ server1 <span class="p">|</span> <span class="nv">SUCCESS</span> <span class="o"
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">server1 <span class="p">|</span> CHANGED <span class="p">|</span> <span class="nv">rc</span><span class="o">=</span><span class="m">0</span> &gt;&gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">server1 <span class="p">|</span> CHANGED <span class="p">|</span> <span class="nv">rc</span><span class="o">=</span><span class="m">0</span> &gt;&gt;
 <span class="nv">NAME</span><span class="o">=</span><span class="s2">&#34;CentOS Linux&#34;</span>
 <span class="nv">VERSION</span><span class="o">=</span><span class="s2">&#34;8&#34;</span>
 <span class="nv">ID</span><span class="o">=</span><span class="s2">&#34;centos&#34;</span>
@@ -489,7 +489,7 @@ server2 <span class="p">|</span> CHANGED <span class="p">|</span> <span class="n
 <p>An Ansible playbook is an organized unit of scripts that defines work for a server configuration managed by the automation tool Ansible and create by <code>YAML</code> file.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -500,7 +500,7 @@ server2 <span class="p">|</span> CHANGED <span class="p">|</span> <span class="n
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">iloveansible</span><span class="w">
 </span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">server1</span><span class="w">
 </span><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
@@ -520,14 +520,14 @@ server2 <span class="p">|</span> CHANGED <span class="p">|</span> <span class="n
 <p>So, the structure directory should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">learn-ansible/
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">learn-ansible/
 └───inventory/
 │   │   vagrant.hosts
 └───Vagrantfile
@@ -538,7 +538,7 @@ server2 <span class="p">|</span> CHANGED <span class="p">|</span> <span class="n
 <p>And we get an output.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -550,7 +550,7 @@ server2 <span class="p">|</span> CHANGED <span class="p">|</span> <span class="n
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">PLAY <span class="o">[</span>iloveansible<span class="o">]</span> ************************************************************************************************************************************************************************************************************************
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">PLAY <span class="o">[</span>iloveansible<span class="o">]</span> ************************************************************************************************************************************************************************************************************************
 
 TASK <span class="o">[</span>Gathering Facts<span class="o">]</span> *********************************************************************************************************************************************************************************************************************
 ok: <span class="o">[</span>server1<span class="o">]</span>
@@ -566,7 +566,7 @@ server1                    : <span class="nv">ok</span><span class="o">=</span><
 <p>Because a playbook just running on <code>server1</code> that means on <code>server2</code> doesn&rsquo;t have a <code>nano</code>. So what if we install <code>nano</code> on all server group? Here is a <code>yaml</code> file. Change hosts to <code>linux</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -577,7 +577,7 @@ server1                    : <span class="nv">ok</span><span class="o">=</span><
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">iloveansible</span><span class="w">
 </span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">linux</span><span class="w">
 </span><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
@@ -592,7 +592,7 @@ server1                    : <span class="nv">ok</span><span class="o">=</span><
 <p>And we get an output.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -607,7 +607,7 @@ server1                    : <span class="nv">ok</span><span class="o">=</span><
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">PLAY <span class="o">[</span>iloveansible<span class="o">]</span> ************************************************************************************************************************************************************************************************************************
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">PLAY <span class="o">[</span>iloveansible<span class="o">]</span> ************************************************************************************************************************************************************************************************************************
 
 TASK <span class="o">[</span>Gathering Facts<span class="o">]</span> *********************************************************************************************************************************************************************************************************************
 ok: <span class="o">[</span>server1<span class="o">]</span>
@@ -627,14 +627,14 @@ server2                    : <span class="nv">ok</span><span class="o">=</span><
 <p>And we should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Last metadata expiration check: 0:21:55 ago on Sat <span class="m">31</span> Jul <span class="m">2021</span> 02:10:15 PM UTC.
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Last metadata expiration check: 0:21:55 ago on Sat <span class="m">31</span> Jul <span class="m">2021</span> 02:10:15 PM UTC.
 Package nano-2.9.8-1.el8.x86_64 is already installed.
 Dependencies resolved.
 Nothing to <span class="k">do</span>.
@@ -645,7 +645,7 @@ Complete!
 <p>What if we want to uninstall the nano on all server? Just change <code>state: latest</code> to <code>state: absent</code> like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -656,7 +656,7 @@ Complete!
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">iloveansible</span><span class="w">
 </span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">linux</span><span class="w">
 </span><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">

@@ -236,10 +236,10 @@
 <p><strong>Intalling Oh My Zsh</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sh -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sh -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Download and Install Nerd Patched Fonts</strong></p>
@@ -247,19 +247,19 @@
 <p><strong>Installing Powerlevel10k</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/romkatv/powerlevel10k.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/romkatv/powerlevel10k.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Change <code>.zshrc</code> Configuration</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vi .zshrc
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi .zshrc
 </code></pre></td></tr></table>
 </div>
 </div><p>Change <code>ZSH_THEME</code> to <code>ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</code></p>
@@ -269,11 +269,11 @@
 <p>If you see <code>[oh-my-zsh] Insecure completion-dependent directories detected:</code> type command below</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">chmod <span class="m">755</span> /usr/local/share/zsh
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chmod <span class="m">755</span> /usr/local/share/zsh
 chmod <span class="m">755</span> /usr/local/share/zsh/site-functions
 </code></pre></td></tr></table>
 </div>
@@ -281,12 +281,12 @@ chmod <span class="m">755</span> /usr/local/share/zsh/site-functions
 <p>Download plugins for auto suggestion and syntax highlighting</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/zsh-users/zsh-autosuggestions.git <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-autosuggestions
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/zsh-users/zsh-autosuggestions.git <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-autosuggestions
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-syntax-highlighting
 </code></pre></td></tr></table>
@@ -297,12 +297,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="
 <p>Install jenv with brew</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install jenv
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install jenv
 <span class="nb">echo</span> <span class="s1">&#39;export PATH=&#34;$HOME/.jenv/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.zshrc
 <span class="nb">echo</span> <span class="s1">&#39;eval &#34;$(jenv init -)&#34;&#39;</span> &gt;&gt; ~/.zshrc
 </code></pre></td></tr></table>
@@ -311,40 +311,40 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="
 <p>Add brew cask by adding <code>homebrew/cask</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew tap homebrew/cask-versions
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew tap homebrew/cask-versions
 </code></pre></td></tr></table>
 </div>
 </div><p>Install JDK 11 and JDK 8 from <a href="https://www.azul.com/downloads/zulu-community/?package=jdk">Azul OpenJDK</a></p>
 <p>Add java11 and java8 into jenv</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">jenv add /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/ 
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">jenv add /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/ 
 jenv add /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/ 
 </code></pre></td></tr></table>
 </div>
 </div><p>See all installed versions java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">jenv versions
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">jenv versions
 </code></pre></td></tr></table>
 </div>
 </div><p>Configure global version</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">jenv global 11.0.9
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">jenv global 11.0.9
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="configure-multiple-python-version-with-pyenv"></a><h3>Configure Multiple Python Version with Pyenv</h3>
@@ -352,17 +352,17 @@ jenv add /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/
 <p>Install pyenv with brew</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install pyenv
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install pyenv
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Define environment variable <code>PYENV_ROOT</code> and add <code>pyenv init</code></strong></p>
 <p>I will use <code>zsh</code> so here bash command line</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -370,7 +370,7 @@ jenv add /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39;</span> &gt;&gt; ~/.zshrc
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39;</span> &gt;&gt; ~/.zshrc
 <span class="nb">echo</span> <span class="s1">&#39;export PATH=&#34;$PYENV_ROOT/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.zshrc
 
 <span class="nb">echo</span> -e <span class="s1">&#39;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval &#34;$(pyenv init -)&#34;\nfi&#39;</span> &gt;&gt; ~/.zshrc
@@ -382,11 +382,11 @@ jenv add /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/
 <p>Configure global environment python</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pyenv install 3.9.1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pyenv install 3.9.1
 pyenv global 3.9.1
 </code></pre></td></tr></table>
 </div>
@@ -396,28 +396,28 @@ pyenv global 3.9.1
 <p><strong>Install MySQL database on docker</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -p 3306:3306 --name mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw -d mysql:latest
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run -p 3306:3306 --name mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw -d mysql:latest
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Install SQL Server on docker</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker run -e <span class="s2">&#34;ACCEPT_EULA=Y&#34;</span> -e <span class="s2">&#34;SA_PASSWORD=&lt;YourStrong@Passw0rd&gt;&#34;</span> -p 1433:1433 --name sqlserver -h sqlserver -d mcr.microsoft.com/mssql/server:2019-latest
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run -e <span class="s2">&#34;ACCEPT_EULA=Y&#34;</span> -e <span class="s2">&#34;SA_PASSWORD=&lt;YourStrong@Passw0rd&gt;&#34;</span> -p 1433:1433 --name sqlserver -h sqlserver -d mcr.microsoft.com/mssql/server:2019-latest
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Install Postgresql on docker</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker run --name postgresql -d -p 5432:5432 -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>yoursecretpassword postgres
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run --name postgresql -d -p 5432:5432 -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>yoursecretpassword postgres
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="configuring-auto-connect-ssh-tunneling"></a><h3>Configuring Auto Connect SSH Tunneling</h3>
@@ -426,77 +426,77 @@ pyenv global 3.9.1
 <p>Install RabbitMQ with brew</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install rabbitmq
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install rabbitmq
 </code></pre></td></tr></table>
 </div>
 </div><p>Export path for RabbitMQ</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/sbin
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/sbin
 </code></pre></td></tr></table>
 </div>
 </div><p>Start service when laptop is started automatically in backgroun</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew services start rabbitmq
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew services start rabbitmq
 </code></pre></td></tr></table>
 </div>
 </div><p>Enable management plugin</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">rabbitmq-plugins <span class="nb">enable</span> rabbitmq_management
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">rabbitmq-plugins <span class="nb">enable</span> rabbitmq_management
 </code></pre></td></tr></table>
 </div>
 </div><p>Try to access <code>http://localhost:15672</code></p>
 <a class="post-dummy-target" id="install-composer"></a><h3>Install Composer</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install composer
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install composer
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="install-nodejs-and-yarn"></a><h3>Install Node.js and Yarn</h3>
 <p>Go to <a href="https://nodejs.org/en/">Node.js Org</a> download and install it.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo chown -R <span class="nv">$USER</span> /usr/local/lib/node_modules
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo chown -R <span class="nv">$USER</span> /usr/local/lib/node_modules
 npm install --global yarn
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="install-hugo-blog"></a><h3>Install Hugo Blog</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install hugo
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install hugo
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="install-maven"></a><h3>Install Maven</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install maven
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install maven
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="references"></a><h3>References</h3>

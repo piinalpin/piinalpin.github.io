@@ -249,22 +249,22 @@
 <p>Details of the cluster and its health status is.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl cluster-info
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl cluster-info
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Kubernetes control plane is running at https://kubernetes.docker.internal:6443
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Kubernetes control plane is running at https://kubernetes.docker.internal:6443
 KubeDNS is running at https://kubernetes.docker.internal:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 To further debug and diagnose cluster problems, use <span class="s1">&#39;kubectl cluster-info dump&#39;</span>.
@@ -273,20 +273,20 @@ To further debug and diagnose cluster problems, use <span class="s1">&#39;kubect
 </div><p>To view the nodes in the cluster with.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get nodes
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get nodes
 </code></pre></td></tr></table>
 </div>
 </div><p>We shoulkd get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">NAME             STATUS   ROLES    AGE     VERSION
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">NAME             STATUS   ROLES    AGE     VERSION
 docker-desktop   Ready    master   4d22h   v1.19.7
 </code></pre></td></tr></table>
 </div>
@@ -297,50 +297,50 @@ docker-desktop   Ready    master   4d22h   v1.19.7
 <p>Using <code>kubectl run</code>, it allows containers to be deployed onto the cluster.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl create deployment hello-world --image<span class="o">=</span>piinalpin/sample-node-web-app
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl create deployment hello-world --image<span class="o">=</span>piinalpin/sample-node-web-app
 </code></pre></td></tr></table>
 </div>
 </div><p>To check status of the deployment.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get pods
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get pods
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">NAME                           READY   STATUS    RESTARTS   AGE
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">NAME                           READY   STATUS    RESTARTS   AGE
 hello-world-6b64556c5b-9pzrp   1/1     Running   <span class="m">0</span>          88s
 </code></pre></td></tr></table>
 </div>
 </div><p>Once the container is running it can be exposed via different networking options, depending on requirements. One possible solution is NodePort, that provides a dynamic port to a container.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl expose deployment hello-world --port<span class="o">=</span><span class="m">8080</span> --type<span class="o">=</span>NodePort
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl expose deployment hello-world --port<span class="o">=</span><span class="m">8080</span> --type<span class="o">=</span>NodePort
 </code></pre></td></tr></table>
 </div>
 </div><p>The command below finds the allocated port and executes a HTTP request.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">NODE_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl get svc hello-world -o go-template<span class="o">=</span><span class="s1">&#39;{{range.spec.ports}}{{if .nodePort}}{{.nodePort}}{{&#34;\n&#34;}}{{end}}{{end}}&#39;</span><span class="k">)</span> 
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">NODE_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl get svc hello-world -o go-template<span class="o">=</span><span class="s1">&#39;{{range.spec.ports}}{{if .nodePort}}{{.nodePort}}{{&#34;\n&#34;}}{{end}}{{end}}&#39;</span><span class="k">)</span> 
 <span class="nb">echo</span> <span class="s2">&#34;Accessing http://localhost:</span><span class="nv">$NODE_PORT</span><span class="s2">&#34;</span>  
 curl http://localhost:<span class="nv">$NODE_PORT</span>
 </code></pre></td></tr></table>
@@ -348,26 +348,26 @@ curl http://localhost:<span class="nv">$NODE_PORT</span>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Kubernetes Dashboard</strong></p>
 <p>Deploy latest kubernetes dashboard, you can deploy the dashboard itself with the following single command.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml   
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml   
 </code></pre></td></tr></table>
 </div>
 </div><p>If your cluster is working correctly, you should see an output confirming the creation of a bunch of Kubernetes components like in the example below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -383,7 +383,7 @@ curl http://localhost:<span class="nv">$NODE_PORT</span>
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">namespace/kubernetes-dashboard created
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">namespace/kubernetes-dashboard created
 serviceaccount/kubernetes-dashboard created
 service/kubernetes-dashboard created
 secret/kubernetes-dashboard-certs created
@@ -402,22 +402,22 @@ deployment.apps/dashboard-metrics-scraper created
 </div><p>Afterwards, you should have two new pods running on your cluster.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get pods -A
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get pods -A
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">NAMESPACE              NAME                                         READY   STATUS    RESTARTS   AGE
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">NAMESPACE              NAME                                         READY   STATUS    RESTARTS   AGE
 ...
 kubernetes-dashboard   dashboard-metrics-scraper-7b59f7d4df-qkztd   1/1     Running   <span class="m">0</span>          30s
 kubernetes-dashboard   kubernetes-dashboard-74d688b6bc-s4595        1/1     Running   <span class="m">0</span>          30s
@@ -429,10 +429,10 @@ kubernetes-dashboard   kubernetes-dashboard-74d688b6bc-s4595        1/1     Runn
 <p>Get token to access dashboard page and paste on authentication page.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get secret -n kubernetes-dashboard <span class="k">$(</span>kubectl get serviceaccount default -n kubernetes-dashboard -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&#34;{.secrets[0].name}&#34;</span><span class="k">)</span> -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&#34;{.data.token}&#34;</span> <span class="p">|</span> base64 --decode
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get secret -n kubernetes-dashboard <span class="k">$(</span>kubectl get serviceaccount default -n kubernetes-dashboard -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&#34;{.secrets[0].name}&#34;</span><span class="k">)</span> -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&#34;{.data.token}&#34;</span> <span class="p">|</span> base64 --decode
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="/images/k8s-dashboard.png" alt="Kubernetes Dashboard"></p>
@@ -440,16 +440,16 @@ kubernetes-dashboard   kubernetes-dashboard-74d688b6bc-s4595        1/1     Runn
 <p>Stopping Kubernetes, by type following script</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl delete -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl delete -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -465,7 +465,7 @@ kubernetes-dashboard   kubernetes-dashboard-74d688b6bc-s4595        1/1     Runn
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">namespace <span class="s2">&#34;kubernetes-dashboard&#34;</span> deleted
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">namespace <span class="s2">&#34;kubernetes-dashboard&#34;</span> deleted
 serviceaccount <span class="s2">&#34;kubernetes-dashboard&#34;</span> deleted
 service <span class="s2">&#34;kubernetes-dashboard&#34;</span> deleted
 secret <span class="s2">&#34;kubernetes-dashboard-certs&#34;</span> deleted
@@ -487,15 +487,15 @@ deployment.apps <span class="s2">&#34;dashboard-metrics-scraper&#34;</span> dele
 <p>Create file <code>kubernetes-dashboard.sh</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">nano ~/kubernetes-dashboard.sh
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">nano ~/kubernetes-dashboard.sh
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -553,7 +553,7 @@ deployment.apps <span class="s2">&#34;dashboard-metrics-scraper&#34;</span> dele
 </span><span class="lnt">56
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
 </span><span class="cp"></span><span class="nv">showtoken</span><span class="o">=</span><span class="m">1</span>
 <span class="nv">cmd</span><span class="o">=</span><span class="s2">&#34;kubectl proxy&#34;</span>
 <span class="nv">count</span><span class="o">=</span><span class="sb">`</span>ps aux <span class="p">|</span> grep -v <span class="s2">&#34;grep&#34;</span> <span class="p">|</span> grep -c <span class="s2">&#34;</span><span class="nv">$cmd</span><span class="s2">&#34;</span><span class="sb">`</span>
@@ -614,44 +614,44 @@ status<span class="o">)</span>
 </div><p>Make this script executable</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">chmod +x ~/kubernetes-dashboard.sh
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chmod +x ~/kubernetes-dashboard.sh
 </code></pre></td></tr></table>
 </div>
 </div><p>Start the dashboard</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">./kubernetes-dashboard.sh start 
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./kubernetes-dashboard.sh start 
 </code></pre></td></tr></table>
 </div>
 </div><p>Check whether the dashboard is running or not and output the tokens if currently set.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">./kubernetes-dashboard.sh status
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./kubernetes-dashboard.sh status
 </code></pre></td></tr></table>
 </div>
 </div><p>Stop the dashboard</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">./kubernetes-dashboard.sh stop
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./kubernetes-dashboard.sh stop
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Deploy Container using YAML</strong></p>
 <p>Create a kubernetes deployment YAML to tell kubernetes to manage a set of replicas of that Pod — literally, a ReplicaSet — to make sure that a certain number of them are always available.  So we might start our Kubernetes Deployment manifest definition YAML <code>deployment.yaml</code> like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -675,7 +675,7 @@ status<span class="o">)</span>
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Deployment</span><span class="w">
 </span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
@@ -707,51 +707,51 @@ status<span class="o">)</span>
 <p>Run YAML file by type following code</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f deployment.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f deployment.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>Check the deployment list</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get deployments
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get deployments
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">NAME          READY   UP-TO-DATE   AVAILABLE   AGE
 hello-world   3/3     <span class="m">3</span>            <span class="m">3</span>           20s
 </code></pre></td></tr></table>
 </div>
 </div><p>Check pods running</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get pods
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get pods
 </code></pre></td></tr></table>
 </div>
 </div><p>We shoul get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">NAME                          READY   STATUS    RESTARTS   AGE
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">NAME                          READY   STATUS    RESTARTS   AGE
 hello-world-f74567869-lsp74   1/1     Running   <span class="m">0</span>          7m7s
 hello-world-f74567869-m5vjd   1/1     Running   <span class="m">0</span>          7m7s
 hello-world-f74567869-z7pg7   1/1     Running   <span class="m">0</span>          7m7s
@@ -762,7 +762,7 @@ hello-world-f74567869-z7pg7   1/1     Running   <span class="m">0</span>        
 <p>Create expose deployment YAML file <code>service.yaml</code> like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -777,7 +777,7 @@ hello-world-f74567869-z7pg7   1/1     Running   <span class="m">0</span>        
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Service</span><span class="w">
 </span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">hello-world</span><span class="w">
@@ -800,30 +800,30 @@ hello-world-f74567869-z7pg7   1/1     Running   <span class="m">0</span>        
 <p>Execute service YAML file by type following code</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f service.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f service.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>Check service is running</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get svc
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get svc
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get and output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">NAME          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT<span class="o">(</span>S<span class="o">)</span>          AGE
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">NAME          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT<span class="o">(</span>S<span class="o">)</span>          AGE
 hello-world   NodePort    10.107.135.246   &lt;none&gt;        8080:31302/TCP   8s
 kubernetes    ClusterIP   10.96.0.1        &lt;none&gt;        443/TCP          5d2h
 </code></pre></td></tr></table>
@@ -831,29 +831,29 @@ kubernetes    ClusterIP   10.96.0.1        &lt;none&gt;        443/TCP          
 </div><p>Check port is exposed and we can execute http request</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl http://localhost:&lt;EXPOSED_PORT&gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl http://localhost:&lt;EXPOSED_PORT&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>To delete service and deployment</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl delete -f deployment.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl delete -f deployment.yaml
 kubectl delete -f service.yaml
 </code></pre></td></tr></table>
 </div>
@@ -861,7 +861,7 @@ kubectl delete -f service.yaml
 <p>Create file <code>hello-world.yaml</code> and fill like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -899,7 +899,7 @@ kubectl delete -f service.yaml
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Deployment</span><span class="w">
 </span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
@@ -940,32 +940,32 @@ kubectl delete -f service.yaml
 </div><p>Execute service YAML file by type following code</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f hello-world.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f hello-world.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">deployment.apps/hello-world created
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">deployment.apps/hello-world created
 service/hello-world created
 </code></pre></td></tr></table>
 </div>
 </div><p>Check deployment and service is running</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get deployments
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">kubectl get deployments
 kubectl get pods
 kubectl get svc
 </code></pre></td></tr></table>
@@ -973,26 +973,26 @@ kubectl get svc
 </div><p>Check exposed port with http request</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl http://localhost:&lt;EXPOSED_PORT&gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl http://localhost:&lt;EXPOSED_PORT&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Create Deployment, Service and Ingress with Load Balancer YAML</strong></p>
 <p>Create file <code>my-kubernetes.yaml</code> and fill like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1065,7 +1065,7 @@ kubectl get svc
 </span><span class="lnt">71
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Deployment</span><span class="w">
 </span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">

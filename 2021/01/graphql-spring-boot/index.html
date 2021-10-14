@@ -41,7 +41,7 @@
     
         "keywords": "Java, Spring Boot, GraphQL, GraphiQL, MySQL",
     
-    "wordcount":  3061 ,
+    "wordcount":  3009 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/01\/graphql-spring-boot\/",
     
         "datePublished": "2021-01-05T09:17:49\u002b07:00",
@@ -147,7 +147,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-01-05>2021-01-05</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 3061 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 3009 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>15 min&nbsp;</div>
         </div>
 
@@ -241,7 +241,7 @@
 <p>The following listing shows the <code>pom.xml</code> file created when you choose Maven. And here my <code>pom.xml</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -323,7 +323,7 @@
 </span><span class="lnt">80
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 	<span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
@@ -408,7 +408,7 @@
 </div><p>Edit <code>application.properties</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -423,7 +423,7 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">#Basic Spring Boot Config for Oracle
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">#Basic Spring Boot Config for Oracle
 spring.jmx.enabled=false
 info.app.name=GraphQL Example
 info.app.description=GraphQL Example
@@ -441,7 +441,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>And here my <code>project/application.yml</code> for external configuration of database connection, flyway migration, etc.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -464,7 +464,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="o">:</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="o">:</span>
   <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Maverick GraphQL Example&#34;</span>
   <span class="nx">website</span><span class="o">:</span> <span class="s2">&#34;blog.piinalpin.com&#34;</span>
   <span class="nx">origin</span><span class="o">:</span> <span class="s2">&#34;http://localhost:3000&#34;</span>
@@ -491,7 +491,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Edit project main application and add annotation <code>@EnableJpaRepositories</code>. The file should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -502,7 +502,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
 <span class="nd">@EnableJpaRepositories</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">GraphqlApplication</span> <span class="o">{</span>
 
@@ -517,7 +517,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Create bean configuration <code>com.maverick.graphql.configuration.DataScalarConfiguration</code> to define scalar for GraphQL schema.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -558,7 +558,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">39
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataScalarConfiguration</span> <span class="o">{</span>
 
     <span class="nd">@Bean</span>
@@ -603,7 +603,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Create GraphQL schema on <code>resource/schema.graphqls</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -633,7 +633,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
 
 <span class="nx">type</span> <span class="nx">Mutation</span> <span class="p">{</span>
     <span class="nx">createPerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="nx">Person</span><span class="o">!</span>
@@ -666,7 +666,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Create table on database migration <code>resource/db/migration/V2_1__Person.sql</code> see <a href="https://flywaydb.org/documentation/">Flyway Documentation</a> for versioning migration.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -685,29 +685,29 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SET</span> <span class="n">AUTOCOMMIT</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-
-<span class="k">START</span> <span class="k">TRANSACTION</span><span class="p">;</span>
-    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">m_person</span> <span class="p">(</span>
-        <span class="n">id</span>                      <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
-        <span class="n">created_at</span>              <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">created_by</span>              <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">updated_at</span>              <span class="n">DATETIME</span><span class="p">,</span>
-        <span class="n">deleted_at</span>              <span class="n">DATETIME</span><span class="p">,</span>
-        <span class="n">first_name</span>              <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">last_name</span>               <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">date_of_birth</span>           <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">identity_type</span>           <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">identity_number</span>         <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">address</span>                 <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-    <span class="p">);</span>
-<span class="k">COMMIT</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SET</span><span class="w"> </span><span class="n">AUTOCOMMIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">m_person</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">        </span><span class="n">id</span><span class="w">                      </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">created_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">created_by</span><span class="w">              </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">updated_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">deleted_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">first_name</span><span class="w">              </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">last_name</span><span class="w">               </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">date_of_birth</span><span class="w">           </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">identity_type</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">identity_number</span><span class="w">         </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">address</span><span class="w">                 </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="w">
+</span><span class="w">    </span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="k">COMMIT</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Create abstract class <code>com.maverick.graphql.model.BaseModel</code> first which aim can be inheritence for another model.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -749,7 +749,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@NoArgsConstructor</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@NoArgsConstructor</span>
 <span class="nd">@MappedSuperclass</span>
 <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">BaseModel</span> <span class="o">{</span>
 
@@ -794,7 +794,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Create person model <code>com.maverick.graphql.model.Person</code> which is inheritence from <code>BaseModel</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -841,7 +841,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">45
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Entity</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Entity</span>
 <span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;M_PERSON&#34;</span><span class="o">)</span>
 <span class="nd">@Builder</span>
 <span class="nd">@NoArgsConstructor</span>
@@ -891,13 +891,13 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Create repository <code>com.maverick.graphql.repository.PersonRepository</code> for transactional query which extends from <code>JpaRepository</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PersonRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="o">{</span>
 
 <span class="o">}</span>
@@ -906,7 +906,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Create form <code>com.maverick.graphql.form.PersonForm</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -924,7 +924,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonForm</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
@@ -945,7 +945,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Create service <code>com.maverick.graphql.service.PersonService</code> to store person model into database using repository.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -962,7 +962,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonService</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonRepository</span> <span class="n">personRepository</span><span class="o">;</span>
@@ -982,7 +982,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Create mutation service <code>com.maverick.graphql.mutation.PersonMutation</code> use for anychange data from GraphQL schema.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1007,7 +1007,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonMutation</span> <span class="kd">implements</span> <span class="n">GraphQLMutationResolver</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonService</span> <span class="n">personService</span><span class="o">;</span>
@@ -1037,7 +1037,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1047,7 +1047,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="nx">CreatePerson</span><span class="p">(</span><span class="nx">$input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="nx">CreatePerson</span><span class="p">(</span><span class="nx">$input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">){</span>
     <span class="nx">createPerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">$input</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">id</span>
         <span class="nx">firstName</span>
@@ -1060,7 +1060,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>GraphQL Variables</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1072,7 +1072,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;input&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Alvinditya&#34;</span><span class="p">,</span>
         <span class="nt">&#34;lastName&#34;</span><span class="p">:</span> <span class="s2">&#34;Saputra&#34;</span><span class="p">,</span>
@@ -1087,7 +1087,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Response should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1099,7 +1099,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;createPerson&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1115,7 +1115,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Edit <code>resource/schema.graphqls</code>, code should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1150,7 +1150,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
 
 <span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
     <span class="nx">getAllPerson</span><span class="o">:</span> <span class="p">[</span><span class="nx">Person</span><span class="o">!</span><span class="p">]</span>
@@ -1188,7 +1188,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Edit <code>com.maverick.graphql.repository.PersonRepository</code> add line to get person data by identity number.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1198,7 +1198,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
 <span class="nd">@Transactional</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PersonRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="o">{</span>
 
@@ -1211,7 +1211,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Edit <code>com.maverick.graphql.service.PersonService</code> to process logic get data from repository. Code should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1240,7 +1240,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonService</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonRepository</span> <span class="n">personRepository</span><span class="o">;</span>
@@ -1272,7 +1272,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Create exception <code>com.maverick.graphql.exception.DataNotFoundException</code> to handle when record not found.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1288,7 +1288,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@ResponseStatus</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="na">NOT_FOUND</span><span class="o">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="s">&#34;data: not found&#34;</span><span class="o">)</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@ResponseStatus</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="na">NOT_FOUND</span><span class="o">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="s">&#34;data: not found&#34;</span><span class="o">)</span>
 <span class="nd">@NoArgsConstructor</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataNotFoundException</span> <span class="kd">extends</span> <span class="n">RuntimeException</span> <span class="o">{</span>
 
@@ -1307,7 +1307,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Create query resolver <code>com.maverick.graphql.resolver.PersonResolver</code> to handle query request.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1336,7 +1336,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonResolver</span> <span class="kd">implements</span> <span class="n">GraphQLQueryResolver</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonService</span> <span class="n">personService</span><span class="o">;</span>
@@ -1370,7 +1370,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1379,7 +1379,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
     <span class="nx">getAllPerson</span> <span class="p">{</span>
         <span class="nx">id</span>
         <span class="nx">firstName</span>
@@ -1391,7 +1391,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Response should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1409,7 +1409,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;getAllPerson&#34;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
@@ -1430,7 +1430,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1439,7 +1439,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
     <span class="nx">getPersonById</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">id</span>
         <span class="nx">firstName</span>
@@ -1451,7 +1451,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Response should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1462,7 +1462,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;getPersonById&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
@@ -1476,7 +1476,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1486,7 +1486,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
     <span class="nx">getPersonByIdentityNumber</span><span class="p">(</span><span class="nx">identityNumber</span><span class="o">:</span> <span class="s2">&#34;346343723744&#34;</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">id</span>
         <span class="nx">firstName</span>
@@ -1499,7 +1499,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Response should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1511,7 +1511,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;getPersonByIdentityNumber&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
@@ -1527,7 +1527,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Edit <code>resource/schema.graphqls</code>, code should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1563,7 +1563,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
 
 <span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
     <span class="nx">getAllPerson</span><span class="o">:</span> <span class="p">[</span><span class="nx">Person</span><span class="o">!</span><span class="p">]</span>
@@ -1602,7 +1602,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Edit mutation <code>com.maverick.graphql.mutation.PersonMutation</code> to process logic save updated data. Code should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1639,7 +1639,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonMutation</span> <span class="kd">implements</span> <span class="n">GraphQLMutationResolver</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonService</span> <span class="n">personService</span><span class="o">;</span>
@@ -1681,7 +1681,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1693,7 +1693,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="nx">UpdatePerson</span><span class="p">(</span><span class="nx">$input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="nx">UpdatePerson</span><span class="p">(</span><span class="nx">$input</span><span class="o">:</span> <span class="nx">PersonInput</span><span class="o">!</span><span class="p">){</span>
     <span class="nx">updatePerson</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">$input</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">id</span>
         <span class="nx">firstName</span>
@@ -1708,7 +1708,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>GraphQL Variables</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1720,7 +1720,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;input&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;firstName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
         <span class="nt">&#34;lastName&#34;</span><span class="p">:</span> <span class="s2">&#34;Johnson&#34;</span><span class="p">,</span>
@@ -1735,7 +1735,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Response should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1749,7 +1749,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;updatePerson&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1767,7 +1767,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Edit <code>resource/schema.graphqls</code>, code should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1809,7 +1809,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
 <span class="nx">scalar</span> <span class="nx">Timestamp</span>
 
 <span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
@@ -1854,7 +1854,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Edit <code>com.maverick.graphql.repository.PersonRepository</code> add line to update deleted_at for soft delete.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1868,7 +1868,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
 <span class="nd">@Transactional</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PersonRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="o">{</span>
 
@@ -1885,7 +1885,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Edit <code>com.maverick.graphql.service.PersonService</code> to process logic delete data from repository. Code should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1918,7 +1918,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonService</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonRepository</span> <span class="n">personRepository</span><span class="o">;</span>
@@ -1954,7 +1954,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Edit mutation <code>com.maverick.graphql.mutation.PersonMutation</code> to process logic save updated data. Code should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2002,7 +2002,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">46
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonMutation</span> <span class="kd">implements</span> <span class="n">GraphQLMutationResolver</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">PersonService</span> <span class="n">personService</span><span class="o">;</span>
@@ -2055,14 +2055,14 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="p">{</span>
     <span class="nx">deletePerson</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">message</span>
     <span class="p">}</span>
@@ -2072,7 +2072,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Response should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2081,7 +2081,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;deletePerson&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;ok&#34;</span>
@@ -2094,14 +2094,14 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="p">{</span>
     <span class="nx">deletePerson</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">message</span>
     <span class="p">}</span>
@@ -2111,7 +2111,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </div><p>Response should be like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2121,7 +2121,7 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;errors&#34;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;person record: not found&#34;</span>
@@ -2135,10 +2135,10 @@ spring.jpa.hibernate.use-new-id-generator-mappings=false
 <p>You can clone or download this project</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">https://github.com/piinalpin/graphql-spring-boot.git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">https://github.com/piinalpin/graphql-spring-boot.git
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>

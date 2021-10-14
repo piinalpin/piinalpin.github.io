@@ -41,7 +41,7 @@
     
         "keywords": "Java, Spring Boot, GraphQL, GraphiQL, MySQL",
     
-    "wordcount":  1303 ,
+    "wordcount":  1250 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/01\/graphql-spring-boot-relation\/",
     
         "datePublished": "2021-01-06T09:30:18\u002b07:00",
@@ -147,8 +147,8 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-01-06>2021-01-06</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1303 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>7 min&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1250 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>6 min&nbsp;</div>
         </div>
 
         
@@ -228,7 +228,7 @@
 <p>Create database migration <code>resource/db/migration/V2_2__Book.sql</code> see <a href="https://flywaydb.org/documentation/">Flyway Documentation</a> for versioning migration.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -247,29 +247,29 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SET</span> <span class="n">AUTOCOMMIT</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-
-<span class="k">START</span> <span class="k">TRANSACTION</span><span class="p">;</span>
-    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">m_book</span> <span class="p">(</span>
-        <span class="n">id</span>                      <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
-        <span class="n">created_at</span>              <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">created_by</span>              <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">updated_at</span>              <span class="n">DATETIME</span><span class="p">,</span>
-        <span class="n">deleted_at</span>              <span class="n">DATETIME</span><span class="p">,</span>
-        <span class="n">author_id</span>               <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">title</span>                   <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">publisher</span>               <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="n">description</span>             <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
-        <span class="n">release_date</span>            <span class="n">DATETIME</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">author_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">m_person</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
-    <span class="p">);</span>
-<span class="k">COMMIT</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SET</span><span class="w"> </span><span class="n">AUTOCOMMIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">m_book</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">        </span><span class="n">id</span><span class="w">                      </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">created_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">created_by</span><span class="w">              </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">updated_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">deleted_at</span><span class="w">              </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">author_id</span><span class="w">               </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">title</span><span class="w">                   </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">publisher</span><span class="w">               </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="n">description</span><span class="w">             </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span><span class="w">
+</span><span class="w">        </span><span class="n">release_date</span><span class="w">            </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">author_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">m_person</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">
+</span><span class="w">    </span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="k">COMMIT</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Create book model <code>com.maverick.graphql.model.BookModel</code> which is inheritence from <code>BaseModel</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -311,7 +311,7 @@
 </span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Entity</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Entity</span>
 <span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;M_BOOK&#34;</span><span class="o">)</span>
 <span class="nd">@Builder</span>
 <span class="nd">@NoArgsConstructor</span>
@@ -356,14 +356,14 @@
 </div><p>Edit person model <code>com.maverick.graphql.model.PersonModel</code> for mapping one to many from <code>BookModel</code>, add this line into <code>PersonModel</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@JsonIgnore</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@JsonIgnore</span>
 <span class="nd">@OneToMany</span><span class="o">(</span><span class="n">cascade</span> <span class="o">=</span> <span class="n">CascadeType</span><span class="o">.</span><span class="na">ALL</span><span class="o">,</span> <span class="n">fetch</span> <span class="o">=</span> <span class="n">FetchType</span><span class="o">.</span><span class="na">LAZY</span><span class="o">,</span> <span class="n">mappedBy</span> <span class="o">=</span> <span class="s">&#34;author&#34;</span><span class="o">)</span>
 <span class="nd">@Getter</span>
 <span class="nd">@Setter</span>
@@ -373,7 +373,7 @@
 </div><p>Create repository <code>com.maverick.graphql.repository.BookRepository</code> extends from <code>JpaRepository</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -388,7 +388,7 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
 <span class="nd">@Transactional</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">BookRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">BookModel</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="o">{</span>
 
@@ -406,7 +406,7 @@
 </div><p>Create form <code>com.maverick.graphql.form.BookForm</code> for input request.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -422,7 +422,7 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BookForm</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="n">Long</span> <span class="n">authorId</span><span class="o">;</span>
@@ -441,7 +441,7 @@
 </div><p>Create service <code>com.maverick.graphql.service.BookService</code> to store book model into database using repository.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -474,7 +474,7 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BookService</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">BookRepository</span> <span class="n">bookRepository</span><span class="o">;</span>
@@ -511,7 +511,7 @@
 <p>Create mutation service <code>com.maverick.graphql.mutation.BookMutation</code> use for anychange data from GraphQL schema.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -565,7 +565,7 @@
 </span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BookMutation</span> <span class="kd">implements</span> <span class="n">GraphQLMutationResolver</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">BookService</span> <span class="n">bookService</span><span class="o">;</span>
@@ -623,7 +623,7 @@
 <p>Create query resolver <code>com.maverick.graphql.resolver.BookResolver</code> to handle query request.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -650,7 +650,7 @@
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BookResolver</span> <span class="kd">implements</span> <span class="n">GraphQLQueryResolver</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">BookService</span> <span class="n">bookService</span><span class="o">;</span>
@@ -681,7 +681,7 @@
 <p>Add book into schema, edit <code>resource/schema.graphqls</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -724,7 +724,7 @@
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">scalar</span> <span class="nb">Date</span>
 
 <span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
     <span class="nx">getAllPerson</span><span class="o">:</span> <span class="p">[</span><span class="nx">Person</span><span class="o">!</span><span class="p">]</span>
@@ -773,7 +773,7 @@
 <p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -787,7 +787,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="nx">AddBook</span><span class="p">(</span><span class="nx">$input</span><span class="o">:</span> <span class="nx">BookInput</span><span class="o">!</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="nx">AddBook</span><span class="p">(</span><span class="nx">$input</span><span class="o">:</span> <span class="nx">BookInput</span><span class="o">!</span><span class="p">){</span>
     <span class="nx">addBook</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">$input</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">id</span>
         <span class="nx">title</span>
@@ -804,7 +804,7 @@
 </div><p>GraphQL Variables</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -815,7 +815,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;input&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;authorId&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Tutorial GraphQL&#34;</span><span class="p">,</span>
@@ -829,7 +829,7 @@
 </div><p>Response</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -845,7 +845,7 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;addBook&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -865,7 +865,7 @@
 <p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -880,7 +880,7 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">query</span> <span class="p">{</span>
     <span class="nx">getBookById</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">id</span>
         <span class="nx">title</span>
@@ -898,7 +898,7 @@
 </div><p>Response</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -915,7 +915,7 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;getBookById&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -936,7 +936,7 @@
 <p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -950,7 +950,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="nx">UpdateBook</span><span class="p">(</span><span class="nx">$input</span><span class="o">:</span> <span class="nx">BookInput</span><span class="o">!</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="nx">UpdateBook</span><span class="p">(</span><span class="nx">$input</span><span class="o">:</span> <span class="nx">BookInput</span><span class="o">!</span><span class="p">){</span>
     <span class="nx">updateBook</span><span class="p">(</span><span class="nx">input</span><span class="o">:</span> <span class="nx">$input</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">id</span>
         <span class="nx">title</span>
@@ -967,7 +967,7 @@
 </div><p>GraphQL Variables</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -978,7 +978,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;input&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;authorId&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Tutorial GraphQL Updated&#34;</span><span class="p">,</span>
@@ -992,7 +992,7 @@
 </div><p>Response</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1008,7 +1008,7 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;updateBook&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1028,14 +1028,14 @@
 <p>Query</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">mutation</span> <span class="p">{</span>
     <span class="nx">deleteBook</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">message</span>
     <span class="p">}</span>
@@ -1045,7 +1045,7 @@
 </div><p>Response</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1054,7 +1054,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&#34;deleteBook&#34;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;ok&#34;</span>
@@ -1067,10 +1067,10 @@
 <p>You can clone or download this project</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git@github.com:piinalpin/graphql-spring-boot.git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git@github.com:piinalpin/graphql-spring-boot.git
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>

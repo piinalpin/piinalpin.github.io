@@ -1,0 +1,40 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>PiinAlpin on PiinAlpin</title>
+        <link>https://blog.piinalpin.com/</link>
+        <description>Recent content in PiinAlpin on PiinAlpin</description>
+        <generator>Hugo -- gohugo.io</generator>
+        
+            <language>en</language>
+        
+        
+        
+            <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+        
+        
+            <lastBuildDate>Thu, 14 Oct 2021 11:19:26 +0700</lastBuildDate>
+        
+        <atom:link href="https://blog.piinalpin.com/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Posts</title>
+                <link>https://blog.piinalpin.com/posts/</link>
+                <pubDate>Thu, 14 Oct 2021 11:19:26 +0700</pubDate>
+                
+                <guid>https://blog.piinalpin.com/posts/</guid>
+                <description></description>
+            </item>
+        
+            <item>
+                <title>About Me</title>
+                <link>https://blog.piinalpin.com/about/</link>
+                <pubDate>Fri, 02 Aug 2019 11:04:49 +0800</pubDate>
+                
+                <guid>https://blog.piinalpin.com/about/</guid>
+                <description>&lt;p&gt;Hello! I am &lt;strong&gt;Alvinditya Saputra&lt;/strong&gt;. Backend Developer.&lt;/p&gt;
+&lt;p&gt;I like new things, interested in data science and have a high curiosity. Familiar with agile development and system development with Restful using &lt;strong&gt;Object Relational Mapping&lt;/strong&gt;. If I have spare time I would rather research about &lt;strong&gt;machine learning&lt;/strong&gt; in the Python forum.&lt;/p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

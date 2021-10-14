@@ -41,7 +41,7 @@
     
         "keywords": "Java, Spring Batch, Spring Boot, MySQL",
     
-    "wordcount":  2002 ,
+    "wordcount":  1966 ,
     "url": "https:\/\/blog.piinalpin.com\/2020\/12\/spring-batch-example\/",
     
         "datePublished": "2020-12-08T14:08:21\u002b07:00",
@@ -147,7 +147,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-12-08>2020-12-08</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 2002 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1966 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>10 min&nbsp;</div>
         </div>
 
@@ -239,14 +239,14 @@
 <p>Typically, your customer or a business analyst supplies a spreadsheet. For this simple example, you can find some made-up data in <code>src/main/resources/sample-data.csv</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html">Maverick,24,M
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">Maverick,24,M
 Al Sah-Him,21,M
 Felicia,24,F
 Jessica,22,F
@@ -256,7 +256,7 @@ Calvin Joe,25,M
 </div><p>Next, write an SQL script to create a table and store data.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -268,17 +268,17 @@ Calvin Joe,25,M
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">M_HUMAN</span>
-<span class="p">(</span>
-    <span class="n">id</span>         <span class="nb">bigint</span> <span class="n">auto_increment</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-    <span class="n">created_at</span> <span class="k">timestamp</span> <span class="k">default</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">updated_at</span> <span class="k">timestamp</span>                           <span class="k">null</span> <span class="k">on</span> <span class="k">update</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-    <span class="n">deleted_at</span> <span class="k">timestamp</span>                           <span class="k">null</span><span class="p">,</span>
-    <span class="n">name</span>       <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>                        <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">age</span>        <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                          <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">gender</span>     <span class="nb">varchar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                          <span class="k">not</span> <span class="k">null</span>
-<span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">M_HUMAN</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="w">
+</span><span class="w">    </span><span class="n">id</span><span class="w">         </span><span class="nb">bigint</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">updated_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w">                           </span><span class="k">null</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">deleted_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w">                           </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">name</span><span class="w">       </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">                        </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">age</span><span class="w">        </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">                          </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">gender</span><span class="w">     </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">                          </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w">
+</span><span class="w"></span><span class="p">);</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>Starting with spring initializr</li>
@@ -287,7 +287,7 @@ Calvin Joe,25,M
 <p>The following listing shows the <code>pom.xml</code> file created when you choose Maven:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -357,7 +357,7 @@ Calvin Joe,25,M
 </span><span class="lnt">68
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 	<span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
@@ -432,7 +432,7 @@ Calvin Joe,25,M
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -454,7 +454,7 @@ Calvin Joe,25,M
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.model</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.model</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">lombok.AllArgsConstructor</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">lombok.Builder</span><span class="o">;</span>
@@ -481,7 +481,7 @@ Calvin Joe,25,M
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -501,7 +501,7 @@ Calvin Joe,25,M
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.processor</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.processor</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.model.Person</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
@@ -526,7 +526,7 @@ Calvin Joe,25,M
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -572,7 +572,7 @@ Calvin Joe,25,M
 </span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.configuration</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.configuration</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Qualifier</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
@@ -623,7 +623,7 @@ Calvin Joe,25,M
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -688,7 +688,7 @@ Calvin Joe,25,M
 </span><span class="lnt">63
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.quartz</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.quartz</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.quartz.JobExecutionContext</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.quartz.JobExecutionException</span><span class="o">;</span>
@@ -768,7 +768,7 @@ Calvin Joe,25,M
 <p>[7] : Year</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -890,7 +890,7 @@ Calvin Joe,25,M
 </span><span class="lnt">120
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.quartz</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.quartz</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
@@ -1017,7 +1017,7 @@ Calvin Joe,25,M
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1040,7 +1040,7 @@ Calvin Joe,25,M
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.service</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.service</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
@@ -1068,7 +1068,7 @@ Calvin Joe,25,M
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1164,7 +1164,7 @@ Calvin Joe,25,M
 </span><span class="lnt">94
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.configuration</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.configuration</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.model.Person</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.processor.PersonItemProcessor</span><span class="o">;</span>
@@ -1265,7 +1265,7 @@ Calvin Joe,25,M
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1278,7 +1278,7 @@ Calvin Joe,25,M
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
 <span class="nd">@PropertySources</span><span class="o">({</span>
 		<span class="nd">@PropertySource</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;classpath:application.properties&#34;</span><span class="o">,</span> <span class="n">ignoreResourceNotFound</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
 <span class="o">})</span>
@@ -1296,12 +1296,12 @@ Calvin Joe,25,M
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">spring.batch.initialize-schema=ALWAYS
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">spring.batch.initialize-schema=ALWAYS
 spring.main.allow-bean-definition-overriding=true
 spring.batch.job.enabled=false
 </code></pre></td></tr></table>
@@ -1311,7 +1311,7 @@ spring.batch.job.enabled=false
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1328,7 +1328,7 @@ spring.batch.job.enabled=false
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">app</span><span class="p">:</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">app</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Spring Batch Example&#34;</span><span class="w">
 </span><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">
@@ -1350,16 +1350,16 @@ spring.batch.job.enabled=false
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">java -jar spring-batch-example-0.0.1-SNAPSHOT.jar -Dspring.config.location<span class="o">=</span>application.yml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">java -jar spring-batch-example-0.0.1-SNAPSHOT.jar -Dspring.config.location<span class="o">=</span>application.yml
 </code></pre></td></tr></table>
 </div>
 </div><p>The job prints out a line for each person that gets transformed. After the job runs, you can also see the output from querying the database. It should resemble the following output:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1371,7 +1371,7 @@ spring.batch.job.enabled=false
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">2020-12-08 14:00:00.218  INFO 78242 --- [erBean_Worker-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=importPersonJob]] launched with the following parameters: [{time=1607410800020}]
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">2020-12-08 14:00:00.218  INFO 78242 --- [erBean_Worker-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=importPersonJob]] launched with the following parameters: [{time=1607410800020}]
 2020-12-08 14:00:00.338  INFO 78242 --- [erBean_Worker-1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [personImportStep]
 2020-12-08 14:00:00.437  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Maverick
 2020-12-08 14:00:00.438  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Al Sah-Him
@@ -1387,10 +1387,10 @@ spring.batch.job.enabled=false
 <p>You can clone or download this project</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git@github.com:piinalpin/spring-batch-quartz-example.git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git@github.com:piinalpin/spring-batch-quartz-example.git
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apollo-React on PiinAlpin</title>
+    <link>https://blog.piinalpin.com/tags/apollo-react/</link>
+    <description>Recent content in Apollo-React on PiinAlpin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 06 Jan 2021 14:18:10 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/apollo-react/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GraphQL Client using React</title>
+      <link>https://blog.piinalpin.com/2021/01/consume-graphql-react/</link>
+      <pubDate>Wed, 06 Jan 2021 14:18:10 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2021/01/consume-graphql-react/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

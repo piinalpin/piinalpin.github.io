@@ -224,10 +224,10 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip install tweepy
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install tweepy
 </code></pre></td></tr></table>
 </div>
 </div><ol start="2">
@@ -236,7 +236,7 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -273,7 +273,7 @@
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">json</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">tweepy</span>
 
 
@@ -315,7 +315,7 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -343,7 +343,7 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import custom twitter trendings API</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import custom twitter trendings API</span>
 <span class="kn">from</span> <span class="nn">TwitterTrendingsAPI</span> <span class="kn">import</span> <span class="n">TwitterTrendingsAPI</span>
 
 <span class="c1"># Define WOEID</span>
@@ -361,14 +361,14 @@
 
 <span class="c1"># Get Trendings</span>
 <span class="n">trendings</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">getTrending</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">trendings</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trendings</span><span class="p">)</span>
 
 <span class="c1"># Filter Trendings By Hashtag</span>
 <span class="n">trends</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">trend</span> <span class="ow">in</span> <span class="n">trendings</span><span class="p">:</span>
     <span class="n">getTrendName</span> <span class="o">=</span> <span class="n">trend</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&#34;#&#34;</span><span class="p">)</span>
     <span class="n">trends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">getTrendName</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">trends</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trends</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="conclusion"></a><h3>Conclusion</h3>

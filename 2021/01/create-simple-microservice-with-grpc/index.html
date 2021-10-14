@@ -243,7 +243,7 @@
 <p>Add below dependencies on your <code>pom.xml</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -273,7 +273,7 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- For the gRPC server --&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- For the gRPC server --&gt;</span>
 <span class="nt">&lt;dependency&gt;</span>
 	<span class="nt">&lt;groupId&gt;</span>net.devh<span class="nt">&lt;/groupId&gt;</span>
 	<span class="nt">&lt;artifactId&gt;</span>grpc-server-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
@@ -306,7 +306,7 @@
 </div><p>Add below extension and plugins into build section</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -344,7 +344,7 @@
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;extensions&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;extensions&gt;</span>
 	<span class="nt">&lt;extension&gt;</span>
 		<span class="nt">&lt;groupId&gt;</span>kr.motd.maven<span class="nt">&lt;/groupId&gt;</span>
 		<span class="nt">&lt;artifactId&gt;</span>os-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
@@ -385,7 +385,7 @@
 </div><p>Add configuration server port and gRPC port number. Create <code>project/application.yml</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -395,7 +395,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">server</span><span class="o">:</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">server</span><span class="o">:</span>
   <span class="nx">port</span><span class="o">:</span> <span class="mi">8080</span>
 <span class="nx">grpc</span><span class="o">:</span>
   <span class="nx">server</span><span class="o">:</span>
@@ -409,7 +409,7 @@
 <p>Then create a protocol buffers on gRPC Server-One <code>src/main/proto/HelloServiceServerOne.proto</code> file like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -427,7 +427,7 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
 <span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">serverone</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
 
@@ -448,16 +448,16 @@
 </div><p>Once the proto file is created, we should package the project. It will generated the classes inside the target folder.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Create an implementation class <code>com.example.grpc.serverone.server.HelloServiceServerOneImpl</code> for the proto service.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -480,7 +480,7 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@GrpcService</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@GrpcService</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloServiceServerOneImpl</span> <span class="kd">extends</span> <span class="n">HelloServiceServerOneGrpc</span><span class="o">.</span><span class="na">HelloServiceServerOneImplBase</span> <span class="o">{</span>
 
     <span class="nd">@Override</span>
@@ -506,7 +506,7 @@
 </div><p>Update project main application like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -515,7 +515,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerOneApplication</span> <span class="kd">extends</span> <span class="n">SpringBootServletInitializer</span> <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerOneApplication</span> <span class="kd">extends</span> <span class="n">SpringBootServletInitializer</span> <span class="o">{</span>
 
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">ServerOneApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
@@ -529,7 +529,7 @@
 <p>Add below dependencies on your <code>pom.xml</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -559,7 +559,7 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- For the gRPC server --&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- For the gRPC server --&gt;</span>
 <span class="nt">&lt;dependency&gt;</span>
 	<span class="nt">&lt;groupId&gt;</span>net.devh<span class="nt">&lt;/groupId&gt;</span>
 	<span class="nt">&lt;artifactId&gt;</span>grpc-server-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
@@ -592,7 +592,7 @@
 </div><p>Add below extension and plugins into build section</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -630,7 +630,7 @@
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;extensions&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;extensions&gt;</span>
 	<span class="nt">&lt;extension&gt;</span>
 		<span class="nt">&lt;groupId&gt;</span>kr.motd.maven<span class="nt">&lt;/groupId&gt;</span>
 		<span class="nt">&lt;artifactId&gt;</span>os-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
@@ -671,7 +671,7 @@
 </div><p>Add configuration server port and gRPC port number. Create <code>project/application.yml</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -681,7 +681,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">server</span><span class="o">:</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">server</span><span class="o">:</span>
   <span class="nx">port</span><span class="o">:</span> <span class="mi">8081</span>
 <span class="nx">grpc</span><span class="o">:</span>
   <span class="nx">server</span><span class="o">:</span>
@@ -696,7 +696,7 @@
 <p><strong>Note:</strong> It should be same for protocol buffers on gRPC Server One because we need a stub service from server one.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -714,7 +714,7 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
 <span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">serverone</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
 
@@ -735,17 +735,17 @@
 </div><p>Once the proto file is created, we should package the project. It will generated the classes inside the target folder.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a service class</p>
 <p><code>com.example.grpc.servertwo.client.GRPCClientService</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -775,7 +775,7 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">GRPCClientService</span> <span class="o">{</span>
 
     <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${grpcServerOne.port:9090}&#34;</span><span class="o">)</span>
@@ -810,7 +810,7 @@
 <p><code>com.example.grpc.servertwo.rest.dto.HelloClientRequest</code> we will use <code>dto</code> package (Data Transfer Object).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -820,7 +820,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloClientRequest</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
@@ -834,7 +834,7 @@
 <p><code>com.example.grpc.servertwo.rest.dto.HelloClientResponse</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -843,7 +843,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
 <span class="nd">@Builder</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloClientResponse</span> <span class="o">{</span>
 
@@ -856,7 +856,7 @@
 <p><code>com.example.grpc.servertwo.rest.controller.ServerTwoController</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -879,7 +879,7 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerTwoController</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">GRPCClientService</span> <span class="n">grpcClientService</span><span class="o">;</span>
@@ -905,7 +905,7 @@
 </div><p>Update project main application like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -915,7 +915,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerTwoApplication</span> <span class="kd">extends</span> <span class="n">SpringBootServletInitializer</span> <span class="o">{</span>
 
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
@@ -931,13 +931,13 @@
 <p>Request</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
     <span class="s2">&#34;firstName&#34;</span><span class="o">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
     <span class="s2">&#34;lastName&#34;</span><span class="o">:</span> <span class="s2">&#34;Johnson&#34;</span>
 <span class="p">}</span>
@@ -946,12 +946,12 @@
 </div><p>Response</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
     <span class="s2">&#34;greeting&#34;</span><span class="o">:</span> <span class="s2">&#34;Hello, Maverick Johnson. This response from server one.&#34;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -959,11 +959,11 @@
 </div><p>And the log is</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">2021-01-30 18:01:02.702  INFO <span class="m">53068</span> --- <span class="o">[</span>nio-8081-exec-1<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### Start execute GRPCClientService from server two</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">2021-01-30 18:01:02.702  INFO <span class="m">53068</span> --- <span class="o">[</span>nio-8081-exec-1<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### Start execute GRPCClientService from server two</span>
 2021-01-30 18:01:02.702  INFO <span class="m">53068</span> --- <span class="o">[</span>nio-8081-exec-1<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">## grpcServerOneHost::localhost and grpcServerOnePort::9090</span>
 </code></pre></td></tr></table>
 </div>
@@ -971,7 +971,7 @@
 <p>Create a protocol buffers on gRPC Server-Two <code>src/main/proto/UserServiceServerTwo.proto</code> file like below.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -999,7 +999,7 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
 <span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">servertwo</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
 
@@ -1030,16 +1030,16 @@
 </div><p>Once the proto file is created, we should package the project. It will generated the classes inside the target folder.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Create an implementation class <code>com.example.grpc.servertwo.server.UserServiceServerTwoImpl</code> for the proto service.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1091,7 +1091,7 @@
 </span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@GrpcService</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@GrpcService</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserServiceServerTwoImpl</span> <span class="kd">extends</span> <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">UserServiceServerTwoImplBase</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">UserServiceServerTwoImpl</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
@@ -1149,7 +1149,7 @@
 <p><strong>Note:</strong> It should be same for protocol buffers on gRPC Server Two because we need a stub service from server two.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1177,7 +1177,7 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
 <span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">servertwo</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
 
@@ -1208,17 +1208,17 @@
 </div><p>Once the proto file is created, we should package the project. It will generated the classes inside the target folder.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a service class</p>
 <p><code>com.example.grpc.servertwo.client.GRPCClientService</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1274,7 +1274,7 @@
 </span><span class="lnt">54
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">GRPCClientService</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">GRPCClientService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
@@ -1335,7 +1335,7 @@
 <p><code>com.example.grpc.serverone.rest.dto.UserClientRequest</code> we will use <code>dto</code> package (Data Transfer Object).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1346,7 +1346,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserClientRequest</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="n">String</span> <span class="n">username</span><span class="o">;</span>
@@ -1360,7 +1360,7 @@
 </div><p>Create a response <code>com.example.grpc.serverone.rest.dto.UserClientResponse</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1377,7 +1377,7 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
 <span class="nd">@Builder</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserClientResponse</span> <span class="o">{</span>
 
@@ -1398,7 +1398,7 @@
 <p><code>com.example.grpc.serverone.rest.controller.ServerOneController</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1428,7 +1428,7 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerOneController</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">GRPCClientService</span> <span class="n">grpcClientService</span><span class="o">;</span>
@@ -1464,7 +1464,7 @@
 <p>Response</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1482,7 +1482,7 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="p">[</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">[</span>
     <span class="p">{</span>
         <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;maverick&#34;</span><span class="p">,</span>
         <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;12824834&#34;</span><span class="p">,</span>
@@ -1503,12 +1503,12 @@
 </div><p>And the log is</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">2021-01-30 18:00:31.317  INFO <span class="m">53038</span> --- <span class="o">[</span>nio-8080-exec-2<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### START execute GRPCClientService from server one</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">2021-01-30 18:00:31.317  INFO <span class="m">53038</span> --- <span class="o">[</span>nio-8080-exec-2<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### START execute GRPCClientService from server one</span>
 2021-01-30 18:00:31.318  INFO <span class="m">53038</span> --- <span class="o">[</span>nio-8080-exec-2<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">## grpcServerTwoHost::localhost and grpcServerTwoPort::9091</span>
 2021-01-30 18:00:31.967  INFO <span class="m">53038</span> --- <span class="o">[</span>nio-8080-exec-2<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### END execute GRPCClientService from server one</span>
 </code></pre></td></tr></table>
@@ -1517,14 +1517,14 @@
 <p>Request</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
     <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe&#34;</span><span class="p">,</span>
     <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe123&#34;</span><span class="p">,</span>
     <span class="s2">&#34;fullName&#34;</span><span class="o">:</span> <span class="s2">&#34;John Doe&#34;</span>
@@ -1534,7 +1534,7 @@
 </div><p>Response</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1543,7 +1543,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
     <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe&#34;</span><span class="p">,</span>
     <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe123&#34;</span><span class="p">,</span>
     <span class="s2">&#34;fullName&#34;</span><span class="o">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">,</span>
@@ -1558,7 +1558,7 @@
 <p><strong>Note:</strong> It should be same for protocol buffers on gRPC Server One because we need a stub service from server one.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1576,7 +1576,7 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
 <span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">serverone</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
 
@@ -1598,11 +1598,11 @@
 <p>We need some dependencies for gRPC.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install grpcio grpcio-tools
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pip install grpcio grpcio-tools
 $ python -m grpc_tools.protoc -I. --python_out<span class="o">=</span>. --grpc_python_out<span class="o">=</span>. HelloServiceServerOne.proto
 </code></pre></td></tr></table>
 </div>
@@ -1614,7 +1614,7 @@ $ python -m grpc_tools.protoc -I. --python_out<span class="o">=</span>. --grpc_p
 <p>Create a gRPC Client</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1637,7 +1637,7 @@ $ python -m grpc_tools.protoc -I. --python_out<span class="o">=</span>. --grpc_p
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">grpc</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">grpc</span>
 
 <span class="c1">## Import generated classes</span>
 <span class="kn">import</span> <span class="nn">HelloServiceServerOne_pb2</span><span class="o">,</span> <span class="nn">HelloServiceServerOne_pb2_grpc</span>
@@ -1657,18 +1657,18 @@ $ python -m grpc_tools.protoc -I. --python_out<span class="o">=</span>. --grpc_p
 <span class="n">response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
 
 <span class="c1"># Output response</span>
-<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">greeting</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">greeting</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Thats it!</p>
 <p>With the server already listening, we simply run our client.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ python client.py
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ python client.py
 Hello, Maverick John Doe. This response from server one.
 </code></pre></td></tr></table>
 </div>
@@ -1676,10 +1676,10 @@ Hello, Maverick John Doe. This response from server one.
 <p>You can clone or download this project</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">https://github.com/piinalpin/gRPC-example.git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">https://github.com/piinalpin/gRPC-example.git
 </code></pre></td></tr></table>
 </div>
 </div><a class="post-dummy-target" id="thankyou"></a><h3>Thankyou</h3>

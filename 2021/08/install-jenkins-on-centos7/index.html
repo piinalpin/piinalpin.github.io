@@ -236,11 +236,11 @@
 <li>Add the following host entries on local device <code>/etc/hosts</code> :
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">192.168.0.1 jenkins.local
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">192.168.0.1 jenkins.local
 192.168.1.1 agent.local
 </code></pre></td></tr></table>
 </div>
@@ -250,7 +250,7 @@
 <p>Create Vagrantfile and fill the following code.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -280,7 +280,7 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Vagrant.configure<span class="o">(</span>2<span class="o">)</span> <span class="k">do</span> <span class="p">|</span>config<span class="p">|</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Vagrant.configure<span class="o">(</span>2<span class="o">)</span> <span class="k">do</span> <span class="p">|</span>config<span class="p">|</span>
     config.vm.box <span class="o">=</span> <span class="s2">&#34;bento/centos-7&#34;</span>
   
     config.vm.define <span class="s2">&#34;jenkins&#34;</span> <span class="k">do</span> <span class="p">|</span>jenkins<span class="p">|</span>
@@ -318,7 +318,7 @@
 <p>Create jenkins limit file <code>/etc/security/limits.d/30-jenkins.conf</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -328,7 +328,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">jenkins soft core unlimited
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">jenkins soft core unlimited
 jenkins hard core unlimited
 jenkins soft fsize unlimited
 jenkins hard fsize unlimited
@@ -341,7 +341,7 @@ jenkins hard nproc <span class="m">30654</span>
 </div><p>Setup firewall</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -350,7 +350,7 @@ jenkins hard nproc <span class="m">30654</span>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">systemctl start firewalld
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start firewalld
 
 firewall-cmd --permanent --add-port<span class="o">=</span>22/tcp
 firewall-cmd --permanent --add-port<span class="o">=</span>8080/tcp
@@ -362,7 +362,7 @@ firewall-cmd --list-all
 </div><p>We should get an outuput</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -377,7 +377,7 @@ firewall-cmd --list-all
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">public <span class="o">(</span>active<span class="o">)</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">public <span class="o">(</span>active<span class="o">)</span>
   target: default
   icmp-block-inversion: no
   interfaces: eth0 eth1
@@ -395,18 +395,18 @@ firewall-cmd --list-all
 </div><p>Add the following entries to <code>/etc/hosts</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">192.168.0.1 jenkins.local
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">192.168.0.1 jenkins.local
 192.168.1.1 agent.local
 </code></pre></td></tr></table>
 </div>
 </div><p>Add AdoptOpenJDK repository</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -416,7 +416,7 @@ firewall-cmd --list-all
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt;&#39;EOF&#39; &gt; /etc/yum.repos.d/adoptopenjdk.repo
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt;&#39;EOF&#39; &gt; /etc/yum.repos.d/adoptopenjdk.repo
 </span><span class="s">[AdoptOpenJDK]
 </span><span class="s">name=AdoptOpenJDK
 </span><span class="s">baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
@@ -429,31 +429,31 @@ firewall-cmd --list-all
 </div><p>Add repository to get latest Git</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.9-1.x86_64.rpm
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.9-1.x86_64.rpm
 </code></pre></td></tr></table>
 </div>
 </div><p>Add jenkins repository</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 </code></pre></td></tr></table>
 </div>
 </div><p>Create directory</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mkdir -p /var/cache/jenkins/tmp
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir -p /var/cache/jenkins/tmp
 mkdir -p /var/cache/jenkins/heapdumps
 </code></pre></td></tr></table>
 </div>
@@ -461,21 +461,21 @@ mkdir -p /var/cache/jenkins/heapdumps
 <p>Install AdoptOpenJDK, Git, Jenkins and Fontconfig</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yum -y install adoptopenjdk-11-hotspot git jenkins fontconfig
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install adoptopenjdk-11-hotspot git jenkins fontconfig
 </code></pre></td></tr></table>
 </div>
 </div><p>Edit the <code>/etc/sysconfig/jenkins</code> file</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">JENKINS_JAVA_OPTIONS</span><span class="o">=</span><span class="s2">&#34;-Djava.awt.headless=true -Djava.io.tmpdir=/var/cache/jenkins/tmp -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Jakarta -Duser.timezone=Asia/Jakarta&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">JENKINS_JAVA_OPTIONS</span><span class="o">=</span><span class="s2">&#34;-Djava.awt.headless=true -Djava.io.tmpdir=/var/cache/jenkins/tmp -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Jakarta -Duser.timezone=Asia/Jakarta&#34;</span>
 
 <span class="nv">JENKINS_ARGS</span><span class="o">=</span><span class="s2">&#34;--pluginroot=/var/cache/jenkins/plugins&#34;</span>
 </code></pre></td></tr></table>
@@ -485,7 +485,7 @@ mkdir -p /var/cache/jenkins/heapdumps
 <p>We should get an output status.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -494,7 +494,7 @@ mkdir -p /var/cache/jenkins/heapdumps
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">● jenkins.service - LSB: Jenkins Automation Server
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">● jenkins.service - LSB: Jenkins Automation Server
    Loaded: loaded <span class="o">(</span>/etc/rc.d/init.d/jenkins<span class="p">;</span> bad<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
    Active: active <span class="o">(</span>running<span class="o">)</span> since Sun 2021-08-01 01:06:57 UTC<span class="p">;</span> 16s ago
      Docs: man:systemd-sysv-generator<span class="o">(</span>8<span class="o">)</span>
@@ -520,7 +520,7 @@ mkdir -p /var/cache/jenkins/heapdumps
 <p>Setup firewall</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -528,7 +528,7 @@ mkdir -p /var/cache/jenkins/heapdumps
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">systemctl start firewalld
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start firewalld
 
 firewall-cmd --permanent --add-port<span class="o">=</span>22/tcp
 
@@ -539,7 +539,7 @@ firewall-cmd --list-all
 </div><p>We should get an outuput</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -554,7 +554,7 @@ firewall-cmd --list-all
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">public <span class="o">(</span>active<span class="o">)</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">public <span class="o">(</span>active<span class="o">)</span>
   target: default
   icmp-block-inversion: no
   interfaces: eth0 eth1
@@ -572,18 +572,18 @@ firewall-cmd --list-all
 </div><p>Add the following entries to <code>/etc/hosts</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">192.168.0.1 jenkins.local
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">192.168.0.1 jenkins.local
 192.168.1.1 agent.local
 </code></pre></td></tr></table>
 </div>
 </div><p>Add AdoptOpenJDK repository</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -593,7 +593,7 @@ firewall-cmd --list-all
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt;&#39;EOF&#39; &gt; /etc/yum.repos.d/adoptopenjdk.repo
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt;&#39;EOF&#39; &gt; /etc/yum.repos.d/adoptopenjdk.repo
 </span><span class="s">[AdoptOpenJDK]
 </span><span class="s">name=AdoptOpenJDK
 </span><span class="s">baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
@@ -606,20 +606,20 @@ firewall-cmd --list-all
 </div><p>Add repository to get latest Git</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.9-1.x86_64.rpm
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.9-1.x86_64.rpm
 </code></pre></td></tr></table>
 </div>
 </div><p>Uninstall old Git by typing <code>yum remove git*</code> on your terminal</p>
 <p>Install AdoptOpenJDK, Git, Fontconfig and Wget</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yum -y install adoptopenjdk-11-hotspot git fontconfig wget
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install adoptopenjdk-11-hotspot git fontconfig wget
 </code></pre></td></tr></table>
 </div>
 </div><p>Install docker and unzip from <a href="https://docs.docker.com/engine/install/centos/">Install Docker Engine on CentOS</a></p>
@@ -639,10 +639,10 @@ firewall-cmd --list-all
 <p>SSH again to vagrant agent</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">ssh -p <span class="m">2231</span> vagrant@agent.local -i .vagrant/machines/agent/virtualbox/private_key
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ssh -p <span class="m">2231</span> vagrant@agent.local -i .vagrant/machines/agent/virtualbox/private_key
 </code></pre></td></tr></table>
 </div>
 </div><p>Try running container by typing <code>docker run hello-world</code> on your terminal.</p>
@@ -697,7 +697,7 @@ firewall-cmd --list-all
 <p>Create build script to running jobs.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -713,7 +713,7 @@ firewall-cmd --list-all
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pipeline <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pipeline <span class="o">{</span>
   agent <span class="o">{</span>label <span class="s2">&#34;linux&#34;</span><span class="o">}</span>
   stages <span class="o">{</span>
     stage<span class="o">(</span><span class="s2">&#34;Hello&#34;</span><span class="o">)</span> <span class="o">{</span>

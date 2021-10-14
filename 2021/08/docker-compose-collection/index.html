@@ -41,7 +41,7 @@
     
         "keywords": "Docker, Docker Compose, Collection, YAML",
     
-    "wordcount":  748 ,
+    "wordcount":  732 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/08\/docker-compose-collection\/",
     
         "datePublished": "2021-08-15T20:01:28\u002b07:00",
@@ -147,7 +147,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-08-15>2021-08-15</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 748 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 732 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>4 min&nbsp;</div>
         </div>
 
@@ -229,11 +229,11 @@
             <a class="post-dummy-target" id="basic-command"></a><h3>Basic command</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker-compose -f <span class="nv">$FILENAME</span> up -d
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker-compose -f <span class="nv">$FILENAME</span> up -d
 docker-compose -f <span class="nv">$FILENAME</span> down -v
 </code></pre></td></tr></table>
 </div>
@@ -241,10 +241,10 @@ docker-compose -f <span class="nv">$FILENAME</span> down -v
 <p>Download docker compose configuration using curl</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o kafka-cli.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o kafka-cli.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>kafka-cli.yaml</code> will create a new container <code>zookeeper</code> and exposed port <code>2181</code> on host port. Also create a new container <code>kafka</code> and exposed port <code>29092</code>, <code>9092</code> and <code>9101</code> on host port.</p>
@@ -253,10 +253,10 @@ docker-compose -f <span class="nv">$FILENAME</span> down -v
 <p>Download docker compose configuration using curl</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o redis.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/redis.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o redis.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/redis.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>redis.yaml</code> will create a new container <code>redis</code> and exposed port <code>6379</code> on host port.</p>
@@ -264,30 +264,30 @@ docker-compose -f <span class="nv">$FILENAME</span> down -v
 <p>Run <code>redis-cli</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it redis redis-cli
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it redis redis-cli
 </code></pre></td></tr></table>
 </div>
 </div><p>Select the Redis logical database having the specified zero-based numeric index. New connections always use the database 0.</p>
 <p>Change database.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">select</span> <span class="o">[</span>INDEX<span class="o">]</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="k">select</span> <span class="o">[</span>INDEX<span class="o">]</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Set and get key</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">set</span> <span class="o">[</span>KEY_NAME<span class="o">]</span> <span class="o">[</span>VALUE<span class="o">]</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">set</span> <span class="o">[</span>KEY_NAME<span class="o">]</span> <span class="o">[</span>VALUE<span class="o">]</span>
 get <span class="o">[</span>KEY_NAME<span class="o">]</span>
 </code></pre></td></tr></table>
 </div>
@@ -295,11 +295,11 @@ get <span class="o">[</span>KEY_NAME<span class="o">]</span>
 <p>Install <a href="https://formulae.brew.sh/cask/another-redis-desktop-manager">Another Redis Desktop Manager</a> with homebrew. You can run with following command on your terminal.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">brew install cask 
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install cask 
 brew install --cask another-redis-desktop-manager
 </code></pre></td></tr></table>
 </div>
@@ -313,39 +313,39 @@ brew install --cask another-redis-desktop-manager
 <p>Download docker compose configuration using curl</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o mysql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mysql.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o mysql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mysql.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>mysql.yaml</code> will create a new container <code>mysql</code> and exposed port <code>3306</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
 </code></pre></td></tr></table>
 </div>
 </div><p>Create volume <code>mysql-data</code> to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker volume create mysql-data
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create mysql-data
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>MySQL CLI</strong></p>
 <p>Run this command to run MySQL command on container. Default user is <code>root</code> and password <code>SevenEightTwo782</code> you can change the password in <code>yaml</code> file.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it mysql bash
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it mysql bash
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Basic command:</strong></p>
@@ -353,33 +353,33 @@ brew install --cask another-redis-desktop-manager
 <li>Login into database, then type your password
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mysql -u root -p
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mysql -u root -p
 </code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Get list of databases
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">show</span> <span class="n">databases</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">show</span><span class="w"> </span><span class="n">databases</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Create database and use database
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">database</span> <span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span>
-<span class="n">use</span> <span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">use</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -387,39 +387,39 @@ brew install --cask another-redis-desktop-manager
 <p>Download docker compose configuration using curl</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o postgresql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/postgresql.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o postgresql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/postgresql.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>postgresql.yaml</code> will create a new container <code>postgresql</code> and exposed port <code>5432</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
 </code></pre></td></tr></table>
 </div>
 </div><p>Create volume <code>postgre-data</code> to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker volume create postgre-data
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create postgre-data
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Postgre SQL CLI</strong></p>
 <p>Run this command to run PostgreSQL command on container. Default user is <code>postgres</code> and password <code>SevenEightTwo782</code> you can change the password in <code>yaml</code> file.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it postgresql bash
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it postgresql bash
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Basic command:</strong></p>
@@ -427,33 +427,33 @@ brew install --cask another-redis-desktop-manager
 <li>Login into database
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">psql -Upostgres -w
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">psql -Upostgres -w
 </code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Get list of databases
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="err">\</span><span class="n">l</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="err">\</span><span class="n">l</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Create database and use database
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">database</span> <span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span>
-<span class="err">\</span><span class="k">c</span> <span class="err">$</span><span class="n">DB_NAME</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -461,39 +461,39 @@ brew install --cask another-redis-desktop-manager
 <p>Download docker compose configuration using curl</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o sqlserver.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sqlserver.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o sqlserver.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sqlserver.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>sqlserver.yaml</code> will create a new container <code>sqlserver</code> and exposed port <code>1433</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
 </code></pre></td></tr></table>
 </div>
 </div><p>Create volume <code>sqlserver-data</code> and <code>sqlserver-user</code> to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker volume create sqlserver-data <span class="o">&amp;&amp;</span> docker volume create sqlserver-user
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create sqlserver-data <span class="o">&amp;&amp;</span> docker volume create sqlserver-user
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>SQL Server CLI</strong></p>
 <p>Run this command to run SQL Server command on container. Default user is <code>sa</code> and password <code>SevenEightTwo782</code> you can change the password in <code>yaml</code> file.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it sqlserver /opt/mssql-tools/bin/sqlcmd -U sa -P SevenEightTwo782
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it sqlserver /opt/mssql-tools/bin/sqlcmd -U sa -P SevenEightTwo782
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Basic command:</strong></p>
@@ -501,25 +501,25 @@ brew install --cask another-redis-desktop-manager
 <li>Get list of databases
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">name</span> <span class="k">from</span> <span class="n">sys</span><span class="p">.</span><span class="n">databases</span>
-<span class="k">go</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">databases</span><span class="w">
+</span><span class="w"></span><span class="k">go</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Create database and use database
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">database</span> <span class="err">$</span><span class="n">DB_NAME</span>
-<span class="k">go</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="w">
+</span><span class="w"></span><span class="k">go</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -527,29 +527,29 @@ brew install --cask another-redis-desktop-manager
 <p>Download docker compose configuration using curl</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o rabbitmq.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/rabbitmq.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o rabbitmq.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/rabbitmq.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>rabbitmq.yaml</code> will create a new container <code>rabbitmq</code> and exposed port <code>5672</code> and <code>15672</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
 </code></pre></td></tr></table>
 </div>
 </div><p>Create volume <code>rabbitmq-data</code> and <code>rabbitmq-log</code> to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker volume create rabbitmq-data <span class="o">&amp;&amp;</span> docker volume create rabbitmq-log
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create rabbitmq-data <span class="o">&amp;&amp;</span> docker volume create rabbitmq-log
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>RabbitMq Management</strong></p>
@@ -559,29 +559,29 @@ brew install --cask another-redis-desktop-manager
 <p>Download docker compose configuration using curl</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o sonarqube.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sonarqube.yaml
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o sonarqube.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sonarqube.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>sonarqube.yaml</code> will create a new container <code>sonarqube</code> and exposed port <code>9000</code> and <code>9002</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
 </code></pre></td></tr></table>
 </div>
 </div><p>Create volume to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">docker volume create sonarqube-data <span class="o">&amp;&amp;</span> docker volume create sonarqube-extensions <span class="o">&amp;&amp;</span> docker volume create sonarqube-logs <span class="o">&amp;&amp;</span> docker volume create sonarqube-temp
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create sonarqube-data <span class="o">&amp;&amp;</span> docker volume create sonarqube-extensions <span class="o">&amp;&amp;</span> docker volume create sonarqube-logs <span class="o">&amp;&amp;</span> docker volume create sonarqube-temp
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Sonarqube Management</strong></p>
