@@ -3,7 +3,7 @@
         <url>
             <loc>https://blog.piinalpin.com/categories/</loc>
             
-                <lastmod>2021-10-14T11:19:26+07:00</lastmod>
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -17,21 +17,7 @@
         <url>
             <loc>https://blog.piinalpin.com/tags/chat-bot/</loc>
             
-                <lastmod>2021-10-14T11:19:26+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/2021/10/contextual-chat-bot/</loc>
-            
-                <lastmod>2021-10-14T11:19:26+07:00</lastmod>
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -45,7 +31,35 @@
         <url>
             <loc>https://blog.piinalpin.com/categories/documentation/</loc>
             
-                <lastmod>2021-10-14T11:19:26+07:00</lastmod>
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/java/</loc>
+            
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/javascript/</loc>
+            
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -59,7 +73,7 @@
         <url>
             <loc>https://blog.piinalpin.com/tags/machine-learning/</loc>
             
-                <lastmod>2021-10-14T11:19:26+07:00</lastmod>
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -73,7 +87,7 @@
         <url>
             <loc>https://blog.piinalpin.com/tags/nlp/</loc>
             
-                <lastmod>2021-10-14T11:19:26+07:00</lastmod>
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -87,7 +101,7 @@
         <url>
             <loc>https://blog.piinalpin.com/</loc>
             
-                <lastmod>2021-10-14T11:19:26+07:00</lastmod>
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -101,7 +115,7 @@
         <url>
             <loc>https://blog.piinalpin.com/posts/</loc>
             
-                <lastmod>2021-10-14T11:19:26+07:00</lastmod>
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -115,7 +129,49 @@
         <url>
             <loc>https://blog.piinalpin.com/tags/python/</loc>
             
-                <lastmod>2021-10-14T11:19:26+07:00</lastmod>
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
+            
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot-web-socket/</loc>
+            
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</loc>
+            
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -129,7 +185,7 @@
         <url>
             <loc>https://blog.piinalpin.com/tags/</loc>
             
-                <lastmod>2021-10-14T11:19:26+07:00</lastmod>
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -142,6 +198,20 @@
     
         <url>
             <loc>https://blog.piinalpin.com/tags/tensorflow/</loc>
+            
+                <lastmod>2021-10-14T14:52:27+07:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://blog.piinalpin.com/2021/10/contextual-chat-bot/</loc>
             
                 <lastmod>2021-10-14T11:19:26+07:00</lastmod>
             
@@ -477,20 +547,6 @@
         </url>
     
         <url>
-            <loc>https://blog.piinalpin.com/tags/java/</loc>
-            
-                <lastmod>2021-07-23T20:04:22+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://blog.piinalpin.com/tags/kafka/</loc>
             
                 <lastmod>2021-07-23T20:04:22+07:00</lastmod>
@@ -520,20 +576,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</loc>
-            
-                <lastmod>2021-07-23T20:04:22+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc>
             
                 <lastmod>2021-07-23T20:04:22+07:00</lastmod>
             
@@ -1094,20 +1136,6 @@
     
         <url>
             <loc>https://blog.piinalpin.com/2021/01/consume-graphql-react/</loc>
-            
-                <lastmod>2021-01-06T14:18:10+07:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://blog.piinalpin.com/tags/javascript/</loc>
             
                 <lastmod>2021-01-06T14:18:10+07:00</lastmod>
             

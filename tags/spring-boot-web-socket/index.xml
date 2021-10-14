@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on PiinAlpin</title>
-    <link>https://blog.piinalpin.com/tags/javascript/</link>
-    <description>Recent content in Javascript on PiinAlpin</description>
+    <title>Spring Boot Web Socket on PiinAlpin</title>
+    <link>https://blog.piinalpin.com/tags/spring-boot-web-socket/</link>
+    <description>Recent content in Spring Boot Web Socket on PiinAlpin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 14 Oct 2021 14:52:27 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Oct 2021 14:52:27 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/spring-boot-web-socket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring Boot Web Socket Chat Bot</title>
       <link>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</link>
       <pubDate>Thu, 14 Oct 2021 14:52:27 +0700</pubDate>
       
       <guid>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GraphQL Client using React</title>
-      <link>https://blog.piinalpin.com/2021/01/consume-graphql-react/</link>
-      <pubDate>Wed, 06 Jan 2021 14:18:10 +0700</pubDate>
-      
-      <guid>https://blog.piinalpin.com/2021/01/consume-graphql-react/</guid>
       <description></description>
     </item>
     
