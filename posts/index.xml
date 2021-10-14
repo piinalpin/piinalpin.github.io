@@ -14,7 +14,7 @@
       <pubDate>Thu, 14 Oct 2021 14:52:27 +0700</pubDate>
       
       <guid>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
-      <description>Overview WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP connection. The WebSocket protocol was standardized by the IETF as RFC 6455 in 2011, and the WebSocket API in Web IDL is being standardized by the W3C.</description>
+      <description>WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP connection. The WebSocket protocol was standardized by the IETF as RFC 6455 in 2011, and the WebSocket API in Web IDL is being standardized by the W3C.</description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@
       <pubDate>Thu, 14 Oct 2021 11:19:26 +0700</pubDate>
       
       <guid>https://blog.piinalpin.com/2021/10/contextual-chat-bot/</guid>
-      <description>Overview Contextual chat bots are bots that can chat with humans using everyday language that is appropriate to the topic humans are talking about. We will build a model for a puzzle conversation.</description>
+      <description>Contextual chat bots are bots that can chat with humans using everyday language that is appropriate to the topic humans are talking about. We will build a model for a puzzle conversation.</description>
     </item>
     
     <item>

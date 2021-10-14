@@ -600,6 +600,14 @@ Then access `index.html` on your favourite browser. And lets chat with chat bot.
 
 ![Example Spring Bot](/images/example-web-socket.gif)
 
+### Clone or Download
+
+You can clone or download this project at
+
+```bash
+https://github.com/piinalpin/springboot-websocket-chatbot.git
+```
+
 ### Reference
 
 [Wikipedia](https://en.wikipedia.org/wiki/WebSocket) - WebSocket
