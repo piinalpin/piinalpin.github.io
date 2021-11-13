@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Minio Server on PiinAlpin</title>
+    <link>https://blog.piinalpin.com/tags/minio-server/</link>
+    <description>Recent content in Minio Server on PiinAlpin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 13 Nov 2021 09:55:34 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/minio-server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud Object Storage Spring Boot With Minio</title>
+      <link>https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/</link>
+      <pubDate>Sat, 13 Nov 2021 09:55:34 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
