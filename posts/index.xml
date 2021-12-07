@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 13 Nov 2021 09:55:34 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Dec 2021 10:31:30 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Object Relational Mapping Node JS using Sequelize</title>
+      <link>https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/</link>
+      <pubDate>Tue, 07 Dec 2021 10:31:30 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/</guid>
+      <description>Object-Relational Mapping (ORM) is a technique that lets you query and manipulate data from a database using an object-oriented paradigm. When talking about ORM, most people are referring to a library that implements the Object-Relational Mapping technique, hence the phrase "an ORM".</description>
+    </item>
+    
     <item>
       <title>Cloud Object Storage Spring Boot With Minio</title>
       <link>https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/</link>
