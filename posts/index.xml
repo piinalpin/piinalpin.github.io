@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 07 Dec 2021 10:31:30 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Dec 2021 10:02:39 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image Processing Using Tensorflow - Convolutional Neural Network (CNN)</title>
+      <link>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
+      <pubDate>Fri, 10 Dec 2021 10:02:39 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
+      <description>Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing.</description>
+    </item>
+    
     <item>
       <title>Object Relational Mapping Node JS using Sequelize</title>
       <link>https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/</link>

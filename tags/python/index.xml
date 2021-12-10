@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 14 Oct 2021 14:52:27 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Dec 2021 10:02:39 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image Processing Using Tensorflow - Convolutional Neural Network (CNN)</title>
+      <link>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
+      <pubDate>Fri, 10 Dec 2021 10:02:39 +0700</pubDate>
+      
+      <guid>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Spring Boot Web Socket Chat Bot</title>
       <link>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</link>
