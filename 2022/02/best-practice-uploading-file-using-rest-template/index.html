@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Best Practice Uploading File Using Spring RestTemplate | PiinAlpin</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="A little things but important when uploading files through REST template. It should send the filename in the correct format.">
+<link rel="prev" href="https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/" />
+<link rel="canonical" href="https://blog.piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Best Practice Uploading File Using Spring RestTemplate"/>
+<meta name="twitter:description" content="A little things but important when uploading files through REST template. It should send the filename in the correct format."/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Best Practice Uploading File Using Spring RestTemplate",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/blog.piinalpin.com\/2022\/02\/best-practice-uploading-file-using-rest-template\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/blog.piinalpin.com\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "Spring Boot, Java, REST Template, Upload File, Form Data, Multipart",
+    
+    "wordcount":  563 ,
+    "url": "https:\/\/blog.piinalpin.com\/2022\/02\/best-practice-uploading-file-using-rest-template\/",
+    
+        "datePublished": "2022-02-19T14:11:02\u002b07:00",
+    
+    
+        "dateModified": "2022-02-19T14:11:02\u002b07:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya Saputra",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/blog.piinalpin.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": "A little things but important when uploading files through REST template. It should send the filename in the correct format."
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+
+<script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/service-worker.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
+    </head>
+    <body>
+        <script>
+            window.localStorage.getItem('theme') === 'dark';
+            document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://blog.piinalpin.com/">PiinAlpin</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://blog.piinalpin.com/about" title="">About</a>
+            
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://blog.piinalpin.com/">PiinAlpin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Best Practice Uploading File Using Spring RestTemplate</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://blog.piinalpin.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>piinalpin&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://blog.piinalpin.com/categories/documentation/">Documentation</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2022-02-19>2022-02-19</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 563 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title">Table of Contents</h2>
+                <div class="post-toc-content">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Table of Contents</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="overview"></a><h3>Overview</h3>
+<p><img src="/images/spring-boot-upload-files.png" alt="Spring Boot Upload Files"></p>
+<p>Rest Template is used to create applications that consume RESTful Web Services. You can use the exchange() method to consume the web services for all HTTP methods. The code given below shows how to create Bean for Rest Template to auto wiring the Rest Template object.</p>
+<p>A little things but important when uploading files through REST template. It should send the filename in the correct format. A correct file upload request should be like this.</p>
+<p><strong>HTTP Headers</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Content-Type: multipart/form-data; boundary=/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>HTTP Body</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">--/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+Content-Disposition: form-data; name=&#34;file&#34;; filename=&#34;my-uploaded-file.png&#34;
+Content-Type: application/octet-stream
+Content-Length: ...
+
+&lt;...file data in base 64...&gt;
+--/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB--
+</code></pre></td></tr></table>
+</div>
+</div><p>There can be multiple sections like this in the body with additional data, when more data needs to be posted to the server, like multiple files or other metadata. The Content-Type could also be adjusted. <code>application-octet-stream</code> is the default Spring uses for <code>byte[]</code> data.</p>
+<p>So, I will create utility class to convert base64 string into http entity with file metadata.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Base64Util</span> <span class="o">{</span>
+    
+    <span class="kd">private</span> <span class="nf">Base64Util</span><span class="o">()</span> <span class="o">{}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">generateFilename</span><span class="o">(</span><span class="n">String</span> <span class="n">base64String</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">base64String</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">base64String</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">arrayString</span> <span class="o">=</span> <span class="n">base64String</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34;,&#34;</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">header</span> <span class="o">=</span> <span class="n">arrayString</span><span class="o">[</span><span class="n">0</span><span class="o">].</span><span class="na">split</span><span class="o">(</span><span class="s">&#34;;&#34;</span><span class="o">)[</span><span class="n">0</span><span class="o">];</span>
+        <span class="n">String</span> <span class="n">uuid</span> <span class="o">=</span> <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;%s.%s&#34;</span><span class="o">,</span> <span class="n">uuid</span><span class="o">,</span> <span class="n">header</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34;/&#34;</span><span class="o">)[</span><span class="n">1</span><span class="o">]);</span>
+        <span class="k">return</span> <span class="n">filename</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">stripStartBase64</span><span class="o">(</span><span class="n">String</span> <span class="n">base64String</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">base64String</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">base64String</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">base64String</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">&#34;^data:image/[^;]*;base64,?&#34;</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">HttpEntity</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[]&gt;</span> <span class="nf">convertToHttpEntity</span><span class="o">(</span><span class="n">String</span> <span class="n">filename</span><span class="o">,</span> <span class="n">String</span> <span class="n">base64</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">imageByte</span> <span class="o">=</span> <span class="n">Base64</span><span class="o">.</span><span class="na">decodeBase64</span><span class="o">(</span><span class="n">base64</span><span class="o">);</span>
+        <span class="n">ContentDisposition</span> <span class="n">contentDisposition</span> <span class="o">=</span> <span class="n">ContentDisposition</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="s">&#34;form-data&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">name</span><span class="o">(</span><span class="s">&#34;myImage&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">filename</span><span class="o">(</span><span class="n">filename</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+        <span class="n">MultiValueMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">fileMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedMultiValueMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">fileMap</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">HttpHeaders</span><span class="o">.</span><span class="na">CONTENT_DISPOSITION</span><span class="o">,</span> <span class="n">contentDisposition</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">HttpEntity</span><span class="o">&lt;&gt;(</span><span class="n">imageByte</span><span class="o">,</span> <span class="n">fileMap</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>And a service will send request template for another API like this.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Slf4j</span>
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileUploadService</span> <span class="o">{</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">RestTemplate</span> <span class="n">restTemplate</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendFile</span><span class="o">(</span><span class="n">String</span> <span class="n">base64Image</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Start executing send file through rest template.&#34;</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Sending files...&#34;</span><span class="o">);</span>
+            <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">responseEntity</span> <span class="o">=</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">postForEntity</span><span class="o">(</span><span class="s">&#34;/some-url-to-send-file&#34;</span><span class="o">,</span> <span class="n">constructRequest</span><span class="o">(</span><span class="n">base64Image</span><span class="o">),</span> <span class="n">Object</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Done uploading files.&#34;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Error when uploading file. Error: {}&#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">HttpEntity</span><span class="o">&lt;</span><span class="n">MultiValueMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;&gt;</span> <span class="nf">constructRequest</span><span class="o">(</span><span class="n">String</span> <span class="n">base64Image</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="n">MultiValueMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">body</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedMultiValueMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">body</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;myImage&#34;</span><span class="o">,</span> <span class="n">Base64Util</span><span class="o">.</span><span class="na">convertToHttpEntity</span><span class="o">(</span><span class="n">Base64Util</span><span class="o">.</span><span class="na">generateFilename</span><span class="o">(</span><span class="n">base64Image</span><span class="o">),</span> <span class="n">Base64Util</span><span class="o">.</span><span class="na">stripStartBase64</span><span class="o">(</span><span class="n">base64Image</span><span class="o">)));</span>
+
+        <span class="n">HttpHeaders</span> <span class="n">headers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpHeaders</span><span class="o">();</span>
+        <span class="n">headers</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="n">MediaType</span><span class="o">.</span><span class="na">MULTIPART_FORM_DATA</span><span class="o">);</span>
+        <span class="n">headers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;Some-Header&#34;</span><span class="o">,</span> <span class="s">&#34;Some-Value&#34;</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="k">new</span> <span class="n">HttpEntity</span><span class="o">&lt;&gt;(</span><span class="n">body</span><span class="o">,</span> <span class="n">headers</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Most solutions on google search, you find will not use the embedded HttpEntity, but will just add two entries to the MultiValueMap for the body like so:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">MultiValueMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">body</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedMultiValueMap</span><span class="o">&lt;&gt;();</span>
+<span class="n">body</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;filename&#34;</span><span class="o">,</span> <span class="s">&#34;some-file-name.jpg&#34;</span><span class="o">);</span>
+<span class="n">body</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;file&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">ByteArrayResource</span><span class="o">(</span><span class="n">someByteArray</span><span class="o">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This produces a different request body, where the file and the filename are embedded in two different sections like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">--/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+Content-Disposition: form-data; name=&#34;filename&#34;
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 6
+
+some-file-name.jpg
+--/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+Content-Disposition: form-data; name=&#34;file&#34;
+Content-Type: application/octet-stream
+Content-Length: ...
+
+&lt;...file data in base 64...&gt;
+--/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB--
+</code></pre></td></tr></table>
+</div>
+</div><p>The receiving server will most likely not see the filename in a different section. Some servers will reject the request entirely. So also work with the embedded HttpEntity, when uploading a file with Spring RestTemplate, to produce standard compliant multipart upload requests!</p>
+<a class="post-dummy-target" id="reference"></a><h3>Reference</h3>
+<ul>
+<li><a href="https://medium.com/red6-es/uploading-a-file-with-a-filename-with-spring-resttemplate-8ec5e7dc52ca">Uploading a file with a filename with Spring RestTemplate</a></li>
+</ul>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2022-02-19</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://blog.piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fblog.piinalpin.com%2f2022%2f02%2fbest-practice-uploading-file-using-rest-template%2f&amp;text=Best%20Practice%20Uploading%20File%20Using%20Spring%20RestTemplate&amp;via=piinalpin" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.piinalpin.com%2f2022%2f02%2fbest-practice-uploading-file-using-rest-template%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=https%3a%2f%2fblog.piinalpin.com%2f2022%2f02%2fbest-practice-uploading-file-using-rest-template%2f&amp;title=Best%20Practice%20Uploading%20File%20Using%20Spring%20RestTemplate" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.piinalpin.com%2f2022%2f02%2fbest-practice-uploading-file-using-rest-template%2f&amp;title=Best%20Practice%20Uploading%20File%20Using%20Spring%20RestTemplate" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/spring-boot/"><i class="fas fa-tag fa-fw"></i>Spring Boot</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/java/"><i class="fas fa-tag fa-fw"></i>Java</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/rest-template/"><i class="fas fa-tag fa-fw"></i>REST Template</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/upload-file/"><i class="fas fa-tag fa-fw"></i>Upload File</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/form-data/"><i class="fas fa-tag fa-fw"></i>Form Data</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://blog.piinalpin.com/tags/multipart/"><i class="fas fa-tag fa-fw"></i>Multipart</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://blog.piinalpin.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/" class="prev" rel="prev" title="Image Processing Using Tensorflow - Convolutional Neural Network (CNN)"><i class="fas fa-angle-left fa-fw"></i>Image Processing Using Tensorflow - Convolutional Neural Network (CNN)</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.piinalpin.com/">piinalpin</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
