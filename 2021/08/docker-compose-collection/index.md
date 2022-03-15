@@ -263,3 +263,82 @@ docker volume create sonarqube-data && docker volume create sonarqube-extensions
 Default Sonarqube management user is `admin` and password is `admin`. Go to `localhost:9000` to acess Sonarqube management and then change the default password first.
 
 ![Sonarqube Management](/images/sonarqube-management.png)
+
+## MongoDB
+Download docker compose configuration using curl
+
+```bash
+curl -o mongodb.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mongodb.yaml
+```
+
+This yaml `mongodb.yaml` will create a new container `mongodb` and exposed port `27017` on host port.
+
+Create network `my-network` if does not exists
+
+```bash
+docker network create my-network
+```
+
+Create volume to persist data then run `docker-compose`
+
+```bash
+docker volume create mongodb-data && docker volume create mongodb-config
+```
+
+**MongoDB CLI**
+Run this command to run MongoDB command on container. Default user is `root` and password `SevenEightTwo782` you can change the password in `yaml` file.
+
+```bash
+docker exec -it mongodb mongo -u root -p SevenEightTwo782 --authenticationDatabase admin <SOME_DATABASE>
+```
+
+**Basic command:**
+
+-   Get list of databases
+    ```js
+    show dbs
+    ```
+-   Create database and use database
+    ```js
+    use some_db
+    db
+    ```
+-   Create collection
+    ```js
+    db.createCollection('some_collection');
+    ```
+-   Insert row
+    ```js
+    db.some_db.insertMany([
+        {
+            _id: 1,
+            first_name: "Maverick",
+            last_name: "Johnson",
+            gender: 1
+        },
+        {
+            _id: 2,
+            first_name: "Calvin",
+            last_name: "Joe",
+            gender: 1
+        },
+        {
+            _id: 3,
+            first_name: "Kagura",
+            last_name: "Otsusuki",
+            gender: 0
+        }
+    ]);
+    ```
+- Find row
+    ```js
+    db.some_db.find();
+    ```
+- Update row
+    ```js
+    db.test.updateOne({_id: 1}, {$set: {
+        first_name: "Maverick",
+        last_name: "Johnson Updated",
+        gender: 1
+    }});
+    ```

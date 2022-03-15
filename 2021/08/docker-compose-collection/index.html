@@ -41,7 +41,7 @@
     
         "keywords": "Docker, Docker Compose, Collection, YAML",
     
-    "wordcount":  732 ,
+    "wordcount":  929 ,
     "url": "https:\/\/blog.piinalpin.com\/2021\/08\/docker-compose-collection\/",
     
         "datePublished": "2021-08-15T20:01:28\u002b07:00",
@@ -147,8 +147,8 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-08-15>2021-08-15</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 732 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>4 min&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>about 929 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>5 min&nbsp;</div>
         </div>
 
         
@@ -170,6 +170,7 @@
         <li><a href="#sonarqube">Sonarqube</a></li>
       </ul>
     </li>
+    <li><a href="#mongodb">MongoDB</a></li>
   </ul>
 </nav>
                 </div>
@@ -194,6 +195,7 @@
         <li><a href="#sonarqube">Sonarqube</a></li>
       </ul>
     </li>
+    <li><a href="#mongodb">MongoDB</a></li>
   </ul>
 </nav>
                     </div>
@@ -587,6 +589,156 @@ brew install --cask another-redis-desktop-manager
 </div><p><strong>Sonarqube Management</strong></p>
 <p>Default Sonarqube management user is <code>admin</code> and password is <code>admin</code>. Go to <code>localhost:9000</code> to acess Sonarqube management and then change the default password first.</p>
 <p><img src="/images/sonarqube-management.png" alt="Sonarqube Management"></p>
+<a class="post-dummy-target" id="mongodb"></a><h2>MongoDB</h2>
+<p>Download docker compose configuration using curl</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o mongodb.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mongodb.yaml
+</code></pre></td></tr></table>
+</div>
+</div><p>This yaml <code>mongodb.yaml</code> will create a new container <code>mongodb</code> and exposed port <code>27017</code> on host port.</p>
+<p>Create network <code>my-network</code> if does not exists</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+</code></pre></td></tr></table>
+</div>
+</div><p>Create volume to persist data then run <code>docker-compose</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create mongodb-data <span class="o">&amp;&amp;</span> docker volume create mongodb-config
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>MongoDB CLI</strong>
+Run this command to run MongoDB command on container. Default user is <code>root</code> and password <code>SevenEightTwo782</code> you can change the password in <code>yaml</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it mongodb mongo -u root -p SevenEightTwo782 --authenticationDatabase admin &lt;SOME_DATABASE&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Basic command:</strong></p>
+<ul>
+<li>Get list of databases
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">show</span> <span class="nx">dbs</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Create database and use database
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">use</span> <span class="nx">some_db</span>
+<span class="nx">db</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Create collection
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">db</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="s1">&#39;some_collection&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Insert row
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">db</span><span class="p">.</span><span class="nx">some_db</span><span class="p">.</span><span class="nx">insertMany</span><span class="p">([</span>
+    <span class="p">{</span>
+        <span class="mi">_</span><span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+        <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Johnson&#34;</span><span class="p">,</span>
+        <span class="nx">gender</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="mi">_</span><span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Calvin&#34;</span><span class="p">,</span>
+        <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Joe&#34;</span><span class="p">,</span>
+        <span class="nx">gender</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="mi">_</span><span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Kagura&#34;</span><span class="p">,</span>
+        <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Otsusuki&#34;</span><span class="p">,</span>
+        <span class="nx">gender</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
+<span class="p">]);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Find row
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">db</span><span class="p">.</span><span class="nx">some_db</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Update row
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">db</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">updateOne</span><span class="p">({</span><span class="mi">_</span><span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="nx">$set</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+    <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Johnson Updated&#34;</span><span class="p">,</span>
+    <span class="nx">gender</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">}});</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
 
         </div>
 
