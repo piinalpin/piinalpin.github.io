@@ -264,7 +264,7 @@ Default Sonarqube management user is `admin` and password is `admin`. Go to `loc
 
 ![Sonarqube Management](/images/sonarqube-management.png)
 
-## MongoDB
+### MongoDB
 Download docker compose configuration using curl
 
 ```bash
