@@ -985,6 +985,10 @@ public class TransactionController {
 }
 ```
 
+### Clone on Github
+
+**[piinalpin/springboot-data-jpa-soft-delete](https://github.com/piinalpin/springboot-data-jpa-soft-delete)**
+
 ### Reference
 
 - [Working with Spring Data Repositories](https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html)
