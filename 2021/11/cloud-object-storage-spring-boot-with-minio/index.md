@@ -37,7 +37,7 @@ docker run \
 
 ### Project Setup and Dependencies
 
-I'm depending [Spring Initializr](https://start.spring.io/) for this as it is much easier. And we have to create two spring boot projects and started with maven project.
+I'm depending [Spring Initializr](https://start.spring.io/) for this as it is much easier.
 
 Our example application will be a Spring Boot application. So we need to add some dependencies to our `pom.xml`.
 
