@@ -15,7 +15,7 @@ jobs:
         ALGOLIA_APIKEY: ${{ secrets.ALGOLIA_API_KEY }}
         ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
       run: |
-        curl -X POST -H "X-Algolia-API-Key: $ALGOLIA_APIKEY" -H "X-Algolia-Application-Id: $ALGOLIA_APPLICATION_ID" "https://$ALGOLIA_APPLICATION_ID.algolia.net/1/indexes/test-index/clear"
+        curl -X POST -H "X-Algolia-API-Key: $ALGOLIA_API_KEY" -H "X-Algolia-Application-Id: $ALGOLIA_APPLICATION_ID" "https://$ALGOLIA_APPLICATION_ID.algolia.net/1/indexes/test-index/clear"
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
@@ -25,4 +25,4 @@ jobs:
       env:
         ALGOLIA_APIKEY: ${{ secrets.ALGOLIA_API_KEY }}
         ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
-      run: ALGOLIA_APP_ID=$ALGOLIA_APPLICATION_ID ALGOLIA_ADMIN_KEY=$ALGOLIA_APIKEY node search-engine-sync.js
+      run: ALGOLIA_APP_ID=$ALGOLIA_APPLICATION_ID ALGOLIA_ADMIN_KEY=$ALGOLIA_API_KEY node search-engine-sync.js
