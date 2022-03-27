@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Image Processing Using Tensorflow - Convolutional Neural Network (CNN) - PiinAlpin&#39;s Blog</title><meta name="Description" content="Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing."><meta property="og:title" content="Image Processing Using Tensorflow - Convolutional Neural Network (CNN)" />
+<meta property="og:description" content="Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.piinalpin.com/image-processing-using-tensorflow/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-10T10:02:39+07:00" />
+<meta property="article:modified_time" content="2021-12-10T10:02:39+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Image Processing Using Tensorflow - Convolutional Neural Network (CNN)"/>
+<meta name="twitter:description" content="Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing."/>
+<meta name="application-name" content="PiinAlpin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/image-processing-using-tensorflow/" /><link rel="prev" href="https://blog.piinalpin.com/orm-nodejs-sequelize/" /><link rel="next" href="https://blog.piinalpin.com/best-practice-uploading-file-using-rest-template/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Image Processing Using Tensorflow - Convolutional Neural Network (CNN)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.piinalpin.com\/image-processing-using-tensorflow\/"
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Image Processing, Tensorflow, Artificial Intelligence, Keras, Python","wordcount":  879 ,
+        "url": "https:\/\/blog.piinalpin.com\/image-processing-using-tensorflow\/","datePublished": "2021-12-10T10:02:39+07:00","dateModified": "2021-12-10T10:02:39+07:00","publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
+                "@type": "Person",
+                "name": "Alvinditya Saputra"
+            },"description": "Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing."
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Image Processing Using Tensorflow - Convolutional Neural Network (CNN)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-10">2021-12-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;879 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#study-case">Study Case</a></li>
+      </ul>
+    </li>
+    <li><a href="#source">Source</a>
+      <ul>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="overview">Overview</h3>
+<p>Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/malaria-1.png"
+        data-srcset="/images/malaria-1.png, /images/malaria-1.png 1.5x, /images/malaria-1.png 2x"
+        data-sizes="auto"
+        alt="/images/malaria-1.png"
+        title="Image Processing Flow" /></p>
+<p>Machine learning is a complex discipline. But implementing machine learning models is far less daunting and difficult than it used to be, thanks to machine learning frameworks—such as Google’s TensorFlow—that ease the process of acquiring data, training models, serving predictions, and refining future results.</p>
+<p>Created by the Google Brain team, TensorFlow is an open source library for numerical computation and large-scale machine learning. TensorFlow bundles together a slew of machine learning and deep learning (aka neural networking) models and algorithms and makes them useful by way of a common metaphor. It uses Python to provide a convenient front-end API for building applications with the framework, while executing those applications in high-performance C++.</p>
+<h3 id="study-case">Study Case</h3>
+<p>In this case, we will detect the image whether the image is an indication of malaria infection or not. We will use dataset which can be download <a href="https://github.com/piinalpin/research-collection/tree/master/tensorflow/malaria-detection/dataset" target="_blank" rel="noopener noreffer">here</a>.</p>
+<p><strong>Directory Structure</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── ...
+</span></span><span class="line"><span class="cl">├── dataset
+</span></span><span class="line"><span class="cl">│   └── parasitized/
+</span></span><span class="line"><span class="cl">│   ├── uninfected/
+</span></span><span class="line"><span class="cl">├── test-data/
+</span></span><span class="line"><span class="cl">│   └── ...
+</span></span><span class="line"><span class="cl">└── research.ipynb
+</span></span><span class="line"><span class="cl">└── ...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Import Dependency and Count Dataset</strong></p>
+<p>We will use <code>tensorflow.keras</code> library like following code.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">Sequential</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">MaxPooling2D</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">ImageDataGenerator</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">load_model</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">transform</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">glob</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Count our dataset in this case.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">parasitized</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;dataset/parasitized/*.png&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">uninfected</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;dataset/uninfected/*.png&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Parasitized data: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">Uninfected data: </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">parasitized</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">uninfected</span><span class="p">)))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Preprocessing</strong></p>
+<p>Data augmentation, based on wikipedia data augmentation is techniques are used to increase the amount of data by adding slightly modified copies of already existing data or newly created synthetic data from existing data.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dimension</span> <span class="o">=</span> <span class="mi">128</span>
+</span></span><span class="line"><span class="cl"><span class="n">batch</span> <span class="o">=</span> <span class="mi">32</span>
+</span></span><span class="line"><span class="cl"><span class="n">data_dir</span> <span class="o">=</span> <span class="s2">&#34;dataset&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span><span class="n">rescale</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mf">255.0</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                             <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                             <span class="n">zoom_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                             <span class="n">width_shift_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                             <span class="n">height_shift_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                             <span class="n">shear_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                             <span class="n">horizontal_flip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">train_data</span> <span class="o">=</span> <span class="n">datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                         <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                                         <span class="n">batch_size</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                         <span class="n">class_mode</span><span class="o">=</span><span class="s1">&#39;categorical&#39;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                         <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;training&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">validation_data</span> <span class="o">=</span> <span class="n">datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                              <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                              <span class="n">batch_size</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                              <span class="n">class_mode</span><span class="o">=</span><span class="s1">&#39;categorical&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                              <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;validation&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                              <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">test_data</span> <span class="o">=</span> <span class="n">datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                        <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                        <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                        <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Training Data and Modelling</strong></p>
+<p>The process of training an ML model involves providing an ML algorithm (that is, the learning algorithm) with training data to learn from. The term ML model refers to the model artifact that is created by the training process.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&#34;same&#34;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&#34;same&#34;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&#34;same&#34;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;softmax&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Compile the model</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s2">&#34;adam&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">              <span class="n">loss</span><span class="o">=</span><span class="s2">&#34;binary_crossentropy&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;accuracy&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Save the best trained model by monitoring validation loss</span>
+</span></span><span class="line"><span class="cl"><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&#34;train_data_model.b&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">model_checkpoint</span> <span class="o">=</span> <span class="n">ModelCheckpoint</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                   <span class="n">save_weights_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                   <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                   <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                   <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                   <span class="n">save_best_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Training dataset</span>
+</span></span><span class="line"><span class="cl"><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                    <span class="n">batch_size</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                    <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                    <span class="n">validation_data</span><span class="o">=</span><span class="n">validation_data</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">callbacks</span> <span class="o">=</span> <span class="p">[</span><span class="n">model_checkpoint</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Model Evaluation</strong></p>
+<p>Evaluation is a process during development of the model to check whether the model is best fit for the given problem and corresponding data. Keras model provides a function, evaluate which does the evaluation of the model. It has three main arguments :</p>
+<ul>
+<li>Test data</li>
+<li>Test data label</li>
+<li>verbose - true or false</li>
+</ul>
+<p>Let us evaluate the model, which we created in the previous chapter using test data.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Load compiled model</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&#34;train_data_model.b&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Prediction</strong></p>
+<p>Prediction is fitting a shape that gets as close to the data as possible. The object we’re fitting is more of a skeleton that goes through one body of data instead of a fence that goes between separate bodies of data.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Load image from filename</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">   <span class="n">np_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="n">np_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np_image</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span><span class="o">/</span><span class="mi">255</span>
+</span></span><span class="line"><span class="cl">   <span class="n">np_image</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">np_image</span><span class="p">,</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">   <span class="n">np_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">np_image</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="n">np_image</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">prediction</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">np_image</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np_image</span><span class="p">)</span> <span class="c1"># Predict input image</span>
+</span></span><span class="line"><span class="cl">  <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">prediction</span><span class="p">]</span> <span class="c1"># Normalize prediction</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Test with random data</span>
+</span></span><span class="line"><span class="cl"><span class="n">test1</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized1.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test2</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized2.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test3</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized3.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test4</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized4.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test5</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected1.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test6</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected2.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test7</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected3.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test8</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected4.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Result for infected or uninfected of malaria&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 1: &#34;</span><span class="p">,</span> <span class="n">test1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 2: &#34;</span><span class="p">,</span> <span class="n">test2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 3: &#34;</span><span class="p">,</span> <span class="n">test3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 4: &#34;</span><span class="p">,</span> <span class="n">test4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 5: &#34;</span><span class="p">,</span> <span class="n">test5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 6: &#34;</span><span class="p">,</span> <span class="n">test6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 7: &#34;</span><span class="p">,</span> <span class="n">test7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 8: &#34;</span><span class="p">,</span> <span class="n">test8</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="source">Source</h2>
+<p>You can clone or download the source in</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://github.com/piinalpin/research-collection/tree/master/tensorflow/malaria-detection
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="reference">Reference</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Digital_image_processing" target="_blank" rel="noopener noreffer">Digital Image Processing - Wikipedia</a></li>
+<li><a href="https://www.tensorflow.org/api_docs/python/tf/keras/Sequential" target="_blank" rel="noopener noreffer">Tensorflow Sequential</a></li>
+<li><a href="https://towardsdatascience.com/classification-regression-and-prediction-whats-the-difference-5423d9efe4ec" target="_blank" rel="noopener noreffer">Classification, regression, and prediction — what’s the difference?</a></li>
+<li><a href="https://www.tutorialspoint.com/keras/keras_model_evaluation_and_prediction.htm" target="_blank" rel="noopener noreffer">Model Evaluation and Model Prediction</a></li>
+<li><a href="https://docs.aws.amazon.com/machine-learning/latest/dg/training-ml-models.html" target="_blank" rel="noopener noreffer">Training ML Models</a></li>
+<li><a href="https://research.aimultiple.com/data-augmentation/" target="_blank" rel="noopener noreffer">What is Data Augmentation? Techniques, Benefit &amp; Examples</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-12-10</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/image-processing-using-tensorflow/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.piinalpin.com/image-processing-using-tensorflow/" data-title="Image Processing Using Tensorflow - Convolutional Neural Network (CNN)" data-via="piinalpin" data-hashtags="Image Processing,Tensorflow,Artificial Intelligence,Keras,Python"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.piinalpin.com/image-processing-using-tensorflow/" data-hashtag="Image Processing"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.piinalpin.com/image-processing-using-tensorflow/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/image-processing/">Image Processing</a>,&nbsp;<a href="/tags/tensorflow/">Tensorflow</a>,&nbsp;<a href="/tags/artificial-intelligence/">Artificial Intelligence</a>,&nbsp;<a href="/tags/keras/">Keras</a>,&nbsp;<a href="/tags/python/">Python</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/orm-nodejs-sequelize/" class="prev" rel="prev" title="Object Relational Mapping Node JS using Sequelize"><i class="fas fa-angle-left fa-fw"></i>Object Relational Mapping Node JS using Sequelize</a>
+            <a href="/best-practice-uploading-file-using-rest-template/" class="next" rel="next" title="Best Practice Uploading File Using Spring RestTemplate">Best Practice Uploading File Using Spring RestTemplate<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

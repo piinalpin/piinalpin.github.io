@@ -1,21 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>IMessage on PiinAlpin</title>
-    <link>https://blog.piinalpin.com/tags/imessage/</link>
-    <description>Recent content in IMessage on PiinAlpin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 22 Apr 2021 09:53:30 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/imessage/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>iMessage on Android With AirMessage Server for macOS and Ngrok</title>
-      <link>https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/</link>
-      <pubDate>Thu, 22 Apr 2021 09:53:30 +0700</pubDate>
-      
-      <guid>https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>IMessage - Tag - PiinAlpin&#39;s Blog</title>
+        <link>https://blog.piinalpin.com/tags/imessage/</link>
+        <description>IMessage - Tag - PiinAlpin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 22 Apr 2021 09:53:30 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/imessage/" rel="self" type="application/rss+xml" /><item>
+    <title>iMessage on Android With AirMessage Server for macOS and Ngrok</title>
+    <link>https://blog.piinalpin.com/imessage-on-android-with-air-message-server-and-ngrok/</link>
+    <pubDate>Thu, 22 Apr 2021 09:53:30 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/imessage-on-android-with-air-message-server-and-ngrok/</guid>
+    <description><![CDATA[How to create AirMessage server on MacOS for IMessage on Android with port forwarding using ngrok server.]]></description>
+</item></channel>
 </rss>

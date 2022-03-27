@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Setup My Own Mac - PiinAlpin&#39;s Blog</title><meta name="Description" content="Something I need to do when setting up a laptop."><meta property="og:title" content="Setup My Own Mac" />
+<meta property="og:description" content="Something I need to do when setting up a laptop." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.piinalpin.com/setup-my-own-mac/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-28T14:04:16+07:00" />
+<meta property="article:modified_time" content="2021-02-28T14:04:16+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup My Own Mac"/>
+<meta name="twitter:description" content="Something I need to do when setting up a laptop."/>
+<meta name="application-name" content="PiinAlpin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/setup-my-own-mac/" /><link rel="prev" href="https://blog.piinalpin.com/create-simple-microservice-with-grpc/" /><link rel="next" href="https://blog.piinalpin.com/how-messages-broker-work-using-rabbitmq/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Setup My Own Mac",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.piinalpin.com\/setup-my-own-mac\/"
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Bash, Oh My Zsh, Powerlevel10k, Setup Mac","wordcount":  536 ,
+        "url": "https:\/\/blog.piinalpin.com\/setup-my-own-mac\/","datePublished": "2021-02-28T14:04:16+07:00","dateModified": "2021-02-28T14:04:16+07:00","publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
+                "@type": "Person",
+                "name": "Alvinditya Saputra"
+            },"description": "Something I need to do when setting up a laptop."
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Setup My Own Mac</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-28">2021-02-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;536 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#setup-terminal-with-oh-my-zsh-and-powerlevel10k">Setup Terminal with Oh My Zsh and Powerlevel10k</a></li>
+        <li><a href="#configure-multiple-jdk-with-jenv">Configure Multiple JDK with Jenv</a></li>
+        <li><a href="#configure-multiple-python-version-with-pyenv">Configure Multiple Python Version with Pyenv</a></li>
+        <li><a href="#configure-docker-and-database-with-docker">Configure docker and database with docker</a></li>
+        <li><a href="#configuring-auto-connect-ssh-tunneling">Configuring Auto Connect SSH Tunneling</a></li>
+        <li><a href="#configuring-rabbitmq-and-rabbitmq-management">Configuring RabbitMQ and RabbitMQ Management</a></li>
+        <li><a href="#install-composer">Install Composer</a></li>
+        <li><a href="#install-nodejs-and-yarn">Install Node.js and Yarn</a></li>
+        <li><a href="#install-hugo-blog">Install Hugo Blog</a></li>
+        <li><a href="#install-maven">Install Maven</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="setup-terminal-with-oh-my-zsh-and-powerlevel10k">Setup Terminal with Oh My Zsh and Powerlevel10k</h3>
+<p><strong>Intalling Oh My Zsh</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sh -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Download and Install Nerd Patched Fonts</strong></p>
+<p>Download and install <a href="https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraMono/Regular/complete/Fura%20Mono%20Regular%20Nerd%20Font%20Complete.otf?raw=true" target="_blank" rel="noopener noreffer">FuraMono Fonts</a></p>
+<p><strong>Installing Powerlevel10k</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/romkatv/powerlevel10k.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Change <code>.zshrc</code> Configuration</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi .zshrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Change <code>ZSH_THEME</code> to <code>ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</code></p>
+<p>Enable auto correction uncomment line <code>ENABLE_CORRECTION=&quot;true&quot;</code></p>
+<p>Then <code>restart</code> your terminal and you will see configuration wizard <code>powerlevel10k</code></p>
+<p>If you see <code>[WARNING]: Console output during zsh initialization detected.</code> change your <code>.p10k.zsh</code> and change this line <code>typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet</code></p>
+<p>If you see <code>[oh-my-zsh] Insecure completion-dependent directories detected:</code> type command below</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">755</span> /usr/local/share/zsh
+</span></span><span class="line"><span class="cl">chmod <span class="m">755</span> /usr/local/share/zsh/site-functions
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Add Plugin Auto Suggestions and Syntax Highlighting</strong></p>
+<p>Download plugins for auto suggestion and syntax highlighting</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/zsh-users/zsh-autosuggestions.git <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-autosuggestions
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-syntax-highlighting
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Scroll down on <code>.zshrc</code> find <code>plugin=(git)</code> and change to <code>plugins=(git zsh-autosuggestions zsh-syntax-highlighting)</code></p>
+<h3 id="configure-multiple-jdk-with-jenv">Configure Multiple JDK with Jenv</h3>
+<p><strong>Install Jenv</strong></p>
+<p>Install jenv with brew</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install jenv
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export PATH=&#34;$HOME/.jenv/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;eval &#34;$(jenv init -)&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Install JDK</strong></p>
+<p>Add brew cask by adding <code>homebrew/cask</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew tap homebrew/cask-versions
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Install JDK 11 and JDK 8 from <a href="https://www.azul.com/downloads/zulu-community/?package=jdk" target="_blank" rel="noopener noreffer">Azul OpenJDK</a></p>
+<p>Add java11 and java8 into jenv</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">jenv add /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/ 
+</span></span><span class="line"><span class="cl">jenv add /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/ 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>See all installed versions java</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">jenv versions
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Configure global version</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">jenv global 11.0.9
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="configure-multiple-python-version-with-pyenv">Configure Multiple Python Version with Pyenv</h3>
+<p><strong>Install pyenv</strong></p>
+<p>Install pyenv with brew</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install pyenv
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Define environment variable <code>PYENV_ROOT</code> and add <code>pyenv init</code></strong></p>
+<p>I will use <code>zsh</code> so here bash command line</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export PATH=&#34;$PYENV_ROOT/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s1">&#39;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval &#34;$(pyenv init -)&#34;\nfi&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> .zshrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Install Python</strong></p>
+<p>Configure global environment python</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pyenv install 3.9.1
+</span></span><span class="line"><span class="cl">pyenv global 3.9.1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="configure-docker-and-database-with-docker">Configure docker and database with docker</h3>
+<p>*<strong>Installing Docker</strong></p>
+<p>Download <a href="https://hub.docker.com/editions/community/docker-ce-desktop-mac/" target="_blank" rel="noopener noreffer">Docker</a> from docker hub</p>
+<p><strong>Install MySQL database on docker</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -p 3306:3306 --name mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw -d mysql:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Install SQL Server on docker</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -e <span class="s2">&#34;ACCEPT_EULA=Y&#34;</span> -e <span class="s2">&#34;SA_PASSWORD=&lt;YourStrong@Passw0rd&gt;&#34;</span> -p 1433:1433 --name sqlserver -h sqlserver -d mcr.microsoft.com/mssql/server:2019-latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Install Postgresql on docker</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --name postgresql -d -p 5432:5432 -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>yoursecretpassword postgres
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="configuring-auto-connect-ssh-tunneling">Configuring Auto Connect SSH Tunneling</h3>
+<p>You can read this step on <a href="https://blog.piinalpin.com/2020/09/auto-start-ssh-tunneling-mac/" target="_blank" rel="noopener noreffer">Auto Start SSH Tunneling on Mac</a></p>
+<h3 id="configuring-rabbitmq-and-rabbitmq-management">Configuring RabbitMQ and RabbitMQ Management</h3>
+<p>Install RabbitMQ with brew</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install rabbitmq
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Export path for RabbitMQ</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/sbin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Start service when laptop is started automatically in backgroun</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew services start rabbitmq
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Enable management plugin</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rabbitmq-plugins <span class="nb">enable</span> rabbitmq_management
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Try to access <code>http://localhost:15672</code></p>
+<h3 id="install-composer">Install Composer</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install composer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="install-nodejs-and-yarn">Install Node.js and Yarn</h3>
+<p>Go to <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreffer">Node.js Org</a> download and install it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chown -R <span class="nv">$USER</span> /usr/local/lib/node_modules
+</span></span><span class="line"><span class="cl">npm install --global yarn
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="install-hugo-blog">Install Hugo Blog</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install hugo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="install-maven">Install Maven</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install maven
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="references">References</h3>
+<ul>
+<li><a href="https://medium.com/@shivam1/make-your-terminal-beautiful-and-fast-with-zsh-shell-and-powerlevel10k-6484461c6efb" target="_blank" rel="noopener noreffer">Make your terminal beautiful and fast with ZSH shell and PowerLevel10K</a></li>
+<li><a href="https://belajarinformatika.id/terminal-keren-dengan-oh-my-zsh-dan-powerlevel10k/" target="_blank" rel="noopener noreffer">Terminal Keren dengan Oh My Zsh dan PowerLevel10k</a></li>
+<li><a href="https://www.jenv.be/" target="_blank" rel="noopener noreffer">Jenv</a></li>
+<li><a href="https://mkyong.com/java/how-to-install-java-on-mac-osx/" target="_blank" rel="noopener noreffer">How to install Java JDK on macOS</a></li>
+<li><a href="https://github.com/pyenv/pyenv" target="_blank" rel="noopener noreffer">Simple Python Version Management: pyenv</a></li>
+<li><a href="https://github.com/docker-library/mysql/issues/95" target="_blank" rel="noopener noreffer">Connecting to a mysql running on a Docker container</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&amp;pivots=cs1-bash" target="_blank" rel="noopener noreffer">Quickstart: Run SQL Server container images with Docker</a></li>
+<li><a href="https://stackoverflow.com/questions/35928670/docker-container-for-postgres-9-1-not-exposing-port-5432-to-host" target="_blank" rel="noopener noreffer">Docker container for Postgres 9.1 not exposing port 5432 to host</a></li>
+<li><a href="https://www.rabbitmq.com/install-homebrew.html" target="_blank" rel="noopener noreffer">The Homebrew RabbitMQ Formula</a></li>
+<li><a href="https://www.rabbitmq.com/management.html" target="_blank" rel="noopener noreffer">RabbitMQ Management Plugin</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-02-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/setup-my-own-mac/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.piinalpin.com/setup-my-own-mac/" data-title="Setup My Own Mac" data-via="piinalpin" data-hashtags="Bash,Oh My Zsh,Powerlevel10k,Setup Mac"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.piinalpin.com/setup-my-own-mac/" data-hashtag="Bash"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.piinalpin.com/setup-my-own-mac/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/bash/">Bash</a>,&nbsp;<a href="/tags/oh-my-zsh/">Oh My Zsh</a>,&nbsp;<a href="/tags/powerlevel10k/">Powerlevel10k</a>,&nbsp;<a href="/tags/setup-mac/">Setup Mac</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/create-simple-microservice-with-grpc/" class="prev" rel="prev" title="Create Simple Microservice With gRPC"><i class="fas fa-angle-left fa-fw"></i>Create Simple Microservice With gRPC</a>
+            <a href="/how-messages-broker-work-using-rabbitmq/" class="next" rel="next" title="How Messages Broker Work Using RabbitMQ">How Messages Broker Work Using RabbitMQ<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

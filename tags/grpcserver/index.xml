@@ -1,21 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>gRPCServer on PiinAlpin</title>
-    <link>https://blog.piinalpin.com/tags/grpcserver/</link>
-    <description>Recent content in gRPCServer on PiinAlpin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 30 Jan 2021 16:21:21 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/grpcserver/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Create Simple Microservice With gRPC</title>
-      <link>https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/</link>
-      <pubDate>Sat, 30 Jan 2021 16:21:21 +0700</pubDate>
-      
-      <guid>https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>gRPCServer - Tag - PiinAlpin&#39;s Blog</title>
+        <link>https://blog.piinalpin.com/tags/grpcserver/</link>
+        <description>gRPCServer - Tag - PiinAlpin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 30 Jan 2021 16:21:21 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/grpcserver/" rel="self" type="application/rss+xml" /><item>
+    <title>Create Simple Microservice With gRPC</title>
+    <link>https://blog.piinalpin.com/create-simple-microservice-with-grpc/</link>
+    <pubDate>Sat, 30 Jan 2021 16:21:21 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/create-simple-microservice-with-grpc/</guid>
+    <description><![CDATA[Build a simple microservices gRPC server and client using Spring Boot]]></description>
+</item></channel>
 </rss>

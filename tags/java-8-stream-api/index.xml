@@ -1,23 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Java 8 Stream API on PiinAlpin</title>
-    <link>https://blog.piinalpin.com/tags/java-8-stream-api/</link>
-    <description>Recent content in Java 8 Stream API on PiinAlpin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 15 Sep 2020 14:45:31 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/java-8-stream-api/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Java 8 Stream API Tutorial</title>
-      <link>https://blog.piinalpin.com/2020/09/java-stream-api/</link>
-      <pubDate>Tue, 15 Sep 2020 14:45:31 +0700</pubDate>
-      
-      <guid>https://blog.piinalpin.com/2020/09/java-stream-api/</guid>
-      <description>Prerequisites Basic knowledge of Java 8 (lambda expressions, Optional, method references) of the Stream API. This tutorial is using Gson to pretty print JSON string.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Java 8 Stream API - Tag - PiinAlpin&#39;s Blog</title>
+        <link>https://blog.piinalpin.com/tags/java-8-stream-api/</link>
+        <description>Java 8 Stream API - Tag - PiinAlpin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 15 Sep 2020 14:45:31 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/java-8-stream-api/" rel="self" type="application/rss+xml" /><item>
+    <title>Java 8 Stream API Tutorial</title>
+    <link>https://blog.piinalpin.com/java-stream-api/</link>
+    <pubDate>Tue, 15 Sep 2020 14:45:31 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/java-stream-api/</guid>
+    <description><![CDATA[Prerequisites Basic knowledge of Java 8 (lambda expressions, Optional, method references) of the Stream API. This tutorial is using Gson to pretty print JSON string.
 Object and Data Sampling Create class Pojo.java
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39  public class Pojo { private String numberId; private String name; private String gender; public Pojo(String numberId, String name, String gender) { this.</description>
-    </item>
-    
-  </channel>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39  public class Pojo { private String numberId; private String name; private String gender; public Pojo(String numberId, String name, String gender) { this.]]></description>
+</item></channel>
 </rss>

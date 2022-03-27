@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "![Build Status](https://img.shields.io/badge/build-passed-green.svg)",
+  "main": "index.js",
+  "scripts": {
+    "algolia": "atomic-algolia"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piinalpin/blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piinalpin/blog/issues"
+  },
+  "homepage": "https://github.com/piinalpin/blog#readme",
+  "dependencies": {
+    "atomic-algolia": "^0.3.19"
+  }
+}

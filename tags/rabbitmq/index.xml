@@ -1,30 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>RabbitMQ on PiinAlpin</title>
-    <link>https://blog.piinalpin.com/tags/rabbitmq/</link>
-    <description>Recent content in RabbitMQ on PiinAlpin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 28 Mar 2021 11:20:37 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How Messages Broker Work Using RabbitMQ</title>
-      <link>https://blog.piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</link>
-      <pubDate>Sun, 28 Mar 2021 11:20:37 +0700</pubDate>
-      
-      <guid>https://blog.piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Django Mail Sender With Rabbit-MQ and Celery Worker</title>
-      <link>https://blog.piinalpin.com/2020/02/django-mail-sender/</link>
-      <pubDate>Wed, 12 Feb 2020 13:19:04 +0700</pubDate>
-      
-      <guid>https://blog.piinalpin.com/2020/02/django-mail-sender/</guid>
-      <description>Prerequisites  Erlang (Open Telecom Platform) RabbitMQ (Message Broker) Pyhton 3.6 (Base Compiler) Sendgrid Account (SMTP Client) Virtualenv  Step to create Django mail sender  Create virtual environtment in root directory on your project and activate it  1 2  virtualenv env . env/bin/activate   Install Django 2.1  1  pip install Django==2.1.2   Create project and application in Django  1 2  django-admin startproject your_project_name django-admin startapp your_apps_name   Install library celery and celery-message-consumer  1 2  pip install celery pip install celery-message-consumer   Edit django base settings project_name/settings.</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>RabbitMQ - Tag - PiinAlpin&#39;s Blog</title>
+        <link>https://blog.piinalpin.com/tags/rabbitmq/</link>
+        <description>RabbitMQ - Tag - PiinAlpin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 28 Mar 2021 11:20:37 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/rabbitmq/" rel="self" type="application/rss+xml" /><item>
+    <title>How Messages Broker Work Using RabbitMQ</title>
+    <link>https://blog.piinalpin.com/how-messages-broker-work-using-rabbitmq/</link>
+    <pubDate>Sun, 28 Mar 2021 11:20:37 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/how-messages-broker-work-using-rabbitmq/</guid>
+    <description><![CDATA[Understanding message broker works using RabbitMQ and Spring Boot with microservice architecture.]]></description>
+</item><item>
+    <title>Django Mail Sender With Rabbit-MQ and Celery Worker</title>
+    <link>https://blog.piinalpin.com/django-mail-sender/</link>
+    <pubDate>Wed, 12 Feb 2020 13:19:04 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/django-mail-sender/</guid>
+    <description><![CDATA[Prerequisites  Erlang (Open Telecom Platform) RabbitMQ (Message Broker) Pyhton 3.6 (Base Compiler) Sendgrid Account (SMTP Client) Virtualenv  Step to create Django mail sender  Create virtual environtment in root directory on your project and activate it  1 2  virtualenv env . env/bin/activate   Install Django 2.1  1  pip install Django==2.1.2   Create project and application in Django  1 2  django-admin startproject your_project_name django-admin startapp your_apps_name   Install library celery and celery-message-consumer  1 2  pip install celery pip install celery-message-consumer   Edit django base settings project_name/settings.]]></description>
+</item></channel>
 </rss>

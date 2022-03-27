@@ -1,21 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Docker Container on PiinAlpin</title>
-    <link>https://blog.piinalpin.com/tags/docker-container/</link>
-    <description>Recent content in Docker Container on PiinAlpin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 20 May 2021 12:57:27 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/docker-container/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Why Should Learn Docker</title>
-      <link>https://blog.piinalpin.com/2021/05/why-should-learn-docker/</link>
-      <pubDate>Thu, 20 May 2021 12:57:27 +0700</pubDate>
-      
-      <guid>https://blog.piinalpin.com/2021/05/why-should-learn-docker/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Docker Container - Tag - PiinAlpin&#39;s Blog</title>
+        <link>https://blog.piinalpin.com/tags/docker-container/</link>
+        <description>Docker Container - Tag - PiinAlpin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 20 May 2021 12:57:27 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/docker-container/" rel="self" type="application/rss+xml" /><item>
+    <title>Why Should Learn Docker</title>
+    <link>https://blog.piinalpin.com/why-should-learn-docker/</link>
+    <pubDate>Thu, 20 May 2021 12:57:27 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/why-should-learn-docker/</guid>
+    <description><![CDATA[Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development - desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.]]></description>
+</item></channel>
 </rss>

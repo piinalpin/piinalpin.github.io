@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Simple Flask App with Mysql - PiinAlpin&#39;s Blog</title><meta name="Description" content="This project will create CRUD application with Object Relational Mapping on MySQL using flask and sqlalchemy."><meta property="og:title" content="Simple Flask App with Mysql" />
+<meta property="og:description" content="This project will create CRUD application with Object Relational Mapping on MySQL using flask and sqlalchemy." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.piinalpin.com/flask-mysql/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-12-26T16:46:49+07:00" />
+<meta property="article:modified_time" content="2019-12-26T16:46:49+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Simple Flask App with Mysql"/>
+<meta name="twitter:description" content="This project will create CRUD application with Object Relational Mapping on MySQL using flask and sqlalchemy."/>
+<meta name="application-name" content="PiinAlpin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/flask-mysql/" /><link rel="prev" href="https://blog.piinalpin.com/django-crud-sqlite/" /><link rel="next" href="https://blog.piinalpin.com/research-reference-bot/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Simple Flask App with Mysql",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.piinalpin.com\/flask-mysql\/"
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Python, Flask, MySQL","wordcount":  641 ,
+        "url": "https:\/\/blog.piinalpin.com\/flask-mysql\/","datePublished": "2019-12-26T16:46:49+07:00","dateModified": "2019-12-26T16:46:49+07:00","publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
+                "@type": "Person",
+                "name": "Alvinditya Saputra"
+            },"description": "This project will create CRUD application with Object Relational Mapping on MySQL using flask and sqlalchemy."
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Simple Flask App with Mysql</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-26">2019-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;641 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a>
+      <ul>
+        <li><a href="#project-structure">Project structure</a></li>
+        <li><a href="#step-to-create-this-project">Step to create this project</a></li>
+      </ul>
+    </li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#clone-or-download">Clone or Download</a></li>
+    <li><a href="#authors">Authors</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Make sure you have installed Python 3 on your device</p>
+<h3 id="project-structure">Project structure</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* flask-mysql/
+</span></span><span class="line"><span class="cl">  |--- app/
+</span></span><span class="line"><span class="cl">  |    |--- config/
+</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
+</span></span><span class="line"><span class="cl">  |    |    |--- Database.py
+</span></span><span class="line"><span class="cl">  |    |--- controller/
+</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
+</span></span><span class="line"><span class="cl">  |    |    |--- CollegerController.py
+</span></span><span class="line"><span class="cl">  |    |    |--- CoursesController.py
+</span></span><span class="line"><span class="cl">  |    |    |--- Main.py
+</span></span><span class="line"><span class="cl">  |    |    |--- TakeCourseController.py
+</span></span><span class="line"><span class="cl">  |    |--- model/
+</span></span><span class="line"><span class="cl">  |    |    |--- CollegerModel.py
+</span></span><span class="line"><span class="cl">  |    |    |--- CoursesModel.py
+</span></span><span class="line"><span class="cl">  |    |    |--- TakeCourseModel.py
+</span></span><span class="line"><span class="cl">  |    |--- templates/
+</span></span><span class="line"><span class="cl">  |    |--- __init__.py
+</span></span><span class="line"><span class="cl">  |--- run.py
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="step-to-create-this-project">Step to create this project</h3>
+<p>A step by step series of examples that tell you how to get a development env running</p>
+<ol>
+<li>Install virtual environment if you dont have virtual environment</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pip install virtualenv
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>Create virtual environment and activate inside your flask-rest-api directory according the above structure</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">virtualenv venv
+</span></span><span class="line"><span class="cl">&gt; On windows -&gt; venv\Scripts\activate
+</span></span><span class="line"><span class="cl">&gt; On linux -&gt; . env/bin/activate
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>Install some third party libraries on your virtual environment with pip</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pip install flask flask-sqlalchemy flask-migrate mysql-connector-python
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>Install MySQL database if you don&rsquo;t have, but if you have MySQL you can skip this step</li>
+<li>Create user and grant privilege for user was created</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;newuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="k">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;newuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>Create database on MySQL</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">YOUR_DATABASE_NAME</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>Create <code>project_name/run.py</code> directory inside flask-project according the above structure</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&#34;localhost&#34;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="8">
+<li>Create <code>project_name/app/config/Database.py</code> to create configuration for database</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DbConfig</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">DB_USERNAME</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_USERNAME&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">DB_PASSWORD</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_PASSWORD&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">DB_HOST</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">DB_PORT</span> <span class="o">=</span> <span class="mi">3306</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">DB_NAME</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_DATABASE_NAME&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getUri</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;mysql+mysqlconnector://</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">@</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DB_USERNAME</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_PASSWORD</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_HOST</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                              <span class="bp">self</span><span class="o">.</span><span class="n">DB_PORT</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_NAME</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="9">
+<li>Create <code>project_name/app/__init__.py</code> inside app directory according the above structure <code>project_name/app/</code>. This step will setup for SQLAlchemy config.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.config.Database</span> <span class="kn">import</span> <span class="n">DbConfig</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_DATABASE_URI&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DbConfig</span><span class="p">()</span><span class="o">.</span><span class="n">getUri</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_TRACK_MODIFICATIONS&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">migrate</span> <span class="o">=</span> <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="10">
+<li>Define colleger model to application and create database migration, create python file on <code>app/model/</code> you can see defined model on <a href="https://github.com/piinalpin/flask-mysql/tree/master/app/model" target="_blank" rel="noopener noreffer">here</a></li>
+<li>Update <code>app/__init__.py</code> should like as follows</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.config.Database</span> <span class="kn">import</span> <span class="n">DbConfig</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_DATABASE_URI&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DbConfig</span><span class="p">()</span><span class="o">.</span><span class="n">getUri</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_TRACK_MODIFICATIONS&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.model</span> <span class="kn">import</span> <span class="n">CoursesModel</span><span class="p">,</span> <span class="n">CollegerModel</span><span class="p">,</span> <span class="n">TakeCourseModel</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">migrate</span> <span class="o">=</span> <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="12">
+<li>Run migration with flask-migrate, type in terminal as below</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">flask db init
+</span></span><span class="line"><span class="cl">flask db migrate
+</span></span><span class="line"><span class="cl">flask db upgrade
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="13">
+<li>
+<p>The structure of database should like as follows
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/dbdiagram.png"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/dbdiagram.png, https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/dbdiagram.png 1.5x, https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/dbdiagram.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/dbdiagram.png"
+        title="Sample Database" /></p>
+</li>
+<li>
+<p>Create controller to application, create python file on <code>app/controller/</code> you can see defined controller <a href="https://github.com/piinalpin/flask-mysql/tree/master/app/controller" target="_blank" rel="noopener noreffer">here</a></p>
+</li>
+<li>
+<p>Update <code>app/__init__.py</code> add this import into end line of file, this step to import the controller</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.controller.Main</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.controller.CollegerController</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.controller.CoursesController</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.controller.TakeCourseController</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="16">
+<li>Create templates to application on <code>app/templates/</code> you can see defined templates <a href="https://github.com/piinalpin/flask-mysql/tree/master/app/templates" target="_blank" rel="noopener noreffer">here</a></li>
+<li>Then, you can run this application by terminal</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">python run.py
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="18">
+<li>Homepage</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/homepage.png"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/homepage.png, https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/homepage.png 1.5x, https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/homepage.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/homepage.png"
+        title="Sample Homepage" /></p>
+<ol start="19">
+<li>
+<p>Colleger Page
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/colleger.png"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/colleger.png, https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/colleger.png 1.5x, https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/colleger.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/colleger.png"
+        title="Sample Colleger" /></p>
+</li>
+<li>
+<p>Courses Page
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/courses.png"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/courses.png, https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/courses.png 1.5x, https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/courses.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/courses.png"
+        title="Sample Courses" /></p>
+</li>
+<li>
+<p>Take Course Page
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/take_courses.png"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/take_courses.png, https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/take_courses.png 1.5x, https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/take_courses.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-mysql/master/docs/take_courses.png"
+        title="Sample Take Course" /></p>
+</li>
+</ol>
+<h2 id="built-with">Built With</h2>
+<ul>
+<li><a href="https://www.python.org/download/releases/3.0/" target="_blank" rel="noopener noreffer">Python 3</a> - The language programming used</li>
+<li><a href="http://flask.pocoo.org/" target="_blank" rel="noopener noreffer">Flask</a> - The web framework used</li>
+<li><a href="https://pypi.org/project/Flask-Migrate/" target="_blank" rel="noopener noreffer">Flask Migrate</a> - The database migration</li>
+<li><a href="https://virtualenv.pypa.io/en/latest/" target="_blank" rel="noopener noreffer">Virtualenv</a> - The virtual environment used</li>
+<li><a href="https://www.sqlalchemy.org/" target="_blank" rel="noopener noreffer">SQL Alchemy</a> - The database library</li>
+<li><a href="http://flask-sqlalchemy.pocoo.org/2.3/" target="_blank" rel="noopener noreffer">Flask-SQLAlchemy</a> - Flask and SQL Alchemy connector</li>
+<li><a href="https://pypi.org/project/mysql-connector-python/" target="_blank" rel="noopener noreffer">MySQL Connector Python</a> - Connector MySQL for Python</li>
+<li><a href="https://www.mysql.com/" target="_blank" rel="noopener noreffer">MySQL</a> - MySQL Database</li>
+</ul>
+<h2 id="clone-or-download">Clone or Download</h2>
+<p>You can clone or download this project</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; Clone : git clone https://github.com/piinalpin/flask-mysql.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="authors">Authors</h2>
+<ul>
+<li><strong>Alvinditya Saputra</strong> - <a href="https://linkedin.com/in/piinalpin" target="_blank" rel="noopener noreffer">LinkedIn</a> <a href="https://www.instagram.com/piinalpin" target="_blank" rel="noopener noreffer">Instagram</a> <a href="https://www.twitter.com/piinalpin" target="_blank" rel="noopener noreffer">Twitter</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-12-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/flask-mysql/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.piinalpin.com/flask-mysql/" data-title="Simple Flask App with Mysql" data-via="piinalpin" data-hashtags="Python,Flask,MySQL"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.piinalpin.com/flask-mysql/" data-hashtag="Python"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.piinalpin.com/flask-mysql/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/flask/">Flask</a>,&nbsp;<a href="/tags/mysql/">MySQL</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/django-crud-sqlite/" class="prev" rel="prev" title="Simple Django CRUD App With SQLite"><i class="fas fa-angle-left fa-fw"></i>Simple Django CRUD App With SQLite</a>
+            <a href="/research-reference-bot/" class="next" rel="next" title="Research Reference Bot">Research Reference Bot<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

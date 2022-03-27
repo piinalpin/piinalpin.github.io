@@ -1,30 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pods on PiinAlpin</title>
-    <link>https://blog.piinalpin.com/tags/pods/</link>
-    <description>Recent content in Pods on PiinAlpin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 28 May 2021 09:37:50 +0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/pods/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Persistent Volume and Persistent Volume Claim in Kubernetes</title>
-      <link>https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes-pv-and-pvc/</link>
-      <pubDate>Fri, 28 May 2021 09:37:50 +0700</pubDate>
-      
-      <guid>https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes-pv-and-pvc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Learning Kubernetes</title>
-      <link>https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes/</link>
-      <pubDate>Mon, 24 May 2021 09:19:24 +0700</pubDate>
-      
-      <guid>https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Pods - Tag - PiinAlpin&#39;s Blog</title>
+        <link>https://blog.piinalpin.com/tags/pods/</link>
+        <description>Pods - Tag - PiinAlpin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 28 May 2021 09:37:50 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/pods/" rel="self" type="application/rss+xml" /><item>
+    <title>Persistent Volume and Persistent Volume Claim in Kubernetes</title>
+    <link>https://blog.piinalpin.com/why-should-learn-kubernetes-pv-and-pvc/</link>
+    <pubDate>Fri, 28 May 2021 09:37:50 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/why-should-learn-kubernetes-pv-and-pvc/</guid>
+    <description><![CDATA[Managing storage is a distinct problem from managing compute instances. The PersistentVolume subsystem provides an API for users and administrators that abstracts details of how storage is provided from how it is consumed. To do this, we introduce two new API resources: PersistentVolume and PersistentVolumeClaim.]]></description>
+</item><item>
+    <title>Learning Kubernetes</title>
+    <link>https://blog.piinalpin.com/why-should-learn-kubernetes/</link>
+    <pubDate>Mon, 24 May 2021 09:19:24 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/why-should-learn-kubernetes/</guid>
+    <description><![CDATA[Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.]]></description>
+</item></channel>
 </rss>

@@ -1,0 +1,22 @@
+
+name: Synchronizing Algolia Search
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deleting existing indexes object
+      run: |
+        curl -X POST -H "X-Algolia-API-Key: ${{ secrets.ALGOLIA_API_KEY }}" -H "X-Algolia-Application-Id: ${{ secrets.ALGOLIA_APPLICATION_ID }}" "https://Z6ALHE0FJ2.algolia.net/1/indexes/test-index/clear"
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: Installing dependency
+      run: npm install
+    - name: Synchronizing search engine
+      run: ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APPLICATION_ID }} ALGOLIA_ADMIN_KEY=${{ secrets.ALGOLIA_API_KEY }} node search-engine-sync.js
