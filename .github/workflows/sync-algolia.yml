@@ -12,11 +12,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Deleting existing indexes object
       run: |
-        curl -X POST -H "X-Algolia-API-Key: ${{ secrets.github-pages.ALGOLIA_API_KEY }}" -H "X-Algolia-Application-Id: ${{ secrets.github-pages.ALGOLIA_APPLICATION_ID }}" "https://${{ secrets.github-pages.ALGOLIA_APPLICATION_ID }}.algolia.net/1/indexes/test-index/clear"
+        curl -X POST -H "X-Algolia-API-Key: ${{ github-pages.secrets.ALGOLIA_API_KEY }}" -H "X-Algolia-Application-Id: ${{ github-pages.secrets.ALGOLIA_APPLICATION_ID }}" "https://${{ github-pages.secrets.ALGOLIA_APPLICATION_ID }}.algolia.net/1/indexes/test-index/clear"
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
     - name: Installing dependency
       run: npm install
     - name: Synchronizing search engine
-      run: ALGOLIA_APP_ID=${{ secrets.github-pages.ALGOLIA_APPLICATION_ID }} ALGOLIA_ADMIN_KEY=${{ secrets.github-pages.ALGOLIA_API_KEY }} node search-engine-sync.js
+      run: ALGOLIA_APP_ID=${{ github-pages.secrets.ALGOLIA_APPLICATION_ID }} ALGOLIA_ADMIN_KEY=${{ github-pages.secrets.ALGOLIA_API_KEY }} node search-engine-sync.js
