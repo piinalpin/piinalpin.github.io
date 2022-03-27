@@ -13,8 +13,8 @@ jobs:
     - name: Deleting existing indexes object
       shell: bash
       env:
-        ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-        ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+        ALGOLIA_API_KEY: ${{ github-pages.secrets.ALGOLIA_API_KEY }}
+        ALGOLIA_APPLICATION_ID: ${{ github-pages.secrets.ALGOLIA_APPLICATION_ID }}
       run: |
         chmod +x sync.sh
         ./sync.sh
