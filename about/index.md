@@ -3,5 +3,5 @@
 
 Hello! I am __Alvinditya Saputra__. Backend Developer.
 
-I like new things, interested in data science and have a high curiosity. Familiar with agile development and system development with Restful using __Object Relational Mapping__. If I have spare time I would rather research about __machine learning__ in the Python forum.
+I like new things, have a high curiosity and easily adapt to new environments. Familiar with Agile software development such as Jira, Trello, Open Project, etc. I also like to write on my personal blog, usually I write about the things I research. I'm currently interested in devops tools and server automation provisioning and I'm also interested in kubernetes and auto scaling container management. When I have free time I usually use it for research and documentation.
 

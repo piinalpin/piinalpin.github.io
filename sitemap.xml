@@ -2,18 +2,18 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.piinalpin.com/categories/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/custom-jpa-repository-factory-bean/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/categories/documentation/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/java/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/jpa/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/jpa-repositoriy-factory-bean/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/jpa-soft-deletes-implementation/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/posts/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/soft-delete/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/categories/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/custom-jpa-repository-factory-bean/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/categories/documentation/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/java/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/jpa/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/jpa-repositoriy-factory-bean/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/jpa-soft-deletes-implementation/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/posts/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/soft-delete/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://blog.piinalpin.com/best-practice-uploading-file-using-rest-template/</loc><lastmod>2022-02-19T14:11:02&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.piinalpin.com/tags/form-data/</loc><lastmod>2022-02-19T14:11:02&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.piinalpin.com/tags/multipart/</loc><lastmod>2022-02-19T14:11:02&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
