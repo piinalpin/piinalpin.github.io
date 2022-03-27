@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deleting existing indexes object
-      with:
+      env:
         ALGOLIA_APIKEY: ${{ secrets.ALGOLIA_API_KEY }}
         ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
       run: |
@@ -22,7 +22,7 @@ jobs:
     - name: Installing dependency
       run: npm install
     - name: Synchronizing search engine
-      with:
+      env:
         ALGOLIA_APIKEY: ${{ secrets.ALGOLIA_API_KEY }}
         ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
       run: ALGOLIA_APP_ID=$ALGOLIA_APPLICATION_ID ALGOLIA_ADMIN_KEY=$ALGOLIA_APIKEY node search-engine-sync.js
