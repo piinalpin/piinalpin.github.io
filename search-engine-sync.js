@@ -1,6 +1,6 @@
 var atomicalgolia = require("atomic-algolia")
 var indexName = "test-index"
-var indexPath = "./public/index.json"
+var indexPath = "./index.json"
 var cb = function(error, result) {
     if (error) throw error
 
