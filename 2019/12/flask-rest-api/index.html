@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Simple Build Flask Restful Based - PiinAlpin&#39;s Blog</title><meta name="Description" content="Tutorial for building Create, Read, Update and Delete using REST Full API with Flask and SQLAlchemy"><meta property="og:title" content="Simple Build Flask Restful Based" />
+<meta property="og:description" content="Tutorial for building Create, Read, Update and Delete using REST Full API with Flask and SQLAlchemy" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.piinalpin.com/2019/12/flask-rest-api/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-12-24T01:27:15+07:00" />
+<meta property="article:modified_time" content="2019-12-24T01:27:15+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Simple Build Flask Restful Based"/>
+<meta name="twitter:description" content="Tutorial for building Create, Read, Update and Delete using REST Full API with Flask and SQLAlchemy"/>
+<meta name="application-name" content="PiinAlpin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2019/12/flask-rest-api/" /><link rel="prev" href="https://blog.piinalpin.com/2019/12/flask-crud/" /><link rel="next" href="https://blog.piinalpin.com/2019/12/my-first-workshop/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Simple Build Flask Restful Based",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.piinalpin.com\/2019\/12\/flask-rest-api\/"
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Flask, RestFul, Python, SQL-Alchemy","wordcount":  1168 ,
+        "url": "https:\/\/blog.piinalpin.com\/2019\/12\/flask-rest-api\/","datePublished": "2019-12-24T01:27:15+07:00","dateModified": "2019-12-24T01:27:15+07:00","publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
+                "@type": "Person",
+                "name": "Alvinditya Saputra"
+            },"description": "Tutorial for building Create, Read, Update and Delete using REST Full API with Flask and SQLAlchemy"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Simple Build Flask Restful Based</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-24">2019-12-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1168 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-build">How To Build</a>
+      <ul>
+        <li><a href="#project-structure">Project structure</a></li>
+        <li><a href="#step-to-create-flask-rest-api">Step to create flask rest api</a></li>
+        <li><a href="#after-change-structure-of-flask-project">After change structure of flask project</a></li>
+        <li><a href="#want-to-demo-online">Want to demo online?</a>
+          <ul>
+            <li><a href="#backend-flask-rest-apihttpsflask-rest-api-maverickherokuappcom"><a href="https://flask-rest-api-maverick.herokuapp.com/">Backend Flask REST API</a></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#clone-or-download">Clone or Download</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="how-to-build">How To Build</h2>
+<p>Make sure you have installed Python 3 on your device</p>
+<h3 id="project-structure">Project structure</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* flask-rest-api/
+  |--- app/
+  |    |--- module/
+  |    |    |--- __init__.py
+  |    |    |--- const.py
+  |    |    |--- controller.py
+  |    |    |--- models.py
+  |    |--- __init__.py
+  |--- venv/
+  |--- run.py
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="step-to-create-flask-rest-api">Step to create flask rest api</h3>
+<p>A step by step series of examples that tell you how to get a development env running</p>
+<ol>
+<li>Install virtual environment</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install virtualenv
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>Create virtual environment and activate inside your flask-rest-api directory according the above structure</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">virtualenv venv
+&gt; On windows -&gt; venv\Scripts\activate
+&gt; On linux -&gt; . env/bin/activate
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>Install some third party librares on your virtual environment with pip</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install flask sqlalchemy flask-sqlalchemy flask-migrate
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>Create <code>run.py</code> directory inside flask-project according the above structure</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>Create <code>controller.py</code> according the abpove structure <code>flask-rest-api/app/module/</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&#34;&lt;h1&gt;Welcome to Flask Restful API&lt;/h1&gt;&lt;p&gt;Created By: Alvinditya Saputra&lt;/p&gt;&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>Create <code>__init__.py</code> inside app directory according the above structure <code>flask-rest-api/app/</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">app.module.controller</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>Run first this application to make sure can running with terminal or command promt</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">python run.py
+</code></pre></td></tr></table>
+</div>
+</div><ol start="9">
+<li>Access <code>localhost:5000</code> according port that created in <code>run.py</code></li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/1.PNG"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/1.PNG, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/1.PNG 1.5x, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/1.PNG 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/1.PNG"
+        title="Sample 1" /></p>
+<ol start="10">
+<li>Configure the database with SQLAlchemy, you should create directory <code>db/</code> inside <code>app/</code> directory and modify <code>__init__.py</code> and it will be created <code>flask-api.db</code> inside <code>app</code> directory</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* flask-rest-api/
+  |--- app/
+  |    |--- db/
+  |    |--- module/
+  |    |    |--- __init__.py
+  |    |    |--- controller.py
+  |    |    |--- models.py
+  |    |--- __init__.py
+  |--- venv/
+  |--- run.py
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="n">project_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<span class="n">database_file</span> <span class="o">=</span> <span class="s2">&#34;sqlite:///</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="s2">&#34;db/flask-api.db&#34;</span><span class="p">))</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_DATABASE_URI&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">database_file</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_TRACK_MODIFICATIONS&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="kn">from</span> <span class="nn">app.module.controller</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="11">
+<li>Define model to application and create database migration, you should create <code>models.py</code> file inside <code>module</code> directory according the above structure.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+<span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span>
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">migrate</span> <span class="o">=</span> <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Mahasiswa</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;mahasiswa&#39;</span> <span class="c1">#Must be defined the table name</span>
+
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">nim</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nim</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nim</span> <span class="o">=</span> <span class="n">nim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&#34;&lt;Name: </span><span class="si">{}</span><span class="s2">, Nim: </span><span class="si">{}</span><span class="s2">&gt;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nim</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">getAll</span><span class="p">():</span>
+        <span class="n">students</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">student</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="s1">&#39;nim&#39;</span><span class="p">:</span> <span class="n">student</span><span class="o">.</span><span class="n">nim</span><span class="p">,</span>
+                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">student</span><span class="o">.</span><span class="n">name</span>
+            <span class="p">}</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="12">
+<li>Run migration with flask-migrate, type in terminal as below</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">flask db init
+flask db migrate
+flask db upgrade
+</code></pre></td></tr></table>
+</div>
+</div><ol start="13">
+<li>The structure of database should like as follows</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Mahasiswa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id (Integer, PK, Autoincrement, NOT NULL)</code></td>
+</tr>
+<tr>
+<td><code>name (String, NOT NULL)</code></td>
+</tr>
+<tr>
+<td><code>nim (String, NOT NULL)</code></td>
+</tr>
+</tbody>
+</table>
+<ol start="14">
+<li>Create constant class to define constant variable for example variable to HTTP status, you should create file <code>const.py</code> inside <code>app/module/</code> according the above structure</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">HttpStatus</span><span class="p">:</span>
+    <span class="n">OK</span> <span class="o">=</span> <span class="mi">200</span>
+    <span class="n">CREATED</span> <span class="o">=</span> <span class="mi">201</span>
+    <span class="n">NOT_FOUND</span> <span class="o">=</span> <span class="mi">404</span>
+    <span class="n">BAD_REQUEST</span> <span class="o">=</span> <span class="mi">400</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="15">
+<li>The structure project will be look as follows</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* flask-rest-api/
+  |--- app/
+  |    |--- db/
+  |    |--- module/
+  |    |    |--- __init__.py
+  |    |    |--- const.py
+  |    |    |--- controller.py
+  |    |    |--- models.py
+  |    |--- __init__.py
+  |--- venv/
+  |--- run.py
+</code></pre></td></tr></table>
+</div>
+</div><ol start="16">
+<li>Import database from <code>models.py</code> and constant class <code>const.py</code> add this line <code>from .models import *</code> and <code>from .const import *</code> to the <code>controller.py</code>, it&rsquo;s mean import all class, function or variables from <code>models.py</code> and <code>const.py</code></li>
+<li>Create function to get data from Http Request GET to retrieve all data from database with endpoint <code>/mahasiswa</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/api/v1/mahasiswa&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">mahasiswa</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="n">construct</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s1">&#39;mahasiswa&#39;</span><span class="p">:</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">getAll</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">construct</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="n">OK</span>
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/2.PNG"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/2.PNG, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/2.PNG 1.5x, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/2.PNG 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/2.PNG"
+        title="Sample 2" /></p>
+<ol start="18">
+<li>How to insert data to database with Http Request POST? Okay, lets do it with create function input data from request, add this code to function mahasiswa as <code>def mahasiswa()</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">nim</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;nim&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="s2">&#34;&#34;</span> <span class="k">else</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;nim&#39;</span><span class="p">]</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="s2">&#34;&#34;</span> <span class="k">else</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+        <span class="n">construct</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">mhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="p">(</span><span class="n">nim</span><span class="o">=</span><span class="n">nim</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">mhs</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Data saved&#39;</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">construct</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="n">CREATED</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">construct</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="n">BAD_REQUEST</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/3.PNG"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/3.PNG, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/3.PNG 1.5x, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/3.PNG 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/3.PNG"
+        title="Sample 3" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/4.PNG"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/4.PNG, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/4.PNG 1.5x, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/4.PNG 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/4.PNG"
+        title="Sample 4" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/5.PNG"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/5.PNG, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/5.PNG 1.5x, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/5.PNG 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/5.PNG"
+        title="Sample 5" /></p>
+<ol start="19">
+<li>Then create function to filter or get data by id for which will use to PUT and DELETE request, that mean this function can update and delete data from database</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/api/v1/mahasiswa/&lt;int:id&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">mahasiswaId</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="n">mhs</span> <span class="o">=</span> <span class="n">Mahasiswa</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="n">construct</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s1">&#39;mahasiswa&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">mhs</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="s1">&#39;nim&#39;</span><span class="p">:</span> <span class="n">mhs</span><span class="o">.</span><span class="n">nim</span><span class="p">,</span>
+                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">mhs</span><span class="o">.</span><span class="n">name</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">construct</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="n">OK</span>
+    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;PUT&#39;</span><span class="p">:</span>
+        <span class="n">nim</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;nim&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="s2">&#34;&#34;</span> <span class="k">else</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;nim&#39;</span><span class="p">]</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="s2">&#34;&#34;</span> <span class="k">else</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+        <span class="n">construct</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">mhs</span><span class="o">.</span><span class="n">nim</span> <span class="o">=</span> <span class="n">nim</span>
+            <span class="n">mhs</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Data saved&#39;</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">construct</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="n">OK</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">construct</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="n">BAD_REQUEST</span>
+    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">:</span>
+        <span class="n">construct</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">mhs</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Data has been delete.&#39;</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">construct</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="n">OK</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">construct</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">construct</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="n">BAD_REQUEST</span>
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/6.PNG"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/6.PNG, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/6.PNG 1.5x, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/6.PNG 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/6.PNG"
+        title="Sample 6" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/7.PNG"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/7.PNG, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/7.PNG 1.5x, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/7.PNG 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/7.PNG"
+        title="Sample 7" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/8.PNG"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/8.PNG, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/8.PNG 1.5x, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/8.PNG 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/8.PNG"
+        title="Sample 8" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/9.PNG"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/9.PNG, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/9.PNG 1.5x, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/9.PNG 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/9.PNG"
+        title="Sample 9" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/10.PNG"
+        data-srcset="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/10.PNG, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/10.PNG 1.5x, https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/10.PNG 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/piinalpin/flask-rest-api/master/10.PNG"
+        title="Sample 10" /></p>
+<h3 id="after-change-structure-of-flask-project">After change structure of flask project</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* flask-rest-api/
+  |--- app/
+  |    |--- db/
+  |    |    |--- flask-api.db
+  |    |--- module/
+  |    |    |--- __init__.py
+  |    |    |--- const.py
+  |    |    |--- controller.py
+  |    |    |--- models.py
+  |    |--- __init__.py
+  |--- migrations/
+  |--- venv/
+  |--- run.py
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="want-to-demo-online">Want to demo online?</h3>
+<h4 id="backend-flask-rest-apihttpsflask-rest-api-maverickherokuappcom"><a href="https://flask-rest-api-maverick.herokuapp.com/" target="_blank" rel="noopener noreffer">Backend Flask REST API</a></h4>
+<h2 id="built-with">Built With</h2>
+<ul>
+<li><a href="https://www.python.org/download/releases/3.0/" target="_blank" rel="noopener noreffer">Python 3</a> - The language programming used</li>
+<li><a href="http://flask.pocoo.org/" target="_blank" rel="noopener noreffer">Flask</a> - The web framework used</li>
+<li><a href="https://pypi.org/project/Flask-Migrate/" target="_blank" rel="noopener noreffer">Flask Migrate</a> - The database migration</li>
+<li><a href="https://virtualenv.pypa.io/en/latest/" target="_blank" rel="noopener noreffer">Virtualenv</a> - The virtual environment used</li>
+<li><a href="https://www.sqlalchemy.org/" target="_blank" rel="noopener noreffer">SQL Alchemy</a> - The database library</li>
+<li><a href="http://flask-sqlalchemy.pocoo.org/2.3/" target="_blank" rel="noopener noreffer">Flask-SQLAlchemy</a> - Flask and SQL Alchemy connector</li>
+</ul>
+<h2 id="clone-or-download">Clone or Download</h2>
+<p>You can clone or download this project</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt; Clone : git clone https://github.com/piinalpin/flask-rest-api.git
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-12-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2019/12/flask-rest-api/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.piinalpin.com/2019/12/flask-rest-api/" data-title="Simple Build Flask Restful Based" data-via="piinalpin" data-hashtags="Flask,RestFul,Python,SQL-Alchemy"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.piinalpin.com/2019/12/flask-rest-api/" data-hashtag="Flask"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.piinalpin.com/2019/12/flask-rest-api/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/flask/">Flask</a>,&nbsp;<a href="/tags/restful/">RestFul</a>,&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/sql-alchemy/">SQL-Alchemy</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2019/12/flask-crud/" class="prev" rel="prev" title="Simple CRUD App with Flask And SQL-Alchemy"><i class="fas fa-angle-left fa-fw"></i>Simple CRUD App with Flask And SQL-Alchemy</a>
+            <a href="/2019/12/my-first-workshop/" class="next" rel="next" title="My First Workshop">My First Workshop<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

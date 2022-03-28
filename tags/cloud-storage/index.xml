@@ -5,10 +5,10 @@
         <description>Cloud Storage - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 13 Nov 2021 09:55:34 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/cloud-storage/" rel="self" type="application/rss+xml" /><item>
     <title>Cloud Object Storage Spring Boot With Minio</title>
-    <link>https://blog.piinalpin.com/cloud-object-storage-spring-boot-with-minio/</link>
+    <link>https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/</link>
     <pubDate>Sat, 13 Nov 2021 09:55:34 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/cloud-object-storage-spring-boot-with-minio/</guid>
+    <guid>https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/</guid>
     <description><![CDATA[MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0. It is API compatible with Amazon S3 cloud storage service. Use MinIO to build high performance infrastructure for machine learning, analytics and application data workloads.]]></description>
 </item></channel>
 </rss>

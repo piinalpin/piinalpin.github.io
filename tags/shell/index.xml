@@ -5,10 +5,10 @@
         <description>Shell - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 17 Aug 2021 15:13:17 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/shell/" rel="self" type="application/rss+xml" /><item>
     <title>Bash Script for Lazy People</title>
-    <link>https://blog.piinalpin.com/bash-script-for-lazy-people/</link>
+    <link>https://blog.piinalpin.com/2021/08/bash-script-for-lazy-people/</link>
     <pubDate>Tue, 17 Aug 2021 15:13:17 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/bash-script-for-lazy-people/</guid>
+    <guid>https://blog.piinalpin.com/2021/08/bash-script-for-lazy-people/</guid>
     <description><![CDATA[What is Bash? Bash is a command processor that typically runs in a text window where the user types commands that cause actions. Bash can also read and execute commands from a file, called a shell script. Like most Unix shells, it supports filename globbing (wildcard matching), piping, here documents, command substitution, variables, and control structures for condition-testing and iteration. The keywords, syntax, dynamically scoped variables and other basic features of the language are all copied from sh.]]></description>
 </item></channel>
 </rss>

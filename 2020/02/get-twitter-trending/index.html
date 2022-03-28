@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Get Twitter Trending with World of Earth Identity (WOEID) - PiinAlpin&#39;s Blog</title><meta name="Description" content="This tutorial will consume TwitterAPI to get Twitter Trendings with [Tweepy](https://www.tweepy.org/) Library"><meta property="og:title" content="Get Twitter Trending with World of Earth Identity (WOEID)" />
+<meta property="og:description" content="This tutorial will consume TwitterAPI to get Twitter Trendings with [Tweepy](https://www.tweepy.org/) Library" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.piinalpin.com/2020/02/get-twitter-trending/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-02-04T10:22:45+07:00" />
+<meta property="article:modified_time" content="2020-02-04T10:22:45+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Get Twitter Trending with World of Earth Identity (WOEID)"/>
+<meta name="twitter:description" content="This tutorial will consume TwitterAPI to get Twitter Trendings with [Tweepy](https://www.tweepy.org/) Library"/>
+<meta name="application-name" content="PiinAlpin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2020/02/get-twitter-trending/" /><link rel="prev" href="https://blog.piinalpin.com/2020/01/research-reference-bot/" /><link rel="next" href="https://blog.piinalpin.com/2020/02/django-mail-sender/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Get Twitter Trending with World of Earth Identity (WOEID)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.piinalpin.com\/2020\/02\/get-twitter-trending\/"
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Jupyter Notebook, Python, Anaconda, Data Mining","wordcount":  287 ,
+        "url": "https:\/\/blog.piinalpin.com\/2020\/02\/get-twitter-trending\/","datePublished": "2020-02-04T10:22:45+07:00","dateModified": "2020-02-04T10:22:45+07:00","publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
+                "@type": "Person",
+                "name": "Alvinditya Saputra"
+            },"description": "This tutorial will consume TwitterAPI to get Twitter Trendings with [Tweepy](https://www.tweepy.org/) Library"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Get Twitter Trending with World of Earth Identity (WOEID)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-04">2020-02-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;287 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#step-to-create-twitterapi-consumer">Step to create TwitterAPI Consumer</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="prerequisites">Prerequisites</h3>
+<p>Make sure you have installed <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreffer">Python 3</a> or <a href="https://www.anaconda.com/" target="_blank" rel="noopener noreffer">Anaconda</a> on your device.</p>
+<h3 id="step-to-create-twitterapi-consumer">Step to create TwitterAPI Consumer</h3>
+<ol>
+<li>Install <a href="https://www.tweepy.org/" target="_blank" rel="noopener noreffer">Tweepy</a></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install tweepy
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>Create an App on <a href="https://developer.twitter.com/" target="_blank" rel="noopener noreffer">Twitter Developer</a> to get API Key, then find <code>apiKey</code>, <code>apiSecretKey</code>, <code>accessToken</code>, and <code>accessTokenSecret</code> on tabs <code>Keys and tokens</code></li>
+<li>Create custom library <code>TwitterTrendingsAPI.py</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">tweepy</span>
+
+
+<span class="k">class</span> <span class="nc">TwitterTrendingsAPI</span><span class="p">:</span>
+    
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        How to use?
+</span><span class="s2">        
+</span><span class="s2">        Change apiKey, apiSecretKey, accessToken, accessTokenSecret with your own Twitter Apps from https://developer.twitter.com
+</span><span class="s2">        
+</span><span class="s2">        Use this class
+</span><span class="s2">        
+</span><span class="s2">        api = TwitterAPI(woeId=23424846, limit=10)
+</span><span class="s2">        api.getTrending()
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">woeId</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apiKey</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_API_KEY&gt;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apiSecretKey</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_API_SECRET_KEY&gt;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">accessToken</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_ACCESS_TOKEN&gt;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">accessTokenSecret</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_ACCESS_TOKEN_SECRET&gt;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">woeId</span> <span class="o">=</span> <span class="n">woeId</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">limit</span> <span class="o">=</span> <span class="n">limit</span>
+
+    <span class="k">def</span> <span class="nf">getApiAuth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">apiKey</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">apiSecretKey</span><span class="p">)</span>
+        <span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">accessToken</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">accessTokenSecret</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">getTrending</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">trends</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getApiAuth</span><span class="p">()</span><span class="o">.</span><span class="n">trends_place</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">woeId</span><span class="p">)</span>
+        <span class="n">trending</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">trends</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">trending</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&#34;trends&#34;</span><span class="p">][:</span><span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">]</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>Create python file or jupyter notebook file to call these custom library which is already created</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import custom twitter trendings API</span>
+<span class="kn">from</span> <span class="nn">TwitterTrendingsAPI</span> <span class="kn">import</span> <span class="n">TwitterTrendingsAPI</span>
+
+<span class="c1"># Define WOEID</span>
+<span class="s2">&#34;&#34;&#34;
+</span><span class="s2">More World of Earth Id : https://codebeautify.org/jsonviewer/f83352
+</span><span class="s2">Find WOEID by your self
+</span><span class="s2">
+</span><span class="s2">&#34;&#34;&#34;</span>
+
+<span class="n">INDONESIA_WOE_ID</span> <span class="o">=</span> <span class="mi">23424846</span>
+<span class="n">UNITED_KINGDOM_WOE_ID</span> <span class="o">=</span> <span class="mi">23424975</span>
+
+<span class="c1"># Define TwitterTrendingsAPI Object with Limit 10 Trendings</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">TwitterTrendingsAPI</span><span class="p">(</span><span class="n">woeId</span><span class="o">=</span><span class="n">INDONESIA_WOE_ID</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Get Trendings</span>
+<span class="n">trendings</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">getTrending</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trendings</span><span class="p">)</span>
+
+<span class="c1"># Filter Trendings By Hashtag</span>
+<span class="n">trends</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">trend</span> <span class="ow">in</span> <span class="n">trendings</span><span class="p">:</span>
+    <span class="n">getTrendName</span> <span class="o">=</span> <span class="n">trend</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&#34;#&#34;</span><span class="p">)</span>
+    <span class="n">trends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">getTrendName</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trends</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="conclusion">Conclusion</h3>
+<p>This tutorial can be use for data mining or machine learning, what is trending topic now?</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-02-04</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2020/02/get-twitter-trending/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.piinalpin.com/2020/02/get-twitter-trending/" data-title="Get Twitter Trending with World of Earth Identity (WOEID)" data-via="piinalpin" data-hashtags="Jupyter Notebook,Python,Anaconda,Data Mining"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.piinalpin.com/2020/02/get-twitter-trending/" data-hashtag="Jupyter Notebook"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.piinalpin.com/2020/02/get-twitter-trending/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/jupyter-notebook/">Jupyter Notebook</a>,&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/anaconda/">Anaconda</a>,&nbsp;<a href="/tags/data-mining/">Data Mining</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/01/research-reference-bot/" class="prev" rel="prev" title="Research Reference Bot"><i class="fas fa-angle-left fa-fw"></i>Research Reference Bot</a>
+            <a href="/2020/02/django-mail-sender/" class="next" rel="next" title="Django Mail Sender With Rabbit-MQ and Celery Worker">Django Mail Sender With Rabbit-MQ and Celery Worker<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

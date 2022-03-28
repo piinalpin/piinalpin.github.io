@@ -5,10 +5,10 @@
         <description>Custom Sequence - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 04 Dec 2020 15:49:11 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/custom-sequence/" rel="self" type="application/rss+xml" /><item>
     <title>Create Sequence Like Oracle in MySQL</title>
-    <link>https://blog.piinalpin.com/create-sequence-like-oracle-in-mysql/</link>
+    <link>https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/</link>
     <pubDate>Fri, 04 Dec 2020 15:49:11 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/create-sequence-like-oracle-in-mysql/</guid>
+    <guid>https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/</guid>
     <description><![CDATA[How to implement a custom sequence like Oracle in MySQL using a stored function and triggers]]></description>
 </item></channel>
 </rss>

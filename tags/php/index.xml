@@ -5,10 +5,10 @@
         <description>PHP - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 06 Mar 2020 23:34:23 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/php/" rel="self" type="application/rss+xml" /><item>
     <title>Laravel Custom Base Project</title>
-    <link>https://blog.piinalpin.com/laravel-custom-base-project/</link>
+    <link>https://blog.piinalpin.com/2020/03/laravel-custom-base-project/</link>
     <pubDate>Fri, 06 Mar 2020 23:34:23 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/laravel-custom-base-project/</guid>
+    <guid>https://blog.piinalpin.com/2020/03/laravel-custom-base-project/</guid>
     <description><![CDATA[Features  Basic Authentication Json Web Token Custom Error Handling CORS Filter Authority Access Custom Middleware Soft Deletes Service Custom Form Validation Auto Refresh Token Every 1 Hour (Ajax) User Management  Documentation  Clone this project https://github.com/piinalpin/laravel-base.git. Change.env.docker file to change database configuration to your database configuration and add basic auth configuration. Then copy .env.docker to .env  1 2 3 4 5 6 7 8 9  AUTH_USERNAME=&lt;BASIC_AUTH_USERNAME&gt; AUTH_PASSWORD=&lt;BASIC_AUTH_PASSWORD&gt; DB_CONNECTION=mysql DB_HOST=&lt;DATABASE_HOST&gt; DB_PORT=&lt;DATABASE_PORT&gt; DB_DATABASE=&lt;DATABASE_NAME&gt; DB_USERNAME=&lt;DATABASE_USERNAME&gt; DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;   Run php artisan migrate to migrate table on database.]]></description>
 </item></channel>
 </rss>

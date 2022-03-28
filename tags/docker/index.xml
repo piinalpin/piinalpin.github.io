@@ -5,19 +5,19 @@
         <description>Docker - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 15 Aug 2021 20:01:28 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/docker/" rel="self" type="application/rss+xml" /><item>
     <title>My Docker Compose Collection</title>
-    <link>https://blog.piinalpin.com/docker-compose-collection/</link>
+    <link>https://blog.piinalpin.com/2021/08/docker-compose-collection/</link>
     <pubDate>Sun, 15 Aug 2021 20:01:28 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/docker-compose-collection/</guid>
+    <guid>https://blog.piinalpin.com/2021/08/docker-compose-collection/</guid>
     <description><![CDATA[Basic command 1 2  docker-compose -f $FILENAME up -d docker-compose -f $FILENAME down -v   Kafka CLI Download docker compose configuration using curl
 1  curl -o kafka-cli.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yaml   This yaml kafka-cli.yaml will create a new container zookeeper and exposed port 2181 on host port. Also create a new container kafka and exposed port 29092, 9092 and 9101 on host port.
 Redis By default there are 16 databases (indexed from 0 to 15) and you can navigate between them using select command.]]></description>
 </item><item>
     <title>Why Should Learn Docker</title>
-    <link>https://blog.piinalpin.com/why-should-learn-docker/</link>
+    <link>https://blog.piinalpin.com/2021/05/why-should-learn-docker/</link>
     <pubDate>Thu, 20 May 2021 12:57:27 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/why-should-learn-docker/</guid>
+    <guid>https://blog.piinalpin.com/2021/05/why-should-learn-docker/</guid>
     <description><![CDATA[Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development - desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.]]></description>
 </item></channel>
 </rss>

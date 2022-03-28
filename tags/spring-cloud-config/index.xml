@@ -5,10 +5,10 @@
         <description>Spring Cloud Config - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 19 Jul 2021 15:57:12 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/spring-cloud-config/" rel="self" type="application/rss+xml" /><item>
     <title>Centralized Configuration with Spring Cloud Config</title>
-    <link>https://blog.piinalpin.com/centralized-configuration-with-spring-cloud-config/</link>
+    <link>https://blog.piinalpin.com/2021/07/centralized-configuration-with-spring-cloud-config/</link>
     <pubDate>Mon, 19 Jul 2021 15:57:12 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/centralized-configuration-with-spring-cloud-config/</guid>
+    <guid>https://blog.piinalpin.com/2021/07/centralized-configuration-with-spring-cloud-config/</guid>
     <description><![CDATA[What is Configuration as a Service In micro-service world, managing configurations of each service separately is a tedious and time-consuming task. In other words, if there are many number of modules, and managing properties for each module with the traditional approach is very difficult.
 Central configuration server provides configurations (properties) to each micro service connected. As mentioned in the above diagram, Spring Cloud Config Server can be used as a central cloud config server by integrating to several environments.]]></description>
 </item></channel>

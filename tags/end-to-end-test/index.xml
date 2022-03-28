@@ -5,10 +5,10 @@
         <description>End to End Test - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 19 Feb 2020 21:39:31 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/end-to-end-test/" rel="self" type="application/rss+xml" /><item>
     <title>Automation Test Using Cypress Example</title>
-    <link>https://blog.piinalpin.com/automation-test-cypress/</link>
+    <link>https://blog.piinalpin.com/2020/02/automation-test-cypress/</link>
     <pubDate>Wed, 19 Feb 2020 21:39:31 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/automation-test-cypress/</guid>
+    <guid>https://blog.piinalpin.com/2020/02/automation-test-cypress/</guid>
     <description><![CDATA[Prerequisites Install Cypress using NPM :
 1 2  cd /your/project/path npm install cypress --save-dev   or using Yarn :
 1 2  cd /your/project/path yarn add cypress --dev   Step to create test case  Open cypress to get examples of test case from cypress module  using npx :

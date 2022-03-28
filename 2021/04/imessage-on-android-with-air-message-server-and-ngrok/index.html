@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>iMessage on Android With AirMessage Server for macOS and Ngrok - PiinAlpin&#39;s Blog</title><meta name="Description" content="How to create AirMessage server on MacOS for IMessage on Android with port forwarding using ngrok server."><meta property="og:title" content="iMessage on Android With AirMessage Server for macOS and Ngrok" />
+<meta property="og:description" content="How to create AirMessage server on MacOS for IMessage on Android with port forwarding using ngrok server." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-22T09:53:30+07:00" />
+<meta property="article:modified_time" content="2021-04-22T09:53:30+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="iMessage on Android With AirMessage Server for macOS and Ngrok"/>
+<meta name="twitter:description" content="How to create AirMessage server on MacOS for IMessage on Android with port forwarding using ngrok server."/>
+<meta name="application-name" content="PiinAlpin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/" /><link rel="prev" href="https://blog.piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/" /><link rel="next" href="https://blog.piinalpin.com/2021/05/why-should-learn-docker/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "iMessage on Android With AirMessage Server for macOS and Ngrok",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.piinalpin.com\/2021\/04\/imessage-on-android-with-air-message-server-and-ngrok\/"
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "IMessage, AirMessage, Ngrok.io, Ngrok, AirMessage Server, IMessage on Android","wordcount":  810 ,
+        "url": "https:\/\/blog.piinalpin.com\/2021\/04\/imessage-on-android-with-air-message-server-and-ngrok\/","datePublished": "2021-04-22T09:53:30+07:00","dateModified": "2021-04-22T09:53:30+07:00","publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
+                "@type": "Person",
+                "name": "Alvinditya Saputra"
+            },"description": "How to create AirMessage server on MacOS for IMessage on Android with port forwarding using ngrok server."
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">iMessage on Android With AirMessage Server for macOS and Ngrok</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-22">2021-04-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;810 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#how-does-airmessage-work">How does AirMessage work?</a></li>
+        <li><a href="#what-is-ngrok">What is Ngrok?</a></li>
+        <li><a href="#step-to-create-airmessage-server">Step to create AirMessage server</a></li>
+        <li><a href="#thankyou">Thankyou</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="how-does-airmessage-work">How does AirMessage work?</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/air-message.png"
+        data-srcset="/images/air-message.png, /images/air-message.png 1.5x, /images/air-message.png 2x"
+        data-sizes="auto"
+        alt="/images/air-message.png"
+        title="How does AirMessage work" /></p>
+<p>As Android phones and web browsers aren’t allowed to connect to iMessage, AirMessage leverages a Mac computer to handle sending and receiving messages instead.</p>
+<p>Every message you send from AirMessage is sent to AirMessage Server on your Mac, which is then sent over iMessage. When a new incoming message is received from iMessage, that message is then sent back to your devices.</p>
+<h3 id="what-is-ngrok">What is Ngrok?</h3>
+<p>Ngrok is a cross-platform application that enables developers to expose a local development server to the Internet with minimal effort. The software makes your locally-hosted web server appear to be hosted on a subdomain of ngrok.com, meaning that no public IP or domain name on the local machine is needed. Similar functionality can be achieved with Reverse SSH Tunneling, but this requires more setup as well as hosting of your own remote server.</p>
+<p>Ngrok is able to bypass NAT Mapping and firewall restrictions by creating a long-lived TCP tunnel from a randomly generated subdomain on ngrok.com (e.g. 3gf892ks.ngrok.com) to the local machine. After specifying the port that your web server listens on, the ngrok client program initiates a secure connection to the ngrok server and then anyone can make requests to your local server with the unique ngrok tunnel address. The ngrok developer&rsquo;s guide contains more detailed information on how it works.</p>
+<h3 id="step-to-create-airmessage-server">Step to create AirMessage server</h3>
+<p><strong>Installing AirMessage Server</strong></p>
+<p>Go to <a href="https://airmessage.org" target="_blank" rel="noopener noreffer">AirMessage.org</a> and download AirMessage Server for macOS.</p>
+<p>AirMessage Server is a crucial part of the AirMessage experience - it forwards incoming messages to your Android phone or browser, and sends outgoing messages on their behalf.</p>
+<p>To get started, simply download the server onto your Mac computer and place it in the Applications folder.</p>
+<p>When you open the app, you will be greeted with this welcome message.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/airmessage-welcome.png"
+        data-srcset="/images/airmessage-welcome.png, /images/airmessage-welcome.png 1.5x, /images/airmessage-welcome.png 2x"
+        data-sizes="auto"
+        alt="/images/airmessage-welcome.png"
+        title="AirMessage Welcome Message" /></p>
+<p>Open the preferences window and click “Edit Password…”, and replace the default password with a password of your choosing. Remember, your messages are only as secure as the password you pick!</p>
+<p><strong>Enabling Messaging Access</strong></p>
+<p>If you are on macOS Mojave 10.14 or later, you will have to allow AirMessage automation access in order to send messages. You will be prompted when first running the software, though if you previously rejected this permission, you can re-enable it later under System Preferences &gt; Security &amp; Privacy &gt; Privacy &gt; Automation.</p>
+<p>You will also be prompted to allow AirMessage to read your messages on macOS Mojave 10.14 or later. Under System Preferences &gt; Security &amp; Privacy &gt; Privacy &gt; Full Disk Access, add AirMessage. AirMessage will not read any data other than your Messages data.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/screenshot-mojave-security.png"
+        data-srcset="/images/screenshot-mojave-security.png, /images/screenshot-mojave-security.png 1.5x, /images/screenshot-mojave-security.png 2x"
+        data-sizes="auto"
+        alt="/images/screenshot-mojave-security.png"
+        title="Screenshot Mojave Security" /></p>
+<p><strong>Adjusting Sleep Settings</strong></p>
+<p>As AirMessage functions as a server on your Mac, it will need to be available all the time in order to send and receive messages. For this reason, you will have to disable sleep settings on your Mac. Navigate to System Preferences &gt; Energy Saver to change this setting.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/screenshot-energysaver.png"
+        data-srcset="/images/screenshot-energysaver.png, /images/screenshot-energysaver.png 1.5x, /images/screenshot-energysaver.png 2x"
+        data-sizes="auto"
+        alt="/images/screenshot-energysaver.png"
+        title="Screenshot Energy Saver" /></p>
+<p>If you are running AirMessage on a laptop, the system will freeze all software currently running when the lid is shut, regardless of energy saver settings. If you would like to turn your laptop into a stationary server, we recommend that you use a keep-awake utility such as Amphetamine or Caffeinate (built-in commmand).</p>
+<p><strong>Installing Ngrok Server</strong></p>
+<p>Download ngrok server at <a href="https://ngrok.com/download" target="_blank" rel="noopener noreffer">Ngrok.com</a>.</p>
+<p>On Linux or OSX you can unzip from a terminal with the following command. On Windows, just double click ngrok.zip.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">unzip /path/to/ngrok.zip
+</code></pre></td></tr></table>
+</div>
+</div><p>Sign Up into Ngrok.com if you&rsquo;re not registered. Skip this step if you&rsquo;re already registered.</p>
+<p>Connecting an account will list your open tunnels in the dashboard, give you longer tunnel timeouts, and more. Visit the dashboard to get your auth token.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./ngrok authtoken &lt;CHANGE_TO_YOUR_AUTH_TOKEN&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>Try running it from the command line</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./ngrok http <span class="m">8080</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Configuring Connection</strong></p>
+<p>By default, AirMessage running on port <code>1359</code>, if you changed the default AirMessage server port, enter that number instead of <code>1359</code>.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/airmessage-port.png"
+        data-srcset="/images/airmessage-port.png, /images/airmessage-port.png 1.5x, /images/airmessage-port.png 2x"
+        data-sizes="auto"
+        alt="/images/airmessage-port.png"
+        title="AirMessage Port" /></p>
+<p>Run this command line on terminal.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./ngrok tcp <span class="m">1359</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In the new Session Status window that opens, note down the address that is shown after Forwarding, but leave out the <code>tcp://</code>, example: <code>8.tcp.ngrok.io:17418</code>.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/airmessage-ngrok.png"
+        data-srcset="/images/airmessage-ngrok.png, /images/airmessage-ngrok.png 1.5x, /images/airmessage-ngrok.png 2x"
+        data-sizes="auto"
+        alt="/images/airmessage-ngrok.png"
+        title="Ngrok TCP Forwarding" /></p>
+<p><strong>Setup AirMessage on Android</strong></p>
+<p>In the AirMessage Android app, go to the Server address and enter the forwarding address, example: <code>8.tcp.ngrok.io:17418</code>.</p>
+<p>Ensure your password is the same as what you set in the AirMessage preferences on your Mac. Connect.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/airmessage-app.jpeg"
+        data-srcset="/images/airmessage-app.jpeg, /images/airmessage-app.jpeg 1.5x, /images/airmessage-app.jpeg 2x"
+        data-sizes="auto"
+        alt="/images/airmessage-app.jpeg"
+        title="AirMessage App" /></p>
+<p>To continue using AirMessage, do not close the ngrok Session Status window that opened on your Mac; leave it running at all times, as you will with your Mac. Whenever it is closed, the user is logged out, the Mac is restarted, etc., you must repeat Steps forwarding tcp port. This is a limitation of the free version of ngrok, you must upgrade to use a static/permanent forwarding address.</p>
+<h3 id="thankyou">Thankyou</h3>
+<p><a href="https://www.reddit.com/r/AirMessage/comments/b8uad7/how_to_use_airmessage_without_port_forwarding_or/" target="_blank" rel="noopener noreffer">Reddit</a> - How to use AirMessage without Port Forwarding or Router Access</p>
+<p><a href="https://airmessage.org/about" target="_blank" rel="noopener noreffer">AirMessage About</a> - About AirMessage</p>
+<p><a href="https://airmessage.org/install/" target="_blank" rel="noopener noreffer">AirMessage Installation</a> - AirMessage Installation Guide</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-04-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2021/04/imessage-on-android-with-air-message-server-and-ngrok/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/" data-title="iMessage on Android With AirMessage Server for macOS and Ngrok" data-via="piinalpin" data-hashtags="IMessage,AirMessage,Ngrok.io,Ngrok,AirMessage Server,IMessage on Android"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/" data-hashtag="IMessage"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/imessage/">IMessage</a>,&nbsp;<a href="/tags/airmessage/">AirMessage</a>,&nbsp;<a href="/tags/ngrok.io/">Ngrok.io</a>,&nbsp;<a href="/tags/ngrok/">Ngrok</a>,&nbsp;<a href="/tags/airmessage-server/">AirMessage Server</a>,&nbsp;<a href="/tags/imessage-on-android/">IMessage on Android</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2021/03/how-messages-broker-work-using-rabbitmq/" class="prev" rel="prev" title="How Messages Broker Work Using RabbitMQ"><i class="fas fa-angle-left fa-fw"></i>How Messages Broker Work Using RabbitMQ</a>
+            <a href="/2021/05/why-should-learn-docker/" class="next" rel="next" title="Why Should Learn Docker">Why Should Learn Docker<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

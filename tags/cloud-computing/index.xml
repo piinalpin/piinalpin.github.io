@@ -5,26 +5,26 @@
         <description>Cloud Computing - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Jul 2021 19:26:29 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/cloud-computing/" rel="self" type="application/rss+xml" /><item>
     <title>Why Should Learn Ansible - Linux Automation</title>
-    <link>https://blog.piinalpin.com/why-should-learn-ansible/</link>
+    <link>https://blog.piinalpin.com/2021/07/why-should-learn-ansible/</link>
     <pubDate>Sat, 31 Jul 2021 19:26:29 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/why-should-learn-ansible/</guid>
+    <guid>https://blog.piinalpin.com/2021/07/why-should-learn-ansible/</guid>
     <description><![CDATA[Overview Ansible is a radically simple IT automation engine that automates cloud provisioning, configuration management, application deployment, intra-service orchestration, and many other IT needs.
 Designed for multi-tier deployments since day one, Ansible models your IT infrastructure by describing how all of your systems inter-relate, rather than just managing one system at a time.
 It uses no agents and no additional custom security infrastructure, so it&rsquo;s easy to deploy - and most importantly, it uses a very simple language (YAML, in the form of Ansible Playbooks) that allow you to describe your automation jobs in a way that approaches plain English.]]></description>
 </item><item>
     <title>Persistent Volume and Persistent Volume Claim in Kubernetes</title>
-    <link>https://blog.piinalpin.com/why-should-learn-kubernetes-pv-and-pvc/</link>
+    <link>https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes-pv-and-pvc/</link>
     <pubDate>Fri, 28 May 2021 09:37:50 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/why-should-learn-kubernetes-pv-and-pvc/</guid>
+    <guid>https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes-pv-and-pvc/</guid>
     <description><![CDATA[Managing storage is a distinct problem from managing compute instances. The PersistentVolume subsystem provides an API for users and administrators that abstracts details of how storage is provided from how it is consumed. To do this, we introduce two new API resources: PersistentVolume and PersistentVolumeClaim.]]></description>
 </item><item>
     <title>Learning Kubernetes</title>
-    <link>https://blog.piinalpin.com/why-should-learn-kubernetes/</link>
+    <link>https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes/</link>
     <pubDate>Mon, 24 May 2021 09:19:24 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/why-should-learn-kubernetes/</guid>
+    <guid>https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes/</guid>
     <description><![CDATA[Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.]]></description>
 </item></channel>
 </rss>

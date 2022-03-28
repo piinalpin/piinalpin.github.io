@@ -5,75 +5,75 @@
         <description>Spring Boot - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 20 Mar 2022 13:28:42 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/spring-boot/" rel="self" type="application/rss+xml" /><item>
     <title>JPA Soft Deletes Implementation - Spring Boot</title>
-    <link>https://blog.piinalpin.com/jpa-soft-deletes-implementation/</link>
+    <link>https://blog.piinalpin.com/2022/03/jpa-soft-deletes-implementation/</link>
     <pubDate>Sun, 20 Mar 2022 13:28:42 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/jpa-soft-deletes-implementation/</guid>
+    <guid>https://blog.piinalpin.com/2022/03/jpa-soft-deletes-implementation/</guid>
     <description><![CDATA[Implementing custom jpa soft deletes because sometimes there are business requirements to not permanently delete data from the database.]]></description>
 </item><item>
     <title>Best Practice Uploading File Using Spring RestTemplate</title>
-    <link>https://blog.piinalpin.com/best-practice-uploading-file-using-rest-template/</link>
+    <link>https://blog.piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</link>
     <pubDate>Sat, 19 Feb 2022 14:11:02 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/best-practice-uploading-file-using-rest-template/</guid>
+    <guid>https://blog.piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</guid>
     <description><![CDATA[A little things but important when uploading files through REST template. It should send the filename in the correct format.]]></description>
 </item><item>
     <title>Cloud Object Storage Spring Boot With Minio</title>
-    <link>https://blog.piinalpin.com/cloud-object-storage-spring-boot-with-minio/</link>
+    <link>https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/</link>
     <pubDate>Sat, 13 Nov 2021 09:55:34 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/cloud-object-storage-spring-boot-with-minio/</guid>
+    <guid>https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/</guid>
     <description><![CDATA[MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0. It is API compatible with Amazon S3 cloud storage service. Use MinIO to build high performance infrastructure for machine learning, analytics and application data workloads.]]></description>
 </item><item>
     <title>Spring Boot Web Socket Chat Bot</title>
-    <link>https://blog.piinalpin.com/spring-boot-web-socket-chat-bot/</link>
+    <link>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</link>
     <pubDate>Thu, 14 Oct 2021 14:52:27 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/spring-boot-web-socket-chat-bot/</guid>
+    <guid>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
     <description><![CDATA[Build real time chat with bot using spring boot web socket and contextual chat bot python.]]></description>
 </item><item>
     <title>Messaging on Kafka-CLI With Spring Boot</title>
-    <link>https://blog.piinalpin.com/messaging-on-kafka-with-spring-boot/</link>
+    <link>https://blog.piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</link>
     <pubDate>Fri, 23 Jul 2021 20:04:22 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/messaging-on-kafka-with-spring-boot/</guid>
+    <guid>https://blog.piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</guid>
     <description><![CDATA[Overview Kafka is a distributed system consisting of servers and clients that communicate via a high-performance TCP network protocol. It can be deployed on bare-metal hardware, virtual machines, and containers in on-premise as well as cloud environments.
 Servers: Kafka is run as a cluster of one or more servers that can span multiple datacenters or cloud regions. Some of these servers form the storage layer, called the brokers. Other servers run Kafka Connect to continuously import and export data as event streams to integrate Kafka with your existing systems such as relational databases as well as other Kafka clusters.]]></description>
 </item><item>
     <title>Centralized Configuration with Spring Cloud Config</title>
-    <link>https://blog.piinalpin.com/centralized-configuration-with-spring-cloud-config/</link>
+    <link>https://blog.piinalpin.com/2021/07/centralized-configuration-with-spring-cloud-config/</link>
     <pubDate>Mon, 19 Jul 2021 15:57:12 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/centralized-configuration-with-spring-cloud-config/</guid>
+    <guid>https://blog.piinalpin.com/2021/07/centralized-configuration-with-spring-cloud-config/</guid>
     <description><![CDATA[What is Configuration as a Service In micro-service world, managing configurations of each service separately is a tedious and time-consuming task. In other words, if there are many number of modules, and managing properties for each module with the traditional approach is very difficult.
 Central configuration server provides configurations (properties) to each micro service connected. As mentioned in the above diagram, Spring Cloud Config Server can be used as a central cloud config server by integrating to several environments.]]></description>
 </item><item>
     <title>How Messages Broker Work Using RabbitMQ</title>
-    <link>https://blog.piinalpin.com/how-messages-broker-work-using-rabbitmq/</link>
+    <link>https://blog.piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</link>
     <pubDate>Sun, 28 Mar 2021 11:20:37 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/how-messages-broker-work-using-rabbitmq/</guid>
+    <guid>https://blog.piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</guid>
     <description><![CDATA[Understanding message broker works using RabbitMQ and Spring Boot with microservice architecture.]]></description>
 </item><item>
     <title>Create Simple Microservice With gRPC</title>
-    <link>https://blog.piinalpin.com/create-simple-microservice-with-grpc/</link>
+    <link>https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/</link>
     <pubDate>Sat, 30 Jan 2021 16:21:21 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/create-simple-microservice-with-grpc/</guid>
+    <guid>https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/</guid>
     <description><![CDATA[Build a simple microservices gRPC server and client using Spring Boot]]></description>
 </item><item>
     <title>GraphQL Server using Spring Boot with Relational Mapping</title>
-    <link>https://blog.piinalpin.com/graphql-spring-boot-relation/</link>
+    <link>https://blog.piinalpin.com/2021/01/graphql-spring-boot-relation/</link>
     <pubDate>Wed, 06 Jan 2021 09:30:18 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/graphql-spring-boot-relation/</guid>
+    <guid>https://blog.piinalpin.com/2021/01/graphql-spring-boot-relation/</guid>
     <description><![CDATA[Build simple GraphQL server using Spring Boot with relational mapping MySQL database and Flyway database migration from scratch.]]></description>
 </item><item>
     <title>GraphQL Server with Spring Boot</title>
-    <link>https://blog.piinalpin.com/graphql-spring-boot/</link>
+    <link>https://blog.piinalpin.com/2021/01/graphql-spring-boot/</link>
     <pubDate>Tue, 05 Jan 2021 09:17:49 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/graphql-spring-boot/</guid>
+    <guid>https://blog.piinalpin.com/2021/01/graphql-spring-boot/</guid>
     <description><![CDATA[Build simple GraphQL server using Spring Boot with MySQL database and Flyway database migration from scratch.]]></description>
 </item></channel>
 </rss>

@@ -5,10 +5,10 @@
         <description>Celery - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Feb 2020 13:19:04 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/celery/" rel="self" type="application/rss+xml" /><item>
     <title>Django Mail Sender With Rabbit-MQ and Celery Worker</title>
-    <link>https://blog.piinalpin.com/django-mail-sender/</link>
+    <link>https://blog.piinalpin.com/2020/02/django-mail-sender/</link>
     <pubDate>Wed, 12 Feb 2020 13:19:04 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/django-mail-sender/</guid>
+    <guid>https://blog.piinalpin.com/2020/02/django-mail-sender/</guid>
     <description><![CDATA[Prerequisites  Erlang (Open Telecom Platform) RabbitMQ (Message Broker) Pyhton 3.6 (Base Compiler) Sendgrid Account (SMTP Client) Virtualenv  Step to create Django mail sender  Create virtual environtment in root directory on your project and activate it  1 2  virtualenv env . env/bin/activate   Install Django 2.1  1  pip install Django==2.1.2   Create project and application in Django  1 2  django-admin startproject your_project_name django-admin startapp your_apps_name   Install library celery and celery-message-consumer  1 2  pip install celery pip install celery-message-consumer   Edit django base settings project_name/settings.]]></description>
 </item></channel>
 </rss>

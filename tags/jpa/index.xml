@@ -5,10 +5,10 @@
         <description>JPA - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 20 Mar 2022 13:28:42 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/jpa/" rel="self" type="application/rss+xml" /><item>
     <title>JPA Soft Deletes Implementation - Spring Boot</title>
-    <link>https://blog.piinalpin.com/jpa-soft-deletes-implementation/</link>
+    <link>https://blog.piinalpin.com/2022/03/jpa-soft-deletes-implementation/</link>
     <pubDate>Sun, 20 Mar 2022 13:28:42 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/jpa-soft-deletes-implementation/</guid>
+    <guid>https://blog.piinalpin.com/2022/03/jpa-soft-deletes-implementation/</guid>
     <description><![CDATA[Implementing custom jpa soft deletes because sometimes there are business requirements to not permanently delete data from the database.]]></description>
 </item></channel>
 </rss>

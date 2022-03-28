@@ -5,10 +5,10 @@
         <description>React - Tag - PiinAlpin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 06 Jan 2021 14:18:10 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/react/" rel="self" type="application/rss+xml" /><item>
     <title>GraphQL Client using React</title>
-    <link>https://blog.piinalpin.com/consume-graphql-react/</link>
+    <link>https://blog.piinalpin.com/2021/01/consume-graphql-react/</link>
     <pubDate>Wed, 06 Jan 2021 14:18:10 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/consume-graphql-react/</guid>
+    <guid>https://blog.piinalpin.com/2021/01/consume-graphql-react/</guid>
     <description><![CDATA[A documentation for create React application to consume data from GraphQL server using Apollo Client]]></description>
 </item></channel>
 </rss>
