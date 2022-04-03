@@ -100,6 +100,459 @@
         alt="/images/alvinditya.jpg"
         title="/images/alvinditya.jpg" /></a></div><h2 class="home-subtitle"><div id="id-3" class="typeit"></div></h2><div class="links"><a href="https://github.com/piinalpin" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https://linkedin.com/in/piinalpin" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a><a href="https://twitter.com/piinalpin" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw"></i></a><a href="https://www.instagram.com/piinalpin" title="Instagram" target="_blank" rel="noopener noreffer me"><i class="fab fa-instagram fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/2019/12/django-crud-sqlite/">Simple Django CRUD App With SQLite</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-12-24">2019-12-24</time></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div><div class="content"><h4 id="codename--rattlesnake">Codename : Rattlesnake</h4>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Make sure you have installed Python 3 and virtual environment on your device</p>
+<h3 id="project-structure">Project structure</h3>
+<p>File structure in django by default has a structure like below</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* django-crud-sqlite/
+  |--- rattlesnake/
+  |    |--- app/
+  |    |    |--- migrations/
+  |    |    |--- templates/
+  |    |    |--- __init__.py
+  |    |    |--- admin.py
+  |    |    |--- apps.py
+  |    |    |--- models.py
+  |    |    |--- tests.py
+  |    |    |--- views.py
+  |    |--- rattlesnake/
+  |    |    |--- __init__.py
+  |    |    |--- settings.py
+  |    |    |--- urls.py
+  |    |    |--- wsgi.py
+  |    |--- manage.py
+  |--- venv/
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="step-to-create-django-crud">Step to create django crud</h3>
+<p>A step by step series of examples that tell you how to get a development env running</p>
+<ol>
+<li>Create virtual environment and activate inside your <code>django-crud-sqlite/</code> directory according the above structure</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">virtualenv venv
+&gt; On windows -&gt; venv\Scripts\activate
+&gt; On linux -&gt; . env/bin/activate
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>Install django and start new project inside your <code>django-crud-sqlite/</code> directory according the above structure</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install django
+django-admin startproject rattlesnake
+cd rattlesnake
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>Create new app, from <code>rattlesnake/</code> directory will create create new <code>app/</code> to store the collection</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt; On Windows -&gt; manage.py startapp app
+&gt; On Linux, etc -&gt; ./manage.py startapp app
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>Register your app into <code>rattlesnake</code> project, the <code>app</code> to <code>INSTALLED_APP</code> in <code>rattlesnake/settings.py</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="p">:</span>
+    <span class="s1">&#39;app&#39;</span><span class="p">,</span>
+    <span class="p">:</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>Create the model to define the table structure of database and save the collection into database <code>app/models.py</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
+
+<span class="c1"># Create your models here.</span>
+<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">identityNumber</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">department</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+    
+    <span class="c1"># The absolute path to get the url then reverse into &#39;student_edit&#39; with keyword arguments (kwargs) primary key</span>
+    <span class="k">def</span> <span class="nf">get_absolute_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;student_edit&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>Every after change <code>models.py</code> you need to make migrations into <code>db.sqlite3</code> (database) to create the table for the new model</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">manage.py makemigrations
+manage.py migrate
+</code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>Create the views to create app pages on browser, the file is <code>app/views.py</code> according the above structure</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">DetailView</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.edit</span> <span class="kn">import</span> <span class="n">CreateView</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">,</span> <span class="n">DeleteView</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse_lazy</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Student</span>
+
+<span class="c1"># Create your views here.</span>
+
+<span class="k">class</span> <span class="nc">StudentList</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
+
+<span class="k">class</span> <span class="nc">StudentDetail</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
+
+<span class="k">class</span> <span class="nc">StudentCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
+    <span class="c1"># Field must be same as the model attribute</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;identityNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;department&#39;</span><span class="p">]</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">StudentUpdate</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
+    <span class="c1"># Field must be same as the model attribute</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;identityNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;department&#39;</span><span class="p">]</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">StudentDelete</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="8">
+<li>Then, create file <code>app/urls.py</code> to define app url path (in CI as same as route function)</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentList</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_list&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;view/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentDetail</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_detail&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentCreate</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_new&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;edit/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentUpdate</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_edit&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;delete/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentDelete</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_delete&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="9">
+<li>The <code>app/urls.py</code> would not work unless you include that into the main url <code>rattlesnake/urls.py</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">:</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;student/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;app.urls&#39;</span><span class="p">)),</span>
+    <span class="p">:</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="10">
+<li>Create the html file to display user interface, you need create directory <code>app/templates/app/</code> like below</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* django-crud-sqlite/
+  |--- rattlesnake/
+  |    |--- app/
+  |    |    |--- migrations/
+  |    |    |--- templates/
+  |    |    |    |--- app/
+  |    |    |--- __init__.py
+  |    |    |--- admin.py
+  |    |    |--- apps.py
+  |    |    |--- models.py
+  |    |    |--- tests.py
+  |    |    |--- views.py
+  |    |--- rattlesnake/
+  |    |    |--- __init__.py
+  |    |    |--- settings.py
+  |    |    |--- urls.py
+  |    |    |--- wsgi.py
+  |    |--- manage.py
+  |--- venv/
+</code></pre></td></tr></table>
+</div>
+</div><ol start="11">
+<li>Create file <code>app/templates/app/student_list.html</code> to display or parsing student list data with <code>ListView</code> library</li>
+<li>Create file <code>app/templates/app/student_detail.html</code> to display or parsing data of each student and will used by <code>DetailView</code> library</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Student Detail<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Name : {{ object.name }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Identity Number : {{ object.identityNumber }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Address : {{ object.address }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Department : {{ object.department }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="13">
+<li>Create file <code>app/templates/app/student_form.html</code> to display form input and edit views</li>
+<li>Create file <code>app/templates/app/student_confirm_delete.html</code> to display promt or alert confirmation to delete the object view</li>
+<li>Test the project</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">manage.py runserver
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="after-change-structure-of-flask-project">After change structure of flask project</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* django-crud-sqlite/
+  |--- rattlesnake/
+  |    |--- app/
+  |    |    |--- migrations/
+  |    |    |--- templates/
+  |    |    |    |--- app/
+  |    |    |    |    |--- student_confirm_delete.html
+  |    |    |    |    |--- student_detail.html
+  |    |    |    |    |--- student_form.html
+  |    |    |    |    |--- student_list.html
+  |    |    |--- __init__.py
+  |    |    |--- admin.py
+  |    |    |--- apps.py
+  |    |    |--- models.py
+  |    |    |--- tests.py
+  |    |    |--- urls.py
+  |    |    |--- views.py
+  |    |--- rattlesnake/
+  |    |    |--- __init__.py
+  |    |    |--- settings.py
+  |    |    |--- urls.py
+  |    |    |--- wsgi.py
+  |    |--- db.sqlite3
+  |    |--- manage.py
+  |--- venv/
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="built-with">Built With</h2>
+<ul>
+<li><a href="https://www.python.org/download/releases/3.0/" target="_blank" rel="noopener noreffer">Python 3</a> - The language programming used</li>
+<li><a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreffer">Django 2</a> - The web framework used</li>
+<li><a href="https://virtualenv.pypa.io/en/latest/" target="_blank" rel="noopener noreffer">Virtualenv</a> - The virtual environment used</li>
+<li><a href="https://www.sqlite.org/index.html" target="_blank" rel="noopener noreffer">SQLite 3</a> - The database library</li>
+</ul>
+<h2 id="clone-or-download">Clone or Download</h2>
+<p>You can clone or download this project</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt; Clone : git clone https://github.com/piinalpin/django-crud-sqlite.git
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer">
+        <a href="/2019/12/django-crud-sqlite/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/django/">Django</a>,&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/sqlite/">SQLite</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/2019/12/my-first-workshop/">My First Workshop</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-12-24">2019-12-24</time></span>&nbsp;<span class="post-category">included in <a href="/categories/story/"><i class="far fa-folder fa-fw"></i>Story</a></span></div><div class="content"><p>A few stories about my experience while being a speaker in the Asynchronous Programming and the Build CRUD with Flask workshop at some time ago. As an introduction, I like to share my experience with others. So I want to make a workshop with the purpose of so I can share my experience with others and also when it coincides with my return to the hometown although only briefly, so I think I&rsquo;m not only go home only, but I can sharing with each other. At first I was confused by whom I would share my experience, then I contacted the Linux Study Group at the University of Ahmad Dahlan which became the beginning of my knowledge of information technology and some technologies in Programming language. At that time I chose the theory about Asynchrounous Programming because during my lecture I did not get that knowledge. The response from friends was very positive so it was very fun at the time. Then after the workshop, a few months later I wanted to hold an activity again with different theory. The target is the friends who are working on the final task with the topic Data Mining and machine learning. Most use the Python programming language, so I want to share about how to create an application that can create, read, update and delete with the microframework flask. And the workshop this time is not less exciting with the previous, because the enthusiasm of friends is very high. So it starts from this where I learn not to fear doing positive things even in the slightest way. Although not an international workshop but I am very pleased to be able to share my experience to others.</p></div><div class="post-footer">
         <a href="/2019/12/my-first-workshop/">Read More</a><div class="post-tags">
