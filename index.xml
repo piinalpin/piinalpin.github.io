@@ -3,9 +3,16 @@
         <title>PiinAlpin&#39;s Blog</title>
         <link>https://blog.piinalpin.com/</link>
         <description>Sharing is caring, keep learn and create an awesome codes.</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 Apr 2022 06:53:17 &#43;0700</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 16 Apr 2022 10:28:28 &#43;0700</lastBuildDate>
             <atom:link href="https://blog.piinalpin.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>CI/CD Using Github Action</title>
+    <link>https://blog.piinalpin.com/2022/04/ci-cd-using-github-action/</link>
+    <pubDate>Sat, 16 Apr 2022 10:28:28 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/2022/04/ci-cd-using-github-action/</guid>
+    <description><![CDATA[Continuous integration is a coding philosophy and set of practices that drive development teams to frequently implement small code changes and check them in to a version control repository. Most modern applications require developing code using a variety of platforms and tools, so teams need a consistent mechanism to integrate and validate changes. Continuous integration establishes an automated way to build, package, and test their applications. Having a consistent integration process encourages developers to commit code changes more frequently, which leads to better collaboration and code quality.]]></description>
+</item><item>
     <title>Searching And Filtering Using JPA Specification - Spring Boot</title>
     <link>https://blog.piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</link>
     <pubDate>Sun, 03 Apr 2022 06:53:17 &#43;0700</pubDate>
@@ -69,14 +76,5 @@ Spring Data JPA Specification provides a convenient and sophisticated manner to 
     <author>Author</author>
     <guid>https://blog.piinalpin.com/2021/08/bash-script-for-lazy-people/</guid>
     <description><![CDATA[What is Bash? Bash is a command processor that typically runs in a text window where the user types commands that cause actions. Bash can also read and execute commands from a file, called a shell script. Like most Unix shells, it supports filename globbing (wildcard matching), piping, here documents, command substitution, variables, and control structures for condition-testing and iteration. The keywords, syntax, dynamically scoped variables and other basic features of the language are all copied from sh.]]></description>
-</item><item>
-    <title>My Docker Compose Collection</title>
-    <link>https://blog.piinalpin.com/2021/08/docker-compose-collection/</link>
-    <pubDate>Sun, 15 Aug 2021 20:01:28 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/08/docker-compose-collection/</guid>
-    <description><![CDATA[Basic command 1 2  docker-compose -f $FILENAME up -d docker-compose -f $FILENAME down -v   Kafka CLI Download docker compose configuration using curl
-1  curl -o kafka-cli.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yaml   This yaml kafka-cli.yaml will create a new container zookeeper and exposed port 2181 on host port. Also create a new container kafka and exposed port 29092, 9092 and 9101 on host port.
-Redis By default there are 16 databases (indexed from 0 to 15) and you can navigate between them using select command.]]></description>
 </item></channel>
 </rss>

@@ -18,7 +18,7 @@
 <meta name="application-name" content="PiinAlpin&#39;s Blog">
 <meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/" /><link rel="prev" href="https://blog.piinalpin.com/2022/03/jpa-soft-deletes-implementation/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/" /><link rel="prev" href="https://blog.piinalpin.com/2022/03/jpa-soft-deletes-implementation/" /><link rel="next" href="https://blog.piinalpin.com/2022/04/ci-cd-using-github-action/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -175,30 +175,30 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-data-jpa<span class="nt">&lt;/artifactId&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-<span class="nt">&lt;dependency&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-<span class="nt">&lt;dependency&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>com.h2database<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>h2<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-<span class="nt">&lt;dependency&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-<span class="nt">&lt;dependency&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-data-jpa<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.h2database<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>h2<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Add configuration <code>application.properties</code> file like following below.</p>
 <div class="highlight"><div class="chroma">
@@ -217,19 +217,19 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">server.port<span class="o">=</span><span class="m">8080</span>
-spring.application.name<span class="o">=</span>search-request
-server.servlet.context-path<span class="o">=</span>/api
-
-spring.datasource.url<span class="o">=</span>jdbc:h2:mem:db<span class="p">;</span>
-spring.datasource.driverClassName<span class="o">=</span>org.h2.Driver
-spring.datasource.username<span class="o">=</span>sa
-spring.datasource.password<span class="o">=</span>password
-spring.jpa.database-platform<span class="o">=</span>org.hibernate.dialect.H2Dialect
-spring.h2.console.enabled<span class="o">=</span><span class="nb">true</span>
-spring.jpa.show-sql<span class="o">=</span><span class="nb">true</span>
-spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">server.port<span class="o">=</span><span class="m">8080</span>
+</span></span><span class="line"><span class="cl">spring.application.name<span class="o">=</span>search-request
+</span></span><span class="line"><span class="cl">server.servlet.context-path<span class="o">=</span>/api
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">spring.datasource.url<span class="o">=</span>jdbc:h2:mem:db<span class="p">;</span>
+</span></span><span class="line"><span class="cl">spring.datasource.driverClassName<span class="o">=</span>org.h2.Driver
+</span></span><span class="line"><span class="cl">spring.datasource.username<span class="o">=</span>sa
+</span></span><span class="line"><span class="cl">spring.datasource.password<span class="o">=</span>password
+</span></span><span class="line"><span class="cl">spring.jpa.database-platform<span class="o">=</span>org.hibernate.dialect.H2Dialect
+</span></span><span class="line"><span class="cl">spring.h2.console.enabled<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">spring.jpa.show-sql<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="implementation">Implementation</h3>
 <p>For the sake of simplicity, in the samples, we&rsquo;ll implement the same query in multiple ways: finding operating system by the name, the name containing String, release date between date, and kernel version in a values.</p>
@@ -305,37 +305,37 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
-<span class="nd">@Builder</span>
-<span class="nd">@NoArgsConstructor</span>
-<span class="nd">@AllArgsConstructor</span>
-<span class="nd">@Entity</span>
-<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;operating_system&#34;</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OperatingSystem</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="o">-</span><span class="n">1730538653948604611L</span><span class="o">;</span>
-
-    <span class="nd">@Id</span>
-    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
-
-    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
-
-    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;version&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">version</span><span class="o">;</span>
-
-    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;kernel&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">kernel</span><span class="o">;</span>
-
-    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;release_date&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">LocalDateTime</span> <span class="n">releaseDate</span><span class="o">;</span>
-
-    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;usages&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">usages</span><span class="o">;</span>
-    
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Entity</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;operating_system&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OperatingSystem</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="o">-</span><span class="n">1730538653948604611L</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Id</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;version&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">version</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;kernel&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">kernel</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;release_date&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">LocalDateTime</span> <span class="n">releaseDate</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;usages&#34;</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">usages</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="filter-using-specification">Filter Using Specification</h4>
 <p><strong>Enumeration of Field Type</strong></p>
@@ -400,63 +400,63 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">56
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Slf4j</span>
-<span class="kd">public</span> <span class="kd">enum</span> <span class="n">FieldType</span> <span class="o">{</span>
-
-    <span class="n">BOOLEAN</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">Boolean</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-
-    <span class="n">CHAR</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-
-    <span class="n">DATE</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">Object</span> <span class="n">date</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-            <span class="k">try</span> <span class="o">{</span>
-                <span class="n">DateTimeFormatter</span> <span class="n">formatter</span> <span class="o">=</span> <span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">&#34;dd-MM-yyyy HH:mm:ss&#34;</span><span class="o">);</span>
-                <span class="n">date</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">formatter</span><span class="o">);</span>
-            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Failed parse field type DATE {}&#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-            <span class="o">}</span>
-
-            <span class="k">return</span> <span class="n">date</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-
-    <span class="n">DOUBLE</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">Double</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-
-    <span class="n">INTEGER</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-
-    <span class="n">LONG</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">Long</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-
-    <span class="n">STRING</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">};</span>
-
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">);</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">enum</span> <span class="n">FieldType</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">BOOLEAN</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">Boolean</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">CHAR</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">DATE</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Object</span> <span class="n">date</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">DateTimeFormatter</span> <span class="n">formatter</span> <span class="o">=</span> <span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">&#34;dd-MM-yyyy HH:mm:ss&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">date</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">formatter</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Failed parse field type DATE {}&#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">date</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">DOUBLE</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">Double</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">INTEGER</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">LONG</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">Long</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">STRING</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">Object</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Filter Request</strong></p>
 <p>A data contract for filter request there should be a <code>key</code>, <code>operator</code>, <code>value</code> and <code>fieldType</code>.</p>
@@ -487,30 +487,30 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
-<span class="nd">@Builder</span>
-<span class="nd">@NoArgsConstructor</span>
-<span class="nd">@AllArgsConstructor</span>
-<span class="nd">@JsonIgnoreProperties</span><span class="o">(</span><span class="n">ignoreUnknown</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-<span class="nd">@JsonNaming</span><span class="o">(</span><span class="n">PropertyNamingStrategies</span><span class="o">.</span><span class="na">SnakeCaseStrategy</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FilterRequest</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">6293344849078612450L</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">key</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">Operator</span> <span class="n">operator</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">FieldType</span> <span class="n">fieldType</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="kd">transient</span> <span class="n">Object</span> <span class="n">value</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="kd">transient</span> <span class="n">Object</span> <span class="n">valueTo</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="kd">transient</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">values</span><span class="o">;</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@JsonIgnoreProperties</span><span class="o">(</span><span class="n">ignoreUnknown</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@JsonNaming</span><span class="o">(</span><span class="n">PropertyNamingStrategies</span><span class="o">.</span><span class="na">SnakeCaseStrategy</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FilterRequest</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">6293344849078612450L</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">key</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Operator</span> <span class="n">operator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">FieldType</span> <span class="n">fieldType</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">transient</span> <span class="n">Object</span> <span class="n">value</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">transient</span> <span class="n">Object</span> <span class="n">valueTo</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">transient</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">values</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Enumeration of Operator</strong></p>
 <p>This is a logical for predicate of Criteria API likes <code>EQUAL</code>, <code>NOT_EQUAL</code>, <code>LIKE</code>, <code>IN</code>, and <code>BETWEEN</code>.</p>
@@ -581,70 +581,70 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">63
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Slf4j</span>
-<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Operator</span> <span class="o">{</span>
-
-    <span class="n">EQUAL</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">().</span><span class="na">parse</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-            <span class="n">Expression</span><span class="o">&lt;?&gt;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
-            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">equal</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">),</span> <span class="n">predicate</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-
-    <span class="n">NOT_EQUAL</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">().</span><span class="na">parse</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-            <span class="n">Expression</span><span class="o">&lt;?&gt;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
-            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">notEqual</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">),</span> <span class="n">predicate</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-
-    <span class="n">LIKE</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">Expression</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
-            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">like</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">upper</span><span class="o">(</span><span class="n">key</span><span class="o">),</span> <span class="s">&#34;%&#34;</span> <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">toUpperCase</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;%&#34;</span><span class="o">),</span> <span class="n">predicate</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-
-    <span class="n">IN</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getValues</span><span class="o">();</span>
-            <span class="n">CriteriaBuilder</span><span class="o">.</span><span class="na">In</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">inClause</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="na">in</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">()));</span>
-            <span class="k">for</span> <span class="o">(</span><span class="n">Object</span> <span class="n">value</span> <span class="o">:</span> <span class="n">values</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">inClause</span><span class="o">.</span><span class="na">value</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">().</span><span class="na">parse</span><span class="o">(</span><span class="n">value</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span>
-            <span class="o">}</span>
-            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">inClause</span><span class="o">,</span> <span class="n">predicate</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-
-    <span class="n">BETWEEN</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">().</span><span class="na">parse</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-            <span class="n">Object</span> <span class="n">valueTo</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">().</span><span class="na">parse</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getValueTo</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">()</span> <span class="o">==</span> <span class="n">FieldType</span><span class="o">.</span><span class="na">DATE</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">LocalDateTime</span> <span class="n">startDate</span> <span class="o">=</span> <span class="o">(</span><span class="n">LocalDateTime</span><span class="o">)</span> <span class="n">value</span><span class="o">;</span>
-                <span class="n">LocalDateTime</span> <span class="n">endDate</span> <span class="o">=</span> <span class="o">(</span><span class="n">LocalDateTime</span><span class="o">)</span> <span class="n">valueTo</span><span class="o">;</span>
-                <span class="n">Expression</span><span class="o">&lt;</span><span class="n">LocalDateTime</span><span class="o">&gt;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
-                <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">greaterThanOrEqualTo</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">startDate</span><span class="o">),</span> <span class="n">cb</span><span class="o">.</span><span class="na">lessThanOrEqualTo</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">endDate</span><span class="o">)),</span> <span class="n">predicate</span><span class="o">);</span>
-            <span class="o">}</span>
-
-            <span class="k">if</span> <span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">()</span> <span class="o">!=</span> <span class="n">FieldType</span><span class="o">.</span><span class="na">CHAR</span> <span class="o">&amp;&amp;</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">()</span> <span class="o">!=</span> <span class="n">FieldType</span><span class="o">.</span><span class="na">BOOLEAN</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Number</span> <span class="n">start</span> <span class="o">=</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">value</span><span class="o">;</span>
-                <span class="n">Number</span> <span class="n">end</span> <span class="o">=</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">valueTo</span><span class="o">;</span>
-                <span class="n">Expression</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
-                <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">ge</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">start</span><span class="o">),</span> <span class="n">cb</span><span class="o">.</span><span class="na">le</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">end</span><span class="o">)),</span> <span class="n">predicate</span><span class="o">);</span>
-            <span class="o">}</span>
-
-            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Can not use between for {} field type.&#34;</span><span class="o">,</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">());</span>
-            <span class="k">return</span> <span class="n">predicate</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">};</span>
-
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">);</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">enum</span> <span class="n">Operator</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EQUAL</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">().</span><span class="na">parse</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Expression</span><span class="o">&lt;?&gt;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">equal</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">),</span> <span class="n">predicate</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">NOT_EQUAL</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">().</span><span class="na">parse</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Expression</span><span class="o">&lt;?&gt;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">notEqual</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">),</span> <span class="n">predicate</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">LIKE</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Expression</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">like</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">upper</span><span class="o">(</span><span class="n">key</span><span class="o">),</span> <span class="s">&#34;%&#34;</span> <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">toUpperCase</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;%&#34;</span><span class="o">),</span> <span class="n">predicate</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">IN</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getValues</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">CriteriaBuilder</span><span class="o">.</span><span class="na">In</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">inClause</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="na">in</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">()));</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="o">(</span><span class="n">Object</span> <span class="n">value</span> <span class="o">:</span> <span class="n">values</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">inClause</span><span class="o">.</span><span class="na">value</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">().</span><span class="na">parse</span><span class="o">(</span><span class="n">value</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">inClause</span><span class="o">,</span> <span class="n">predicate</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">BETWEEN</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">().</span><span class="na">parse</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Object</span> <span class="n">valueTo</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">().</span><span class="na">parse</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getValueTo</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">()</span> <span class="o">==</span> <span class="n">FieldType</span><span class="o">.</span><span class="na">DATE</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">LocalDateTime</span> <span class="n">startDate</span> <span class="o">=</span> <span class="o">(</span><span class="n">LocalDateTime</span><span class="o">)</span> <span class="n">value</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">LocalDateTime</span> <span class="n">endDate</span> <span class="o">=</span> <span class="o">(</span><span class="n">LocalDateTime</span><span class="o">)</span> <span class="n">valueTo</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Expression</span><span class="o">&lt;</span><span class="n">LocalDateTime</span><span class="o">&gt;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">greaterThanOrEqualTo</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">startDate</span><span class="o">),</span> <span class="n">cb</span><span class="o">.</span><span class="na">lessThanOrEqualTo</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">endDate</span><span class="o">)),</span> <span class="n">predicate</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">()</span> <span class="o">!=</span> <span class="n">FieldType</span><span class="o">.</span><span class="na">CHAR</span> <span class="o">&amp;&amp;</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">()</span> <span class="o">!=</span> <span class="n">FieldType</span><span class="o">.</span><span class="na">BOOLEAN</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Number</span> <span class="n">start</span> <span class="o">=</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">value</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Number</span> <span class="n">end</span> <span class="o">=</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">valueTo</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Expression</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">ge</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">start</span><span class="o">),</span> <span class="n">cb</span><span class="o">.</span><span class="na">le</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">end</span><span class="o">)),</span> <span class="n">predicate</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Can not use between for {} field type.&#34;</span><span class="o">,</span> <span class="n">request</span><span class="o">.</span><span class="na">getFieldType</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">predicate</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">abstract</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Predicate</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">FilterRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">Predicate</span> <span class="n">predicate</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>If I mapping the operator translated to be a sql query like table below.</p>
 <table>
@@ -699,23 +699,23 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">enum</span> <span class="n">SortDirection</span> <span class="o">{</span>
-
-    <span class="n">ASC</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Order</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">SortRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">asc</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">()));</span>
-        <span class="o">}</span>
-    <span class="o">},</span>
-    <span class="n">DESC</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Order</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">SortRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">desc</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">()));</span>
-        <span class="o">}</span>
-    <span class="o">};</span>
-
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Order</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">SortRequest</span> <span class="n">request</span><span class="o">);</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">enum</span> <span class="n">SortDirection</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">ASC</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Order</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">SortRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">asc</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">()));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">},</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DESC</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Order</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">SortRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">cb</span><span class="o">.</span><span class="na">desc</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getKey</span><span class="o">()));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">abstract</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Order</span> <span class="nf">build</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">,</span> <span class="n">SortRequest</span> <span class="n">request</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>If I mapping the sort direction translated to be a sql query like table below.</p>
 <table>
@@ -757,22 +757,22 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
-<span class="nd">@Builder</span>
-<span class="nd">@NoArgsConstructor</span>
-<span class="nd">@AllArgsConstructor</span>
-<span class="nd">@JsonIgnoreProperties</span><span class="o">(</span><span class="n">ignoreUnknown</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-<span class="nd">@JsonNaming</span><span class="o">(</span><span class="n">PropertyNamingStrategies</span><span class="o">.</span><span class="na">SnakeCaseStrategy</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SortRequest</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">3194362295851723069L</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">key</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">SortDirection</span> <span class="n">direction</span><span class="o">;</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@JsonIgnoreProperties</span><span class="o">(</span><span class="n">ignoreUnknown</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@JsonNaming</span><span class="o">(</span><span class="n">PropertyNamingStrategies</span><span class="o">.</span><span class="na">SnakeCaseStrategy</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SortRequest</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">3194362295851723069L</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">key</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">SortDirection</span> <span class="n">direction</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Search Request</strong></p>
 <p>This is a main request that be used from REST API.</p>
@@ -809,36 +809,36 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
-<span class="nd">@Builder</span>
-<span class="nd">@NoArgsConstructor</span>
-<span class="nd">@AllArgsConstructor</span>
-<span class="nd">@JsonIgnoreProperties</span><span class="o">(</span><span class="n">ignoreUnknown</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-<span class="nd">@JsonNaming</span><span class="o">(</span><span class="n">PropertyNamingStrategies</span><span class="o">.</span><span class="na">SnakeCaseStrategy</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SearchRequest</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">8514625832019794838L</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">FilterRequest</span><span class="o">&gt;</span> <span class="n">filters</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">SortRequest</span><span class="o">&gt;</span> <span class="n">sorts</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">page</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">size</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">FilterRequest</span><span class="o">&gt;</span> <span class="nf">getFilters</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">Objects</span><span class="o">.</span><span class="na">isNull</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">filters</span><span class="o">))</span> <span class="k">return</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">filters</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">SortRequest</span><span class="o">&gt;</span> <span class="nf">getSorts</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">Objects</span><span class="o">.</span><span class="na">isNull</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">sorts</span><span class="o">))</span> <span class="k">return</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">sorts</span><span class="o">;</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@JsonIgnoreProperties</span><span class="o">(</span><span class="n">ignoreUnknown</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@JsonNaming</span><span class="o">(</span><span class="n">PropertyNamingStrategies</span><span class="o">.</span><span class="na">SnakeCaseStrategy</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SearchRequest</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">8514625832019794838L</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">FilterRequest</span><span class="o">&gt;</span> <span class="n">filters</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">SortRequest</span><span class="o">&gt;</span> <span class="n">sorts</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">page</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">size</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">FilterRequest</span><span class="o">&gt;</span> <span class="nf">getFilters</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">Objects</span><span class="o">.</span><span class="na">isNull</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">filters</span><span class="o">))</span> <span class="k">return</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">filters</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">SortRequest</span><span class="o">&gt;</span> <span class="nf">getSorts</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">Objects</span><span class="o">.</span><span class="na">isNull</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">sorts</span><span class="o">))</span> <span class="k">return</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">sorts</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Generic Class Search Specification</strong></p>
 <p>Last, we will create generic class that implements the Specification interface and going to pass in our own constraint to construct actual query.</p>
@@ -877,38 +877,38 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Slf4j</span>
-<span class="nd">@AllArgsConstructor</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SearchSpecification</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Specification</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="o">-</span><span class="n">9153865343320750644L</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">transient</span> <span class="n">SearchRequest</span> <span class="n">request</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Predicate</span> <span class="nf">toPredicate</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaQuery</span><span class="o">&lt;?&gt;</span> <span class="n">query</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Predicate</span> <span class="n">predicate</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="na">equal</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">literal</span><span class="o">(</span><span class="n">Boolean</span><span class="o">.</span><span class="na">TRUE</span><span class="o">),</span> <span class="n">Boolean</span><span class="o">.</span><span class="na">TRUE</span><span class="o">);</span>
-
-        <span class="k">for</span> <span class="o">(</span><span class="n">FilterRequest</span> <span class="n">filter</span> <span class="o">:</span> <span class="k">this</span><span class="o">.</span><span class="na">request</span><span class="o">.</span><span class="na">getFilters</span><span class="o">())</span> <span class="o">{</span>
-            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Filter: {} {} {}&#34;</span><span class="o">,</span> <span class="n">filter</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">filter</span><span class="o">.</span><span class="na">getOperator</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="n">filter</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
-            <span class="n">predicate</span> <span class="o">=</span> <span class="n">filter</span><span class="o">.</span><span class="na">getOperator</span><span class="o">().</span><span class="na">build</span><span class="o">(</span><span class="n">root</span><span class="o">,</span> <span class="n">cb</span><span class="o">,</span> <span class="n">filter</span><span class="o">,</span> <span class="n">predicate</span><span class="o">);</span>
-        <span class="o">}</span>
-
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span> <span class="n">orders</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">SortRequest</span> <span class="n">sort</span> <span class="o">:</span> <span class="k">this</span><span class="o">.</span><span class="na">request</span><span class="o">.</span><span class="na">getSorts</span><span class="o">())</span> <span class="o">{</span>
-            <span class="n">orders</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">sort</span><span class="o">.</span><span class="na">getDirection</span><span class="o">().</span><span class="na">build</span><span class="o">(</span><span class="n">root</span><span class="o">,</span> <span class="n">cb</span><span class="o">,</span> <span class="n">sort</span><span class="o">));</span>
-        <span class="o">}</span>
-
-        <span class="n">query</span><span class="o">.</span><span class="na">orderBy</span><span class="o">(</span><span class="n">orders</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">predicate</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Pageable</span> <span class="nf">getPageable</span><span class="o">(</span><span class="n">Integer</span> <span class="n">page</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">PageRequest</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">Objects</span><span class="o">.</span><span class="na">requireNonNullElse</span><span class="o">(</span><span class="n">page</span><span class="o">,</span> <span class="n">0</span><span class="o">),</span> <span class="n">Objects</span><span class="o">.</span><span class="na">requireNonNullElse</span><span class="o">(</span><span class="n">size</span><span class="o">,</span> <span class="n">100</span><span class="o">));</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SearchSpecification</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Specification</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="o">-</span><span class="n">9153865343320750644L</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">transient</span> <span class="n">SearchRequest</span> <span class="n">request</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Predicate</span> <span class="nf">toPredicate</span><span class="o">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="o">,</span> <span class="n">CriteriaQuery</span><span class="o">&lt;?&gt;</span> <span class="n">query</span><span class="o">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Predicate</span> <span class="n">predicate</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="na">equal</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">literal</span><span class="o">(</span><span class="n">Boolean</span><span class="o">.</span><span class="na">TRUE</span><span class="o">),</span> <span class="n">Boolean</span><span class="o">.</span><span class="na">TRUE</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">FilterRequest</span> <span class="n">filter</span> <span class="o">:</span> <span class="k">this</span><span class="o">.</span><span class="na">request</span><span class="o">.</span><span class="na">getFilters</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Filter: {} {} {}&#34;</span><span class="o">,</span> <span class="n">filter</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">filter</span><span class="o">.</span><span class="na">getOperator</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span> <span class="n">filter</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">predicate</span> <span class="o">=</span> <span class="n">filter</span><span class="o">.</span><span class="na">getOperator</span><span class="o">().</span><span class="na">build</span><span class="o">(</span><span class="n">root</span><span class="o">,</span> <span class="n">cb</span><span class="o">,</span> <span class="n">filter</span><span class="o">,</span> <span class="n">predicate</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span> <span class="n">orders</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">SortRequest</span> <span class="n">sort</span> <span class="o">:</span> <span class="k">this</span><span class="o">.</span><span class="na">request</span><span class="o">.</span><span class="na">getSorts</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">orders</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">sort</span><span class="o">.</span><span class="na">getDirection</span><span class="o">().</span><span class="na">build</span><span class="o">(</span><span class="n">root</span><span class="o">,</span> <span class="n">cb</span><span class="o">,</span> <span class="n">sort</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">query</span><span class="o">.</span><span class="na">orderBy</span><span class="o">(</span><span class="n">orders</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">predicate</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Pageable</span> <span class="nf">getPageable</span><span class="o">(</span><span class="n">Integer</span> <span class="n">page</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">PageRequest</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">Objects</span><span class="o">.</span><span class="na">requireNonNullElse</span><span class="o">(</span><span class="n">page</span><span class="o">,</span> <span class="n">0</span><span class="o">),</span> <span class="n">Objects</span><span class="o">.</span><span class="na">requireNonNullElse</span><span class="o">(</span><span class="n">size</span><span class="o">,</span> <span class="n">100</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="using-search-specification">Using Search Specification</h4>
 <p><strong>Repository</strong></p>
@@ -921,11 +921,11 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OperatingSystemRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">OperatingSystem</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;,</span>
-        <span class="n">JpaSpecificationExecutor</span><span class="o">&lt;</span><span class="n">OperatingSystem</span><span class="o">&gt;</span> <span class="o">{</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Repository</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OperatingSystemRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">OperatingSystem</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">JpaSpecificationExecutor</span><span class="o">&lt;</span><span class="n">OperatingSystem</span><span class="o">&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Service and Controller</strong></p>
 <p>Create service to construct and build specification also pagination request into repository.</p>
@@ -947,21 +947,21 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Slf4j</span>
-<span class="nd">@Service</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OperatingSystemService</span> <span class="o">{</span>
-
-    <span class="nd">@Autowired</span>
-    <span class="kd">private</span> <span class="n">OperatingSystemRepository</span> <span class="n">operatingSystemRepository</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="n">Page</span><span class="o">&lt;</span><span class="n">OperatingSystem</span><span class="o">&gt;</span> <span class="nf">searchOperatingSystem</span><span class="o">(</span><span class="n">SearchRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">SearchSpecification</span><span class="o">&lt;</span><span class="n">OperatingSystem</span><span class="o">&gt;</span> <span class="n">specification</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SearchSpecification</span><span class="o">&lt;&gt;(</span><span class="n">request</span><span class="o">);</span>
-        <span class="n">Pageable</span> <span class="n">pageable</span> <span class="o">=</span> <span class="n">SearchSpecification</span><span class="o">.</span><span class="na">getPageable</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getPage</span><span class="o">(),</span> <span class="n">request</span><span class="o">.</span><span class="na">getSize</span><span class="o">());</span>
-        <span class="k">return</span> <span class="n">operatingSystemRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">(</span><span class="n">specification</span><span class="o">,</span> <span class="n">pageable</span><span class="o">);</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Service</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OperatingSystemService</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">OperatingSystemRepository</span> <span class="n">operatingSystemRepository</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Page</span><span class="o">&lt;</span><span class="n">OperatingSystem</span><span class="o">&gt;</span> <span class="nf">searchOperatingSystem</span><span class="o">(</span><span class="n">SearchRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SearchSpecification</span><span class="o">&lt;</span><span class="n">OperatingSystem</span><span class="o">&gt;</span> <span class="n">specification</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SearchSpecification</span><span class="o">&lt;&gt;(</span><span class="n">request</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Pageable</span> <span class="n">pageable</span> <span class="o">=</span> <span class="n">SearchSpecification</span><span class="o">.</span><span class="na">getPageable</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getPage</span><span class="o">(),</span> <span class="n">request</span><span class="o">.</span><span class="na">getSize</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">operatingSystemRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">(</span><span class="n">specification</span><span class="o">,</span> <span class="n">pageable</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create controller to receive of search request from REST.</p>
 <div class="highlight"><div class="chroma">
@@ -982,21 +982,21 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Slf4j</span>
-<span class="nd">@RestController</span>
-<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/operating-system&#34;</span><span class="o">,</span> <span class="n">consumes</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OperatingSystemController</span> <span class="o">{</span>
-
-    <span class="nd">@Autowired</span>
-    <span class="kd">private</span> <span class="n">OperatingSystemService</span> <span class="n">operatingSystemService</span><span class="o">;</span>
-
-    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/search&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">Page</span><span class="o">&lt;</span><span class="n">OperatingSystem</span><span class="o">&gt;</span> <span class="nf">search</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">SearchRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">operatingSystemService</span><span class="o">.</span><span class="na">searchOperatingSystem</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@RestController</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/operating-system&#34;</span><span class="o">,</span> <span class="n">consumes</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OperatingSystemController</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">OperatingSystemService</span> <span class="n">operatingSystemService</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/search&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Page</span><span class="o">&lt;</span><span class="n">OperatingSystem</span><span class="o">&gt;</span> <span class="nf">search</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">SearchRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">operatingSystemService</span><span class="o">.</span><span class="na">searchOperatingSystem</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="test-search-sepecification">Test Search Sepecification</h4>
 <p>Run spring boot application using comman <code>mvn spring-boot: run</code> and open <code>http://localhost:8080/api/h2-console</code></p>
@@ -1023,17 +1023,17 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Arch Linux&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2022.03.01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.16.11&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-03-01 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Ubuntu&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;20.04.4 LTS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.8&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-02-22 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Ubuntu&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;21.10&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.13&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-01-28 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">110</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;CentOS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;7&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.8&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2020-11-12 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;CentOS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.13&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2021-11-12 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">176</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;EndeavourOS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;21.5&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.15.8&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-03-03 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">93</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Deepin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;20.2.4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.13&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-03-11 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">76</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Deepin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;20.2.2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.8&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-01-11 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">121</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Red Hat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;7.9&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.13&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-02-01 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">329</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Red Hat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.16.11&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-03-20 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">283</span><span class="p">);</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Arch Linux&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2022.03.01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.16.11&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-03-01 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Ubuntu&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;20.04.4 LTS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.8&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-02-22 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Ubuntu&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;21.10&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.13&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-01-28 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">110</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;CentOS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;7&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.8&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2020-11-12 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;CentOS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.13&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2021-11-12 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">176</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;EndeavourOS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;21.5&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.15.8&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-03-03 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">93</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Deepin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;20.2.4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.13&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-03-11 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">76</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Deepin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;20.2.2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.8&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-01-11 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">121</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Red Hat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;7.9&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.13&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-02-01 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">329</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">operating_system</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">release_date</span><span class="p">,</span><span class="w"> </span><span class="n">usages</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Red Hat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5.16.11&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">ts</span><span class="w"> </span><span class="s1">&#39;2022-03-20 00:10:00.69&#39;</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">283</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
@@ -1055,13 +1055,13 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[],</span>
-    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[],</span>
-    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Filter by Name and Sort by Release Date ASC</strong></p>
 <p>Filter name equal to CentOS</p>
@@ -1087,25 +1087,25 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;EQUAL&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;STRING&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;CentOS&#34;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;releaseDate&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;ASC&#34;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;EQUAL&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;STRING&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;CentOS&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;releaseDate&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;ASC&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Filter name not equal to CentOS</p>
 <div class="highlight"><div class="chroma">
@@ -1130,25 +1130,25 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;NOT_EQUAL&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;STRING&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;CentOS&#34;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;releaseDate&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;ASC&#34;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;NOT_EQUAL&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;STRING&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;CentOS&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;releaseDate&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;ASC&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Filter name not equal to CentOS and size 1 response</p>
 <div class="highlight"><div class="chroma">
@@ -1173,25 +1173,25 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;NOT_EQUAL&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;STRING&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;CentOS&#34;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;releaseDate&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;ASC&#34;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">1</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;NOT_EQUAL&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;STRING&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;CentOS&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;releaseDate&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;ASC&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Filter name like and sort by release data DESC</strong></p>
 <div class="highlight"><div class="chroma">
@@ -1216,25 +1216,25 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;LIKE&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;STRING&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;Red&#34;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;releaseDate&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;DESC&#34;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;LIKE&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;STRING&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;Red&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;releaseDate&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;DESC&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Filter kernel in</strong></p>
 <div class="highlight"><div class="chroma">
@@ -1254,20 +1254,20 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;kernel&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IN&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;STRING&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;values&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;5.13&#34;</span><span class="p">,</span> <span class="s2">&#34;5.8&#34;</span><span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[],</span>
-    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;kernel&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;STRING&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;values&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;5.13&#34;</span><span class="p">,</span> <span class="s2">&#34;5.8&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Filter using between</strong></p>
 <p>Filter release date</p>
@@ -1289,21 +1289,21 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;releaseDate&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;BETWEEN&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;DATE&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;01-03-2022 00:00:00&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;value_to&#34;</span><span class="p">:</span> <span class="s2">&#34;11-03-2022 23:59:59&#34;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[],</span>
-    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;releaseDate&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;BETWEEN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;DATE&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;01-03-2022 00:00:00&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;value_to&#34;</span><span class="p">:</span> <span class="s2">&#34;11-03-2022 23:59:59&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Filter usages</p>
 <div class="highlight"><div class="chroma">
@@ -1324,21 +1324,21 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;usages&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;BETWEEN&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;INTEGER&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-            <span class="nt">&#34;value_to&#34;</span><span class="p">:</span> <span class="mi">250</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[],</span>
-    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;filters&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;usages&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;BETWEEN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;field_type&#34;</span><span class="p">:</span> <span class="s2">&#34;INTEGER&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;value_to&#34;</span><span class="p">:</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;sorts&#34;</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;page&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="conclusion">Conclusion</h3>
 <p>JPA Specifications provide us with a way to write reusable queries and also fluent APIs with which we can combine and build more sophisticated queries.</p>
@@ -1381,7 +1381,8 @@ spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2022/03/jpa-soft-deletes-implementation/" class="prev" rel="prev" title="JPA Soft Deletes Implementation - Spring Boot"><i class="fas fa-angle-left fa-fw"></i>JPA Soft Deletes Implementation - Spring Boot</a></div>
+    <div class="post-nav"><a href="/2022/03/jpa-soft-deletes-implementation/" class="prev" rel="prev" title="JPA Soft Deletes Implementation - Spring Boot"><i class="fas fa-angle-left fa-fw"></i>JPA Soft Deletes Implementation - Spring Boot</a>
+            <a href="/2022/04/ci-cd-using-github-action/" class="next" rel="next" title="CI/CD Using Github Action">CI/CD Using Github Action<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">

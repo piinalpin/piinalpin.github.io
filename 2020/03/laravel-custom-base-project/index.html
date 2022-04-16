@@ -155,16 +155,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">AUTH_USERNAME=&lt;BASIC_AUTH_USERNAME&gt;
-AUTH_PASSWORD=&lt;BASIC_AUTH_PASSWORD&gt;
-
-DB_CONNECTION=mysql
-DB_HOST=&lt;DATABASE_HOST&gt;
-DB_PORT=&lt;DATABASE_PORT&gt;
-DB_DATABASE=&lt;DATABASE_NAME&gt;
-DB_USERNAME=&lt;DATABASE_USERNAME&gt;
-DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">AUTH_USERNAME=&lt;BASIC_AUTH_USERNAME&gt;
+</span></span><span class="line"><span class="cl">AUTH_PASSWORD=&lt;BASIC_AUTH_PASSWORD&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">DB_CONNECTION=mysql
+</span></span><span class="line"><span class="cl">DB_HOST=&lt;DATABASE_HOST&gt;
+</span></span><span class="line"><span class="cl">DB_PORT=&lt;DATABASE_PORT&gt;
+</span></span><span class="line"><span class="cl">DB_DATABASE=&lt;DATABASE_NAME&gt;
+</span></span><span class="line"><span class="cl">DB_USERNAME=&lt;DATABASE_USERNAME&gt;
+</span></span><span class="line"><span class="cl">DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>Run <code>php artisan migrate</code> to migrate table on database.</li>
@@ -184,17 +184,17 @@ DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">DB</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;APP_USER&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">([</span> 
-	<span class="s1">&#39;created_at&#39;</span> <span class="o">=&gt;</span> <span class="nx">DB</span><span class="o">::</span><span class="na">raw</span><span class="p">(</span><span class="s1">&#39;CURRENT_TIMESTAMP&#39;</span><span class="p">),</span>
-	<span class="s1">&#39;created_by&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
-	<span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;full_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Administrator&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin@test.com&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="nx">Hash</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-    <span class="s1">&#39;role&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ADMINISTRATOR&#39;</span>
-<span class="p">]);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">DB</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;APP_USER&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">([</span> 
+</span></span><span class="line"><span class="cl">	<span class="s1">&#39;created_at&#39;</span> <span class="o">=&gt;</span> <span class="nx">DB</span><span class="o">::</span><span class="na">raw</span><span class="p">(</span><span class="s1">&#39;CURRENT_TIMESTAMP&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">	<span class="s1">&#39;created_by&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;full_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Administrator&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin@test.com&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="nx">Hash</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;role&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ADMINISTRATOR&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">]);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="5">
 <li>Run <code>php artisan db:seed</code> to seed data in database.</li>
@@ -210,8 +210,8 @@ DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run -p 3306:3306 --name mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw -d mysql:latest
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -p 3306:3306 --name mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw -d mysql:latest
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>Create database and add user for laravel docker, default IP Address for docker is <em>172.17.0.1</em></li>
@@ -226,13 +226,13 @@ DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">shell&gt; docker <span class="nb">exec</span> -it mysql mysql -u root -p
-
-mysql&gt; CREATE DATABASE database_name<span class="p">;</span>
-mysql&gt; CREATE USER <span class="s1">&#39;newuser&#39;</span>@<span class="s1">&#39;172.17.0.1&#39;</span> IDENTIFIED BY <span class="s1">&#39;user_password&#39;</span><span class="p">;</span>
-mysql&gt; GRANT ALL PRIVILEGES ON database_name.* TO <span class="s1">&#39;newuser&#39;</span>@<span class="s1">&#39;172.17.0.1&#39;</span><span class="p">;</span>
-mysql&gt; FLUSH PRIVILEGES<span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">shell&gt; docker <span class="nb">exec</span> -it mysql mysql -u root -p
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mysql&gt; CREATE DATABASE database_name<span class="p">;</span>
+</span></span><span class="line"><span class="cl">mysql&gt; CREATE USER <span class="s1">&#39;newuser&#39;</span>@<span class="s1">&#39;172.17.0.1&#39;</span> IDENTIFIED BY <span class="s1">&#39;user_password&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">mysql&gt; GRANT ALL PRIVILEGES ON database_name.* TO <span class="s1">&#39;newuser&#39;</span>@<span class="s1">&#39;172.17.0.1&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">mysql&gt; FLUSH PRIVILEGES<span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>Change <code>.env.docker</code> to change database connection for mysql docker</li>
@@ -247,13 +247,13 @@ mysql&gt; FLUSH PRIVILEGES<span class="p">;</span>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">DB_CONNECTION=mysql
-DB_HOST=172.17.0.1
-DB_PORT=3306
-DB_DATABASE=database_name
-DB_USERNAME=new_user
-DB_PASSWORD=user_password
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">DB_CONNECTION=mysql
+</span></span><span class="line"><span class="cl">DB_HOST=172.17.0.1
+</span></span><span class="line"><span class="cl">DB_PORT=3306
+</span></span><span class="line"><span class="cl">DB_DATABASE=database_name
+</span></span><span class="line"><span class="cl">DB_USERNAME=new_user
+</span></span><span class="line"><span class="cl">DB_PASSWORD=user_password
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="5">
 <li>Run migration and seed data <code>php artisan migrate &amp;&amp; php artisan db:seed</code></li>
@@ -264,8 +264,8 @@ DB_PASSWORD=user_password
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker build -t laravel_web:latest -f web.dockerfile .
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build -t laravel_web:latest -f web.dockerfile .
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="7">
 <li>Build laravel application on docker, you can see Dockerfile for laravel application at <a href="https://github.com/piinalpin/laravel-base/blob/master/app.dockerfile" target="_blank" rel="noopener noreffer">app.dockerfile</a></li>
@@ -275,8 +275,8 @@ DB_PASSWORD=user_password
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker build -t laravel_app:latest -f app.dockerfile .
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build -t laravel_app:latest -f app.dockerfile .
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="8">
 <li>Create network on docker and create connection for mysql docker on your network.</li>
@@ -287,9 +287,9 @@ DB_PASSWORD=user_password
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
-docker network connect my-network mysql
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create my-network
+</span></span><span class="line"><span class="cl">docker network connect my-network mysql
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="9">
 <li>Adjust <code>docker-compose.yml</code> to run web server, application and connect to external mysql container.</li>
@@ -329,38 +329,38 @@ docker network connect my-network mysql
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">laravel_web:latest</span><span class="w">
-</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="l">./:/var/www</span><span class="w">
-</span><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
-</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="s2">&#34;8080:80&#34;</span><span class="w">
-</span><span class="w">      </span>- <span class="s2">&#34;443:443&#34;</span><span class="w">
-</span><span class="w">    </span><span class="nt">links</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="l">app</span><span class="w">
-</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="l">my-network</span><span class="w">
-</span><span class="w">
-</span><span class="w">  </span><span class="nt">app</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">laravel_app:latest</span><span class="w">
-</span><span class="w">    </span><span class="nt">env_file</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;.env.docker&#39;</span><span class="w">
-</span><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="s2">&#34;DB_HOST=172.17.0.1&#34;</span><span class="w">
-</span><span class="w">      </span>- <span class="s2">&#34;APP_URL=http://localhost:8080/api/v1&#34;</span><span class="w">
-</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="l">./:/var/www</span><span class="w">
-</span><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
-</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="l">my-network</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">my-network</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">laravel_web:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./:/var/www</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;8080:80&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;443:443&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">links</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">app</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">my-network</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">app</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">laravel_app:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">env_file</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;.env.docker&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;DB_HOST=172.17.0.1&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;APP_URL=http://localhost:8080/api/v1&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./:/var/www</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">my-network</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">my-network</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="10">
 <li>Run <code>docker-compose up -d</code> to deploy docker image to container and <code>docker-compose down</code> to stop it.</li>
@@ -402,16 +402,16 @@ docker network connect my-network mysql
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-	<span class="nt">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;someuser&#34;</span><span class="p">,</span>
-	<span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;someemail@test.com&#34;</span><span class="p">,</span>
-	<span class="nt">&#34;fullName&#34;</span><span class="p">:</span> <span class="s2">&#34;Some Name&#34;</span><span class="p">,</span>
-	<span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
-	<span class="nt">&#34;confirmPassword&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
-	<span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-	<span class="nt">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;SOME_ROLE&#34;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;someuser&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;someemail@test.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;fullName&#34;</span><span class="p">:</span> <span class="s2">&#34;Some Name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;confirmPassword&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;SOME_ROLE&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -443,16 +443,16 @@ docker network connect my-network mysql
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-	<span class="nt">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;someuser&#34;</span><span class="p">,</span>
-	<span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;someemail@test.com&#34;</span><span class="p">,</span>
-	<span class="nt">&#34;fullName&#34;</span><span class="p">:</span> <span class="s2">&#34;Some Name&#34;</span><span class="p">,</span>
-	<span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
-	<span class="nt">&#34;confirmPassword&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
-	<span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-	<span class="nt">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;SOME_ROLE&#34;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;someuser&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;someemail@test.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;fullName&#34;</span><span class="p">:</span> <span class="s2">&#34;Some Name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;confirmPassword&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;SOME_ROLE&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

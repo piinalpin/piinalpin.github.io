@@ -170,41 +170,41 @@
 </span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
-</span><span class="w"></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.8&#39;</span><span class="w">
-</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">zookeeper</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">confluentinc/cp-zookeeper:6.2.0</span><span class="w">
-</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">zookeeper</span><span class="w">
-</span><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">zookeeper</span><span class="w">
-</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="s2">&#34;2181:2181&#34;</span><span class="w">
-</span><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="nt">ZOOKEEPER_CLIENT_PORT</span><span class="p">:</span><span class="w"> </span><span class="m">2181</span><span class="w">
-</span><span class="w">      </span><span class="nt">ZOOKEEPER_TICK_TIME</span><span class="p">:</span><span class="w"> </span><span class="m">2000</span><span class="w">
-</span><span class="w">  </span><span class="nt">kafka</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">confluentinc/cp-kafka:6.2.0</span><span class="w">
-</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">kafka</span><span class="w">
-</span><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">kafka</span><span class="w">
-</span><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="l">zookeeper</span><span class="w">
-</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="s2">&#34;29092:29092&#34;</span><span class="w">
-</span><span class="w">      </span>- <span class="s2">&#34;9092:9092&#34;</span><span class="w">
-</span><span class="w">      </span>- <span class="s2">&#34;9101:9101&#34;</span><span class="w">
-</span><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
-</span><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="nt">KAFKA_BROKER_ID</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">      </span><span class="nt">KAFKA_ZOOKEEPER_CONNECT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;zookeeper:2181&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">KAFKA_LISTENER_SECURITY_PROTOCOL_MAP</span><span class="p">:</span><span class="w"> </span><span class="l">PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT</span><span class="w">
-</span><span class="w">      </span><span class="nt">KAFKA_ADVERTISED_LISTENERS</span><span class="p">:</span><span class="w"> </span><span class="l">PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092</span><span class="w">
-</span><span class="w">      </span><span class="nt">KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">      </span><span class="nt">KAFKA_TRANSACTION_STATE_LOG_MIN_ISR</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">      </span><span class="nt">KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">      </span><span class="nt">KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
-</span><span class="w">      </span><span class="nt">KAFKA_JMX_PORT</span><span class="p">:</span><span class="w"> </span><span class="m">9101</span><span class="w">
-</span><span class="w">      </span><span class="nt">KAFKA_JMX_HOSTNAME</span><span class="p">:</span><span class="w"> </span><span class="l">localhost</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.8&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">zookeeper</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">confluentinc/cp-zookeeper:6.2.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">zookeeper</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">zookeeper</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;2181:2181&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ZOOKEEPER_CLIENT_PORT</span><span class="p">:</span><span class="w"> </span><span class="m">2181</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ZOOKEEPER_TICK_TIME</span><span class="p">:</span><span class="w"> </span><span class="m">2000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">kafka</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">confluentinc/cp-kafka:6.2.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">kafka</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">kafka</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">zookeeper</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;29092:29092&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;9092:9092&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;9101:9101&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">KAFKA_BROKER_ID</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">KAFKA_ZOOKEEPER_CONNECT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;zookeeper:2181&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">KAFKA_LISTENER_SECURITY_PROTOCOL_MAP</span><span class="p">:</span><span class="w"> </span><span class="l">PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">KAFKA_ADVERTISED_LISTENERS</span><span class="p">:</span><span class="w"> </span><span class="l">PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">KAFKA_TRANSACTION_STATE_LOG_MIN_ISR</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">KAFKA_JMX_PORT</span><span class="p">:</span><span class="w"> </span><span class="m">9101</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">KAFKA_JMX_HOSTNAME</span><span class="p">:</span><span class="w"> </span><span class="l">localhost</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>And run on terminal with following command</p>
 <div class="highlight"><div class="chroma">
@@ -212,8 +212,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker-compose up -d
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker-compose up -d
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>For stopping server with following command</p>
 <div class="highlight"><div class="chroma">
@@ -221,8 +221,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker-compose down -v
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker-compose down -v
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="project-setup-and-dependencies">Project Setup and Dependencies</h3>
 <p>I&rsquo;m depending <a href="https://start.spring.io/" target="_blank" rel="noopener noreffer">Spring Initializr</a> for this as it is much easier. And we have to create two spring boot projects and started with maven project.</p>
@@ -240,16 +240,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-<span class="nt">&lt;dependency&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>org.springframework.kafka<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>spring-kafka<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>2.7.4<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.springframework.kafka<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>spring-kafka<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>2.7.4<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We also need to create <code>application.yml</code> for configuration file.</p>
 <div class="highlight"><div class="chroma">
@@ -260,11 +260,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">kafka</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">bootstrapAddress</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;http://localhost:9092&#34;</span><span class="w">
-</span><span class="w"></span><span class="nt">server</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8080</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">kafka</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">bootstrapAddress</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;http://localhost:9092&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">server</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8080</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="implementation">Implementation</h3>
 <p><strong>Configuring Topics</strong></p>
@@ -278,12 +278,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaTopicConstant</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">HELLO_WORLD</span> <span class="o">=</span> <span class="s">&#34;hello-world&#34;</span><span class="o">;</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaTopicConstant</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">HELLO_WORLD</span> <span class="o">=</span> <span class="s">&#34;hello-world&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create bean configuration <code>com.piinalpin.kafkademo.config.KafkaTopicConfiguration</code> to define topics on Kafka.</p>
 <div class="highlight"><div class="chroma">
@@ -309,26 +309,26 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaTopicConfiguration</span> <span class="o">{</span>
-
-    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${kafka.bootstrapAddress:}&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">bootstrapAddress</span><span class="o">;</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">KafkaAdmin</span> <span class="nf">kafkaAdmin</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-        <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">AdminClientConfig</span><span class="o">.</span><span class="na">BOOTSTRAP_SERVERS_CONFIG</span><span class="o">,</span> <span class="n">bootstrapAddress</span><span class="o">);</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">KafkaAdmin</span><span class="o">(</span><span class="n">config</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">NewTopic</span> <span class="nf">helloWorld</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">NewTopic</span><span class="o">(</span><span class="n">KafkaTopicConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="o">(</span><span class="kt">short</span><span class="o">)</span> <span class="n">1</span><span class="o">);</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaTopicConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${kafka.bootstrapAddress:}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">bootstrapAddress</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">KafkaAdmin</span> <span class="nf">kafkaAdmin</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">config</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">AdminClientConfig</span><span class="o">.</span><span class="na">BOOTSTRAP_SERVERS_CONFIG</span><span class="o">,</span> <span class="n">bootstrapAddress</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">KafkaAdmin</span><span class="o">(</span><span class="n">config</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">NewTopic</span> <span class="nf">helloWorld</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">NewTopic</span><span class="o">(</span><span class="n">KafkaTopicConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="o">(</span><span class="kt">short</span><span class="o">)</span> <span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Producer Configuration</strong></p>
 <p>Create bean configuration <code>com.piinalpin.kafkademo.config.KafkaProducerConfiguration</code> to define producer configuration bean on Kafka.</p>
@@ -357,28 +357,28 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaProducerConfiguration</span> <span class="o">{</span>
-
-    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${kafka.bootstrapAddress:}&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">bootstrapAddress</span><span class="o">;</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">ProducerFactory</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">producerFactory</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">configProps</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-        <span class="n">configProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ProducerConfig</span><span class="o">.</span><span class="na">BOOTSTRAP_SERVERS_CONFIG</span><span class="o">,</span> <span class="n">bootstrapAddress</span><span class="o">);</span>
-        <span class="n">configProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ProducerConfig</span><span class="o">.</span><span class="na">KEY_SERIALIZER_CLASS_CONFIG</span><span class="o">,</span> <span class="n">StringSerializer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        <span class="n">configProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ProducerConfig</span><span class="o">.</span><span class="na">VALUE_SERIALIZER_CLASS_CONFIG</span><span class="o">,</span> <span class="n">StringSerializer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">DefaultKafkaProducerFactory</span><span class="o">&lt;&gt;(</span><span class="n">configProps</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">KafkaTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">kafkaTemplate</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">KafkaTemplate</span><span class="o">&lt;&gt;(</span><span class="n">producerFactory</span><span class="o">());</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaProducerConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${kafka.bootstrapAddress:}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">bootstrapAddress</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ProducerFactory</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">producerFactory</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">configProps</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">configProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ProducerConfig</span><span class="o">.</span><span class="na">BOOTSTRAP_SERVERS_CONFIG</span><span class="o">,</span> <span class="n">bootstrapAddress</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">configProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ProducerConfig</span><span class="o">.</span><span class="na">KEY_SERIALIZER_CLASS_CONFIG</span><span class="o">,</span> <span class="n">StringSerializer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">configProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ProducerConfig</span><span class="o">.</span><span class="na">VALUE_SERIALIZER_CLASS_CONFIG</span><span class="o">,</span> <span class="n">StringSerializer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">DefaultKafkaProducerFactory</span><span class="o">&lt;&gt;(</span><span class="n">configProps</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">KafkaTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">kafkaTemplate</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">KafkaTemplate</span><span class="o">&lt;&gt;(</span><span class="n">producerFactory</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Publisher Service</strong></p>
 <p>Create service <code>com.piinalpin.kafkademo.service.KafkaPublisherService</code> to publish a message.</p>
@@ -401,22 +401,22 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaPublisherService</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">KafkaProducerService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-
-    <span class="nd">@Autowired</span>
-    <span class="kd">private</span> <span class="n">KafkaTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">kafkaTemplate</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Sending message to Kafka...&#34;</span><span class="o">);</span>
-        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Payload: %s, Topic: %s&#34;</span><span class="o">,</span> <span class="n">KafkaTopicConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">message</span><span class="o">));</span>
-        <span class="n">kafkaTemplate</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">KafkaTopicConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Service</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaPublisherService</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">KafkaProducerService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">KafkaTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">kafkaTemplate</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Sending message to Kafka...&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Payload: %s, Topic: %s&#34;</span><span class="o">,</span> <span class="n">KafkaTopicConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">message</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kafkaTemplate</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">KafkaTopicConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Send Message</strong></p>
 <p>Create rest controller <code>com.piinalpin.kafkademo.controller.KafkaDemoController</code> to send a message via rest.</p>
@@ -450,33 +450,33 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaDemoController</span> <span class="o">{</span>
-
-    <span class="nd">@Autowired</span>
-    <span class="kd">private</span> <span class="n">KafkaPublisherService</span> <span class="n">kafkaPublisherService</span><span class="o">;</span>
-
-    <span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">main</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">okMessage</span><span class="o">(</span><span class="s">&#34;ok&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/greeting&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">greeting</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="n">request</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;greeting&#34;</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">kafkaPublisherService</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;greeting&#34;</span><span class="o">));</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">okMessage</span><span class="o">(</span><span class="s">&#34;Sending message...&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">okMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-        <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@RestController</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaDemoController</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">KafkaPublisherService</span> <span class="n">kafkaPublisherService</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">main</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">okMessage</span><span class="o">(</span><span class="s">&#34;ok&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/greeting&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">greeting</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="n">request</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;greeting&#34;</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">kafkaPublisherService</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;greeting&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">okMessage</span><span class="o">(</span><span class="s">&#34;Sending message...&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">okMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Try to run by typing <code>mvn spring-boot:run</code> then open Postman like below.</p>
 <p><code>URL: http://localhost:8080/greeting (POST)</code></p>
@@ -488,10 +488,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;greeting&#34;</span><span class="p">:</span> <span class="s2">&#34;Hello my name is Maverick&#34;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;greeting&#34;</span><span class="p">:</span> <span class="s2">&#34;Hello my name is Maverick&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>And log will display like below.</p>
 <div class="highlight"><div class="chroma">
@@ -500,9 +500,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">19</span><span class="o">:</span><span class="mi">27</span><span class="o">:</span><span class="mf">00.306</span>  <span class="nx">INFO</span> <span class="mi">87879</span> <span class="o">---</span> <span class="p">[</span><span class="nx">nio</span><span class="o">-</span><span class="mi">8080</span><span class="o">-</span><span class="nx">exec</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">p</span><span class="p">.</span><span class="nx">k</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">KafkaProducerService</span>       <span class="o">:</span> <span class="nx">Sending</span> <span class="nx">message</span> <span class="nx">to</span> <span class="nx">Kafka</span><span class="p">...</span>
-<span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">19</span><span class="o">:</span><span class="mi">27</span><span class="o">:</span><span class="mf">00.307</span>  <span class="nx">INFO</span> <span class="mi">87879</span> <span class="o">---</span> <span class="p">[</span><span class="nx">nio</span><span class="o">-</span><span class="mi">8080</span><span class="o">-</span><span class="nx">exec</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">p</span><span class="p">.</span><span class="nx">k</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">KafkaProducerService</span>       <span class="o">:</span> <span class="nx">Payload</span><span class="o">:</span> <span class="nx">hello</span><span class="o">-</span><span class="nx">world</span><span class="p">,</span> <span class="nx">Topic</span><span class="o">:</span> <span class="nx">Hello</span> <span class="nx">my</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">Maverick</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">19</span><span class="o">:</span><span class="mi">27</span><span class="o">:</span><span class="mf">00.306</span>  <span class="nx">INFO</span> <span class="mi">87879</span> <span class="o">---</span> <span class="p">[</span><span class="nx">nio</span><span class="o">-</span><span class="mi">8080</span><span class="o">-</span><span class="nx">exec</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">p</span><span class="p">.</span><span class="nx">k</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">KafkaProducerService</span>       <span class="o">:</span> <span class="nx">Sending</span> <span class="nx">message</span> <span class="nx">to</span> <span class="nx">Kafka</span><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">19</span><span class="o">:</span><span class="mi">27</span><span class="o">:</span><span class="mf">00.307</span>  <span class="nx">INFO</span> <span class="mi">87879</span> <span class="o">---</span> <span class="p">[</span><span class="nx">nio</span><span class="o">-</span><span class="mi">8080</span><span class="o">-</span><span class="nx">exec</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">p</span><span class="p">.</span><span class="nx">k</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">KafkaProducerService</span>       <span class="o">:</span> <span class="nx">Payload</span><span class="o">:</span> <span class="nx">hello</span><span class="o">-</span><span class="nx">world</span><span class="p">,</span> <span class="nx">Topic</span><span class="o">:</span> <span class="nx">Hello</span> <span class="nx">my</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">Maverick</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Consumer Configuration</strong></p>
 <p>For consuming messages, we need to configure a ConsumerFactory and a KafkaListenerContainerFactory. Once these beans are available in the Spring bean factory, POJO-based consumers can be configured using @KafkaListener annotation.</p>
@@ -540,35 +540,35 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
-<span class="nd">@EnableKafka</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaConsumerConfiguration</span> <span class="o">{</span>
-
-    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${kafka.bootstrapAddress:}&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">bootstrapAddress</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="n">ConsumerFactory</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">consumerFactory</span><span class="o">(</span><span class="n">String</span> <span class="n">groupId</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-        <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ConsumerConfig</span><span class="o">.</span><span class="na">BOOTSTRAP_SERVERS_CONFIG</span><span class="o">,</span> <span class="n">bootstrapAddress</span><span class="o">);</span>
-        <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ConsumerConfig</span><span class="o">.</span><span class="na">GROUP_ID_CONFIG</span><span class="o">,</span> <span class="n">groupId</span><span class="o">);</span>
-        <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ConsumerConfig</span><span class="o">.</span><span class="na">KEY_DESERIALIZER_CLASS_CONFIG</span><span class="o">,</span> <span class="n">StringDeserializer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ConsumerConfig</span><span class="o">.</span><span class="na">VALUE_DESERIALIZER_CLASS_CONFIG</span><span class="o">,</span> <span class="n">StringDeserializer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">DefaultKafkaConsumerFactory</span><span class="o">&lt;&gt;(</span><span class="n">props</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">ConcurrentKafkaListenerContainerFactory</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">kafkaListenerContainerFactory</span><span class="o">(</span><span class="n">String</span> <span class="n">groupId</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">ConcurrentKafkaListenerContainerFactory</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">factory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcurrentKafkaListenerContainerFactory</span><span class="o">&lt;&gt;();</span>
-        <span class="n">factory</span><span class="o">.</span><span class="na">setConsumerFactory</span><span class="o">(</span><span class="n">consumerFactory</span><span class="o">(</span><span class="n">groupId</span><span class="o">));</span>
-        <span class="k">return</span> <span class="n">factory</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">ConcurrentKafkaListenerContainerFactory</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">greeting</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">kafkaListenerContainerFactory</span><span class="o">(</span><span class="s">&#34;greeting&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@EnableKafka</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaConsumerConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${kafka.bootstrapAddress:}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">bootstrapAddress</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ConsumerFactory</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">consumerFactory</span><span class="o">(</span><span class="n">String</span> <span class="n">groupId</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ConsumerConfig</span><span class="o">.</span><span class="na">BOOTSTRAP_SERVERS_CONFIG</span><span class="o">,</span> <span class="n">bootstrapAddress</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ConsumerConfig</span><span class="o">.</span><span class="na">GROUP_ID_CONFIG</span><span class="o">,</span> <span class="n">groupId</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ConsumerConfig</span><span class="o">.</span><span class="na">KEY_DESERIALIZER_CLASS_CONFIG</span><span class="o">,</span> <span class="n">StringDeserializer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ConsumerConfig</span><span class="o">.</span><span class="na">VALUE_DESERIALIZER_CLASS_CONFIG</span><span class="o">,</span> <span class="n">StringDeserializer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">DefaultKafkaConsumerFactory</span><span class="o">&lt;&gt;(</span><span class="n">props</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ConcurrentKafkaListenerContainerFactory</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">kafkaListenerContainerFactory</span><span class="o">(</span><span class="n">String</span> <span class="n">groupId</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ConcurrentKafkaListenerContainerFactory</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">factory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcurrentKafkaListenerContainerFactory</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">factory</span><span class="o">.</span><span class="na">setConsumerFactory</span><span class="o">(</span><span class="n">consumerFactory</span><span class="o">(</span><span class="n">groupId</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">factory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ConcurrentKafkaListenerContainerFactory</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">greeting</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">kafkaListenerContainerFactory</span><span class="o">(</span><span class="s">&#34;greeting&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Consuming Messages</strong></p>
 <p>Create service <code>com.piinalpin.kafkademo.service.KafkaConsumerService</code> as a listener to consume message from Kafka.</p>
@@ -587,18 +587,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaConsumerService</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">KafkaConsumerService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-
-    <span class="nd">@KafkaListener</span><span class="o">(</span><span class="n">topics</span> <span class="o">=</span> <span class="n">KafkaTopicConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">containerFactory</span> <span class="o">=</span> <span class="s">&#34;greeting&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">greeting</span><span class="o">(</span><span class="n">String</span> <span class="n">payload</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Received payload: %s&#34;</span><span class="o">,</span> <span class="n">payload</span><span class="o">));</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Service</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaConsumerService</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">KafkaConsumerService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@KafkaListener</span><span class="o">(</span><span class="n">topics</span> <span class="o">=</span> <span class="n">KafkaTopicConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">containerFactory</span> <span class="o">=</span> <span class="s">&#34;greeting&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">greeting</span><span class="o">(</span><span class="n">String</span> <span class="n">payload</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Received payload: %s&#34;</span><span class="o">,</span> <span class="n">payload</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Try to run by typing <code>mvn spring-boot:run</code> then open Postman like below.</p>
 <p><code>URL: http://localhost:8080/greeting (POST)</code></p>
@@ -610,10 +610,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;greeting&#34;</span><span class="p">:</span> <span class="s2">&#34;Hello my name is Maverick&#34;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;greeting&#34;</span><span class="p">:</span> <span class="s2">&#34;Hello my name is Maverick&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>And log will display like below.</p>
 <div class="highlight"><div class="chroma">
@@ -625,12 +625,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">20</span><span class="o">:</span><span class="mi">57</span><span class="o">:</span><span class="mf">09.511</span>  <span class="nx">INFO</span> <span class="mi">8569</span> <span class="o">---</span> <span class="p">[</span><span class="nx">nio</span><span class="o">-</span><span class="mi">8080</span><span class="o">-</span><span class="nx">exec</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">p</span><span class="p">.</span><span class="nx">k</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">KafkaPublisherService</span>      <span class="o">:</span> <span class="nx">Sending</span> <span class="nx">message</span> <span class="nx">to</span> <span class="nx">Kafka</span><span class="p">...</span>
-<span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">20</span><span class="o">:</span><span class="mi">57</span><span class="o">:</span><span class="mf">09.511</span>  <span class="nx">INFO</span> <span class="mi">8569</span> <span class="o">---</span> <span class="p">[</span><span class="nx">nio</span><span class="o">-</span><span class="mi">8080</span><span class="o">-</span><span class="nx">exec</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">p</span><span class="p">.</span><span class="nx">k</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">KafkaPublisherService</span>      <span class="o">:</span> <span class="nx">Payload</span><span class="o">:</span> <span class="nx">hello</span><span class="o">-</span><span class="nx">world</span><span class="p">,</span> <span class="nx">Topic</span><span class="o">:</span> <span class="nx">Hello</span> <span class="nx">my</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">Maverick</span>
-
-<span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">20</span><span class="o">:</span><span class="mi">57</span><span class="o">:</span><span class="mf">09.565</span>  <span class="nx">INFO</span> <span class="mi">8569</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ad</span> <span class="o">|</span> <span class="nx">producer</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">org</span><span class="p">.</span><span class="nx">apache</span><span class="p">.</span><span class="nx">kafka</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="nx">Metadata</span>        <span class="o">:</span> <span class="p">[</span><span class="nx">Producer</span> <span class="nx">clientId</span><span class="o">=</span><span class="nx">producer</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">Cluster</span> <span class="nx">ID</span><span class="o">:</span> <span class="nx">wlyOQ1ksRQ6eVAu6Q0JXYA</span>
-<span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">20</span><span class="o">:</span><span class="mi">57</span><span class="o">:</span><span class="mf">09.798</span>  <span class="nx">INFO</span> <span class="mi">8569</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntainer</span><span class="err">#</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="nx">C</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">p</span><span class="p">.</span><span class="nx">k</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">KafkaConsumerService</span>       <span class="o">:</span> <span class="nx">Received</span> <span class="nx">payload</span><span class="o">:</span> <span class="nx">Hello</span> <span class="nx">my</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">Maverick</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">20</span><span class="o">:</span><span class="mi">57</span><span class="o">:</span><span class="mf">09.511</span>  <span class="nx">INFO</span> <span class="mi">8569</span> <span class="o">---</span> <span class="p">[</span><span class="nx">nio</span><span class="o">-</span><span class="mi">8080</span><span class="o">-</span><span class="nx">exec</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">p</span><span class="p">.</span><span class="nx">k</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">KafkaPublisherService</span>      <span class="o">:</span> <span class="nx">Sending</span> <span class="nx">message</span> <span class="nx">to</span> <span class="nx">Kafka</span><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">20</span><span class="o">:</span><span class="mi">57</span><span class="o">:</span><span class="mf">09.511</span>  <span class="nx">INFO</span> <span class="mi">8569</span> <span class="o">---</span> <span class="p">[</span><span class="nx">nio</span><span class="o">-</span><span class="mi">8080</span><span class="o">-</span><span class="nx">exec</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">p</span><span class="p">.</span><span class="nx">k</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">KafkaPublisherService</span>      <span class="o">:</span> <span class="nx">Payload</span><span class="o">:</span> <span class="nx">hello</span><span class="o">-</span><span class="nx">world</span><span class="p">,</span> <span class="nx">Topic</span><span class="o">:</span> <span class="nx">Hello</span> <span class="nx">my</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">Maverick</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">20</span><span class="o">:</span><span class="mi">57</span><span class="o">:</span><span class="mf">09.565</span>  <span class="nx">INFO</span> <span class="mi">8569</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ad</span> <span class="o">|</span> <span class="nx">producer</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">org</span><span class="p">.</span><span class="nx">apache</span><span class="p">.</span><span class="nx">kafka</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="nx">Metadata</span>        <span class="o">:</span> <span class="p">[</span><span class="nx">Producer</span> <span class="nx">clientId</span><span class="o">=</span><span class="nx">producer</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">Cluster</span> <span class="nx">ID</span><span class="o">:</span> <span class="nx">wlyOQ1ksRQ6eVAu6Q0JXYA</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span> <span class="mi">20</span><span class="o">:</span><span class="mi">57</span><span class="o">:</span><span class="mf">09.798</span>  <span class="nx">INFO</span> <span class="mi">8569</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntainer</span><span class="err">#</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="nx">C</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">p</span><span class="p">.</span><span class="nx">k</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">KafkaConsumerService</span>       <span class="o">:</span> <span class="nx">Received</span> <span class="nx">payload</span><span class="o">:</span> <span class="nx">Hello</span> <span class="nx">my</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">Maverick</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="clone-or-download">Clone or Download</h3>
 <p>You can clone or download this project</p>
@@ -639,8 +639,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">https://github.com/piinalpin/kafka-demo.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://github.com/piinalpin/kafka-demo.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="thankyou">Thankyou</h3>
 <p><a href="https://www.baeldung.com/spring-kafka" target="_blank" rel="noopener noreffer">Baeldung</a> - Intro to Apache Kafka with Spring</p>
