@@ -117,30 +117,30 @@ Then, create another job for build package and build images.
 
 ```yaml
 build:
-    name: Build
-    runs-on: ubuntu-18.04
-    needs: run_test
-    steps:
-      - run: echo "Starting build package"
-      - uses: actions/checkout@v3
-      - name: Setup JDK 11
-        uses: actions/setup-java@v3
-        with:
-          java-version: 11
-          distribution: 'adopt'
-      - name: Maven Build
-        run: mvn clean package -Dmaven.test.skip=true
-      - name: Login to docker hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: user/images:tag
+  name: Build
+  runs-on: ubuntu-18.04
+  needs: run_test
+  steps:
+    - run: echo "Starting build package"
+    - uses: actions/checkout@v3
+    - name: Setup JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: 11
+        distribution: 'adopt'
+    - name: Maven Build
+      run: mvn clean package -Dmaven.test.skip=true
+    - name: Login to docker hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: user/images:tag
 ```
 
 Description :
@@ -155,33 +155,33 @@ Finally, create job for deploying into server using SSH.
 
 ```yaml
 deployment:
-    name: Deploy container using SSH
-    runs-on: ubuntu-18.04
-    needs: build
-    steps:
-      - run: echo "Starting deploy container"
-      - uses: actions/checkout@v3
-      - name: Copy environment file via ssh
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          port: 22
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: .env
-          target: /home/${{ secrets.SSH_USERNAME }}
-      - name: Deploy using ssh
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          port: 22
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            docker stop the_container
-            docker rmi user/images:tag
-            docker pull user/images:tag
-            docker run -d --rm --name the_container -p 80:8080 --env-file=.env --network another_network user/images:tag
+  name: Deploy container using SSH
+  runs-on: ubuntu-18.04
+  needs: build
+  steps:
+    - run: echo "Starting deploy container"
+    - uses: actions/checkout@v3
+    - name: Copy environment file via ssh
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        port: 22
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: .env
+        target: /home/${{ secrets.SSH_USERNAME }}
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        port: 22
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          docker stop the_container
+          docker rmi user/images:tag
+          docker pull user/images:tag
+          docker run -d --rm --name the_container -p 80:8080 --env-file=.env --network another_network user/images:tag
 ```
 
 ![Github Action Pipeline](/images/github-action-pipeline.png)
