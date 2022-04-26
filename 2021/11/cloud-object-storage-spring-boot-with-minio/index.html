@@ -16,9 +16,7 @@
 <meta name="twitter:title" content="Cloud Object Storage Spring Boot With Minio"/>
 <meta name="twitter:description" content="MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0. It is API compatible with Amazon S3 cloud storage service. Use MinIO to build high performance infrastructure for machine learning, analytics and application data workloads."/>
 <meta name="application-name" content="PiinAlpin&#39;s Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/" /><link rel="prev" href="https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/" /><link rel="next" href="https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/" /><link rel="prev" href="https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/" /><link rel="next" href="https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -148,9 +146,9 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Access Key : minioadmin
-</span></span><span class="line"><span class="cl">Secret Key : minioadmin
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">Access Key : minioadmin
+Secret Key : minioadmin
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Run Standalone MinIO on Docker</strong></p>
 <p>MinIO needs a persistent volume to store configuration and application data. However, for testing purposes, you can launch MinIO by simply passing a directory (/data in the example below). This directory gets created in the container filesystem at the time of container start. But all the data is lost after container exits.</p>
@@ -164,13 +162,13 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 9000:9000 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 9001:9001 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="s2">&#34;MINIO_ROOT_USER=&lt;USERNAME&gt;&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="s2">&#34;MINIO_ROOT_PASSWORD=&lt;PASSWORD&gt;&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  quay.io/minio/minio server /data --console-address <span class="s2">&#34;:9001&#34;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run <span class="se">\
+</span><span class="se"></span>  -p 9000:9000 <span class="se">\
+</span><span class="se"></span>  -p 9001:9001 <span class="se">\
+</span><span class="se"></span>  -e <span class="s2">&#34;MINIO_ROOT_USER=&lt;USERNAME&gt;&#34;</span> <span class="se">\
+</span><span class="se"></span>  -e <span class="s2">&#34;MINIO_ROOT_PASSWORD=&lt;PASSWORD&gt;&#34;</span> <span class="se">\
+</span><span class="se"></span>  quay.io/minio/minio server /data --console-address <span class="s2">&#34;:9001&#34;</span>
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="project-setup-and-dependencies">Project Setup and Dependencies</h3>
 <p>I&rsquo;m depending <a href="https://start.spring.io/" target="_blank" rel="noopener noreffer">Spring Initializr</a> for this as it is much easier.</p>
@@ -208,36 +206,36 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>1.18.12<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>io.minio<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>minio<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>8.3.0<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>com.squareup.okhttp3<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>okhttp<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>4.9.1<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>commons-io<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>commons-io<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>2.11.0<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.18.12<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>io.minio<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>minio<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>8.3.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.squareup.okhttp3<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>okhttp<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>4.9.1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>commons-io<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>commons-io<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.11.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Change configuration <code>application.properties</code> file like following below. I will use <code>play.min.io</code> to this documentation which is open source and for demo the other projects.</p>
 <div class="highlight"><div class="chroma">
@@ -252,15 +250,15 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">server.port=8080
-</span></span><span class="line"><span class="cl">spring.servlet.multipart.max-file-size=2MB
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># Minio
-</span></span><span class="line"><span class="cl">minio.bucket.name=minio-example-demo
-</span></span><span class="line"><span class="cl">minio.access.key=minioadmin
-</span></span><span class="line"><span class="cl">minio.access.secret=minioadmin
-</span></span><span class="line"><span class="cl">minio.url=https://play.min.io
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">server.port=8080
+spring.servlet.multipart.max-file-size=2MB
+
+# Minio
+minio.bucket.name=minio-example-demo
+minio.access.key=minioadmin
+minio.access.secret=minioadmin
+minio.url=https://play.min.io
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Upload Some Image on Minio</strong></p>
 <p>I will create folder inside the <code>minio-example-demo</code> bucket is <code>myfolder</code> and upload some images.</p>
@@ -301,29 +299,29 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MinioConfiguration</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${minio.access.key}&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">accessKey</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${minio.access.secret}&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">secretKey</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${minio.url}&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">minioUrl</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
-</span></span><span class="line"><span class="cl">    <span class="nd">@Primary</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MinioClient</span> <span class="nf">minioClient</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">MinioClient</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">credentials</span><span class="o">(</span><span class="n">accessKey</span><span class="o">,</span> <span class="n">secretKey</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">endpoint</span><span class="o">(</span><span class="n">minioUrl</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MinioConfiguration</span> <span class="o">{</span>
+
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${minio.access.key}&#34;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">accessKey</span><span class="o">;</span>
+
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${minio.access.secret}&#34;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">secretKey</span><span class="o">;</span>
+
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${minio.url}&#34;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">minioUrl</span><span class="o">;</span>
+
+    <span class="nd">@Bean</span>
+    <span class="nd">@Primary</span>
+    <span class="kd">public</span> <span class="n">MinioClient</span> <span class="nf">minioClient</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">MinioClient</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">credentials</span><span class="o">(</span><span class="n">accessKey</span><span class="o">,</span> <span class="n">secretKey</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">endpoint</span><span class="o">(</span><span class="n">minioUrl</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Data Transfer Object</strong></p>
 <p>Create a dto class to construct object even for request or response <code>com.piinalpin.minio.http.dto.FileDto</code> like following below.</p>
@@ -355,31 +353,31 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@JsonNaming</span><span class="o">(</span><span class="n">PropertyNamingStrategies</span><span class="o">.</span><span class="na">SnakeCaseStrategy</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@JsonInclude</span><span class="o">(</span><span class="n">JsonInclude</span><span class="o">.</span><span class="na">Include</span><span class="o">.</span><span class="na">NON_NULL</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileDto</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">232836038145089522L</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">description</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;java:S1948&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">MultipartFile</span> <span class="n">file</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">url</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Long</span> <span class="n">size</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">filename</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<span class="nd">@Builder</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="nd">@AllArgsConstructor</span>
+<span class="nd">@JsonNaming</span><span class="o">(</span><span class="n">PropertyNamingStrategies</span><span class="o">.</span><span class="na">SnakeCaseStrategy</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="nd">@JsonInclude</span><span class="o">(</span><span class="n">JsonInclude</span><span class="o">.</span><span class="na">Include</span><span class="o">.</span><span class="na">NON_NULL</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileDto</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">232836038145089522L</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">description</span><span class="o">;</span>
+
+    <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;java:S1948&#34;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">MultipartFile</span> <span class="n">file</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">url</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">size</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">filename</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Get List Objects from Bucket</strong></p>
 <p>Create service to get list objects inside bucket at <code>om.piinalpin.minio.service.MinioService</code> like following below. First we should inject <code>MinioClient</code> to use minio and define bucket name get from <code>properties</code> file.</p>
@@ -392,12 +390,12 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">MinioClient</span> <span class="n">minioClient</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${minio.bucket.name}&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">bucketName</span><span class="o">;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Autowired</span>
+<span class="kd">private</span> <span class="n">MinioClient</span> <span class="n">minioClient</span><span class="o">;</span>
+
+<span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${minio.bucket.name}&#34;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">bucketName</span><span class="o">;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create method to get list objects from bucket in minio like following below.</p>
 <div class="highlight"><div class="chroma">
@@ -441,44 +439,44 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@Service</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MinioService</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">MinioClient</span> <span class="n">minioClient</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${minio.bucket.name}&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">bucketName</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">FileDto</span><span class="o">&gt;</span> <span class="nf">getListObjects</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">FileDto</span><span class="o">&gt;</span> <span class="n">objects</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Result</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">minioClient</span><span class="o">.</span><span class="na">listObjects</span><span class="o">(</span><span class="n">ListObjectsArgs</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">bucket</span><span class="o">(</span><span class="n">bucketName</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">recursive</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">build</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="o">(</span><span class="n">Result</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">item</span> <span class="o">:</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                <span class="n">objects</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">FileDto</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                        <span class="o">.</span><span class="na">filename</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">objectName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                        <span class="o">.</span><span class="na">size</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">size</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                        <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="n">getPreSignedUrl</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">objectName</span><span class="o">()))</span>
-</span></span><span class="line"><span class="cl">                        <span class="o">.</span><span class="na">build</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">            <span class="o">}</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">objects</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Happened error when get list objects from minio: &#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">objects</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="nf">getPreSignedUrl</span><span class="o">(</span><span class="n">String</span> <span class="n">filename</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s">&#34;http://localhost:8080/file/&#34;</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span><span class="n">filename</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Slf4j</span>
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MinioService</span> <span class="o">{</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">MinioClient</span> <span class="n">minioClient</span><span class="o">;</span>
+
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${minio.bucket.name}&#34;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">bucketName</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">FileDto</span><span class="o">&gt;</span> <span class="nf">getListObjects</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">FileDto</span><span class="o">&gt;</span> <span class="n">objects</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Result</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">minioClient</span><span class="o">.</span><span class="na">listObjects</span><span class="o">(</span><span class="n">ListObjectsArgs</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">bucket</span><span class="o">(</span><span class="n">bucketName</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">recursive</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Result</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">item</span> <span class="o">:</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">objects</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">FileDto</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                        <span class="o">.</span><span class="na">filename</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">objectName</span><span class="o">())</span>
+                        <span class="o">.</span><span class="na">size</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">size</span><span class="o">())</span>
+                        <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="n">getPreSignedUrl</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">objectName</span><span class="o">()))</span>
+                        <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="n">objects</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Happened error when get list objects from minio: &#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">objects</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="nf">getPreSignedUrl</span><span class="o">(</span><span class="n">String</span> <span class="n">filename</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">&#34;http://localhost:8080/file/&#34;</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span><span class="n">filename</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create a controller to interacted with user to get list objects of bucket <code>com.piinalpin.minio.http.controller.FileController</code> like following below.</p>
 <div class="highlight"><div class="chroma">
@@ -499,21 +497,21 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@RestController</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/file&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileController</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">MinioService</span> <span class="n">minioService</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@GetMapping</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">getFiles</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ResponseEntity</span><span class="o">.</span><span class="na">ok</span><span class="o">(</span><span class="n">minioService</span><span class="o">.</span><span class="na">getListObjects</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Slf4j</span>
+<span class="nd">@RestController</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/file&#34;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileController</span> <span class="o">{</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">MinioService</span> <span class="n">minioService</span><span class="o">;</span>
+
+    <span class="nd">@GetMapping</span>
+    <span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">getFiles</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">ResponseEntity</span><span class="o">.</span><span class="na">ok</span><span class="o">(</span><span class="n">minioService</span><span class="o">.</span><span class="na">getListObjects</span><span class="o">());</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Let&rsquo;s try to running spring boot application by typing command on your terminal like following below.</p>
 <div class="highlight"><div class="chroma">
@@ -521,8 +519,8 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mvn spring-boot:run 
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn spring-boot:run 
+</code></pre></td></tr></table>
 </div>
 </div><p>And open your postman or thunder client or anything else to get list objects of bucket by accessing <code>http://localhost:8080/file</code>. Then we should get an output.</p>
 <div class="highlight"><div class="chroma">
@@ -541,19 +539,19 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>
-</span></span><span class="line"><span class="cl">  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:8080/file/myfolder/microservices-portable-networkjpg.jpg&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">25816</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;filename&#34;</span><span class="p">:</span> <span class="s2">&#34;myfolder/microservices-portable-networkjpg.jpg&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:8080/file/surrounding.png&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">37600</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;filename&#34;</span><span class="p">:</span> <span class="s2">&#34;surrounding.png&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:8080/file/myfolder/microservices-portable-networkjpg.jpg&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">25816</span><span class="p">,</span>
+    <span class="nt">&#34;filename&#34;</span><span class="p">:</span> <span class="s2">&#34;myfolder/microservices-portable-networkjpg.jpg&#34;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:8080/file/surrounding.png&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">37600</span><span class="p">,</span>
+    <span class="nt">&#34;filename&#34;</span><span class="p">:</span> <span class="s2">&#34;surrounding.png&#34;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Upload File into Minio</strong></p>
 <p>Create method in <code>MinioService</code> to upload file like following below.</p>
@@ -579,25 +577,25 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">FileDto</span> <span class="nf">uploadFile</span><span class="o">(</span><span class="n">FileDto</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">minioClient</span><span class="o">.</span><span class="na">putObject</span><span class="o">(</span><span class="n">PutObjectArgs</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">bucket</span><span class="o">(</span><span class="n">bucketName</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">object</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getOriginalFilename</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getInputStream</span><span class="o">(),</span> <span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getSize</span><span class="o">(),</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Happened error when upload file: &#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">FileDto</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getTitle</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getDescription</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">size</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getSize</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="n">getPreSignedUrl</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getOriginalFilename</span><span class="o">()))</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">filename</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getOriginalFilename</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">FileDto</span> <span class="nf">uploadFile</span><span class="o">(</span><span class="n">FileDto</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">minioClient</span><span class="o">.</span><span class="na">putObject</span><span class="o">(</span><span class="n">PutObjectArgs</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">bucket</span><span class="o">(</span><span class="n">bucketName</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">object</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getOriginalFilename</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getInputStream</span><span class="o">(),</span> <span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getSize</span><span class="o">(),</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Happened error when upload file: &#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">FileDto</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getTitle</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getDescription</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">size</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getSize</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="n">getPreSignedUrl</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getOriginalFilename</span><span class="o">()))</span>
+            <span class="o">.</span><span class="na">filename</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">getOriginalFilename</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create another controller to handle upload file like following below.</p>
 <div class="highlight"><div class="chroma">
@@ -608,11 +606,11 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/upload&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">upload</span><span class="o">(</span><span class="nd">@ModelAttribute</span> <span class="n">FileDto</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ResponseEntity</span><span class="o">.</span><span class="na">ok</span><span class="o">().</span><span class="na">body</span><span class="o">(</span><span class="n">minioService</span><span class="o">.</span><span class="na">uploadFile</span><span class="o">(</span><span class="n">request</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/upload&#34;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">upload</span><span class="o">(</span><span class="nd">@ModelAttribute</span> <span class="n">FileDto</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">ResponseEntity</span><span class="o">.</span><span class="na">ok</span><span class="o">().</span><span class="na">body</span><span class="o">(</span><span class="n">minioService</span><span class="o">.</span><span class="na">uploadFile</span><span class="o">(</span><span class="n">request</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Let&rsquo;s try to running spring boot application by typing command on your terminal like following below.</p>
 <div class="highlight"><div class="chroma">
@@ -620,8 +618,8 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mvn spring-boot:run 
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn spring-boot:run 
+</code></pre></td></tr></table>
 </div>
 </div><p>And open your postman or thunder client or anything else to get list objects of bucket by accessing <code>http://localhost:8080/file/upload</code> with method <code>POST</code>. The request should like below.</p>
 <p><img
@@ -644,14 +642,14 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick description&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:8080/file/logo_rrq.jpg&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">87624</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;filename&#34;</span><span class="p">:</span> <span class="s2">&#34;logo_rrq.jpg&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick description&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:8080/file/logo_rrq.jpg&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;size&#34;</span><span class="p">:</span> <span class="mi">87624</span><span class="p">,</span>
+  <span class="nt">&#34;filename&#34;</span><span class="p">:</span> <span class="s2">&#34;logo_rrq.jpg&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Download File from Minio</strong></p>
 <p>Create method in <code>MinioService</code> to get object from minio and transfer it to response <code>application/octet-stream</code> like following below.</p>
@@ -673,21 +671,21 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">InputStream</span> <span class="nf">getObject</span><span class="o">(</span><span class="n">String</span> <span class="n">filename</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">InputStream</span> <span class="n">stream</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">stream</span> <span class="o">=</span> <span class="n">minioClient</span><span class="o">.</span><span class="na">getObject</span><span class="o">(</span><span class="n">GetObjectArgs</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">bucket</span><span class="o">(</span><span class="n">bucketName</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">object</span><span class="o">(</span><span class="n">filename</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Happened error when get list objects from minio: &#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">stream</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">InputStream</span> <span class="nf">getObject</span><span class="o">(</span><span class="n">String</span> <span class="n">filename</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">InputStream</span> <span class="n">stream</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">stream</span> <span class="o">=</span> <span class="n">minioClient</span><span class="o">.</span><span class="na">getObject</span><span class="o">(</span><span class="n">GetObjectArgs</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">bucket</span><span class="o">(</span><span class="n">bucketName</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">object</span><span class="o">(</span><span class="n">filename</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Happened error when get list objects from minio: &#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">stream</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create another controller to download file with dynamic path variables like following below.</p>
 <div class="highlight"><div class="chroma">
@@ -702,15 +700,15 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/**&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">getFile</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">pattern</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">request</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="n">BEST_MATCHING_PATTERN_ATTRIBUTE</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AntPathMatcher</span><span class="o">().</span><span class="na">extractPathWithinPattern</span><span class="o">(</span><span class="n">pattern</span><span class="o">,</span> <span class="n">request</span><span class="o">.</span><span class="na">getServletPath</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ResponseEntity</span><span class="o">.</span><span class="na">ok</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">contentType</span><span class="o">(</span><span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_OCTET_STREAM</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="n">IOUtils</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">(</span><span class="n">minioService</span><span class="o">.</span><span class="na">getObject</span><span class="o">(</span><span class="n">filename</span><span class="o">)));</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/**&#34;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">getFile</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">pattern</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">request</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="n">BEST_MATCHING_PATTERN_ATTRIBUTE</span><span class="o">);</span>
+    <span class="n">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AntPathMatcher</span><span class="o">().</span><span class="na">extractPathWithinPattern</span><span class="o">(</span><span class="n">pattern</span><span class="o">,</span> <span class="n">request</span><span class="o">.</span><span class="na">getServletPath</span><span class="o">());</span>
+    <span class="k">return</span> <span class="n">ResponseEntity</span><span class="o">.</span><span class="na">ok</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">contentType</span><span class="o">(</span><span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_OCTET_STREAM</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="n">IOUtils</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">(</span><span class="n">minioService</span><span class="o">.</span><span class="na">getObject</span><span class="o">(</span><span class="n">filename</span><span class="o">)));</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Let&rsquo;s try to running spring boot application by typing command on your terminal like following below.</p>
 <div class="highlight"><div class="chroma">
@@ -718,8 +716,8 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mvn spring-boot:run 
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn spring-boot:run 
+</code></pre></td></tr></table>
 </div>
 </div><p>And open your browser to get list objects of bucket by accessing <code>http://localhost:8080/file/{filename}</code>. Change <code>{filename}</code> to your filename or object name on minio bucket. For example I will use inside <code>myfolder</code>, so the url shoul be like this <code>http://localhost:8080/file/myfolder/microservices-portable-networkjpg.jpg</code>. Then the browser should be auto download the file.</p>
 <h3 id="clone-or-download">Clone or Download</h3>
@@ -729,8 +727,8 @@ There is also a public instance to test on <code>https://play.min.io/minio/</cod
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://github.com/piinalpin/minio-example.git
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">https://github.com/piinalpin/minio-example.git
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="reference">Reference</h3>
 <ul>

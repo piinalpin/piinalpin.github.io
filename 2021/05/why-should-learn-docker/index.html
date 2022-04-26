@@ -16,9 +16,7 @@
 <meta name="twitter:title" content="Why Should Learn Docker"/>
 <meta name="twitter:description" content="Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development - desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle."/>
 <meta name="application-name" content="PiinAlpin&#39;s Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2021/05/why-should-learn-docker/" /><link rel="prev" href="https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/" /><link rel="next" href="https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2021/05/why-should-learn-docker/" /><link rel="prev" href="https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/" /><link rel="next" href="https://blog.piinalpin.com/2021/05/why-should-learn-kubernetes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -143,8 +141,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --name hello_world -d piinalpin/sample-node-web-app
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run --name hello_world -d piinalpin/sample-node-web-app
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -160,8 +158,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it hello_world /bin/sh
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it hello_world /bin/sh
+</code></pre></td></tr></table>
 </div>
 </div><p>Run a simple command to get list folder in work directory by type the following command.</p>
 <div class="highlight"><div class="chroma">
@@ -169,8 +167,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -l <span class="o">&amp;&amp;</span> cat server.js
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls -l <span class="o">&amp;&amp;</span> cat server.js
+</code></pre></td></tr></table>
 </div>
 </div><p>We will get an output.</p>
 <div class="highlight"><div class="chroma">
@@ -199,29 +197,29 @@
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">total <span class="m">40</span>
-</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> root     root           <span class="m">392</span> May <span class="m">19</span> 08:30 Dockerfile
-</span></span><span class="line"><span class="cl">drwxr-xr-x   <span class="m">62</span> root     root          <span class="m">4096</span> May <span class="m">19</span> 08:26 node_modules
-</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> root     root            <span class="m">81</span> May <span class="m">19</span> 08:00 package-lock.json
-</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> root     root           <span class="m">300</span> May <span class="m">19</span> 08:08 package.json
-</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> root     root           <span class="m">343</span> May <span class="m">19</span> 08:16 server.js
-</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> root     root         <span class="m">17266</span> May <span class="m">19</span> 08:08 yarn.lock
-</span></span><span class="line"><span class="cl">var <span class="nv">express</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;express&#39;</span><span class="o">)</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">var <span class="nv">app</span> <span class="o">=</span> express<span class="o">()</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">const <span class="nv">PORT</span> <span class="o">=</span> 8080<span class="p">;</span>
-</span></span><span class="line"><span class="cl">const <span class="nv">HOST</span> <span class="o">=</span> <span class="s1">&#39;0.0.0.0&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">app.get<span class="o">(</span><span class="s1">&#39;/&#39;</span>, <span class="o">(</span>req, res, next<span class="o">)</span> <span class="o">=</span>&gt; <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    const <span class="nv">data</span> <span class="o">=</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;status&#39;</span>: <span class="s1">&#39;success&#39;</span>,
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;message&#39;</span>: <span class="s1">&#39;Hello World! This api from Node.js&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    res.json<span class="o">(</span>data<span class="o">)</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="o">})</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">app.listen<span class="o">(</span>PORT, HOST<span class="o">)</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">console.log<span class="o">(</span><span class="sb">`</span>Running on http://<span class="si">${</span><span class="nv">HOST</span><span class="si">}</span>:<span class="si">${</span><span class="nv">PORT</span><span class="si">}</span><span class="sb">`</span><span class="o">)</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">total <span class="m">40</span>
+-rw-r--r--    <span class="m">1</span> root     root           <span class="m">392</span> May <span class="m">19</span> 08:30 Dockerfile
+drwxr-xr-x   <span class="m">62</span> root     root          <span class="m">4096</span> May <span class="m">19</span> 08:26 node_modules
+-rw-r--r--    <span class="m">1</span> root     root            <span class="m">81</span> May <span class="m">19</span> 08:00 package-lock.json
+-rw-r--r--    <span class="m">1</span> root     root           <span class="m">300</span> May <span class="m">19</span> 08:08 package.json
+-rw-r--r--    <span class="m">1</span> root     root           <span class="m">343</span> May <span class="m">19</span> 08:16 server.js
+-rw-r--r--    <span class="m">1</span> root     root         <span class="m">17266</span> May <span class="m">19</span> 08:08 yarn.lock
+var <span class="nv">express</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;express&#39;</span><span class="o">)</span><span class="p">;</span>
+var <span class="nv">app</span> <span class="o">=</span> express<span class="o">()</span><span class="p">;</span>
+const <span class="nv">PORT</span> <span class="o">=</span> 8080<span class="p">;</span>
+const <span class="nv">HOST</span> <span class="o">=</span> <span class="s1">&#39;0.0.0.0&#39;</span><span class="p">;</span>
+
+app.get<span class="o">(</span><span class="s1">&#39;/&#39;</span>, <span class="o">(</span>req, res, next<span class="o">)</span> <span class="o">=</span>&gt; <span class="o">{</span>
+    const <span class="nv">data</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="s1">&#39;status&#39;</span>: <span class="s1">&#39;success&#39;</span>,
+        <span class="s1">&#39;message&#39;</span>: <span class="s1">&#39;Hello World! This api from Node.js&#39;</span>
+    <span class="o">}</span><span class="p">;</span>
+    res.json<span class="o">(</span>data<span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+
+app.listen<span class="o">(</span>PORT, HOST<span class="o">)</span><span class="p">;</span>
+console.log<span class="o">(</span><span class="sb">`</span>Running on http://<span class="si">${</span><span class="nv">HOST</span><span class="si">}</span>:<span class="si">${</span><span class="nv">PORT</span><span class="si">}</span><span class="sb">`</span><span class="o">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -238,8 +236,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /etc/os-release
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat /etc/os-release
+</code></pre></td></tr></table>
 </div>
 </div><p>We will get an output</p>
 <div class="highlight"><div class="chroma">
@@ -252,13 +250,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">NAME</span><span class="o">=</span><span class="s2">&#34;Alpine Linux&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">ID</span><span class="o">=</span>alpine
-</span></span><span class="line"><span class="cl"><span class="nv">VERSION_ID</span><span class="o">=</span>3.11.11
-</span></span><span class="line"><span class="cl"><span class="nv">PRETTY_NAME</span><span class="o">=</span><span class="s2">&#34;Alpine Linux v3.11&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">HOME_URL</span><span class="o">=</span><span class="s2">&#34;https://alpinelinux.org/&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">BUG_REPORT_URL</span><span class="o">=</span><span class="s2">&#34;https://bugs.alpinelinux.org/&#34;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">NAME</span><span class="o">=</span><span class="s2">&#34;Alpine Linux&#34;</span>
+<span class="nv">ID</span><span class="o">=</span>alpine
+<span class="nv">VERSION_ID</span><span class="o">=</span>3.11.11
+<span class="nv">PRETTY_NAME</span><span class="o">=</span><span class="s2">&#34;Alpine Linux v3.11&#34;</span>
+<span class="nv">HOME_URL</span><span class="o">=</span><span class="s2">&#34;https://alpinelinux.org/&#34;</span>
+<span class="nv">BUG_REPORT_URL</span><span class="o">=</span><span class="s2">&#34;https://bugs.alpinelinux.org/&#34;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>This image use <code>Linux Alpine</code> which the operating system is very light. And then let&rsquo;s testing the server API by type the following command</p>
 <div class="highlight"><div class="chroma">
@@ -266,8 +264,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl http://localhost:8080
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl http://localhost:8080
+</code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
@@ -275,8 +273,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl: not found
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl: not found
+</code></pre></td></tr></table>
 </div>
 </div><p>Thats mean, on <code>Linux Alpine</code> distribution didn&rsquo;t have <code>curl</code> command. We should install it by type the following command.</p>
 <div class="highlight"><div class="chroma">
@@ -286,10 +284,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apk update
-</span></span><span class="line"><span class="cl">apk search curl
-</span></span><span class="line"><span class="cl">apk add curl
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">apk update
+apk search curl
+apk add curl
+</code></pre></td></tr></table>
 </div>
 </div><p>Then, test again the API server by type a command <code>curl http://localhost:8080</code>. And we should get an output.</p>
 <div class="highlight"><div class="chroma">
@@ -297,8 +295,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Expose Container PORT to Host PORT</strong></p>
 <p>If we want to access the container from host, we should expose the container port to host port by type a command <code>docker run -p &lt;HOST_PORT&gt;:&lt;CONTAINER_PORT&gt; --name &lt;CONTAINER_NAME&gt; -d &lt;IMAGE&gt;</code></p>
@@ -307,8 +305,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -p 8001:8080 --name hello_world2 -d piinalpin/sample-node-web-app
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run -p 8001:8080 --name hello_world2 -d piinalpin/sample-node-web-app
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -324,8 +322,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker ps
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker ps
+</code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
@@ -335,10 +333,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">CONTAINER ID   IMAGE                           COMMAND                  CREATED              STATUS              PORTS                                       NAMES
-</span></span><span class="line"><span class="cl">ec819086e2a5   piinalpin/sample-node-web-app   <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   <span class="m">27</span> minutes ago       Up <span class="m">27</span> minutes       0.0.0.0:8001-&gt;8080/tcp, :::8001-&gt;8080/tcp  hello_world2
-</span></span><span class="line"><span class="cl">d81a2784edaf   piinalpin/sample-node-web-app   <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   About an hour ago    Up About an hour    8080/tcp                                    hello_world
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">CONTAINER ID   IMAGE                           COMMAND                  CREATED              STATUS              PORTS                                       NAMES
+ec819086e2a5   piinalpin/sample-node-web-app   <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   <span class="m">27</span> minutes ago       Up <span class="m">27</span> minutes       0.0.0.0:8001-&gt;8080/tcp, :::8001-&gt;8080/tcp  hello_world2
+d81a2784edaf   piinalpin/sample-node-web-app   <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   About an hour ago    Up About an hour    8080/tcp                                    hello_world
+</code></pre></td></tr></table>
 </div>
 </div><p>Let&rsquo;s test the server API from the host by type following command</p>
 <div class="highlight"><div class="chroma">
@@ -346,8 +344,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl http://localhost:8001
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl http://localhost:8001
+</code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
@@ -355,8 +353,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>%
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>%
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Build Image</strong></p>
 <p>We will build an image which running a <code>Node.js</code> server. If you don&rsquo;t have a <code>Node.js</code> install from <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreffer">Node.js</a>.</p>
@@ -381,22 +379,22 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="mi">8080</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">HOST</span> <span class="o">=</span> <span class="s1">&#39;0.0.0.0&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;status&#39;</span><span class="o">:</span> <span class="s1">&#39;success&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;message&#39;</span><span class="o">:</span> <span class="s1">&#39;Hello World! This api from Node.js&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span> <span class="nx">HOST</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Running on http://</span><span class="si">${</span><span class="nx">HOST</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="mi">8080</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">HOST</span> <span class="o">=</span> <span class="s1">&#39;0.0.0.0&#39;</span><span class="p">;</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;status&#39;</span><span class="o">:</span> <span class="s1">&#39;success&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;message&#39;</span><span class="o">:</span> <span class="s1">&#39;Hello World! This api from Node.js&#39;</span>
+    <span class="p">};</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span> <span class="nx">HOST</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Running on http://</span><span class="si">${</span><span class="nx">HOST</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Try run the server</p>
 <div class="highlight"><div class="chroma">
@@ -404,8 +402,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">node server.js
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">node server.js
+</code></pre></td></tr></table>
 </div>
 </div><p>On the new terminal session type command <code>curl http://localhost:8080</code>. And we should get an output.</p>
 <div class="highlight"><div class="chroma">
@@ -413,8 +411,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>%
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>%
+</code></pre></td></tr></table>
 </div>
 </div><p>And let&rsquo;s create an image using <code>Dockerfile</code> like following script</p>
 <div class="highlight"><div class="chroma">
@@ -441,27 +439,27 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> node:16-alpine3.11</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Create app directory</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /usr/src/app</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Install app dependencies</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># A wildcard is used to ensure both package.json AND package-lock.json are copied</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># where available (npm@5+)</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> package*.json ./<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> npm install<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># If you are building your code for production</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># RUN npm ci --only=production</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Bundle app source</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> . .<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 8080</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;node&#34;</span><span class="p">,</span> <span class="s2">&#34;server.js&#34;</span><span class="p">]</span><span class="err">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="k">FROM</span><span class="s"> node:16-alpine3.11</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Create app directory</span><span class="err">
+</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /usr/src/app</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Install app dependencies</span><span class="err">
+</span><span class="err"></span><span class="c"># A wildcard is used to ensure both package.json AND package-lock.json are copied</span><span class="err">
+</span><span class="err"></span><span class="c"># where available (npm@5+)</span><span class="err">
+</span><span class="err"></span><span class="k">COPY</span> package*.json ./<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> npm install<span class="err">
+</span><span class="err"></span><span class="c"># If you are building your code for production</span><span class="err">
+</span><span class="err"></span><span class="c"># RUN npm ci --only=production</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Bundle app source</span><span class="err">
+</span><span class="err"></span><span class="k">COPY</span> . .<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 8080</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;node&#34;</span><span class="p">,</span> <span class="s2">&#34;server.js&#34;</span><span class="p">]</span><span class="err">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Dockerfile will pull <code>node:16-alpine3.11</code> images</li>
@@ -478,8 +476,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build . -t hello-world-image
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker build . -t hello-world-image
+</code></pre></td></tr></table>
 </div>
 </div><p>Then makesure the image success created</p>
 <div class="highlight"><div class="chroma">
@@ -487,8 +485,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker images
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker images
+</code></pre></td></tr></table>
 </div>
 </div><p>We should get an output</p>
 <div class="highlight"><div class="chroma">
@@ -497,9 +495,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">REPOSITORY                           TAG                                                     IMAGE ID       CREATED          SIZE
-</span></span><span class="line"><span class="cl">hello-world-image                    latest                                                  dd1c9d75c9d6   <span class="m">14</span> seconds ago   118MB
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">REPOSITORY                           TAG                                                     IMAGE ID       CREATED          SIZE
+hello-world-image                    latest                                                  dd1c9d75c9d6   <span class="m">14</span> seconds ago   118MB
+</code></pre></td></tr></table>
 </div>
 </div><p>And then try to run container from <code>hello-world-image</code> and also expose port to host port</p>
 <div class="highlight"><div class="chroma">
@@ -508,9 +506,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -p 8002:8080 --name hello_world3 -d hello-world-image
-</span></span><span class="line"><span class="cl">docker ps
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run -p 8002:8080 --name hello_world3 -d hello-world-image
+docker ps
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -529,11 +527,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">CONTAINER ID   IMAGE                           COMMAND                  CREATED              STATUS              PORTS                                       NAMES
-</span></span><span class="line"><span class="cl">d92c8b3cf293   hello-world-image               <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   About a minute ago   Up About a minute   0.0.0.0:8002-&gt;8080/tcp, :::8002-&gt;8080/tcp   hello_world3
-</span></span><span class="line"><span class="cl">ec819086e2a5   piinalpin/sample-node-web-app   <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   <span class="m">27</span> minutes ago       Up <span class="m">27</span> minutes       0.0.0.0:8001-&gt;8080/tcp, :::8001-&gt;8080/tcp   hello_world2
-</span></span><span class="line"><span class="cl">d81a2784edaf   piinalpin/sample-node-web-app   <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   About an hour ago    Up About an hour    8080/tcp                                    hello_world
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">CONTAINER ID   IMAGE                           COMMAND                  CREATED              STATUS              PORTS                                       NAMES
+d92c8b3cf293   hello-world-image               <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   About a minute ago   Up About a minute   0.0.0.0:8002-&gt;8080/tcp, :::8002-&gt;8080/tcp   hello_world3
+ec819086e2a5   piinalpin/sample-node-web-app   <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   <span class="m">27</span> minutes ago       Up <span class="m">27</span> minutes       0.0.0.0:8001-&gt;8080/tcp, :::8001-&gt;8080/tcp   hello_world2
+d81a2784edaf   piinalpin/sample-node-web-app   <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   About an hour ago    Up About an hour    8080/tcp                                    hello_world
+</code></pre></td></tr></table>
 </div>
 </div><p>Let&rsquo;s try the server app by type following command <code>curl http://localhost:8002</code> and we should get an output</p>
 <div class="highlight"><div class="chroma">
@@ -541,8 +539,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>%
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span><span class="s2">&#34;status&#34;</span>:<span class="s2">&#34;success&#34;</span>,<span class="s2">&#34;message&#34;</span>:<span class="s2">&#34;Hello World! This api from Node.js&#34;</span><span class="o">}</span>%
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Stop, Start, Delete Container and Delete Images</strong></p>
 <p>If you want to start, stop, delete container and delete image, type the following command</p>
@@ -554,11 +552,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker stop &lt;CONTAINER_NAME&gt;
-</span></span><span class="line"><span class="cl">docker start &lt;CONTAINER_NAME&gt;
-</span></span><span class="line"><span class="cl">docker rm &lt;CONTAINER_NAME&gt;
-</span></span><span class="line"><span class="cl">docker rmi &lt;IMAGE&gt;
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker stop &lt;CONTAINER_NAME&gt;
+docker start &lt;CONTAINER_NAME&gt;
+docker rm &lt;CONTAINER_NAME&gt;
+docker rmi &lt;IMAGE&gt;
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="thankyou">Thankyou</h3>
 <p><a href="https://docs.docker.com/get-started/overview/" target="_blank" rel="noopener noreffer">Docs Docker</a> - Docker Overview</p></div><div class="post-footer" id="post-footer">

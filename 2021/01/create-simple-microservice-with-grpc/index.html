@@ -16,9 +16,7 @@
 <meta name="twitter:title" content="Create Simple Microservice With gRPC"/>
 <meta name="twitter:description" content="Build a simple microservices gRPC server and client using Spring Boot"/>
 <meta name="application-name" content="PiinAlpin&#39;s Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/" /><link rel="prev" href="https://blog.piinalpin.com/2021/01/consume-graphql-react/" /><link rel="next" href="https://blog.piinalpin.com/2021/02/setup-my-own-mac/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/" /><link rel="prev" href="https://blog.piinalpin.com/2021/01/consume-graphql-react/" /><link rel="next" href="https://blog.piinalpin.com/2021/02/setup-my-own-mac/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -183,35 +181,35 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!-- For the gRPC server --&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>net.devh<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>grpc-server-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>2.5.1.RELEASE<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;exclusions&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;exclusion&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>io.grpc<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>grpc-netty-shaded<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/exclusion&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/exclusions&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- For the gRPC client --&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>net.devh<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>grpc-client-spring-boot-autoconfigure<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>2.5.1.RELEASE<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>1.18.16<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- For the gRPC server --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>net.devh<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>grpc-server-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>2.5.1.RELEASE<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;exclusions&gt;</span>
+		<span class="nt">&lt;exclusion&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>io.grpc<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>grpc-netty-shaded<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;/exclusion&gt;</span>
+	<span class="nt">&lt;/exclusions&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+
+<span class="c">&lt;!-- For the gRPC client --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>net.devh<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>grpc-client-spring-boot-autoconfigure<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>2.5.1.RELEASE<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+
+<span class="c">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>1.18.16<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Add below extension and plugins into build section</p>
 <div class="highlight"><div class="chroma">
@@ -254,43 +252,43 @@
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;extensions&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;extension&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;groupId&gt;</span>kr.motd.maven<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;artifactId&gt;</span>os-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;version&gt;</span>1.6.1<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/extension&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/extensions&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;plugins&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;plugin&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/plugin&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;plugin&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;groupId&gt;</span>org.xolstice.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;artifactId&gt;</span>protobuf-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;version&gt;</span>0.6.1<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;configuration&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;protocArtifact&gt;</span>
-</span></span><span class="line"><span class="cl">				com.google.protobuf:protoc:3.3.0:exe:${os.detected.classifier}
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;/protocArtifact&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;pluginId&gt;</span>grpc-java<span class="nt">&lt;/pluginId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;pluginArtifact&gt;</span>
-</span></span><span class="line"><span class="cl">				io.grpc:protoc-gen-grpc-java:1.4.0:exe:${os.detected.classifier}
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;/pluginArtifact&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;protoSourceRoot&gt;</span>src/main/proto<span class="nt">&lt;/protoSourceRoot&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/configuration&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;executions&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;execution&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;goals&gt;</span>
-</span></span><span class="line"><span class="cl">					<span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
-</span></span><span class="line"><span class="cl">					<span class="nt">&lt;goal&gt;</span>compile-custom<span class="nt">&lt;/goal&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;/goals&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;/execution&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/executions&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/plugin&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/plugins&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;extensions&gt;</span>
+	<span class="nt">&lt;extension&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>kr.motd.maven<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>os-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;version&gt;</span>1.6.1<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;/extension&gt;</span>
+<span class="nt">&lt;/extensions&gt;</span>
+<span class="nt">&lt;plugins&gt;</span>
+	<span class="nt">&lt;plugin&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;/plugin&gt;</span>
+	<span class="nt">&lt;plugin&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>org.xolstice.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>protobuf-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;version&gt;</span>0.6.1<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;configuration&gt;</span>
+			<span class="nt">&lt;protocArtifact&gt;</span>
+				com.google.protobuf:protoc:3.3.0:exe:${os.detected.classifier}
+			<span class="nt">&lt;/protocArtifact&gt;</span>
+			<span class="nt">&lt;pluginId&gt;</span>grpc-java<span class="nt">&lt;/pluginId&gt;</span>
+			<span class="nt">&lt;pluginArtifact&gt;</span>
+				io.grpc:protoc-gen-grpc-java:1.4.0:exe:${os.detected.classifier}
+			<span class="nt">&lt;/pluginArtifact&gt;</span>
+			<span class="nt">&lt;protoSourceRoot&gt;</span>src/main/proto<span class="nt">&lt;/protoSourceRoot&gt;</span>
+		<span class="nt">&lt;/configuration&gt;</span>
+		<span class="nt">&lt;executions&gt;</span>
+			<span class="nt">&lt;execution&gt;</span>
+				<span class="nt">&lt;goals&gt;</span>
+					<span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
+					<span class="nt">&lt;goal&gt;</span>compile-custom<span class="nt">&lt;/goal&gt;</span>
+				<span class="nt">&lt;/goals&gt;</span>
+			<span class="nt">&lt;/execution&gt;</span>
+		<span class="nt">&lt;/executions&gt;</span>
+	<span class="nt">&lt;/plugin&gt;</span>
+<span class="nt">&lt;/plugins&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Add configuration server port and gRPC port number. Create <code>project/application.yml</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -305,15 +303,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">server</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">port</span><span class="o">:</span> <span class="mi">8080</span>
-</span></span><span class="line"><span class="cl"><span class="nx">grpc</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">server</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">port</span><span class="o">:</span> <span class="mi">9090</span>
-</span></span><span class="line"><span class="cl"><span class="nx">grpcServerTwo</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">host</span><span class="o">:</span> <span class="nx">localhost</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">port</span><span class="o">:</span> <span class="mi">9091</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">server</span><span class="o">:</span>
+  <span class="nx">port</span><span class="o">:</span> <span class="mi">8080</span>
+<span class="nx">grpc</span><span class="o">:</span>
+  <span class="nx">server</span><span class="o">:</span>
+    <span class="nx">port</span><span class="o">:</span> <span class="mi">9090</span>
+<span class="nx">grpcServerTwo</span><span class="o">:</span>
+  <span class="nx">host</span><span class="o">:</span> <span class="nx">localhost</span>
+  <span class="nx">port</span><span class="o">:</span> <span class="mi">9091</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>The line of <code>grpcServerTwo</code> used to communication channel from <code>gRPC Server-One</code> into <code>gRPC Server-Two</code>.</p>
 <p>Then create a protocol buffers on gRPC Server-One <code>src/main/proto/HelloServiceServerOne.proto</code> file like below.</p>
@@ -337,23 +335,23 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">serverone</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">HelloRequest</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">firstName</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">lastName</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">HelloResponse</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">greeting</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">service</span> <span class="nx">HelloServiceServerOne</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">rpc</span> <span class="nf">hello</span><span class="p">(</span><span class="nx">HelloRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">HelloResponse</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
+<span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">serverone</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
+
+<span class="nx">message</span> <span class="nx">HelloRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">firstName</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">lastName</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">message</span> <span class="nx">HelloResponse</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">greeting</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">service</span> <span class="nx">HelloServiceServerOne</span> <span class="p">{</span>
+    <span class="nx">rpc</span> <span class="nf">hello</span><span class="p">(</span><span class="nx">HelloRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">HelloResponse</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Once the proto file is created, we should package the project. It will generated the classes inside the target folder.</p>
 <div class="highlight"><div class="chroma">
@@ -361,8 +359,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create an implementation class <code>com.example.grpc.serverone.server.HelloServiceServerOneImpl</code> for the proto service.</p>
 <div class="highlight"><div class="chroma">
@@ -390,28 +388,28 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@GrpcService</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloServiceServerOneImpl</span> <span class="kd">extends</span> <span class="n">HelloServiceServerOneGrpc</span><span class="o">.</span><span class="na">HelloServiceServerOneImplBase</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">hello</span><span class="o">(</span><span class="n">HelloRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">StreamObserver</span><span class="o">&lt;</span><span class="n">HelloResponse</span><span class="o">&gt;</span> <span class="n">responseObserver</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">greeting</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;Hello, &#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFirstName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getLastName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;. This response from server one.&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">toString</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">HelloResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">HelloResponse</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setGreeting</span><span class="o">(</span><span class="n">greeting</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onCompleted</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@GrpcService</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloServiceServerOneImpl</span> <span class="kd">extends</span> <span class="n">HelloServiceServerOneGrpc</span><span class="o">.</span><span class="na">HelloServiceServerOneImplBase</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">hello</span><span class="o">(</span><span class="n">HelloRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">StreamObserver</span><span class="o">&lt;</span><span class="n">HelloResponse</span><span class="o">&gt;</span> <span class="n">responseObserver</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">greeting</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;Hello, &#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFirstName</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getLastName</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;. This response from server one.&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+
+        <span class="n">HelloResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">HelloResponse</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">setGreeting</span><span class="o">(</span><span class="n">greeting</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onCompleted</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Update project main application like below.</p>
 <div class="highlight"><div class="chroma">
@@ -425,14 +423,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerOneApplication</span> <span class="kd">extends</span> <span class="n">SpringBootServletInitializer</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">ServerOneApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">	<span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerOneApplication</span> <span class="kd">extends</span> <span class="n">SpringBootServletInitializer</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">ServerOneApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Try to run by typing <code>mvn spring-boot:run</code> to run the gRPC Server-One.</p>
 <p><strong>gRPC Server Two as a Client</strong></p>
@@ -469,35 +467,35 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!-- For the gRPC server --&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>net.devh<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>grpc-server-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>2.5.1.RELEASE<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;exclusions&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;exclusion&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>io.grpc<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>grpc-netty-shaded<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/exclusion&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/exclusions&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- For the gRPC client --&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>net.devh<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>grpc-client-spring-boot-autoconfigure<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>2.5.1.RELEASE<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>1.18.16<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- For the gRPC server --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>net.devh<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>grpc-server-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>2.5.1.RELEASE<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;exclusions&gt;</span>
+		<span class="nt">&lt;exclusion&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>io.grpc<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>grpc-netty-shaded<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;/exclusion&gt;</span>
+	<span class="nt">&lt;/exclusions&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+
+<span class="c">&lt;!-- For the gRPC client --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>net.devh<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>grpc-client-spring-boot-autoconfigure<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>2.5.1.RELEASE<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+
+<span class="c">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>1.18.16<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Add below extension and plugins into build section</p>
 <div class="highlight"><div class="chroma">
@@ -540,43 +538,43 @@
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;extensions&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;extension&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;groupId&gt;</span>kr.motd.maven<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;artifactId&gt;</span>os-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;version&gt;</span>1.6.1<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/extension&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/extensions&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;plugins&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;plugin&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/plugin&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;plugin&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;groupId&gt;</span>org.xolstice.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;artifactId&gt;</span>protobuf-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;version&gt;</span>0.6.1<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;configuration&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;protocArtifact&gt;</span>
-</span></span><span class="line"><span class="cl">				com.google.protobuf:protoc:3.3.0:exe:${os.detected.classifier}
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;/protocArtifact&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;pluginId&gt;</span>grpc-java<span class="nt">&lt;/pluginId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;pluginArtifact&gt;</span>
-</span></span><span class="line"><span class="cl">				io.grpc:protoc-gen-grpc-java:1.4.0:exe:${os.detected.classifier}
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;/pluginArtifact&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;protoSourceRoot&gt;</span>src/main/proto<span class="nt">&lt;/protoSourceRoot&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/configuration&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;executions&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;execution&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;goals&gt;</span>
-</span></span><span class="line"><span class="cl">					<span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
-</span></span><span class="line"><span class="cl">					<span class="nt">&lt;goal&gt;</span>compile-custom<span class="nt">&lt;/goal&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;/goals&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;/execution&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/executions&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/plugin&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/plugins&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;extensions&gt;</span>
+	<span class="nt">&lt;extension&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>kr.motd.maven<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>os-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;version&gt;</span>1.6.1<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;/extension&gt;</span>
+<span class="nt">&lt;/extensions&gt;</span>
+<span class="nt">&lt;plugins&gt;</span>
+	<span class="nt">&lt;plugin&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;/plugin&gt;</span>
+	<span class="nt">&lt;plugin&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>org.xolstice.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>protobuf-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;version&gt;</span>0.6.1<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;configuration&gt;</span>
+			<span class="nt">&lt;protocArtifact&gt;</span>
+				com.google.protobuf:protoc:3.3.0:exe:${os.detected.classifier}
+			<span class="nt">&lt;/protocArtifact&gt;</span>
+			<span class="nt">&lt;pluginId&gt;</span>grpc-java<span class="nt">&lt;/pluginId&gt;</span>
+			<span class="nt">&lt;pluginArtifact&gt;</span>
+				io.grpc:protoc-gen-grpc-java:1.4.0:exe:${os.detected.classifier}
+			<span class="nt">&lt;/pluginArtifact&gt;</span>
+			<span class="nt">&lt;protoSourceRoot&gt;</span>src/main/proto<span class="nt">&lt;/protoSourceRoot&gt;</span>
+		<span class="nt">&lt;/configuration&gt;</span>
+		<span class="nt">&lt;executions&gt;</span>
+			<span class="nt">&lt;execution&gt;</span>
+				<span class="nt">&lt;goals&gt;</span>
+					<span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
+					<span class="nt">&lt;goal&gt;</span>compile-custom<span class="nt">&lt;/goal&gt;</span>
+				<span class="nt">&lt;/goals&gt;</span>
+			<span class="nt">&lt;/execution&gt;</span>
+		<span class="nt">&lt;/executions&gt;</span>
+	<span class="nt">&lt;/plugin&gt;</span>
+<span class="nt">&lt;/plugins&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Add configuration server port and gRPC port number. Create <code>project/application.yml</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -591,15 +589,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">server</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">port</span><span class="o">:</span> <span class="mi">8081</span>
-</span></span><span class="line"><span class="cl"><span class="nx">grpc</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">server</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">port</span><span class="o">:</span> <span class="mi">9091</span>
-</span></span><span class="line"><span class="cl"><span class="nx">grpcServerOne</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">host</span><span class="o">:</span> <span class="nx">localhost</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">port</span><span class="o">:</span> <span class="mi">9090</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">server</span><span class="o">:</span>
+  <span class="nx">port</span><span class="o">:</span> <span class="mi">8081</span>
+<span class="nx">grpc</span><span class="o">:</span>
+  <span class="nx">server</span><span class="o">:</span>
+    <span class="nx">port</span><span class="o">:</span> <span class="mi">9091</span>
+<span class="nx">grpcServerOne</span><span class="o">:</span>
+  <span class="nx">host</span><span class="o">:</span> <span class="nx">localhost</span>
+  <span class="nx">port</span><span class="o">:</span> <span class="mi">9090</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>The line of <code>grpcServerOne</code> used to communication channel from <code>gRPC Server-Two</code> into <code>gRPC Server-One</code>.</p>
 <p>Then create a protocol buffers on gRPC Server-Two <code>src/main/proto/HelloServiceServerOne.proto</code> file like below.</p>
@@ -624,23 +622,23 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">serverone</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">HelloRequest</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">firstName</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">lastName</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">HelloResponse</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">greeting</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">service</span> <span class="nx">HelloServiceServerOne</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">rpc</span> <span class="nf">hello</span><span class="p">(</span><span class="nx">HelloRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">HelloResponse</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
+<span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">serverone</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
+
+<span class="nx">message</span> <span class="nx">HelloRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">firstName</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">lastName</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">message</span> <span class="nx">HelloResponse</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">greeting</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">service</span> <span class="nx">HelloServiceServerOne</span> <span class="p">{</span>
+    <span class="nx">rpc</span> <span class="nf">hello</span><span class="p">(</span><span class="nx">HelloRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">HelloResponse</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Once the proto file is created, we should package the project. It will generated the classes inside the target folder.</p>
 <div class="highlight"><div class="chroma">
@@ -648,8 +646,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create a service class</p>
 <p><code>com.example.grpc.servertwo.client.GRPCClientService</code></p>
@@ -685,35 +683,35 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Service</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GRPCClientService</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${grpcServerOne.port:9090}&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">grpcServerOnePort</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${grpcServerOne.host:localhost}&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">grpcServerOneHost</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">GRPCClientService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">HelloResponse</span> <span class="nf">getGreetingFromServerOne</span><span class="o">(</span><span class="n">HelloClientRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### Start execute GRPCClientService from server two&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;## grpcServerOneHost::%s and grpcServerPort::%s&#34;</span><span class="o">,</span> <span class="n">grpcServerOneHost</span><span class="o">,</span> <span class="n">grpcServerOnePort</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">        <span class="n">ManagedChannel</span> <span class="n">channel</span> <span class="o">=</span> <span class="n">ManagedChannelBuilder</span><span class="o">.</span><span class="na">forAddress</span><span class="o">(</span><span class="n">grpcServerOneHost</span><span class="o">,</span> <span class="n">grpcServerOnePort</span><span class="o">).</span><span class="na">usePlaintext</span><span class="o">().</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">HelloServiceServerOneGrpc</span><span class="o">.</span><span class="na">HelloServiceServerOneBlockingStub</span> <span class="n">stub</span> <span class="o">=</span> <span class="n">HelloServiceServerOneGrpc</span><span class="o">.</span><span class="na">newBlockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">HelloResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="na">hello</span><span class="o">(</span><span class="n">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setFirstName</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFirstName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setLastName</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getLastName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">channel</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">response</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GRPCClientService</span> <span class="o">{</span>
+
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${grpcServerOne.port:9090}&#34;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">grpcServerOnePort</span><span class="o">;</span>
+
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${grpcServerOne.host:localhost}&#34;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">grpcServerOneHost</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">GRPCClientService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="kd">public</span> <span class="n">HelloResponse</span> <span class="nf">getGreetingFromServerOne</span><span class="o">(</span><span class="n">HelloClientRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### Start execute GRPCClientService from server two&#34;</span><span class="o">);</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;## grpcServerOneHost::%s and grpcServerPort::%s&#34;</span><span class="o">,</span> <span class="n">grpcServerOneHost</span><span class="o">,</span> <span class="n">grpcServerOnePort</span><span class="o">));</span>
+        <span class="n">ManagedChannel</span> <span class="n">channel</span> <span class="o">=</span> <span class="n">ManagedChannelBuilder</span><span class="o">.</span><span class="na">forAddress</span><span class="o">(</span><span class="n">grpcServerOneHost</span><span class="o">,</span> <span class="n">grpcServerOnePort</span><span class="o">).</span><span class="na">usePlaintext</span><span class="o">().</span><span class="na">build</span><span class="o">();</span>
+        <span class="n">HelloServiceServerOneGrpc</span><span class="o">.</span><span class="na">HelloServiceServerOneBlockingStub</span> <span class="n">stub</span> <span class="o">=</span> <span class="n">HelloServiceServerOneGrpc</span><span class="o">.</span><span class="na">newBlockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">);</span>
+
+        <span class="n">HelloResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="na">hello</span><span class="o">(</span><span class="n">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">setFirstName</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFirstName</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">setLastName</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getLastName</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+
+        <span class="n">channel</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
+
+        <span class="k">return</span> <span class="n">response</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Lets make a rest service that we can request from postman to get response from gRPC Server-One.</p>
 <p>Create a request</p>
@@ -730,15 +728,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloClientRequest</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloClientRequest</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create a response</p>
 <p><code>com.example.grpc.servertwo.rest.dto.HelloClientResponse</code></p>
@@ -753,14 +751,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloClientResponse</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">greeting</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<span class="nd">@Builder</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloClientResponse</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">greeting</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>After that, we will create a rest controller</p>
 <p><code>com.example.grpc.servertwo.rest.controller.ServerTwoController</code></p>
@@ -789,28 +787,28 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@RestController</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerTwoController</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">GRPCClientService</span> <span class="n">grpcClientService</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">ServerTwoController</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">ServerTwoController</span><span class="o">(</span><span class="n">GRPCClientService</span> <span class="n">grpcClientService</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">grpcClientService</span> <span class="o">=</span> <span class="n">grpcClientService</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/greeting&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">HelloClientResponse</span> <span class="nf">greeting</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">HelloClientRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">HelloResponse</span> <span class="n">grpcResponse</span> <span class="o">=</span> <span class="n">grpcClientService</span><span class="o">.</span><span class="na">getGreetingFromServerOne</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">HelloClientResponse</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">greeting</span><span class="o">(</span><span class="n">grpcResponse</span><span class="o">.</span><span class="na">getGreeting</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerTwoController</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">GRPCClientService</span> <span class="n">grpcClientService</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">ServerTwoController</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">ServerTwoController</span><span class="o">(</span><span class="n">GRPCClientService</span> <span class="n">grpcClientService</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">grpcClientService</span> <span class="o">=</span> <span class="n">grpcClientService</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/greeting&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">HelloClientResponse</span> <span class="nf">greeting</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">HelloClientRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">HelloResponse</span> <span class="n">grpcResponse</span> <span class="o">=</span> <span class="n">grpcClientService</span><span class="o">.</span><span class="na">getGreetingFromServerOne</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">HelloClientResponse</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">greeting</span><span class="o">(</span><span class="n">grpcResponse</span><span class="o">.</span><span class="na">getGreeting</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Update project main application like below.</p>
 <div class="highlight"><div class="chroma">
@@ -825,15 +823,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerTwoApplication</span> <span class="kd">extends</span> <span class="n">SpringBootServletInitializer</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">ServerTwoApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">	<span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerTwoApplication</span> <span class="kd">extends</span> <span class="n">SpringBootServletInitializer</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">ServerTwoApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Try to run by typing <code>mvn spring-boot:run</code> to run the gRPC Server-Two.</p>
 <p><strong>Lets try hello request from Postman</strong></p>
@@ -847,11 +845,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;firstName&#34;</span><span class="o">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;lastName&#34;</span><span class="o">:</span> <span class="s2">&#34;Johnson&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+    <span class="s2">&#34;firstName&#34;</span><span class="o">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;lastName&#34;</span><span class="o">:</span> <span class="s2">&#34;Johnson&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Response</p>
 <div class="highlight"><div class="chroma">
@@ -861,10 +859,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;greeting&#34;</span><span class="o">:</span> <span class="s2">&#34;Hello, Maverick Johnson. This response from server one.&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+    <span class="s2">&#34;greeting&#34;</span><span class="o">:</span> <span class="s2">&#34;Hello, Maverick Johnson. This response from server one.&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>And the log is</p>
 <div class="highlight"><div class="chroma">
@@ -873,9 +871,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">2021-01-30 18:01:02.702  INFO <span class="m">53068</span> --- <span class="o">[</span>nio-8081-exec-1<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### Start execute GRPCClientService from server two</span>
-</span></span><span class="line"><span class="cl">2021-01-30 18:01:02.702  INFO <span class="m">53068</span> --- <span class="o">[</span>nio-8081-exec-1<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">## grpcServerOneHost::localhost and grpcServerOnePort::9090</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">2021-01-30 18:01:02.702  INFO <span class="m">53068</span> --- <span class="o">[</span>nio-8081-exec-1<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### Start execute GRPCClientService from server two</span>
+2021-01-30 18:01:02.702  INFO <span class="m">53068</span> --- <span class="o">[</span>nio-8081-exec-1<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">## grpcServerOneHost::localhost and grpcServerOnePort::9090</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>gRPC Server Two as a Server</strong></p>
 <p>Create a protocol buffers on gRPC Server-Two <code>src/main/proto/UserServiceServerTwo.proto</code> file like below.</p>
@@ -909,33 +907,33 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">servertwo</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">UserRequest</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">username</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">password</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">fullName</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">User</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">username</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">password</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">fullName</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">status</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">createdAt</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">UserResponse</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">repeated</span> <span class="nx">User</span> <span class="nx">user</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">service</span> <span class="nx">UserServiceServerTwo</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">rpc</span> <span class="nf">createUser</span><span class="p">(</span><span class="nx">UserRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">User</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">rpc</span> <span class="nf">getAll</span><span class="p">(</span><span class="nx">UserRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">UserResponse</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
+<span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">servertwo</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
+
+<span class="nx">message</span> <span class="nx">UserRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">username</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">password</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">fullName</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">message</span> <span class="nx">User</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">username</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">password</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">fullName</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">status</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">createdAt</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">message</span> <span class="nx">UserResponse</span> <span class="p">{</span>
+    <span class="nx">repeated</span> <span class="nx">User</span> <span class="nx">user</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">service</span> <span class="nx">UserServiceServerTwo</span> <span class="p">{</span>
+    <span class="nx">rpc</span> <span class="nf">createUser</span><span class="p">(</span><span class="nx">UserRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">User</span><span class="p">);</span>
+    <span class="nx">rpc</span> <span class="nf">getAll</span><span class="p">(</span><span class="nx">UserRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">UserResponse</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Once the proto file is created, we should package the project. It will generated the classes inside the target folder.</p>
 <div class="highlight"><div class="chroma">
@@ -943,8 +941,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create an implementation class <code>com.example.grpc.servertwo.server.UserServiceServerTwoImpl</code> for the proto service.</p>
 <div class="highlight"><div class="chroma">
@@ -1001,57 +999,57 @@
 </span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@GrpcService</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserServiceServerTwoImpl</span> <span class="kd">extends</span> <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">UserServiceServerTwoImplBase</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">UserServiceServerTwoImpl</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">ALL_USERS</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">User</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">&#34;maverick&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="s">&#34;12824834&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setFullName</span><span class="o">(</span><span class="s">&#34;Maverick Johnson&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setCreatedAt</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">().</span><span class="na">toString</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&#34;active&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">build</span><span class="o">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">User</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">&#34;admin&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="s">&#34;2348324274&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setFullName</span><span class="o">(</span><span class="s">&#34;Administrator&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setCreatedAt</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">().</span><span class="na">toString</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&#34;active&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">build</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">    <span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getAll</span><span class="o">(</span><span class="n">UserRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">StreamObserver</span><span class="o">&lt;</span><span class="n">UserResponse</span><span class="o">&gt;</span> <span class="n">responseObserver</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### START executing UserServiceServerTwoImpl.getAll()&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">UserResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">UserResponse</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">addAllUser</span><span class="o">(</span><span class="n">ALL_USERS</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onCompleted</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### END executing UserServiceServerTwoImpl.getAll()&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">createUser</span><span class="o">(</span><span class="n">UserRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">StreamObserver</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">responseObserver</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### START executing UserServiceServerTwoImpl.createUser()&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getUsername</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getPassword</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setFullName</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFullName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&#34;active&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setCreatedAt</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">().</span><span class="na">toString</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onCompleted</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### END executing UserServiceServerTwoImpl.createUser()&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@GrpcService</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserServiceServerTwoImpl</span> <span class="kd">extends</span> <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">UserServiceServerTwoImplBase</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">UserServiceServerTwoImpl</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">ALL_USERS</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span>
+            <span class="n">User</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">&#34;maverick&#34;</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="s">&#34;12824834&#34;</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setFullName</span><span class="o">(</span><span class="s">&#34;Maverick Johnson&#34;</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setCreatedAt</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">().</span><span class="na">toString</span><span class="o">())</span>
+                    <span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&#34;active&#34;</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">build</span><span class="o">(),</span>
+            <span class="n">User</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">&#34;admin&#34;</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="s">&#34;2348324274&#34;</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setFullName</span><span class="o">(</span><span class="s">&#34;Administrator&#34;</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setCreatedAt</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">().</span><span class="na">toString</span><span class="o">())</span>
+                    <span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&#34;active&#34;</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">build</span><span class="o">()</span>
+    <span class="o">);</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getAll</span><span class="o">(</span><span class="n">UserRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">StreamObserver</span><span class="o">&lt;</span><span class="n">UserResponse</span><span class="o">&gt;</span> <span class="n">responseObserver</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### START executing UserServiceServerTwoImpl.getAll()&#34;</span><span class="o">);</span>
+        <span class="n">UserResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">UserResponse</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">addAllUser</span><span class="o">(</span><span class="n">ALL_USERS</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onCompleted</span><span class="o">();</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### END executing UserServiceServerTwoImpl.getAll()&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">createUser</span><span class="o">(</span><span class="n">UserRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">StreamObserver</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">responseObserver</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### START executing UserServiceServerTwoImpl.createUser()&#34;</span><span class="o">);</span>
+        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getUsername</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getPassword</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">setFullName</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFullName</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&#34;active&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setCreatedAt</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">().</span><span class="na">toString</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+        <span class="n">responseObserver</span><span class="o">.</span><span class="na">onCompleted</span><span class="o">();</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### END executing UserServiceServerTwoImpl.createUser()&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Try to run by typing <code>mvn spring-boot:run</code> to run the gRPC Server-Two.</p>
 <p><strong>gRPC Server One as a Client</strong></p>
@@ -1087,33 +1085,33 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">servertwo</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">UserRequest</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">username</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">password</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">fullName</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">User</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">username</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">password</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">fullName</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">status</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">createdAt</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">UserResponse</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">repeated</span> <span class="nx">User</span> <span class="nx">user</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">service</span> <span class="nx">UserServiceServerTwo</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">rpc</span> <span class="nf">createUser</span><span class="p">(</span><span class="nx">UserRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">User</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">rpc</span> <span class="nf">getAll</span><span class="p">(</span><span class="nx">UserRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">UserResponse</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
+<span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">servertwo</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
+
+<span class="nx">message</span> <span class="nx">UserRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">username</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">password</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">fullName</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">message</span> <span class="nx">User</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">username</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">password</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">fullName</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">status</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">createdAt</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">message</span> <span class="nx">UserResponse</span> <span class="p">{</span>
+    <span class="nx">repeated</span> <span class="nx">User</span> <span class="nx">user</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">service</span> <span class="nx">UserServiceServerTwo</span> <span class="p">{</span>
+    <span class="nx">rpc</span> <span class="nf">createUser</span><span class="p">(</span><span class="nx">UserRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">User</span><span class="p">);</span>
+    <span class="nx">rpc</span> <span class="nf">getAll</span><span class="p">(</span><span class="nx">UserRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">UserResponse</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Once the proto file is created, we should package the project. It will generated the classes inside the target folder.</p>
 <div class="highlight"><div class="chroma">
@@ -1121,8 +1119,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create a service class</p>
 <p><code>com.example.grpc.servertwo.client.GRPCClientService</code></p>
@@ -1184,61 +1182,61 @@
 </span><span class="lnt">54
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Service</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GRPCClientService</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">GRPCClientService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${grpcServerTwo.port:9091}&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">grpcServerTwoPort</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${grpcServerTwo.host:localhost}&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">grpcServerTwoHost</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">User</span> <span class="nf">createUser</span><span class="o">(</span><span class="n">UserClientRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### START execute GRPCClientService from server one&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;## grpcServerOneHost::%s and grpcServerPort::%s&#34;</span><span class="o">,</span> <span class="n">grpcServerTwoHost</span><span class="o">,</span> <span class="n">grpcServerTwoPort</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">        <span class="n">ManagedChannel</span> <span class="n">channel</span> <span class="o">=</span> <span class="n">ManagedChannelBuilder</span><span class="o">.</span><span class="na">forAddress</span><span class="o">(</span><span class="n">grpcServerTwoHost</span><span class="o">,</span> <span class="n">grpcServerTwoPort</span><span class="o">).</span><span class="na">usePlaintext</span><span class="o">().</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">UserServiceServerTwoBlockingStub</span> <span class="n">stub</span> <span class="o">=</span> <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">newBlockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="na">createUser</span><span class="o">(</span><span class="n">UserRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getUsername</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getPassword</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setFullName</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFullName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">channel</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### END execute GRPCClientService from server one&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">UserClientResponse</span><span class="o">&gt;</span> <span class="nf">getAllUser</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### START execute GRPCClientService from server one&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">ManagedChannel</span> <span class="n">channel</span> <span class="o">=</span> <span class="n">ManagedChannelBuilder</span><span class="o">.</span><span class="na">forAddress</span><span class="o">(</span><span class="n">grpcServerTwoHost</span><span class="o">,</span> <span class="n">grpcServerTwoPort</span><span class="o">).</span><span class="na">usePlaintext</span><span class="o">().</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">UserServiceServerTwoBlockingStub</span> <span class="n">stub</span> <span class="o">=</span> <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">newBlockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">UserClientResponse</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">UserResponse</span> <span class="n">grpcResponse</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="na">getAll</span><span class="o">(</span><span class="n">UserRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">build</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">        <span class="n">channel</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">User</span> <span class="n">user</span> <span class="o">:</span> <span class="n">grpcResponse</span><span class="o">.</span><span class="na">getUserList</span><span class="o">())</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">UserClientResponse</span> <span class="n">userResponse</span> <span class="o">=</span> <span class="n">UserClientResponse</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">createdAt</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getCreatedAt</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">fullName</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getFullName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getPassword</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getStatus</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">username</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getUsername</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">            <span class="n">response</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">userResponse</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### END execute GRPCClientService from server one&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">response</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GRPCClientService</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">GRPCClientService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${grpcServerTwo.port:9091}&#34;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">grpcServerTwoPort</span><span class="o">;</span>
+
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${grpcServerTwo.host:localhost}&#34;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">grpcServerTwoHost</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">User</span> <span class="nf">createUser</span><span class="o">(</span><span class="n">UserClientRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### START execute GRPCClientService from server one&#34;</span><span class="o">);</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;## grpcServerOneHost::%s and grpcServerPort::%s&#34;</span><span class="o">,</span> <span class="n">grpcServerTwoHost</span><span class="o">,</span> <span class="n">grpcServerTwoPort</span><span class="o">));</span>
+        <span class="n">ManagedChannel</span> <span class="n">channel</span> <span class="o">=</span> <span class="n">ManagedChannelBuilder</span><span class="o">.</span><span class="na">forAddress</span><span class="o">(</span><span class="n">grpcServerTwoHost</span><span class="o">,</span> <span class="n">grpcServerTwoPort</span><span class="o">).</span><span class="na">usePlaintext</span><span class="o">().</span><span class="na">build</span><span class="o">();</span>
+        <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">UserServiceServerTwoBlockingStub</span> <span class="n">stub</span> <span class="o">=</span> <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">newBlockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">);</span>
+
+        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="na">createUser</span><span class="o">(</span><span class="n">UserRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getUsername</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getPassword</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">setFullName</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getFullName</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+
+        <span class="n">channel</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### END execute GRPCClientService from server one&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">UserClientResponse</span><span class="o">&gt;</span> <span class="nf">getAllUser</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### START execute GRPCClientService from server one&#34;</span><span class="o">);</span>
+        <span class="n">ManagedChannel</span> <span class="n">channel</span> <span class="o">=</span> <span class="n">ManagedChannelBuilder</span><span class="o">.</span><span class="na">forAddress</span><span class="o">(</span><span class="n">grpcServerTwoHost</span><span class="o">,</span> <span class="n">grpcServerTwoPort</span><span class="o">).</span><span class="na">usePlaintext</span><span class="o">().</span><span class="na">build</span><span class="o">();</span>
+        <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">UserServiceServerTwoBlockingStub</span> <span class="n">stub</span> <span class="o">=</span> <span class="n">UserServiceServerTwoGrpc</span><span class="o">.</span><span class="na">newBlockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">);</span>
+
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">UserClientResponse</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+        <span class="n">UserResponse</span> <span class="n">grpcResponse</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="na">getAll</span><span class="o">(</span><span class="n">UserRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">build</span><span class="o">());</span>
+        <span class="n">channel</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="n">User</span> <span class="n">user</span> <span class="o">:</span> <span class="n">grpcResponse</span><span class="o">.</span><span class="na">getUserList</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">UserClientResponse</span> <span class="n">userResponse</span> <span class="o">=</span> <span class="n">UserClientResponse</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">createdAt</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getCreatedAt</span><span class="o">())</span>
+                    <span class="o">.</span><span class="na">fullName</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getFullName</span><span class="o">())</span>
+                    <span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getPassword</span><span class="o">())</span>
+                    <span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getStatus</span><span class="o">())</span>
+                    <span class="o">.</span><span class="na">username</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getUsername</span><span class="o">())</span>
+                    <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+            <span class="n">response</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">userResponse</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### END execute GRPCClientService from server one&#34;</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">response</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Lets make a rest service that we can request from postman to get response from gRPC Server-Two.</p>
 <p>Create a request</p>
@@ -1256,16 +1254,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserClientRequest</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">username</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">password</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">fullName</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserClientRequest</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">username</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">password</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">fullName</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create a response <code>com.example.grpc.serverone.rest.dto.UserClientResponse</code></p>
 <div class="highlight"><div class="chroma">
@@ -1287,22 +1285,22 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserClientResponse</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">username</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">password</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">fullName</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">status</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">createdAt</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<span class="nd">@Builder</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserClientResponse</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">username</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">password</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">fullName</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">status</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">createdAt</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>After that, we will create a rest controller</p>
 <p><code>com.example.grpc.serverone.rest.controller.ServerOneController</code></p>
@@ -1338,35 +1336,35 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@RestController</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerOneController</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">GRPCClientService</span> <span class="n">grpcClientService</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">ServerOneController</span><span class="o">(</span><span class="n">GRPCClientService</span> <span class="n">grpcClientService</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">grpcClientService</span> <span class="o">=</span> <span class="n">grpcClientService</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/createUser&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">UserClientResponse</span> <span class="nf">createUser</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">UserClientRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">grpcClientService</span><span class="o">.</span><span class="na">createUser</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">UserClientResponse</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">username</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getUsername</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getPassword</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">fullName</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getFullName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">createdAt</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getCreatedAt</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getStatus</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/getAllUser&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">UserClientResponse</span><span class="o">&gt;</span> <span class="nf">getAllUser</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">grpcClientService</span><span class="o">.</span><span class="na">getAllUser</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServerOneController</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">GRPCClientService</span> <span class="n">grpcClientService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">ServerOneController</span><span class="o">(</span><span class="n">GRPCClientService</span> <span class="n">grpcClientService</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">grpcClientService</span> <span class="o">=</span> <span class="n">grpcClientService</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/createUser&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">UserClientResponse</span> <span class="nf">createUser</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">UserClientRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">grpcClientService</span><span class="o">.</span><span class="na">createUser</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">UserClientResponse</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">username</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getUsername</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getPassword</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">fullName</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getFullName</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">createdAt</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getCreatedAt</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getStatus</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/getAllUser&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">UserClientResponse</span><span class="o">&gt;</span> <span class="nf">getAllUser</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">grpcClientService</span><span class="o">.</span><span class="na">getAllUser</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Try to run by typing <code>mvn spring-boot:run</code> to run the gRPC Server-One.</p>
 <p><strong>Lets try user request from Postman</strong></p>
@@ -1392,23 +1390,23 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;maverick&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;12824834&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;fullName&#34;</span><span class="o">:</span> <span class="s2">&#34;Maverick Johnson&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;status&#34;</span><span class="o">:</span> <span class="s2">&#34;active&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;createdAt&#34;</span><span class="o">:</span> <span class="s2">&#34;Sat Jan 30 17:42:24 WIB 2021&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;admin&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;2348324274&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;fullName&#34;</span><span class="o">:</span> <span class="s2">&#34;Administrator&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;status&#34;</span><span class="o">:</span> <span class="s2">&#34;active&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;createdAt&#34;</span><span class="o">:</span> <span class="s2">&#34;Sat Jan 30 17:42:24 WIB 2021&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;maverick&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;12824834&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;fullName&#34;</span><span class="o">:</span> <span class="s2">&#34;Maverick Johnson&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;status&#34;</span><span class="o">:</span> <span class="s2">&#34;active&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;createdAt&#34;</span><span class="o">:</span> <span class="s2">&#34;Sat Jan 30 17:42:24 WIB 2021&#34;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;admin&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;2348324274&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;fullName&#34;</span><span class="o">:</span> <span class="s2">&#34;Administrator&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;status&#34;</span><span class="o">:</span> <span class="s2">&#34;active&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;createdAt&#34;</span><span class="o">:</span> <span class="s2">&#34;Sat Jan 30 17:42:24 WIB 2021&#34;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>And the log is</p>
 <div class="highlight"><div class="chroma">
@@ -1418,10 +1416,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">2021-01-30 18:00:31.317  INFO <span class="m">53038</span> --- <span class="o">[</span>nio-8080-exec-2<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### START execute GRPCClientService from server one</span>
-</span></span><span class="line"><span class="cl">2021-01-30 18:00:31.318  INFO <span class="m">53038</span> --- <span class="o">[</span>nio-8080-exec-2<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">## grpcServerTwoHost::localhost and grpcServerTwoPort::9091</span>
-</span></span><span class="line"><span class="cl">2021-01-30 18:00:31.967  INFO <span class="m">53038</span> --- <span class="o">[</span>nio-8080-exec-2<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### END execute GRPCClientService from server one</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">2021-01-30 18:00:31.317  INFO <span class="m">53038</span> --- <span class="o">[</span>nio-8080-exec-2<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### START execute GRPCClientService from server one</span>
+2021-01-30 18:00:31.318  INFO <span class="m">53038</span> --- <span class="o">[</span>nio-8080-exec-2<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">## grpcServerTwoHost::localhost and grpcServerTwoPort::9091</span>
+2021-01-30 18:00:31.967  INFO <span class="m">53038</span> --- <span class="o">[</span>nio-8080-exec-2<span class="o">]</span> c.e.g.s.client.GRPCClientService         : <span class="c1">### END execute GRPCClientService from server one</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><code>URL: http://localhost:8080/createUser (POST)</code></p>
 <p>Request</p>
@@ -1434,12 +1432,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe123&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;fullName&#34;</span><span class="o">:</span> <span class="s2">&#34;John Doe&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+    <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe123&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;fullName&#34;</span><span class="o">:</span> <span class="s2">&#34;John Doe&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Response</p>
 <div class="highlight"><div class="chroma">
@@ -1453,14 +1451,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe123&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;fullName&#34;</span><span class="o">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;status&#34;</span><span class="o">:</span> <span class="s2">&#34;active&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;createdAt&#34;</span><span class="o">:</span> <span class="s2">&#34;Sat Jan 30 18:01:59 WIB 2021&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+    <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="s2">&#34;johndoe123&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;fullName&#34;</span><span class="o">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;status&#34;</span><span class="o">:</span> <span class="s2">&#34;active&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;createdAt&#34;</span><span class="o">:</span> <span class="s2">&#34;Sat Jan 30 18:01:59 WIB 2021&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="grpc-client-with-python">gRPC Client with Python</h3>
 <p>This section is optional, because I curious for another programming language.</p>
@@ -1486,23 +1484,23 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">serverone</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">HelloRequest</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">firstName</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">lastName</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">message</span> <span class="nx">HelloResponse</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="nx">greeting</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">service</span> <span class="nx">HelloServiceServerOne</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">rpc</span> <span class="nf">hello</span><span class="p">(</span><span class="nx">HelloRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">HelloResponse</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span>
+<span class="nx">option</span> <span class="nx">java_multiple_files</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">serverone</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
+
+<span class="nx">message</span> <span class="nx">HelloRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">firstName</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">lastName</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">message</span> <span class="nx">HelloResponse</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="nx">greeting</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">service</span> <span class="nx">HelloServiceServerOne</span> <span class="p">{</span>
+    <span class="nx">rpc</span> <span class="nf">hello</span><span class="p">(</span><span class="nx">HelloRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">HelloResponse</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Generate gRPC classes for Python</p>
 <p>We need some dependencies for gRPC.</p>
@@ -1512,9 +1510,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pip install grpcio grpcio-tools
-</span></span><span class="line"><span class="cl">$ python -m grpc_tools.protoc -I. --python_out<span class="o">=</span>. --grpc_python_out<span class="o">=</span>. HelloServiceServerOne.proto
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pip install grpcio grpcio-tools
+$ python -m grpc_tools.protoc -I. --python_out<span class="o">=</span>. --grpc_python_out<span class="o">=</span>. HelloServiceServerOne.proto
+</code></pre></td></tr></table>
 </div>
 </div><p>The files generated will be as follows:</p>
 <ul>
@@ -1547,28 +1545,28 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">grpc</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">## Import generated classes</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">HelloServiceServerOne_pb2</span><span class="o">,</span> <span class="nn">HelloServiceServerOne_pb2_grpc</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Open a gRPC channel</span>
-</span></span><span class="line"><span class="cl"><span class="n">channel</span> <span class="o">=</span> <span class="n">grpc</span><span class="o">.</span><span class="n">insecure_channel</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="s1">&#39;localhost:9090&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Create a stub for gRPC client</span>
-</span></span><span class="line"><span class="cl"><span class="n">stub</span> <span class="o">=</span> <span class="n">HelloServiceServerOne_pb2_grpc</span><span class="o">.</span><span class="n">HelloServiceServerOneStub</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Create a valid request</span>
-</span></span><span class="line"><span class="cl"><span class="n">request</span> <span class="o">=</span> <span class="n">HelloServiceServerOne_pb2</span><span class="o">.</span><span class="n">HelloRequest</span><span class="p">(</span><span class="n">firstName</span><span class="o">=</span><span class="s2">&#34;Maverick&#34;</span><span class="p">,</span> <span class="n">lastName</span><span class="o">=</span><span class="s2">&#34;John Doe&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Make the call</span>
-</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Output response</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">greeting</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">grpc</span>
+
+<span class="c1">## Import generated classes</span>
+<span class="kn">import</span> <span class="nn">HelloServiceServerOne_pb2</span><span class="o">,</span> <span class="nn">HelloServiceServerOne_pb2_grpc</span>
+
+
+<span class="c1"># Open a gRPC channel</span>
+<span class="n">channel</span> <span class="o">=</span> <span class="n">grpc</span><span class="o">.</span><span class="n">insecure_channel</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="s1">&#39;localhost:9090&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Create a stub for gRPC client</span>
+<span class="n">stub</span> <span class="o">=</span> <span class="n">HelloServiceServerOne_pb2_grpc</span><span class="o">.</span><span class="n">HelloServiceServerOneStub</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+
+<span class="c1"># Create a valid request</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">HelloServiceServerOne_pb2</span><span class="o">.</span><span class="n">HelloRequest</span><span class="p">(</span><span class="n">firstName</span><span class="o">=</span><span class="s2">&#34;Maverick&#34;</span><span class="p">,</span> <span class="n">lastName</span><span class="o">=</span><span class="s2">&#34;John Doe&#34;</span><span class="p">)</span>
+
+<span class="c1"># Make the call</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
+
+<span class="c1"># Output response</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">greeting</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Thats it!</p>
 <p>With the server already listening, we simply run our client.</p>
@@ -1578,9 +1576,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ python client.py
-</span></span><span class="line"><span class="cl">Hello, Maverick John Doe. This response from server one.
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ python client.py
+Hello, Maverick John Doe. This response from server one.
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="clone-or-download">Clone or Download</h3>
 <p>You can clone or download this project</p>
@@ -1589,8 +1587,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://github.com/piinalpin/gRPC-example.git
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">https://github.com/piinalpin/gRPC-example.git
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="thankyou">Thankyou</h3>
 <p><a href="https://medium.com/@sajeerzeji44/grpc-for-spring-boot-microservices-bd9b79569772" target="_blank" rel="noopener noreffer">Medium</a> - GRPC for Spring Boot Microservices</p>

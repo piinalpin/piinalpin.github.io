@@ -16,9 +16,7 @@
 <meta name="twitter:title" content="Automation Test Using Cypress Example"/>
 <meta name="twitter:description" content="This automation test is used as an example of testing applications automatically from https://github.com/piinalpin/FE-flask-rest-api.git making it easier for users to check whether the application is running according to business flow or not."/>
 <meta name="application-name" content="PiinAlpin&#39;s Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2020/02/automation-test-cypress/" /><link rel="prev" href="https://blog.piinalpin.com/2020/02/django-mail-sender/" /><link rel="next" href="https://blog.piinalpin.com/2020/03/laravel-custom-base-project/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2020/02/automation-test-cypress/" /><link rel="prev" href="https://blog.piinalpin.com/2020/02/django-mail-sender/" /><link rel="next" href="https://blog.piinalpin.com/2020/03/laravel-custom-base-project/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -131,9 +129,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /your/project/path
-</span></span><span class="line"><span class="cl">npm install cypress --save-dev
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /your/project/path
+npm install cypress --save-dev
+</code></pre></td></tr></table>
 </div>
 </div><p>or using Yarn :</p>
 <div class="highlight"><div class="chroma">
@@ -142,9 +140,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /your/project/path
-</span></span><span class="line"><span class="cl">yarn add cypress --dev
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /your/project/path
+yarn add cypress --dev
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="step-to-create-test-case">Step to create test case</h3>
 <ol>
@@ -156,8 +154,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npx cypress open
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npx cypress open
+</code></pre></td></tr></table>
 </div>
 </div><p>using yarn</p>
 <div class="highlight"><div class="chroma">
@@ -165,8 +163,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yarn run cypress open
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yarn run cypress open
+</code></pre></td></tr></table>
 </div>
 </div><p>Cypress should be like image below
 <img
@@ -194,17 +192,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;student&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kirito&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;2483483&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">},</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;editStudent&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kirigaya Kazuto&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;8374323&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+	<span class="nt">&#34;student&#34;</span><span class="p">:</span> <span class="p">{</span>
+		<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kirito&#34;</span><span class="p">,</span>
+		<span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;2483483&#34;</span>
+	<span class="p">},</span>
+	<span class="nt">&#34;editStudent&#34;</span><span class="p">:</span> <span class="p">{</span>
+		<span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Kirigaya Kazuto&#34;</span><span class="p">,</span>
+		<span class="nt">&#34;identityNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;8374323&#34;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>Create test case <code>student.spec.js</code> inside <code>/my-project/cypress/integration/myapp</code> extension should be <code>.spec.js</code> because legible automatically on cypress as test case. Lets start with get list student.</li>
@@ -254,48 +252,48 @@
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;Student CRUD Test&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// Define variable of new record and update record
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">let</span> <span class="nx">student</span> <span class="o">=</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">	<span class="kd">let</span> <span class="nx">editStudent</span> <span class="o">=</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// Before each will be run automatically when run a test case
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// Visit website with follow url
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">visit</span><span class="p">(</span><span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="c1">// Read sudent-data.json which is use for add record
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;cypress/integration/fe-flask-rest-api/student-data.json&#39;</span><span class="p">).</span><span class="nx">its</span><span class="p">(</span><span class="s1">&#39;student&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">student</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            	<span class="nx">name</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            	<span class="nx">identityNumber</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">identityNumber</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">})</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="c1">// Read sudent-data.json which is use for update record
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;cypress/integration/fe-flask-rest-api/student-data.json&#39;</span><span class="p">).</span><span class="nx">its</span><span class="p">(</span><span class="s1">&#39;editStudent&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">editStudent</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            	<span class="nx">name</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            	<span class="nx">identityNumber</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">identityNumber</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">})</span>
-</span></span><span class="line"><span class="cl">	<span class="p">})</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// Create function get list student case
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Get List Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// Find class nav-link on htmnl where text contains List Student then click it
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;List Student&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="c1">// Assertion url should be equals
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="c1">// Assertion table of list student has table&gt;thead&gt;tr
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;thead&#39;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have&#39;</span><span class="p">,</span> <span class="s1">&#39;tr&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="p">})</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">})</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;Student CRUD Test&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+	<span class="c1">// Define variable of new record and update record
+</span><span class="c1"></span>	<span class="kd">let</span> <span class="nx">student</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="kd">let</span> <span class="nx">editStudent</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="c1">// Before each will be run automatically when run a test case
+</span><span class="c1"></span>	<span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">// Visit website with follow url
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">visit</span><span class="p">(</span><span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/&#39;</span><span class="p">)</span>
+
+		<span class="c1">// Read sudent-data.json which is use for add record
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;cypress/integration/fe-flask-rest-api/student-data.json&#39;</span><span class="p">).</span><span class="nx">its</span><span class="p">(</span><span class="s1">&#39;student&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">student</span> <span class="o">=</span> <span class="p">{</span>
+            	<span class="nx">name</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+            	<span class="nx">identityNumber</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">identityNumber</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+
+		<span class="c1">// Read sudent-data.json which is use for update record
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;cypress/integration/fe-flask-rest-api/student-data.json&#39;</span><span class="p">).</span><span class="nx">its</span><span class="p">(</span><span class="s1">&#39;editStudent&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">editStudent</span> <span class="o">=</span> <span class="p">{</span>
+            	<span class="nx">name</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+            	<span class="nx">identityNumber</span><span class="o">:</span> <span class="nx">value</span><span class="p">.</span><span class="nx">identityNumber</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+	<span class="p">})</span>
+
+	<span class="c1">// Create function get list student case
+</span><span class="c1"></span>	<span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Get List Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">// Find class nav-link on htmnl where text contains List Student then click it
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;List Student&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+
+		<span class="c1">// Assertion url should be equals
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+
+		<span class="c1">// Assertion table of list student has table&gt;thead&gt;tr
+</span><span class="c1"></span>		<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;thead&#39;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have&#39;</span><span class="p">,</span> <span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+	<span class="p">})</span>
+
+<span class="p">})</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>You can see on Cypress application then click <code>Run all spec</code>.</li>
@@ -317,19 +315,19 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Add New Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Add Student&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa/add&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;name&#34;]&#39;</span><span class="p">).</span><span class="nx">type</span><span class="p">(</span><span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;nim&#34;]&#39;</span><span class="p">).</span><span class="nx">type</span><span class="p">(</span><span class="nx">student</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Submit&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Yes, save it!&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;tbody&gt;tr&#39;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;contain&#39;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">})</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Add New Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Add Student&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa/add&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;name&#34;]&#39;</span><span class="p">).</span><span class="nx">type</span><span class="p">(</span><span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;nim&#34;]&#39;</span><span class="p">).</span><span class="nx">type</span><span class="p">(</span><span class="nx">student</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Submit&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Yes, save it!&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;tbody&gt;tr&#39;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;contain&#39;</span><span class="p">,</span> <span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="6">
 <li>Create update test case, before you run this spec please remove all data from web application. Because cypress run all spec of <code>student.spec.js</code> automatically.</li>
@@ -351,20 +349,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Edit Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;List Student&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button.btn.btn-warning.btn-secondary&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.class&#39;</span><span class="p">,</span> <span class="s1">&#39;fa-pencil&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;name&#34;]&#39;</span><span class="p">).</span><span class="nx">clear</span><span class="p">().</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">).</span><span class="nx">clear</span><span class="p">().</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;nim&#34;]&#39;</span><span class="p">).</span><span class="nx">clear</span><span class="p">().</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">).</span><span class="nx">clear</span><span class="p">().</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">editStudent</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Submit&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Yes, save it!&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;tbody&gt;tr&#39;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;contain&#39;</span><span class="p">,</span> <span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">})</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Edit Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;List Student&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button.btn.btn-warning.btn-secondary&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.class&#39;</span><span class="p">,</span> <span class="s1">&#39;fa-pencil&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;name&#34;]&#39;</span><span class="p">).</span><span class="nx">clear</span><span class="p">().</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">).</span><span class="nx">clear</span><span class="p">().</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;input[id=&#34;nim&#34;]&#39;</span><span class="p">).</span><span class="nx">clear</span><span class="p">().</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">).</span><span class="nx">clear</span><span class="p">().</span><span class="nx">type</span><span class="p">(</span><span class="nx">editStudent</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.value&#39;</span><span class="p">,</span> <span class="nx">editStudent</span><span class="p">.</span><span class="nx">identityNumber</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Submit&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Yes, save it!&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;tbody&gt;tr&#39;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;contain&#39;</span><span class="p">,</span> <span class="nx">editStudent</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="7">
 <li>Create delete test case, like step 6th please remove all data manually.</li>
@@ -383,17 +381,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Delete Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;List Student&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button.btn.btn-danger.btn-secondary&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.class&#39;</span><span class="p">,</span> <span class="s1">&#39;fa-trash&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Yes, save it!&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;thead&#39;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have&#39;</span><span class="p">,</span> <span class="s1">&#39;tr&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">})</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Delete Student&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;.nav-link&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;List Student&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button.btn.btn-danger.btn-secondary&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.class&#39;</span><span class="p">,</span> <span class="s1">&#39;fa-trash&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;Yes, save it!&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">url</span><span class="p">().</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;https://fe-flask-rest-api-maverick.herokuapp.com/#/mahasiswa&#39;</span><span class="p">)</span>
+	<span class="nx">cy</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;table&gt;thead&#39;</span><span class="p">).</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have&#39;</span><span class="p">,</span> <span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="8">
 <li>
@@ -423,11 +421,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/piinalpin/cypress-example.git
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> cypress-example
-</span></span><span class="line"><span class="cl">npm i
-</span></span><span class="line"><span class="cl">npx cypress open
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/piinalpin/cypress-example.git
+<span class="nb">cd</span> cypress-example
+npm i
+npx cypress open
+</code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

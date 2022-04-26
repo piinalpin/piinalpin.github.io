@@ -16,9 +16,7 @@
 <meta name="twitter:title" content="How Messages Broker Work Using RabbitMQ"/>
 <meta name="twitter:description" content="Understanding message broker works using RabbitMQ and Spring Boot with microservice architecture."/>
 <meta name="application-name" content="PiinAlpin&#39;s Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/" /><link rel="prev" href="https://blog.piinalpin.com/2021/02/setup-my-own-mac/" /><link rel="next" href="https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/" /><link rel="prev" href="https://blog.piinalpin.com/2021/02/setup-my-own-mac/" /><link rel="next" href="https://blog.piinalpin.com/2021/04/imessage-on-android-with-air-message-server-and-ngrok/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -225,86 +223,86 @@
 </span><span class="lnt">79
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-</span></span><span class="line"><span class="cl">		 <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;parent&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;version&gt;</span>2.3.4.RELEASE<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;relativePath/&gt;</span> <span class="c">&lt;!-- lookup parent from repository --&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/parent&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>com.example<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>rabbitmq<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;name&gt;</span>rabbitmq<span class="nt">&lt;/name&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;description&gt;</span>Demo project for Spring Boot<span class="nt">&lt;/description&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;properties&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;java.version&gt;</span>11<span class="nt">&lt;/java.version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/properties&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;dependencies&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;exclusions&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;exclusion&gt;</span>
-</span></span><span class="line"><span class="cl">					<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">					<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-tomcat<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;/exclusion&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;/exclusions&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-undertow<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="c">&lt;!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-amqp --&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-amqp<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;version&gt;</span>2.4.1<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>jackson-databind<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/dependencies&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;build&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;plugins&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;plugin&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;configuration&gt;</span>
-</span></span><span class="line"><span class="cl">					<span class="nt">&lt;excludes&gt;</span>
-</span></span><span class="line"><span class="cl">						<span class="nt">&lt;exclude&gt;</span>
-</span></span><span class="line"><span class="cl">							<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">							<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">						<span class="nt">&lt;/exclude&gt;</span>
-</span></span><span class="line"><span class="cl">					<span class="nt">&lt;/excludes&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;/configuration&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;/plugin&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/plugins&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/build&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/project&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+		 <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+	<span class="nt">&lt;parent&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;version&gt;</span>2.3.4.RELEASE<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;relativePath/&gt;</span> <span class="c">&lt;!-- lookup parent from repository --&gt;</span>
+	<span class="nt">&lt;/parent&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>com.example<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>rabbitmq<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;name&gt;</span>rabbitmq<span class="nt">&lt;/name&gt;</span>
+	<span class="nt">&lt;description&gt;</span>Demo project for Spring Boot<span class="nt">&lt;/description&gt;</span>
+	<span class="nt">&lt;properties&gt;</span>
+		<span class="nt">&lt;java.version&gt;</span>11<span class="nt">&lt;/java.version&gt;</span>
+	<span class="nt">&lt;/properties&gt;</span>
+	<span class="nt">&lt;dependencies&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;exclusions&gt;</span>
+				<span class="nt">&lt;exclusion&gt;</span>
+					<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+					<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-tomcat<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;/exclusion&gt;</span>
+			<span class="nt">&lt;/exclusions&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-undertow<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="c">&lt;!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-amqp --&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-amqp<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>2.4.1<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>jackson-databind<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+	<span class="nt">&lt;/dependencies&gt;</span>
+
+	<span class="nt">&lt;build&gt;</span>
+		<span class="nt">&lt;plugins&gt;</span>
+			<span class="nt">&lt;plugin&gt;</span>
+				<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+				<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;configuration&gt;</span>
+					<span class="nt">&lt;excludes&gt;</span>
+						<span class="nt">&lt;exclude&gt;</span>
+							<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+							<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+						<span class="nt">&lt;/exclude&gt;</span>
+					<span class="nt">&lt;/excludes&gt;</span>
+				<span class="nt">&lt;/configuration&gt;</span>
+			<span class="nt">&lt;/plugin&gt;</span>
+		<span class="nt">&lt;/plugins&gt;</span>
+	<span class="nt">&lt;/build&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>And here is <code>pom.xml</code> from <code>rabbitmq-listener</code> project.</p>
 <div class="highlight"><div class="chroma">
@@ -378,74 +376,74 @@
 </span><span class="lnt">67
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;parent&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;version&gt;</span>2.4.4<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;relativePath/&gt;</span> <span class="c">&lt;!-- lookup parent from repository --&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/parent&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>com.example.<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>rabbitmq-listener<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;name&gt;</span>rabbitmq-listener<span class="nt">&lt;/name&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;description&gt;</span>Demo project for Spring Boot<span class="nt">&lt;/description&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;properties&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;java.version&gt;</span>11<span class="nt">&lt;/java.version&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/properties&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;dependencies&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-amqp<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.amqp<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-rabbit-test<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>jackson-databind<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/dependencies&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;build&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;plugins&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;plugin&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;configuration&gt;</span>
-</span></span><span class="line"><span class="cl">					<span class="nt">&lt;excludes&gt;</span>
-</span></span><span class="line"><span class="cl">						<span class="nt">&lt;exclude&gt;</span>
-</span></span><span class="line"><span class="cl">							<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">							<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">						<span class="nt">&lt;/exclude&gt;</span>
-</span></span><span class="line"><span class="cl">					<span class="nt">&lt;/excludes&gt;</span>
-</span></span><span class="line"><span class="cl">				<span class="nt">&lt;/configuration&gt;</span>
-</span></span><span class="line"><span class="cl">			<span class="nt">&lt;/plugin&gt;</span>
-</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/plugins&gt;</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/build&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/project&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+	<span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+	<span class="nt">&lt;parent&gt;</span>
+		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+		<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;version&gt;</span>2.4.4<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;relativePath/&gt;</span> <span class="c">&lt;!-- lookup parent from repository --&gt;</span>
+	<span class="nt">&lt;/parent&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>com.example.<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>rabbitmq-listener<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;name&gt;</span>rabbitmq-listener<span class="nt">&lt;/name&gt;</span>
+	<span class="nt">&lt;description&gt;</span>Demo project for Spring Boot<span class="nt">&lt;/description&gt;</span>
+	<span class="nt">&lt;properties&gt;</span>
+		<span class="nt">&lt;java.version&gt;</span>11<span class="nt">&lt;/java.version&gt;</span>
+	<span class="nt">&lt;/properties&gt;</span>
+	<span class="nt">&lt;dependencies&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-amqp<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.springframework.amqp<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>spring-rabbit-test<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>jackson-databind<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+	<span class="nt">&lt;/dependencies&gt;</span>
+
+	<span class="nt">&lt;build&gt;</span>
+		<span class="nt">&lt;plugins&gt;</span>
+			<span class="nt">&lt;plugin&gt;</span>
+				<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+				<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;configuration&gt;</span>
+					<span class="nt">&lt;excludes&gt;</span>
+						<span class="nt">&lt;exclude&gt;</span>
+							<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+							<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+						<span class="nt">&lt;/exclude&gt;</span>
+					<span class="nt">&lt;/excludes&gt;</span>
+				<span class="nt">&lt;/configuration&gt;</span>
+			<span class="nt">&lt;/plugin&gt;</span>
+		<span class="nt">&lt;/plugins&gt;</span>
+	<span class="nt">&lt;/build&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="working-with-rabbitmq-as-a-producers">Working with <code>rabbitmq</code> as a producers</h3>
 <p>Update your <code>application.properties</code> like below.</p>
@@ -462,16 +460,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">info.app.name=RabbitMQ Example
-</span></span><span class="line"><span class="cl">info.app.description=RabbitMQ Example
-</span></span><span class="line"><span class="cl">info.app.version=1.0.0
-</span></span><span class="line"><span class="cl">spring.jmx.enabled=false
-</span></span><span class="line"><span class="cl">spring.rabbitmq.host=localhost
-</span></span><span class="line"><span class="cl">spring.rabbitmq.username=guest
-</span></span><span class="line"><span class="cl">spring.rabbitmq.password=guest
-</span></span><span class="line"><span class="cl">spring.rabbitmq.port=5672
-</span></span><span class="line"><span class="cl">server.port=8080
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">info.app.name=RabbitMQ Example
+info.app.description=RabbitMQ Example
+info.app.version=1.0.0
+spring.jmx.enabled=false
+spring.rabbitmq.host=localhost
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+spring.rabbitmq.port=5672
+server.port=8080
+</code></pre></td></tr></table>
 </div>
 </div><p>Create constant value for queue name in package <code>com.example.rabbitmq.constant</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -484,13 +482,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueConstant</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">HELLO_WORLD</span> <span class="o">=</span> <span class="s">&#34;hello-world&#34;</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">EMAIL</span> <span class="o">=</span> <span class="s">&#34;email-sender&#34;</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueConstant</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">HELLO_WORLD</span> <span class="o">=</span> <span class="s">&#34;hello-world&#34;</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">EMAIL</span> <span class="o">=</span> <span class="s">&#34;email-sender&#34;</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create bean configuration to register queue in package <code>com.example.rabbitmq.configuration</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -511,21 +509,21 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueConfiguration</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">helloWorld</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">sendEmail</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueConfiguration</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">helloWorld</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">sendEmail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create message sender to send a message to RabbitMQ <code>com.example.rabbitmq.service</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -546,21 +544,21 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Service</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessagesSender</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">MessagesSender</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">RabbitTemplate</span> <span class="n">rabbitTemplate</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Sending message to RabbitMQ...&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">rabbitTemplate</span><span class="o">.</span><span class="na">convertAndSend</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Hello my name is %s&#34;</span><span class="o">,</span> <span class="n">name</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessagesSender</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">MessagesSender</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">RabbitTemplate</span> <span class="n">rabbitTemplate</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Sending message to RabbitMQ...&#34;</span><span class="o">);</span>
+        <span class="n">rabbitTemplate</span><span class="o">.</span><span class="na">convertAndSend</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Hello my name is %s&#34;</span><span class="o">,</span> <span class="n">name</span><span class="o">));</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create endpoint to send message dinamically from REST <code>com.example.rabbitmq.controller</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -587,27 +585,27 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@RestController</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ApplicationController</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">MessagesSender</span> <span class="n">messagesSender</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">ApplicationController</span><span class="o">(</span><span class="n">MessagesSender</span> <span class="n">messagesSender</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">messagesSender</span> <span class="o">=</span> <span class="n">messagesSender</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/hello-world&#34;</span><span class="o">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Hello World&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">hello</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">messagesSender</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">,</span> <span class="s">&#34;sending message...&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ApplicationController</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">MessagesSender</span> <span class="n">messagesSender</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">ApplicationController</span><span class="o">(</span><span class="n">MessagesSender</span> <span class="n">messagesSender</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">messagesSender</span> <span class="o">=</span> <span class="n">messagesSender</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/hello-world&#34;</span><span class="o">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Hello World&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">hello</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">messagesSender</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">));</span>
+
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">,</span> <span class="s">&#34;sending message...&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Run spring boot by typing <code>mvn spring-boot:run</code> then open Postman like below.</p>
 <p><code>URL: http://localhost:8080/hello-world (POST)</code></p>
@@ -627,11 +625,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mf">54.952</span>  <span class="nx">INFO</span> <span class="mi">54639</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">rabbitmq</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">HelloWorldSender</span>    <span class="o">:</span> <span class="nx">Sending</span> <span class="nx">message</span> <span class="nx">to</span> <span class="nx">RabbitMQ</span><span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mf">54.957</span>  <span class="nx">INFO</span> <span class="mi">54639</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">o</span><span class="p">.</span><span class="nx">s</span><span class="p">.</span><span class="nx">a</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">c</span><span class="p">.</span><span class="nx">CachingConnectionFactory</span>       <span class="o">:</span> <span class="nx">Attempting</span> <span class="nx">to</span> <span class="nx">connect</span> <span class="nx">to</span><span class="o">:</span> <span class="p">[</span><span class="nx">localhost</span><span class="o">:</span><span class="mi">5672</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mf">55.107</span>  <span class="nx">INFO</span> <span class="mi">54639</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">o</span><span class="p">.</span><span class="nx">s</span><span class="p">.</span><span class="nx">a</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">c</span><span class="p">.</span><span class="nx">CachingConnectionFactory</span>       <span class="o">:</span> <span class="nx">Created</span> <span class="k">new</span> <span class="nx">connection</span><span class="o">:</span> <span class="nx">rabbitConnectionFactory</span><span class="err">#</span><span class="mi">4</span><span class="nx">adc663e</span><span class="o">:</span><span class="mi">0</span><span class="o">/</span><span class="nx">SimpleConnection</span><span class="err">@</span><span class="mi">43156916</span> <span class="p">[</span><span class="nx">delegate</span><span class="o">=</span><span class="nx">amqp</span><span class="o">:</span><span class="c1">//guest@127.0.0.1:5672/, localPort= 53933]
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mf">55.124</span>  <span class="nx">INFO</span> <span class="mi">54639</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">o</span><span class="p">.</span><span class="nx">s</span><span class="p">.</span><span class="nx">amqp</span><span class="p">.</span><span class="nx">rabbit</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">RabbitAdmin</span>         <span class="o">:</span> <span class="nx">Auto</span><span class="o">-</span><span class="nx">declaring</span> <span class="nx">a</span> <span class="nx">non</span><span class="o">-</span><span class="nx">durable</span><span class="p">,</span> <span class="nx">auto</span><span class="o">-</span><span class="k">delete</span><span class="p">,</span> <span class="nx">or</span> <span class="nx">exclusive</span> <span class="nx">Queue</span> <span class="p">(</span><span class="nx">hello</span><span class="o">-</span><span class="nx">world</span><span class="p">)</span> <span class="nx">durable</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span> <span class="nx">auto</span><span class="o">-</span><span class="k">delete</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span> <span class="nx">exclusive</span><span class="o">:</span><span class="kc">false</span><span class="p">.</span> <span class="nx">It</span> <span class="nx">will</span> <span class="nx">be</span> <span class="nx">redeclared</span> <span class="k">if</span> <span class="nx">the</span> <span class="nx">broker</span> <span class="nx">stops</span> <span class="nx">and</span> <span class="nx">is</span> <span class="nx">restarted</span> <span class="k">while</span> <span class="nx">the</span> <span class="nx">connection</span> <span class="nx">factory</span> <span class="nx">is</span> <span class="nx">alive</span><span class="p">,</span> <span class="nx">but</span> <span class="nx">all</span> <span class="nx">messages</span> <span class="nx">will</span> <span class="nx">be</span> <span class="nx">lost</span><span class="p">.</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mf">54.952</span>  <span class="nx">INFO</span> <span class="mi">54639</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">rabbitmq</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">HelloWorldSender</span>    <span class="o">:</span> <span class="nx">Sending</span> <span class="nx">message</span> <span class="nx">to</span> <span class="nx">RabbitMQ</span><span class="p">...</span>
+<span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mf">54.957</span>  <span class="nx">INFO</span> <span class="mi">54639</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">o</span><span class="p">.</span><span class="nx">s</span><span class="p">.</span><span class="nx">a</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">c</span><span class="p">.</span><span class="nx">CachingConnectionFactory</span>       <span class="o">:</span> <span class="nx">Attempting</span> <span class="nx">to</span> <span class="nx">connect</span> <span class="nx">to</span><span class="o">:</span> <span class="p">[</span><span class="nx">localhost</span><span class="o">:</span><span class="mi">5672</span><span class="p">]</span>
+<span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mf">55.107</span>  <span class="nx">INFO</span> <span class="mi">54639</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">o</span><span class="p">.</span><span class="nx">s</span><span class="p">.</span><span class="nx">a</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">c</span><span class="p">.</span><span class="nx">CachingConnectionFactory</span>       <span class="o">:</span> <span class="nx">Created</span> <span class="k">new</span> <span class="nx">connection</span><span class="o">:</span> <span class="nx">rabbitConnectionFactory</span><span class="err">#</span><span class="mi">4</span><span class="nx">adc663e</span><span class="o">:</span><span class="mi">0</span><span class="o">/</span><span class="nx">SimpleConnection</span><span class="err">@</span><span class="mi">43156916</span> <span class="p">[</span><span class="nx">delegate</span><span class="o">=</span><span class="nx">amqp</span><span class="o">:</span><span class="c1">//guest@127.0.0.1:5672/, localPort= 53933]
+</span><span class="c1"></span><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mf">55.124</span>  <span class="nx">INFO</span> <span class="mi">54639</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">o</span><span class="p">.</span><span class="nx">s</span><span class="p">.</span><span class="nx">amqp</span><span class="p">.</span><span class="nx">rabbit</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">RabbitAdmin</span>         <span class="o">:</span> <span class="nx">Auto</span><span class="o">-</span><span class="nx">declaring</span> <span class="nx">a</span> <span class="nx">non</span><span class="o">-</span><span class="nx">durable</span><span class="p">,</span> <span class="nx">auto</span><span class="o">-</span><span class="k">delete</span><span class="p">,</span> <span class="nx">or</span> <span class="nx">exclusive</span> <span class="nx">Queue</span> <span class="p">(</span><span class="nx">hello</span><span class="o">-</span><span class="nx">world</span><span class="p">)</span> <span class="nx">durable</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span> <span class="nx">auto</span><span class="o">-</span><span class="k">delete</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span> <span class="nx">exclusive</span><span class="o">:</span><span class="kc">false</span><span class="p">.</span> <span class="nx">It</span> <span class="nx">will</span> <span class="nx">be</span> <span class="nx">redeclared</span> <span class="k">if</span> <span class="nx">the</span> <span class="nx">broker</span> <span class="nx">stops</span> <span class="nx">and</span> <span class="nx">is</span> <span class="nx">restarted</span> <span class="k">while</span> <span class="nx">the</span> <span class="nx">connection</span> <span class="nx">factory</span> <span class="nx">is</span> <span class="nx">alive</span><span class="p">,</span> <span class="nx">but</span> <span class="nx">all</span> <span class="nx">messages</span> <span class="nx">will</span> <span class="nx">be</span> <span class="nx">lost</span><span class="p">.</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>And go to RabbitMQ management by accessing <code>http://localhost:15672</code> by default username and password is <code>guest</code> then go to <code>Queues</code> tab.</p>
 <p><img
@@ -682,33 +680,33 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Service</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessagesSender</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">MessagesSender</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">RabbitTemplate</span> <span class="n">rabbitTemplate</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">ObjectMapper</span> <span class="n">mapper</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Sending message to RabbitMQ...&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">rabbitTemplate</span><span class="o">.</span><span class="na">convertAndSend</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Hello my name is %s&#34;</span><span class="o">,</span> <span class="n">name</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendEmail</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Sending message to RabbitMQ...&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">rabbitTemplate</span><span class="o">.</span><span class="na">convertAndSend</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">,</span> <span class="n">mapper</span><span class="o">.</span><span class="na">writeValueAsString</span><span class="o">(</span><span class="n">map</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JsonProcessingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessagesSender</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">MessagesSender</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">RabbitTemplate</span> <span class="n">rabbitTemplate</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">ObjectMapper</span> <span class="n">mapper</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Sending message to RabbitMQ...&#34;</span><span class="o">);</span>
+        <span class="n">rabbitTemplate</span><span class="o">.</span><span class="na">convertAndSend</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Hello my name is %s&#34;</span><span class="o">,</span> <span class="n">name</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendEmail</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Sending message to RabbitMQ...&#34;</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">rabbitTemplate</span><span class="o">.</span><span class="na">convertAndSend</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">,</span> <span class="n">mapper</span><span class="o">.</span><span class="na">writeValueAsString</span><span class="o">(</span><span class="n">map</span><span class="o">));</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JsonProcessingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Update rest controller <code>com.example.rabbitmq.controller.ApplicationController.java</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -744,36 +742,36 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@RestController</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ApplicationController</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">MessagesSender</span> <span class="n">messagesSender</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">ApplicationController</span><span class="o">(</span><span class="n">MessagesSender</span> <span class="n">messagesSender</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">messagesSender</span> <span class="o">=</span> <span class="n">messagesSender</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/hello-world&#34;</span><span class="o">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Hello World&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">hello</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">messagesSender</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">,</span> <span class="s">&#34;sending message...&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/sendEmail&#34;</span><span class="o">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Send Email&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">sendEmail</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">messagesSender</span><span class="o">.</span><span class="na">sendEmail</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">,</span> <span class="s">&#34;sending your email...&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ApplicationController</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">MessagesSender</span> <span class="n">messagesSender</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">ApplicationController</span><span class="o">(</span><span class="n">MessagesSender</span> <span class="n">messagesSender</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">messagesSender</span> <span class="o">=</span> <span class="n">messagesSender</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/hello-world&#34;</span><span class="o">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Hello World&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">hello</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">messagesSender</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">));</span>
+
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">,</span> <span class="s">&#34;sending message...&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/sendEmail&#34;</span><span class="o">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Send Email&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">sendEmail</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">messagesSender</span><span class="o">.</span><span class="na">sendEmail</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">ret</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">,</span> <span class="s">&#34;sending your email...&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Run spring boot by typing <code>mvn spring-boot:run</code> then open Postman like below.</p>
 <p><code>URL: http://localhost:8080/sendEmail (POST)</code></p>
@@ -791,9 +789,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">33</span><span class="o">:</span><span class="mf">35.980</span>  <span class="nx">INFO</span> <span class="mi">60764</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">o</span><span class="p">.</span><span class="nx">s</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">servlet</span><span class="p">.</span><span class="nx">DispatcherServlet</span>        <span class="o">:</span> <span class="nx">Completed</span> <span class="nx">initialization</span> <span class="k">in</span> <span class="mi">10</span> <span class="nx">ms</span>
-</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">33</span><span class="o">:</span><span class="mf">36.051</span>  <span class="nx">INFO</span> <span class="mi">60764</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">rabbitmq</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">EmailSender</span>   <span class="o">:</span> <span class="nx">Sending</span> <span class="nx">message</span> <span class="nx">to</span> <span class="nx">RabbitMQ</span><span class="p">...</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">33</span><span class="o">:</span><span class="mf">35.980</span>  <span class="nx">INFO</span> <span class="mi">60764</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">o</span><span class="p">.</span><span class="nx">s</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">servlet</span><span class="p">.</span><span class="nx">DispatcherServlet</span>        <span class="o">:</span> <span class="nx">Completed</span> <span class="nx">initialization</span> <span class="k">in</span> <span class="mi">10</span> <span class="nx">ms</span>
+<span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">02</span><span class="o">:</span><span class="mi">33</span><span class="o">:</span><span class="mf">36.051</span>  <span class="nx">INFO</span> <span class="mi">60764</span> <span class="o">---</span> <span class="p">[</span>  <span class="nx">XNIO</span><span class="o">-</span><span class="mi">1</span> <span class="nx">task</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">example</span><span class="p">.</span><span class="nx">rabbitmq</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">EmailSender</span>   <span class="o">:</span> <span class="nx">Sending</span> <span class="nx">message</span> <span class="nx">to</span> <span class="nx">RabbitMQ</span><span class="p">...</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>And go to RabbitMQ management then go to <code>Queues</code> tab.</p>
 <p><img
@@ -827,15 +825,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">info.app.name=RabbitMQ Listener Example
-</span></span><span class="line"><span class="cl">info.app.description=RabbitMQ Listener Example
-</span></span><span class="line"><span class="cl">info.app.version=1.0.0
-</span></span><span class="line"><span class="cl">spring.jmx.enabled=false
-</span></span><span class="line"><span class="cl">spring.rabbitmq.host=localhost
-</span></span><span class="line"><span class="cl">spring.rabbitmq.username=guest
-</span></span><span class="line"><span class="cl">spring.rabbitmq.password=guest
-</span></span><span class="line"><span class="cl">spring.rabbitmq.port=5672
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">info.app.name=RabbitMQ Listener Example
+info.app.description=RabbitMQ Listener Example
+info.app.version=1.0.0
+spring.jmx.enabled=false
+spring.rabbitmq.host=localhost
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+spring.rabbitmq.port=5672
+</code></pre></td></tr></table>
 </div>
 </div><p>Create bean configuration to inject <code>ObjectMapper</code> dependencies in package <code>com.example.rabbitmqlistener.config</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -851,16 +849,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeanConfiguration</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ObjectMapper</span> <span class="nf">mapper</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">ObjectMapper</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeanConfiguration</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">ObjectMapper</span> <span class="nf">mapper</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ObjectMapper</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create constant value for queue name in package <code>com.example.rabbitmqlistener.constant</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -873,13 +871,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueConstant</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">HELLO_WORLD</span> <span class="o">=</span> <span class="s">&#34;hello-world&#34;</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">EMAIL</span> <span class="o">=</span> <span class="s">&#34;email-sender&#34;</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueConstant</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">HELLO_WORLD</span> <span class="o">=</span> <span class="s">&#34;hello-world&#34;</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">EMAIL</span> <span class="o">=</span> <span class="s">&#34;email-sender&#34;</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create bean configuration to register queue in package <code>com.example.rabbitmqlistener.configuration</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -900,21 +898,21 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueConfiguration</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">helloWorld</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">sendEmail</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueConfiguration</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">helloWorld</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Queue</span> <span class="nf">sendEmail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">(</span><span class="n">QueueConstant</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create model <code>com.example.rabbitmqlistener.model.EmailModel</code> used mapping message into class object.</p>
 <div class="highlight"><div class="chroma">
@@ -937,23 +935,23 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailModel</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">from</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">to</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">subject</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">message</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="nd">@AllArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailModel</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">from</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">to</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">subject</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">message</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create listener <code>com.example.rabbitmqlistener.service.MessageListenerService</code> to listen message from RabbitMQ by queues name.</p>
 <div class="highlight"><div class="chroma">
@@ -991,38 +989,38 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Service</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessageListenerService</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">MessageListenerService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">ObjectMapper</span> <span class="n">mapper</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">MessageListenerService</span><span class="o">(</span><span class="n">ObjectMapper</span> <span class="n">mapper</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">mapper</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@RabbitListener</span><span class="o">(</span><span class="n">queues</span> <span class="o">=</span> <span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">greeting</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Receiving message...&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Message is: &#34;</span> <span class="o">+</span> <span class="n">message</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@RabbitListener</span><span class="o">(</span><span class="n">queues</span> <span class="o">=</span> <span class="n">QueueConstant</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendEmail</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Receiving message: &#34;</span> <span class="o">+</span> <span class="n">message</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">EmailModel</span> <span class="n">email</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="na">readValue</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">EmailModel</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Converting to model...&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;EmailModel:: &#34;</span> <span class="o">+</span> <span class="n">email</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JsonProcessingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessageListenerService</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">MessageListenerService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">ObjectMapper</span> <span class="n">mapper</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">MessageListenerService</span><span class="o">(</span><span class="n">ObjectMapper</span> <span class="n">mapper</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">mapper</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@RabbitListener</span><span class="o">(</span><span class="n">queues</span> <span class="o">=</span> <span class="n">QueueConstant</span><span class="o">.</span><span class="na">HELLO_WORLD</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">greeting</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Receiving message...&#34;</span><span class="o">);</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Message is: &#34;</span> <span class="o">+</span> <span class="n">message</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@RabbitListener</span><span class="o">(</span><span class="n">queues</span> <span class="o">=</span> <span class="n">QueueConstant</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendEmail</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Receiving message: &#34;</span> <span class="o">+</span> <span class="n">message</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">EmailModel</span> <span class="n">email</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="na">readValue</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">EmailModel</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Converting to model...&#34;</span><span class="o">);</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;EmailModel:: &#34;</span> <span class="o">+</span> <span class="n">email</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JsonProcessingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Run spring boot by typing <code>mvn spring-boot:run</code> and see the logs.</p>
 <div class="highlight"><div class="chroma">
@@ -1034,12 +1032,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">11</span><span class="o">:</span><span class="mi">11</span><span class="o">:</span><span class="mf">56.224</span>  <span class="nx">INFO</span> <span class="mi">67938</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntContainer</span><span class="err">#</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">MessageListenerService</span>     <span class="o">:</span> <span class="nx">Receiving</span> <span class="nx">message</span><span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">11</span><span class="o">:</span><span class="mi">11</span><span class="o">:</span><span class="mf">56.226</span>  <span class="nx">INFO</span> <span class="mi">67938</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntContainer</span><span class="err">#</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">MessageListenerService</span>     <span class="o">:</span> <span class="nx">Message</span> <span class="nx">is</span><span class="o">:</span> <span class="nx">Hello</span> <span class="nx">my</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">Maverick</span>
-</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">11</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">18.721</span>  <span class="nx">INFO</span> <span class="mi">68207</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntContainer</span><span class="err">#</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">MessageListenerService</span>     <span class="o">:</span> <span class="nx">Receiving</span> <span class="nx">message</span><span class="o">:</span> <span class="p">{</span><span class="s2">&#34;to&#34;</span><span class="o">:</span><span class="s2">&#34;maverick@test.com&#34;</span><span class="p">,</span><span class="s2">&#34;from&#34;</span><span class="o">:</span><span class="s2">&#34;calvinjoe@test.com&#34;</span><span class="p">,</span><span class="s2">&#34;message&#34;</span><span class="o">:</span><span class="s2">&#34;Hello, you got message from RabbitMQ&#34;</span><span class="p">,</span><span class="s2">&#34;subject&#34;</span><span class="o">:</span><span class="s2">&#34;RabbitMQ Information&#34;</span><span class="p">,</span><span class="s2">&#34;name&#34;</span><span class="o">:</span><span class="s2">&#34;Maverick&#34;</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">11</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">18.787</span>  <span class="nx">INFO</span> <span class="mi">68207</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntContainer</span><span class="err">#</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">MessageListenerService</span>     <span class="o">:</span> <span class="nx">Converting</span> <span class="nx">to</span> <span class="nx">model</span><span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">11</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">18.813</span>  <span class="nx">INFO</span> <span class="mi">68207</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntContainer</span><span class="err">#</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">MessageListenerService</span>     <span class="o">:</span> <span class="nx">EmailModel</span><span class="o">::</span> <span class="nx">EmailModel</span><span class="p">(</span><span class="nx">from</span><span class="o">=</span><span class="nx">calvinjoe</span><span class="err">@</span><span class="nx">test</span><span class="p">.</span><span class="nx">com</span><span class="p">,</span> <span class="nx">to</span><span class="o">=</span><span class="nx">maverick</span><span class="err">@</span><span class="nx">test</span><span class="p">.</span><span class="nx">com</span><span class="p">,</span> <span class="nx">subject</span><span class="o">=</span><span class="nx">RabbitMQ</span> <span class="nx">Information</span><span class="p">,</span> <span class="nx">message</span><span class="o">=</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">you</span> <span class="nx">got</span> <span class="nx">message</span> <span class="nx">from</span> <span class="nx">RabbitMQ</span><span class="p">,</span> <span class="nx">name</span><span class="o">=</span><span class="nx">Maverick</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">11</span><span class="o">:</span><span class="mi">11</span><span class="o">:</span><span class="mf">56.224</span>  <span class="nx">INFO</span> <span class="mi">67938</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntContainer</span><span class="err">#</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">MessageListenerService</span>     <span class="o">:</span> <span class="nx">Receiving</span> <span class="nx">message</span><span class="p">...</span>
+<span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">11</span><span class="o">:</span><span class="mi">11</span><span class="o">:</span><span class="mf">56.226</span>  <span class="nx">INFO</span> <span class="mi">67938</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntContainer</span><span class="err">#</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">MessageListenerService</span>     <span class="o">:</span> <span class="nx">Message</span> <span class="nx">is</span><span class="o">:</span> <span class="nx">Hello</span> <span class="nx">my</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">Maverick</span>
+<span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">11</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">18.721</span>  <span class="nx">INFO</span> <span class="mi">68207</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntContainer</span><span class="err">#</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">MessageListenerService</span>     <span class="o">:</span> <span class="nx">Receiving</span> <span class="nx">message</span><span class="o">:</span> <span class="p">{</span><span class="s2">&#34;to&#34;</span><span class="o">:</span><span class="s2">&#34;maverick@test.com&#34;</span><span class="p">,</span><span class="s2">&#34;from&#34;</span><span class="o">:</span><span class="s2">&#34;calvinjoe@test.com&#34;</span><span class="p">,</span><span class="s2">&#34;message&#34;</span><span class="o">:</span><span class="s2">&#34;Hello, you got message from RabbitMQ&#34;</span><span class="p">,</span><span class="s2">&#34;subject&#34;</span><span class="o">:</span><span class="s2">&#34;RabbitMQ Information&#34;</span><span class="p">,</span><span class="s2">&#34;name&#34;</span><span class="o">:</span><span class="s2">&#34;Maverick&#34;</span><span class="p">}</span>
+<span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">11</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">18.787</span>  <span class="nx">INFO</span> <span class="mi">68207</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntContainer</span><span class="err">#</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">MessageListenerService</span>     <span class="o">:</span> <span class="nx">Converting</span> <span class="nx">to</span> <span class="nx">model</span><span class="p">...</span>
+<span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">11</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">18.813</span>  <span class="nx">INFO</span> <span class="mi">68207</span> <span class="o">---</span> <span class="p">[</span><span class="nx">ntContainer</span><span class="err">#</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="nx">c</span><span class="p">.</span><span class="nx">e</span><span class="p">.</span><span class="nx">r</span><span class="p">.</span><span class="nx">service</span><span class="p">.</span><span class="nx">MessageListenerService</span>     <span class="o">:</span> <span class="nx">EmailModel</span><span class="o">::</span> <span class="nx">EmailModel</span><span class="p">(</span><span class="nx">from</span><span class="o">=</span><span class="nx">calvinjoe</span><span class="err">@</span><span class="nx">test</span><span class="p">.</span><span class="nx">com</span><span class="p">,</span> <span class="nx">to</span><span class="o">=</span><span class="nx">maverick</span><span class="err">@</span><span class="nx">test</span><span class="p">.</span><span class="nx">com</span><span class="p">,</span> <span class="nx">subject</span><span class="o">=</span><span class="nx">RabbitMQ</span> <span class="nx">Information</span><span class="p">,</span> <span class="nx">message</span><span class="o">=</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">you</span> <span class="nx">got</span> <span class="nx">message</span> <span class="nx">from</span> <span class="nx">RabbitMQ</span><span class="p">,</span> <span class="nx">name</span><span class="o">=</span><span class="nx">Maverick</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="clone-or-download">Clone or Download</h3>
 <p>You can clone or download this project</p>
@@ -1048,8 +1046,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://github.com/piinalpin/rabbitmq.git
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">https://github.com/piinalpin/rabbitmq.git
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="thankyou">Thankyou</h3>
 <p><a href="https://www.ibm.com/cloud/learn/message-brokers" target="_blank" rel="noopener noreffer">IBM</a> - Message Brokers</p>
