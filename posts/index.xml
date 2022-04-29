@@ -3,7 +3,15 @@
         <title>All Posts - PiinAlpin&#39;s Blog</title>
         <link>https://blog.piinalpin.com/posts/</link>
         <description>All Posts | PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 16 Apr 2022 10:28:28 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 Apr 2022 13:38:40 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Api Gateway Using Spring Boot Cloud Gateway &#43; Netflix Hystrix</title>
+    <link>https://blog.piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</link>
+    <pubDate>Fri, 29 Apr 2022 13:38:40 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</guid>
+    <description><![CDATA[An API gateway is an interface between clients and backend microservices. When a gateway is used, it becomes the single point of contact for clients; it receives their API calls and routes each one to the appropriate backend.
+It facilitates microservice architectures. When an API gateway is used, clients do not know (nor should they know) the structure of the backend. Modern architectures discourage the use of large monolithic services; rather, numerous small microservices are preferred.]]></description>
+</item><item>
     <title>CI/CD Using Github Action</title>
     <link>https://blog.piinalpin.com/2022/04/ci-cd-using-github-action/</link>
     <pubDate>Sat, 16 Apr 2022 10:28:28 &#43;0700</pubDate>
@@ -67,12 +75,5 @@ Spring Data JPA Specification provides a convenient and sophisticated manner to 
     <author>Author</author>
     <guid>https://blog.piinalpin.com/2021/10/contextual-chat-bot/</guid>
     <description><![CDATA[Build contextual chat bot with python and tensorflow library to talking about riddles. We will build a model for a puzzle conversation.]]></description>
-</item><item>
-    <title>Bash Script for Lazy People</title>
-    <link>https://blog.piinalpin.com/2021/08/bash-script-for-lazy-people/</link>
-    <pubDate>Tue, 17 Aug 2021 15:13:17 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/08/bash-script-for-lazy-people/</guid>
-    <description><![CDATA[What is Bash? Bash is a command processor that typically runs in a text window where the user types commands that cause actions. Bash can also read and execute commands from a file, called a shell script. Like most Unix shells, it supports filename globbing (wildcard matching), piping, here documents, command substitution, variables, and control structures for condition-testing and iteration. The keywords, syntax, dynamically scoped variables and other basic features of the language are all copied from sh.]]></description>
 </item></channel>
 </rss>

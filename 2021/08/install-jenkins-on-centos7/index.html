@@ -146,9 +146,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">192.168.0.1 jenkins.local
-192.168.1.1 agent.local
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">192.168.0.1 jenkins.local
+</span></span><span class="line"><span class="cl">192.168.1.1 agent.local
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -186,35 +186,35 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Vagrant.configure<span class="o">(</span>2<span class="o">)</span> <span class="k">do</span> <span class="p">|</span>config<span class="p">|</span>
-    config.vm.box <span class="o">=</span> <span class="s2">&#34;bento/centos-7&#34;</span>
-  
-    config.vm.define <span class="s2">&#34;jenkins&#34;</span> <span class="k">do</span> <span class="p">|</span>jenkins<span class="p">|</span>
-      jenkins.vm.network <span class="s2">&#34;private_network&#34;</span>, ip: <span class="s2">&#34;192.168.0.1&#34;</span>, name: <span class="s1">&#39;vboxnet0&#39;</span>
-      jenkins.vm.hostname <span class="o">=</span> <span class="s2">&#34;jenkins.local&#34;</span>
-      jenkins.vm.network :forwarded_port, guest: 22, host: 2222, id: <span class="s2">&#34;ssh&#34;</span>, disabled: <span class="nb">true</span>
-      jenkins.vm.network :forwarded_port, guest: 22, host: 2230, auto_correct: <span class="nb">true</span>
-      jenkins.vm.network :forwarded_port, guest: 8080, host: 8080, auto_correct: <span class="nb">true</span>
-      jenkins.ssh.port <span class="o">=</span> <span class="m">2230</span>
-      jenkins.vm.provider <span class="s2">&#34;jenkins&#34;</span> <span class="k">do</span> <span class="p">|</span>vb<span class="p">|</span>
-        vb.cpus <span class="o">=</span> <span class="m">1</span>
-        vb.memory <span class="o">=</span> <span class="m">1024</span>
-      end
-    end
-
-    config.vm.define <span class="s2">&#34;agent&#34;</span> <span class="k">do</span> <span class="p">|</span>agent<span class="p">|</span>
-      agent.vm.network <span class="s2">&#34;private_network&#34;</span>, ip: <span class="s2">&#34;192.168.1.1&#34;</span>, name: <span class="s1">&#39;vboxnet1&#39;</span>
-      agent.vm.hostname <span class="o">=</span> <span class="s2">&#34;agent.local&#34;</span>
-      agent.vm.network :forwarded_port, guest: 22, host: 2222, id: <span class="s2">&#34;ssh&#34;</span>, disabled: <span class="nb">true</span>
-      agent.vm.network :forwarded_port, guest: 22, host: 2231, auto_correct: <span class="nb">true</span>
-      agent.ssh.port <span class="o">=</span> <span class="m">2231</span>
-      agent.vm.provider <span class="s2">&#34;agent&#34;</span> <span class="k">do</span> <span class="p">|</span>vb<span class="p">|</span>
-        vb.cpus <span class="o">=</span> <span class="m">1</span>
-        vb.memory <span class="o">=</span> <span class="m">1024</span>
-      end
-    end
-  end
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Vagrant.configure<span class="o">(</span>2<span class="o">)</span> <span class="k">do</span> <span class="p">|</span>config<span class="p">|</span>
+</span></span><span class="line"><span class="cl">    config.vm.box <span class="o">=</span> <span class="s2">&#34;bento/centos-7&#34;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    config.vm.define <span class="s2">&#34;jenkins&#34;</span> <span class="k">do</span> <span class="p">|</span>jenkins<span class="p">|</span>
+</span></span><span class="line"><span class="cl">      jenkins.vm.network <span class="s2">&#34;private_network&#34;</span>, ip: <span class="s2">&#34;192.168.0.1&#34;</span>, name: <span class="s1">&#39;vboxnet0&#39;</span>
+</span></span><span class="line"><span class="cl">      jenkins.vm.hostname <span class="o">=</span> <span class="s2">&#34;jenkins.local&#34;</span>
+</span></span><span class="line"><span class="cl">      jenkins.vm.network :forwarded_port, guest: 22, host: 2222, id: <span class="s2">&#34;ssh&#34;</span>, disabled: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">      jenkins.vm.network :forwarded_port, guest: 22, host: 2230, auto_correct: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">      jenkins.vm.network :forwarded_port, guest: 8080, host: 8080, auto_correct: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">      jenkins.ssh.port <span class="o">=</span> <span class="m">2230</span>
+</span></span><span class="line"><span class="cl">      jenkins.vm.provider <span class="s2">&#34;jenkins&#34;</span> <span class="k">do</span> <span class="p">|</span>vb<span class="p">|</span>
+</span></span><span class="line"><span class="cl">        vb.cpus <span class="o">=</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">        vb.memory <span class="o">=</span> <span class="m">1024</span>
+</span></span><span class="line"><span class="cl">      end
+</span></span><span class="line"><span class="cl">    end
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    config.vm.define <span class="s2">&#34;agent&#34;</span> <span class="k">do</span> <span class="p">|</span>agent<span class="p">|</span>
+</span></span><span class="line"><span class="cl">      agent.vm.network <span class="s2">&#34;private_network&#34;</span>, ip: <span class="s2">&#34;192.168.1.1&#34;</span>, name: <span class="s1">&#39;vboxnet1&#39;</span>
+</span></span><span class="line"><span class="cl">      agent.vm.hostname <span class="o">=</span> <span class="s2">&#34;agent.local&#34;</span>
+</span></span><span class="line"><span class="cl">      agent.vm.network :forwarded_port, guest: 22, host: 2222, id: <span class="s2">&#34;ssh&#34;</span>, disabled: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">      agent.vm.network :forwarded_port, guest: 22, host: 2231, auto_correct: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">      agent.ssh.port <span class="o">=</span> <span class="m">2231</span>
+</span></span><span class="line"><span class="cl">      agent.vm.provider <span class="s2">&#34;agent&#34;</span> <span class="k">do</span> <span class="p">|</span>vb<span class="p">|</span>
+</span></span><span class="line"><span class="cl">        vb.cpus <span class="o">=</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">        vb.memory <span class="o">=</span> <span class="m">1024</span>
+</span></span><span class="line"><span class="cl">      end
+</span></span><span class="line"><span class="cl">    end
+</span></span><span class="line"><span class="cl">  end
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>And start vagrant by typing <code>vagrant up</code> on your terminal.</p>
 <h3 id="install-jenkins">Install Jenkins</h3>
@@ -234,15 +234,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">jenkins soft core unlimited
-jenkins hard core unlimited
-jenkins soft fsize unlimited
-jenkins hard fsize unlimited
-jenkins soft nofile <span class="m">4096</span>
-jenkins hard nofile <span class="m">8192</span>
-jenkins soft nproc <span class="m">30654</span>
-jenkins hard nproc <span class="m">30654</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">jenkins soft core unlimited
+</span></span><span class="line"><span class="cl">jenkins hard core unlimited
+</span></span><span class="line"><span class="cl">jenkins soft fsize unlimited
+</span></span><span class="line"><span class="cl">jenkins hard fsize unlimited
+</span></span><span class="line"><span class="cl">jenkins soft nofile <span class="m">4096</span>
+</span></span><span class="line"><span class="cl">jenkins hard nofile <span class="m">8192</span>
+</span></span><span class="line"><span class="cl">jenkins soft nproc <span class="m">30654</span>
+</span></span><span class="line"><span class="cl">jenkins hard nproc <span class="m">30654</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Setup firewall</p>
 <div class="highlight"><div class="chroma">
@@ -256,14 +256,14 @@ jenkins hard nproc <span class="m">30654</span>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start firewalld
-
-firewall-cmd --permanent --add-port<span class="o">=</span>22/tcp
-firewall-cmd --permanent --add-port<span class="o">=</span>8080/tcp
-
-firewall-cmd --reload
-firewall-cmd --list-all
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start firewalld
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">firewall-cmd --permanent --add-port<span class="o">=</span>22/tcp
+</span></span><span class="line"><span class="cl">firewall-cmd --permanent --add-port<span class="o">=</span>8080/tcp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">firewall-cmd --reload
+</span></span><span class="line"><span class="cl">firewall-cmd --list-all
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We should get an outuput</p>
 <div class="highlight"><div class="chroma">
@@ -283,20 +283,20 @@ firewall-cmd --list-all
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">public <span class="o">(</span>active<span class="o">)</span>
-  target: default
-  icmp-block-inversion: no
-  interfaces: eth0 eth1
-  sources: 
-  services: dhcpv6-client ssh
-  ports: 22/tcp 8080/tcp
-  protocols: 
-  masquerade: no
-  forward-ports: 
-  source-ports: 
-  icmp-blocks: 
-  rich rules:
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">public <span class="o">(</span>active<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  target: default
+</span></span><span class="line"><span class="cl">  icmp-block-inversion: no
+</span></span><span class="line"><span class="cl">  interfaces: eth0 eth1
+</span></span><span class="line"><span class="cl">  sources: 
+</span></span><span class="line"><span class="cl">  services: dhcpv6-client ssh
+</span></span><span class="line"><span class="cl">  ports: 22/tcp 8080/tcp
+</span></span><span class="line"><span class="cl">  protocols: 
+</span></span><span class="line"><span class="cl">  masquerade: no
+</span></span><span class="line"><span class="cl">  forward-ports: 
+</span></span><span class="line"><span class="cl">  source-ports: 
+</span></span><span class="line"><span class="cl">  icmp-blocks: 
+</span></span><span class="line"><span class="cl">  rich rules:
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Add the following entries to <code>/etc/hosts</code></p>
 <div class="highlight"><div class="chroma">
@@ -305,9 +305,9 @@ firewall-cmd --list-all
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">192.168.0.1 jenkins.local
-192.168.1.1 agent.local
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">192.168.0.1 jenkins.local
+</span></span><span class="line"><span class="cl">192.168.1.1 agent.local
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Add AdoptOpenJDK repository</p>
 <div class="highlight"><div class="chroma">
@@ -322,15 +322,15 @@ firewall-cmd --list-all
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt;&#39;EOF&#39; &gt; /etc/yum.repos.d/adoptopenjdk.repo
-</span><span class="s">[AdoptOpenJDK]
-</span><span class="s">name=AdoptOpenJDK
-</span><span class="s">baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
-</span><span class="s">enabled=1
-</span><span class="s">gpgcheck=1
-</span><span class="s">gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
-</span><span class="s">EOF</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat <span class="s">&lt;&lt;&#39;EOF&#39; &gt; /etc/yum.repos.d/adoptopenjdk.repo
+</span></span></span><span class="line"><span class="cl"><span class="s">[AdoptOpenJDK]
+</span></span></span><span class="line"><span class="cl"><span class="s">name=AdoptOpenJDK
+</span></span></span><span class="line"><span class="cl"><span class="s">baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
+</span></span></span><span class="line"><span class="cl"><span class="s">enabled=1
+</span></span></span><span class="line"><span class="cl"><span class="s">gpgcheck=1
+</span></span></span><span class="line"><span class="cl"><span class="s">gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Add repository to get latest Git</p>
 <div class="highlight"><div class="chroma">
@@ -338,8 +338,8 @@ firewall-cmd --list-all
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.9-1.x86_64.rpm
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.9-1.x86_64.rpm
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Add jenkins repository</p>
 <div class="highlight"><div class="chroma">
@@ -348,9 +348,9 @@ firewall-cmd --list-all
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+</span></span><span class="line"><span class="cl">rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create directory</p>
 <div class="highlight"><div class="chroma">
@@ -359,9 +359,9 @@ rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir -p /var/cache/jenkins/tmp
-mkdir -p /var/cache/jenkins/heapdumps
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /var/cache/jenkins/tmp
+</span></span><span class="line"><span class="cl">mkdir -p /var/cache/jenkins/heapdumps
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Uninstall old Git by typing <code>yum remove git*</code> on your terminal</p>
 <p>Install AdoptOpenJDK, Git, Jenkins and Fontconfig</p>
@@ -370,8 +370,8 @@ mkdir -p /var/cache/jenkins/heapdumps
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install adoptopenjdk-11-hotspot git jenkins fontconfig
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum -y install adoptopenjdk-11-hotspot git jenkins fontconfig
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Edit the <code>/etc/sysconfig/jenkins</code> file</p>
 <div class="highlight"><div class="chroma">
@@ -381,10 +381,10 @@ mkdir -p /var/cache/jenkins/heapdumps
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">JENKINS_JAVA_OPTIONS</span><span class="o">=</span><span class="s2">&#34;-Djava.awt.headless=true -Djava.io.tmpdir=/var/cache/jenkins/tmp -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Jakarta -Duser.timezone=Asia/Jakarta&#34;</span>
-
-<span class="nv">JENKINS_ARGS</span><span class="o">=</span><span class="s2">&#34;--pluginroot=/var/cache/jenkins/plugins&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">JENKINS_JAVA_OPTIONS</span><span class="o">=</span><span class="s2">&#34;-Djava.awt.headless=true -Djava.io.tmpdir=/var/cache/jenkins/tmp -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Jakarta -Duser.timezone=Asia/Jakarta&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">JENKINS_ARGS</span><span class="o">=</span><span class="s2">&#34;--pluginroot=/var/cache/jenkins/plugins&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Change owner jenkins config file <code>chown -R jenkins:jenkins /var/cache/jenkins</code></p>
 <p>Start jenkins by typing <code>systemctl start jenkins</code> and get status <code>systemctl -l status jenkins</code></p>
@@ -400,14 +400,14 @@ mkdir -p /var/cache/jenkins/heapdumps
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">● jenkins.service - LSB: Jenkins Automation Server
-   Loaded: loaded <span class="o">(</span>/etc/rc.d/init.d/jenkins<span class="p">;</span> bad<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
-   Active: active <span class="o">(</span>running<span class="o">)</span> since Sun 2021-08-01 01:06:57 UTC<span class="p">;</span> 16s ago
-     Docs: man:systemd-sysv-generator<span class="o">(</span>8<span class="o">)</span>
-  Process: <span class="m">3697</span> <span class="nv">ExecStart</span><span class="o">=</span>/etc/rc.d/init.d/jenkins start <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span>0/SUCCESS<span class="o">)</span>
-   CGroup: /system.slice/jenkins.service
-           └─3718 /etc/alternatives/java -Dcom.sun.akuma.Daemon<span class="o">=</span>daemonized -Djava.awt.headless<span class="o">=</span><span class="nb">true</span> -Djava.io.tmpdir<span class="o">=</span>/var/cache/jenkins/tmp -Dorg.apache.commons.jelly.tags.fmt.timeZone<span class="o">=</span>Asia/Jakarta -Duser.timezone<span class="o">=</span>Asia/Jakarta -DJENKINS_HOME<span class="o">=</span>/var/lib/jenkins -jar /usr/lib/jenkins/jenkins.war --logfile<span class="o">=</span>/var/log/jenkins/jenkins.log --webroot<span class="o">=</span>/var/cache/jenkins/war --daemon --httpPort<span class="o">=</span><span class="m">8080</span> --debug<span class="o">=</span><span class="m">5</span> --handlerCountMax<span class="o">=</span><span class="m">100</span> --handlerCountMaxIdle<span class="o">=</span><span class="m">20</span> --pluginroot<span class="o">=</span>/var/cache/jenkins/plugins
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">● jenkins.service - LSB: Jenkins Automation Server
+</span></span><span class="line"><span class="cl">   Loaded: loaded <span class="o">(</span>/etc/rc.d/init.d/jenkins<span class="p">;</span> bad<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
+</span></span><span class="line"><span class="cl">   Active: active <span class="o">(</span>running<span class="o">)</span> since Sun 2021-08-01 01:06:57 UTC<span class="p">;</span> 16s ago
+</span></span><span class="line"><span class="cl">     Docs: man:systemd-sysv-generator<span class="o">(</span>8<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  Process: <span class="m">3697</span> <span class="nv">ExecStart</span><span class="o">=</span>/etc/rc.d/init.d/jenkins start <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span>0/SUCCESS<span class="o">)</span>
+</span></span><span class="line"><span class="cl">   CGroup: /system.slice/jenkins.service
+</span></span><span class="line"><span class="cl">           └─3718 /etc/alternatives/java -Dcom.sun.akuma.Daemon<span class="o">=</span>daemonized -Djava.awt.headless<span class="o">=</span><span class="nb">true</span> -Djava.io.tmpdir<span class="o">=</span>/var/cache/jenkins/tmp -Dorg.apache.commons.jelly.tags.fmt.timeZone<span class="o">=</span>Asia/Jakarta -Duser.timezone<span class="o">=</span>Asia/Jakarta -DJENKINS_HOME<span class="o">=</span>/var/lib/jenkins -jar /usr/lib/jenkins/jenkins.war --logfile<span class="o">=</span>/var/log/jenkins/jenkins.log --webroot<span class="o">=</span>/var/cache/jenkins/war --daemon --httpPort<span class="o">=</span><span class="m">8080</span> --debug<span class="o">=</span><span class="m">5</span> --handlerCountMax<span class="o">=</span><span class="m">100</span> --handlerCountMaxIdle<span class="o">=</span><span class="m">20</span> --pluginroot<span class="o">=</span>/var/cache/jenkins/plugins
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="setup-jenkins-ui">Setup Jenkins UI</h3>
 <p>Access <code>http://jenkins.local:8080</code> on your host and should be like below.</p>
@@ -462,13 +462,13 @@ mkdir -p /var/cache/jenkins/heapdumps
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start firewalld
-
-firewall-cmd --permanent --add-port<span class="o">=</span>22/tcp
-
-firewall-cmd --reload
-firewall-cmd --list-all
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start firewalld
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">firewall-cmd --permanent --add-port<span class="o">=</span>22/tcp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">firewall-cmd --reload
+</span></span><span class="line"><span class="cl">firewall-cmd --list-all
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We should get an outuput</p>
 <div class="highlight"><div class="chroma">
@@ -488,20 +488,20 @@ firewall-cmd --list-all
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">public <span class="o">(</span>active<span class="o">)</span>
-  target: default
-  icmp-block-inversion: no
-  interfaces: eth0 eth1
-  sources: 
-  services: dhcpv6-client ssh
-  ports: 22/tcp 8080/tcp
-  protocols: 
-  masquerade: no
-  forward-ports: 
-  source-ports: 
-  icmp-blocks: 
-  rich rules:
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">public <span class="o">(</span>active<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  target: default
+</span></span><span class="line"><span class="cl">  icmp-block-inversion: no
+</span></span><span class="line"><span class="cl">  interfaces: eth0 eth1
+</span></span><span class="line"><span class="cl">  sources: 
+</span></span><span class="line"><span class="cl">  services: dhcpv6-client ssh
+</span></span><span class="line"><span class="cl">  ports: 22/tcp 8080/tcp
+</span></span><span class="line"><span class="cl">  protocols: 
+</span></span><span class="line"><span class="cl">  masquerade: no
+</span></span><span class="line"><span class="cl">  forward-ports: 
+</span></span><span class="line"><span class="cl">  source-ports: 
+</span></span><span class="line"><span class="cl">  icmp-blocks: 
+</span></span><span class="line"><span class="cl">  rich rules:
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Add the following entries to <code>/etc/hosts</code></p>
 <div class="highlight"><div class="chroma">
@@ -510,9 +510,9 @@ firewall-cmd --list-all
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">192.168.0.1 jenkins.local
-192.168.1.1 agent.local
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">192.168.0.1 jenkins.local
+</span></span><span class="line"><span class="cl">192.168.1.1 agent.local
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Add AdoptOpenJDK repository</p>
 <div class="highlight"><div class="chroma">
@@ -527,15 +527,15 @@ firewall-cmd --list-all
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt;&#39;EOF&#39; &gt; /etc/yum.repos.d/adoptopenjdk.repo
-</span><span class="s">[AdoptOpenJDK]
-</span><span class="s">name=AdoptOpenJDK
-</span><span class="s">baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
-</span><span class="s">enabled=1
-</span><span class="s">gpgcheck=1
-</span><span class="s">gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
-</span><span class="s">EOF</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat <span class="s">&lt;&lt;&#39;EOF&#39; &gt; /etc/yum.repos.d/adoptopenjdk.repo
+</span></span></span><span class="line"><span class="cl"><span class="s">[AdoptOpenJDK]
+</span></span></span><span class="line"><span class="cl"><span class="s">name=AdoptOpenJDK
+</span></span></span><span class="line"><span class="cl"><span class="s">baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
+</span></span></span><span class="line"><span class="cl"><span class="s">enabled=1
+</span></span></span><span class="line"><span class="cl"><span class="s">gpgcheck=1
+</span></span></span><span class="line"><span class="cl"><span class="s">gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Add repository to get latest Git</p>
 <div class="highlight"><div class="chroma">
@@ -543,8 +543,8 @@ firewall-cmd --list-all
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.9-1.x86_64.rpm
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.9-1.x86_64.rpm
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Uninstall old Git by typing <code>yum remove git*</code> on your terminal</p>
 <p>Install AdoptOpenJDK, Git, Fontconfig and Wget</p>
@@ -553,8 +553,8 @@ firewall-cmd --list-all
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install adoptopenjdk-11-hotspot git fontconfig wget
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum -y install adoptopenjdk-11-hotspot git fontconfig wget
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Install docker and unzip from <a href="https://docs.docker.com/engine/install/centos/" target="_blank" rel="noopener noreffer">Install Docker Engine on CentOS</a></p>
 <ul>
@@ -576,8 +576,8 @@ firewall-cmd --list-all
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ssh -p <span class="m">2231</span> vagrant@agent.local -i .vagrant/machines/agent/virtualbox/private_key
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh -p <span class="m">2231</span> vagrant@agent.local -i .vagrant/machines/agent/virtualbox/private_key
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Try running container by typing <code>docker run hello-world</code> on your terminal.</p>
 <p>Installing maven</p>
@@ -696,21 +696,21 @@ firewall-cmd --list-all
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pipeline <span class="o">{</span>
-  agent <span class="o">{</span>label <span class="s2">&#34;linux&#34;</span><span class="o">}</span>
-  stages <span class="o">{</span>
-    stage<span class="o">(</span><span class="s2">&#34;Hello&#34;</span><span class="o">)</span> <span class="o">{</span>
-      steps <span class="o">{</span>
-        sh <span class="s2">&#34;&#34;&#34;
-</span><span class="s2">          mvn --version
-</span><span class="s2">          gradle --version
-</span><span class="s2">          docker info
-</span><span class="s2">        &#34;&#34;&#34;</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pipeline <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  agent <span class="o">{</span>label <span class="s2">&#34;linux&#34;</span><span class="o">}</span>
+</span></span><span class="line"><span class="cl">  stages <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    stage<span class="o">(</span><span class="s2">&#34;Hello&#34;</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      steps <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        sh <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">          mvn --version
+</span></span></span><span class="line"><span class="cl"><span class="s2">          gradle --version
+</span></span></span><span class="line"><span class="cl"><span class="s2">          docker info
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>You can see my example on <strong><a href="https://github.com/piinalpin/learning-ansible/tree/master/02-install-jenkins-centos8" target="_blank" rel="noopener noreffer">Github</a></strong></p>
 <h3 id="references">References</h3>

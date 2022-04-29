@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.piinalpin.com\/2020\/12\/spring-batch-example\/"
-        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Java, Spring Batch, Spring Boot, MySQL","wordcount":  1966 ,
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Java, Spring Batch, Spring Boot, MySQL","wordcount":  1965 ,
         "url": "https:\/\/blog.piinalpin.com\/2020\/12\/spring-batch-example\/","datePublished": "2020-12-08T14:08:21+07:00","dateModified": "2020-12-08T14:08:21+07:00","publisher": {
             "@type": "Organization",
             "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
@@ -102,7 +102,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Simple Spring Batch with Quartz Scheduling</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-08">2020-12-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1966 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-08">2020-12-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1965 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -155,12 +155,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">Maverick,24,M
-Al Sah-Him,21,M
-Felicia,24,F
-Jessica,22,F
-Calvin Joe,25,M
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">Maverick,24,M
+</span></span><span class="line"><span class="cl">Al Sah-Him,21,M
+</span></span><span class="line"><span class="cl">Felicia,24,F
+</span></span><span class="line"><span class="cl">Jessica,22,F
+</span></span><span class="line"><span class="cl">Calvin Joe,25,M
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Next, write an SQL script to create a table and store data.</p>
 <div class="highlight"><div class="chroma">
@@ -177,17 +177,17 @@ Calvin Joe,25,M
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">M_HUMAN</span><span class="w">
-</span><span class="w"></span><span class="p">(</span><span class="w">
-</span><span class="w">    </span><span class="n">id</span><span class="w">         </span><span class="nb">bigint</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">updated_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w">                           </span><span class="k">null</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">deleted_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w">                           </span><span class="k">null</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">name</span><span class="w">       </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">                        </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">age</span><span class="w">        </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">                          </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">gender</span><span class="w">     </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">                          </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w">
-</span><span class="w"></span><span class="p">);</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">M_HUMAN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w">         </span><span class="nb">bigint</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">updated_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w">                           </span><span class="k">null</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">deleted_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w">                           </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span><span class="w">       </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">                        </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">age</span><span class="w">        </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">                          </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">gender</span><span class="w">     </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">                          </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>Starting with spring initializr</li>
@@ -263,78 +263,76 @@ Calvin Joe,25,M
 </span><span class="lnt">65
 </span><span class="lnt">66
 </span><span class="lnt">67
-</span><span class="lnt">68
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-	<span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
-	<span class="nt">&lt;parent&gt;</span>
-		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-		<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
-		<span class="nt">&lt;version&gt;</span>2.4.0<span class="nt">&lt;/version&gt;</span>
-		<span class="nt">&lt;relativePath/&gt;</span> <span class="c">&lt;!-- lookup parent from repository --&gt;</span>
-	<span class="nt">&lt;/parent&gt;</span>
-	<span class="nt">&lt;groupId&gt;</span>com.maverick<span class="nt">&lt;/groupId&gt;</span>
-	<span class="nt">&lt;artifactId&gt;</span>spring-batch-example<span class="nt">&lt;/artifactId&gt;</span>
-	<span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
-	<span class="nt">&lt;name&gt;</span>spring-batch-example<span class="nt">&lt;/name&gt;</span>
-	<span class="nt">&lt;description&gt;</span>Demo project for Spring Boot<span class="nt">&lt;/description&gt;</span>
-
-	<span class="nt">&lt;properties&gt;</span>
-		<span class="nt">&lt;java.version&gt;</span>11<span class="nt">&lt;/java.version&gt;</span>
-	<span class="nt">&lt;/properties&gt;</span>
-
-	<span class="nt">&lt;dependencies&gt;</span>
-		<span class="nt">&lt;dependency&gt;</span>
-			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-batch<span class="nt">&lt;/artifactId&gt;</span>
-		<span class="nt">&lt;/dependency&gt;</span>
-
-		<span class="nt">&lt;dependency&gt;</span>
-			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
-			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-		<span class="nt">&lt;/dependency&gt;</span>
-		<span class="nt">&lt;dependency&gt;</span>
-			<span class="nt">&lt;groupId&gt;</span>org.springframework.batch<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId&gt;</span>spring-batch-test<span class="nt">&lt;/artifactId&gt;</span>
-			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-		<span class="nt">&lt;/dependency&gt;</span>
-		<span class="c">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span>
-		<span class="nt">&lt;dependency&gt;</span>
-			<span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
-			<span class="nt">&lt;version&gt;</span>8.0.22<span class="nt">&lt;/version&gt;</span>
-		<span class="nt">&lt;/dependency&gt;</span>
-
-		<span class="c">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;</span>
-		<span class="nt">&lt;dependency&gt;</span>
-			<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-			<span class="nt">&lt;version&gt;</span>1.18.16<span class="nt">&lt;/version&gt;</span>
-			<span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
-		<span class="nt">&lt;/dependency&gt;</span>
-		<span class="nt">&lt;dependency&gt;</span>
-			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-quartz<span class="nt">&lt;/artifactId&gt;</span>
-		<span class="nt">&lt;/dependency&gt;</span>
-
-	<span class="nt">&lt;/dependencies&gt;</span>
-
-	<span class="nt">&lt;build&gt;</span>
-		<span class="nt">&lt;plugins&gt;</span>
-			<span class="nt">&lt;plugin&gt;</span>
-				<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-				<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-			<span class="nt">&lt;/plugin&gt;</span>
-		<span class="nt">&lt;/plugins&gt;</span>
-	<span class="nt">&lt;/build&gt;</span>
-
-<span class="nt">&lt;/project&gt;</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;parent&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;version&gt;</span>2.4.0<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;relativePath/&gt;</span> <span class="c">&lt;!-- lookup parent from repository --&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/parent&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>com.maverick<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>spring-batch-example<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;name&gt;</span>spring-batch-example<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;description&gt;</span>Demo project for Spring Boot<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;properties&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;java.version&gt;</span>11<span class="nt">&lt;/java.version&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/properties&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-batch<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.batch<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-batch-test<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="c">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;version&gt;</span>8.0.22<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;version&gt;</span>1.18.16<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-quartz<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;build&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;plugins&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">				<span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">				<span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;/plugin&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/plugins&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/build&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/project&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>Create a model class as the following example <code>src/main/java/com/maverick/springbatchexample/model/Person.java</code></li>
@@ -363,27 +361,27 @@ Calvin Joe,25,M
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.model</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">lombok.AllArgsConstructor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">lombok.Builder</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">lombok.Data</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">lombok.NoArgsConstructor</span><span class="o">;</span>
-
-<span class="nd">@Data</span>
-<span class="nd">@AllArgsConstructor</span>
-<span class="nd">@NoArgsConstructor</span>
-<span class="nd">@Builder</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">age</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">gender</span><span class="o">;</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.model</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">lombok.AllArgsConstructor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">lombok.Builder</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">lombok.Data</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">lombok.NoArgsConstructor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Data</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">age</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">gender</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>Create an intermediate processor as the following example <code>src/main/java/com/maverick/springbatchexample/processor/PersonItemProcessor.java</code></li>
@@ -410,25 +408,25 @@ Calvin Joe,25,M
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.processor</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.model.Person</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.item.ItemProcessor</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonItemProcessor</span> <span class="kd">implements</span> <span class="n">ItemProcessor</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">PersonItemProcessor</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Person</span> <span class="nf">process</span><span class="o">(</span><span class="n">Person</span> <span class="n">person</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-        <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### Process: &#34;</span> <span class="o">+</span> <span class="n">person</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
-        <span class="k">return</span> <span class="n">person</span><span class="o">;</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.processor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.model.Person</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.item.ItemProcessor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonItemProcessor</span> <span class="kd">implements</span> <span class="n">ItemProcessor</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">PersonItemProcessor</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Person</span> <span class="nf">process</span><span class="o">(</span><span class="n">Person</span> <span class="n">person</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### Process: &#34;</span> <span class="o">+</span> <span class="n">person</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">person</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="5">
 <li>Create datasource configuration as the following example <code>src/main/java/com/maverick/springbatchexample/configuration/DataSourceConfiguration.java</code></li>
@@ -481,51 +479,51 @@ Calvin Joe,25,M
 </span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.configuration</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Qualifier</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.boot.jdbc.DataSourceBuilder</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Primary</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.jdbc.core.JdbcTemplate</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">javax.sql.DataSource</span><span class="o">;</span>
-
-<span class="nd">@Configuration</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataSourceConfiguration</span> <span class="o">{</span>
-
-    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${spring.datasource.url}&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">datasourceUrl</span><span class="o">;</span>
-
-    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${spring.datasource.username}&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">datasourceUsername</span><span class="o">;</span>
-
-    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${spring.datasource.password}&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">datasourcePassword</span><span class="o">;</span>
-
-    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${spring.datasource.driverClassName}&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">datasourceDriverClassName</span><span class="o">;</span>
-
-    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;MVRCKDatasource&#34;</span><span class="o">)</span>
-    <span class="nd">@Primary</span>
-    <span class="kd">public</span> <span class="n">DataSource</span> <span class="nf">dataSource</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">DataSourceBuilder</span><span class="o">.</span><span class="na">create</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="n">datasourceUrl</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">username</span><span class="o">(</span><span class="n">datasourceUsername</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="n">datasourcePassword</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">driverClassName</span><span class="o">(</span><span class="n">datasourceDriverClassName</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;MVRCKJdbcTemplate&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">JdbcTemplate</span> <span class="nf">jdbcTemplate</span><span class="o">(</span><span class="nd">@Qualifier</span><span class="o">(</span><span class="s">&#34;MVRCKDatasource&#34;</span><span class="o">)</span> <span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">JdbcTemplate</span><span class="o">(</span><span class="n">dataSource</span><span class="o">);</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.configuration</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Qualifier</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.boot.jdbc.DataSourceBuilder</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Primary</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.jdbc.core.JdbcTemplate</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">javax.sql.DataSource</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataSourceConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${spring.datasource.url}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">datasourceUrl</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${spring.datasource.username}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">datasourceUsername</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${spring.datasource.password}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">datasourcePassword</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${spring.datasource.driverClassName}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">datasourceDriverClassName</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;MVRCKDatasource&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Primary</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">DataSource</span> <span class="nf">dataSource</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">DataSourceBuilder</span><span class="o">.</span><span class="na">create</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">url</span><span class="o">(</span><span class="n">datasourceUrl</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">username</span><span class="o">(</span><span class="n">datasourceUsername</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="n">datasourcePassword</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">driverClassName</span><span class="o">(</span><span class="n">datasourceDriverClassName</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;MVRCKJdbcTemplate&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">JdbcTemplate</span> <span class="nf">jdbcTemplate</span><span class="o">(</span><span class="nd">@Qualifier</span><span class="o">(</span><span class="s">&#34;MVRCKDatasource&#34;</span><span class="o">)</span> <span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">JdbcTemplate</span><span class="o">(</span><span class="n">dataSource</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="6">
 <li>Create quartz job launcher as the following example <code>src/main/java/com/maverick/springbatchexample/quartz/QuartzJobLauncher.java</code></li>
@@ -597,70 +595,70 @@ Calvin Joe,25,M
 </span><span class="lnt">63
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.quartz</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">org.quartz.JobExecutionContext</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.quartz.JobExecutionException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.*</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.JobLocator</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.JobLauncher</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.NoSuchJobException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.repository.JobExecutionAlreadyRunningException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.repository.JobRestartException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.scheduling.quartz.QuartzJobBean</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuartzJobLauncher</span> <span class="kd">extends</span> <span class="n">QuartzJobBean</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">QuartzJobLauncher</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">jobName</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">JobLauncher</span> <span class="n">jobLauncher</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">JobLocator</span> <span class="n">jobLocator</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getJobName</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">jobName</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setJobName</span><span class="o">(</span><span class="n">String</span> <span class="n">jobName</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">jobName</span> <span class="o">=</span> <span class="n">jobName</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">JobLauncher</span> <span class="nf">getJobLauncher</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">jobLauncher</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setJobLauncher</span><span class="o">(</span><span class="n">JobLauncher</span> <span class="n">jobLauncher</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">jobLauncher</span> <span class="o">=</span> <span class="n">jobLauncher</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">JobLocator</span> <span class="nf">getJobLocator</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">jobLocator</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setJobLocator</span><span class="o">(</span><span class="n">JobLocator</span> <span class="n">jobLocator</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">jobLocator</span> <span class="o">=</span> <span class="n">jobLocator</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">executeInternal</span><span class="o">(</span><span class="n">JobExecutionContext</span> <span class="n">jobExecutionContext</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">JobExecutionException</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">Job</span> <span class="n">job</span> <span class="o">=</span> <span class="n">jobLocator</span><span class="o">.</span><span class="na">getJob</span><span class="o">(</span><span class="n">jobName</span><span class="o">);</span>
-            <span class="n">JobParameters</span> <span class="n">jobParameters</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobParametersBuilder</span><span class="o">()</span>
-                    <span class="o">.</span><span class="na">addLong</span><span class="o">(</span><span class="s">&#34;time&#34;</span><span class="o">,</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">())</span>
-                    <span class="o">.</span><span class="na">toJobParameters</span><span class="o">();</span>
-            <span class="n">JobExecution</span> <span class="n">jobExecution</span> <span class="o">=</span> <span class="n">jobLauncher</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">job</span><span class="o">,</span> <span class="n">jobParameters</span><span class="o">);</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Job was completed successfully.&#34;</span><span class="o">,</span> <span class="n">job</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">jobExecution</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JobParametersInvalidException</span> <span class="o">|</span> <span class="n">NoSuchJobException</span> <span class="o">|</span> <span class="n">JobExecutionAlreadyRunningException</span> <span class="o">|</span> <span class="n">JobInstanceAlreadyCompleteException</span> <span class="o">|</span> <span class="n">JobRestartException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Failed execute job !!!&#34;</span><span class="o">);</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="n">ex</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.quartz</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.quartz.JobExecutionContext</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.quartz.JobExecutionException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.*</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.JobLocator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.JobLauncher</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.NoSuchJobException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.repository.JobExecutionAlreadyRunningException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.repository.JobRestartException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.scheduling.quartz.QuartzJobBean</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuartzJobLauncher</span> <span class="kd">extends</span> <span class="n">QuartzJobBean</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">QuartzJobLauncher</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">jobName</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">JobLauncher</span> <span class="n">jobLauncher</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">JobLocator</span> <span class="n">jobLocator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getJobName</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jobName</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setJobName</span><span class="o">(</span><span class="n">String</span> <span class="n">jobName</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">jobName</span> <span class="o">=</span> <span class="n">jobName</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">JobLauncher</span> <span class="nf">getJobLauncher</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jobLauncher</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setJobLauncher</span><span class="o">(</span><span class="n">JobLauncher</span> <span class="n">jobLauncher</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">jobLauncher</span> <span class="o">=</span> <span class="n">jobLauncher</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">JobLocator</span> <span class="nf">getJobLocator</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jobLocator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setJobLocator</span><span class="o">(</span><span class="n">JobLocator</span> <span class="n">jobLocator</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">jobLocator</span> <span class="o">=</span> <span class="n">jobLocator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">executeInternal</span><span class="o">(</span><span class="n">JobExecutionContext</span> <span class="n">jobExecutionContext</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">JobExecutionException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Job</span> <span class="n">job</span> <span class="o">=</span> <span class="n">jobLocator</span><span class="o">.</span><span class="na">getJob</span><span class="o">(</span><span class="n">jobName</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">JobParameters</span> <span class="n">jobParameters</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobParametersBuilder</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">addLong</span><span class="o">(</span><span class="s">&#34;time&#34;</span><span class="o">,</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">toJobParameters</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">JobExecution</span> <span class="n">jobExecution</span> <span class="o">=</span> <span class="n">jobLauncher</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">job</span><span class="o">,</span> <span class="n">jobParameters</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Job was completed successfully.&#34;</span><span class="o">,</span> <span class="n">job</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">jobExecution</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JobParametersInvalidException</span> <span class="o">|</span> <span class="n">NoSuchJobException</span> <span class="o">|</span> <span class="n">JobExecutionAlreadyRunningException</span> <span class="o">|</span> <span class="n">JobInstanceAlreadyCompleteException</span> <span class="o">|</span> <span class="n">JobRestartException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;Failed execute job !!!&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="n">ex</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="7">
 <li>Create quartz configuration as the following example <code>src/main/java/com/maverick/springbatchexample/quartz/QuartzConfiguration.java</code></li>
@@ -799,127 +797,127 @@ Calvin Joe,25,M
 </span><span class="lnt">120
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.quartz</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.JobLocator</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.JobRegistry</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.explore.JobExplorer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.JobLauncher</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.JobOperator</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.support.SimpleJobLauncher</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.support.SimpleJobOperator</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.repository.JobRepository</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.repository.support.JobRepositoryFactoryBean</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.scheduling.quartz.CronTriggerFactoryBean</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.scheduling.quartz.JobDetailFactoryBean</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.scheduling.quartz.SchedulerFactoryBean</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.transaction.PlatformTransactionManager</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">javax.sql.DataSource</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
-
-<span class="nd">@Configuration</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuartzConfiguration</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">QuartzConfiguration</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">JobExplorer</span> <span class="n">jobExplorer</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">JobLocator</span> <span class="n">jobLocator</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">JobRegistry</span> <span class="n">jobRegistry</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">PlatformTransactionManager</span> <span class="n">platformTransactionManager</span><span class="o">;</span>
-
-    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${scheduler.maverick.cron}&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">schedulerMaverickCron</span><span class="o">;</span>
-
-    <span class="nd">@Autowired</span>
-    <span class="kd">public</span> <span class="nf">QuartzConfiguration</span><span class="o">(</span><span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">,</span> <span class="n">JobExplorer</span> <span class="n">jobExplorer</span><span class="o">,</span> <span class="n">JobLocator</span> <span class="n">jobLocator</span><span class="o">,</span>
-                               <span class="n">JobRegistry</span> <span class="n">jobRegistry</span><span class="o">,</span> <span class="n">PlatformTransactionManager</span> <span class="n">platformTransactionManager</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">dataSource</span> <span class="o">=</span> <span class="n">dataSource</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">jobExplorer</span> <span class="o">=</span> <span class="n">jobExplorer</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">jobLocator</span> <span class="o">=</span> <span class="n">jobLocator</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">jobRegistry</span> <span class="o">=</span> <span class="n">jobRegistry</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">platformTransactionManager</span> <span class="o">=</span> <span class="n">platformTransactionManager</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">JobRegistryBeanPostProcessor</span> <span class="nf">jobRegistryBeanPostProcessor</span><span class="o">(</span><span class="n">JobRegistry</span> <span class="n">jobRegistry</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">JobRegistryBeanPostProcessor</span> <span class="n">jobRegistryBeanPostProcessor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobRegistryBeanPostProcessor</span><span class="o">();</span>
-        <span class="n">jobRegistryBeanPostProcessor</span><span class="o">.</span><span class="na">setJobRegistry</span><span class="o">(</span><span class="n">jobRegistry</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">jobRegistryBeanPostProcessor</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;jobRepository&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">JobRepository</span> <span class="nf">jobRepository</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">JobRepositoryFactoryBean</span> <span class="n">factoryBean</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobRepositoryFactoryBean</span><span class="o">();</span>
-        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setDataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">);</span>
-        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setTransactionManager</span><span class="o">(</span><span class="n">platformTransactionManager</span><span class="o">);</span>
-        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setIsolationLevelForCreate</span><span class="o">(</span><span class="s">&#34;ISOLATION_READ_COMMITTED&#34;</span><span class="o">);</span>
-        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setTablePrefix</span><span class="o">(</span><span class="s">&#34;BATCH_&#34;</span><span class="o">);</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">factoryBean</span><span class="o">.</span><span class="na">afterPropertiesSet</span><span class="o">();</span>
-            <span class="k">return</span> <span class="n">factoryBean</span><span class="o">.</span><span class="na">getObject</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;JobRepository bean could not be initialized&#34;</span><span class="o">,</span> <span class="n">ex</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">JobLauncher</span> <span class="nf">jobLauncher</span><span class="o">(){</span>
-        <span class="n">SimpleJobLauncher</span> <span class="n">jobLauncher</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleJobLauncher</span><span class="o">();</span>
-        <span class="n">jobLauncher</span><span class="o">.</span><span class="na">setJobRepository</span><span class="o">(</span><span class="n">jobRepository</span><span class="o">());</span>
-        <span class="k">return</span> <span class="n">jobLauncher</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">JobOperator</span> <span class="nf">jobOperator</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">SimpleJobOperator</span> <span class="n">jobOperator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleJobOperator</span><span class="o">();</span>
-        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobExplorer</span><span class="o">(</span><span class="n">jobExplorer</span><span class="o">);</span>
-        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobLauncher</span><span class="o">(</span><span class="n">jobLauncher</span><span class="o">());</span>
-        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobRegistry</span><span class="o">(</span><span class="n">jobRegistry</span><span class="o">);</span>
-        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobRepository</span><span class="o">(</span><span class="n">jobRepository</span><span class="o">());</span>
-        <span class="k">return</span> <span class="n">jobOperator</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">JobDetailFactoryBean</span> <span class="nf">jobDetailFactoryBean</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">JobDetailFactoryBean</span> <span class="n">factory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobDetailFactoryBean</span><span class="o">();</span>
-        <span class="n">factory</span><span class="o">.</span><span class="na">setJobClass</span><span class="o">(</span><span class="n">QuartzJobLauncher</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobName&#34;</span><span class="o">,</span> <span class="s">&#34;importPersonJob&#34;</span><span class="o">);</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobLauncher&#34;</span><span class="o">,</span> <span class="n">jobLauncher</span><span class="o">());</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobLocator&#34;</span><span class="o">,</span> <span class="n">jobLocator</span><span class="o">);</span>
-        <span class="n">factory</span><span class="o">.</span><span class="na">setJobDataAsMap</span><span class="o">(</span><span class="n">map</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">factory</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">CronTriggerFactoryBean</span> <span class="nf">cronTriggerFactoryBean</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">CronTriggerFactoryBean</span> <span class="n">stFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CronTriggerFactoryBean</span><span class="o">();</span>
-        <span class="n">stFactory</span><span class="o">.</span><span class="na">setJobDetail</span><span class="o">(</span><span class="n">jobDetailFactoryBean</span><span class="o">().</span><span class="na">getObject</span><span class="o">());</span>
-        <span class="n">stFactory</span><span class="o">.</span><span class="na">setCronExpression</span><span class="o">(</span><span class="n">schedulerMaverickCron</span><span class="o">);</span>
-        <span class="n">stFactory</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;cronTriggerFactoryBean&#34;</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">stFactory</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">SchedulerFactoryBean</span> <span class="nf">schedulerBean</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">SchedulerFactoryBean</span> <span class="n">scheduler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SchedulerFactoryBean</span><span class="o">();</span>
-        <span class="n">scheduler</span><span class="o">.</span><span class="na">setTriggers</span><span class="o">(</span><span class="n">cronTriggerFactoryBean</span><span class="o">().</span><span class="na">getObject</span><span class="o">());</span>
-        <span class="k">return</span> <span class="n">scheduler</span><span class="o">;</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.quartz</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.JobLocator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.JobRegistry</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.explore.JobExplorer</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.JobLauncher</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.JobOperator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.support.SimpleJobLauncher</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.support.SimpleJobOperator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.repository.JobRepository</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.repository.support.JobRepositoryFactoryBean</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.scheduling.quartz.CronTriggerFactoryBean</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.scheduling.quartz.JobDetailFactoryBean</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.scheduling.quartz.SchedulerFactoryBean</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.transaction.PlatformTransactionManager</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">javax.sql.DataSource</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuartzConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">QuartzConfiguration</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">JobExplorer</span> <span class="n">jobExplorer</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">JobLocator</span> <span class="n">jobLocator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">JobRegistry</span> <span class="n">jobRegistry</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">PlatformTransactionManager</span> <span class="n">platformTransactionManager</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${scheduler.maverick.cron}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">schedulerMaverickCron</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">QuartzConfiguration</span><span class="o">(</span><span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">,</span> <span class="n">JobExplorer</span> <span class="n">jobExplorer</span><span class="o">,</span> <span class="n">JobLocator</span> <span class="n">jobLocator</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">                               <span class="n">JobRegistry</span> <span class="n">jobRegistry</span><span class="o">,</span> <span class="n">PlatformTransactionManager</span> <span class="n">platformTransactionManager</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">dataSource</span> <span class="o">=</span> <span class="n">dataSource</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">jobExplorer</span> <span class="o">=</span> <span class="n">jobExplorer</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">jobLocator</span> <span class="o">=</span> <span class="n">jobLocator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">jobRegistry</span> <span class="o">=</span> <span class="n">jobRegistry</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">platformTransactionManager</span> <span class="o">=</span> <span class="n">platformTransactionManager</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">JobRegistryBeanPostProcessor</span> <span class="nf">jobRegistryBeanPostProcessor</span><span class="o">(</span><span class="n">JobRegistry</span> <span class="n">jobRegistry</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">JobRegistryBeanPostProcessor</span> <span class="n">jobRegistryBeanPostProcessor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobRegistryBeanPostProcessor</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jobRegistryBeanPostProcessor</span><span class="o">.</span><span class="na">setJobRegistry</span><span class="o">(</span><span class="n">jobRegistry</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jobRegistryBeanPostProcessor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;jobRepository&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">JobRepository</span> <span class="nf">jobRepository</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">JobRepositoryFactoryBean</span> <span class="n">factoryBean</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobRepositoryFactoryBean</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setDataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setTransactionManager</span><span class="o">(</span><span class="n">platformTransactionManager</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setIsolationLevelForCreate</span><span class="o">(</span><span class="s">&#34;ISOLATION_READ_COMMITTED&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">factoryBean</span><span class="o">.</span><span class="na">setTablePrefix</span><span class="o">(</span><span class="s">&#34;BATCH_&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">factoryBean</span><span class="o">.</span><span class="na">afterPropertiesSet</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">factoryBean</span><span class="o">.</span><span class="na">getObject</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;JobRepository bean could not be initialized&#34;</span><span class="o">,</span> <span class="n">ex</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">JobLauncher</span> <span class="nf">jobLauncher</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SimpleJobLauncher</span> <span class="n">jobLauncher</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleJobLauncher</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jobLauncher</span><span class="o">.</span><span class="na">setJobRepository</span><span class="o">(</span><span class="n">jobRepository</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jobLauncher</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">JobOperator</span> <span class="nf">jobOperator</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SimpleJobOperator</span> <span class="n">jobOperator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleJobOperator</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobExplorer</span><span class="o">(</span><span class="n">jobExplorer</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobLauncher</span><span class="o">(</span><span class="n">jobLauncher</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobRegistry</span><span class="o">(</span><span class="n">jobRegistry</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jobOperator</span><span class="o">.</span><span class="na">setJobRepository</span><span class="o">(</span><span class="n">jobRepository</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jobOperator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">JobDetailFactoryBean</span> <span class="nf">jobDetailFactoryBean</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">JobDetailFactoryBean</span> <span class="n">factory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JobDetailFactoryBean</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">factory</span><span class="o">.</span><span class="na">setJobClass</span><span class="o">(</span><span class="n">QuartzJobLauncher</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobName&#34;</span><span class="o">,</span> <span class="s">&#34;importPersonJob&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobLauncher&#34;</span><span class="o">,</span> <span class="n">jobLauncher</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;jobLocator&#34;</span><span class="o">,</span> <span class="n">jobLocator</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">factory</span><span class="o">.</span><span class="na">setJobDataAsMap</span><span class="o">(</span><span class="n">map</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">factory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">CronTriggerFactoryBean</span> <span class="nf">cronTriggerFactoryBean</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">CronTriggerFactoryBean</span> <span class="n">stFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CronTriggerFactoryBean</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stFactory</span><span class="o">.</span><span class="na">setJobDetail</span><span class="o">(</span><span class="n">jobDetailFactoryBean</span><span class="o">().</span><span class="na">getObject</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stFactory</span><span class="o">.</span><span class="na">setCronExpression</span><span class="o">(</span><span class="n">schedulerMaverickCron</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stFactory</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;cronTriggerFactoryBean&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">stFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">SchedulerFactoryBean</span> <span class="nf">schedulerBean</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SchedulerFactoryBean</span> <span class="n">scheduler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SchedulerFactoryBean</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">scheduler</span><span class="o">.</span><span class="na">setTriggers</span><span class="o">(</span><span class="n">cronTriggerFactoryBean</span><span class="o">().</span><span class="na">getObject</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">scheduler</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="8">
 <li>Create job completion notification listener to notify when job is complete as the following example <code>src/main/java/com/maverick/springbatchexample/service/JobCompletionNotificationListener.java</code></li>
@@ -949,28 +947,28 @@ Calvin Joe,25,M
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.service</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.BatchStatus</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.JobExecution</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.listener.JobExecutionListenerSupport</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Service</span><span class="o">;</span>
-
-<span class="nd">@Service</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JobCompletionNotificationListener</span> <span class="kd">extends</span> <span class="n">JobExecutionListenerSupport</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">JobCompletionNotificationListener</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterJob</span><span class="o">(</span><span class="n">JobExecution</span> <span class="n">jobExecution</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">jobExecution</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()</span> <span class="o">==</span> <span class="n">BatchStatus</span><span class="o">.</span><span class="na">COMPLETED</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### JOB FINISHED!&#34;</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.service</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.BatchStatus</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.JobExecution</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.listener.JobExecutionListenerSupport</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.stereotype.Service</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Service</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JobCompletionNotificationListener</span> <span class="kd">extends</span> <span class="n">JobExecutionListenerSupport</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">JobCompletionNotificationListener</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterJob</span><span class="o">(</span><span class="n">JobExecution</span> <span class="n">jobExecution</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">jobExecution</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()</span> <span class="o">==</span> <span class="n">BatchStatus</span><span class="o">.</span><span class="na">COMPLETED</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;### JOB FINISHED!&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="9">
 <li>Put together a batch job configuration as the following example <code>src/main/java/com/maverick/springbatchexample/configuration/BatchConfiguration.java</code></li>
@@ -1073,101 +1071,101 @@ Calvin Joe,25,M
 </span><span class="lnt">94
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.configuration</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.model.Person</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.processor.PersonItemProcessor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.service.JobCompletionNotificationListener</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.Job</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.Step</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.annotation.EnableBatchProcessing</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.annotation.JobBuilderFactory</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.annotation.StepBuilderFactory</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.annotation.StepScope</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.support.RunIdIncrementer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.item.database.JdbcBatchItemWriter</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilder</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.item.file.FlatFileItemReader</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Qualifier</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.core.io.ClassPathResource</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">javax.sql.DataSource</span><span class="o">;</span>
-
-<span class="nd">@Configuration</span>
-<span class="nd">@EnableBatchProcessing</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BatchConfiguration</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">JobBuilderFactory</span> <span class="n">jobBuilderFactory</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">StepBuilderFactory</span> <span class="n">stepBuilderFactory</span><span class="o">;</span>
-
-    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${files.source-file:sample-data.csv}&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">sourceFile</span><span class="o">;</span>
-
-    <span class="nd">@Autowired</span>
-    <span class="kd">public</span> <span class="nf">BatchConfiguration</span><span class="o">(</span><span class="n">JobBuilderFactory</span> <span class="n">jobBuilderFactory</span><span class="o">,</span> <span class="n">StepBuilderFactory</span> <span class="n">stepBuilderFactory</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">jobBuilderFactory</span> <span class="o">=</span> <span class="n">jobBuilderFactory</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">stepBuilderFactory</span> <span class="o">=</span> <span class="n">stepBuilderFactory</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">FlatFileItemReader</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="nf">reader</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">FlatFileItemReaderBuilder</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;()</span>
-                <span class="o">.</span><span class="na">name</span><span class="o">(</span><span class="s">&#34;personItemReader&#34;</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">resource</span><span class="o">(</span><span class="k">new</span> <span class="n">ClassPathResource</span><span class="o">(</span><span class="n">sourceFile</span><span class="o">))</span>
-                <span class="o">.</span><span class="na">delimited</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">names</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="s">&#34;age&#34;</span><span class="o">,</span> <span class="s">&#34;gender&#34;</span><span class="o">})</span>
-                <span class="o">.</span><span class="na">fieldSetMapper</span><span class="o">(</span><span class="k">new</span> <span class="n">BeanWrapperFieldSetMapper</span><span class="o">&lt;&gt;(){{</span>
-                    <span class="n">setTargetType</span><span class="o">(</span><span class="n">Person</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-                <span class="o">}})</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="nd">@StepScope</span>
-    <span class="kd">public</span> <span class="n">PersonItemProcessor</span> <span class="nf">processor</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">PersonItemProcessor</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">JdbcBatchItemWriter</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="nf">writer</span><span class="o">(</span><span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">JdbcBatchItemWriterBuilder</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;()</span>
-                <span class="o">.</span><span class="na">itemSqlParameterSourceProvider</span><span class="o">(</span><span class="k">new</span> <span class="n">BeanPropertyItemSqlParameterSourceProvider</span><span class="o">&lt;&gt;())</span>
-                <span class="o">.</span><span class="na">sql</span><span class="o">(</span><span class="s">&#34;INSERT INTO M_HUMAN (name, age, gender) VALUES (:name, :age, :gender)&#34;</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">dataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">Job</span> <span class="nf">importPersonJob</span><span class="o">(</span><span class="n">JobCompletionNotificationListener</span> <span class="n">listener</span><span class="o">,</span>
-                               <span class="nd">@Qualifier</span><span class="o">(</span><span class="s">&#34;personImportStep&#34;</span><span class="o">)</span> <span class="n">Step</span> <span class="n">personImportStep</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">jobBuilderFactory</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;importPersonJob&#34;</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">incrementer</span><span class="o">(</span><span class="k">new</span> <span class="n">RunIdIncrementer</span><span class="o">())</span>
-                <span class="o">.</span><span class="na">listener</span><span class="o">(</span><span class="n">listener</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="n">personImportStep</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">Step</span> <span class="nf">personImportStep</span><span class="o">(</span><span class="n">FlatFileItemReader</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">reader</span><span class="o">,</span>
-                                 <span class="n">PersonItemProcessor</span> <span class="n">processor</span><span class="o">,</span>
-                                 <span class="n">JdbcBatchItemWriter</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">writer</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">stepBuilderFactory</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;personImportStep&#34;</span><span class="o">)</span>
-                <span class="o">.&lt;</span><span class="n">Person</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="nf">chunk</span><span class="o">(</span><span class="n">10</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">reader</span><span class="o">(</span><span class="n">reader</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">processor</span><span class="o">(</span><span class="n">processor</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">writer</span><span class="o">(</span><span class="n">writer</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.maverick.springbatchexample.configuration</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.model.Person</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.processor.PersonItemProcessor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.maverick.springbatchexample.service.JobCompletionNotificationListener</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.Job</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.Step</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.annotation.EnableBatchProcessing</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.annotation.JobBuilderFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.annotation.StepBuilderFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.configuration.annotation.StepScope</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.core.launch.support.RunIdIncrementer</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.item.database.JdbcBatchItemWriter</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilder</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.item.file.FlatFileItemReader</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Qualifier</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.springframework.core.io.ClassPathResource</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">javax.sql.DataSource</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@EnableBatchProcessing</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BatchConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">JobBuilderFactory</span> <span class="n">jobBuilderFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">StepBuilderFactory</span> <span class="n">stepBuilderFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${files.source-file:sample-data.csv}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">sourceFile</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">BatchConfiguration</span><span class="o">(</span><span class="n">JobBuilderFactory</span> <span class="n">jobBuilderFactory</span><span class="o">,</span> <span class="n">StepBuilderFactory</span> <span class="n">stepBuilderFactory</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">jobBuilderFactory</span> <span class="o">=</span> <span class="n">jobBuilderFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">stepBuilderFactory</span> <span class="o">=</span> <span class="n">stepBuilderFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">FlatFileItemReader</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="nf">reader</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">FlatFileItemReaderBuilder</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">name</span><span class="o">(</span><span class="s">&#34;personItemReader&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">resource</span><span class="o">(</span><span class="k">new</span> <span class="n">ClassPathResource</span><span class="o">(</span><span class="n">sourceFile</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">delimited</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">names</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="s">&#34;age&#34;</span><span class="o">,</span> <span class="s">&#34;gender&#34;</span><span class="o">})</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">fieldSetMapper</span><span class="o">(</span><span class="k">new</span> <span class="n">BeanWrapperFieldSetMapper</span><span class="o">&lt;&gt;(){{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">setTargetType</span><span class="o">(</span><span class="n">Person</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}})</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@StepScope</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">PersonItemProcessor</span> <span class="nf">processor</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">PersonItemProcessor</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">JdbcBatchItemWriter</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="nf">writer</span><span class="o">(</span><span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">JdbcBatchItemWriterBuilder</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">itemSqlParameterSourceProvider</span><span class="o">(</span><span class="k">new</span> <span class="n">BeanPropertyItemSqlParameterSourceProvider</span><span class="o">&lt;&gt;())</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">sql</span><span class="o">(</span><span class="s">&#34;INSERT INTO M_HUMAN (name, age, gender) VALUES (:name, :age, :gender)&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">dataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Job</span> <span class="nf">importPersonJob</span><span class="o">(</span><span class="n">JobCompletionNotificationListener</span> <span class="n">listener</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">                               <span class="nd">@Qualifier</span><span class="o">(</span><span class="s">&#34;personImportStep&#34;</span><span class="o">)</span> <span class="n">Step</span> <span class="n">personImportStep</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jobBuilderFactory</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;importPersonJob&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">incrementer</span><span class="o">(</span><span class="k">new</span> <span class="n">RunIdIncrementer</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">listener</span><span class="o">(</span><span class="n">listener</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="n">personImportStep</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Step</span> <span class="nf">personImportStep</span><span class="o">(</span><span class="n">FlatFileItemReader</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">reader</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">                                 <span class="n">PersonItemProcessor</span> <span class="n">processor</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">                                 <span class="n">JdbcBatchItemWriter</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">writer</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">stepBuilderFactory</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;personImportStep&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.&lt;</span><span class="n">Person</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="nf">chunk</span><span class="o">(</span><span class="n">10</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">reader</span><span class="o">(</span><span class="n">reader</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">processor</span><span class="o">(</span><span class="n">processor</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">writer</span><span class="o">(</span><span class="n">writer</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="10">
 <li>Make application executable and load <code>application.properties</code> from classpath</li>
@@ -1187,18 +1185,18 @@ Calvin Joe,25,M
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
-<span class="nd">@PropertySources</span><span class="o">({</span>
-		<span class="nd">@PropertySource</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;classpath:application.properties&#34;</span><span class="o">,</span> <span class="n">ignoreResourceNotFound</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-<span class="o">})</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpringBatchExampleApplication</span> <span class="o">{</span>
-
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">SpringBatchExampleApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
-	<span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@PropertySources</span><span class="o">({</span>
+</span></span><span class="line"><span class="cl">		<span class="nd">@PropertySource</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;classpath:application.properties&#34;</span><span class="o">,</span> <span class="n">ignoreResourceNotFound</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">})</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpringBatchExampleApplication</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">SpringBatchExampleApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="11">
 <li>Edit <code>src/main/resources/application.properties</code> to allow initialize schema and etc.</li>
@@ -1210,10 +1208,10 @@ Calvin Joe,25,M
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">spring.batch.initialize-schema=ALWAYS
-spring.main.allow-bean-definition-overriding=true
-spring.batch.job.enabled=false
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">spring.batch.initialize-schema=ALWAYS
+</span></span><span class="line"><span class="cl">spring.main.allow-bean-definition-overriding=true
+</span></span><span class="line"><span class="cl">spring.batch.job.enabled=false
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="12">
 <li>Create an external application configuration call <code>application.yml</code></li>
@@ -1237,22 +1235,22 @@ spring.batch.job.enabled=false
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">app</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Spring Batch Example&#34;</span><span class="w">
-</span><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dev&#34;</span><span class="w">
-</span><span class="w">  </span><span class="nt">datasource</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;jdbc:mysql://localhost:3306/DB_NAME?allowPublicKeyRetrieval=true&amp;useSSL=false&#34;</span><span class="w">
-</span><span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">DB_USERNAME</span><span class="w">
-</span><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">DB_PASSWORD</span><span class="w">
-</span><span class="w">    </span><span class="nt">driverClassName</span><span class="p">:</span><span class="w"> </span><span class="l">com.mysql.cj.jdbc.Driver</span><span class="w">
-</span><span class="w"></span><span class="nt">scheduler</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">maverick</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0 0 14 ? * TUE *&#34;</span><span class="w">
-</span><span class="w"></span><span class="nt">files</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">source-file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;sample-data.csv&#34;</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">app</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Spring Batch Example&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">profiles</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dev&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">datasource</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;jdbc:mysql://localhost:3306/DB_NAME?allowPublicKeyRetrieval=true&amp;useSSL=false&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">DB_USERNAME</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">DB_PASSWORD</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driverClassName</span><span class="p">:</span><span class="w"> </span><span class="l">com.mysql.cj.jdbc.Driver</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">scheduler</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">maverick</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0 0 14 ? * TUE *&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">files</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">source-file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;sample-data.csv&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="13">
 <li>Build an executable jar with <code>mvn clean package</code> and run application parallel to <code>application.yml</code> with command</li>
@@ -1262,8 +1260,8 @@ spring.batch.job.enabled=false
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">java -jar spring-batch-example-0.0.1-SNAPSHOT.jar -Dspring.config.location<span class="o">=</span>application.yml
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -jar spring-batch-example-0.0.1-SNAPSHOT.jar -Dspring.config.location<span class="o">=</span>application.yml
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The job prints out a line for each person that gets transformed. After the job runs, you can also see the output from querying the database. It should resemble the following output:</p>
 <div class="highlight"><div class="chroma">
@@ -1280,17 +1278,17 @@ spring.batch.job.enabled=false
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">2020-12-08 14:00:00.218  INFO 78242 --- [erBean_Worker-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=importPersonJob]] launched with the following parameters: [{time=1607410800020}]
-2020-12-08 14:00:00.338  INFO 78242 --- [erBean_Worker-1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [personImportStep]
-2020-12-08 14:00:00.437  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Maverick
-2020-12-08 14:00:00.438  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Al Sah-Him
-2020-12-08 14:00:00.438  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Felicia
-2020-12-08 14:00:00.438  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Jessica
-2020-12-08 14:00:00.438  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Calvin Joe
-2020-12-08 14:00:00.503  INFO 78242 --- [erBean_Worker-1] o.s.batch.core.step.AbstractStep         : Step: [personImportStep] executed in 164ms
-2020-12-08 14:00:00.533  INFO 78242 --- [erBean_Worker-1] .m.s.s.JobCompletionNotificationListener : ### JOB FINISHED!
-2020-12-08 14:00:00.559  INFO 78242 --- [erBean_Worker-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=importPersonJob]] completed with the following parameters: [{time=1607410800020}] and the following status: [COMPLETED] in 267ms
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2020-12-08 14:00:00.218  INFO 78242 --- [erBean_Worker-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=importPersonJob]] launched with the following parameters: [{time=1607410800020}]
+</span></span><span class="line"><span class="cl">2020-12-08 14:00:00.338  INFO 78242 --- [erBean_Worker-1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [personImportStep]
+</span></span><span class="line"><span class="cl">2020-12-08 14:00:00.437  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Maverick
+</span></span><span class="line"><span class="cl">2020-12-08 14:00:00.438  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Al Sah-Him
+</span></span><span class="line"><span class="cl">2020-12-08 14:00:00.438  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Felicia
+</span></span><span class="line"><span class="cl">2020-12-08 14:00:00.438  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Jessica
+</span></span><span class="line"><span class="cl">2020-12-08 14:00:00.438  INFO 78242 --- [erBean_Worker-1] c.m.s.processor.PersonItemProcessor      : ### Process: Calvin Joe
+</span></span><span class="line"><span class="cl">2020-12-08 14:00:00.503  INFO 78242 --- [erBean_Worker-1] o.s.batch.core.step.AbstractStep         : Step: [personImportStep] executed in 164ms
+</span></span><span class="line"><span class="cl">2020-12-08 14:00:00.533  INFO 78242 --- [erBean_Worker-1] .m.s.s.JobCompletionNotificationListener : ### JOB FINISHED!
+</span></span><span class="line"><span class="cl">2020-12-08 14:00:00.559  INFO 78242 --- [erBean_Worker-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=importPersonJob]] completed with the following parameters: [{time=1607410800020}] and the following status: [COMPLETED] in 267ms
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="clone-or-download">Clone or Download</h3>
 <p>You can clone or download this project</p>
@@ -1299,8 +1297,8 @@ spring.batch.job.enabled=false
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git@github.com:piinalpin/spring-batch-quartz-example.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git@github.com:piinalpin/spring-batch-quartz-example.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="thankyou">Thankyou</h3>
 <p><a href="https://spring.io/guides/gs/batch-processing/" target="_blank" rel="noopener noreffer">Spring.io</a> - Create a Batch Service</p></div><div class="post-footer" id="post-footer">
