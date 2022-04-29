@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.piinalpin.com\/2022\/04\/api-gateway-using-spring-boot-cloud-gateway\/"
-        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "API Gateway, Spring Boot Cloud Gateway, Hystrix, Netflix Hystrix, Spring Cloud Gateway, Spring Boot, Java, Circuit Breaker","wordcount":  1451 ,
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "API Gateway, Spring Boot Cloud Gateway, Hystrix, Netflix Hystrix, Spring Cloud Gateway, Spring Boot, Java, Circuit Breaker","wordcount":  1437 ,
         "url": "https:\/\/blog.piinalpin.com\/2022\/04\/api-gateway-using-spring-boot-cloud-gateway\/","datePublished": "2022-04-29T13:38:40+07:00","dateModified": "2022-04-29T13:38:40+07:00","publisher": {
             "@type": "Organization",
             "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
@@ -102,7 +102,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Api Gateway Using Spring Boot Cloud Gateway &#43; Netflix Hystrix</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-29">2022-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1451 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-29">2022-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1437 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -424,9 +424,6 @@
 </span><span class="lnt">28
 </span><span class="lnt">29
 </span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
@@ -434,9 +431,6 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">ModifyRequestBodyGatewayFilterFactory</span> <span class="n">filterFactory</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">RequestBodyRewriter</span> <span class="n">rewriter</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ORIGINAL_REQUEST_BODY</span> <span class="o">=</span> <span class="s">&#34;originalRequestBody&#34;</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
@@ -538,9 +532,6 @@
 </span><span class="lnt">68
 </span><span class="lnt">69
 </span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
@@ -549,9 +540,6 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">ModifyResponseBodyGatewayFilterFactory</span> <span class="n">filterFactory</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Autowired</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">ResponseBodyRewriter</span> <span class="n">rewriter</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ORIGINAL_RESPONSE_BODY</span> <span class="o">=</span> <span class="s">&#34;originalResponseBody&#34;</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">

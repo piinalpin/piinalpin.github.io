@@ -186,9 +186,6 @@ public class PreGlobalFilter implements GlobalFilter, Ordered {
     @Autowired
     private ModifyRequestBodyGatewayFilterFactory filterFactory;
 
-    @Autowired
-    private RequestBodyRewriter rewriter;
-
     public static final String ORIGINAL_REQUEST_BODY = "originalRequestBody";
 
     @Override
@@ -226,9 +223,6 @@ public class PostGlobalFilter implements GlobalFilter, Ordered {
 
     @Autowired
     private ModifyResponseBodyGatewayFilterFactory filterFactory;
-
-    @Autowired
-    private ResponseBodyRewriter rewriter;
 
     public static final String ORIGINAL_RESPONSE_BODY = "originalResponseBody";
 
