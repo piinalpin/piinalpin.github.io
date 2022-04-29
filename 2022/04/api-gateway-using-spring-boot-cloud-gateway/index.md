@@ -175,28 +175,6 @@ Let's try to shutdown the `springboot-helloworld` service, then go to `http://lo
 
 ![Spring Cloud Gateway Global Filter Order](/images/spring-cloud-gateway-global-filter-order.webp)
 
-**RequestBodyRewriter**
-
-Using the `ModifyRequestBodyGatewayFilterFactory` to rewriting the request body and store to exchange attributes.
-
-```java
-@Component
-public class RequestBodyRewriter implements RewriteFunction<String, String> {
-
-    @Override
-    public Publisher<String> apply(ServerWebExchange exchange, String body) {
-        String originalBody = "";
-        if (body != null) {
-            originalBody = body;
-        }
-
-        exchange.getAttributes().put(PreGlobalFilter.ORIGINAL_REQUEST_BODY, originalBody);
-        return Mono.just(originalBody);
-    }
-    
-}
-```
-
 **PreGlobalFilter**
 
 Execute pre filter to call `RequestBodyRewriter` then can be used for logging.
@@ -215,42 +193,29 @@ public class PreGlobalFilter implements GlobalFilter, Ordered {
 
     @Override
     public int getOrder() {
-        return -1;
+        return NettyWriteResponseFilter.WRITE_RESPONSE_FILTER_ORDER;
     }
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         return filterFactory
             .apply(new ModifyRequestBodyGatewayFilterFactory.Config()
-                .setRewriteFunction(String.class, String.class, rewriter))
+                .setRewriteFunction(String.class, String.class, (newExchange, body) -> {
+                    String originalBody = null;
+                    if (body != null) {
+                        originalBody = body;
+                    }
+
+                    exchange.getAttributes().put(ORIGINAL_REQUEST_BODY, originalBody);
+                    return Mono.just(originalBody);
+                }))
             .filter(exchange, chain);
     }
     
 }
 ```
 
-**ResponseBodyRewriter**
-
-Using the `ModifyResponseBodyGatewayFilterFactory` to rewriting the response body and store to exchange attributes.
-
-```java
-@Component
-public class ResponseBodyRewriter implements RewriteFunction<byte[], byte[]> {@Override
-    
-    public Publisher<byte[]> apply(ServerWebExchange exchange, byte[] body) {
-        String originalBody = null;
-        if (body != null) {
-            originalBody = new String(body);
-        }
-
-        exchange.getAttributes().put(PostGlobalFilter.ORIGINAL_RESPONSE_BODY, originalBody);
-        return Mono.just(originalBody.getBytes());
-    }
-    
-}
-```
-
-**PreGlobalFilter**
+**PostGlobalFilter**
 
 Execute post filter to call `ResponseBodyRewriter` and construct the log message and then can be used for logging.
 
@@ -269,14 +234,22 @@ public class PostGlobalFilter implements GlobalFilter, Ordered {
 
     @Override
     public int getOrder() {
-        return NettyWriteResponseFilter.WRITE_RESPONSE_FILTER_ORDER - 1;
+        return NettyWriteResponseFilter.WRITE_RESPONSE_FILTER_ORDER + 1;
     }
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         GatewayFilter delegate = filterFactory
             .apply(new ModifyResponseBodyGatewayFilterFactory.Config()
-                .setRewriteFunction(byte[].class, byte[].class, rewriter));
+                .setRewriteFunction(byte[].class, byte[].class, (newExchange, body) -> {
+                    String originalBody = null;
+                    if (body != null) {
+                        originalBody = new String(body);
+                    }
+
+                    exchange.getAttributes().put(ORIGINAL_RESPONSE_BODY, originalBody);
+                    return Mono.just(originalBody.getBytes());
+                }));
         return delegate
             .filter(exchange, chain)
             .then(Mono.fromRunnable(() -> {
@@ -313,7 +286,6 @@ public class PostGlobalFilter implements GlobalFilter, Ordered {
         });
         sb.append("\n");
         sb.append("Response Body: ").append(responseBody).append("\n");
-        sb.append("\n");
         
         log.info(sb.toString());
         exchange.getAttributes().remove(PreGlobalFilter.ORIGINAL_REQUEST_BODY);

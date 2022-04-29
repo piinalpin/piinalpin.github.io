@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.piinalpin.com\/2022\/04\/api-gateway-using-spring-boot-cloud-gateway\/"
-        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "API Gateway, Spring Boot Cloud Gateway, Hystrix, Netflix Hystrix, Spring Cloud Gateway, Spring Boot, Java, Circuit Breaker","wordcount":  1521 ,
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "API Gateway, Spring Boot Cloud Gateway, Hystrix, Netflix Hystrix, Spring Cloud Gateway, Spring Boot, Java, Circuit Breaker","wordcount":  1451 ,
         "url": "https:\/\/blog.piinalpin.com\/2022\/04\/api-gateway-using-spring-boot-cloud-gateway\/","datePublished": "2022-04-29T13:38:40+07:00","dateModified": "2022-04-29T13:38:40+07:00","publisher": {
             "@type": "Organization",
             "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
@@ -102,8 +102,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Api Gateway Using Spring Boot Cloud Gateway &#43; Netflix Hystrix</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-29">2022-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1521 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-29">2022-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1451 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -390,45 +390,7 @@
         data-sizes="auto"
         alt="/images/spring-cloud-gateway-global-filter-order.webp"
         title="Spring Cloud Gateway Global Filter Order" /></p>
-<p><strong>RequestBodyRewriter</strong></p>
-<p>Using the <code>ModifyRequestBodyGatewayFilterFactory</code> to rewriting the request body and store to exchange attributes.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Component</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RequestBodyRewriter</span> <span class="kd">implements</span> <span class="n">RewriteFunction</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Publisher</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">apply</span><span class="o">(</span><span class="n">ServerWebExchange</span> <span class="n">exchange</span><span class="o">,</span> <span class="n">String</span> <span class="n">body</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">originalBody</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">body</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">originalBody</span> <span class="o">=</span> <span class="n">body</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">exchange</span><span class="o">.</span><span class="na">getAttributes</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="n">PreGlobalFilter</span><span class="o">.</span><span class="na">ORIGINAL_REQUEST_BODY</span><span class="o">,</span> <span class="n">originalBody</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">originalBody</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>PreGlobalFilter</strong></p>
+<p><strong>PreGlobalFilter</strong></p>
 <p>Execute pre filter to call <code>RequestBodyRewriter</code> then can be used for logging.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -457,6 +419,14 @@
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
@@ -472,57 +442,29 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getOrder</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">NettyWriteResponseFilter</span><span class="o">.</span><span class="na">WRITE_RESPONSE_FILTER_ORDER</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Mono</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span> <span class="nf">filter</span><span class="o">(</span><span class="n">ServerWebExchange</span> <span class="n">exchange</span><span class="o">,</span> <span class="n">GatewayFilterChain</span> <span class="n">chain</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">filterFactory</span>
 </span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="k">new</span> <span class="n">ModifyRequestBodyGatewayFilterFactory</span><span class="o">.</span><span class="na">Config</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setRewriteFunction</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">rewriter</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setRewriteFunction</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="o">(</span><span class="n">newExchange</span><span class="o">,</span> <span class="n">body</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">String</span> <span class="n">originalBody</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="o">(</span><span class="n">body</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">originalBody</span> <span class="o">=</span> <span class="n">body</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="n">exchange</span><span class="o">.</span><span class="na">getAttributes</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="n">ORIGINAL_REQUEST_BODY</span><span class="o">,</span> <span class="n">originalBody</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">originalBody</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}))</span>
 </span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">exchange</span><span class="o">,</span> <span class="n">chain</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>ResponseBodyRewriter</strong></p>
-<p>Using the <code>ModifyResponseBodyGatewayFilterFactory</code> to rewriting the response body and store to exchange attributes.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Component</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ResponseBodyRewriter</span> <span class="kd">implements</span> <span class="n">RewriteFunction</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[],</span> <span class="kt">byte</span><span class="o">[]&gt;</span> <span class="o">{</span><span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Publisher</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">[]&gt;</span> <span class="nf">apply</span><span class="o">(</span><span class="n">ServerWebExchange</span> <span class="n">exchange</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">body</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">originalBody</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">body</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">originalBody</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">exchange</span><span class="o">.</span><span class="na">getAttributes</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="n">PostGlobalFilter</span><span class="o">.</span><span class="na">ORIGINAL_RESPONSE_BODY</span><span class="o">,</span> <span class="n">originalBody</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">originalBody</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>PreGlobalFilter</strong></p>
+</div><p><strong>PostGlobalFilter</strong></p>
 <p>Execute post filter to call <code>ResponseBodyRewriter</code> and construct the log message and then can be used for logging.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -592,6 +534,13 @@
 </span><span class="lnt">64
 </span><span class="lnt">65
 </span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
@@ -608,14 +557,22 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getOrder</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">NettyWriteResponseFilter</span><span class="o">.</span><span class="na">WRITE_RESPONSE_FILTER_ORDER</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">NettyWriteResponseFilter</span><span class="o">.</span><span class="na">WRITE_RESPONSE_FILTER_ORDER</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Mono</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span> <span class="nf">filter</span><span class="o">(</span><span class="n">ServerWebExchange</span> <span class="n">exchange</span><span class="o">,</span> <span class="n">GatewayFilterChain</span> <span class="n">chain</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">GatewayFilter</span> <span class="n">delegate</span> <span class="o">=</span> <span class="n">filterFactory</span>
 </span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="k">new</span> <span class="n">ModifyResponseBodyGatewayFilterFactory</span><span class="o">.</span><span class="na">Config</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setRewriteFunction</span><span class="o">(</span><span class="kt">byte</span><span class="o">[].</span><span class="na">class</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[].</span><span class="na">class</span><span class="o">,</span> <span class="n">rewriter</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">setRewriteFunction</span><span class="o">(</span><span class="kt">byte</span><span class="o">[].</span><span class="na">class</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[].</span><span class="na">class</span><span class="o">,</span> <span class="o">(</span><span class="n">newExchange</span><span class="o">,</span> <span class="n">body</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">String</span> <span class="n">originalBody</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="o">(</span><span class="n">body</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">originalBody</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="n">exchange</span><span class="o">.</span><span class="na">getAttributes</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="n">ORIGINAL_RESPONSE_BODY</span><span class="o">,</span> <span class="n">originalBody</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">originalBody</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}));</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">delegate</span>
 </span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">exchange</span><span class="o">,</span> <span class="n">chain</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">then</span><span class="o">(</span><span class="n">Mono</span><span class="o">.</span><span class="na">fromRunnable</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
@@ -652,7 +609,6 @@
 </span></span><span class="line"><span class="cl">        <span class="o">});</span>
 </span></span><span class="line"><span class="cl">        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;\n&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;Response Body: &#34;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">responseBody</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;\n&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;\n&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 </span></span><span class="line"><span class="cl">        <span class="n">exchange</span><span class="o">.</span><span class="na">getAttributes</span><span class="o">().</span><span class="na">remove</span><span class="o">(</span><span class="n">PreGlobalFilter</span><span class="o">.</span><span class="na">ORIGINAL_REQUEST_BODY</span><span class="o">);</span>
