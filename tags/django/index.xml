@@ -43,25 +43,25 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* django-crud-sqlite/
-</span></span><span class="line"><span class="cl">  |--- rattlesnake/
-</span></span><span class="line"><span class="cl">  |    |--- app/
-</span></span><span class="line"><span class="cl">  |    |    |--- migrations/
-</span></span><span class="line"><span class="cl">  |    |    |--- templates/
-</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |    |    |--- admin.py
-</span></span><span class="line"><span class="cl">  |    |    |--- apps.py
-</span></span><span class="line"><span class="cl">  |    |    |--- models.py
-</span></span><span class="line"><span class="cl">  |    |    |--- tests.py
-</span></span><span class="line"><span class="cl">  |    |    |--- views.py
-</span></span><span class="line"><span class="cl">  |    |--- rattlesnake/
-</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |    |    |--- settings.py
-</span></span><span class="line"><span class="cl">  |    |    |--- urls.py
-</span></span><span class="line"><span class="cl">  |    |    |--- wsgi.py
-</span></span><span class="line"><span class="cl">  |    |--- manage.py
-</span></span><span class="line"><span class="cl">  |--- venv/
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* django-crud-sqlite/
+  |--- rattlesnake/
+  |    |--- app/
+  |    |    |--- migrations/
+  |    |    |--- templates/
+  |    |    |--- __init__.py
+  |    |    |--- admin.py
+  |    |    |--- apps.py
+  |    |    |--- models.py
+  |    |    |--- tests.py
+  |    |    |--- views.py
+  |    |--- rattlesnake/
+  |    |    |--- __init__.py
+  |    |    |--- settings.py
+  |    |    |--- urls.py
+  |    |    |--- wsgi.py
+  |    |--- manage.py
+  |--- venv/
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="step-to-create-django-crud">Step to create django crud</h3>
 <p>A step by step series of examples that tell you how to get a development env running</p>
@@ -75,10 +75,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">virtualenv venv
-</span></span><span class="line"><span class="cl">&gt; On windows -&gt; venv\Scripts\activate
-</span></span><span class="line"><span class="cl">&gt; On linux -&gt; . env/bin/activate
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">virtualenv venv
+&gt; On windows -&gt; venv\Scripts\activate
+&gt; On linux -&gt; . env/bin/activate
+</code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>Install django and start new project inside your <code>django-crud-sqlite/</code> directory according the above structure</li>
@@ -90,10 +90,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pip install django
-</span></span><span class="line"><span class="cl">django-admin startproject rattlesnake
-</span></span><span class="line"><span class="cl">cd rattlesnake
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install django
+django-admin startproject rattlesnake
+cd rattlesnake
+</code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>Create new app, from <code>rattlesnake/</code> directory will create create new <code>app/</code> to store the collection</li>
@@ -104,9 +104,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; On Windows -&gt; manage.py startapp app
-</span></span><span class="line"><span class="cl">&gt; On Linux, etc -&gt; ./manage.py startapp app
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt; On Windows -&gt; manage.py startapp app
+&gt; On Linux, etc -&gt; ./manage.py startapp app
+</code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>Register your app into <code>rattlesnake</code> project, the <code>app</code> to <code>INSTALLED_APP</code> in <code>rattlesnake/settings.py</code></li>
@@ -122,14 +122,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;app&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="p">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="p">:</span>
+    <span class="s1">&#39;app&#39;</span><span class="p">,</span>
+    <span class="p">:</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="5">
 <li>Create the model to define the table structure of database and save the collection into database <code>app/models.py</code></li>
@@ -154,23 +154,23 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Create your models here.</span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">identityNumber</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">department</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c1"># The absolute path to get the url then reverse into &#39;student_edit&#39; with keyword arguments (kwargs) primary key</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_absolute_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;student_edit&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">})</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
+
+<span class="c1"># Create your models here.</span>
+<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">identityNumber</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">department</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+    
+    <span class="c1"># The absolute path to get the url then reverse into &#39;student_edit&#39; with keyword arguments (kwargs) primary key</span>
+    <span class="k">def</span> <span class="nf">get_absolute_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;student_edit&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">})</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="6">
 <li>Every after change <code>models.py</code> you need to make migrations into <code>db.sqlite3</code> (database) to create the table for the new model</li>
@@ -181,9 +181,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">manage.py makemigrations
-</span></span><span class="line"><span class="cl">manage.py migrate
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">manage.py makemigrations
+manage.py migrate
+</code></pre></td></tr></table>
 </div>
 </div><ol start="7">
 <li>Create the views to create app pages on browser, the file is <code>app/views.py</code> according the above structure</li>
@@ -223,38 +223,38 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">DetailView</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.views.generic.edit</span> <span class="kn">import</span> <span class="n">CreateView</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">,</span> <span class="n">DeleteView</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse_lazy</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Student</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Create your views here.</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">StudentList</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">StudentDetail</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">StudentCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># Field must be same as the model attribute</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;identityNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;department&#39;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">StudentUpdate</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># Field must be same as the model attribute</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;identityNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;department&#39;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">StudentDelete</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
-</span></span><span class="line"><span class="cl">    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">DetailView</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.edit</span> <span class="kn">import</span> <span class="n">CreateView</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">,</span> <span class="n">DeleteView</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse_lazy</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Student</span>
+
+<span class="c1"># Create your views here.</span>
+
+<span class="k">class</span> <span class="nc">StudentList</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
+
+<span class="k">class</span> <span class="nc">StudentDetail</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
+
+<span class="k">class</span> <span class="nc">StudentCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
+    <span class="c1"># Field must be same as the model attribute</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;identityNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;department&#39;</span><span class="p">]</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">StudentUpdate</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
+    <span class="c1"># Field must be same as the model attribute</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;identityNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;department&#39;</span><span class="p">]</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">StudentDelete</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Student</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;student_list&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="8">
 <li>Then, create file <code>app/urls.py</code> to define app url path (in CI as same as route function)</li>
@@ -273,17 +273,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentList</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_list&#39;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;view/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentDetail</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_detail&#39;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentCreate</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_new&#39;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;edit/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentUpdate</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_edit&#39;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;delete/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentDelete</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_delete&#39;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl"><span class="p">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentList</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_list&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;view/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentDetail</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_detail&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentCreate</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_new&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;edit/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentUpdate</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_edit&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;delete/&lt;int:pk&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">StudentDelete</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;student_delete&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="9">
 <li>The <code>app/urls.py</code> would not work unless you include that into the main url <code>rattlesnake/urls.py</code></li>
@@ -300,15 +300,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;student/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;app.urls&#39;</span><span class="p">)),</span>
-</span></span><span class="line"><span class="cl">    <span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="p">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">:</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;student/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;app.urls&#39;</span><span class="p">)),</span>
+    <span class="p">:</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="10">
 <li>Create the html file to display user interface, you need create directory <code>app/templates/app/</code> like below</li>
@@ -336,26 +336,26 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* django-crud-sqlite/
-</span></span><span class="line"><span class="cl">  |--- rattlesnake/
-</span></span><span class="line"><span class="cl">  |    |--- app/
-</span></span><span class="line"><span class="cl">  |    |    |--- migrations/
-</span></span><span class="line"><span class="cl">  |    |    |--- templates/
-</span></span><span class="line"><span class="cl">  |    |    |    |--- app/
-</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |    |    |--- admin.py
-</span></span><span class="line"><span class="cl">  |    |    |--- apps.py
-</span></span><span class="line"><span class="cl">  |    |    |--- models.py
-</span></span><span class="line"><span class="cl">  |    |    |--- tests.py
-</span></span><span class="line"><span class="cl">  |    |    |--- views.py
-</span></span><span class="line"><span class="cl">  |    |--- rattlesnake/
-</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |    |    |--- settings.py
-</span></span><span class="line"><span class="cl">  |    |    |--- urls.py
-</span></span><span class="line"><span class="cl">  |    |    |--- wsgi.py
-</span></span><span class="line"><span class="cl">  |    |--- manage.py
-</span></span><span class="line"><span class="cl">  |--- venv/
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* django-crud-sqlite/
+  |--- rattlesnake/
+  |    |--- app/
+  |    |    |--- migrations/
+  |    |    |--- templates/
+  |    |    |    |--- app/
+  |    |    |--- __init__.py
+  |    |    |--- admin.py
+  |    |    |--- apps.py
+  |    |    |--- models.py
+  |    |    |--- tests.py
+  |    |    |--- views.py
+  |    |--- rattlesnake/
+  |    |    |--- __init__.py
+  |    |    |--- settings.py
+  |    |    |--- urls.py
+  |    |    |--- wsgi.py
+  |    |--- manage.py
+  |--- venv/
+</code></pre></td></tr></table>
 </div>
 </div><ol start="11">
 <li>Create file <code>app/templates/app/student_list.html</code> to display or parsing student list data with <code>ListView</code> library</li>
@@ -370,12 +370,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Student Detail<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Name : {{ object.name }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Identity Number : {{ object.identityNumber }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Address : {{ object.address }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Department : {{ object.department }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Student Detail<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Name : {{ object.name }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Identity Number : {{ object.identityNumber }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Address : {{ object.address }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Department : {{ object.department }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="13">
 <li>Create file <code>app/templates/app/student_form.html</code> to display form input and edit views</li>
@@ -387,8 +387,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">manage.py runserver
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">manage.py runserver
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="after-change-structure-of-flask-project">After change structure of flask project</h3>
 <div class="highlight"><div class="chroma">
@@ -420,32 +420,32 @@
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* django-crud-sqlite/
-</span></span><span class="line"><span class="cl">  |--- rattlesnake/
-</span></span><span class="line"><span class="cl">  |    |--- app/
-</span></span><span class="line"><span class="cl">  |    |    |--- migrations/
-</span></span><span class="line"><span class="cl">  |    |    |--- templates/
-</span></span><span class="line"><span class="cl">  |    |    |    |--- app/
-</span></span><span class="line"><span class="cl">  |    |    |    |    |--- student_confirm_delete.html
-</span></span><span class="line"><span class="cl">  |    |    |    |    |--- student_detail.html
-</span></span><span class="line"><span class="cl">  |    |    |    |    |--- student_form.html
-</span></span><span class="line"><span class="cl">  |    |    |    |    |--- student_list.html
-</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |    |    |--- admin.py
-</span></span><span class="line"><span class="cl">  |    |    |--- apps.py
-</span></span><span class="line"><span class="cl">  |    |    |--- models.py
-</span></span><span class="line"><span class="cl">  |    |    |--- tests.py
-</span></span><span class="line"><span class="cl">  |    |    |--- urls.py
-</span></span><span class="line"><span class="cl">  |    |    |--- views.py
-</span></span><span class="line"><span class="cl">  |    |--- rattlesnake/
-</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |    |    |--- settings.py
-</span></span><span class="line"><span class="cl">  |    |    |--- urls.py
-</span></span><span class="line"><span class="cl">  |    |    |--- wsgi.py
-</span></span><span class="line"><span class="cl">  |    |--- db.sqlite3
-</span></span><span class="line"><span class="cl">  |    |--- manage.py
-</span></span><span class="line"><span class="cl">  |--- venv/
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* django-crud-sqlite/
+  |--- rattlesnake/
+  |    |--- app/
+  |    |    |--- migrations/
+  |    |    |--- templates/
+  |    |    |    |--- app/
+  |    |    |    |    |--- student_confirm_delete.html
+  |    |    |    |    |--- student_detail.html
+  |    |    |    |    |--- student_form.html
+  |    |    |    |    |--- student_list.html
+  |    |    |--- __init__.py
+  |    |    |--- admin.py
+  |    |    |--- apps.py
+  |    |    |--- models.py
+  |    |    |--- tests.py
+  |    |    |--- urls.py
+  |    |    |--- views.py
+  |    |--- rattlesnake/
+  |    |    |--- __init__.py
+  |    |    |--- settings.py
+  |    |    |--- urls.py
+  |    |    |--- wsgi.py
+  |    |--- db.sqlite3
+  |    |--- manage.py
+  |--- venv/
+</code></pre></td></tr></table>
 </div>
 </div><h2 id="built-with">Built With</h2>
 <ul>
@@ -461,8 +461,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; Clone : git clone https://github.com/piinalpin/django-crud-sqlite.git
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt; Clone : git clone https://github.com/piinalpin/django-crud-sqlite.git
+</code></pre></td></tr></table>
 </div>
 </div>]]></description>
 </item></channel>

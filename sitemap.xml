@@ -2,30 +2,30 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.piinalpin.com/tags/api-gateway/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/categories/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/circuit-breaker/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/categories/documentation/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/hystrix/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/java/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/netflix-hystrix/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/posts/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/spring-boot-cloud-gateway/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/spring-cloud-gateway/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/2022/04/ci-cd-using-github-action/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/continuous-delivery/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/continuous-integration/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/devops/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/github-actions/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/pipeline/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/criteria-builder/</loc><lastmod>2022-04-03T06:53:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/jpa/</loc><lastmod>2022-04-03T06:53:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/jpa-specification/</loc><lastmod>2022-04-03T06:53:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://blog.piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</loc><lastmod>2022-04-03T06:53:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/api-gateway/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/categories/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/circuit-breaker/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/categories/documentation/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/hystrix/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/java/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/netflix-hystrix/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/posts/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot-cloud-gateway/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/spring-cloud-gateway/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/</loc><lastmod>2022-04-29T13:38:40&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://blog.piinalpin.com/2022/04/ci-cd-using-github-action/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/continuous-delivery/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/continuous-integration/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/devops/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/github-actions/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/pipeline/</loc><lastmod>2022-04-16T10:28:28&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/criteria-builder/</loc><lastmod>2022-04-03T06:53:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/jpa/</loc><lastmod>2022-04-03T06:53:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/jpa-specification/</loc><lastmod>2022-04-03T06:53:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</loc><lastmod>2022-04-03T06:53:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.piinalpin.com/tags/custom-jpa-repository-factory-bean/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.piinalpin.com/tags/jpa-repositoriy-factory-bean/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.piinalpin.com/2022/03/jpa-soft-deletes-implementation/</loc><lastmod>2022-03-20T13:28:42&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

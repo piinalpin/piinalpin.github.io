@@ -133,9 +133,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker-compose -f <span class="nv">$FILENAME</span> up -d
-</span></span><span class="line"><span class="cl">docker-compose -f <span class="nv">$FILENAME</span> down -v
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker-compose -f <span class="nv">$FILENAME</span> up -d
+docker-compose -f <span class="nv">$FILENAME</span> down -v
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="kafka-cli">Kafka CLI</h3>
 <p>Download docker compose configuration using curl</p>
@@ -144,8 +144,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o kafka-cli.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yaml
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o kafka-cli.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yaml
+</code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>kafka-cli.yaml</code> will create a new container <code>zookeeper</code> and exposed port <code>2181</code> on host port. Also create a new container <code>kafka</code> and exposed port <code>29092</code>, <code>9092</code> and <code>9101</code> on host port.</p>
 <h3 id="redis">Redis</h3>
@@ -156,8 +156,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o redis.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/redis.yaml
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o redis.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/redis.yaml
+</code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>redis.yaml</code> will create a new container <code>redis</code> and exposed port <code>6379</code> on host port.</p>
 <p><strong>Redis CLI</strong></p>
@@ -167,8 +167,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it redis redis-cli
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it redis redis-cli
+</code></pre></td></tr></table>
 </div>
 </div><p>Select the Redis logical database having the specified zero-based numeric index. New connections always use the database 0.</p>
 <p>Change database.</p>
@@ -177,8 +177,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">select</span> <span class="o">[</span>INDEX<span class="o">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="k">select</span> <span class="o">[</span>INDEX<span class="o">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Set and get key</p>
 <div class="highlight"><div class="chroma">
@@ -187,9 +187,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">set</span> <span class="o">[</span>KEY_NAME<span class="o">]</span> <span class="o">[</span>VALUE<span class="o">]</span>
-</span></span><span class="line"><span class="cl">get <span class="o">[</span>KEY_NAME<span class="o">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">set</span> <span class="o">[</span>KEY_NAME<span class="o">]</span> <span class="o">[</span>VALUE<span class="o">]</span>
+get <span class="o">[</span>KEY_NAME<span class="o">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Another Redis Desktop Manager</strong></p>
 <p>Install <a href="https://formulae.brew.sh/cask/another-redis-desktop-manager" target="_blank" rel="noopener noreffer">Another Redis Desktop Manager</a> with homebrew. You can run with following command on your terminal.</p>
@@ -199,9 +199,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install cask 
-</span></span><span class="line"><span class="cl">brew install --cask another-redis-desktop-manager
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install cask 
+brew install --cask another-redis-desktop-manager
+</code></pre></td></tr></table>
 </div>
 </div><p>Open the application, and should looks like below.</p>
 <p><img
@@ -237,8 +237,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o mysql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mysql.yaml
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o mysql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mysql.yaml
+</code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>mysql.yaml</code> will create a new container <code>mysql</code> and exposed port <code>3306</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
@@ -247,8 +247,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create my-network
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+</code></pre></td></tr></table>
 </div>
 </div><p>Create volume <code>mysql-data</code> to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
@@ -256,8 +256,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker volume create mysql-data
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create mysql-data
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>MySQL CLI</strong></p>
 <p>Run this command to run MySQL command on container. Default user is <code>root</code> and password <code>SevenEightTwo782</code> you can change the password in <code>yaml</code> file.</p>
@@ -266,8 +266,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it mysql bash
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it mysql bash
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Basic command:</strong></p>
 <ul>
@@ -277,8 +277,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mysql -u root -p
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mysql -u root -p
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Get list of databases
@@ -287,8 +287,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="n">databases</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">show</span><span class="w"> </span><span class="n">databases</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Create database and use database
@@ -298,9 +298,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">use</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">use</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -311,8 +311,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o postgresql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/postgresql.yaml
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o postgresql.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/postgresql.yaml
+</code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>postgresql.yaml</code> will create a new container <code>postgresql</code> and exposed port <code>5432</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
@@ -321,8 +321,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create my-network
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+</code></pre></td></tr></table>
 </div>
 </div><p>Create volume <code>postgre-data</code> to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
@@ -330,8 +330,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker volume create postgre-data
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create postgre-data
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Postgre SQL CLI</strong></p>
 <p>Run this command to run PostgreSQL command on container. Default user is <code>postgres</code> and password <code>SevenEightTwo782</code> you can change the password in <code>yaml</code> file.</p>
@@ -340,8 +340,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it postgresql bash
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it postgresql bash
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Basic command:</strong></p>
 <ul>
@@ -351,8 +351,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">psql -Upostgres -w
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">psql -Upostgres -w
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Get list of databases
@@ -361,8 +361,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">l</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="err">\</span><span class="n">l</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Create database and use database
@@ -372,9 +372,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -385,8 +385,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o sqlserver.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sqlserver.yaml
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o sqlserver.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sqlserver.yaml
+</code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>sqlserver.yaml</code> will create a new container <code>sqlserver</code> and exposed port <code>1433</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
@@ -395,8 +395,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create my-network
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+</code></pre></td></tr></table>
 </div>
 </div><p>Create volume <code>sqlserver-data</code> and <code>sqlserver-user</code> to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
@@ -404,8 +404,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker volume create sqlserver-data <span class="o">&amp;&amp;</span> docker volume create sqlserver-user
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create sqlserver-data <span class="o">&amp;&amp;</span> docker volume create sqlserver-user
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>SQL Server CLI</strong></p>
 <p>Run this command to run SQL Server command on container. Default user is <code>sa</code> and password <code>SevenEightTwo782</code> you can change the password in <code>yaml</code> file.</p>
@@ -414,8 +414,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it sqlserver /opt/mssql-tools/bin/sqlcmd -U sa -P SevenEightTwo782
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it sqlserver /opt/mssql-tools/bin/sqlcmd -U sa -P SevenEightTwo782
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Basic command:</strong></p>
 <ul>
@@ -426,9 +426,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">databases</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">go</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">databases</span><span class="w">
+</span><span class="w"></span><span class="k">go</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Create database and use database
@@ -438,9 +438,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">go</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="err">$</span><span class="n">DB_NAME</span><span class="w">
+</span><span class="w"></span><span class="k">go</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -451,8 +451,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o rabbitmq.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/rabbitmq.yaml
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o rabbitmq.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/rabbitmq.yaml
+</code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>rabbitmq.yaml</code> will create a new container <code>rabbitmq</code> and exposed port <code>5672</code> and <code>15672</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
@@ -461,8 +461,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create my-network
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+</code></pre></td></tr></table>
 </div>
 </div><p>Create volume <code>rabbitmq-data</code> and <code>rabbitmq-log</code> to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
@@ -470,8 +470,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker volume create rabbitmq-data <span class="o">&amp;&amp;</span> docker volume create rabbitmq-log
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create rabbitmq-data <span class="o">&amp;&amp;</span> docker volume create rabbitmq-log
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>RabbitMq Management</strong></p>
 <p>Default RabbitMQ management user is <code>guest</code> and password is <code>guest</code>. Go to <code>localhost:15672</code> to acess RabbitMQ management.</p>
@@ -490,8 +490,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o sonarqube.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sonarqube.yaml
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o sonarqube.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sonarqube.yaml
+</code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>sonarqube.yaml</code> will create a new container <code>sonarqube</code> and exposed port <code>9000</code> and <code>9002</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
@@ -500,8 +500,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create my-network
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+</code></pre></td></tr></table>
 </div>
 </div><p>Create volume to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
@@ -509,8 +509,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker volume create sonarqube-data <span class="o">&amp;&amp;</span> docker volume create sonarqube-extensions <span class="o">&amp;&amp;</span> docker volume create sonarqube-logs <span class="o">&amp;&amp;</span> docker volume create sonarqube-temp
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create sonarqube-data <span class="o">&amp;&amp;</span> docker volume create sonarqube-extensions <span class="o">&amp;&amp;</span> docker volume create sonarqube-logs <span class="o">&amp;&amp;</span> docker volume create sonarqube-temp
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Sonarqube Management</strong></p>
 <p>Default Sonarqube management user is <code>admin</code> and password is <code>admin</code>. Go to <code>localhost:9000</code> to acess Sonarqube management and then change the default password first.</p>
@@ -529,8 +529,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o mongodb.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mongodb.yaml
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o mongodb.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/mongodb.yaml
+</code></pre></td></tr></table>
 </div>
 </div><p>This yaml <code>mongodb.yaml</code> will create a new container <code>mongodb</code> and exposed port <code>27017</code> on host port.</p>
 <p>Create network <code>my-network</code> if does not exists</p>
@@ -539,8 +539,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create my-network
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
+</code></pre></td></tr></table>
 </div>
 </div><p>Create volume to persist data then run <code>docker-compose</code></p>
 <div class="highlight"><div class="chroma">
@@ -548,8 +548,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker volume create mongodb-data <span class="o">&amp;&amp;</span> docker volume create mongodb-config
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create mongodb-data <span class="o">&amp;&amp;</span> docker volume create mongodb-config
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>MongoDB CLI</strong>
 Run this command to run MongoDB command on container. Default user is <code>root</code> and password <code>SevenEightTwo782</code> you can change the password in <code>yaml</code> file.</p>
@@ -558,8 +558,8 @@ Run this command to run MongoDB command on container. Default user is <code>root
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it mongodb mongo -u root -p SevenEightTwo782 --authenticationDatabase admin &lt;SOME_DATABASE&gt;
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker <span class="nb">exec</span> -it mongodb mongo -u root -p SevenEightTwo782 --authenticationDatabase admin &lt;SOME_DATABASE&gt;
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Basic command:</strong></p>
 <ul>
@@ -569,8 +569,8 @@ Run this command to run MongoDB command on container. Default user is <code>root
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">show</span> <span class="nx">dbs</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">show</span> <span class="nx">dbs</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Create database and use database
@@ -580,9 +580,9 @@ Run this command to run MongoDB command on container. Default user is <code>root
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">use</span> <span class="nx">some_db</span>
-</span></span><span class="line"><span class="cl"><span class="nx">db</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">use</span> <span class="nx">some_db</span>
+<span class="nx">db</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Create collection
@@ -591,8 +591,8 @@ Run this command to run MongoDB command on container. Default user is <code>root
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">db</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="s1">&#39;some_collection&#39;</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">db</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="s1">&#39;some_collection&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Insert row
@@ -620,27 +620,27 @@ Run this command to run MongoDB command on container. Default user is <code>root
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">db</span><span class="p">.</span><span class="nx">some_db</span><span class="p">.</span><span class="nx">insertMany</span><span class="p">([</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">_id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Johnson&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">gender</span><span class="o">:</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">_id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Calvin&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Joe&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">gender</span><span class="o">:</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">_id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Kagura&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Otsusuki&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">gender</span><span class="o">:</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">]);</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">db</span><span class="p">.</span><span class="nx">some_db</span><span class="p">.</span><span class="nx">insertMany</span><span class="p">([</span>
+    <span class="p">{</span>
+        <span class="mi">_</span><span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+        <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Johnson&#34;</span><span class="p">,</span>
+        <span class="nx">gender</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="mi">_</span><span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Calvin&#34;</span><span class="p">,</span>
+        <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Joe&#34;</span><span class="p">,</span>
+        <span class="nx">gender</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="mi">_</span><span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Kagura&#34;</span><span class="p">,</span>
+        <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Otsusuki&#34;</span><span class="p">,</span>
+        <span class="nx">gender</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
+<span class="p">]);</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Find row
@@ -649,8 +649,8 @@ Run this command to run MongoDB command on container. Default user is <code>root
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">db</span><span class="p">.</span><span class="nx">some_db</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">db</span><span class="p">.</span><span class="nx">some_db</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>Update row
@@ -663,12 +663,12 @@ Run this command to run MongoDB command on container. Default user is <code>root
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">db</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">updateOne</span><span class="p">({</span><span class="nx">_id</span><span class="o">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="nx">$set</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Johnson Updated&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">gender</span><span class="o">:</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="p">}});</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">db</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">updateOne</span><span class="p">({</span><span class="mi">_</span><span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="nx">$set</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">first_name</span><span class="o">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+    <span class="nx">last_name</span><span class="o">:</span> <span class="s2">&#34;Johnson Updated&#34;</span><span class="p">,</span>
+    <span class="nx">gender</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">}});</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>

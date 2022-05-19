@@ -144,17 +144,17 @@ Install GorillaMux for it&rsquo;s efficiency and simplicity for learning <code>g
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">	<span class="s">&#34;encoding/json&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="s">&#34;net/http&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// Mux package for routing
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="s">&#34;github.com/gorilla/mux&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;encoding/json&#34;</span>
+	<span class="s">&#34;log&#34;</span>
+	<span class="s">&#34;net/http&#34;</span>
+
+	<span class="c1">// Mux package for routing
+</span><span class="c1"></span>	<span class="s">&#34;github.com/gorilla/mux&#34;</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>Setting up our model
@@ -170,13 +170,13 @@ On golang, model as known as struct like a class in Java or Python, so create a 
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// Create contact Model
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">Contact</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">Name</span>	<span class="kt">string</span> <span class="s">`json:&#34;name&#34;`</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">Phone</span>	<span class="kt">string</span> <span class="s">`json:&#34;phone&#34;`</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">Email</span>	<span class="kt">string</span> <span class="s">`json:&#34;email&#34;`</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Create contact Model
+</span><span class="c1"></span><span class="kd">type</span> <span class="nx">Contact</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">Name</span>	<span class="kt">string</span> <span class="s">`json:&#34;name&#34;`</span>
+	<span class="nx">Phone</span>	<span class="kt">string</span> <span class="s">`json:&#34;phone&#34;`</span>
+	<span class="nx">Email</span>	<span class="kt">string</span> <span class="s">`json:&#34;email&#34;`</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>Setting up our utilities
@@ -199,20 +199,20 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// Common header conforms to the http.HandlerFunc interface, and
-</span></span></span><span class="line"><span class="cl"><span class="c1">// adds the Content-Type: application/json header to each response.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">handler</span> <span class="nx">http</span><span class="p">.</span><span class="nx">HandlerFunc</span><span class="p">)</span> <span class="nx">http</span><span class="p">.</span><span class="nx">HandlerFunc</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">w</span><span class="p">.</span><span class="nf">Header</span><span class="p">().</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Content-Type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="nf">handler</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Ok message
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">OkMessage</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">Message</span>	<span class="kt">string</span> <span class="s">`json:&#34;message&#34;`</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Common header conforms to the http.HandlerFunc interface, and
+</span><span class="c1">// adds the Content-Type: application/json header to each response.
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">handler</span> <span class="nx">http</span><span class="p">.</span><span class="nx">HandlerFunc</span><span class="p">)</span> <span class="nx">http</span><span class="p">.</span><span class="nx">HandlerFunc</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">w</span><span class="p">.</span><span class="nf">Header</span><span class="p">().</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Content-Type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json&#34;</span><span class="p">)</span>
+        <span class="nf">handler</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Ok message
+</span><span class="c1"></span><span class="kd">type</span> <span class="nx">OkMessage</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">Message</span>	<span class="kt">string</span> <span class="s">`json:&#34;message&#34;`</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>Create dummy data for contact model</li>
@@ -231,17 +231,17 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// Construct contacts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">constructContacts</span><span class="p">()</span> <span class="p">[]</span><span class="nx">Contact</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	 <span class="kd">var</span> <span class="nx">contacts</span> <span class="p">[]</span><span class="nx">Contact</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// Hardcoded data - @todo: add database
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">contacts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">contacts</span><span class="p">,</span> <span class="nx">Contact</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Maverick&#34;</span><span class="p">,</span> <span class="nx">Phone</span><span class="p">:</span> <span class="s">&#34;98xxx-xxxxx&#34;</span><span class="p">,</span> <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;person1@mail.com&#34;</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">contacts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">contacts</span><span class="p">,</span> <span class="nx">Contact</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Enoge&#34;</span><span class="p">,</span> <span class="nx">Phone</span><span class="p">:</span> <span class="s">&#34;96xxx-xxxxx&#34;</span><span class="p">,</span> <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;person2@mail.com&#34;</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">contacts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">contacts</span><span class="p">,</span> <span class="nx">Contact</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Martin&#34;</span><span class="p">,</span> <span class="nx">Phone</span><span class="p">:</span> <span class="s">&#34;97xxx-xxxxx&#34;</span><span class="p">,</span> <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;person3@mail.com&#34;</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">contacts</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Construct contacts
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">constructContacts</span><span class="p">()</span> <span class="p">[]</span><span class="nx">Contact</span><span class="p">{</span>
+	 <span class="kd">var</span> <span class="nx">contacts</span> <span class="p">[]</span><span class="nx">Contact</span>
+	<span class="c1">// Hardcoded data - @todo: add database
+</span><span class="c1"></span>	<span class="nx">contacts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">contacts</span><span class="p">,</span> <span class="nx">Contact</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Maverick&#34;</span><span class="p">,</span> <span class="nx">Phone</span><span class="p">:</span> <span class="s">&#34;98xxx-xxxxx&#34;</span><span class="p">,</span> <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;person1@mail.com&#34;</span><span class="p">})</span>
+	<span class="nx">contacts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">contacts</span><span class="p">,</span> <span class="nx">Contact</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Enoge&#34;</span><span class="p">,</span> <span class="nx">Phone</span><span class="p">:</span> <span class="s">&#34;96xxx-xxxxx&#34;</span><span class="p">,</span> <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;person2@mail.com&#34;</span><span class="p">})</span>
+	<span class="nx">contacts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">contacts</span><span class="p">,</span> <span class="nx">Contact</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Martin&#34;</span><span class="p">,</span> <span class="nx">Phone</span><span class="p">:</span> <span class="s">&#34;97xxx-xxxxx&#34;</span><span class="p">,</span> <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;person3@mail.com&#34;</span><span class="p">})</span>
+
+	<span class="k">return</span> <span class="nx">contacts</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="5">
 <li>Create get all contacts and detail contact function</li>
@@ -270,27 +270,27 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// Get all contacts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">getAllContacts</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nf">constructContacts</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">getDetail</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// Get params
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">params</span> <span class="o">:=</span> <span class="nx">mux</span><span class="p">.</span><span class="nf">Vars</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// Looping for through contacts and find one by id
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">item</span> <span class="o">:=</span> <span class="k">range</span> <span class="nf">constructContacts</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">item</span><span class="p">.</span><span class="nx">Name</span> <span class="o">==</span> <span class="nx">params</span><span class="p">[</span><span class="s">&#34;name&#34;</span><span class="p">]</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">			<span class="k">return</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">Contact</span><span class="p">{})</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Get all contacts
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">getAllContacts</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nf">constructContacts</span><span class="p">())</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">getDetail</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">// Get params
+</span><span class="c1"></span>	<span class="nx">params</span> <span class="o">:=</span> <span class="nx">mux</span><span class="p">.</span><span class="nf">Vars</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
+
+	<span class="c1">// Looping for through contacts and find one by id
+</span><span class="c1"></span>	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">item</span> <span class="o">:=</span> <span class="k">range</span> <span class="nf">constructContacts</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">item</span><span class="p">.</span><span class="nx">Name</span> <span class="o">==</span> <span class="nx">params</span><span class="p">[</span><span class="s">&#34;name&#34;</span><span class="p">]</span> <span class="p">{</span>
+			<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">Contact</span><span class="p">{})</span>
+
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="6">
 <li>Create function to add new contact</li>
@@ -305,13 +305,13 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// Create contact
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">createContact</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">contact</span> <span class="nx">Contact</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">_</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">NewDecoder</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Body</span><span class="p">).</span><span class="nf">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">contact</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nx">contact</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Create contact
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">createContact</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">contact</span> <span class="nx">Contact</span>
+	<span class="nx">_</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">NewDecoder</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Body</span><span class="p">).</span><span class="nf">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">contact</span><span class="p">)</span>
+	<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nx">contact</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="7">
 <li>Create function to update contact by name</li>
@@ -335,22 +335,22 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl">	<span class="c1">// Update contact
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">updateContact</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// Get params
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">params</span> <span class="o">:=</span> <span class="nx">mux</span><span class="p">.</span><span class="nf">Vars</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// Looping for through contacts and fine one by id
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">item</span> <span class="o">:=</span> <span class="k">range</span> <span class="nf">constructContacts</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">item</span><span class="p">.</span><span class="nx">Name</span> <span class="o">==</span> <span class="nx">params</span><span class="p">[</span><span class="s">&#34;name&#34;</span><span class="p">]</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="kd">var</span> <span class="nx">contact</span> <span class="nx">Contact</span>
-</span></span><span class="line"><span class="cl">			<span class="nx">_</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">NewDecoder</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Body</span><span class="p">).</span><span class="nf">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">contact</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">			<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nx">contact</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">			<span class="k">return</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang">	<span class="c1">// Update contact
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">updateContact</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">// Get params
+</span><span class="c1"></span>	<span class="nx">params</span> <span class="o">:=</span> <span class="nx">mux</span><span class="p">.</span><span class="nf">Vars</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
+
+	<span class="c1">// Looping for through contacts and fine one by id
+</span><span class="c1"></span>	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">item</span> <span class="o">:=</span> <span class="k">range</span> <span class="nf">constructContacts</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">item</span><span class="p">.</span><span class="nx">Name</span> <span class="o">==</span> <span class="nx">params</span><span class="p">[</span><span class="s">&#34;name&#34;</span><span class="p">]</span> <span class="p">{</span>
+			<span class="kd">var</span> <span class="nx">contact</span> <span class="nx">Contact</span>
+			<span class="nx">_</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">NewDecoder</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Body</span><span class="p">).</span><span class="nf">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">contact</span><span class="p">)</span>
+			<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nx">contact</span><span class="p">)</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="8">
 <li>Create function to delete contact by name</li>
@@ -367,15 +367,15 @@ We will create an utilities for headers response and custom message.</li>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// Delete contact
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">deleteContact</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">msg</span> <span class="nx">OkMessage</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">msg</span><span class="p">.</span><span class="nx">Message</span> <span class="p">=</span> <span class="s">&#34;ok&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// TODO: Add handle to filter by id
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// Delete contact
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">deleteContact</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">msg</span> <span class="nx">OkMessage</span>
+	<span class="nx">msg</span><span class="p">.</span><span class="nx">Message</span> <span class="p">=</span> <span class="s">&#34;ok&#34;</span>
+
+	<span class="c1">// TODO: Add handle to filter by id
+</span><span class="c1"></span>	<span class="nx">json</span><span class="p">.</span><span class="nf">NewEncoder</span><span class="p">(</span><span class="nx">w</span><span class="p">).</span><span class="nf">Encode</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="9">
 <li>Create main function
@@ -400,22 +400,22 @@ Firstly we initialize the router variable as r and the GorillaMux is used by cal
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	<span class="c1">// Init router
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">route</span> <span class="o">:=</span> <span class="nx">mux</span><span class="p">.</span><span class="nf">NewRouter</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="nx">route</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/contacts&#34;</span><span class="p">,</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">getAllContacts</span><span class="p">)).</span><span class="nf">Methods</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">route</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/contacts&#34;</span><span class="p">,</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">createContact</span><span class="p">)).</span><span class="nf">Methods</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">route</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/contacts/{name}&#34;</span><span class="p">,</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">getDetail</span><span class="p">)).</span><span class="nf">Methods</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">route</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/contacts/{name}&#34;</span><span class="p">,</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">updateContact</span><span class="p">)).</span><span class="nf">Methods</span><span class="p">(</span><span class="s">&#34;PUT&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">route</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/contacts/{name}&#34;</span><span class="p">,</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">deleteContact</span><span class="p">)).</span><span class="nf">Methods</span><span class="p">(</span><span class="s">&#34;DELETE&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// Start server
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:8000&#34;</span><span class="p">,</span> <span class="nx">route</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	
+	<span class="c1">// Init router
+</span><span class="c1"></span>	<span class="nx">route</span> <span class="o">:=</span> <span class="nx">mux</span><span class="p">.</span><span class="nf">NewRouter</span><span class="p">()</span>
+
+	<span class="nx">route</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/contacts&#34;</span><span class="p">,</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">getAllContacts</span><span class="p">)).</span><span class="nf">Methods</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">)</span>
+	<span class="nx">route</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/contacts&#34;</span><span class="p">,</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">createContact</span><span class="p">)).</span><span class="nf">Methods</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">)</span>
+	<span class="nx">route</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/contacts/{name}&#34;</span><span class="p">,</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">getDetail</span><span class="p">)).</span><span class="nf">Methods</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">)</span>
+	<span class="nx">route</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/contacts/{name}&#34;</span><span class="p">,</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">updateContact</span><span class="p">)).</span><span class="nf">Methods</span><span class="p">(</span><span class="s">&#34;PUT&#34;</span><span class="p">)</span>
+	<span class="nx">route</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/contacts/{name}&#34;</span><span class="p">,</span> <span class="nf">CommonHeaders</span><span class="p">(</span><span class="nx">deleteContact</span><span class="p">)).</span><span class="nf">Methods</span><span class="p">(</span><span class="s">&#34;DELETE&#34;</span><span class="p">)</span>
+
+	<span class="c1">// Start server
+</span><span class="c1"></span>	<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:8000&#34;</span><span class="p">,</span> <span class="nx">route</span><span class="p">))</span>
+
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="thankyou">Thankyou</h3>
 <p><a href="https://medium.com/swlh/create-rest-api-in-minutes-with-go-golang-c4a2c6279721" target="_blank" rel="noopener noreffer">Medium</a> - Create REST API in Minutes With Go/Golang</p>
