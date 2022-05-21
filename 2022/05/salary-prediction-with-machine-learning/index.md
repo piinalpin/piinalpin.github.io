@@ -29,7 +29,7 @@ Linear regression is a basic and commonly used type of predictive analysis.  The
 
 The simplest form of the regression equation with one dependent and one independent variable is defined by the formula :
 
-![y = bx + c](http://www.sciweavers.org/tex2img.php?eq=y%20%3D%20%7Bb%7D%20x%20%2B%20c&bc=White&fc=Black&im=jpg&fs=24&ff=arev&edit=0)
+![y = bx + c](/images/linear-regression-equation.png)
 
 Where:
 * *y* : estimated dependent variable score
