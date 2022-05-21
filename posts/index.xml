@@ -3,7 +3,15 @@
         <title>All Posts - PiinAlpin&#39;s Blog</title>
         <link>https://blog.piinalpin.com/posts/</link>
         <description>All Posts | PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 Apr 2022 13:38:40 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 21 May 2022 17:07:17 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Salary Prediction with ML - Linear Regression</title>
+    <link>https://blog.piinalpin.com/2022/05/salary-prediction-with-machine-learning/</link>
+    <pubDate>Sat, 21 May 2022 17:07:17 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/2022/05/salary-prediction-with-machine-learning/</guid>
+    <description><![CDATA[Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy.
+How Does Machine Learning Works? Similar to how the human brain gains knowledge and understanding, machine learning relies on input, such as training data or knowledge graphs, to understand entities, domains and the connections between them. With entities defined, deep learning can begin.]]></description>
+</item><item>
     <title>Api Gateway Using Spring Boot Cloud Gateway &#43; Netflix Hystrix</title>
     <link>https://blog.piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</link>
     <pubDate>Fri, 29 Apr 2022 13:38:40 &#43;0700</pubDate>
@@ -68,12 +76,5 @@ Spring Data JPA Specification provides a convenient and sophisticated manner to 
     <author>Author</author>
     <guid>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
     <description><![CDATA[Build real time chat with bot using spring boot web socket and contextual chat bot python.]]></description>
-</item><item>
-    <title>Contextual Chat Bot using NLP</title>
-    <link>https://blog.piinalpin.com/2021/10/contextual-chat-bot/</link>
-    <pubDate>Thu, 14 Oct 2021 11:19:26 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/10/contextual-chat-bot/</guid>
-    <description><![CDATA[Build contextual chat bot with python and tensorflow library to talking about riddles. We will build a model for a puzzle conversation.]]></description>
 </item></channel>
 </rss>
