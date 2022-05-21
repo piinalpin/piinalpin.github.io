@@ -25,7 +25,10 @@ Machine learning classifiers fall into three primary categories, such as:
 
 ### Linear Regression
 
-Linear regression is a basic and commonly used type of predictive analysis.  The overall idea of regression is to examine two things: (1) does a set of predictor variables do a good job in predicting an outcome (dependent) variable?  (2) Which variables in particular are significant predictors of the outcome variable, and in what way do they–indicated by the magnitude and sign of the beta estimates–impact the outcome variable?  These regression estimates are used to explain the relationship between one dependent variable and one or more independent variables.
+Linear regression is a basic and commonly used type of predictive analysis.  The overall idea of regression is to examine two things: 
+  * Does a set of predictor variables do a good job in predicting an outcome (dependent) variable? 
+  
+  * Which variables in particular are significant predictors of the outcome variable, and in what way do they–indicated by the magnitude and sign of the beta estimates–impact the outcome variable?  These regression estimates are used to explain the relationship between one dependent variable and one or more independent variables.
 
 The simplest form of the regression equation with one dependent and one independent variable is defined by the formula :
 
@@ -39,7 +42,7 @@ Where:
 
 There are many names for a regression’s dependent variable.  It may be called an outcome variable, criterion variable, endogenous variable, or regressand.  The independent variables can be called exogenous variables, predictor variables, or regressors.
 
-Three major uses for regression analysis are (1) determining the strength of predictors, (2) forecasting an effect, and (3) trend forecasting.
+Three major uses for regression analysis are determining the strength of predictors, forecasting an effect, and trend forecasting.
 
 ### Salary Prediction Model
 
