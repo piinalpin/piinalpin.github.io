@@ -152,16 +152,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.
-</span></span><span class="line"><span class="cl">├── ...
-</span></span><span class="line"><span class="cl">├── dataset
-</span></span><span class="line"><span class="cl">│   └── parasitized/
-</span></span><span class="line"><span class="cl">│   ├── uninfected/
-</span></span><span class="line"><span class="cl">├── test-data/
-</span></span><span class="line"><span class="cl">│   └── ...
-</span></span><span class="line"><span class="cl">└── research.ipynb
-</span></span><span class="line"><span class="cl">└── ...
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">.
+├── ...
+├── dataset
+│   └── parasitized/
+│   ├── uninfected/
+├── test-data/
+│   └── ...
+└── research.ipynb
+└── ...
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Import Dependency and Count Dataset</strong></p>
 <p>We will use <code>tensorflow.keras</code> library like following code.</p>
@@ -180,18 +180,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">Sequential</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">MaxPooling2D</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">ImageDataGenerator</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">load_model</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">transform</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">glob</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">MaxPooling2D</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">ImageDataGenerator</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">load_model</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">transform</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Count our dataset in this case.</p>
 <div class="highlight"><div class="chroma">
@@ -202,11 +202,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">parasitized</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;dataset/parasitized/*.png&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">uninfected</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;dataset/uninfected/*.png&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Parasitized data: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">Uninfected data: </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">parasitized</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">uninfected</span><span class="p">)))</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">parasitized</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;dataset/parasitized/*.png&#39;</span><span class="p">)</span>
+<span class="n">uninfected</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;dataset/uninfected/*.png&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Parasitized data: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">Uninfected data: </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">parasitized</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">uninfected</span><span class="p">)))</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Preprocessing</strong></p>
 <p>Data augmentation, based on wikipedia data augmentation is techniques are used to increase the amount of data by adding slightly modified copies of already existing data or newly created synthetic data from existing data.</p>
@@ -243,36 +243,36 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dimension</span> <span class="o">=</span> <span class="mi">128</span>
-</span></span><span class="line"><span class="cl"><span class="n">batch</span> <span class="o">=</span> <span class="mi">32</span>
-</span></span><span class="line"><span class="cl"><span class="n">data_dir</span> <span class="o">=</span> <span class="s2">&#34;dataset&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span><span class="n">rescale</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mf">255.0</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                             <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                             <span class="n">zoom_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                             <span class="n">width_shift_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                             <span class="n">height_shift_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                             <span class="n">shear_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                             <span class="n">horizontal_flip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">train_data</span> <span class="o">=</span> <span class="n">datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                                         <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">),</span> 
-</span></span><span class="line"><span class="cl">                                         <span class="n">batch_size</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                                         <span class="n">class_mode</span><span class="o">=</span><span class="s1">&#39;categorical&#39;</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                                         <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;training&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">validation_data</span> <span class="o">=</span> <span class="n">datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                              <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">                                              <span class="n">batch_size</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                              <span class="n">class_mode</span><span class="o">=</span><span class="s1">&#39;categorical&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                              <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;validation&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                              <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">test_data</span> <span class="o">=</span> <span class="n">datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                        <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">                                        <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                        <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">dimension</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="s2">&#34;dataset&#34;</span>
+
+<span class="n">datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span><span class="n">rescale</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mf">255.0</span><span class="p">,</span> 
+                             <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                             <span class="n">zoom_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+                             <span class="n">width_shift_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+                             <span class="n">height_shift_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+                             <span class="n">shear_range</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+                             <span class="n">horizontal_flip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">train_data</span> <span class="o">=</span> <span class="n">datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> 
+                                         <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">),</span> 
+                                         <span class="n">batch_size</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span> 
+                                         <span class="n">class_mode</span><span class="o">=</span><span class="s1">&#39;categorical&#39;</span><span class="p">,</span> 
+                                         <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;training&#39;</span><span class="p">)</span>
+
+<span class="n">validation_data</span> <span class="o">=</span> <span class="n">datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span>
+                                              <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">),</span>
+                                              <span class="n">batch_size</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span>
+                                              <span class="n">class_mode</span><span class="o">=</span><span class="s1">&#39;categorical&#39;</span><span class="p">,</span>
+                                              <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;validation&#39;</span><span class="p">,</span>
+                                              <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span>
+                                        <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">),</span>
+                                        <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                                        <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Training Data and Modelling</strong></p>
 <p>The process of training an ML model involves providing an ML algorithm (that is, the learning algorithm) with training data to learn from. The term ML model refers to the model artifact that is created by the training process.</p>
@@ -317,44 +317,44 @@
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&#34;same&#34;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&#34;same&#34;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&#34;same&#34;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;softmax&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Compile the model</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s2">&#34;adam&#34;</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">              <span class="n">loss</span><span class="o">=</span><span class="s2">&#34;binary_crossentropy&#34;</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;accuracy&#34;</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Save the best trained model by monitoring validation loss</span>
-</span></span><span class="line"><span class="cl"><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&#34;train_data_model.b&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">model_checkpoint</span> <span class="o">=</span> <span class="n">ModelCheckpoint</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                                   <span class="n">save_weights_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                                   <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                                   <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                                   <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                                   <span class="n">save_best_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Training dataset</span>
-</span></span><span class="line"><span class="cl"><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                    <span class="n">batch_size</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                    <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
-</span></span><span class="line"><span class="cl">                    <span class="n">validation_data</span><span class="o">=</span><span class="n">validation_data</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">callbacks</span> <span class="o">=</span> <span class="p">[</span><span class="n">model_checkpoint</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&#34;same&#34;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&#34;same&#34;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&#34;same&#34;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;relu&#34;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;softmax&#34;</span><span class="p">))</span>
+
+<span class="c1"># Compile the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s2">&#34;adam&#34;</span><span class="p">,</span> 
+              <span class="n">loss</span><span class="o">=</span><span class="s2">&#34;binary_crossentropy&#34;</span><span class="p">,</span> 
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;accuracy&#34;</span><span class="p">])</span>
+
+<span class="c1"># Save the best trained model by monitoring validation loss</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&#34;train_data_model.b&#34;</span>
+<span class="n">model_checkpoint</span> <span class="o">=</span> <span class="n">ModelCheckpoint</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> 
+                                   <span class="n">save_weights_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                                   <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> 
+                                   <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                                   <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> 
+                                   <span class="n">save_best_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Training dataset</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> 
+                    <span class="n">batch_size</span><span class="o">=</span><span class="n">batch</span><span class="p">,</span> 
+                    <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+                    <span class="n">validation_data</span><span class="o">=</span><span class="n">validation_data</span><span class="p">,</span>
+                    <span class="n">callbacks</span> <span class="o">=</span> <span class="p">[</span><span class="n">model_checkpoint</span><span class="p">],</span>
+                    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Model Evaluation</strong></p>
 <p>Evaluation is a process during development of the model to check whether the model is best fit for the given problem and corresponding data. Keras model provides a function, evaluate which does the evaluation of the model. It has three main arguments :</p>
@@ -371,10 +371,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Load compiled model</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&#34;train_data_model.b&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load compiled model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&#34;train_data_model.b&#34;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><strong>Prediction</strong></p>
 <p>Prediction is fitting a shape that gets as close to the data as possible. The object we’re fitting is more of a skeleton that goes through one body of data instead of a fence that goes between separate bodies of data.</p>
@@ -417,42 +417,42 @@
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Load image from filename</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">   <span class="n">np_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">   <span class="n">np_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np_image</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span><span class="o">/</span><span class="mi">255</span>
-</span></span><span class="line"><span class="cl">   <span class="n">np_image</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">np_image</span><span class="p">,</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">   <span class="n">np_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">np_image</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="n">np_image</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">prediction</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">  <span class="n">np_image</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np_image</span><span class="p">)</span> <span class="c1"># Predict input image</span>
-</span></span><span class="line"><span class="cl">  <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">prediction</span><span class="p">]</span> <span class="c1"># Normalize prediction</span>
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">False</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kc">True</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">## Test with random data</span>
-</span></span><span class="line"><span class="cl"><span class="n">test1</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized1.png&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">test2</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized2.png&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">test3</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized3.png&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">test4</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized4.png&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">test5</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected1.png&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">test6</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected2.png&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">test7</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected3.png&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">test8</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected4.png&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Result for infected or uninfected of malaria&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 1: &#34;</span><span class="p">,</span> <span class="n">test1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 2: &#34;</span><span class="p">,</span> <span class="n">test2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 3: &#34;</span><span class="p">,</span> <span class="n">test3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 4: &#34;</span><span class="p">,</span> <span class="n">test4</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 5: &#34;</span><span class="p">,</span> <span class="n">test5</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 6: &#34;</span><span class="p">,</span> <span class="n">test6</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 7: &#34;</span><span class="p">,</span> <span class="n">test7</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 8: &#34;</span><span class="p">,</span> <span class="n">test8</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load image from filename</span>
+<span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+   <span class="n">np_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+   <span class="n">np_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np_image</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span><span class="o">/</span><span class="mi">255</span>
+   <span class="n">np_image</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">np_image</span><span class="p">,</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+   <span class="n">np_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">np_image</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">np_image</span>
+
+<span class="k">def</span> <span class="nf">prediction</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+  <span class="n">np_image</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+  <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np_image</span><span class="p">)</span> <span class="c1"># Predict input image</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">prediction</span><span class="p">]</span> <span class="c1"># Normalize prediction</span>
+  <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">False</span>
+  <span class="k">return</span> <span class="kc">True</span>
+
+<span class="c1">## Test with random data</span>
+<span class="n">test1</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized1.png&#34;</span><span class="p">)</span>
+<span class="n">test2</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized2.png&#34;</span><span class="p">)</span>
+<span class="n">test3</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized3.png&#34;</span><span class="p">)</span>
+<span class="n">test4</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/parasitized4.png&#34;</span><span class="p">)</span>
+<span class="n">test5</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected1.png&#34;</span><span class="p">)</span>
+<span class="n">test6</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected2.png&#34;</span><span class="p">)</span>
+<span class="n">test7</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected3.png&#34;</span><span class="p">)</span>
+<span class="n">test8</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="s2">&#34;test-data/uninfected4.png&#34;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Result for infected or uninfected of malaria&#34;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 1: &#34;</span><span class="p">,</span> <span class="n">test1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 2: &#34;</span><span class="p">,</span> <span class="n">test2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 3: &#34;</span><span class="p">,</span> <span class="n">test3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 4: &#34;</span><span class="p">,</span> <span class="n">test4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 5: &#34;</span><span class="p">,</span> <span class="n">test5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 6: &#34;</span><span class="p">,</span> <span class="n">test6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 7: &#34;</span><span class="p">,</span> <span class="n">test7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Test 8: &#34;</span><span class="p">,</span> <span class="n">test8</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><h2 id="source">Source</h2>
 <p>You can clone or download the source in</p>
@@ -461,8 +461,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://github.com/piinalpin/research-collection/tree/master/tensorflow/malaria-detection
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">https://github.com/piinalpin/research-collection/tree/master/tensorflow/malaria-detection
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="reference">Reference</h3>
 <ul>

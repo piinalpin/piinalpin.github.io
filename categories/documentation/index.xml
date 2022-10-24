@@ -3,7 +3,16 @@
         <title>Documentation - Category - PiinAlpin&#39;s Blog</title>
         <link>https://blog.piinalpin.com/categories/documentation/</link>
         <description>Documentation - Category - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 21 May 2022 17:07:17 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/categories/documentation/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 24 Oct 2022 14:02:54 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/categories/documentation/" rel="self" type="application/rss+xml" /><item>
+    <title>How to Run Redis Sentinel</title>
+    <link>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</link>
+    <pubDate>Mon, 24 Oct 2022 14:02:54 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</guid>
+    <description><![CDATA[Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster.
+Sentinel itself is designed to run in a configuration where there are multiple Sentinel processes cooperating together. The advantage of having multiple Sentinel processes cooperating are the following :
+ Failure detection is performed when multiple Sentinels agree about the fact a given master is no longer available.]]></description>
+</item><item>
     <title>Salary Prediction with ML - Linear Regression</title>
     <link>https://blog.piinalpin.com/2022/05/salary-prediction-with-machine-learning/</link>
     <pubDate>Sat, 21 May 2022 17:07:17 &#43;0700</pubDate>
@@ -69,12 +78,5 @@ Spring Data JPA Specification provides a convenient and sophisticated manner to 
     <author>Author</author>
     <guid>https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/</guid>
     <description><![CDATA[MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0. It is API compatible with Amazon S3 cloud storage service. Use MinIO to build high performance infrastructure for machine learning, analytics and application data workloads.]]></description>
-</item><item>
-    <title>Spring Boot Web Socket Chat Bot</title>
-    <link>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</link>
-    <pubDate>Thu, 14 Oct 2021 14:52:27 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
-    <description><![CDATA[Build real time chat with bot using spring boot web socket and contextual chat bot python.]]></description>
 </item></channel>
 </rss>

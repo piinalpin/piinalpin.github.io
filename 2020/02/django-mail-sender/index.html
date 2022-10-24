@@ -139,9 +139,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">virtualenv env
-</span></span><span class="line"><span class="cl">. env/bin/activate
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virtualenv env
+. env/bin/activate
+</code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>Install Django 2.1</li>
@@ -151,8 +151,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install <span class="nv">Django</span><span class="o">==</span>2.1.2
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pip install <span class="nv">Django</span><span class="o">==</span>2.1.2
+</code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>Create project and application in Django</li>
@@ -163,9 +163,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">django-admin startproject your_project_name
-</span></span><span class="line"><span class="cl">django-admin startapp your_apps_name
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">django-admin startproject your_project_name
+django-admin startapp your_apps_name
+</code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>Install library celery and celery-message-consumer</li>
@@ -176,9 +176,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install celery
-</span></span><span class="line"><span class="cl">pip install celery-message-consumer
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pip install celery
+pip install celery-message-consumer
+</code></pre></td></tr></table>
 </div>
 </div><ol start="5">
 <li>Edit django base settings <code>project_name/settings.py</code></li>
@@ -192,11 +192,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
-</span></span><span class="line"><span class="cl"><span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;localhost&#39;</span><span class="p">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;localhost&#39;</span><span class="p">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Add email configuration</p>
 <div class="highlight"><div class="chroma">
@@ -210,14 +210,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django.core.mail.backends.smtp.EmailBackend&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="s1">&#39;smtp.sendgrid.net&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">Your_Username</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">Your_Password</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">587</span>
-</span></span><span class="line"><span class="cl"><span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="kc">True</span>
-</span></span><span class="line"><span class="cl"><span class="n">DEFAULT_FROM_EMAIL</span> <span class="o">=</span> <span class="s2">&#34;Info KS-Linux UAD &lt;info@kslinux.tif.uad.ac.id&gt;&#34;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django.core.mail.backends.smtp.EmailBackend&#39;</span>
+<span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="s1">&#39;smtp.sendgrid.net&#39;</span>
+<span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">Your_Username</span><span class="o">&gt;</span>
+<span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">Your_Password</span><span class="o">&gt;</span>
+<span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">587</span>
+<span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">DEFAULT_FROM_EMAIL</span> <span class="o">=</span> <span class="s2">&#34;Info KS-Linux UAD &lt;info@kslinux.tif.uad.ac.id&gt;&#34;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Add RabbitMQ configuration</p>
 <div class="highlight"><div class="chroma">
@@ -232,15 +232,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># RabbitMQ Configuration</span>
-</span></span><span class="line"><span class="cl"><span class="n">RABBIT_HOST</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">RABBIT_PORT</span> <span class="o">=</span> <span class="s2">&#34;5672&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">RABBIT_VIRTUAL_HOST</span> <span class="o">=</span> <span class="s2">&#34;/&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">RABBITMQ_ROUTING_KEY</span> <span class="o">=</span> <span class="s2">&#34;mail_consumer&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># RabbitMQ Credentials</span>
-</span></span><span class="line"><span class="cl"><span class="n">RABBIT_USERNAME</span> <span class="o">=</span> <span class="s2">&#34;guest&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">RABBIT_PASSWORD</span> <span class="o">=</span> <span class="s2">&#34;guest&#34;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># RabbitMQ Configuration</span>
+<span class="n">RABBIT_HOST</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span>
+<span class="n">RABBIT_PORT</span> <span class="o">=</span> <span class="s2">&#34;5672&#34;</span>
+<span class="n">RABBIT_VIRTUAL_HOST</span> <span class="o">=</span> <span class="s2">&#34;/&#34;</span>
+<span class="n">RABBITMQ_ROUTING_KEY</span> <span class="o">=</span> <span class="s2">&#34;mail_consumer&#34;</span>
+<span class="c1"># RabbitMQ Credentials</span>
+<span class="n">RABBIT_USERNAME</span> <span class="o">=</span> <span class="s2">&#34;guest&#34;</span>
+<span class="n">RABBIT_PASSWORD</span> <span class="o">=</span> <span class="s2">&#34;guest&#34;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Add application at configuration</p>
 <div class="highlight"><div class="chroma">
@@ -257,17 +257,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;mail_consumer&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mail_consumer&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create logging configuration and create <code>logs</code> directory</p>
 <div class="highlight"><div class="chroma">
@@ -345,78 +345,78 @@
 </span><span class="lnt">71
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Logging Configuratino</span>
-</span></span><span class="line"><span class="cl"><span class="n">LOGGING</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;disable_existing_loggers&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;require_debug_false&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;()&#39;</span><span class="p">:</span> <span class="s1">&#39;django.utils.log.RequireDebugFalse&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;require_debug_true&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;()&#39;</span><span class="p">:</span> <span class="s1">&#39;django.utils.log.RequireDebugTrue&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;formatters&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;main_formatter&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(levelname)s</span><span class="s1">:</span><span class="si">%(name)s</span><span class="s1">: </span><span class="si">%(message)s</span><span class="s1"> &#39;</span>
-</span></span><span class="line"><span class="cl">                      <span class="s1">&#39;(</span><span class="si">%(asctime)s</span><span class="s1">; </span><span class="si">%(filename)s</span><span class="s1">:</span><span class="si">%(lineno)d</span><span class="s1">)&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;datefmt&#39;</span><span class="p">:</span> <span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;mail_admins&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;require_debug_false&#39;</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;django.utils.log.AdminEmailHandler&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;console&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;require_debug_true&#39;</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;logging.StreamHandler&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;formatter&#39;</span><span class="p">:</span> <span class="s1">&#39;main_formatter&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;production_file&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;INFO&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;logging.handlers.RotatingFileHandler&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="s1">&#39;logs/main.log&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;maxBytes&#39;</span><span class="p">:</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>  <span class="c1"># 5 MB</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;backupCount&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;formatter&#39;</span><span class="p">:</span> <span class="s1">&#39;main_formatter&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;require_debug_false&#39;</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;debug_file&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;logging.handlers.RotatingFileHandler&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="s1">&#39;logs/main_debug.log&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;maxBytes&#39;</span><span class="p">:</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>  <span class="c1"># 5 MB</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;backupCount&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;formatter&#39;</span><span class="p">:</span> <span class="s1">&#39;main_formatter&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;require_debug_true&#39;</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;null&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s2">&#34;class&#34;</span><span class="p">:</span> <span class="s1">&#39;logging.NullHandler&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;loggers&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;django.request&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mail_admins&#39;</span><span class="p">,</span> <span class="s1">&#39;console&#39;</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;propagate&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;django&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;null&#39;</span><span class="p">,</span> <span class="p">],</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;py.warnings&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;null&#39;</span><span class="p">,</span> <span class="p">],</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;console&#39;</span><span class="p">,</span> <span class="s1">&#39;production_file&#39;</span><span class="p">,</span> <span class="s1">&#39;debug_file&#39;</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s2">&#34;DEBUG&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Logging Configuratino</span>
+<span class="n">LOGGING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;disable_existing_loggers&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;require_debug_false&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;()&#39;</span><span class="p">:</span> <span class="s1">&#39;django.utils.log.RequireDebugFalse&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;require_debug_true&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;()&#39;</span><span class="p">:</span> <span class="s1">&#39;django.utils.log.RequireDebugTrue&#39;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;formatters&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main_formatter&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(levelname)s</span><span class="s1">:</span><span class="si">%(name)s</span><span class="s1">: </span><span class="si">%(message)s</span><span class="s1"> &#39;</span>
+                      <span class="s1">&#39;(</span><span class="si">%(asctime)s</span><span class="s1">; </span><span class="si">%(filename)s</span><span class="s1">:</span><span class="si">%(lineno)d</span><span class="s1">)&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;datefmt&#39;</span><span class="p">:</span> <span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&#34;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;mail_admins&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;require_debug_false&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;django.utils.log.AdminEmailHandler&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;console&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;require_debug_true&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;logging.StreamHandler&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;formatter&#39;</span><span class="p">:</span> <span class="s1">&#39;main_formatter&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;production_file&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;INFO&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;logging.handlers.RotatingFileHandler&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="s1">&#39;logs/main.log&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;maxBytes&#39;</span><span class="p">:</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>  <span class="c1"># 5 MB</span>
+            <span class="s1">&#39;backupCount&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+            <span class="s1">&#39;formatter&#39;</span><span class="p">:</span> <span class="s1">&#39;main_formatter&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;require_debug_false&#39;</span><span class="p">],</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;debug_file&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;logging.handlers.RotatingFileHandler&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="s1">&#39;logs/main_debug.log&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;maxBytes&#39;</span><span class="p">:</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>  <span class="c1"># 5 MB</span>
+            <span class="s1">&#39;backupCount&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+            <span class="s1">&#39;formatter&#39;</span><span class="p">:</span> <span class="s1">&#39;main_formatter&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;require_debug_true&#39;</span><span class="p">],</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;null&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&#34;class&#34;</span><span class="p">:</span> <span class="s1">&#39;logging.NullHandler&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;loggers&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;django.request&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mail_admins&#39;</span><span class="p">,</span> <span class="s1">&#39;console&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;propagate&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;django&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;null&#39;</span><span class="p">,</span> <span class="p">],</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;py.warnings&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;null&#39;</span><span class="p">,</span> <span class="p">],</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;console&#39;</span><span class="p">,</span> <span class="s1">&#39;production_file&#39;</span><span class="p">,</span> <span class="s1">&#39;debug_file&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s2">&#34;DEBUG&#34;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>Create queue name or exchange to RabbitMQ and Celery by-pass log</p>
 <div class="highlight"><div class="chroma">
@@ -434,18 +434,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># ADD CELERY BYPASS LOG</span>
-</span></span><span class="line"><span class="cl"><span class="n">CELERYD_HIJACK_ROOT_LOGGER</span> <span class="o">=</span> <span class="kc">False</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># CREATE QUEUE TO RABBITMQ</span>
-</span></span><span class="line"><span class="cl"><span class="n">EXCHANGES</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># a reference name for this config, used when attaching handlers</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span>  <span class="c1"># actual name of exchange in RabbitMQ</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;mail_consumer&#39;</span><span class="p">,</span>  <span class="c1"># an AMQP exchange type</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># ADD CELERY BYPASS LOG</span>
+<span class="n">CELERYD_HIJACK_ROOT_LOGGER</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># CREATE QUEUE TO RABBITMQ</span>
+<span class="n">EXCHANGES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># a reference name for this config, used when attaching handlers</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span>  <span class="c1"># actual name of exchange in RabbitMQ</span>
+        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;mail_consumer&#39;</span><span class="p">,</span>  <span class="c1"># an AMQP exchange type</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="6">
 <li>Create function send in <code>app_name/views.py</code></li>
@@ -471,24 +471,24 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">trinity</span> <span class="kn">import</span> <span class="n">settings</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.core.mail</span> <span class="kn">import</span> <span class="n">EmailMultiAlternatives</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sender</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">subject</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="n">body</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="n">from_email</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEFAULT_FROM_EMAIL</span>
-</span></span><span class="line"><span class="cl">        <span class="n">to</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;to&#39;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="n">html_body</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="n">messages</span> <span class="o">=</span> <span class="n">EmailMultiAlternatives</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">from_email</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">messages</span><span class="o">.</span><span class="n">attach_alternative</span><span class="p">(</span><span class="n">html_body</span><span class="p">,</span> <span class="s2">&#34;text/html&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">messages</span><span class="o">.</span><span class="n">attach_file</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">],</span> <span class="s1">&#39;image/jpg&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">messages</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Email has been sent!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">except</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Can not sent email, something wrong!&#34;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">trinity</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">django.core.mail</span> <span class="kn">import</span> <span class="n">EmailMultiAlternatives</span>
+
+<span class="k">def</span> <span class="nf">sender</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">subject</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+        <span class="n">from_email</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEFAULT_FROM_EMAIL</span>
+        <span class="n">to</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;to&#39;</span><span class="p">]</span>
+        <span class="n">html_body</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">]</span>
+        <span class="n">messages</span> <span class="o">=</span> <span class="n">EmailMultiAlternatives</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">from_email</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>
+        <span class="n">messages</span><span class="o">.</span><span class="n">attach_alternative</span><span class="p">(</span><span class="n">html_body</span><span class="p">,</span> <span class="s2">&#34;text/html&#34;</span><span class="p">)</span>
+        <span class="n">messages</span><span class="o">.</span><span class="n">attach_file</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">],</span> <span class="s1">&#39;image/jpg&#39;</span><span class="p">)</span>
+        <span class="n">messages</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Email has been sent!&#34;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Can not sent email, something wrong!&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="7">
 <li>Create task listener to RabbitMQ queue <code>app_name/tasks.py</code></li>
@@ -512,22 +512,22 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">event_consumer</span> <span class="kn">import</span> <span class="n">message_handler</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nd">@message_handler</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">RABBITMQ_ROUTING_KEY</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">listen_queue</span><span class="p">(</span><span class="n">body</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># CREATE PAYLOAD FROM BODY</span>
-</span></span><span class="line"><span class="cl">    <span class="n">payload</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;==================================&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># PRINT PAYLOADS</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># CALL FUNCTION SENDER FROM VIEWS</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="n">sender</span>
-</span></span><span class="line"><span class="cl">    <span class="n">sender</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">event_consumer</span> <span class="kn">import</span> <span class="n">message_handler</span>
+
+<span class="nd">@message_handler</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">RABBITMQ_ROUTING_KEY</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">listen_queue</span><span class="p">(</span><span class="n">body</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+    <span class="c1"># CREATE PAYLOAD FROM BODY</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;==================================&#34;</span><span class="p">);</span>
+    <span class="c1"># PRINT PAYLOADS</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+    <span class="c1"># CALL FUNCTION SENDER FROM VIEWS</span>
+    <span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="n">sender</span>
+    <span class="n">sender</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="8">
 <li>Create celery worker <code>project_name/celery.py</code></li>
@@ -565,36 +565,36 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># IMPORT LIBRARY TO CONNECT WITH RABBITMQ</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">celery.signals</span> <span class="kn">import</span> <span class="n">setup_logging</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">event_consumer.handlers</span> <span class="kn">import</span> <span class="n">AMQPRetryConsumerStep</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">trinity.settings</span> <span class="kn">import</span> <span class="n">LOGGING</span>
-</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;DJANGO_SETTINGS_MODULE&#39;</span><span class="p">,</span> <span class="s1">&#39;trinity.settings&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># CREATE APP CELERY</span>
-</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span><span class="s1">&#39;trinity&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="s1">&#39;consumer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">AMQPRetryConsumerStep</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># - namespace=&#39;CELERY&#39; means all celery-related configuration keys</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#   should have a `CELERY_` prefix.</span>
-</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config_from_object</span><span class="p">(</span><span class="s1">&#39;django.conf:settings&#39;</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s1">&#39;CELERY&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Load task modules from all registered Django app configs.</span>
-</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">autodiscover_tasks</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># CREATE TASKS</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@app</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">debug_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Request: </span><span class="si">{0!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nd">@setup_logging</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">configure_logging</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">logging.config</span>
-</span></span><span class="line"><span class="cl">    <span class="n">logging</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">dictConfig</span><span class="p">(</span><span class="n">LOGGING</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># IMPORT LIBRARY TO CONNECT WITH RABBITMQ</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
+<span class="kn">from</span> <span class="nn">celery.signals</span> <span class="kn">import</span> <span class="n">setup_logging</span>
+<span class="kn">from</span> <span class="nn">event_consumer.handlers</span> <span class="kn">import</span> <span class="n">AMQPRetryConsumerStep</span>
+
+<span class="kn">from</span> <span class="nn">trinity.settings</span> <span class="kn">import</span> <span class="n">LOGGING</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;DJANGO_SETTINGS_MODULE&#39;</span><span class="p">,</span> <span class="s1">&#39;trinity.settings&#39;</span><span class="p">)</span>
+
+<span class="c1"># CREATE APP CELERY</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span><span class="s1">&#39;trinity&#39;</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="s1">&#39;consumer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">AMQPRetryConsumerStep</span><span class="p">)</span>
+
+<span class="c1"># - namespace=&#39;CELERY&#39; means all celery-related configuration keys</span>
+<span class="c1">#   should have a `CELERY_` prefix.</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config_from_object</span><span class="p">(</span><span class="s1">&#39;django.conf:settings&#39;</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s1">&#39;CELERY&#39;</span><span class="p">)</span>
+<span class="c1"># Load task modules from all registered Django app configs.</span>
+<span class="n">app</span><span class="o">.</span><span class="n">autodiscover_tasks</span><span class="p">()</span>
+
+<span class="c1"># CREATE TASKS</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">debug_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Request: </span><span class="si">{0!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">))</span>
+
+<span class="nd">@setup_logging</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">configure_logging</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">logging.config</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">dictConfig</span><span class="p">(</span><span class="n">LOGGING</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="9">
 <li>Create test send message to broker with pika. Create new file outside the project and then create new virtual environtment. Install <code>pika</code> to create connection with broker.</li>
@@ -604,8 +604,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install pika
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pip install pika
+</code></pre></td></tr></table>
 </div>
 </div><ol start="10">
 <li>Create file wihich is send message to the broker <code>test_send_email.py</code></li>
@@ -641,34 +641,34 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pika</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># GET CONNECTION TO RABBITMQ</span>
-</span></span><span class="line"><span class="cl"><span class="n">connection</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">BlockingConnection</span><span class="p">(</span><span class="n">pika</span><span class="o">.</span><span class="n">ConnectionParameters</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">channel</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">channel</span><span class="o">.</span><span class="n">queue_declare</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;mail_consumer&#39;</span><span class="p">,</span> <span class="n">durable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">{
-</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;subject&#34;: &#34;Registration of Training Asynchronous Programming&#34;,
-</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;text&#34;: &#34;Congratulations you have registered as participants of asynchronous programming. We have attached a ticket registration, please download.&#34;,
-</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;html&#34;:&#34;&lt;h2&gt;Congratulations you have registered as participants of asynchronous programming. We have attached a ticket registration, please download.&lt;/h2&gt;&#34;,
-</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;to&#34;: [&#34;&lt;Your_Destination_Email&gt;&#34;],
-</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;file&#34;: &#34;&lt;Attachment&gt;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">}
-</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># PUSH MESSAGE TO QUEUE MAIL_CONSUMER</span>
-</span></span><span class="line"><span class="cl"><span class="n">channel</span><span class="o">.</span><span class="n">basic_publish</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                      <span class="n">routing_key</span><span class="o">=</span><span class="s1">&#39;mail_consumer&#39;</span><span class="p">,</span> <span class="c1"># This is routing key which must be the same as celery routing key</span>
-</span></span><span class="line"><span class="cl">                      <span class="n">body</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                      <span class="n">properties</span><span class="o">=</span><span class="n">pika</span><span class="o">.</span><span class="n">BasicProperties</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">                         <span class="n">delivery_mode</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># make message persistent</span>
-</span></span><span class="line"><span class="cl">                      <span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34; [x] Sent </span><span class="si">%r</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">message</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pika</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># GET CONNECTION TO RABBITMQ</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">BlockingConnection</span><span class="p">(</span><span class="n">pika</span><span class="o">.</span><span class="n">ConnectionParameters</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">))</span>
+<span class="n">channel</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
+
+<span class="n">channel</span><span class="o">.</span><span class="n">queue_declare</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;mail_consumer&#39;</span><span class="p">,</span> <span class="n">durable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">{
+</span><span class="s2">    &#34;subject&#34;: &#34;Registration of Training Asynchronous Programming&#34;,
+</span><span class="s2">    &#34;text&#34;: &#34;Congratulations you have registered as participants of asynchronous programming. We have attached a ticket registration, please download.&#34;,
+</span><span class="s2">    &#34;html&#34;:&#34;&lt;h2&gt;Congratulations you have registered as participants of asynchronous programming. We have attached a ticket registration, please download.&lt;/h2&gt;&#34;,
+</span><span class="s2">    &#34;to&#34;: [&#34;&lt;Your_Destination_Email&gt;&#34;],
+</span><span class="s2">    &#34;file&#34;: &#34;&lt;Attachment&gt;&#34;
+</span><span class="s2">}
+</span><span class="s2">&#34;&#34;&#34;</span>
+<span class="c1"># PUSH MESSAGE TO QUEUE MAIL_CONSUMER</span>
+<span class="n">channel</span><span class="o">.</span><span class="n">basic_publish</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                      <span class="n">routing_key</span><span class="o">=</span><span class="s1">&#39;mail_consumer&#39;</span><span class="p">,</span> <span class="c1"># This is routing key which must be the same as celery routing key</span>
+                      <span class="n">body</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+                      <span class="n">properties</span><span class="o">=</span><span class="n">pika</span><span class="o">.</span><span class="n">BasicProperties</span><span class="p">(</span>
+                         <span class="n">delivery_mode</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># make message persistent</span>
+                      <span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34; [x] Sent </span><span class="si">%r</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="11">
 <li>Run the test send message</li>
@@ -678,8 +678,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python test_send_email.py<span class="sb">`</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">python test_send_email.py<span class="sb">`</span>
+</code></pre></td></tr></table>
 </div>
 </div><ol start="12">
 <li>
@@ -694,8 +694,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip celery worker -A your_project_name.celery.app
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pip celery worker -A your_project_name.celery.app
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="built-with">Built With</h3>
 <ul>
@@ -711,8 +711,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/piinalpin/trinity.git
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/piinalpin/trinity.git
+</code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

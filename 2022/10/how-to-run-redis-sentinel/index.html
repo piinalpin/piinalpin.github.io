@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>How to Run Redis Sentinel - PiinAlpin&#39;s Blog</title><meta name="Description" content="Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster."><meta property="og:title" content="How to Run Redis Sentinel" />
+<meta property="og:description" content="Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-24T14:02:54+07:00" />
+<meta property="article:modified_time" content="2022-10-24T14:02:54+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to Run Redis Sentinel"/>
+<meta name="twitter:description" content="Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster."/>
+<meta name="application-name" content="PiinAlpin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/" /><link rel="prev" href="https://blog.piinalpin.com/2022/05/salary-prediction-with-machine-learning/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to Run Redis Sentinel",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.piinalpin.com\/2022\/10\/how-to-run-redis-sentinel\/"
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Redis, Redis Sentinel, Docker","wordcount":  1208 ,
+        "url": "https:\/\/blog.piinalpin.com\/2022\/10\/how-to-run-redis-sentinel\/","datePublished": "2022-10-24T14:02:54+07:00","dateModified": "2022-10-24T14:02:54+07:00","publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
+                "@type": "Person",
+                "name": "Alvinditya Saputra"
+            },"description": "Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster."
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">How to Run Redis Sentinel</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-10-24">2022-10-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1208 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#redis-sentinel-replication-topology">Redis Sentinel Replication Topology</a></li>
+        <li><a href="#install-redis">Install Redis</a></li>
+        <li><a href="#run-redis-sentinel">Run Redis Sentinel</a></li>
+        <li><a href="#redis-sentinel-command">Redis Sentinel Command</a></li>
+        <li><a href="#stop-redis-sentinel">Stop Redis Sentinel</a></li>
+        <li><a href="#run-with-docker">Run with Docker</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster.</p>
+<p>Sentinel itself is designed to run in a configuration where there are multiple Sentinel processes cooperating together. The advantage of having multiple Sentinel processes cooperating are the following :</p>
+<ol>
+<li>Failure detection is performed when multiple Sentinels agree about the fact a given master is no longer available. This lowers the probability of false positives.</li>
+<li>Sentinel works even if not all the Sentinel processes are working, making the system robust against failures. There is no fun in having a failover system which is itself a single point of failure, after all.</li>
+</ol>
+<p>The sum of Sentinels, Redis instances (masters and replicas) and clients connecting to Sentinel and Redis, are also a larger distributed system with specific properties. In this document concepts will be introduced gradually starting from basic information needed in order to understand the basic properties of Sentinel, to more complex information (that are optional) in order to understand how exactly Sentinel works. See the official documentation <a href="https://redis.io/docs/manual/sentinel/" target="_blank" rel="noopener noreffer">here</a></p>
+<h3 id="redis-sentinel-replication-topology">Redis Sentinel Replication Topology</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/redis-sentinel-topology.png"
+        data-srcset="/images/redis-sentinel-topology.png, /images/redis-sentinel-topology.png 1.5x, /images/redis-sentinel-topology.png 2x"
+        data-sizes="auto"
+        alt="/images/redis-sentinel-topology.png"
+        title="Redis Sentinel Topology" /></p>
+<p>Redis sentinel simple topology, I will explained with 1 master and 2 slaves. Assume we have 3 instance of Virtual Machine and each instances running <code>redis-server</code> and <strong>sentinel mode</strong>. The slaves is replica of redis master.</p>
+<h3 id="install-redis">Install Redis</h3>
+<p>You can download Redis latest <a href="https://redis.io/download" target="_blank" rel="noopener noreffer">here</a> or you can use <code>brew</code> to install redis.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install redis
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="run-redis-sentinel">Run Redis Sentinel</h3>
+<p>First of all, we have to run redis server properly and we should create configuration file for each redis server.</p>
+<p><strong>Redis Master</strong>
+Create configuration file <code>redis-master.conf</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">port 6379
+daemonize yes
+dbfilename dump_6379.rdb
+</code></pre></td></tr></table>
+</div>
+</div><p>The configuration file mean running on port <code>6379</code>, runing on background process as <code>daemonized</code> and set db file name.</p>
+<p>Then run <code>redis-server</code> with command :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-server redis-master.conf
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Redis Slave</strong></p>
+<p>Create configuration file <code>redis-slave-1.conf</code> and <code>redis-slave-2.conf</code></p>
+<p><em>redis-slave-1.conf</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">port 6380
+daemonize yes
+dbfilename dump_6380.rdb
+replicaof localhost 6379
+replica-read-only yes
+</code></pre></td></tr></table>
+</div>
+</div><p><em>redis-slave-2.conf</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">port 6381
+daemonize yes
+dbfilename dump_6380.rdb
+replicaof localhost 6379
+replica-read-only yes
+</code></pre></td></tr></table>
+</div>
+</div><p>Then run <code>redis-server</code> with command :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-server redis-slave-1.conf
+redis-server redis-slave-2.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>We will have 2 redis server as replica and running on port <code>6380</code> and <code>6381</code>.</p>
+<p><strong>Redis Sentinel Mode</strong>
+Run redis on sentinel mode, and we will create 3 node of sentinels. First of all we will create configuration files <code>sentinel-1.conf</code>, <code>sentinel-2.conf</code>, and <code>sentinel-3.conf</code> to monitoring <code>redis-master</code>.</p>
+<p><em>sentinel-1.conf</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">protected-mode no
+port 26379
+
+daemonize yes
+
+sentinel monitor mymaster ::1 6379 2
+sentinel down-after-milliseconds mymaster 5000
+sentinel failover-timeout mymaster 10000
+
+sentinel resolve-hostnames yes
+</code></pre></td></tr></table>
+</div>
+</div><p><em>sentinel-2.conf</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">protected-mode no
+port 26380
+
+daemonize yes
+
+sentinel monitor mymaster ::1 6379 2
+sentinel down-after-milliseconds mymaster 5000
+sentinel failover-timeout mymaster 10000
+
+sentinel resolve-hostnames yes
+</code></pre></td></tr></table>
+</div>
+</div><p><em>sentinel-3.conf</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">protected-mode no
+port 26381
+
+daemonize yes
+
+sentinel monitor mymaster ::1 6379 2
+sentinel down-after-milliseconds mymaster 5000
+sentinel failover-timeout mymaster 10000
+
+sentinel resolve-hostnames yes
+</code></pre></td></tr></table>
+</div>
+</div><p>And then run redis server as sentinel mode</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-server sentinel-1.conf --sentinel
+redis-server sentinel-2.conf --sentinel
+redis-server sentinel-3.conf --sentinel
+</code></pre></td></tr></table>
+</div>
+</div><p>Redis sentinel nodes will running on port <code>26379</code>, <code>26380</code>, and <code>26381</code>.</p>
+<h3 id="redis-sentinel-command">Redis Sentinel Command</h3>
+<p>To run sentinel command, we use <code>redis-cli</code> with port of sentinel</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-cli -h <span class="nv">$SENTINEL_HOST</span> -p <span class="nv">$SENTINEL_PORT</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Basic usage redis sentinel command is</p>
+<ul>
+<li><code>sentinel get-master-addr-by-name &lt;master_name&gt;</code> to get master address</li>
+<li><code>sentinel ckquorum &lt;master_name&gt;</code> to get info quorum
+For more details, see the official documentation <a href="https://redis.io/docs/manual/sentinel/#sentinel-commands" target="_blank" rel="noopener noreffer">here</a>.</li>
+</ul>
+<p>Redis master info replication</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">role:master
+connected_slaves:2
+slave0:ip=::1,port=6380,state=online,offset=76442,lag=0
+slave1:ip=::1,port=6381,state=online,offset=76200,lag=1
+master_failover_state:no-failover
+master_replid:2fe52acf2b457b936070ae2f86204efc3752f0cf
+master_replid2:4252dff2f509b85fcd78b02c763d99a371ebe652
+master_repl_offset:76442
+second_repl_offset:23098
+repl_backlog_active:1
+repl_backlog_size:1048576
+repl_backlog_first_byte_offset:23098
+repl_backlog_histlen:53345
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="stop-redis-sentinel">Stop Redis Sentinel</h3>
+<p>To stopping the redis sentinel, use the <code>redis-cli</code> command to shutdown the server.</p>
+<p><strong>Stop Redis Sentinel</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-cli -p <span class="m">26381</span> shutdown
+redis-cli -p <span class="m">26380</span> shutdown
+redis-cli -p <span class="m">26379</span> shutdown
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Stop Redis Server</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-cli -p <span class="m">6381</span> shutdown
+redis-cli -p <span class="m">6380</span> shutdown
+redis-cli -p <span class="m">6379</span> shutdown
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="run-with-docker">Run with Docker</h3>
+<p>This section I will explain how to run redis sentinel using <code>docker-compose</code>. Create <code>docker-compose.yml</code> configuration.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.8&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">redis-master</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">redis-master</span><span class="w">
+</span><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">redis-master</span><span class="w">
+</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:latest</span><span class="w">
+</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
+</span><span class="sd">      bash -c &#34;echo &#39;port 26379&#39; &gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;dir /tmp&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel resolve-hostnames yes&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel monitor mymaster redis-master 6379 2&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel down-after-milliseconds mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel parallel-syncs mymaster 1&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel failover-timeout mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      cat sentinel.conf &amp;&amp;
+</span><span class="sd">      redis-server sentinel.conf --sentinel &amp; 
+</span><span class="sd">      redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru&#34;</span><span class="w">      
+</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="m">6379</span><span class="p">:</span><span class="m">6379</span><span class="w">
+</span><span class="w">      </span>- <span class="m">26379</span><span class="p">:</span><span class="m">26379</span><span class="w">
+</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.2</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">redis-slave-1</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-1</span><span class="w">
+</span><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-1</span><span class="w">
+</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:latest</span><span class="w">
+</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
+</span><span class="sd">      bash -c &#34;echo &#39;port 26379&#39; &gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;dir /tmp&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel resolve-hostnames yes&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel monitor mymaster redis-master 6379 2&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel down-after-milliseconds mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel parallel-syncs mymaster 1&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel failover-timeout mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      cat sentinel.conf &amp;&amp;
+</span><span class="sd">      redis-server sentinel.conf --sentinel &amp; 
+</span><span class="sd">      redis-server --port 6380 --slaveof redis-master 6379 --maxmemory 256mb --maxmemory-policy allkeys-lru&#34;</span><span class="w">      
+</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="m">6380</span><span class="p">:</span><span class="m">6380</span><span class="w">
+</span><span class="w">      </span>- <span class="m">26380</span><span class="p">:</span><span class="m">26379</span><span class="w">
+</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.3</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">redis-slave-2</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-2</span><span class="w">
+</span><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-2</span><span class="w">
+</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:latest</span><span class="w">
+</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
+</span><span class="sd">      bash -c &#34;echo &#39;port 26379&#39; &gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;dir /tmp&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel resolve-hostnames yes&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel monitor mymaster redis-master 6379 2&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel down-after-milliseconds mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel parallel-syncs mymaster 1&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      echo &#39;sentinel failover-timeout mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span><span class="sd">      cat sentinel.conf &amp;&amp;
+</span><span class="sd">      redis-server sentinel.conf --sentinel &amp; 
+</span><span class="sd">      redis-server --port 6381 --slaveof redis-master 6379 --maxmemory 256mb --maxmemory-policy allkeys-lru&#34;</span><span class="w">      
+</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="m">6381</span><span class="p">:</span><span class="m">6381</span><span class="w">
+</span><span class="w">      </span>- <span class="m">26381</span><span class="p">:</span><span class="m">26379</span><span class="w">
+</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.4</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">default</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">bridge</span><span class="w">
+</span><span class="w">    </span><span class="nt">ipam</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">config</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">subnet</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.0</span><span class="l">/16</span><span class="w">
+</span><span class="w">          </span><span class="nt">gateway</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.1</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>When we run the docker compose</p>
+<ul>
+<li>It will create a local network with subnet <code>172.68.0.0/16</code> and gateway <code>172.68.0.1</code>.</li>
+<li><code>redis-master</code> assign to IP <code>172.68.0.2</code></li>
+<li><code>redis-slave-1</code> assign to IP <code>172.68.0.3</code></li>
+<li><code>redis-slave-2</code> assign to IP <code>172.68.0.4</code></li>
+<li>Each container will publish port for redis server and sentinel</li>
+<li><code>redis-slave-x</code> will be slave of <code>redis-master</code> using docker network</li>
+</ul>
+<p>Before run redis sentinel container, we should configure ip routing on local machine (host device) from docker ip to localhost.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.2
+sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.3
+sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.4
+</code></pre></td></tr></table>
+</div>
+</div><p>Check if the docker container ip have an alias on local machine with the command <code>ifconfig lo0</code>. And we will get an output.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lo0: <span class="nv">flags</span><span class="o">=</span>8049&lt;UP,LOOPBACK,RUNNING,MULTICAST&gt; mtu <span class="m">16384</span>
+	<span class="nv">options</span><span class="o">=</span>1203&lt;RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP&gt;
+	inet 127.0.0.1 netmask 0xff000000 
+	inet6 ::1 prefixlen <span class="m">128</span> 
+	inet6 fe80::1%lo0 prefixlen <span class="m">64</span> scopeid 0x1 
+	inet 172.68.0.2 netmask 0xffff0000 
+	inet 172.68.0.3 netmask 0xffff0000 
+	inet 172.68.0.4 netmask 0xffff0000 
+	nd6 <span class="nv">options</span><span class="o">=</span>201&lt;PERFORMNUD,DAD&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>The <code>inet 172.68.0.2 netmask 0xffff0000</code> indicates that the routing is running properly.</p>
+<p>Finally, we can run redis sentinel with docker using following commans :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker compose up -d
+</code></pre></td></tr></table>
+</div>
+</div><p>It will run 3 container such as <code>redis-master</code>, <code>redis-slave-1</code> and <code>redis-slave-2</code>.</p>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="https://redis.io/docs/manual/sentinel/" target="_blank" rel="noopener noreffer">High availability with Redis Sentinel</a></li>
+<li><a href="https://github.com/chrisza4/redis-sentinel-setup" target="_blank" rel="noopener noreffer">Simple Redis sentinel setup</a></li>
+<li><a href="https://medium.com/@anshulsharma942528/springboot-app-with-redis-sentinel-running-in-docker-container-3f8f1aadf0c8" target="_blank" rel="noopener noreffer">Springboot App with Redis Sentinel, Running in Docker container</a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-10-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2022/10/how-to-run-redis-sentinel/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/" data-title="How to Run Redis Sentinel" data-via="piinalpin" data-hashtags="Redis,Redis Sentinel,Docker"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/" data-hashtag="Redis"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/redis/">Redis</a>,&nbsp;<a href="/tags/redis-sentinel/">Redis Sentinel</a>,&nbsp;<a href="/tags/docker/">Docker</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2022/05/salary-prediction-with-machine-learning/" class="prev" rel="prev" title="Salary Prediction with ML - Linear Regression"><i class="fas fa-angle-left fa-fw"></i>Salary Prediction with ML - Linear Regression</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
