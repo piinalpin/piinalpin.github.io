@@ -3,7 +3,14 @@
         <title>Documentation - Category - PiinAlpin&#39;s Blog</title>
         <link>https://blog.piinalpin.com/categories/documentation/</link>
         <description>Documentation - Category - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 24 Oct 2022 14:02:54 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/categories/documentation/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 26 Oct 2022 13:48:09 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/categories/documentation/" rel="self" type="application/rss+xml" /><item>
+    <title>High Availability with Redis Sentinel and Spring Lettuce Client</title>
+    <link>https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</link>
+    <pubDate>Wed, 26 Oct 2022 13:48:09 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</guid>
+    <description><![CDATA[Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine. Redis provides data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions, and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.]]></description>
+</item><item>
     <title>How to Run Redis Sentinel</title>
     <link>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</link>
     <pubDate>Mon, 24 Oct 2022 14:02:54 &#43;0700</pubDate>
@@ -71,12 +78,5 @@ Spring Data JPA Specification provides a convenient and sophisticated manner to 
     <author>Author</author>
     <guid>https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/</guid>
     <description><![CDATA[Object-Relational Mapping (ORM) is a technique that lets you query and manipulate data from a database using an object-oriented paradigm.]]></description>
-</item><item>
-    <title>Cloud Object Storage Spring Boot With Minio</title>
-    <link>https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/</link>
-    <pubDate>Sat, 13 Nov 2021 09:55:34 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/11/cloud-object-storage-spring-boot-with-minio/</guid>
-    <description><![CDATA[MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0. It is API compatible with Amazon S3 cloud storage service. Use MinIO to build high performance infrastructure for machine learning, analytics and application data workloads.]]></description>
 </item></channel>
 </rss>

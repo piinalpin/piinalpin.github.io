@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Spring Lettuce Client - Tag - PiinAlpin&#39;s Blog</title>
+        <link>https://blog.piinalpin.com/tags/spring-lettuce-client/</link>
+        <description>Spring Lettuce Client - Tag - PiinAlpin&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 26 Oct 2022 13:48:09 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/spring-lettuce-client/" rel="self" type="application/rss+xml" /><item>
+    <title>High Availability with Redis Sentinel and Spring Lettuce Client</title>
+    <link>https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</link>
+    <pubDate>Wed, 26 Oct 2022 13:48:09 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</guid>
+    <description><![CDATA[Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine. Redis provides data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions, and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.]]></description>
+</item></channel>
+</rss>
