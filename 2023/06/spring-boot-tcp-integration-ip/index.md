@@ -383,7 +383,7 @@ curl --location 'http://localhost:8080/api/send?message=Hello%20there'
 #### Conclusion
 We can create TCP Client using spring integration IP. Thank you for reading this article, you can find the source code in my github [**here**](https://github.com/piinalpin/spring-boot-tcp)
 
-### Refereces
+### References
 - [What is Transmission Control Protocol TCP/IP?](https://www.fortinet.com/resources/cyberglossary/tcp-ip)
 - [What Is TCP (Transmission Control Protocol)?](https://www.spiceworks.com/tech/networking/articles/what-is-tcp/)
 - [Spring TCP and UDP Support](https://docs.spring.io/spring-integration/reference/html/ip.html)
