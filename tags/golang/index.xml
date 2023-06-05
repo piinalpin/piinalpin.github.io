@@ -11,6 +11,6 @@
     <guid>https://blog.piinalpin.com/2020/11/simple-rest-golang/</guid>
     <description><![CDATA[Introduction Go is a statically typed language, The compiler produces optimized machine code, so CPU-intensive code is significantly more efficient than languages like Python or Ruby, which have byte-code compilers and use virtual machines for execution.
 Prerequisites Make sure you have installed Golang on your device
-Step to create a simple REST application using Golang  Importing packages or modules Install GorillaMux for it&rsquo;s efficiency and simplicity for learning go get github.]]></description>
+Step to create a simple REST application using Golang Importing packages or modules Install GorillaMux for it&rsquo;s efficiency and simplicity for learning go get github.]]></description>
 </item></channel>
 </rss>

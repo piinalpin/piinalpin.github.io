@@ -11,7 +11,6 @@
 <meta property="og:url" content="https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-24T14:02:54+07:00" />
 <meta property="article:modified_time" content="2022-10-24T14:02:54+07:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to Run Redis Sentinel"/>
 <meta name="twitter:description" content="Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster."/>
@@ -25,7 +24,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.piinalpin.com\/2022\/10\/how-to-run-redis-sentinel\/"
-        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Redis, Redis Sentinel, Docker","wordcount":  1208 ,
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Redis, Redis Sentinel, Docker","wordcount":  1271 ,
         "url": "https:\/\/blog.piinalpin.com\/2022\/10\/how-to-run-redis-sentinel\/","datePublished": "2022-10-24T14:02:54+07:00","dateModified": "2022-10-24T14:02:54+07:00","publisher": {
             "@type": "Organization",
             "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
@@ -102,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">How to Run Redis Sentinel</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-10-24">2022-10-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1208 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-10-24">2022-10-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1271 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -148,8 +147,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install redis
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install redis
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="run-redis-sentinel">Run Redis Sentinel</h3>
 <p>First of all, we have to run redis server properly and we should create configuration file for each redis server.</p>
@@ -162,10 +161,10 @@ Create configuration file <code>redis-master.conf</code></p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">port 6379
-daemonize yes
-dbfilename dump_6379.rdb
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">port 6379
+</span></span><span class="line"><span class="cl">daemonize yes
+</span></span><span class="line"><span class="cl">dbfilename dump_6379.rdb
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The configuration file mean running on port <code>6379</code>, runing on background process as <code>daemonized</code> and set db file name.</p>
 <p>Then run <code>redis-server</code> with command :</p>
@@ -174,8 +173,8 @@ dbfilename dump_6379.rdb
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-server redis-master.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">redis-server redis-master.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Redis Slave</strong></p>
 <p>Create configuration file <code>redis-slave-1.conf</code> and <code>redis-slave-2.conf</code></p>
@@ -189,12 +188,12 @@ dbfilename dump_6379.rdb
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">port 6380
-daemonize yes
-dbfilename dump_6380.rdb
-replicaof localhost 6379
-replica-read-only yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">port 6380
+</span></span><span class="line"><span class="cl">daemonize yes
+</span></span><span class="line"><span class="cl">dbfilename dump_6380.rdb
+</span></span><span class="line"><span class="cl">replicaof localhost 6379
+</span></span><span class="line"><span class="cl">replica-read-only yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><em>redis-slave-2.conf</em></p>
 <div class="highlight"><div class="chroma">
@@ -206,12 +205,12 @@ replica-read-only yes
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">port 6381
-daemonize yes
-dbfilename dump_6380.rdb
-replicaof localhost 6379
-replica-read-only yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">port 6381
+</span></span><span class="line"><span class="cl">daemonize yes
+</span></span><span class="line"><span class="cl">dbfilename dump_6380.rdb
+</span></span><span class="line"><span class="cl">replicaof localhost 6379
+</span></span><span class="line"><span class="cl">replica-read-only yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Then run <code>redis-server</code> with command :</p>
 <div class="highlight"><div class="chroma">
@@ -220,9 +219,9 @@ replica-read-only yes
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-server redis-slave-1.conf
-redis-server redis-slave-2.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">redis-server redis-slave-1.conf
+</span></span><span class="line"><span class="cl">redis-server redis-slave-2.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We will have 2 redis server as replica and running on port <code>6380</code> and <code>6381</code>.</p>
 <p><strong>Redis Sentinel Mode</strong>
@@ -242,17 +241,17 @@ Run redis on sentinel mode, and we will create 3 node of sentinels. First of all
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">protected-mode no
-port 26379
-
-daemonize yes
-
-sentinel monitor mymaster ::1 6379 2
-sentinel down-after-milliseconds mymaster 5000
-sentinel failover-timeout mymaster 10000
-
-sentinel resolve-hostnames yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protected-mode no
+</span></span><span class="line"><span class="cl">port 26379
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">daemonize yes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sentinel monitor mymaster ::1 6379 2
+</span></span><span class="line"><span class="cl">sentinel down-after-milliseconds mymaster 5000
+</span></span><span class="line"><span class="cl">sentinel failover-timeout mymaster 10000
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sentinel resolve-hostnames yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><em>sentinel-2.conf</em></p>
 <div class="highlight"><div class="chroma">
@@ -269,17 +268,17 @@ sentinel resolve-hostnames yes
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">protected-mode no
-port 26380
-
-daemonize yes
-
-sentinel monitor mymaster ::1 6379 2
-sentinel down-after-milliseconds mymaster 5000
-sentinel failover-timeout mymaster 10000
-
-sentinel resolve-hostnames yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protected-mode no
+</span></span><span class="line"><span class="cl">port 26380
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">daemonize yes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sentinel monitor mymaster ::1 6379 2
+</span></span><span class="line"><span class="cl">sentinel down-after-milliseconds mymaster 5000
+</span></span><span class="line"><span class="cl">sentinel failover-timeout mymaster 10000
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sentinel resolve-hostnames yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><em>sentinel-3.conf</em></p>
 <div class="highlight"><div class="chroma">
@@ -296,17 +295,17 @@ sentinel resolve-hostnames yes
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">protected-mode no
-port 26381
-
-daemonize yes
-
-sentinel monitor mymaster ::1 6379 2
-sentinel down-after-milliseconds mymaster 5000
-sentinel failover-timeout mymaster 10000
-
-sentinel resolve-hostnames yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protected-mode no
+</span></span><span class="line"><span class="cl">port 26381
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">daemonize yes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sentinel monitor mymaster ::1 6379 2
+</span></span><span class="line"><span class="cl">sentinel down-after-milliseconds mymaster 5000
+</span></span><span class="line"><span class="cl">sentinel failover-timeout mymaster 10000
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sentinel resolve-hostnames yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>And then run redis server as sentinel mode</p>
 <div class="highlight"><div class="chroma">
@@ -316,10 +315,10 @@ sentinel resolve-hostnames yes
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-server sentinel-1.conf --sentinel
-redis-server sentinel-2.conf --sentinel
-redis-server sentinel-3.conf --sentinel
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">redis-server sentinel-1.conf --sentinel
+</span></span><span class="line"><span class="cl">redis-server sentinel-2.conf --sentinel
+</span></span><span class="line"><span class="cl">redis-server sentinel-3.conf --sentinel
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Redis sentinel nodes will running on port <code>26379</code>, <code>26380</code>, and <code>26381</code>.</p>
 <h3 id="redis-sentinel-command">Redis Sentinel Command</h3>
@@ -329,8 +328,8 @@ redis-server sentinel-3.conf --sentinel
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-cli -h <span class="nv">$SENTINEL_HOST</span> -p <span class="nv">$SENTINEL_PORT</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">redis-cli -h <span class="nv">$SENTINEL_HOST</span> -p <span class="nv">$SENTINEL_PORT</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Basic usage redis sentinel command is</p>
 <ul>
@@ -356,20 +355,20 @@ For more details, see the official documentation <a href="https://redis.io/docs/
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">role:master
-connected_slaves:2
-slave0:ip=::1,port=6380,state=online,offset=76442,lag=0
-slave1:ip=::1,port=6381,state=online,offset=76200,lag=1
-master_failover_state:no-failover
-master_replid:2fe52acf2b457b936070ae2f86204efc3752f0cf
-master_replid2:4252dff2f509b85fcd78b02c763d99a371ebe652
-master_repl_offset:76442
-second_repl_offset:23098
-repl_backlog_active:1
-repl_backlog_size:1048576
-repl_backlog_first_byte_offset:23098
-repl_backlog_histlen:53345
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">role:master
+</span></span><span class="line"><span class="cl">connected_slaves:2
+</span></span><span class="line"><span class="cl">slave0:ip=::1,port=6380,state=online,offset=76442,lag=0
+</span></span><span class="line"><span class="cl">slave1:ip=::1,port=6381,state=online,offset=76200,lag=1
+</span></span><span class="line"><span class="cl">master_failover_state:no-failover
+</span></span><span class="line"><span class="cl">master_replid:2fe52acf2b457b936070ae2f86204efc3752f0cf
+</span></span><span class="line"><span class="cl">master_replid2:4252dff2f509b85fcd78b02c763d99a371ebe652
+</span></span><span class="line"><span class="cl">master_repl_offset:76442
+</span></span><span class="line"><span class="cl">second_repl_offset:23098
+</span></span><span class="line"><span class="cl">repl_backlog_active:1
+</span></span><span class="line"><span class="cl">repl_backlog_size:1048576
+</span></span><span class="line"><span class="cl">repl_backlog_first_byte_offset:23098
+</span></span><span class="line"><span class="cl">repl_backlog_histlen:53345
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="stop-redis-sentinel">Stop Redis Sentinel</h3>
 <p>To stopping the redis sentinel, use the <code>redis-cli</code> command to shutdown the server.</p>
@@ -381,10 +380,10 @@ repl_backlog_histlen:53345
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-cli -p <span class="m">26381</span> shutdown
-redis-cli -p <span class="m">26380</span> shutdown
-redis-cli -p <span class="m">26379</span> shutdown
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">redis-cli -p <span class="m">26381</span> shutdown
+</span></span><span class="line"><span class="cl">redis-cli -p <span class="m">26380</span> shutdown
+</span></span><span class="line"><span class="cl">redis-cli -p <span class="m">26379</span> shutdown
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Stop Redis Server</strong></p>
 <div class="highlight"><div class="chroma">
@@ -394,10 +393,10 @@ redis-cli -p <span class="m">26379</span> shutdown
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">redis-cli -p <span class="m">6381</span> shutdown
-redis-cli -p <span class="m">6380</span> shutdown
-redis-cli -p <span class="m">6379</span> shutdown
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">redis-cli -p <span class="m">6381</span> shutdown
+</span></span><span class="line"><span class="cl">redis-cli -p <span class="m">6380</span> shutdown
+</span></span><span class="line"><span class="cl">redis-cli -p <span class="m">6379</span> shutdown
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="run-with-docker">Run with Docker</h3>
 <p>This section I will explain how to run redis sentinel using <code>docker-compose</code>. Create <code>docker-compose.yml</code> configuration.</p>
@@ -482,84 +481,84 @@ redis-cli -p <span class="m">6379</span> shutdown
 </span><span class="lnt">77
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.8&#34;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
-</span><span class="w">
-</span><span class="w">  </span><span class="nt">redis-master</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">redis-master</span><span class="w">
-</span><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">redis-master</span><span class="w">
-</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:latest</span><span class="w">
-</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
-</span><span class="sd">      bash -c &#34;echo &#39;port 26379&#39; &gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;dir /tmp&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel resolve-hostnames yes&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel monitor mymaster redis-master 6379 2&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel down-after-milliseconds mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel parallel-syncs mymaster 1&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel failover-timeout mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      cat sentinel.conf &amp;&amp;
-</span><span class="sd">      redis-server sentinel.conf --sentinel &amp; 
-</span><span class="sd">      redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru&#34;</span><span class="w">      
-</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="m">6379</span><span class="p">:</span><span class="m">6379</span><span class="w">
-</span><span class="w">      </span>- <span class="m">26379</span><span class="p">:</span><span class="m">26379</span><span class="w">
-</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.2</span><span class="w">
-</span><span class="w">
-</span><span class="w">  </span><span class="nt">redis-slave-1</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-1</span><span class="w">
-</span><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-1</span><span class="w">
-</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:latest</span><span class="w">
-</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
-</span><span class="sd">      bash -c &#34;echo &#39;port 26379&#39; &gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;dir /tmp&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel resolve-hostnames yes&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel monitor mymaster redis-master 6379 2&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel down-after-milliseconds mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel parallel-syncs mymaster 1&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel failover-timeout mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      cat sentinel.conf &amp;&amp;
-</span><span class="sd">      redis-server sentinel.conf --sentinel &amp; 
-</span><span class="sd">      redis-server --port 6380 --slaveof redis-master 6379 --maxmemory 256mb --maxmemory-policy allkeys-lru&#34;</span><span class="w">      
-</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="m">6380</span><span class="p">:</span><span class="m">6380</span><span class="w">
-</span><span class="w">      </span>- <span class="m">26380</span><span class="p">:</span><span class="m">26379</span><span class="w">
-</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.3</span><span class="w">
-</span><span class="w">
-</span><span class="w">  </span><span class="nt">redis-slave-2</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-2</span><span class="w">
-</span><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-2</span><span class="w">
-</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:latest</span><span class="w">
-</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
-</span><span class="sd">      bash -c &#34;echo &#39;port 26379&#39; &gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;dir /tmp&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel resolve-hostnames yes&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel monitor mymaster redis-master 6379 2&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel down-after-milliseconds mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel parallel-syncs mymaster 1&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      echo &#39;sentinel failover-timeout mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
-</span><span class="sd">      cat sentinel.conf &amp;&amp;
-</span><span class="sd">      redis-server sentinel.conf --sentinel &amp; 
-</span><span class="sd">      redis-server --port 6381 --slaveof redis-master 6379 --maxmemory 256mb --maxmemory-policy allkeys-lru&#34;</span><span class="w">      
-</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="m">6381</span><span class="p">:</span><span class="m">6381</span><span class="w">
-</span><span class="w">      </span>- <span class="m">26381</span><span class="p">:</span><span class="m">26379</span><span class="w">
-</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.4</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">default</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">bridge</span><span class="w">
-</span><span class="w">    </span><span class="nt">ipam</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="nt">config</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="nt">subnet</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.0</span><span class="l">/16</span><span class="w">
-</span><span class="w">          </span><span class="nt">gateway</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.1</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.8&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">redis-master</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">redis-master</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">redis-master</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">      bash -c &#34;echo &#39;port 26379&#39; &gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;dir /tmp&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel resolve-hostnames yes&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel monitor mymaster redis-master 6379 2&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel down-after-milliseconds mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel parallel-syncs mymaster 1&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel failover-timeout mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      cat sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      redis-server sentinel.conf --sentinel &amp; 
+</span></span></span><span class="line"><span class="cl"><span class="sd">      redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru&#34;</span><span class="w">      
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">6379</span><span class="p">:</span><span class="m">6379</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">26379</span><span class="p">:</span><span class="m">26379</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">redis-slave-1</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">      bash -c &#34;echo &#39;port 26379&#39; &gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;dir /tmp&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel resolve-hostnames yes&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel monitor mymaster redis-master 6379 2&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel down-after-milliseconds mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel parallel-syncs mymaster 1&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel failover-timeout mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      cat sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      redis-server sentinel.conf --sentinel &amp; 
+</span></span></span><span class="line"><span class="cl"><span class="sd">      redis-server --port 6380 --slaveof redis-master 6379 --maxmemory 256mb --maxmemory-policy allkeys-lru&#34;</span><span class="w">      
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">6380</span><span class="p">:</span><span class="m">6380</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">26380</span><span class="p">:</span><span class="m">26379</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">redis-slave-2</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">redis-slave-2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">      bash -c &#34;echo &#39;port 26379&#39; &gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;dir /tmp&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel resolve-hostnames yes&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel monitor mymaster redis-master 6379 2&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel down-after-milliseconds mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel parallel-syncs mymaster 1&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      echo &#39;sentinel failover-timeout mymaster 5000&#39; &gt;&gt; sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      cat sentinel.conf &amp;&amp;
+</span></span></span><span class="line"><span class="cl"><span class="sd">      redis-server sentinel.conf --sentinel &amp; 
+</span></span></span><span class="line"><span class="cl"><span class="sd">      redis-server --port 6381 --slaveof redis-master 6379 --maxmemory 256mb --maxmemory-policy allkeys-lru&#34;</span><span class="w">      
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">6381</span><span class="p">:</span><span class="m">6381</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">26381</span><span class="p">:</span><span class="m">26379</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">default</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">bridge</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ipam</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">config</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">subnet</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.0</span><span class="l">/16</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">gateway</span><span class="p">:</span><span class="w"> </span><span class="m">172.68.0.1</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>When we run the docker compose</p>
 <ul>
@@ -578,10 +577,10 @@ redis-cli -p <span class="m">6379</span> shutdown
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.2
-sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.3
-sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.4
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.2
+</span></span><span class="line"><span class="cl">sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.3
+</span></span><span class="line"><span class="cl">sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.4
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Check if the docker container ip have an alias on local machine with the command <code>ifconfig lo0</code>. And we will get an output.</p>
 <div class="highlight"><div class="chroma">
@@ -597,16 +596,16 @@ sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.4
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lo0: <span class="nv">flags</span><span class="o">=</span>8049&lt;UP,LOOPBACK,RUNNING,MULTICAST&gt; mtu <span class="m">16384</span>
-	<span class="nv">options</span><span class="o">=</span>1203&lt;RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP&gt;
-	inet 127.0.0.1 netmask 0xff000000 
-	inet6 ::1 prefixlen <span class="m">128</span> 
-	inet6 fe80::1%lo0 prefixlen <span class="m">64</span> scopeid 0x1 
-	inet 172.68.0.2 netmask 0xffff0000 
-	inet 172.68.0.3 netmask 0xffff0000 
-	inet 172.68.0.4 netmask 0xffff0000 
-	nd6 <span class="nv">options</span><span class="o">=</span>201&lt;PERFORMNUD,DAD&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lo0: <span class="nv">flags</span><span class="o">=</span>8049&lt;UP,LOOPBACK,RUNNING,MULTICAST&gt; mtu <span class="m">16384</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">options</span><span class="o">=</span>1203&lt;RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP&gt;
+</span></span><span class="line"><span class="cl">	inet 127.0.0.1 netmask 0xff000000 
+</span></span><span class="line"><span class="cl">	inet6 ::1 prefixlen <span class="m">128</span> 
+</span></span><span class="line"><span class="cl">	inet6 fe80::1%lo0 prefixlen <span class="m">64</span> scopeid 0x1 
+</span></span><span class="line"><span class="cl">	inet 172.68.0.2 netmask 0xffff0000 
+</span></span><span class="line"><span class="cl">	inet 172.68.0.3 netmask 0xffff0000 
+</span></span><span class="line"><span class="cl">	inet 172.68.0.4 netmask 0xffff0000 
+</span></span><span class="line"><span class="cl">	nd6 <span class="nv">options</span><span class="o">=</span>201&lt;PERFORMNUD,DAD&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The <code>inet 172.68.0.2 netmask 0xffff0000</code> indicates that the routing is running properly.</p>
 <p>Finally, we can run redis sentinel with docker using following commans :</p>
@@ -615,8 +614,8 @@ sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.4
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker compose up -d
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker compose up -d
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It will run 3 container such as <code>redis-master</code>, <code>redis-slave-1</code> and <code>redis-slave-2</code>.</p>
 <h3 id="reference">Reference</h3>
@@ -655,7 +654,7 @@ sudo ifconfig lo0 <span class="nb">alias</span> 172.68.0.4
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
         </div>
     </footer></div>
 

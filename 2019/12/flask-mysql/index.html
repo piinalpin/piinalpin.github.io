@@ -11,7 +11,6 @@
 <meta property="og:url" content="https://blog.piinalpin.com/2019/12/flask-mysql/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-12-26T16:46:49+07:00" />
 <meta property="article:modified_time" content="2019-12-26T16:46:49+07:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Simple Flask App with Mysql"/>
 <meta name="twitter:description" content="This project will create CRUD application with Object Relational Mapping on MySQL using flask and sqlalchemy."/>
@@ -25,7 +24,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.piinalpin.com\/2019\/12\/flask-mysql\/"
-        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Python, Flask, MySQL","wordcount":  643 ,
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Python, Flask, MySQL","wordcount":  663 ,
         "url": "https:\/\/blog.piinalpin.com\/2019\/12\/flask-mysql\/","datePublished": "2019-12-26T16:46:49+07:00","dateModified": "2019-12-26T16:46:49+07:00","publisher": {
             "@type": "Organization",
             "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
@@ -102,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Simple Flask App with Mysql</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-26">2019-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;643 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-26">2019-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;663 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -148,25 +147,25 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* flask-mysql/
-  |--- app/
-  |    |--- config/
-  |    |    |--- __init__.py
-  |    |    |--- Database.py
-  |    |--- controller/
-  |    |    |--- __init__.py
-  |    |    |--- CollegerController.py
-  |    |    |--- CoursesController.py
-  |    |    |--- Main.py
-  |    |    |--- TakeCourseController.py
-  |    |--- model/
-  |    |    |--- CollegerModel.py
-  |    |    |--- CoursesModel.py
-  |    |    |--- TakeCourseModel.py
-  |    |--- templates/
-  |    |--- __init__.py
-  |--- run.py
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* flask-mysql/
+</span></span><span class="line"><span class="cl">  |--- app/
+</span></span><span class="line"><span class="cl">  |    |--- config/
+</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
+</span></span><span class="line"><span class="cl">  |    |    |--- Database.py
+</span></span><span class="line"><span class="cl">  |    |--- controller/
+</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
+</span></span><span class="line"><span class="cl">  |    |    |--- CollegerController.py
+</span></span><span class="line"><span class="cl">  |    |    |--- CoursesController.py
+</span></span><span class="line"><span class="cl">  |    |    |--- Main.py
+</span></span><span class="line"><span class="cl">  |    |    |--- TakeCourseController.py
+</span></span><span class="line"><span class="cl">  |    |--- model/
+</span></span><span class="line"><span class="cl">  |    |    |--- CollegerModel.py
+</span></span><span class="line"><span class="cl">  |    |    |--- CoursesModel.py
+</span></span><span class="line"><span class="cl">  |    |    |--- TakeCourseModel.py
+</span></span><span class="line"><span class="cl">  |    |--- templates/
+</span></span><span class="line"><span class="cl">  |    |--- __init__.py
+</span></span><span class="line"><span class="cl">  |--- run.py
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="step-to-create-this-project">Step to create this project</h3>
 <p>A step by step series of examples that tell you how to get a development env running</p>
@@ -178,8 +177,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install virtualenv
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pip install virtualenv
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>Create virtual environment and activate inside your flask-rest-api directory according the above structure</li>
@@ -191,10 +190,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">virtualenv venv
-&gt; On windows -&gt; venv\Scripts\activate
-&gt; On linux -&gt; . env/bin/activate
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">virtualenv venv
+</span></span><span class="line"><span class="cl">&gt; On windows -&gt; venv\Scripts\activate
+</span></span><span class="line"><span class="cl">&gt; On linux -&gt; . env/bin/activate
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>Install some third party libraries on your virtual environment with pip</li>
@@ -204,8 +203,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install flask flask-sqlalchemy flask-migrate mysql-connector-python
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pip install flask flask-sqlalchemy flask-migrate mysql-connector-python
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>Install MySQL database if you don&rsquo;t have, but if you have MySQL you can skip this step</li>
@@ -218,10 +217,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;newuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="k">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;newuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;newuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="k">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;newuser&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="6">
 <li>Create database on MySQL</li>
@@ -231,8 +230,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">YOUR_DATABASE_NAME</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">YOUR_DATABASE_NAME</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="7">
 <li>Create <code>project_name/run.py</code> directory inside flask-project according the above structure</li>
@@ -246,12 +245,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&#34;localhost&#34;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&#34;localhost&#34;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="8">
 <li>Create <code>project_name/app/config/Database.py</code> to create configuration for database</li>
@@ -269,22 +268,20 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">DbConfig</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">DB_USERNAME</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_USERNAME&gt;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">DB_PASSWORD</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_PASSWORD&gt;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">DB_HOST</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">DB_PORT</span> <span class="o">=</span> <span class="mi">3306</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">DB_NAME</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_DATABASE_NAME&gt;&#34;</span>
-
-    <span class="k">def</span> <span class="nf">getUri</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&#34;mysql+mysqlconnector://</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">@</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DB_USERNAME</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_PASSWORD</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_HOST</span><span class="p">,</span>
-                                                              <span class="bp">self</span><span class="o">.</span><span class="n">DB_PORT</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_NAME</span><span class="p">)</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DbConfig</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">DB_USERNAME</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_USERNAME&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">DB_PASSWORD</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_PASSWORD&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">DB_HOST</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">DB_PORT</span> <span class="o">=</span> <span class="mi">3306</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">DB_NAME</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_DATABASE_NAME&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getUri</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;mysql+mysqlconnector://</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">@</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DB_USERNAME</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_PASSWORD</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_HOST</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                              <span class="bp">self</span><span class="o">.</span><span class="n">DB_PORT</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DB_NAME</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="9">
 <li>Create <code>project_name/app/__init__.py</code> inside app directory according the above structure <code>project_name/app/</code>. This step will setup for SQLAlchemy config.</li>
@@ -302,22 +299,20 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
-<span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span>
-<span class="kn">from</span> <span class="nn">app.config.Database</span> <span class="kn">import</span> <span class="n">DbConfig</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_DATABASE_URI&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DbConfig</span><span class="p">()</span><span class="o">.</span><span class="n">getUri</span><span class="p">()</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_TRACK_MODIFICATIONS&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-
-<span class="n">migrate</span> <span class="o">=</span> <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.config.Database</span> <span class="kn">import</span> <span class="n">DbConfig</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_DATABASE_URI&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DbConfig</span><span class="p">()</span><span class="o">.</span><span class="n">getUri</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_TRACK_MODIFICATIONS&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">migrate</span> <span class="o">=</span> <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="10">
 <li>Define colleger model to application and create database migration, create python file on <code>app/model/</code> you can see defined model on <a href="https://github.com/piinalpin/flask-mysql/tree/master/app/model" target="_blank" rel="noopener noreffer">here</a></li>
@@ -340,20 +335,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
-<span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span>
-<span class="kn">from</span> <span class="nn">app.config.Database</span> <span class="kn">import</span> <span class="n">DbConfig</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_DATABASE_URI&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DbConfig</span><span class="p">()</span><span class="o">.</span><span class="n">getUri</span><span class="p">()</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_TRACK_MODIFICATIONS&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">app.model</span> <span class="kn">import</span> <span class="n">CoursesModel</span><span class="p">,</span> <span class="n">CollegerModel</span><span class="p">,</span> <span class="n">TakeCourseModel</span>
-
-<span class="n">migrate</span> <span class="o">=</span> <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.config.Database</span> <span class="kn">import</span> <span class="n">DbConfig</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_DATABASE_URI&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DbConfig</span><span class="p">()</span><span class="o">.</span><span class="n">getUri</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&#34;SQLALCHEMY_TRACK_MODIFICATIONS&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.model</span> <span class="kn">import</span> <span class="n">CoursesModel</span><span class="p">,</span> <span class="n">CollegerModel</span><span class="p">,</span> <span class="n">TakeCourseModel</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">migrate</span> <span class="o">=</span> <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="12">
 <li>Run migration with flask-migrate, type in terminal as below</li>
@@ -365,10 +360,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">flask db init
-flask db migrate
-flask db upgrade
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">flask db init
+</span></span><span class="line"><span class="cl">flask db migrate
+</span></span><span class="line"><span class="cl">flask db upgrade
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="13">
 <li>
@@ -397,11 +392,11 @@ flask db upgrade
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">app.controller.Main</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">app.controller.CollegerController</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">app.controller.CoursesController</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">app.controller.TakeCourseController</span> <span class="kn">import</span> <span class="o">*</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.controller.Main</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.controller.CollegerController</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.controller.CoursesController</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">app.controller.TakeCourseController</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="16">
 <li>Create templates to application on <code>app/templates/</code> you can see defined templates <a href="https://github.com/piinalpin/flask-mysql/tree/master/app/templates" target="_blank" rel="noopener noreffer">here</a></li>
@@ -412,8 +407,8 @@ flask db upgrade
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">python run.py
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">python run.py
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="18">
 <li>Homepage</li>
@@ -479,8 +474,8 @@ flask db upgrade
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt; Clone : git clone https://github.com/piinalpin/flask-mysql.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; Clone : git clone https://github.com/piinalpin/flask-mysql.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="authors">Authors</h2>
 <ul>
@@ -515,7 +510,7 @@ flask db upgrade
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
         </div>
     </footer></div>
 

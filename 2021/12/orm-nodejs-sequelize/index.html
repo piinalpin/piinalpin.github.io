@@ -11,7 +11,6 @@
 <meta property="og:url" content="https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-07T10:31:30+07:00" />
 <meta property="article:modified_time" content="2021-12-07T10:31:30+07:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Object Relational Mapping Node JS using Sequelize"/>
 <meta name="twitter:description" content="Object-Relational Mapping (ORM) is a technique that lets you query and manipulate data from a database using an object-oriented paradigm."/>
@@ -25,7 +24,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.piinalpin.com\/2021\/12\/orm-nodejs-sequelize\/"
-        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Node JS, Express JS, Javascript, Sequelize, Object Relational Mapping, ORM, ES6, Ecma Script","wordcount":  2297 ,
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Node JS, Express JS, Javascript, Sequelize, Object Relational Mapping, ORM, ES6, Ecma Script","wordcount":  2395 ,
         "url": "https:\/\/blog.piinalpin.com\/2021\/12\/orm-nodejs-sequelize\/","datePublished": "2021-12-07T10:31:30+07:00","dateModified": "2021-12-07T10:31:30+07:00","publisher": {
             "@type": "Organization",
             "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
@@ -102,8 +101,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Object Relational Mapping Node JS using Sequelize</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-07">2021-12-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2297 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-07">2021-12-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2395 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;12 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -172,10 +171,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir orm-nodejs
-<span class="nb">cd</span> orm-nodejs
-yarn init
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir orm-nodejs
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> orm-nodejs
+</span></span><span class="line"><span class="cl">yarn init
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create <code>.env</code> file and fill like below.</p>
 <div class="highlight"><div class="chroma">
@@ -192,17 +191,17 @@ yarn init
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># Server
-SERVER_PORT=8000
-
-# Database
-DB_HOST=&lt;YOUR DATABASE HOST&gt;
-DB_USER=&lt;YOUR DATABASE USER&gt;
-DB_PASSWORD=&lt;YOUR DATABASE PASSWORD&gt;
-DB_PORT=&lt;YOUR DATABASE PORT&gt;
-DB_NAME=&lt;YOUR DATABASE NAME&gt;
-DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Server
+</span></span><span class="line"><span class="cl">SERVER_PORT=8000
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Database
+</span></span><span class="line"><span class="cl">DB_HOST=&lt;YOUR DATABASE HOST&gt;
+</span></span><span class="line"><span class="cl">DB_USER=&lt;YOUR DATABASE USER&gt;
+</span></span><span class="line"><span class="cl">DB_PASSWORD=&lt;YOUR DATABASE PASSWORD&gt;
+</span></span><span class="line"><span class="cl">DB_PORT=&lt;YOUR DATABASE PORT&gt;
+</span></span><span class="line"><span class="cl">DB_NAME=&lt;YOUR DATABASE NAME&gt;
+</span></span><span class="line"><span class="cl">DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Project Structure</strong></p>
 <div class="highlight"><div class="chroma">
@@ -225,23 +224,23 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">.
-├── ...
-├── app
-│   └── config/
-│   ├── model/
-│   ├── routes/
-│   ├── service/
-│   ├── util/
-│   └── ...
-└── .env
-└── package.json
-└── routes.js
-└── schemas.sql
-└── server.js
-└── yarn.lock
-└── ...
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── ...
+</span></span><span class="line"><span class="cl">├── app
+</span></span><span class="line"><span class="cl">│   └── config/
+</span></span><span class="line"><span class="cl">│   ├── model/
+</span></span><span class="line"><span class="cl">│   ├── routes/
+</span></span><span class="line"><span class="cl">│   ├── service/
+</span></span><span class="line"><span class="cl">│   ├── util/
+</span></span><span class="line"><span class="cl">│   └── ...
+</span></span><span class="line"><span class="cl">└── .env
+</span></span><span class="line"><span class="cl">└── package.json
+</span></span><span class="line"><span class="cl">└── routes.js
+</span></span><span class="line"><span class="cl">└── schemas.sql
+</span></span><span class="line"><span class="cl">└── server.js
+</span></span><span class="line"><span class="cl">└── yarn.lock
+</span></span><span class="line"><span class="cl">└── ...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Database Design</strong></p>
 <p><img
@@ -282,32 +281,32 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span><span class="w"> </span><span class="n">SEQUENCE</span><span class="w"> </span><span class="n">id_transaction_seq</span><span class="w"> </span><span class="k">start</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">increment</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="n">SEQUENCE</span><span class="w"> </span><span class="n">id_transaction_detail_seq</span><span class="w"> </span><span class="k">start</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">increment</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="s2">&#34;transaction&#34;</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;id&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;id_transaction_seq&#39;</span><span class="p">),</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;created_at&#34;</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;updated_at&#34;</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;transaction_ref_number&#34;</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;transaction_date&#34;</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;customer_name&#34;</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;cost&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;shipping_cost&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w">
-</span><span class="w"></span><span class="p">);</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="s2">&#34;transaction_detail&#34;</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;id&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;id_transaction_detail_seq&#39;</span><span class="p">),</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;created_at&#34;</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;updated_at&#34;</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;transaction_id&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;stuff&#34;</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;price&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;qty&#34;</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;total&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span><span class="w">  </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">fk_transaction</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">transaction_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="k">transaction</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">
-</span><span class="w"></span><span class="p">);</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="n">SEQUENCE</span><span class="w"> </span><span class="n">id_transaction_seq</span><span class="w"> </span><span class="k">start</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">increment</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="n">SEQUENCE</span><span class="w"> </span><span class="n">id_transaction_detail_seq</span><span class="w"> </span><span class="k">start</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">increment</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="s2">&#34;transaction&#34;</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;id&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;id_transaction_seq&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;created_at&#34;</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;updated_at&#34;</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;transaction_ref_number&#34;</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;transaction_date&#34;</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;customer_name&#34;</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;cost&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;shipping_cost&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="s2">&#34;transaction_detail&#34;</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;id&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;id_transaction_detail_seq&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;created_at&#34;</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;updated_at&#34;</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;transaction_id&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;stuff&#34;</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;price&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;qty&#34;</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s2">&#34;total&#34;</span><span class="w"> </span><span class="nb">bigint</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">fk_transaction</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">transaction_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="k">transaction</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Install Dependency</strong></p>
 <p>Install the required dependencies, type yarn command in terminal like below.</p>
@@ -316,8 +315,8 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yarn add express sequelize dotenv pg pg-hstore cors nodemon
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yarn add express sequelize dotenv pg pg-hstore cors nodemon
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Add codes below into <code>package.json</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -328,11 +327,11 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;scripts&#34;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&#34;dev&#34;</span><span class="p">:</span> <span class="s2">&#34;nodemon server&#34;</span>
-<span class="p">}</span><span class="err">,</span>
-<span class="s2">&#34;type&#34;</span><span class="err">:</span> <span class="s2">&#34;module&#34;</span><span class="err">,</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;scripts&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;dev&#34;</span><span class="p">:</span> <span class="s2">&#34;nodemon server&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;type&#34;</span><span class="err">:</span> <span class="s2">&#34;module&#34;</span><span class="err">,</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="implementation">Implementation</h3>
 <p><strong>Create Initial Routes and Server</strong></p>
@@ -350,16 +349,16 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;express&#39;</span><span class="p">;</span>
-
-<span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">Router</span><span class="p">();</span>
-
-<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;ok&#39;</span><span class="p">});</span>
-<span class="p">});</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;express&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">Router</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;ok&#39;</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create a server to provide the api, fill the code like below.</p>
 <div class="highlight"><div class="chroma">
@@ -390,31 +389,31 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">express</span><span class="p">,</span> <span class="p">{</span> <span class="nx">json</span><span class="p">,</span> <span class="nx">urlencoded</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;express&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">cors</span> <span class="nx">from</span> <span class="s2">&#34;cors&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">dotenv</span> <span class="nx">from</span> <span class="s2">&#34;dotenv&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">routes</span> <span class="nx">from</span>  <span class="s2">&#34;./routes.js&#34;</span><span class="p">;</span>
-
-<span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">();</span>
-<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
-<span class="kr">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SERVER_PORT</span><span class="p">;</span>
-
-<span class="kd">var</span> <span class="nx">corsOptions</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">origin</span><span class="o">:</span> <span class="s2">&#34;http://localhost:8000&#34;</span>
-<span class="p">};</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">(</span><span class="nx">corsOptions</span><span class="p">));</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">json</span><span class="p">());</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">urlencoded</span><span class="p">({</span> 
-    <span class="nx">extended</span><span class="o">:</span> <span class="kc">true</span> 
-<span class="p">}));</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/api&#39;</span><span class="p">,</span> <span class="nx">routes</span><span class="p">);</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Running on port &#34;</span><span class="p">,</span> <span class="nx">PORT</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">express</span><span class="p">,</span> <span class="p">{</span> <span class="nx">json</span><span class="p">,</span> <span class="nx">urlencoded</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;express&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">cors</span> <span class="nx">from</span> <span class="s2">&#34;cors&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">dotenv</span> <span class="nx">from</span> <span class="s2">&#34;dotenv&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">routes</span> <span class="nx">from</span>  <span class="s2">&#34;./routes.js&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SERVER_PORT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">corsOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">origin</span><span class="o">:</span> <span class="s2">&#34;http://localhost:8000&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">(</span><span class="nx">corsOptions</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">json</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">urlencoded</span><span class="p">({</span> 
+</span></span><span class="line"><span class="cl">    <span class="nx">extended</span><span class="o">:</span> <span class="kc">true</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/api&#39;</span><span class="p">,</span> <span class="nx">routes</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Running on port &#34;</span><span class="p">,</span> <span class="nx">PORT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Try to run with <code>yarn run dev</code> and consume base path with <code>curl http://localhost:8000/api/</code> in terminal like below. And we should get an output <code>{&quot;message&quot;:&quot;ok&quot;}</code></p>
 <p><strong>Database Configuration</strong></p>
@@ -444,28 +443,28 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">dotenv</span> <span class="nx">from</span> <span class="s1">&#39;dotenv&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Sequelize</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;sequelize&#39;</span><span class="p">;</span>
-<span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">();</span>
-
-<span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sequelize</span><span class="p">(</span>
-    <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_NAME</span><span class="p">,</span>
-    <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_USER</span><span class="p">,</span>
-    <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_PASSWORD</span><span class="p">,</span>
-    <span class="p">{</span>
-        <span class="nx">host</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_HOST</span><span class="p">,</span>
-        <span class="nx">dialect</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_DIALECT</span><span class="p">,</span>
-        <span class="nx">pool</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">max</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
-            <span class="nx">min</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-            <span class="nx">acquire</span><span class="o">:</span> <span class="mi">30000</span><span class="p">,</span>
-            <span class="nx">idle</span><span class="o">:</span> <span class="mi">10000</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">)</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">db</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">dotenv</span> <span class="nx">from</span> <span class="s1">&#39;dotenv&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Sequelize</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;sequelize&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sequelize</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_NAME</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_USER</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_PASSWORD</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">host</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_HOST</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">dialect</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_DIALECT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">pool</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">max</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">min</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">acquire</span><span class="o">:</span> <span class="mi">30000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">idle</span><span class="o">:</span> <span class="mi">10000</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">db</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Model</strong></p>
 <p>Create model <code>transaction</code> and <code>transaction_detail</code> in <code>app/model/**</code>. First, we create <code>transaction.js</code> like following code.</p>
@@ -520,54 +519,54 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">Sequelize</span> <span class="nx">from</span> <span class="s1">&#39;sequelize&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">db</span> <span class="nx">from</span> <span class="s1">&#39;../config/database.js&#39;</span><span class="p">;</span>
-
-<span class="kr">const</span> <span class="nx">Transaction</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;transaction&#39;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">INTEGER</span><span class="p">,</span>
-        <span class="nx">primaryKey</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">db</span><span class="p">.</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">literal</span><span class="p">(</span><span class="s2">&#34;nextval(&#39;id_transaction_seq&#39;)&#34;</span><span class="p">)</span>
-    <span class="p">},</span>
-    <span class="nx">createdAt</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
-        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">NOW</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">updatedAt</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
-        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">NOW</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">transactionRefNumber</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">transactionDate</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">customerName</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">cost</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">shippingCost</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">}</span>
-<span class="p">},</span> <span class="p">{</span>
-    <span class="nx">tableName</span><span class="o">:</span> <span class="s1">&#39;transaction&#39;</span><span class="p">,</span>
-    <span class="nx">underscored</span><span class="o">:</span> <span class="kc">true</span>
-<span class="p">});</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">Transaction</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Sequelize</span> <span class="nx">from</span> <span class="s1">&#39;sequelize&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">db</span> <span class="nx">from</span> <span class="s1">&#39;../config/database.js&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Transaction</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;transaction&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">id</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">INTEGER</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">primaryKey</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">db</span><span class="p">.</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">literal</span><span class="p">(</span><span class="s2">&#34;nextval(&#39;id_transaction_seq&#39;)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">createdAt</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">NOW</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">updatedAt</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">NOW</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">transactionRefNumber</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">transactionDate</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">customerName</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">cost</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">shippingCost</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">tableName</span><span class="o">:</span> <span class="s1">&#39;transaction&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">underscored</span><span class="o">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">Transaction</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>And <code>transactionDetail.js</code> model like following code.</p>
 <div class="highlight"><div class="chroma">
@@ -627,60 +626,60 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">Sequelize</span> <span class="nx">from</span> <span class="s1">&#39;sequelize&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">db</span> <span class="nx">from</span> <span class="s1">&#39;../config/database.js&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Transaction</span> <span class="nx">from</span> <span class="s1">&#39;./transaction.js&#39;</span><span class="p">;</span>
-
-<span class="kr">const</span> <span class="nx">TransactionDetail</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;transaction_detail&#39;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">INTEGER</span><span class="p">,</span>
-        <span class="nx">primaryKey</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">db</span><span class="p">.</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">literal</span><span class="p">(</span><span class="s2">&#34;nextval(&#39;id_transaction_detail_seq&#39;)&#34;</span><span class="p">)</span>
-    <span class="p">},</span>
-    <span class="nx">createdAt</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
-        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">NOW</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">updatedAt</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
-        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">NOW</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">transactionId</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">references</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">model</span><span class="o">:</span> <span class="s1">&#39;transaction&#39;</span><span class="p">,</span> <span class="c1">// &#39;transaction&#39; refer to table name
-</span><span class="c1"></span>            <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">stuff</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">price</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">qty</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="nx">total</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
-        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">}</span>
-<span class="p">},</span> <span class="p">{</span>
-    <span class="nx">tableName</span><span class="o">:</span> <span class="s1">&#39;transaction_detail&#39;</span><span class="p">,</span>
-    <span class="nx">underscored</span><span class="o">:</span> <span class="kc">true</span>
-<span class="p">});</span>
-
-<span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">belongsTo</span><span class="p">(</span><span class="nx">Transaction</span><span class="p">,</span> <span class="p">{</span> <span class="nx">as</span><span class="o">:</span> <span class="s1">&#39;transaction&#39;</span><span class="p">,</span> <span class="nx">foreignKey</span><span class="o">:</span> <span class="s1">&#39;transactionId&#39;</span><span class="p">,</span> <span class="nx">targetKey</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span> <span class="p">});</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">TransactionDetail</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Sequelize</span> <span class="nx">from</span> <span class="s1">&#39;sequelize&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">db</span> <span class="nx">from</span> <span class="s1">&#39;../config/database.js&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Transaction</span> <span class="nx">from</span> <span class="s1">&#39;./transaction.js&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">TransactionDetail</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;transaction_detail&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">id</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">INTEGER</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">primaryKey</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">db</span><span class="p">.</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">literal</span><span class="p">(</span><span class="s2">&#34;nextval(&#39;id_transaction_detail_seq&#39;)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">createdAt</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">NOW</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">updatedAt</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">defaultValue</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">NOW</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">transactionId</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">references</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">model</span><span class="o">:</span> <span class="s1">&#39;transaction&#39;</span><span class="p">,</span> <span class="c1">// &#39;transaction&#39; refer to table name
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">stuff</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">price</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">qty</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">total</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BIGINT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">allowNull</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">tableName</span><span class="o">:</span> <span class="s1">&#39;transaction_detail&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">underscored</span><span class="o">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">belongsTo</span><span class="p">(</span><span class="nx">Transaction</span><span class="p">,</span> <span class="p">{</span> <span class="nx">as</span><span class="o">:</span> <span class="s1">&#39;transaction&#39;</span><span class="p">,</span> <span class="nx">foreignKey</span><span class="o">:</span> <span class="s1">&#39;transactionId&#39;</span><span class="p">,</span> <span class="nx">targetKey</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">TransactionDetail</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Take note for this line</p>
 <div class="highlight"><div class="chroma">
@@ -688,8 +687,8 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">belongsTo</span><span class="p">(</span><span class="nx">Transaction</span><span class="p">,</span> <span class="p">{</span> <span class="nx">as</span><span class="o">:</span> <span class="s1">&#39;transaction&#39;</span><span class="p">,</span> <span class="nx">foreignKey</span><span class="o">:</span> <span class="s1">&#39;transactionId&#39;</span><span class="p">,</span> <span class="nx">targetKey</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span> <span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">belongsTo</span><span class="p">(</span><span class="nx">Transaction</span><span class="p">,</span> <span class="p">{</span> <span class="nx">as</span><span class="o">:</span> <span class="s1">&#39;transaction&#39;</span><span class="p">,</span> <span class="nx">foreignKey</span><span class="o">:</span> <span class="s1">&#39;transactionId&#39;</span><span class="p">,</span> <span class="nx">targetKey</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span> <span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>That mean, <code>TransactionDetail</code> have a constraint to <code>Transaction</code> model.</p>
 <p><strong>Service to Create a new Transaction</strong></p>
@@ -753,62 +752,62 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">55
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">Transaction</span> <span class="nx">from</span> <span class="s1">&#39;../model/transaction.js&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">TransactionDetail</span> <span class="nx">from</span> <span class="s1">&#39;../model/transactionDetail.js&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">db</span> <span class="nx">from</span> <span class="s1">&#39;../config/database.js&#39;</span>
-
-<span class="kr">export</span> <span class="kr">const</span> <span class="nx">create</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute create new transaction&#39;</span><span class="p">);</span>
-
-    <span class="kd">let</span> <span class="nx">t</span><span class="p">;</span>
-
-    <span class="c1">// Get request body
-</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Request::: &#39;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">request</span><span class="p">));</span>
-
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="c1">// define managed transaction
-</span><span class="c1"></span>        <span class="nx">t</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">db</span><span class="p">.</span><span class="nx">transaction</span><span class="p">();</span>
-
-        <span class="kr">const</span> <span class="nx">transaction</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">Transaction</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-            <span class="nx">transactionRefNumber</span><span class="o">:</span> <span class="nx">request</span><span class="p">.</span><span class="nx">transactionRefNumber</span><span class="p">,</span>
-            <span class="nx">transactionDate</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
-            <span class="nx">customerName</span><span class="o">:</span> <span class="nx">request</span><span class="p">.</span><span class="nx">customerName</span><span class="p">,</span>
-            <span class="nx">cost</span><span class="o">:</span> <span class="nx">request</span><span class="p">.</span><span class="nx">cost</span><span class="p">,</span>
-            <span class="nx">shippingCost</span><span class="o">:</span> <span class="nx">request</span><span class="p">.</span><span class="nx">shippingCost</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="nx">transaction</span><span class="o">:</span> <span class="nx">t</span>
-        <span class="p">});</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Transaction:: &#39;</span> <span class="o">+</span> <span class="nx">transaction</span><span class="p">);</span>
-
-        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">request</span><span class="p">.</span><span class="nx">details</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kr">const</span> <span class="nx">detail</span> <span class="o">=</span> <span class="nx">request</span><span class="p">.</span><span class="nx">details</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-            <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-                <span class="nx">transactionId</span><span class="o">:</span> <span class="nx">transaction</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
-                <span class="nx">stuff</span><span class="o">:</span> <span class="nx">detail</span><span class="p">.</span><span class="nx">stuff</span><span class="p">,</span>
-                <span class="nx">price</span><span class="o">:</span> <span class="nx">detail</span><span class="p">.</span><span class="nx">price</span><span class="p">,</span>
-                <span class="nx">qty</span><span class="o">:</span> <span class="nx">detail</span><span class="p">.</span><span class="nx">qty</span><span class="p">,</span>
-                <span class="nx">total</span><span class="o">:</span> <span class="nx">detail</span><span class="p">.</span><span class="nx">total</span><span class="p">,</span>
-            <span class="p">},</span> <span class="p">{</span>
-                <span class="nx">transaction</span><span class="o">:</span> <span class="nx">t</span>
-            <span class="p">});</span>
-        <span class="p">}</span>
-
-        <span class="c1">// Commit managed transaction
-</span><span class="c1"></span>        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">transaction</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Rollback managed transaction
-</span><span class="c1"></span>        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">rollback</span><span class="p">();</span>
-
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Happened error when save transaction data. &#39;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
-            <span class="nx">message</span><span class="o">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span>
-        <span class="p">})</span>
-    <span class="p">}</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute create new transaction&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Transaction</span> <span class="nx">from</span> <span class="s1">&#39;../model/transaction.js&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">TransactionDetail</span> <span class="nx">from</span> <span class="s1">&#39;../model/transactionDetail.js&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">db</span> <span class="nx">from</span> <span class="s1">&#39;../config/database.js&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">create</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute create new transaction&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Get request body
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Request::: &#39;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">request</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// define managed transaction
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">t</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">db</span><span class="p">.</span><span class="nx">transaction</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">transaction</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">Transaction</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">transactionRefNumber</span><span class="o">:</span> <span class="nx">request</span><span class="p">.</span><span class="nx">transactionRefNumber</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">transactionDate</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">customerName</span><span class="o">:</span> <span class="nx">request</span><span class="p">.</span><span class="nx">customerName</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">cost</span><span class="o">:</span> <span class="nx">request</span><span class="p">.</span><span class="nx">cost</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">shippingCost</span><span class="o">:</span> <span class="nx">request</span><span class="p">.</span><span class="nx">shippingCost</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">transaction</span><span class="o">:</span> <span class="nx">t</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Transaction:: &#39;</span> <span class="o">+</span> <span class="nx">transaction</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">request</span><span class="p">.</span><span class="nx">details</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">const</span> <span class="nx">detail</span> <span class="o">=</span> <span class="nx">request</span><span class="p">.</span><span class="nx">details</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">transactionId</span><span class="o">:</span> <span class="nx">transaction</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">stuff</span><span class="o">:</span> <span class="nx">detail</span><span class="p">.</span><span class="nx">stuff</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">price</span><span class="o">:</span> <span class="nx">detail</span><span class="p">.</span><span class="nx">price</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">qty</span><span class="o">:</span> <span class="nx">detail</span><span class="p">.</span><span class="nx">qty</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">total</span><span class="o">:</span> <span class="nx">detail</span><span class="p">.</span><span class="nx">total</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">},</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">transaction</span><span class="o">:</span> <span class="nx">t</span>
+</span></span><span class="line"><span class="cl">            <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Commit managed transaction
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">transaction</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Rollback managed transaction
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">rollback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Happened error when save transaction data. &#39;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">message</span><span class="o">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute create new transaction&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In this code, we use a transactional database <code>transaction commit and rollback</code>. So, if we got error when inserting a new row, the database will be rollback to before insert.</p>
 <p><strong>Routing</strong></p>
@@ -826,16 +825,16 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;express&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">transactionService</span> <span class="nx">from</span> <span class="s1">&#39;../service/transactionService.js&#39;</span><span class="p">;</span>
-
-<span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">Router</span><span class="p">();</span>
-
-<span class="c1">// Transaction
-</span><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">transactionService</span><span class="p">.</span><span class="nx">create</span><span class="p">);</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;express&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">transactionService</span> <span class="nx">from</span> <span class="s1">&#39;../service/transactionService.js&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">Router</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Transaction
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">transactionService</span><span class="p">.</span><span class="nx">create</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Lets try to run by typing in your favourite terminal <code>yarn run dev</code>. And open your postman and fill data like below.</p>
 <div class="highlight"><div class="chroma">
@@ -871,36 +870,36 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="err">POST</span> <span class="err">http://localhost:</span><span class="mi">8000</span><span class="err">/api/transaction</span>
-
-<span class="err">request</span> <span class="err">body:</span>
-<span class="p">{</span>
-    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120003&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="mi">400000</span><span class="p">,</span>
-    <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="mi">18000</span><span class="p">,</span>
-    <span class="nt">&#34;details&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Speaker&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="mi">200000</span><span class="p">,</span>
-            <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="mi">200000</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Headset&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="mi">180000</span><span class="p">,</span>
-            <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="mi">180000</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Case Iphone 6S&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="mi">20000</span><span class="p">,</span>
-            <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="mi">20000</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">POST</span> <span class="err">http:</span><span class="c1">//localhost:8000/api/transaction
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="err">request</span> <span class="err">body:</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120003&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="mi">400000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="mi">18000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;details&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Speaker&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="mi">200000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="mi">200000</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Headset&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="mi">180000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="mi">180000</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Case Iphone 6S&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="mi">20000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="mi">20000</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>ANd we should got an output.</p>
 <div class="highlight"><div class="chroma">
@@ -917,17 +916,17 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.403Z&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.410Z&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120003&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;transactionDate&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.401Z&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="s2">&#34;400000&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="s2">&#34;18000&#34;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.403Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.410Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120003&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;transactionDate&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.401Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="s2">&#34;400000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="s2">&#34;18000&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Service to Get All Transaction</strong></p>
 <p>After we create a new transaction, we will create a service to get all of transaction or search transaction by parameter. Add the following code into <code>app/service/transactionService.js</code></p>
@@ -960,32 +959,32 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">Sequelize</span> <span class="nx">from</span> <span class="s1">&#39;sequelize&#39;</span><span class="p">;</span>
-
-<span class="kr">export</span> <span class="kr">const</span> <span class="nx">getAll</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute find all transaction&#39;</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">transactions</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">Transaction</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">transactions</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute find all transaction&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kr">export</span> <span class="kr">const</span> <span class="nx">search</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute search transaction by parameter&#39;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Search Request:: &#39;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">));</span>
-    <span class="kr">const</span> <span class="nx">transaction</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">Transaction</span><span class="p">.</span><span class="nx">findAll</span><span class="p">({</span>
-        <span class="nx">where</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">transactionRefNumber</span><span class="o">:</span> <span class="p">{</span>
-                <span class="p">[</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]</span><span class="o">:</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">transactionRefNumber</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span>
-            <span class="p">},</span>
-            <span class="nx">customerName</span><span class="o">:</span> <span class="p">{</span>
-                <span class="p">[</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]</span><span class="o">:</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">customerName</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">transaction</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute search transaction by parameter&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Sequelize</span> <span class="nx">from</span> <span class="s1">&#39;sequelize&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">getAll</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute find all transaction&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">transactions</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">Transaction</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">transactions</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute find all transaction&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">search</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute search transaction by parameter&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Search Request:: &#39;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">transaction</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">Transaction</span><span class="p">.</span><span class="nx">findAll</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">where</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">transactionRefNumber</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="p">[</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]</span><span class="o">:</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">transactionRefNumber</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">customerName</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="p">[</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]</span><span class="o">:</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">customerName</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">transaction</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute search transaction by parameter&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Get All Transaction Routes</strong></p>
 <p>Then, we will create routes to get all transaction or search transaction data by parameter. Add the following code into <code>app/routes/transactionRoute.js</code></p>
@@ -995,9 +994,9 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">transactionService</span><span class="p">.</span><span class="nx">getAll</span><span class="p">);</span>
-<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/search&#39;</span><span class="p">,</span> <span class="nx">transactionService</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">transactionService</span><span class="p">.</span><span class="nx">getAll</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/search&#39;</span><span class="p">,</span> <span class="nx">transactionService</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Trying our api using postman.</p>
 <p>Get all transaction.</p>
@@ -1040,42 +1039,42 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="err">GET</span> <span class="err">http://localhost:</span><span class="mi">8000</span><span class="err">/api/transaction</span>
-
-<span class="err">Response:</span>
-<span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;13&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:20:44.668Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:20:44.670Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120001&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionDate&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:20:44.667Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="s2">&#34;320000&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="s2">&#34;8000&#34;</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;14&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:21:36.088Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:21:36.090Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120002&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionDate&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:21:36.087Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="s2">&#34;200000&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="s2">&#34;18000&#34;</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.403Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.410Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120003&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionDate&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.401Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="s2">&#34;400000&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="s2">&#34;18000&#34;</span>
-  <span class="p">}</span>
-<span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">GET</span> <span class="err">http:</span><span class="c1">//localhost:8000/api/transaction
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="err">Response:</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;13&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:20:44.668Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:20:44.670Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120001&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionDate&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:20:44.667Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="s2">&#34;320000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="s2">&#34;8000&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;14&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:21:36.088Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:21:36.090Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120002&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionDate&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T01:21:36.087Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="s2">&#34;200000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="s2">&#34;18000&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.403Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.410Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120003&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionDate&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.401Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="s2">&#34;400000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="s2">&#34;18000&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Search transaction by parameter.</p>
 <div class="highlight"><div class="chroma">
@@ -1103,28 +1102,28 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="err">GET</span> <span class="err">http://localhost:</span><span class="mi">8000</span><span class="err">/api/transaction/search</span>
-
-<span class="err">Request</span> <span class="err">Body:</span>
-<span class="p">{</span>
-    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120003&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
-<span class="p">}</span>
-
-<span class="err">Response:</span>
-<span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.403Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.410Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120003&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionDate&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.401Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="s2">&#34;400000&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="s2">&#34;18000&#34;</span>
-  <span class="p">}</span>
-<span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">GET</span> <span class="err">http:</span><span class="c1">//localhost:8000/api/transaction/search
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="err">Request</span> <span class="err">Body:</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120003&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">Response:</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.403Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.410Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionRefNumber&#34;</span><span class="p">:</span> <span class="s2">&#34;120003&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionDate&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.401Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;customerName&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;cost&#34;</span><span class="p">:</span> <span class="s2">&#34;400000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;shippingCost&#34;</span><span class="p">:</span> <span class="s2">&#34;18000&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Transaction Detail Service</strong></p>
 <p>Create transaction detail service to search, update, or delete transaction detail in <code>app/service/transactionDetailService.js</code> like following code.</p>
@@ -1235,110 +1234,110 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">103
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">db</span> <span class="nx">from</span> <span class="s1">&#39;../config/database.js&#39;</span>
-<span class="kr">import</span> <span class="nx">TransactionDetail</span> <span class="nx">from</span> <span class="s1">&#39;../model/transactionDetail.js&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Sequelize</span> <span class="nx">from</span> <span class="s1">&#39;sequelize&#39;</span><span class="p">;</span>
-
-<span class="kr">export</span> <span class="kr">const</span> <span class="nx">search</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute search transaction detail by parameter&#39;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Search Request:: &#39;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">));</span>
-    <span class="kr">const</span> <span class="nx">transaction</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">findAll</span><span class="p">({</span>
-        <span class="nx">where</span><span class="o">:</span> <span class="p">{</span>
-            <span class="p">[</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">Op</span><span class="p">.</span><span class="nx">and</span><span class="p">]</span><span class="o">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nx">stuff</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="p">[</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]</span><span class="o">:</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">stuff</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span>
-                    <span class="p">}</span>
-                <span class="p">},</span>
-                <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">where</span><span class="p">(</span>
-                    <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">cast</span><span class="p">(</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">col</span><span class="p">(</span><span class="s1">&#39;transaction_detail.transaction_id&#39;</span><span class="p">),</span> <span class="s1">&#39;varchar&#39;</span><span class="p">),</span>
-                    <span class="p">{</span>
-                        <span class="p">[</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">Op</span><span class="p">.</span><span class="nx">iLike</span><span class="p">]</span><span class="o">:</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">transactionId</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span>
-                    <span class="p">}</span>
-                <span class="p">)</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">transaction</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute search transaction detail by parameter&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kr">export</span> <span class="kr">const</span> <span class="nx">update</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute update transaction detail&#39;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Transaction detail update Request:: &#39;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">));</span>
-
-    <span class="kd">let</span> <span class="nx">t</span><span class="p">;</span>
-
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Find transaction detail by id:: &#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">detail</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="nx">detail</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Data transaction detail not found, cancel update data&#39;</span><span class="p">);</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;transaction detail: not found&#39;</span><span class="p">});</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="nx">t</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">db</span><span class="p">.</span><span class="nx">transaction</span><span class="p">();</span>
-
-        <span class="kr">const</span> <span class="nx">detailToUpdate</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="nx">qty</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">qty</span><span class="p">,</span>
-            <span class="nx">total</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">detail</span><span class="p">.</span><span class="nx">total</span><span class="p">)</span> <span class="o">*</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">qty</span>
-        <span class="p">}</span>
-
-        <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">detailToUpdate</span><span class="p">,</span> <span class="p">{</span>
-            <span class="nx">where</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">id</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span>
-            <span class="p">}</span>
-        <span class="p">});</span>
-
-        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;success&#39;</span><span class="p">});</span>
-    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">rollback</span><span class="p">();</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Happened error when updating transaction detail&#39;</span><span class="p">);</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
-            <span class="nx">message</span><span class="o">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span>
-        <span class="p">})</span>
-    <span class="p">}</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute update transaction detail&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kr">export</span> <span class="kr">const</span> <span class="nx">deleteById</span> <span class="o">=</span> <span class="kr">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute delete transaction detail by id&#39;</span><span class="p">);</span>
-
-    <span class="kd">let</span> <span class="nx">t</span><span class="p">;</span>
-
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Find transaction detail by id:: &#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">detail</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="nx">detail</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Data transaction detail not found, cancel update data&#39;</span><span class="p">);</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;transaction detail: not found&#39;</span><span class="p">});</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="nx">t</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">db</span><span class="p">.</span><span class="nx">transaction</span><span class="p">();</span>
-
-        <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">destroy</span><span class="p">({</span>
-            <span class="nx">where</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">id</span><span class="o">:</span> <span class="nx">detail</span><span class="p">.</span><span class="nx">id</span>
-            <span class="p">}</span>
-        <span class="p">});</span>
-
-        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;success&#39;</span><span class="p">});</span>
-    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">rollback</span><span class="p">();</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Happened error when deleting transaction detail&#39;</span><span class="p">);</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
-            <span class="nx">message</span><span class="o">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span>
-        <span class="p">})</span>
-    <span class="p">}</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute delete transaction detail by id&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">db</span> <span class="nx">from</span> <span class="s1">&#39;../config/database.js&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">TransactionDetail</span> <span class="nx">from</span> <span class="s1">&#39;../model/transactionDetail.js&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Sequelize</span> <span class="nx">from</span> <span class="s1">&#39;sequelize&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">search</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute search transaction detail by parameter&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Search Request:: &#39;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">transaction</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">findAll</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">where</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="p">[</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">Op</span><span class="p">.</span><span class="nx">and</span><span class="p">]</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">stuff</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">[</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]</span><span class="o">:</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">stuff</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">},</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">where</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">cast</span><span class="p">(</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">col</span><span class="p">(</span><span class="s1">&#39;transaction_detail.transaction_id&#39;</span><span class="p">),</span> <span class="s1">&#39;varchar&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">[</span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">Op</span><span class="p">.</span><span class="nx">iLike</span><span class="p">]</span><span class="o">:</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">transactionId</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">transaction</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute search transaction detail by parameter&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">update</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute update transaction detail&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Transaction detail update Request:: &#39;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Find transaction detail by id:: &#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">detail</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="nx">detail</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Data transaction detail not found, cancel update data&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;transaction detail: not found&#39;</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">t</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">db</span><span class="p">.</span><span class="nx">transaction</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">detailToUpdate</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">qty</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">qty</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">total</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">detail</span><span class="p">.</span><span class="nx">total</span><span class="p">)</span> <span class="o">*</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">qty</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">detailToUpdate</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">where</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">id</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;success&#39;</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">rollback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Happened error when updating transaction detail&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">message</span><span class="o">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute update transaction detail&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">deleteById</span> <span class="o">=</span> <span class="kr">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Start execute delete transaction detail by id&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Find transaction detail by id:: &#39;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">detail</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="nx">detail</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Data transaction detail not found, cancel update data&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;transaction detail: not found&#39;</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">t</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">db</span><span class="p">.</span><span class="nx">transaction</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kr">await</span> <span class="nx">TransactionDetail</span><span class="p">.</span><span class="nx">destroy</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">where</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">id</span><span class="o">:</span> <span class="nx">detail</span><span class="p">.</span><span class="nx">id</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;success&#39;</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">await</span> <span class="nx">t</span><span class="p">.</span><span class="nx">rollback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Happened error when deleting transaction detail&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">message</span><span class="o">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;End execute delete transaction detail by id&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Update Transaction Routes</strong></p>
 <p>Update transaction routes, add the following code into <code>app/routes/transactionRoute.js</code>.</p>
@@ -1352,13 +1351,13 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">transactionDetailService</span> <span class="nx">from</span> <span class="s1">&#39;../service/transactionDetailService.js&#39;</span><span class="p">;</span>
-
-<span class="c1">// Detail
-</span><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/detail&#39;</span><span class="p">,</span> <span class="nx">transactionDetailService</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
-<span class="nx">router</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s1">&#39;/detail/:id&#39;</span><span class="p">,</span> <span class="nx">transactionDetailService</span><span class="p">.</span><span class="nx">update</span><span class="p">);</span>
-<span class="nx">router</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">&#39;/detail/:id&#39;</span><span class="p">,</span> <span class="nx">transactionDetailService</span><span class="p">.</span><span class="nx">deleteById</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">transactionDetailService</span> <span class="nx">from</span> <span class="s1">&#39;../service/transactionDetailService.js&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Detail
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/detail&#39;</span><span class="p">,</span> <span class="nx">transactionDetailService</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s1">&#39;/detail/:id&#39;</span><span class="p">,</span> <span class="nx">transactionDetailService</span><span class="p">.</span><span class="nx">update</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">&#39;/detail/:id&#39;</span><span class="p">,</span> <span class="nx">transactionDetailService</span><span class="p">.</span><span class="nx">deleteById</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Test our transaction detail api.</p>
 <p>Search all transaction detail by parameter.</p>
@@ -1407,48 +1406,48 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="err">GET</span> <span class="err">http://localhost:</span><span class="mi">8000</span><span class="err">/api/transaction/detail</span>
-
-<span class="err">Request</span> <span class="err">Body:</span>
-<span class="p">{</span>
-    <span class="nt">&#34;transactionId&#34;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
-    <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
-<span class="p">}</span>
-
-<span class="err">Response:</span>
-<span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;9&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.687Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.688Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionId&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Speaker&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="s2">&#34;200000&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="s2">&#34;200000&#34;</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;10&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:10.006Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:10.006Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionId&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Headset&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="s2">&#34;180000&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="s2">&#34;180000&#34;</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;11&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:10.525Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:10.525Z&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;transactionId&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Case Iphone 6S&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="s2">&#34;20000&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="s2">&#34;20000&#34;</span>
-  <span class="p">}</span>
-<span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">GET</span> <span class="err">http:</span><span class="c1">//localhost:8000/api/transaction/detail
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="err">Request</span> <span class="err">Body:</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionId&#34;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">Response:</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;9&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.687Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:09.688Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionId&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Speaker&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="s2">&#34;200000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="s2">&#34;200000&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;10&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:10.006Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:10.006Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionId&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Headset&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="s2">&#34;180000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="s2">&#34;180000&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;11&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;createdAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:10.525Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;updatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2021-12-07T06:53:10.525Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transactionId&#34;</span><span class="p">:</span> <span class="s2">&#34;15&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;stuff&#34;</span><span class="p">:</span> <span class="s2">&#34;Case Iphone 6S&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="s2">&#34;20000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="s2">&#34;20000&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Update transaction detail.</p>
 <div class="highlight"><div class="chroma">
@@ -1466,18 +1465,18 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="err">PUT</span> <span class="err">http://localhost:</span><span class="mi">8000</span><span class="err">/api/transaction/detail/</span><span class="mi">11</span>
-
-<span class="err">Request</span> <span class="err">Body:</span>
-<span class="p">{</span>
-    <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">3</span>
-<span class="p">}</span>
-
-<span class="err">Response:</span>
-<span class="p">{</span>
-  <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;success&#34;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">PUT</span> <span class="err">http:</span><span class="c1">//localhost:8000/api/transaction/detail/11
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="err">Request</span> <span class="err">Body:</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;qty&#34;</span><span class="p">:</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">Response:</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;success&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Delete transaction detail by id.</p>
 <div class="highlight"><div class="chroma">
@@ -1490,13 +1489,13 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="err">DELETE</span> <span class="err">http://localhost:</span><span class="mi">8000</span><span class="err">/api/transaction/detail/</span><span class="mi">11</span>
-
-<span class="err">Response:</span>
-<span class="p">{</span>
-  <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;success&#34;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">DELETE</span> <span class="err">http:</span><span class="c1">//localhost:8000/api/transaction/detail/11
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="err">Response:</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;success&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="clone-or-download">Clone or download</h3>
 <p>You can clone or download this project at</p>
@@ -1505,8 +1504,8 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">https://github.com/piinalpin/nodejs-orm.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://github.com/piinalpin/nodejs-orm.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="references">References</h3>
 <ul>
@@ -1547,7 +1546,7 @@ DB_DIALECT=&lt;YOUR DATABASE DIALECT&gt;
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
         </div>
     </footer></div>
 

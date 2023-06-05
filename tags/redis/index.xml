@@ -18,6 +18,6 @@
     <guid>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</guid>
     <description><![CDATA[Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster.
 Sentinel itself is designed to run in a configuration where there are multiple Sentinel processes cooperating together. The advantage of having multiple Sentinel processes cooperating are the following :
- Failure detection is performed when multiple Sentinels agree about the fact a given master is no longer available.]]></description>
+Failure detection is performed when multiple Sentinels agree about the fact a given master is no longer available.]]></description>
 </item></channel>
 </rss>

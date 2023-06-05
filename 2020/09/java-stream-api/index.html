@@ -11,7 +11,6 @@
 <meta property="og:url" content="https://blog.piinalpin.com/2020/09/java-stream-api/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-09-15T14:45:31+07:00" />
 <meta property="article:modified_time" content="2020-09-15T14:45:31+07:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java 8 Stream API Tutorial"/>
 <meta name="twitter:description" content="The usage of Java 8 Streams from creation to parallel execution"/>
@@ -172,46 +171,46 @@
 </span><span class="lnt">39
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pojo</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">numberId</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">gender</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">Pojo</span><span class="o">(</span><span class="n">String</span> <span class="n">numberId</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">gender</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">numberId</span> <span class="o">=</span> <span class="n">numberId</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">gender</span> <span class="o">=</span> <span class="n">gender</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getNumberId</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">numberId</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNumberId</span><span class="o">(</span><span class="n">String</span> <span class="n">numberId</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">numberId</span> <span class="o">=</span> <span class="n">numberId</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getGender</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">gender</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setGender</span><span class="o">(</span><span class="n">String</span> <span class="n">gender</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">gender</span> <span class="o">=</span> <span class="n">gender</span><span class="o">;</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pojo</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">numberId</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">gender</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">Pojo</span><span class="o">(</span><span class="n">String</span> <span class="n">numberId</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">gender</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">numberId</span> <span class="o">=</span> <span class="n">numberId</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">gender</span> <span class="o">=</span> <span class="n">gender</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getNumberId</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">numberId</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNumberId</span><span class="o">(</span><span class="n">String</span> <span class="n">numberId</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">numberId</span> <span class="o">=</span> <span class="n">numberId</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getGender</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">gender</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setGender</span><span class="o">(</span><span class="n">String</span> <span class="n">gender</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">gender</span> <span class="o">=</span> <span class="n">gender</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In main application, create list pojo.</p>
 <div class="highlight"><div class="chroma">
@@ -237,26 +236,26 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-	<span class="n">Gson</span> <span class="n">gson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GsonBuilder</span><span class="o">().</span><span class="na">setPrettyPrinting</span><span class="o">().</span><span class="na">create</span><span class="o">();</span>
-	<span class="n">List</span><span class="o">&lt;</span><span class="n">Pojo</span><span class="o">&gt;</span> <span class="n">pojoList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Pojo</span><span class="o">&gt;();</span>
-
-	<span class="c1">// Define object
-</span><span class="c1"></span>	<span class="n">Pojo</span> <span class="n">pojo1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&#34;1&#34;</span><span class="o">,</span> <span class="s">&#34;John Doe&#34;</span><span class="o">,</span> <span class="s">&#34;M&#34;</span><span class="o">);</span>
-	<span class="n">Pojo</span> <span class="n">pojo2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&#34;2&#34;</span><span class="o">,</span> <span class="s">&#34;Maverick&#34;</span><span class="o">,</span> <span class="s">&#34;M&#34;</span><span class="o">);</span>
-	<span class="n">Pojo</span> <span class="n">pojo3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&#34;3&#34;</span><span class="o">,</span> <span class="s">&#34;Natalie&#34;</span><span class="o">,</span> <span class="s">&#34;F&#34;</span><span class="o">);</span>
-	<span class="n">Pojo</span> <span class="n">pojo4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&#34;4&#34;</span><span class="o">,</span> <span class="s">&#34;Gracia&#34;</span><span class="o">,</span> <span class="s">&#34;F&#34;</span><span class="o">);</span>
-	<span class="n">Pojo</span> <span class="n">pojo5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&#34;5&#34;</span><span class="o">,</span> <span class="s">&#34;Patrick&#34;</span><span class="o">,</span> <span class="s">&#34;M&#34;</span><span class="o">);</span>
-
-	<span class="c1">// Add to array list
-</span><span class="c1"></span>	<span class="n">pojoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pojo1</span><span class="o">);</span>
-	<span class="n">pojoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pojo2</span><span class="o">);</span>
-	<span class="n">pojoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pojo3</span><span class="o">);</span>
-	<span class="n">pojoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pojo4</span><span class="o">);</span>
-	<span class="n">pojoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pojo5</span><span class="o">);</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Gson</span> <span class="n">gson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GsonBuilder</span><span class="o">().</span><span class="na">setPrettyPrinting</span><span class="o">().</span><span class="na">create</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">	<span class="n">List</span><span class="o">&lt;</span><span class="n">Pojo</span><span class="o">&gt;</span> <span class="n">pojoList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Pojo</span><span class="o">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Define object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Pojo</span> <span class="n">pojo1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&#34;1&#34;</span><span class="o">,</span> <span class="s">&#34;John Doe&#34;</span><span class="o">,</span> <span class="s">&#34;M&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Pojo</span> <span class="n">pojo2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&#34;2&#34;</span><span class="o">,</span> <span class="s">&#34;Maverick&#34;</span><span class="o">,</span> <span class="s">&#34;M&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Pojo</span> <span class="n">pojo3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&#34;3&#34;</span><span class="o">,</span> <span class="s">&#34;Natalie&#34;</span><span class="o">,</span> <span class="s">&#34;F&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Pojo</span> <span class="n">pojo4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&#34;4&#34;</span><span class="o">,</span> <span class="s">&#34;Gracia&#34;</span><span class="o">,</span> <span class="s">&#34;F&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Pojo</span> <span class="n">pojo5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&#34;5&#34;</span><span class="o">,</span> <span class="s">&#34;Patrick&#34;</span><span class="o">,</span> <span class="s">&#34;M&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Add to array list
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">pojoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pojo1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pojoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pojo2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pojoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pojo3</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pojoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pojo4</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pojoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pojo5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The json data is :</p>
 <div class="highlight"><div class="chroma">
@@ -290,34 +289,34 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;2&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;3&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Natalie&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;F&#34;</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;4&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Gracia&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;F&#34;</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;5&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Patrick&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
-  <span class="p">}</span>
-<span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;2&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;3&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Natalie&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;F&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Gracia&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;F&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;5&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Patrick&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="grouping-collection">Grouping Collection</h3>
 <p>Using <code>import static java.util.stream.Collectors.groupingBy;</code> fo grouping array list pojo.</p>
@@ -326,8 +325,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Pojo</span><span class="o">&gt;&gt;</span> <span class="n">groupingPojo</span> <span class="o">=</span> <span class="n">pojoList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">groupingBy</span><span class="o">(</span><span class="n">Pojo</span><span class="o">::</span><span class="n">getGender</span><span class="o">));</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Pojo</span><span class="o">&gt;&gt;</span> <span class="n">groupingPojo</span> <span class="o">=</span> <span class="n">pojoList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">groupingBy</span><span class="o">(</span><span class="n">Pojo</span><span class="o">::</span><span class="n">getGender</span><span class="o">));</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It will give an output :</p>
 <div class="highlight"><div class="chroma">
@@ -365,38 +364,38 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;F&#34;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;3&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Natalie&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;F&#34;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;4&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Gracia&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;F&#34;</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="nt">&#34;M&#34;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;2&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;5&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Patrick&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;F&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;3&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Natalie&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;F&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Gracia&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;F&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;M&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;John Doe&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;2&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;5&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Patrick&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="filtering-collection">Filtering Collection</h3>
 <p>Let&rsquo;s try filter the collection by Number ID and if not finding data then return null or you can fill new object from Pojo</p>
@@ -405,8 +404,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Pojo</span> <span class="n">filterByNumber</span> <span class="o">=</span> <span class="n">pojoList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">.</span><span class="na">getNumberId</span><span class="o">().</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&#34;2&#34;</span><span class="o">)).</span><span class="na">findAny</span><span class="o">().</span><span class="na">orElse</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Pojo</span> <span class="n">filterByNumber</span> <span class="o">=</span> <span class="n">pojoList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">.</span><span class="na">getNumberId</span><span class="o">().</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&#34;2&#34;</span><span class="o">)).</span><span class="na">findAny</span><span class="o">().</span><span class="na">orElse</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It will give an output :</p>
 <div class="highlight"><div class="chroma">
@@ -418,12 +417,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;2&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;numberId&#34;</span><span class="p">:</span> <span class="s2">&#34;2&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Maverick&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;M&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="counting-collection">Counting Collection</h3>
 <p>Let&rsquo;s try counting object by Gender.</p>
@@ -432,8 +431,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Long</span> <span class="n">countByGender</span> <span class="o">=</span> <span class="n">pojoList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">.</span><span class="na">getGender</span><span class="o">().</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&#34;M&#34;</span><span class="o">)).</span><span class="na">count</span><span class="o">();</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Long</span> <span class="n">countByGender</span> <span class="o">=</span> <span class="n">pojoList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">.</span><span class="na">getGender</span><span class="o">().</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&#34;M&#34;</span><span class="o">)).</span><span class="na">count</span><span class="o">();</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It will give an output :</p>
 <div class="highlight"><div class="chroma">
@@ -441,8 +440,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">3
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">3
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="convert-arraylist-to-string">Convert ArrayList to String</h3>
 <p>Let&rsquo;s try convert ArrayList to String and output it.</p>
@@ -451,8 +450,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">listToString</span> <span class="o">=</span> <span class="n">pojoList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">Pojo</span><span class="o">::</span><span class="n">getName</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">(</span><span class="s">&#34;, &#34;</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">));</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">listToString</span> <span class="o">=</span> <span class="n">pojoList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">Pojo</span><span class="o">::</span><span class="n">getName</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">(</span><span class="s">&#34;, &#34;</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">));</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It will give an output :</p>
 <div class="highlight"><div class="chroma">
@@ -460,8 +459,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">John Doe, Maverick, Natalie, Gracia, Patrick
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">John Doe, Maverick, Natalie, Gracia, Patrick
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="returning-boolean-using-any-match">Returning Boolean using Any Match</h3>
 <p>Let&rsquo;s try using anyMatch on java Stream API.</p>
@@ -470,8 +469,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="n">findMaverick</span> <span class="o">=</span> <span class="n">pojoList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">anyMatch</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&#34;Maverick&#34;</span><span class="o">));</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">boolean</span> <span class="n">findMaverick</span> <span class="o">=</span> <span class="n">pojoList</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">anyMatch</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&#34;Maverick&#34;</span><span class="o">));</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It will give an output :</p>
 <div class="highlight"><div class="chroma">
@@ -479,8 +478,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">true
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">true
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="thankyou">Thankyou</h3>
 <p><a href="https://www.baeldung.com/java-8-streams" target="_blank" rel="noopener noreffer">Baeldung</a> - The Java 8 Stream API Tutorial</p>
@@ -514,7 +513,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
         </div>
     </footer></div>
 

@@ -3,7 +3,15 @@
         <title>Spring Boot - Tag - PiinAlpin&#39;s Blog</title>
         <link>https://blog.piinalpin.com/tags/spring-boot/</link>
         <description>Spring Boot - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 26 Oct 2022 13:48:09 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/spring-boot/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/spring-boot/" rel="self" type="application/rss+xml" /><item>
+    <title>Spring Boot TCP Integration IP</title>
+    <link>https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</link>
+    <pubDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</guid>
+    <description><![CDATA[Transmission Control Protocol (TCP) is a communications standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.
+TCP is one of the basic standards that define the rules of the internet and is included within the standards defined by the Internet Engineering Task Force (IETF). It is one of the most commonly used protocols within digital network communications and ensures end-to-end data delivery.]]></description>
+</item><item>
     <title>High Availability with Redis Sentinel and Spring Lettuce Client</title>
     <link>https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</link>
     <pubDate>Wed, 26 Oct 2022 13:48:09 &#43;0700</pubDate>
@@ -70,12 +78,5 @@ Servers: Kafka is run as a cluster of one or more servers that can span multiple
     <guid>https://blog.piinalpin.com/2021/07/centralized-configuration-with-spring-cloud-config/</guid>
     <description><![CDATA[What is Configuration as a Service In micro-service world, managing configurations of each service separately is a tedious and time-consuming task. In other words, if there are many number of modules, and managing properties for each module with the traditional approach is very difficult.
 Central configuration server provides configurations (properties) to each micro service connected. As mentioned in the above diagram, Spring Cloud Config Server can be used as a central cloud config server by integrating to several environments.]]></description>
-</item><item>
-    <title>How Messages Broker Work Using RabbitMQ</title>
-    <link>https://blog.piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</link>
-    <pubDate>Sun, 28 Mar 2021 11:20:37 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</guid>
-    <description><![CDATA[Understanding message broker works using RabbitMQ and Spring Boot with microservice architecture.]]></description>
 </item></channel>
 </rss>

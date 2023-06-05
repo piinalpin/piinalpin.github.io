@@ -11,7 +11,6 @@
 <meta property="og:url" content="https://blog.piinalpin.com/2021/08/bash-script-for-lazy-people/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-08-17T15:13:17+07:00" />
 <meta property="article:modified_time" content="2021-08-17T15:13:17+07:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bash Script for Lazy People"/>
 <meta name="twitter:description" content="Bash is a command processor that typically runs in a text window where the user types commands that cause actions. Bash can also read and execute commands from a file, called a shell script."/>
@@ -25,7 +24,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.piinalpin.com\/2021\/08\/bash-script-for-lazy-people\/"
-        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Shell Script, Shell, Bash, Bash Script, CLI, Command Line Interface","wordcount":  1146 ,
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Shell Script, Shell, Bash, Bash Script, CLI, Command Line Interface","wordcount":  1149 ,
         "url": "https:\/\/blog.piinalpin.com\/2021\/08\/bash-script-for-lazy-people\/","datePublished": "2021-08-17T15:13:17+07:00","dateModified": "2021-08-17T15:13:17+07:00","publisher": {
             "@type": "Organization",
             "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
@@ -102,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Bash Script for Lazy People</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-17">2021-08-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1146 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-17">2021-08-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1149 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -174,8 +173,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Hello World</strong></p>
 <div class="highlight"><div class="chroma">
@@ -185,10 +184,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-<span class="nb">echo</span> <span class="s2">&#34;Hello world!!!&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Hello world!!!&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>or with function</p>
 <div class="highlight"><div class="chroma">
@@ -202,14 +201,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-hello<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">echo</span> <span class="s2">&#34;Hello world!!!&#34;</span>
-<span class="o">}</span>
-
-hello
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">hello<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Hello world!!!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">hello
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Run file with command <code>./hello.sh</code> and we got an output <code>Hello world!!!</code></p>
 <p><strong>Conditions</strong></p>
@@ -225,14 +224,14 @@ hello
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-<span class="nv">var</span><span class="o">=</span><span class="nb">true</span>
-
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$var</span> <span class="o">==</span> <span class="nb">true</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&#34;var value is: </span><span class="nv">$var</span><span class="s2">&#34;</span>
-<span class="k">fi</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nv">var</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$var</span> <span class="o">==</span> <span class="nb">true</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;var value is: </span><span class="nv">$var</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Run file with command <code>./hello.sh</code> and we got an output <code>var value is: true</code></p>
 <p><em>Case Conditions</em></p>
@@ -252,19 +251,19 @@ hello
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-<span class="nv">var</span><span class="o">=</span><span class="m">1</span>
-
-<span class="k">case</span> <span class="nv">$var</span> in
-1<span class="o">)</span>
-    <span class="nb">echo</span> <span class="s2">&#34;var value is </span><span class="nv">$var</span><span class="s2">&#34;</span>
-<span class="p">;;</span>
-*<span class="o">)</span>
-    <span class="nb">echo</span> <span class="s2">&#34;Invalid value&#34;</span>
-<span class="p">;;</span>
-<span class="k">esac</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nv">var</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="nv">$var</span> in
+</span></span><span class="line"><span class="cl">1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;var value is </span><span class="nv">$var</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">;;</span>
+</span></span><span class="line"><span class="cl">*<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Invalid value&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">;;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Run file with command <code>./hello.sh</code> and we got an output <code>var value is: true</code></p>
 <p><strong>Looping</strong></p>
@@ -285,19 +284,19 @@ hello
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-<span class="nv">isvalid</span><span class="o">=</span><span class="nb">true</span>
-<span class="nv">count</span><span class="o">=</span><span class="m">1</span>
-
-<span class="k">while</span> <span class="o">[</span> <span class="nv">$isvalid</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span>
-<span class="nb">echo</span> <span class="nv">$count</span>
-    <span class="k">if</span> <span class="o">[</span> <span class="nv">$count</span> -eq <span class="m">5</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="nb">break</span>
-    <span class="k">fi</span>
-<span class="o">((</span>count++<span class="o">))</span>
-<span class="k">done</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nv">isvalid</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="nv">count</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="o">[</span> <span class="nv">$isvalid</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$count</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$count</span> -eq <span class="m">5</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="o">((</span>count++<span class="o">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><em>For</em></p>
 <div class="highlight"><div class="chroma">
@@ -309,12 +308,12 @@ hello
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-<span class="k">for</span> <span class="o">((</span> <span class="nv">count</span><span class="o">=</span>10<span class="p">;</span> count&gt;0<span class="p">;</span> count-- <span class="o">))</span><span class="p">;</span> <span class="k">do</span>
-    <span class="nb">echo</span> -n <span class="s2">&#34;</span><span class="nv">$count</span><span class="s2"> &#34;</span>
-<span class="k">done</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="o">((</span> <span class="nv">count</span><span class="o">=</span>10<span class="p">;</span> count&gt;0<span class="p">;</span> count-- <span class="o">))</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> -n <span class="s2">&#34;</span><span class="nv">$count</span><span class="s2"> &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="my-bash-script-usage">My Bash Script Usage</h3>
 <p>I use bash script to saving time and eliminate repetitive task. So, I can be more productive for lazy people like me.</p>
@@ -340,24 +339,24 @@ hello
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-<span class="c1"># Pull latest code</span>
-git pull
-
-<span class="c1"># Add to stagged file</span>
-git add -A
-
-<span class="c1"># Create a new commit message</span>
-<span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;rebuilding site `date`&#34;</span>
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">1</span> <span class="o">]</span>
-  <span class="k">then</span> <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
-<span class="k">fi</span>
-git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
-
-<span class="c1"># Push or upload to Github</span>
-git push origin master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Pull latest code</span>
+</span></span><span class="line"><span class="cl">git pull
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Add to stagged file</span>
+</span></span><span class="line"><span class="cl">git add -A
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create a new commit message</span>
+</span></span><span class="line"><span class="cl"><span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;rebuilding site `date`&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">1</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">then</span> <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Push or upload to Github</span>
+</span></span><span class="line"><span class="cl">git push origin master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Run this file with command <code>./deploy.sh -m &quot;Your message&quot;</code></p>
 <p><strong>Running Docker Compose Command</strong></p>
@@ -367,8 +366,8 @@ git push origin master
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o rabbitmq.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/rabbitmq.yaml
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o rabbitmq.yml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/rabbitmq.yaml
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Then, I should create a <code>docker network</code>.</p>
 <div class="highlight"><div class="chroma">
@@ -376,8 +375,8 @@ git push origin master
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker network create my-network
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create my-network
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Then, I should create a volume <code>rabbitmq-data</code> and <code>rabbitmq-log</code> to persist data.</p>
 <div class="highlight"><div class="chroma">
@@ -386,9 +385,9 @@ git push origin master
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker volume create rabbitmq-data
-docker volume create rabbitmq-log
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker volume create rabbitmq-data
+</span></span><span class="line"><span class="cl">docker volume create rabbitmq-log
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Then, I will execute <code>rabbitmq.yaml</code> to run RabbitMQ with <code>docker compose</code></p>
 <div class="highlight"><div class="chroma">
@@ -396,8 +395,8 @@ docker volume create rabbitmq-log
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker compose -f rabbitmq.yaml up -d
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker compose -f rabbitmq.yaml up -d
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>And to stop it, I will execute command</p>
 <div class="highlight"><div class="chroma">
@@ -405,8 +404,8 @@ docker volume create rabbitmq-log
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker compose -f rabbitmq.yaml down -v
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker compose -f rabbitmq.yaml down -v
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>With bash script, I can simplified all task with one command line. First, I will create file <code>rabbitmq.sh</code> and fill code like below.</p>
 <div class="highlight"><div class="chroma">
@@ -461,55 +460,55 @@ docker volume create rabbitmq-log
 </span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-<span class="nv">FILE</span><span class="o">=</span>rabbitmq.yaml
-<span class="nv">NAME</span><span class="o">=</span>RabbitMQ
-
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> <span class="o">=</span> <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="c1"># Check if configuration file is not exists will download configuration</span>
-    <span class="k">if</span> <span class="o">[[</span> ! -f <span class="s2">&#34;</span><span class="nv">$FILE</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        curl -o <span class="nv">$FILE</span> https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/<span class="nv">$FILE</span>
-    <span class="k">fi</span>
-
-    <span class="c1"># Check network if not exists will create a docker network</span>
-    <span class="nv">net</span><span class="o">=</span><span class="sb">`</span>docker network ls -q -f <span class="nv">name</span><span class="o">=</span>my-network<span class="sb">`</span>
-    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$net</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span>  <span class="k">then</span>
-        <span class="nv">net</span><span class="o">=</span><span class="sb">`</span>docker network create my-network<span class="sb">`</span>
-        <span class="nb">echo</span> <span class="s2">&#34;Create docker network: </span><span class="nv">$net</span><span class="s2">&#34;</span>
-    <span class="k">fi</span>
-
-    <span class="c1"># Check volume is not exists will create volume</span>
-    <span class="nv">rabbitmqData</span><span class="o">=</span><span class="sb">`</span>docker volume ls -q -f <span class="nv">name</span><span class="o">=</span>rabbitmq-data<span class="sb">`</span>
-    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$rabbitmqData</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span>  <span class="k">then</span>
-        <span class="nv">rabbitmqData</span><span class="o">=</span><span class="sb">`</span>docker volume create rabbitmq-data<span class="sb">`</span>
-        <span class="nb">echo</span> <span class="s2">&#34;Create docker volume: </span><span class="nv">$rabbitmqData</span><span class="s2">&#34;</span>
-
-        <span class="nv">rabbitmqLog</span><span class="o">=</span><span class="sb">`</span>docker volume ls -q -f <span class="nv">name</span><span class="o">=</span>rabbitmq-log<span class="sb">`</span>
-        
-        <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$rabbitmqLog</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span>  <span class="k">then</span>
-            <span class="nv">rabbitmqLog</span><span class="o">=</span><span class="sb">`</span>docker volume create rabbitmq-log<span class="sb">`</span>
-            <span class="nb">echo</span> <span class="s2">&#34;Create docker volume: </span><span class="nv">$rabbitmqLog</span><span class="s2">&#34;</span>
-        <span class="k">fi</span>
-    <span class="k">fi</span>
-
-    <span class="c1"># If command args start then run docker compose up</span>
-    <span class="k">if</span> <span class="o">[</span> <span class="nv">$*</span> <span class="o">=</span> <span class="s2">&#34;start&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        docker compose -f <span class="nv">$FILE</span> up -d
-        <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2"> has started.&#34;</span>
-    <span class="c1"># Or if command args is stop then run docker compose down</span>
-    <span class="k">elif</span> <span class="o">[</span> <span class="nv">$*</span> <span class="o">=</span> <span class="s2">&#34;stop&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        docker compose -f <span class="nv">$FILE</span> down -v
-        <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2"> has stopped.&#34;</span>
-    <span class="k">else</span>
-        <span class="nb">echo</span> <span class="s2">&#34;Invalid command&#34;</span>
-        <span class="nb">exit</span> <span class="m">0</span>
-    <span class="k">fi</span>
-<span class="k">else</span>
-    <span class="nb">echo</span> <span class="s2">&#34;Invalid command&#34;</span>
-    <span class="nb">exit</span> <span class="m">0</span>
-<span class="k">fi</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nv">FILE</span><span class="o">=</span>rabbitmq.yaml
+</span></span><span class="line"><span class="cl"><span class="nv">NAME</span><span class="o">=</span>RabbitMQ
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> <span class="o">=</span> <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Check if configuration file is not exists will download configuration</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[[</span> ! -f <span class="s2">&#34;</span><span class="nv">$FILE</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        curl -o <span class="nv">$FILE</span> https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/<span class="nv">$FILE</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Check network if not exists will create a docker network</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">net</span><span class="o">=</span><span class="sb">`</span>docker network ls -q -f <span class="nv">name</span><span class="o">=</span>my-network<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$net</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span>  <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">net</span><span class="o">=</span><span class="sb">`</span>docker network create my-network<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Create docker network: </span><span class="nv">$net</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Check volume is not exists will create volume</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">rabbitmqData</span><span class="o">=</span><span class="sb">`</span>docker volume ls -q -f <span class="nv">name</span><span class="o">=</span>rabbitmq-data<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$rabbitmqData</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span>  <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">rabbitmqData</span><span class="o">=</span><span class="sb">`</span>docker volume create rabbitmq-data<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Create docker volume: </span><span class="nv">$rabbitmqData</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">rabbitmqLog</span><span class="o">=</span><span class="sb">`</span>docker volume ls -q -f <span class="nv">name</span><span class="o">=</span>rabbitmq-log<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$rabbitmqLog</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span>  <span class="k">then</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">rabbitmqLog</span><span class="o">=</span><span class="sb">`</span>docker volume create rabbitmq-log<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;Create docker volume: </span><span class="nv">$rabbitmqLog</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># If command args start then run docker compose up</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$*</span> <span class="o">=</span> <span class="s2">&#34;start&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        docker compose -f <span class="nv">$FILE</span> up -d
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2"> has started.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Or if command args is stop then run docker compose down</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[</span> <span class="nv">$*</span> <span class="o">=</span> <span class="s2">&#34;stop&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        docker compose -f <span class="nv">$FILE</span> down -v
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2"> has stopped.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Invalid command&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Invalid command&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>To start RabbitMQ service by typing following command.</p>
 <div class="highlight"><div class="chroma">
@@ -517,8 +516,8 @@ docker volume create rabbitmq-log
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./rabbitmq.sh start
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./rabbitmq.sh start
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
@@ -534,8 +533,8 @@ docker volume create rabbitmq-log
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./rabbitmq.sh stop
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./rabbitmq.sh stop
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
@@ -553,8 +552,8 @@ docker volume create rabbitmq-log
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o pouncher.sh https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sh/pouncher.sh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o pouncher.sh https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/sh/pouncher.sh
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Then make file is executable <code>chmod +x pouncher.sh</code>.</p>
 <p>See help command by typing <code>./pouncher.sh --help</code></p>
@@ -600,7 +599,7 @@ docker volume create rabbitmq-log
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
         </div>
     </footer></div>
 

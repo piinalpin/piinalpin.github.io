@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Spring Boot TCP Integration IP - PiinAlpin&#39;s Blog</title><meta name="Description" content="Sharing is caring, keep learn and create an awesome codes."><meta property="og:title" content="Spring Boot TCP Integration IP" />
+<meta property="og:description" content="Transmission Control Protocol (TCP) is a communications standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.
+TCP is one of the basic standards that define the rules of the internet and is included within the standards defined by the Internet Engineering Task Force (IETF). It is one of the most commonly used protocols within digital network communications and ensures end-to-end data delivery." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-05T08:29:10+07:00" />
+<meta property="article:modified_time" content="2023-06-05T08:29:10+07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring Boot TCP Integration IP"/>
+<meta name="twitter:description" content="Transmission Control Protocol (TCP) is a communications standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.
+TCP is one of the basic standards that define the rules of the internet and is included within the standards defined by the Internet Engineering Task Force (IETF). It is one of the most commonly used protocols within digital network communications and ensures end-to-end data delivery."/>
+<meta name="application-name" content="PiinAlpin&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/" /><link rel="prev" href="https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Spring Boot TCP Integration IP",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.piinalpin.com\/2023\/06\/spring-boot-tcp-integration-ip\/"
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Spring Boot, TCP Integration, Spring Boot TCP, Spring Integration IP","wordcount":  1806 ,
+        "url": "https:\/\/blog.piinalpin.com\/2023\/06\/spring-boot-tcp-integration-ip\/","datePublished": "2023-06-05T08:29:10+07:00","dateModified": "2023-06-05T08:29:10+07:00","publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
+                "@type": "Person",
+                "name": "Alvinditya Saputra"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Spring Boot TCP Integration IP</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-06-05">2023-06-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1806 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#how-tcp-works">How TCP works?</a></li>
+        <li><a href="#spring-integration-ip">Spring Integration IP</a></li>
+        <li><a href="#implement-the-tcp-server">Implement the TCP Server</a></li>
+        <li><a href="#implement-the-tcp-client">Implement the TCP Client</a>
+          <ul>
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ul>
+        </li>
+        <li><a href="#refereces">Refereces</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>Transmission Control Protocol (TCP)</strong> is a communications standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.</p>
+<p>TCP is one of the basic standards that define the rules of the internet and is included within the standards defined by the Internet Engineering Task Force (IETF). It is one of the most commonly used protocols within digital network communications and ensures end-to-end data delivery.</p>
+<p>TCP organizes data so that it can be transmitted between a server and a client. It guarantees the integrity of the data being communicated over a network. Before it transmits data, TCP establishes a connection between a source and its destination, which it ensures remains live until communication begins. It then breaks large amounts of data into smaller packets, while ensuring data integrity is in place throughout the process.</p>
+<p>As a result, high-level protocols that need to transmit data all use TCP Protocol.  Examples include peer-to-peer sharing methods like File Transfer Protocol (FTP), Secure Shell (SSH), and Telnet. It is also used to send and receive email through Internet Message Access Protocol (IMAP), Post Office Protocol (POP), and Simple Mail Transfer Protocol (SMTP), and for web access through the Hypertext Transfer Protocol (HTTP).</p>
+<h3 id="how-tcp-works">How TCP works?</h3>
+<div style="text-align: center;"><img src="/images/tcp-works.png" alt="TCP Works" decoding="async"/></div>
+<ul>
+<li>The server is in a <strong>“passive open”</strong> state: Passive open is a network communication setting where a server process is waiting to establish a connection with a client. It is “listening” for a connection without establishing it.</li>
+<li>The client must initiate an <strong>“active open:”</strong> Once the server is in a “passive open” state, the client must establish a connection by sending a TCP synchronization or TCP SYN message. The server then expends resources to accept the connection.</li>
+<li>A reliable connection is established through a three-way handshake: The three-way handshake is one of the central features of TCP. It makes sure that the connection is set up securely and reliably by ensuring it follows three steps:</li>
+<li><strong>SYN</strong>: The client sends a synchronization message to the server, essentially a unique numerical value.</li>
+<li><strong>SYN-ACK</strong>: The server sends back a synchronization acknowledgment (or SYN-ACK) message, which comprises two parts – the SYN value +1 and an ACK message, which is also a numerical value. The client receives the SYN-ACK.</li>
+<li><strong>ACK</strong>: The client responds with an acknowledgment of its own, which is the ACK value + 1. This step in the three-way handshake establishes the client-to-server connection. Applications hosted on the client can now communicate with server-hosted applications by leveraging the connection.</li>
+<li><strong>Timeout</strong>: Timeout is the maximum interval allowed to pass between the data origination and receipt. It ensures that the connection does not remain open too long and minimizes exposure to online threats and bad actors.</li>
+<li><strong>Acknowledgment</strong>: The server and the client exchange ACK values for data transmission validation. If a data stream is not acknowledged, then the protocol tries retransmission. Also, if three consecutive ACK values are the same, then TCP initiates retransmission.</li>
+</ul>
+<p>These rules make TCP among the most reliable communication protocols available across local area networks (LAN) and wide area networks (WAN). However, it does have a few vulnerabilities. The three-way handshake (SYN, SYN-ACK, and ACK) process takes time, and there is a stipulated interval allotted for a timeout. As a result, TCP connections have a greater latency and may slow down data transmission when heavy packets need to be delivered.</p>
+<h3 id="spring-integration-ip">Spring Integration IP</h3>
+<p>Spring Integration provides channel adapters for receiving and sending messages over internet protocols. Both UDP (User Datagram Protocol) and TCP (Transmission Control Protocol) adapters are provided. Each adapter provides for one-way communication over the underlying protocol. In addition, Spring Integration provides simple inbound and outbound TCP gateways. These are used when two-way communication is needed.</p>
+<p>Two flavors each of UDP inbound and outbound channel adapters are provided:</p>
+<ul>
+<li><code>UnicastSendingMessageHandler</code> sends a datagram packet to a single destination.</li>
+<li><code>UnicastReceivingChannelAdapter</code> receives incoming datagram packets.</li>
+<li><code>MulticastSendingMessageHandler</code> sends (broadcasts) datagram packets to a multicast address.</li>
+<li><code>MulticastReceivingChannelAdapter</code> receives incoming datagram packets by joining to a multicast address.</li>
+</ul>
+<p>TCP inbound and outbound channel adapters are provided:</p>
+<ul>
+<li><code>TcpSendingMessageHandler</code> sends messages over TCP.</li>
+<li><code>TcpReceivingChannelAdapter</code> receives messages over TCP.</li>
+</ul>
+<p><strong>Prerequisities</strong></p>
+<ul>
+<li>JDK 17 or later</li>
+<li>Spring Boot 3.1.x or later</li>
+</ul>
+<h3 id="implement-the-tcp-server">Implement the TCP Server</h3>
+<p>Before we implement the client, we need a TCP server. TCP server can be created using any language that supports TCP, but we will create it with Spring Boot as well. The server will listen the port <code>10001</code> on <code>localhost</code>, and will send message to the client.</p>
+<p><strong>Dependency</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-integration<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.integration<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-integration-ip<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>jackson-core<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>2.14.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>jackson-databind<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>2.14.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Add the port listen <code>tcp.server.port=10001</code> on <code>application.properties</code></p>
+<p><strong>Configuration</strong> <br>
+Create Bean Configuration called <code>TCPServerConfiguration</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TCPServerConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${tcp.server.port}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">port</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TCP_DEFAULT_CHANNEL</span> <span class="o">=</span> <span class="s">&#34;tcp-channel-sample&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">AbstractServerConnectionFactory</span> <span class="nf">serverConnectionFactory</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TcpNioServerConnectionFactory</span> <span class="n">tcpNioServerConnectionFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TcpNioServerConnectionFactory</span><span class="o">(</span><span class="n">port</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tcpNioServerConnectionFactory</span><span class="o">.</span><span class="na">setUsingDirectBuffers</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">tcpNioServerConnectionFactory</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">TCP_DEFAULT_CHANNEL</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MessageChannel</span> <span class="nf">messageChannel</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">DirectChannel</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">TcpInboundGateway</span> <span class="nf">tcpInboundGateway</span><span class="o">(</span><span class="n">AbstractServerConnectionFactory</span> <span class="n">serverConnectionFactory</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">                                               <span class="nd">@Qualifier</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;tcp-channel-sample&#34;</span><span class="o">)</span> <span class="n">MessageChannel</span> <span class="n">messageChannel</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TcpInboundGateway</span> <span class="n">gateway</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TcpInboundGateway</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">gateway</span><span class="o">.</span><span class="na">setConnectionFactory</span><span class="o">(</span><span class="n">serverConnectionFactory</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">gateway</span><span class="o">.</span><span class="na">setRequestChannel</span><span class="o">(</span><span class="n">messageChannel</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">gateway</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Data Transfer Object (DTO)</strong> <br>
+Add the DTO <code>MessageDTO</code> to send response to client.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessageDTO</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Serial</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">2780348667790818215L</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">message</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">sender</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">timestamp</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Service</strong> <br>
+A service class to process message from client and generate response which is will be send to client.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Service</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessageService</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">process</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">message</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">messageJson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Receive message as JSON: {}&#34;</span><span class="o">,</span> <span class="n">messageJson</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Jackson2JsonObjectMapper</span> <span class="n">mapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Jackson2JsonObjectMapper</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MessageDTO</span> <span class="n">messageDTO</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="na">fromJson</span><span class="o">(</span><span class="n">messageJson</span><span class="o">,</span> <span class="n">MessageDTO</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Message: {}, from: {}, at: {}&#34;</span><span class="o">,</span> <span class="n">messageDTO</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span> <span class="n">messageDTO</span><span class="o">.</span><span class="na">getSender</span><span class="o">(),</span> <span class="n">messageDTO</span><span class="o">.</span><span class="na">getTimestamp</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">MessageDTO</span> <span class="n">response</span> <span class="o">=</span> <span class="n">MessageDTO</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">message</span><span class="o">(</span><span class="s">&#34;Hello this message from TCP server!&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">timestamp</span><span class="o">(</span><span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">toString</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">sender</span><span class="o">(</span><span class="s">&#34;tcp-server&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">mapper</span><span class="o">.</span><span class="na">toJson</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>TCP Endpoint</strong> <br>
+FInally, we need to create Message Endpoint which will be register to the input channel on <code>ServiceActivator</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@MessageEndpoint</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TCPMessageEndpoint</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">MessageService</span> <span class="n">messageService</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">TCPMessageEndpoint</span><span class="o">(</span><span class="n">MessageService</span> <span class="n">messageService</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">messageService</span> <span class="o">=</span> <span class="n">messageService</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@ServiceActivator</span><span class="o">(</span><span class="n">inputChannel</span> <span class="o">=</span> <span class="n">TCPServerConfiguration</span><span class="o">.</span><span class="na">TCP_DEFAULT_CHANNEL</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">process</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">message</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">messageService</span><span class="o">.</span><span class="na">process</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Send message to client&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="na">getBytes</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="implement-the-tcp-client">Implement the TCP Client</h3>
+<p>After we have TCP server, we can create our TCP Client using Spring Boot that listen the port of TCP server. We will create web service REST to try the client.</p>
+<p><strong>Dependency</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-integration<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.integration<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-integration-ip<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>jackson-databind<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>2.14.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>jackson-core<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>2.14.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Properties</strong> <br>
+Update the <code>application.properties</code> like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">spring.application.name<span class="o">=</span>tcp-client-sample
+</span></span><span class="line"><span class="cl">server.port<span class="o">=</span><span class="m">8080</span>
+</span></span><span class="line"><span class="cl">server.servlet.context-path<span class="o">=</span>/api
+</span></span><span class="line"><span class="cl">server.error.include-message<span class="o">=</span>always
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tcp.server.host<span class="o">=</span>localhost
+</span></span><span class="line"><span class="cl">tcp.server.port<span class="o">=</span><span class="m">10001</span>
+</span></span><span class="line"><span class="cl">tcp.client.connection.poolSize<span class="o">=</span><span class="m">50</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Configuration</strong> <br>
+Create Bean Configuration called <code>TCPClientConfiguration</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TCPClientConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${tcp.server.host}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">host</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${tcp.server.port}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">port</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${tcp.client.connection.poolSize}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">connectionPoolSize</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TCP_DEFAULT_CHANNEL</span> <span class="o">=</span> <span class="s">&#34;tcp-channel-sample&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">AbstractClientConnectionFactory</span> <span class="nf">clientConnectionFactory</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TcpNioClientConnectionFactory</span> <span class="n">tcpNioClientConnectionFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TcpNioClientConnectionFactory</span><span class="o">(</span><span class="n">host</span><span class="o">,</span> <span class="n">port</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tcpNioClientConnectionFactory</span><span class="o">.</span><span class="na">setUsingDirectBuffers</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">CachingClientConnectionFactory</span><span class="o">(</span><span class="n">tcpNioClientConnectionFactory</span><span class="o">,</span> <span class="n">connectionPoolSize</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">TCP_DEFAULT_CHANNEL</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MessageChannel</span> <span class="nf">messageChannel</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">DirectChannel</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@ServiceActivator</span><span class="o">(</span><span class="n">inputChannel</span> <span class="o">=</span> <span class="n">TCP_DEFAULT_CHANNEL</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MessageHandler</span> <span class="nf">messageHandler</span><span class="o">(</span><span class="n">AbstractClientConnectionFactory</span> <span class="n">clientConnectionFactory</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TcpOutboundGateway</span> <span class="n">tcpOutboundGateway</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TcpOutboundGateway</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tcpOutboundGateway</span><span class="o">.</span><span class="na">setConnectionFactory</span><span class="o">(</span><span class="n">clientConnectionFactory</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">tcpOutboundGateway</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Data Transfer Object (DTO)</strong> <br>
+Add the DTO <code>MessageDTO</code> like DTO on our tcp server to send message to server.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessageDTO</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Serial</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">497439089321548030L</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">message</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">sender</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">timestamp</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>The Gateway</strong> <br>
+Create a TCP outbound gateway as gateway spring integration ip to the server.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Component</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@MessagingGateway</span><span class="o">(</span><span class="n">defaultRequestChannel</span> <span class="o">=</span> <span class="n">TCPClientConfiguration</span><span class="o">.</span><span class="na">TCP_DEFAULT_CHANNEL</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">TCPClientGateway</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">byte</span><span class="o">[]</span> <span class="nf">send</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">message</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Service</strong> <br>
+A service class to send message to server and mapping response our from TCP server.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Service</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessageService</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">TCPClientGateway</span> <span class="n">clientGateway</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">MessageService</span><span class="o">(</span><span class="n">TCPClientGateway</span> <span class="n">clientGateway</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">clientGateway</span> <span class="o">=</span> <span class="n">clientGateway</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@SneakyThrows</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MessageDTO</span> <span class="nf">send</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MessageDTO</span> <span class="n">messageRequest</span> <span class="o">=</span> <span class="n">MessageDTO</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">message</span><span class="o">(</span><span class="n">message</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">sender</span><span class="o">(</span><span class="s">&#34;tcp-client&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">timestamp</span><span class="o">(</span><span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">toString</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Jackson2JsonObjectMapper</span> <span class="n">mapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Jackson2JsonObjectMapper</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">messageRequestStr</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="na">toJson</span><span class="o">(</span><span class="n">messageRequest</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Sending message: {}&#34;</span><span class="o">,</span> <span class="n">messageRequestStr</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">byte</span><span class="o">[]</span> <span class="n">responseByte</span> <span class="o">=</span> <span class="n">clientGateway</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">messageRequestStr</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MessageDTO</span> <span class="n">response</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="na">fromJson</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">responseByte</span><span class="o">),</span> <span class="n">MessageDTO</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Receive message: {}, from: {}, at: {}&#34;</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span> <span class="n">response</span><span class="o">.</span><span class="na">getSender</span><span class="o">(),</span> <span class="n">response</span><span class="o">.</span><span class="na">getTimestamp</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">response</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Controller</strong> <br>
+The controller as REST controller that we used to receive request from API.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@RestController</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TcpClientController</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">MessageService</span> <span class="n">messageService</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">TcpClientController</span><span class="o">(</span><span class="n">MessageService</span> <span class="n">messageService</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">messageService</span> <span class="o">=</span> <span class="n">messageService</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/send&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MessageDTO</span> <span class="nf">send</span><span class="o">(</span><span class="nd">@RequestParam</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">)</span> <span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">messageService</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Test the integration</strong> <br></p>
+<p>Test using <code>cURL</code> or you can test using browser or postman</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl --location <span class="s1">&#39;http://localhost:8080/api/send?message=Hello%20there&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Log the client</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2023-06-05T15:30:22.227+07:00  INFO 21852 --- [nio-8080-exec-1] c.p.t.service.MessageService             : Sending message: {&#34;message&#34;:&#34;Hello there&#34;,&#34;sender&#34;:&#34;tcp-client&#34;,&#34;timestamp&#34;:&#34;2023-06-05T15:30:22.198153100&#34;}
+</span></span><span class="line"><span class="cl">2023-06-05T15:30:22.240+07:00  WARN 21852 --- [nio-8080-exec-1] o.s.i.i.tcp.connection.TcpNioConnection  : No publisher available to publish TcpConnectionOpenEvent [source=TcpNioConnection:127.0.0.1:10001:57665:73fbea17-47c5-4c94-b3cb-ce75b94c6402], [factory=unknown, connectionId=127.0.0.1:10001:57665:73fbea17-47c5-4c94-b3cb-ce75b94c6402] **OPENED**
+</span></span><span class="line"><span class="cl">2023-06-05T15:30:22.314+07:00  INFO 21852 --- [nio-8080-exec-1] c.p.t.service.MessageService             : Receive message: Hello this message from TCP server!, from: tcp-server, at: 2023-06-05T15:30:22.286923800
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Log the server</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2023-06-05T15:30:22.261+07:00  INFO 20196 --- [pool-2-thread-3] c.p.t.service.MessageService             : Receive message as JSON: {&#34;message&#34;:&#34;Hello there&#34;,&#34;sender&#34;:&#34;tcp-client&#34;,&#34;timestamp&#34;:&#34;2023-06-05T15:30:22.198153100&#34;}
+</span></span><span class="line"><span class="cl">2023-06-05T15:30:22.286+07:00  INFO 20196 --- [pool-2-thread-3] c.p.t.service.MessageService             : Message: Hello there, from: tcp-client, at: 2023-06-05T15:30:22.198153100
+</span></span><span class="line"><span class="cl">2023-06-05T15:30:22.296+07:00  INFO 20196 --- [pool-2-thread-3] c.p.t.endpoint.TCPMessageEndpoint        : Send message to client
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="conclusion">Conclusion</h4>
+<p>We can create TCP Client using spring integration IP. Thank you for reading this article, you can find the source code in my github <a href="https://github.com/piinalpin/spring-boot-tcp" target="_blank" rel="noopener noreffer"><strong>here</strong></a></p>
+<h3 id="refereces">Refereces</h3>
+<ul>
+<li><a href="https://www.fortinet.com/resources/cyberglossary/tcp-ip" target="_blank" rel="noopener noreffer">What is Transmission Control Protocol TCP/IP?</a></li>
+<li><a href="https://www.spiceworks.com/tech/networking/articles/what-is-tcp/" target="_blank" rel="noopener noreffer">What Is TCP (Transmission Control Protocol)?</a></li>
+<li><a href="https://docs.spring.io/spring-integration/reference/html/ip.html" target="_blank" rel="noopener noreffer">Spring TCP and UDP Support</a></li>
+<li><a href="https://github.com/zhwxp/spring-boot-tcp-client-sample" target="_blank" rel="noopener noreffer">Spring Boot TCP Client Sample</a></li>
+<li><a href="https://github.com/zhwxp/spring-boot-tcp-server-sample" target="_blank" rel="noopener noreffer">Spring Boot TCP Server Sample</a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-06-05</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2023/06/spring-boot-tcp-integration-ip/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/" data-title="Spring Boot TCP Integration IP" data-via="piinalpin" data-hashtags="Spring Boot,TCP Integration,Spring Boot TCP,Spring Integration IP"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/" data-hashtag="Spring Boot"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/spring-boot/">Spring Boot</a>,&nbsp;<a href="/tags/tcp-integration/">TCP Integration</a>,&nbsp;<a href="/tags/spring-boot-tcp/">Spring Boot TCP</a>,&nbsp;<a href="/tags/spring-integration-ip/">Spring Integration IP</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2022/10/redis-sentinel-spring-lettuce-client/" class="prev" rel="prev" title="High Availability with Redis Sentinel and Spring Lettuce Client"><i class="fas fa-angle-left fa-fw"></i>High Availability with Redis Sentinel and Spring Lettuce Client</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

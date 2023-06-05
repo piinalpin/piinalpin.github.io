@@ -2,19 +2,23 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.piinalpin.com/categories/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/categories/documentation/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/posts/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/redis/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/redis-client/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/redis-sentinel/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/spring-lettuce-client/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/tags/docker/</loc><lastmod>2022-10-24T14:02:54&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</loc><lastmod>2022-10-24T14:02:54&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/categories/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/categories/documentation/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/posts/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/spring-boot-tcp/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/spring-integration-ip/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/tcp-integration/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/redis/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/redis-client/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/redis-sentinel/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/spring-lettuce-client/</loc><lastmod>2022-10-26T13:48:09&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.piinalpin.com/tags/docker/</loc><lastmod>2022-10-24T14:02:54&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</loc><lastmod>2022-10-24T14:02:54&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.piinalpin.com/tags/linear-regression/</loc><lastmod>2022-05-21T17:07:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.piinalpin.com/tags/machine-learning/</loc><lastmod>2022-05-21T17:07:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.piinalpin.com/tags/python/</loc><lastmod>2022-05-21T17:07:17&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

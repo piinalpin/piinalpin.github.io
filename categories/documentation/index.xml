@@ -3,7 +3,15 @@
         <title>Documentation - Category - PiinAlpin&#39;s Blog</title>
         <link>https://blog.piinalpin.com/categories/documentation/</link>
         <description>Documentation - Category - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 26 Oct 2022 13:48:09 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/categories/documentation/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/categories/documentation/" rel="self" type="application/rss+xml" /><item>
+    <title>Spring Boot TCP Integration IP</title>
+    <link>https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</link>
+    <pubDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</guid>
+    <description><![CDATA[Transmission Control Protocol (TCP) is a communications standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.
+TCP is one of the basic standards that define the rules of the internet and is included within the standards defined by the Internet Engineering Task Force (IETF). It is one of the most commonly used protocols within digital network communications and ensures end-to-end data delivery.]]></description>
+</item><item>
     <title>High Availability with Redis Sentinel and Spring Lettuce Client</title>
     <link>https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</link>
     <pubDate>Wed, 26 Oct 2022 13:48:09 &#43;0700</pubDate>
@@ -18,7 +26,7 @@
     <guid>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</guid>
     <description><![CDATA[Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster.
 Sentinel itself is designed to run in a configuration where there are multiple Sentinel processes cooperating together. The advantage of having multiple Sentinel processes cooperating are the following :
- Failure detection is performed when multiple Sentinels agree about the fact a given master is no longer available.]]></description>
+Failure detection is performed when multiple Sentinels agree about the fact a given master is no longer available.]]></description>
 </item><item>
     <title>Salary Prediction with ML - Linear Regression</title>
     <link>https://blog.piinalpin.com/2022/05/salary-prediction-with-machine-learning/</link>
@@ -71,12 +79,5 @@ Spring Data JPA Specification provides a convenient and sophisticated manner to 
     <author>Author</author>
     <guid>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
     <description><![CDATA[Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing.]]></description>
-</item><item>
-    <title>Object Relational Mapping Node JS using Sequelize</title>
-    <link>https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/</link>
-    <pubDate>Tue, 07 Dec 2021 10:31:30 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/</guid>
-    <description><![CDATA[Object-Relational Mapping (ORM) is a technique that lets you query and manipulate data from a database using an object-oriented paradigm.]]></description>
 </item></channel>
 </rss>

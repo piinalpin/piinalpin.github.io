@@ -11,7 +11,6 @@
 <meta property="og:url" content="https://blog.piinalpin.com/2020/02/get-twitter-trending/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-02-04T10:22:45+07:00" />
 <meta property="article:modified_time" content="2020-02-04T10:22:45+07:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Get Twitter Trending with World of Earth Identity (WOEID)"/>
 <meta name="twitter:description" content="This tutorial will consume TwitterAPI to get Twitter Trendings with [Tweepy](https://www.tweepy.org/) Library"/>
@@ -25,7 +24,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.piinalpin.com\/2020\/02\/get-twitter-trending\/"
-        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Jupyter Notebook, Python, Anaconda, Data Mining","wordcount":  287 ,
+        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Jupyter Notebook, Python, Anaconda, Data Mining","wordcount":  286 ,
         "url": "https:\/\/blog.piinalpin.com\/2020\/02\/get-twitter-trending\/","datePublished": "2020-02-04T10:22:45+07:00","dateModified": "2020-02-04T10:22:45+07:00","publisher": {
             "@type": "Organization",
             "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
@@ -102,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Get Twitter Trending with World of Earth Identity (WOEID)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-04">2020-02-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;287 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-04">2020-02-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;286 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -131,8 +130,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install tweepy
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pip install tweepy
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>Create an App on <a href="https://developer.twitter.com/" target="_blank" rel="noopener noreffer">Twitter Developer</a> to get API Key, then find <code>apiKey</code>, <code>apiSecretKey</code>, <code>accessToken</code>, and <code>accessTokenSecret</code> on tabs <code>Keys and tokens</code></li>
@@ -174,45 +173,43 @@
 </span><span class="lnt">32
 </span><span class="lnt">33
 </span><span class="lnt">34
-</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">tweepy</span>
-
-
-<span class="k">class</span> <span class="nc">TwitterTrendingsAPI</span><span class="p">:</span>
-    
-    <span class="s2">&#34;&#34;&#34;
-</span><span class="s2">        How to use?
-</span><span class="s2">        
-</span><span class="s2">        Change apiKey, apiSecretKey, accessToken, accessTokenSecret with your own Twitter Apps from https://developer.twitter.com
-</span><span class="s2">        
-</span><span class="s2">        Use this class
-</span><span class="s2">        
-</span><span class="s2">        api = TwitterAPI(woeId=23424846, limit=10)
-</span><span class="s2">        api.getTrending()
-</span><span class="s2">    &#34;&#34;&#34;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">woeId</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">apiKey</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_API_KEY&gt;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">apiSecretKey</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_API_SECRET_KEY&gt;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">accessToken</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_ACCESS_TOKEN&gt;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">accessTokenSecret</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_ACCESS_TOKEN_SECRET&gt;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">woeId</span> <span class="o">=</span> <span class="n">woeId</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">limit</span> <span class="o">=</span> <span class="n">limit</span>
-
-    <span class="k">def</span> <span class="nf">getApiAuth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">apiKey</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">apiSecretKey</span><span class="p">)</span>
-        <span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">accessToken</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">accessTokenSecret</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">getTrending</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">trends</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getApiAuth</span><span class="p">()</span><span class="o">.</span><span class="n">trends_place</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">woeId</span><span class="p">)</span>
-        <span class="n">trending</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">trends</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">trending</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&#34;trends&#34;</span><span class="p">][:</span><span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">]</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">tweepy</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TwitterTrendingsAPI</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        How to use?
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Change apiKey, apiSecretKey, accessToken, accessTokenSecret with your own Twitter Apps from https://developer.twitter.com
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Use this class
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        api = TwitterAPI(woeId=23424846, limit=10)
+</span></span></span><span class="line"><span class="cl"><span class="s2">        api.getTrending()
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">woeId</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">apiKey</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_API_KEY&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">apiSecretKey</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_API_SECRET_KEY&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">accessToken</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_ACCESS_TOKEN&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">accessTokenSecret</span> <span class="o">=</span> <span class="s2">&#34;&lt;YOUR_ACCESS_TOKEN_SECRET&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">woeId</span> <span class="o">=</span> <span class="n">woeId</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">limit</span> <span class="o">=</span> <span class="n">limit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getApiAuth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">apiKey</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">apiSecretKey</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">accessToken</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">accessTokenSecret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getTrending</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">trends</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getApiAuth</span><span class="p">()</span><span class="o">.</span><span class="n">trends_place</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">woeId</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">trending</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">trends</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">trending</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&#34;trends&#34;</span><span class="p">][:</span><span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>Create python file or jupyter notebook file to call these custom library which is already created</li>
@@ -247,33 +244,33 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import custom twitter trendings API</span>
-<span class="kn">from</span> <span class="nn">TwitterTrendingsAPI</span> <span class="kn">import</span> <span class="n">TwitterTrendingsAPI</span>
-
-<span class="c1"># Define WOEID</span>
-<span class="s2">&#34;&#34;&#34;
-</span><span class="s2">More World of Earth Id : https://codebeautify.org/jsonviewer/f83352
-</span><span class="s2">Find WOEID by your self
-</span><span class="s2">
-</span><span class="s2">&#34;&#34;&#34;</span>
-
-<span class="n">INDONESIA_WOE_ID</span> <span class="o">=</span> <span class="mi">23424846</span>
-<span class="n">UNITED_KINGDOM_WOE_ID</span> <span class="o">=</span> <span class="mi">23424975</span>
-
-<span class="c1"># Define TwitterTrendingsAPI Object with Limit 10 Trendings</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">TwitterTrendingsAPI</span><span class="p">(</span><span class="n">woeId</span><span class="o">=</span><span class="n">INDONESIA_WOE_ID</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># Get Trendings</span>
-<span class="n">trendings</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">getTrending</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">trendings</span><span class="p">)</span>
-
-<span class="c1"># Filter Trendings By Hashtag</span>
-<span class="n">trends</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">trend</span> <span class="ow">in</span> <span class="n">trendings</span><span class="p">:</span>
-    <span class="n">getTrendName</span> <span class="o">=</span> <span class="n">trend</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&#34;#&#34;</span><span class="p">)</span>
-    <span class="n">trends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">getTrendName</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">trends</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Import custom twitter trendings API</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">TwitterTrendingsAPI</span> <span class="kn">import</span> <span class="n">TwitterTrendingsAPI</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Define WOEID</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">More World of Earth Id : https://codebeautify.org/jsonviewer/f83352
+</span></span></span><span class="line"><span class="cl"><span class="s2">Find WOEID by your self
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">INDONESIA_WOE_ID</span> <span class="o">=</span> <span class="mi">23424846</span>
+</span></span><span class="line"><span class="cl"><span class="n">UNITED_KINGDOM_WOE_ID</span> <span class="o">=</span> <span class="mi">23424975</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Define TwitterTrendingsAPI Object with Limit 10 Trendings</span>
+</span></span><span class="line"><span class="cl"><span class="n">api</span> <span class="o">=</span> <span class="n">TwitterTrendingsAPI</span><span class="p">(</span><span class="n">woeId</span><span class="o">=</span><span class="n">INDONESIA_WOE_ID</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Get Trendings</span>
+</span></span><span class="line"><span class="cl"><span class="n">trendings</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">getTrending</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">trendings</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Filter Trendings By Hashtag</span>
+</span></span><span class="line"><span class="cl"><span class="n">trends</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">trend</span> <span class="ow">in</span> <span class="n">trendings</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">getTrendName</span> <span class="o">=</span> <span class="n">trend</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&#34;#&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">getTrendName</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">trends</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="conclusion">Conclusion</h3>
 <p>This tutorial can be use for data mining or machine learning, what is trending topic now?</p></div><div class="post-footer" id="post-footer">
@@ -306,7 +303,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
         </div>
     </footer></div>
 
