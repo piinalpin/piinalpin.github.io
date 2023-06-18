@@ -5,17 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Create Sequence Like Oracle in MySQL - PiinAlpin&#39;s Blog</title><meta name="Description" content="How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"><meta property="og:title" content="Create Sequence Like Oracle in MySQL" />
+        <title>Create Sequence Like Oracle in MySQL - PiinAlpin Official Blog</title><meta name="Description" content="How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"><meta property="og:title" content="Create Sequence Like Oracle in MySQL" />
 <meta property="og:description" content="How to implement a custom sequence like Oracle in MySQL using a stored function and triggers" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-12-04T15:49:11+07:00" />
 <meta property="article:modified_time" content="2020-12-04T15:49:11+07:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create Sequence Like Oracle in MySQL"/>
 <meta name="twitter:description" content="How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"/>
-<meta name="application-name" content="PiinAlpin&#39;s Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" /><link rel="prev" href="https://blog.piinalpin.com/2020/11/simple-rest-golang/" /><link rel="next" href="https://blog.piinalpin.com/2020/12/spring-batch-example/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="application-name" content="PiinAlpin Official Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin Official Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" /><link rel="prev" href="https://piinalpin.com/2020/11/simple-rest-golang/" /><link rel="next" href="https://piinalpin.com/2020/12/spring-batch-example/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -23,11 +23,11 @@
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/blog.piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/"
-        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Sequence, SQL, MySQL, Nextval, Sequence MySQL, Custom Sequence","wordcount":  338 ,
-        "url": "https:\/\/blog.piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/","datePublished": "2020-12-04T15:49:11+07:00","dateModified": "2020-12-04T15:49:11+07:00","publisher": {
+            "@id": "https:\/\/piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/"
+        },"image": ["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Sequence, SQL, MySQL, Nextval, Sequence MySQL, Custom Sequence","wordcount":  338 ,
+        "url": "https:\/\/piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/","datePublished": "2020-12-04T15:49:11+07:00","dateModified": "2020-12-04T15:49:11+07:00","publisher": {
             "@type": "Organization",
-            "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
+            "name": "Alvinditya","logo": "https:\/\/piinalpin.com\/images\/alvinditya.jpg"},"author": {
                 "@type": "Person",
                 "name": "Alvinditya Saputra"
             },"description": "How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"
@@ -38,7 +38,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+            <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -62,7 +62,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+                <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -334,7 +334,7 @@ The trigger only generated a new id if 0 is inserted. So, if you create a new ta
                             <a class="link-to-markdown" href="/2020/12/create-sequence-like-oracle-in-mysql/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" data-title="Create Sequence Like Oracle in MySQL" data-via="piinalpin" data-hashtags="Sequence,SQL,MySQL,Nextval,Sequence MySQL,Custom Sequence"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" data-hashtag="Sequence"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" data-title="Create Sequence Like Oracle in MySQL" data-via="piinalpin" data-hashtags="Sequence,SQL,MySQL,Nextval,Sequence MySQL,Custom Sequence"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" data-hashtag="Sequence"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/"><i class="fab fa-linkedin fa-fw"></i></a></span>
             </div>
         </div>
     </div>

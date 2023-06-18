@@ -1,35 +1,35 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tensorflow - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/tensorflow/</link>
-        <description>Tensorflow - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Dec 2021 10:02:39 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/tensorflow/" rel="self" type="application/rss+xml" /><item>
+        <title>Tensorflow - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/tensorflow/</link>
+        <description>Tensorflow - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Dec 2021 10:02:39 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/tensorflow/" rel="self" type="application/rss+xml" /><item>
     <title>Image Processing Using Tensorflow - Convolutional Neural Network (CNN)</title>
-    <link>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
+    <link>https://piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
     <pubDate>Fri, 10 Dec 2021 10:02:39 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
+    <guid>https://piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
     <description><![CDATA[Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing.]]></description>
 </item><item>
     <title>Spring Boot Web Socket Chat Bot</title>
-    <link>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</link>
+    <link>https://piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</link>
     <pubDate>Thu, 14 Oct 2021 14:52:27 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
+    <guid>https://piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
     <description><![CDATA[Build real time chat with bot using spring boot web socket and contextual chat bot python.]]></description>
 </item><item>
     <title>Contextual Chat Bot using NLP</title>
-    <link>https://blog.piinalpin.com/2021/10/contextual-chat-bot/</link>
+    <link>https://piinalpin.com/2021/10/contextual-chat-bot/</link>
     <pubDate>Thu, 14 Oct 2021 11:19:26 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/10/contextual-chat-bot/</guid>
+    <guid>https://piinalpin.com/2021/10/contextual-chat-bot/</guid>
     <description><![CDATA[Build contextual chat bot with python and tensorflow library to talking about riddles. We will build a model for a puzzle conversation.]]></description>
 </item><item>
     <title>Research Reference Bot</title>
-    <link>https://blog.piinalpin.com/2020/01/research-reference-bot/</link>
+    <link>https://piinalpin.com/2020/01/research-reference-bot/</link>
     <pubDate>Fri, 17 Jan 2020 12:00:22 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2020/01/research-reference-bot/</guid>
+    <guid>https://piinalpin.com/2020/01/research-reference-bot/</guid>
     <description><![CDATA[This project will create search engine bot on telegram using TF IDF and Cosine Similarity]]></description>
 </item></channel>
 </rss>

@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Form Data - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/form-data/</link>
-        <description>Form Data - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 19 Feb 2022 14:11:02 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/form-data/" rel="self" type="application/rss+xml" /><item>
+        <title>Form Data - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/form-data/</link>
+        <description>Form Data - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 19 Feb 2022 14:11:02 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/form-data/" rel="self" type="application/rss+xml" /><item>
     <title>Best Practice Uploading File Using Spring RestTemplate</title>
-    <link>https://blog.piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</link>
+    <link>https://piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</link>
     <pubDate>Sat, 19 Feb 2022 14:11:02 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</guid>
+    <guid>https://piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</guid>
     <description><![CDATA[A little things but important when uploading files through REST template. It should send the filename in the correct format.]]></description>
 </item></channel>
 </rss>

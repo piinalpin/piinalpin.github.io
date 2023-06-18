@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Flask - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/flask/</link>
-        <description>Flask - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 26 Dec 2019 16:46:49 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/flask/" rel="self" type="application/rss+xml" /><item>
+        <title>Flask - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/flask/</link>
+        <description>Flask - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 26 Dec 2019 16:46:49 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/flask/" rel="self" type="application/rss+xml" /><item>
     <title>Simple Flask App with Mysql</title>
-    <link>https://blog.piinalpin.com/2019/12/flask-mysql/</link>
+    <link>https://piinalpin.com/2019/12/flask-mysql/</link>
     <pubDate>Thu, 26 Dec 2019 16:46:49 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2019/12/flask-mysql/</guid>
+    <guid>https://piinalpin.com/2019/12/flask-mysql/</guid>
     <description><![CDATA[<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Make sure you have installed Python 3 on your device</p>
@@ -336,10 +336,10 @@
 </ul>]]></description>
 </item><item>
     <title>Simple Build Flask Restful Based</title>
-    <link>https://blog.piinalpin.com/2019/12/flask-rest-api/</link>
+    <link>https://piinalpin.com/2019/12/flask-rest-api/</link>
     <pubDate>Tue, 24 Dec 2019 01:27:15 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2019/12/flask-rest-api/</guid>
+    <guid>https://piinalpin.com/2019/12/flask-rest-api/</guid>
     <description><![CDATA[<h2 id="how-to-build">How To Build</h2>
 <p>Make sure you have installed Python 3 on your device</p>
 <h3 id="project-structure">Project structure</h3>
@@ -948,10 +948,10 @@
 </div>]]></description>
 </item><item>
     <title>Simple CRUD App with Flask And SQL-Alchemy</title>
-    <link>https://blog.piinalpin.com/2019/12/flask-crud/</link>
+    <link>https://piinalpin.com/2019/12/flask-crud/</link>
     <pubDate>Tue, 24 Dec 2019 00:34:28 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2019/12/flask-crud/</guid>
+    <guid>https://piinalpin.com/2019/12/flask-crud/</guid>
     <description><![CDATA[<h3 id="prerequisites">Prerequisites</h3>
 <p>Make sure you have installed Python 3 on your device</p>
 <h3 id="project-structure">Project structure</h3>

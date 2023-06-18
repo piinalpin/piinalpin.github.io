@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>MariaDB - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/mariadb/</link>
-        <description>MariaDB - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 12 Dec 2020 23:21:44 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/mariadb/" rel="self" type="application/rss+xml" /><item>
+        <title>MariaDB - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/mariadb/</link>
+        <description>MariaDB - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 12 Dec 2020 23:21:44 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/mariadb/" rel="self" type="application/rss+xml" /><item>
     <title>SQL Insert Generator from Excel File using Python</title>
-    <link>https://blog.piinalpin.com/2020/12/sql-generator/</link>
+    <link>https://piinalpin.com/2020/12/sql-generator/</link>
     <pubDate>Sat, 12 Dec 2020 23:21:44 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2020/12/sql-generator/</guid>
+    <guid>https://piinalpin.com/2020/12/sql-generator/</guid>
     <description><![CDATA[How to create SQL insert generator using python with pandas and click library]]></description>
 </item></channel>
 </rss>

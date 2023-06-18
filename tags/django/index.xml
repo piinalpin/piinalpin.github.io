@@ -1,21 +1,21 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Django - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/django/</link>
-        <description>Django - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Feb 2020 13:19:04 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/django/" rel="self" type="application/rss+xml" /><item>
+        <title>Django - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/django/</link>
+        <description>Django - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Feb 2020 13:19:04 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/django/" rel="self" type="application/rss+xml" /><item>
     <title>Django Mail Sender With Rabbit-MQ and Celery Worker</title>
-    <link>https://blog.piinalpin.com/2020/02/django-mail-sender/</link>
+    <link>https://piinalpin.com/2020/02/django-mail-sender/</link>
     <pubDate>Wed, 12 Feb 2020 13:19:04 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2020/02/django-mail-sender/</guid>
+    <guid>https://piinalpin.com/2020/02/django-mail-sender/</guid>
     <description><![CDATA[Prerequisites Erlang (Open Telecom Platform) RabbitMQ (Message Broker) Pyhton 3.6 (Base Compiler) Sendgrid Account (SMTP Client) Virtualenv Step to create Django mail sender Create virtual environtment in root directory on your project and activate it 1 2 virtualenv env . env/bin/activate Install Django 2.1 1 pip install Django==2.1.2 Create project and application in Django 1 2 django-admin startproject your_project_name django-admin startapp your_apps_name Install library celery and celery-message-consumer 1 2 pip install celery pip install celery-message-consumer Edit django base settings project_name/settings.]]></description>
 </item><item>
     <title>Simple Django CRUD App With SQLite</title>
-    <link>https://blog.piinalpin.com/2019/12/django-crud-sqlite/</link>
+    <link>https://piinalpin.com/2019/12/django-crud-sqlite/</link>
     <pubDate>Tue, 24 Dec 2019 21:06:33 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2019/12/django-crud-sqlite/</guid>
+    <guid>https://piinalpin.com/2019/12/django-crud-sqlite/</guid>
     <description><![CDATA[<h4 id="codename--rattlesnake">Codename : Rattlesnake</h4>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Make sure you have installed Python 3 and virtual environment on your device</p>

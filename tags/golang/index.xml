@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Golang - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/golang/</link>
-        <description>Golang - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 20 Nov 2020 13:43:51 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/golang/" rel="self" type="application/rss+xml" /><item>
+        <title>Golang - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/golang/</link>
+        <description>Golang - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 20 Nov 2020 13:43:51 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/golang/" rel="self" type="application/rss+xml" /><item>
     <title>Simple REST Application using Go/Golang</title>
-    <link>https://blog.piinalpin.com/2020/11/simple-rest-golang/</link>
+    <link>https://piinalpin.com/2020/11/simple-rest-golang/</link>
     <pubDate>Fri, 20 Nov 2020 13:43:51 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2020/11/simple-rest-golang/</guid>
+    <guid>https://piinalpin.com/2020/11/simple-rest-golang/</guid>
     <description><![CDATA[Introduction Go is a statically typed language, The compiler produces optimized machine code, so CPU-intensive code is significantly more efficient than languages like Python or Ruby, which have byte-code compilers and use virtual machines for execution.
 Prerequisites Make sure you have installed Golang on your device
 Step to create a simple REST application using Golang Importing packages or modules Install GorillaMux for it&rsquo;s efficiency and simplicity for learning go get github.]]></description>

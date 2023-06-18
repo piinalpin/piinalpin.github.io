@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Workshop - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/workshop/</link>
-        <description>Workshop - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Dec 2019 20:32:49 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/workshop/" rel="self" type="application/rss+xml" /><item>
+        <title>Workshop - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/workshop/</link>
+        <description>Workshop - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Dec 2019 20:32:49 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/workshop/" rel="self" type="application/rss+xml" /><item>
     <title>My First Workshop</title>
-    <link>https://blog.piinalpin.com/2019/12/my-first-workshop/</link>
+    <link>https://piinalpin.com/2019/12/my-first-workshop/</link>
     <pubDate>Tue, 24 Dec 2019 20:32:49 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2019/12/my-first-workshop/</guid>
+    <guid>https://piinalpin.com/2019/12/my-first-workshop/</guid>
     <description><![CDATA[<p>A few stories about my experience while being a speaker in the Asynchronous Programming and the Build CRUD with Flask workshop at some time ago. As an introduction, I like to share my experience with others. So I want to make a workshop with the purpose of so I can share my experience with others and also when it coincides with my return to the hometown although only briefly, so I think I&rsquo;m not only go home only, but I can sharing with each other. At first I was confused by whom I would share my experience, then I contacted the Linux Study Group at the University of Ahmad Dahlan which became the beginning of my knowledge of information technology and some technologies in Programming language. At that time I chose the theory about Asynchrounous Programming because during my lecture I did not get that knowledge. The response from friends was very positive so it was very fun at the time. Then after the workshop, a few months later I wanted to hold an activity again with different theory. The target is the friends who are working on the final task with the topic Data Mining and machine learning. Most use the Python programming language, so I want to share about how to create an application that can create, read, update and delete with the microframework flask. And the workshop this time is not less exciting with the previous, because the enthusiasm of friends is very high. So it starts from this where I learn not to fear doing positive things even in the slightest way. Although not an international workshop but I am very pleased to be able to share my experience to others.</p>]]></description>
 </item></channel>
 </rss>

@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Spring Boot Web Socket - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/spring-boot-web-socket/</link>
-        <description>Spring Boot Web Socket - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 14 Oct 2021 14:52:27 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/spring-boot-web-socket/" rel="self" type="application/rss+xml" /><item>
+        <title>Spring Boot Web Socket - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/spring-boot-web-socket/</link>
+        <description>Spring Boot Web Socket - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 14 Oct 2021 14:52:27 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/spring-boot-web-socket/" rel="self" type="application/rss+xml" /><item>
     <title>Spring Boot Web Socket Chat Bot</title>
-    <link>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</link>
+    <link>https://piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</link>
     <pubDate>Thu, 14 Oct 2021 14:52:27 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
+    <guid>https://piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
     <description><![CDATA[Build real time chat with bot using spring boot web socket and contextual chat bot python.]]></description>
 </item></channel>
 </rss>

@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Sequelize - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/sequelize/</link>
-        <description>Sequelize - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 07 Dec 2021 10:31:30 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/sequelize/" rel="self" type="application/rss+xml" /><item>
+        <title>Sequelize - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/sequelize/</link>
+        <description>Sequelize - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 07 Dec 2021 10:31:30 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/sequelize/" rel="self" type="application/rss+xml" /><item>
     <title>Object Relational Mapping Node JS using Sequelize</title>
-    <link>https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/</link>
+    <link>https://piinalpin.com/2021/12/orm-nodejs-sequelize/</link>
     <pubDate>Tue, 07 Dec 2021 10:31:30 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/12/orm-nodejs-sequelize/</guid>
+    <guid>https://piinalpin.com/2021/12/orm-nodejs-sequelize/</guid>
     <description><![CDATA[Object-Relational Mapping (ORM) is a technique that lets you query and manipulate data from a database using an object-oriented paradigm.]]></description>
 </item></channel>
 </rss>

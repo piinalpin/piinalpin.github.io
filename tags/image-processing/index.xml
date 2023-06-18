@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Image Processing - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/image-processing/</link>
-        <description>Image Processing - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Dec 2021 10:02:39 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/image-processing/" rel="self" type="application/rss+xml" /><item>
+        <title>Image Processing - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/image-processing/</link>
+        <description>Image Processing - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Dec 2021 10:02:39 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/image-processing/" rel="self" type="application/rss+xml" /><item>
     <title>Image Processing Using Tensorflow - Convolutional Neural Network (CNN)</title>
-    <link>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
+    <link>https://piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
     <pubDate>Fri, 10 Dec 2021 10:02:39 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
+    <guid>https://piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
     <description><![CDATA[Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing.]]></description>
 </item></channel>
 </rss>

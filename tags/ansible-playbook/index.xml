@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Ansible Playbook - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/ansible-playbook/</link>
-        <description>Ansible Playbook - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Jul 2021 19:26:29 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/ansible-playbook/" rel="self" type="application/rss+xml" /><item>
+        <title>Ansible Playbook - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/ansible-playbook/</link>
+        <description>Ansible Playbook - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Jul 2021 19:26:29 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/ansible-playbook/" rel="self" type="application/rss+xml" /><item>
     <title>Why Should Learn Ansible - Linux Automation</title>
-    <link>https://blog.piinalpin.com/2021/07/why-should-learn-ansible/</link>
+    <link>https://piinalpin.com/2021/07/why-should-learn-ansible/</link>
     <pubDate>Sat, 31 Jul 2021 19:26:29 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/07/why-should-learn-ansible/</guid>
+    <guid>https://piinalpin.com/2021/07/why-should-learn-ansible/</guid>
     <description><![CDATA[Overview Ansible is a radically simple IT automation engine that automates cloud provisioning, configuration management, application deployment, intra-service orchestration, and many other IT needs.
 Designed for multi-tier deployments since day one, Ansible models your IT infrastructure by describing how all of your systems inter-relate, rather than just managing one system at a time.
 It uses no agents and no additional custom security infrastructure, so it&rsquo;s easy to deploy - and most importantly, it uses a very simple language (YAML, in the form of Ansible Playbooks) that allow you to describe your automation jobs in a way that approaches plain English.]]></description>

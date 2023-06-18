@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>GraphQL Client - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/graphql-client/</link>
-        <description>GraphQL Client - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 06 Jan 2021 14:18:10 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/graphql-client/" rel="self" type="application/rss+xml" /><item>
+        <title>GraphQL Client - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/graphql-client/</link>
+        <description>GraphQL Client - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 06 Jan 2021 14:18:10 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/graphql-client/" rel="self" type="application/rss+xml" /><item>
     <title>GraphQL Client using React</title>
-    <link>https://blog.piinalpin.com/2021/01/consume-graphql-react/</link>
+    <link>https://piinalpin.com/2021/01/consume-graphql-react/</link>
     <pubDate>Wed, 06 Jan 2021 14:18:10 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/01/consume-graphql-react/</guid>
+    <guid>https://piinalpin.com/2021/01/consume-graphql-react/</guid>
     <description><![CDATA[A documentation for create React application to consume data from GraphQL server using Apollo Client]]></description>
 </item></channel>
 </rss>

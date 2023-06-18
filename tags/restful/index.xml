@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>RestFul - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/restful/</link>
-        <description>RestFul - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Dec 2019 01:27:15 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/restful/" rel="self" type="application/rss+xml" /><item>
+        <title>RestFul - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/restful/</link>
+        <description>RestFul - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Dec 2019 01:27:15 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/restful/" rel="self" type="application/rss+xml" /><item>
     <title>Simple Build Flask Restful Based</title>
-    <link>https://blog.piinalpin.com/2019/12/flask-rest-api/</link>
+    <link>https://piinalpin.com/2019/12/flask-rest-api/</link>
     <pubDate>Tue, 24 Dec 2019 01:27:15 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2019/12/flask-rest-api/</guid>
+    <guid>https://piinalpin.com/2019/12/flask-rest-api/</guid>
     <description><![CDATA[<h2 id="how-to-build">How To Build</h2>
 <p>Make sure you have installed Python 3 on your device</p>
 <h3 id="project-structure">Project structure</h3>

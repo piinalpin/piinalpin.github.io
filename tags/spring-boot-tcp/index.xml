@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Spring Boot TCP - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/spring-boot-tcp/</link>
-        <description>Spring Boot TCP - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/spring-boot-tcp/" rel="self" type="application/rss+xml" /><item>
+        <title>Spring Boot TCP - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/spring-boot-tcp/</link>
+        <description>Spring Boot TCP - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/spring-boot-tcp/" rel="self" type="application/rss+xml" /><item>
     <title>Spring Boot TCP Integration IP</title>
-    <link>https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</link>
+    <link>https://piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</link>
     <pubDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</guid>
+    <guid>https://piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</guid>
     <description><![CDATA[Transmission Control Protocol (TCP) is a communications standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.
 TCP is one of the basic standards that define the rules of the internet and is included within the standards defined by the Internet Engineering Task Force (IETF). It is one of the most commonly used protocols within digital network communications and ensures end-to-end data delivery.]]></description>
 </item></channel>

@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Cosine Similarity - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/cosine-similarity/</link>
-        <description>Cosine Similarity - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 17 Jan 2020 12:00:22 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/cosine-similarity/" rel="self" type="application/rss+xml" /><item>
+        <title>Cosine Similarity - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/cosine-similarity/</link>
+        <description>Cosine Similarity - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 17 Jan 2020 12:00:22 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/cosine-similarity/" rel="self" type="application/rss+xml" /><item>
     <title>Research Reference Bot</title>
-    <link>https://blog.piinalpin.com/2020/01/research-reference-bot/</link>
+    <link>https://piinalpin.com/2020/01/research-reference-bot/</link>
     <pubDate>Fri, 17 Jan 2020 12:00:22 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2020/01/research-reference-bot/</guid>
+    <guid>https://piinalpin.com/2020/01/research-reference-bot/</guid>
     <description><![CDATA[This project will create search engine bot on telegram using TF IDF and Cosine Similarity]]></description>
 </item></channel>
 </rss>

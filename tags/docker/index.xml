@@ -1,32 +1,32 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Docker - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/docker/</link>
-        <description>Docker - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 24 Oct 2022 14:02:54 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/docker/" rel="self" type="application/rss+xml" /><item>
+        <title>Docker - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/docker/</link>
+        <description>Docker - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 24 Oct 2022 14:02:54 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/docker/" rel="self" type="application/rss+xml" /><item>
     <title>How to Run Redis Sentinel</title>
-    <link>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</link>
+    <link>https://piinalpin.com/2022/10/how-to-run-redis-sentinel/</link>
     <pubDate>Mon, 24 Oct 2022 14:02:54 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</guid>
+    <guid>https://piinalpin.com/2022/10/how-to-run-redis-sentinel/</guid>
     <description><![CDATA[Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster.
 Sentinel itself is designed to run in a configuration where there are multiple Sentinel processes cooperating together. The advantage of having multiple Sentinel processes cooperating are the following :
 Failure detection is performed when multiple Sentinels agree about the fact a given master is no longer available.]]></description>
 </item><item>
     <title>My Docker Compose Collection</title>
-    <link>https://blog.piinalpin.com/2021/08/docker-compose-collection/</link>
+    <link>https://piinalpin.com/2021/08/docker-compose-collection/</link>
     <pubDate>Sun, 15 Aug 2021 20:01:28 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/08/docker-compose-collection/</guid>
+    <guid>https://piinalpin.com/2021/08/docker-compose-collection/</guid>
     <description><![CDATA[Basic command 1 2 docker-compose -f $FILENAME up -d docker-compose -f $FILENAME down -v Kafka CLI Download docker compose configuration using curl
 1 curl -o kafka-cli.yaml https://raw.githubusercontent.com/piinalpin/docker-compose-collection/master/kafka-cli.yaml This yaml kafka-cli.yaml will create a new container zookeeper and exposed port 2181 on host port. Also create a new container kafka and exposed port 29092, 9092 and 9101 on host port.
 Redis By default there are 16 databases (indexed from 0 to 15) and you can navigate between them using select command.]]></description>
 </item><item>
     <title>Why Should Learn Docker</title>
-    <link>https://blog.piinalpin.com/2021/05/why-should-learn-docker/</link>
+    <link>https://piinalpin.com/2021/05/why-should-learn-docker/</link>
     <pubDate>Thu, 20 May 2021 12:57:27 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/05/why-should-learn-docker/</guid>
+    <guid>https://piinalpin.com/2021/05/why-should-learn-docker/</guid>
     <description><![CDATA[Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development - desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.]]></description>
 </item></channel>
 </rss>

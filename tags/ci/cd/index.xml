@@ -1,21 +1,21 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>CI/CD - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/ci/cd/</link>
-        <description>CI/CD - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://blog.piinalpin.com/tags/ci/cd/" rel="self" type="application/rss+xml" /><item>
+        <title>CI/CD - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/ci/cd/</link>
+        <description>CI/CD - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://piinalpin.com/tags/ci/cd/" rel="self" type="application/rss+xml" /><item>
     <title>CI/CD Using Github Action</title>
-    <link>https://blog.piinalpin.com/2022/04/ci-cd-using-github-action/</link>
+    <link>https://piinalpin.com/2022/04/ci-cd-using-github-action/</link>
     <pubDate>Sat, 16 Apr 2022 10:28:28 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/04/ci-cd-using-github-action/</guid>
+    <guid>https://piinalpin.com/2022/04/ci-cd-using-github-action/</guid>
     <description><![CDATA[Continuous integration is a coding philosophy and set of practices that drive development teams to frequently implement small code changes and check them in to a version control repository. Most modern applications require developing code using a variety of platforms and tools, so teams need a consistent mechanism to integrate and validate changes. Continuous integration establishes an automated way to build, package, and test their applications. Having a consistent integration process encourages developers to commit code changes more frequently, which leads to better collaboration and code quality.]]></description>
 </item><item>
     <title>Install Jenkins on Centos7</title>
-    <link>https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/</link>
+    <link>https://piinalpin.com/2021/08/install-jenkins-on-centos7/</link>
     <pubDate>Sun, 01 Aug 2021 09:38:14 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/</guid>
+    <guid>https://piinalpin.com/2021/08/install-jenkins-on-centos7/</guid>
     <description><![CDATA[Overview Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
 Jenkins can be installed through native system packages, Docker, or even run standalone by any machine with a Java Runtime Environment (JRE) installed (Jenkins.io).
 Prerequisites Vagrant, see how to install Vagrant here Add the following host entries on local device /etc/hosts : 1 2 192.]]></description>

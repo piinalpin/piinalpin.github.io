@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Criteria Builder - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/criteria-builder/</link>
-        <description>Criteria Builder - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 Apr 2022 06:53:17 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/criteria-builder/" rel="self" type="application/rss+xml" /><item>
+        <title>Criteria Builder - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/criteria-builder/</link>
+        <description>Criteria Builder - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 Apr 2022 06:53:17 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/criteria-builder/" rel="self" type="application/rss+xml" /><item>
     <title>Searching And Filtering Using JPA Specification - Spring Boot</title>
-    <link>https://blog.piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</link>
+    <link>https://piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</link>
     <pubDate>Sun, 03 Apr 2022 06:53:17 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</guid>
+    <guid>https://piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</guid>
     <description><![CDATA[Introduction Spring data JPA provides many ways to deal with entities including query methods and custom JPQL queries. However, sometimes we need a more programmatic approach: for example Criteria API or QueryDSL.
 Spring Data JPA Specification provides a convenient and sophisticated manner to build dynamic SQL where clauses. By adding some extra logic and considering some pitfalls, we are capable of offering API consumers a zero-effort generic mechanism for filtering entities.]]></description>
 </item></channel>

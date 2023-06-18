@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Data Mining - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/data-mining/</link>
-        <description>Data Mining - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 04 Feb 2020 10:22:45 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/data-mining/" rel="self" type="application/rss+xml" /><item>
+        <title>Data Mining - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/data-mining/</link>
+        <description>Data Mining - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 04 Feb 2020 10:22:45 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/data-mining/" rel="self" type="application/rss+xml" /><item>
     <title>Get Twitter Trending with World of Earth Identity (WOEID)</title>
-    <link>https://blog.piinalpin.com/2020/02/get-twitter-trending/</link>
+    <link>https://piinalpin.com/2020/02/get-twitter-trending/</link>
     <pubDate>Tue, 04 Feb 2020 10:22:45 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2020/02/get-twitter-trending/</guid>
+    <guid>https://piinalpin.com/2020/02/get-twitter-trending/</guid>
     <description><![CDATA[This tutorial will consume TwitterAPI to get Twitter Trendings with [Tweepy](https://www.tweepy.org/) Library]]></description>
 </item></channel>
 </rss>

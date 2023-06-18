@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Centos7 - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/centos7/</link>
-        <description>Centos7 - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 01 Aug 2021 09:38:14 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/centos7/" rel="self" type="application/rss+xml" /><item>
+        <title>Centos7 - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/centos7/</link>
+        <description>Centos7 - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 01 Aug 2021 09:38:14 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/centos7/" rel="self" type="application/rss+xml" /><item>
     <title>Install Jenkins on Centos7</title>
-    <link>https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/</link>
+    <link>https://piinalpin.com/2021/08/install-jenkins-on-centos7/</link>
     <pubDate>Sun, 01 Aug 2021 09:38:14 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/08/install-jenkins-on-centos7/</guid>
+    <guid>https://piinalpin.com/2021/08/install-jenkins-on-centos7/</guid>
     <description><![CDATA[Overview Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
 Jenkins can be installed through native system packages, Docker, or even run standalone by any machine with a Java Runtime Environment (JRE) installed (Jenkins.io).
 Prerequisites Vagrant, see how to install Vagrant here Add the following host entries on local device /etc/hosts : 1 2 192.]]></description>

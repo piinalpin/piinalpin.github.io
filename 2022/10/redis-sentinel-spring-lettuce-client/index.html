@@ -5,17 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>High Availability with Redis Sentinel and Spring Lettuce Client - PiinAlpin&#39;s Blog</title><meta name="Description" content="Redis is a very popular, open-source, and very fast in-memory key-value data store. This is an example implementation high availability with Redis Sentinel and Spring Lettuce Client"><meta property="og:title" content="High Availability with Redis Sentinel and Spring Lettuce Client" />
+        <title>High Availability with Redis Sentinel and Spring Lettuce Client - PiinAlpin Official Blog</title><meta name="Description" content="Redis is a very popular, open-source, and very fast in-memory key-value data store. This is an example implementation high availability with Redis Sentinel and Spring Lettuce Client"><meta property="og:title" content="High Availability with Redis Sentinel and Spring Lettuce Client" />
 <meta property="og:description" content="Redis is a very popular, open-source, and very fast in-memory key-value data store. This is an example implementation high availability with Redis Sentinel and Spring Lettuce Client" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-26T13:48:09+07:00" />
 <meta property="article:modified_time" content="2022-10-26T13:48:09+07:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="High Availability with Redis Sentinel and Spring Lettuce Client"/>
 <meta name="twitter:description" content="Redis is a very popular, open-source, and very fast in-memory key-value data store. This is an example implementation high availability with Redis Sentinel and Spring Lettuce Client"/>
-<meta name="application-name" content="PiinAlpin&#39;s Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/" /><link rel="prev" href="https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/" /><link rel="next" href="https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="application-name" content="PiinAlpin Official Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin Official Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/" /><link rel="prev" href="https://piinalpin.com/2022/10/how-to-run-redis-sentinel/" /><link rel="next" href="https://piinalpin.com/2023/06/spring-boot-tcp-integration-ip/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -23,11 +23,11 @@
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/blog.piinalpin.com\/2022\/10\/redis-sentinel-spring-lettuce-client\/"
-        },"image": ["https:\/\/blog.piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Redis, Redis Sentinel, Redis Client, Spring Boot, Spring Lettuce Client","wordcount":  2211 ,
-        "url": "https:\/\/blog.piinalpin.com\/2022\/10\/redis-sentinel-spring-lettuce-client\/","datePublished": "2022-10-26T13:48:09+07:00","dateModified": "2022-10-26T13:48:09+07:00","publisher": {
+            "@id": "https:\/\/piinalpin.com\/2022\/10\/redis-sentinel-spring-lettuce-client\/"
+        },"image": ["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Redis, Redis Sentinel, Redis Client, Spring Boot, Spring Lettuce Client","wordcount":  2211 ,
+        "url": "https:\/\/piinalpin.com\/2022\/10\/redis-sentinel-spring-lettuce-client\/","datePublished": "2022-10-26T13:48:09+07:00","dateModified": "2022-10-26T13:48:09+07:00","publisher": {
             "@type": "Organization",
-            "name": "Alvinditya","logo": "https:\/\/blog.piinalpin.com\/images\/alvinditya.jpg"},"author": {
+            "name": "Alvinditya","logo": "https:\/\/piinalpin.com\/images\/alvinditya.jpg"},"author": {
                 "@type": "Person",
                 "name": "Alvinditya Saputra"
             },"description": "Redis is a very popular, open-source, and very fast in-memory key-value data store. This is an example implementation high availability with Redis Sentinel and Spring Lettuce Client"
@@ -38,7 +38,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+            <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -62,7 +62,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="PiinAlpin&#39;s Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+                <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='far fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -126,7 +126,7 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine. Redis provides data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions, and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.</p>
-<p><strong>Redis Sentinel</strong> is high availability solution of redis. It provides <strong>monitoring</strong>, <strong>automatic failover</strong>, and <strong>configuration provider</strong>. Redis sentinel will monitor and automatically detect a master failure and bring all cluster to a stable mode. In <a href="https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/" rel=""><strong>this article</strong></a> we can run redis sentinel with 1 master and 2 replicas. And we will use <strong>3 sentinel instance</strong>, <strong>1 master and 2 slave</strong>, and the usual quorum value is 2.</p>
+<p><strong>Redis Sentinel</strong> is high availability solution of redis. It provides <strong>monitoring</strong>, <strong>automatic failover</strong>, and <strong>configuration provider</strong>. Redis sentinel will monitor and automatically detect a master failure and bring all cluster to a stable mode. In <a href="https://piinalpin.com/2022/10/how-to-run-redis-sentinel/" rel=""><strong>this article</strong></a> we can run redis sentinel with 1 master and 2 replicas. And we will use <strong>3 sentinel instance</strong>, <strong>1 master and 2 slave</strong>, and the usual quorum value is 2.</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -137,7 +137,7 @@
         title="Redis Sentinel Instance" /></p>
 <h3 id="lettuce-client">Lettuce Client</h3>
 <p>To connect sentinel instances we need to use a client that also supports Sentinel itself. Lettuce is a scalable thread-safe Redis client for synchronous, asynchronous and reactive usage. Multiple threads may share one connection if they avoid blocking and transactional operations such as BLPOP and MULTI/EXEC. Lettuce is built with netty. Supports advanced Redis features such as Sentinel, Cluster, Pipelining, Auto-Reconnect and Redis data models. Lettuce client also can use connection pooling to a Redis node.</p>
-<p>Before implement redis client using Spring Lettuce Client, please run redis sentinel cluster properly. See my <a href="https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/" rel=""><strong>How to Run Redis Sentinel</strong></a> article.</p>
+<p>Before implement redis client using Spring Lettuce Client, please run redis sentinel cluster properly. See my <a href="https://piinalpin.com/2022/10/how-to-run-redis-sentinel/" rel=""><strong>How to Run Redis Sentinel</strong></a> article.</p>
 <h3 id="configuration">Configuration</h3>
 <p>Add <em>Spring Data Redis</em>, Spring Web and Lombok for utility to our <code>pom.xml</code></p>
 <div class="highlight"><div class="chroma">
@@ -1151,7 +1151,7 @@
                             <a class="link-to-markdown" href="/2022/10/redis-sentinel-spring-lettuce-client/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/" data-title="High Availability with Redis Sentinel and Spring Lettuce Client" data-via="piinalpin" data-hashtags="Redis,Redis Sentinel,Redis Client,Spring Boot,Spring Lettuce Client"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/" data-hashtag="Redis"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/" data-title="High Availability with Redis Sentinel and Spring Lettuce Client" data-via="piinalpin" data-hashtags="Redis,Redis Sentinel,Redis Client,Spring Boot,Spring Lettuce Client"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/" data-hashtag="Redis"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/"><i class="fab fa-linkedin fa-fw"></i></a></span>
             </div>
         </div>
     </div>

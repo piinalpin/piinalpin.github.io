@@ -1,78 +1,78 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Python - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/python/</link>
-        <description>Python - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 21 May 2022 17:07:17 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/python/" rel="self" type="application/rss+xml" /><item>
+        <title>Python - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/python/</link>
+        <description>Python - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 21 May 2022 17:07:17 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/python/" rel="self" type="application/rss+xml" /><item>
     <title>Salary Prediction with ML - Linear Regression</title>
-    <link>https://blog.piinalpin.com/2022/05/salary-prediction-with-machine-learning/</link>
+    <link>https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/</link>
     <pubDate>Sat, 21 May 2022 17:07:17 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/05/salary-prediction-with-machine-learning/</guid>
+    <guid>https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/</guid>
     <description><![CDATA[Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy.
 How Does Machine Learning Works? Similar to how the human brain gains knowledge and understanding, machine learning relies on input, such as training data or knowledge graphs, to understand entities, domains and the connections between them. With entities defined, deep learning can begin.]]></description>
 </item><item>
     <title>Image Processing Using Tensorflow - Convolutional Neural Network (CNN)</title>
-    <link>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
+    <link>https://piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
     <pubDate>Fri, 10 Dec 2021 10:02:39 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
+    <guid>https://piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
     <description><![CDATA[Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing.]]></description>
 </item><item>
     <title>Spring Boot Web Socket Chat Bot</title>
-    <link>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</link>
+    <link>https://piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</link>
     <pubDate>Thu, 14 Oct 2021 14:52:27 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
+    <guid>https://piinalpin.com/2021/10/spring-boot-web-socket-chat-bot/</guid>
     <description><![CDATA[Build real time chat with bot using spring boot web socket and contextual chat bot python.]]></description>
 </item><item>
     <title>Contextual Chat Bot using NLP</title>
-    <link>https://blog.piinalpin.com/2021/10/contextual-chat-bot/</link>
+    <link>https://piinalpin.com/2021/10/contextual-chat-bot/</link>
     <pubDate>Thu, 14 Oct 2021 11:19:26 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/10/contextual-chat-bot/</guid>
+    <guid>https://piinalpin.com/2021/10/contextual-chat-bot/</guid>
     <description><![CDATA[Build contextual chat bot with python and tensorflow library to talking about riddles. We will build a model for a puzzle conversation.]]></description>
 </item><item>
     <title>Create Simple Microservice With gRPC</title>
-    <link>https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/</link>
+    <link>https://piinalpin.com/2021/01/create-simple-microservice-with-grpc/</link>
     <pubDate>Sat, 30 Jan 2021 16:21:21 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/01/create-simple-microservice-with-grpc/</guid>
+    <guid>https://piinalpin.com/2021/01/create-simple-microservice-with-grpc/</guid>
     <description><![CDATA[Build a simple microservices gRPC server and client using Spring Boot]]></description>
 </item><item>
     <title>SQL Insert Generator from Excel File using Python</title>
-    <link>https://blog.piinalpin.com/2020/12/sql-generator/</link>
+    <link>https://piinalpin.com/2020/12/sql-generator/</link>
     <pubDate>Sat, 12 Dec 2020 23:21:44 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2020/12/sql-generator/</guid>
+    <guid>https://piinalpin.com/2020/12/sql-generator/</guid>
     <description><![CDATA[How to create SQL insert generator using python with pandas and click library]]></description>
 </item><item>
     <title>Django Mail Sender With Rabbit-MQ and Celery Worker</title>
-    <link>https://blog.piinalpin.com/2020/02/django-mail-sender/</link>
+    <link>https://piinalpin.com/2020/02/django-mail-sender/</link>
     <pubDate>Wed, 12 Feb 2020 13:19:04 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2020/02/django-mail-sender/</guid>
+    <guid>https://piinalpin.com/2020/02/django-mail-sender/</guid>
     <description><![CDATA[Prerequisites Erlang (Open Telecom Platform) RabbitMQ (Message Broker) Pyhton 3.6 (Base Compiler) Sendgrid Account (SMTP Client) Virtualenv Step to create Django mail sender Create virtual environtment in root directory on your project and activate it 1 2 virtualenv env . env/bin/activate Install Django 2.1 1 pip install Django==2.1.2 Create project and application in Django 1 2 django-admin startproject your_project_name django-admin startapp your_apps_name Install library celery and celery-message-consumer 1 2 pip install celery pip install celery-message-consumer Edit django base settings project_name/settings.]]></description>
 </item><item>
     <title>Get Twitter Trending with World of Earth Identity (WOEID)</title>
-    <link>https://blog.piinalpin.com/2020/02/get-twitter-trending/</link>
+    <link>https://piinalpin.com/2020/02/get-twitter-trending/</link>
     <pubDate>Tue, 04 Feb 2020 10:22:45 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2020/02/get-twitter-trending/</guid>
+    <guid>https://piinalpin.com/2020/02/get-twitter-trending/</guid>
     <description><![CDATA[This tutorial will consume TwitterAPI to get Twitter Trendings with [Tweepy](https://www.tweepy.org/) Library]]></description>
 </item><item>
     <title>Research Reference Bot</title>
-    <link>https://blog.piinalpin.com/2020/01/research-reference-bot/</link>
+    <link>https://piinalpin.com/2020/01/research-reference-bot/</link>
     <pubDate>Fri, 17 Jan 2020 12:00:22 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2020/01/research-reference-bot/</guid>
+    <guid>https://piinalpin.com/2020/01/research-reference-bot/</guid>
     <description><![CDATA[This project will create search engine bot on telegram using TF IDF and Cosine Similarity]]></description>
 </item><item>
     <title>Simple Flask App with Mysql</title>
-    <link>https://blog.piinalpin.com/2019/12/flask-mysql/</link>
+    <link>https://piinalpin.com/2019/12/flask-mysql/</link>
     <pubDate>Thu, 26 Dec 2019 16:46:49 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2019/12/flask-mysql/</guid>
+    <guid>https://piinalpin.com/2019/12/flask-mysql/</guid>
     <description><![CDATA[<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Make sure you have installed Python 3 on your device</p>

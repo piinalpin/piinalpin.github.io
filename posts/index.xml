@@ -1,83 +1,83 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/posts/</link>
-        <description>All Posts | PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/posts/" rel="self" type="application/rss+xml" /><item>
+        <title>All Posts - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/posts/</link>
+        <description>All Posts | PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Spring Boot TCP Integration IP</title>
-    <link>https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</link>
+    <link>https://piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</link>
     <pubDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</guid>
+    <guid>https://piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</guid>
     <description><![CDATA[Transmission Control Protocol (TCP) is a communications standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.
 TCP is one of the basic standards that define the rules of the internet and is included within the standards defined by the Internet Engineering Task Force (IETF). It is one of the most commonly used protocols within digital network communications and ensures end-to-end data delivery.]]></description>
 </item><item>
     <title>High Availability with Redis Sentinel and Spring Lettuce Client</title>
-    <link>https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</link>
+    <link>https://piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</link>
     <pubDate>Wed, 26 Oct 2022 13:48:09 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</guid>
+    <guid>https://piinalpin.com/2022/10/redis-sentinel-spring-lettuce-client/</guid>
     <description><![CDATA[Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine. Redis provides data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions, and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.]]></description>
 </item><item>
     <title>How to Run Redis Sentinel</title>
-    <link>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</link>
+    <link>https://piinalpin.com/2022/10/how-to-run-redis-sentinel/</link>
     <pubDate>Mon, 24 Oct 2022 14:02:54 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/10/how-to-run-redis-sentinel/</guid>
+    <guid>https://piinalpin.com/2022/10/how-to-run-redis-sentinel/</guid>
     <description><![CDATA[Redis Sentinel is the high-availability solution for open-source Redis server. It provides monitoring of all Redis nodes and automatic failover should the master node become unavailable. This guide provides a sample configuration for a three-node Redis cluster.
 Sentinel itself is designed to run in a configuration where there are multiple Sentinel processes cooperating together. The advantage of having multiple Sentinel processes cooperating are the following :
 Failure detection is performed when multiple Sentinels agree about the fact a given master is no longer available.]]></description>
 </item><item>
     <title>Salary Prediction with ML - Linear Regression</title>
-    <link>https://blog.piinalpin.com/2022/05/salary-prediction-with-machine-learning/</link>
+    <link>https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/</link>
     <pubDate>Sat, 21 May 2022 17:07:17 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/05/salary-prediction-with-machine-learning/</guid>
+    <guid>https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/</guid>
     <description><![CDATA[Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy.
 How Does Machine Learning Works? Similar to how the human brain gains knowledge and understanding, machine learning relies on input, such as training data or knowledge graphs, to understand entities, domains and the connections between them. With entities defined, deep learning can begin.]]></description>
 </item><item>
     <title>Api Gateway Using Spring Boot Cloud Gateway &#43; Netflix Hystrix</title>
-    <link>https://blog.piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</link>
+    <link>https://piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</link>
     <pubDate>Fri, 29 Apr 2022 13:38:40 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</guid>
+    <guid>https://piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</guid>
     <description><![CDATA[An API gateway is an interface between clients and backend microservices. When a gateway is used, it becomes the single point of contact for clients; it receives their API calls and routes each one to the appropriate backend.
 It facilitates microservice architectures. When an API gateway is used, clients do not know (nor should they know) the structure of the backend. Modern architectures discourage the use of large monolithic services; rather, numerous small microservices are preferred.]]></description>
 </item><item>
     <title>CI/CD Using Github Action</title>
-    <link>https://blog.piinalpin.com/2022/04/ci-cd-using-github-action/</link>
+    <link>https://piinalpin.com/2022/04/ci-cd-using-github-action/</link>
     <pubDate>Sat, 16 Apr 2022 10:28:28 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/04/ci-cd-using-github-action/</guid>
+    <guid>https://piinalpin.com/2022/04/ci-cd-using-github-action/</guid>
     <description><![CDATA[Continuous integration is a coding philosophy and set of practices that drive development teams to frequently implement small code changes and check them in to a version control repository. Most modern applications require developing code using a variety of platforms and tools, so teams need a consistent mechanism to integrate and validate changes. Continuous integration establishes an automated way to build, package, and test their applications. Having a consistent integration process encourages developers to commit code changes more frequently, which leads to better collaboration and code quality.]]></description>
 </item><item>
     <title>Searching And Filtering Using JPA Specification - Spring Boot</title>
-    <link>https://blog.piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</link>
+    <link>https://piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</link>
     <pubDate>Sun, 03 Apr 2022 06:53:17 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</guid>
+    <guid>https://piinalpin.com/2022/04/searching-and-filtering-using-jpa-specification/</guid>
     <description><![CDATA[Introduction Spring data JPA provides many ways to deal with entities including query methods and custom JPQL queries. However, sometimes we need a more programmatic approach: for example Criteria API or QueryDSL.
 Spring Data JPA Specification provides a convenient and sophisticated manner to build dynamic SQL where clauses. By adding some extra logic and considering some pitfalls, we are capable of offering API consumers a zero-effort generic mechanism for filtering entities.]]></description>
 </item><item>
     <title>JPA Soft Deletes Implementation - Spring Boot</title>
-    <link>https://blog.piinalpin.com/2022/03/jpa-soft-deletes-implementation/</link>
+    <link>https://piinalpin.com/2022/03/jpa-soft-deletes-implementation/</link>
     <pubDate>Sun, 20 Mar 2022 13:28:42 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/03/jpa-soft-deletes-implementation/</guid>
+    <guid>https://piinalpin.com/2022/03/jpa-soft-deletes-implementation/</guid>
     <description><![CDATA[Implementing custom jpa soft deletes because sometimes there are business requirements to not permanently delete data from the database.]]></description>
 </item><item>
     <title>Best Practice Uploading File Using Spring RestTemplate</title>
-    <link>https://blog.piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</link>
+    <link>https://piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</link>
     <pubDate>Sat, 19 Feb 2022 14:11:02 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</guid>
+    <guid>https://piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</guid>
     <description><![CDATA[A little things but important when uploading files through REST template. It should send the filename in the correct format.]]></description>
 </item><item>
     <title>Image Processing Using Tensorflow - Convolutional Neural Network (CNN)</title>
-    <link>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
+    <link>https://piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
     <pubDate>Fri, 10 Dec 2021 10:02:39 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
+    <guid>https://piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
     <description><![CDATA[Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing.]]></description>
 </item></channel>
 </rss>

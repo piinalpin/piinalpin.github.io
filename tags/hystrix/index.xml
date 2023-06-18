@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Hystrix - Tag - PiinAlpin&#39;s Blog</title>
-        <link>https://blog.piinalpin.com/tags/hystrix/</link>
-        <description>Hystrix - Tag - PiinAlpin&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 Apr 2022 13:38:40 &#43;0700</lastBuildDate><atom:link href="https://blog.piinalpin.com/tags/hystrix/" rel="self" type="application/rss+xml" /><item>
+        <title>Hystrix - Tag - PiinAlpin Official Blog</title>
+        <link>https://piinalpin.com/tags/hystrix/</link>
+        <description>Hystrix - Tag - PiinAlpin Official Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 Apr 2022 13:38:40 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/hystrix/" rel="self" type="application/rss+xml" /><item>
     <title>Api Gateway Using Spring Boot Cloud Gateway &#43; Netflix Hystrix</title>
-    <link>https://blog.piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</link>
+    <link>https://piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</link>
     <pubDate>Fri, 29 Apr 2022 13:38:40 &#43;0700</pubDate>
     <author>Author</author>
-    <guid>https://blog.piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</guid>
+    <guid>https://piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/</guid>
     <description><![CDATA[An API gateway is an interface between clients and backend microservices. When a gateway is used, it becomes the single point of contact for clients; it receives their API calls and routes each one to the appropriate backend.
 It facilitates microservice architectures. When an API gateway is used, clients do not know (nor should they know) the structure of the backend. Modern architectures discourage the use of large monolithic services; rather, numerous small microservices are preferred.]]></description>
 </item></channel>
