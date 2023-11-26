@@ -27,7 +27,7 @@
         },"image": ["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Java, Spring Boot, GraphQL, GraphiQL, MySQL","wordcount":  3060 ,
         "url": "https:\/\/piinalpin.com\/2021\/01\/graphql-spring-boot\/","datePublished": "2021-01-05T09:17:49+07:00","dateModified": "2021-01-05T09:17:49+07:00","publisher": {
             "@type": "Organization",
-            "name": "Alvinditya","logo": "https:\/\/piinalpin.com\/images\/alvinditya.jpg"},"author": {
+            "name": "Alvinditya","logo": "https:\/\/piinalpin.com\/images\/favicon.png"},"author": {
                 "@type": "Person",
                 "name": "Alvinditya Saputra"
             },"description": "Build simple GraphQL server using Spring Boot with MySQL database and Flyway database migration from scratch."
@@ -686,7 +686,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nd">@PrePersist</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">createdAt</span> <span class="o">=</span> <span class="n">Timestamp</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">createdBy</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="n">createdBy</span> <span class="o">=</span> <span class="mi">0L</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">createdBy</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="n">createdBy</span> <span class="o">=</span> <span class="mi">0</span><span class="n">L</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nd">@PreUpdate</span>

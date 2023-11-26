@@ -3,9 +3,17 @@
         <title>PiinAlpin Official Blog</title>
         <link>https://piinalpin.com/</link>
         <description>Sharing is caring, keep learn and create an awesome codes.</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 26 Nov 2023 18:36:21 &#43;0700</lastBuildDate>
             <atom:link href="https://piinalpin.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Make Terminal Powerfull Using Oh-My-Posh</title>
+    <link>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</link>
+    <pubDate>Sun, 26 Nov 2023 18:36:21 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</guid>
+    <description><![CDATA[Programmers use a command-line interface (CLI) to issue text-commands to the Operating System (OS), instead of clicking on a Graphical User Interface (GUI). This is because command-line inerface is much more powerful and flexible than the graphical user interface.
+The Terminal application is a command-line Interface (or shell). By default, the Terminal in Ubuntu and macOS runs the so-called bash shell, which supports a set of commands and utilities; and has its own programming language for writing shell scripts.]]></description>
+</item><item>
     <title>Spring Boot TCP Integration IP</title>
     <link>https://piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</link>
     <pubDate>Mon, 05 Jun 2023 08:29:10 &#43;0700</pubDate>
@@ -74,12 +82,5 @@ Spring Data JPA Specification provides a convenient and sophisticated manner to 
     <author>Author</author>
     <guid>https://piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</guid>
     <description><![CDATA[A little things but important when uploading files through REST template. It should send the filename in the correct format.]]></description>
-</item><item>
-    <title>Image Processing Using Tensorflow - Convolutional Neural Network (CNN)</title>
-    <link>https://piinalpin.com/2021/12/image-processing-using-tensorflow/</link>
-    <pubDate>Fri, 10 Dec 2021 10:02:39 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2021/12/image-processing-using-tensorflow/</guid>
-    <description><![CDATA[Digital image processing is the use of a digital computer to process digital images through an algorithm. As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing.]]></description>
 </item></channel>
 </rss>

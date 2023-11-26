@@ -3,7 +3,15 @@
         <title>Shell - Tag - PiinAlpin Official Blog</title>
         <link>https://piinalpin.com/tags/shell/</link>
         <description>Shell - Tag - PiinAlpin Official Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 17 Aug 2021 15:13:17 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/shell/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 26 Nov 2023 18:36:21 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/shell/" rel="self" type="application/rss+xml" /><item>
+    <title>Make Terminal Powerfull Using Oh-My-Posh</title>
+    <link>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</link>
+    <pubDate>Sun, 26 Nov 2023 18:36:21 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</guid>
+    <description><![CDATA[Programmers use a command-line interface (CLI) to issue text-commands to the Operating System (OS), instead of clicking on a Graphical User Interface (GUI). This is because command-line inerface is much more powerful and flexible than the graphical user interface.
+The Terminal application is a command-line Interface (or shell). By default, the Terminal in Ubuntu and macOS runs the so-called bash shell, which supports a set of commands and utilities; and has its own programming language for writing shell scripts.]]></description>
+</item><item>
     <title>Bash Script for Lazy People</title>
     <link>https://piinalpin.com/2021/08/bash-script-for-lazy-people/</link>
     <pubDate>Tue, 17 Aug 2021 15:13:17 &#43;0700</pubDate>
