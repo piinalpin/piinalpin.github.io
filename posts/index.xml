@@ -3,7 +3,16 @@
         <title>All Posts - PiinAlpin Official Blog</title>
         <link>https://piinalpin.com/posts/</link>
         <description>All Posts | PiinAlpin Official Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 26 Nov 2023 18:36:21 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 09 Dec 2023 17:49:12 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Build Kie Server on Spring Boot</title>
+    <link>https://piinalpin.com/2023/12/build-kie-server-on-spring-boot/</link>
+    <pubDate>Sat, 09 Dec 2023 17:49:12 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://piinalpin.com/2023/12/build-kie-server-on-spring-boot/</guid>
+    <description><![CDATA[jBPM is a toolkit for building business applications to help automate business processes and decisions.
+jBPM originates from BPM (Business Process Management) but it has evolved to enable users to pick their own path in business automation. It provides various capabilities that simplify and externalize business logic into reusable assets such as cases, processes, decision tables and more.
+business processes (BPMN2) case management (BPMN2 and CMMN) decision management (DMN) business rules (DRL) business optimisation (Solver) jBPM can be used as standalone service or embedded in custom service.]]></description>
+</item><item>
     <title>Make Terminal Powerfull Using Oh-My-Posh</title>
     <link>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</link>
     <pubDate>Sun, 26 Nov 2023 18:36:21 &#43;0700</pubDate>
@@ -73,12 +82,5 @@ Spring Data JPA Specification provides a convenient and sophisticated manner to 
     <author>Author</author>
     <guid>https://piinalpin.com/2022/03/jpa-soft-deletes-implementation/</guid>
     <description><![CDATA[Implementing custom jpa soft deletes because sometimes there are business requirements to not permanently delete data from the database.]]></description>
-</item><item>
-    <title>Best Practice Uploading File Using Spring RestTemplate</title>
-    <link>https://piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</link>
-    <pubDate>Sat, 19 Feb 2022 14:11:02 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2022/02/best-practice-uploading-file-using-rest-template/</guid>
-    <description><![CDATA[A little things but important when uploading files through REST template. It should send the filename in the correct format.]]></description>
 </item></channel>
 </rss>

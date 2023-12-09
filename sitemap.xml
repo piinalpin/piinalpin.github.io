@@ -2,18 +2,19 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://piinalpin.com/tags/bash/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/categories/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/categories/documentation/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/tags/oh-my-posh/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/posts/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/tags/powershell/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/tags/shell/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/tags/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/tags/terminal/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://piinalpin.com/tags/zsh/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://piinalpin.com/2023/12/build-kie-server-on-spring-boot/</loc><lastmod>2023-12-09T17:49:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://piinalpin.com/</loc><lastmod>2023-12-09T17:49:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://piinalpin.com/posts/</loc><lastmod>2023-12-09T17:49:12&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://piinalpin.com/tags/bash/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://piinalpin.com/categories/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://piinalpin.com/categories/documentation/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://piinalpin.com/tags/oh-my-posh/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://piinalpin.com/tags/powershell/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://piinalpin.com/tags/shell/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://piinalpin.com/tags/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://piinalpin.com/tags/terminal/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://piinalpin.com/tags/zsh/</loc><lastmod>2023-11-26T18:36:21&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://piinalpin.com/tags/spring-boot/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://piinalpin.com/tags/spring-boot-tcp/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://piinalpin.com/2023/06/spring-boot-tcp-integration-ip/</loc><lastmod>2023-06-05T08:29:10&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

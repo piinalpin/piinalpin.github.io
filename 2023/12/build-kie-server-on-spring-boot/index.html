@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Build Kie Server on Spring Boot - PiinAlpin Official Blog</title><meta name="Description" content="Build Kie Server and implement Business Process Management (BPM) System with Spring Boot as JBPM Server"><meta property="og:title" content="Build Kie Server on Spring Boot" />
+<meta property="og:description" content="Build Kie Server and implement Business Process Management (BPM) System with Spring Boot as JBPM Server" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://piinalpin.com/2023/12/build-kie-server-on-spring-boot/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-09T17:49:12+07:00" />
+<meta property="article:modified_time" content="2023-12-09T17:49:12+07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Build Kie Server on Spring Boot"/>
+<meta name="twitter:description" content="Build Kie Server and implement Business Process Management (BPM) System with Spring Boot as JBPM Server"/>
+<meta name="application-name" content="PiinAlpin Official Blog">
+<meta name="apple-mobile-web-app-title" content="PiinAlpin Official Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://piinalpin.com/2023/12/build-kie-server-on-spring-boot/" /><link rel="prev" href="https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Build Kie Server on Spring Boot",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/piinalpin.com\/2023\/12\/build-kie-server-on-spring-boot\/"
+        },"image": ["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  1407 ,
+        "url": "https:\/\/piinalpin.com\/2023\/12\/build-kie-server-on-spring-boot\/","datePublished": "2023-12-09T17:49:12+07:00","dateModified": "2023-12-09T17:49:12+07:00","publisher": {
+            "@type": "Organization",
+            "name": "Alvinditya","logo": "https:\/\/piinalpin.com\/images\/favicon.png"},"author": {
+                "@type": "Person",
+                "name": "Alvinditya Saputra"
+            },"description": "Build Kie Server and implement Business Process Management (BPM) System with Spring Boot as JBPM Server"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='fa fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='fa fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Build Kie Server on Spring Boot</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-12-09">2023-12-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1407 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#kie-server">Kie Server</a></li>
+        <li><a href="#business-process-management-bpm">Business Process Management (BPM)</a></li>
+        <li><a href="#run-application">Run Application</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>jBPM</strong> is a toolkit for building business applications to help automate business processes and decisions.</p>
+<p>jBPM originates from BPM (Business Process Management) but it has evolved to enable users to pick their own path in business automation. It provides various capabilities that simplify and externalize business logic into reusable assets such as cases, processes, decision tables and more.</p>
+<ul>
+<li>business processes (BPMN2)</li>
+<li>case management (BPMN2 and CMMN)</li>
+<li>decision management (DMN)</li>
+<li>business rules (DRL)</li>
+<li>business optimisation (Solver)</li>
+</ul>
+<p>jBPM can be used as standalone service or embedded in custom service. It does not mandate any of the frameworks to be used, it can be successfully used in</p>
+<ul>
+<li>traditional JEE applications - war/ear deployments</li>
+<li>SpringBoot or Thorntail (formerly known as WildFly Swarm) - uberjar deployments</li>
+<li>standalone java programs</li>
+</ul>
+<p class="" align="center">
+  <img src="/images/jbpm.jpg" alt="JBPM Logo"/>
+</p>
+<p><strong>Prerequisities</strong></p>
+<ul>
+<li>Intelij IDEA</li>
+<li>VSCode + BPMN Editor (Extension)</li>
+<li>Java 11</li>
+<li>Jboss Business Central 7.73.0.Final <a href="https://download.jboss.org/jbpm/release/7.73.0.Final/jbpm-server-7.73.0.Final-dist.zip" target="_blank" rel="noopener noreffer">download here</a></li>
+</ul>
+<h3 id="kie-server">Kie Server</h3>
+<p>First thing, we need add dependency <code>pom.xml</code> like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-data-jpa<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.kie<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>kie-server-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>7.73.0.Final<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.osgi<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>osgi.core<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>8.0.0<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.jbpm<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>jbpm-workitems-core<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>7.73.0.Final<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>1.18.24<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.h2database<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>h2<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Modify the <code>application.properties</code> to like this.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-env" data-lang="env"><span class="line"><span class="cl">server.port<span class="o">=</span><span class="m">8081</span>
+</span></span><span class="line"><span class="cl">spring.application.name<span class="o">=</span>workflow
+</span></span><span class="line"><span class="cl">server.servlet.context-path<span class="o">=</span>/api/<span class="si">${</span><span class="nv">spring</span><span class="p">.application.name</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cxf.path<span class="o">=</span>/rest
+</span></span><span class="line"><span class="cl">jbpm.container.alias<span class="o">=</span>workitem-registry
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">spring.datasource.url<span class="o">=</span>jdbc:h2:mem:testdb<span class="p">;</span><span class="nv">DB_CLOSE_DELAY</span><span class="o">=</span>-1<span class="p">;</span><span class="nv">DB_CLOSE_ON_EXIT</span><span class="o">=</span>false<span class="p">;</span><span class="nv">MODE</span><span class="o">=</span>MYSQL
+</span></span><span class="line"><span class="cl">spring.datasource.driverClassName<span class="o">=</span>org.h2.Driver
+</span></span><span class="line"><span class="cl">spring.datasource.username<span class="o">=</span>sa
+</span></span><span class="line"><span class="cl">spring.datasource.password<span class="o">=</span>password
+</span></span><span class="line"><span class="cl">spring.jpa.database-platform<span class="o">=</span>org.hibernate.dialect.H2Dialect
+</span></span><span class="line"><span class="cl">spring.jpa.hibernate.ddl-auto<span class="o">=</span>update
+</span></span><span class="line"><span class="cl">spring.jpa.properties.hibernate.hbm2ddl.auto<span class="o">=</span>update
+</span></span><span class="line"><span class="cl">spring.jpa.hibernate.naming.physical-strategy<span class="o">=</span>org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kieserver.serverId<span class="o">=</span>workitem-service-kie-server
+</span></span><span class="line"><span class="cl">kieserver.serverName<span class="o">=</span>workitem-service-kie-server
+</span></span><span class="line"><span class="cl">kieserver.location<span class="o">=</span>http://localhost:8081<span class="si">${</span><span class="nv">server</span><span class="p">.servlet.context-path</span><span class="si">}</span>/rest/server
+</span></span><span class="line"><span class="cl">kieserver.controllers<span class="o">=</span>http://localhost:8080/business-central/rest/controller
+</span></span><span class="line"><span class="cl">kieserver.drools.enabled<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">kieserver.dmn.enabled<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">kieserver.jbpm.enabled<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">kieserver.jbpmui.enabled<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">kieserver.casemgmt.enabled<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">jbpm.executor.enabled<span class="o">=</span><span class="nb">false</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Since <code>kie-server-spring-boot-starter</code> package is included with spring security, we need to by pass all request. Create <code>CustomSecurityConfig.java</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Order</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@EnableWebSecurity</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CustomSecurityConfig</span> <span class="kd">extends</span> <span class="n">WebSecurityConfigurerAdapter</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="n">HttpSecurity</span> <span class="n">http</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">http</span><span class="o">.</span><span class="na">csrf</span><span class="o">().</span><span class="na">disable</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">authorizeRequests</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">anyRequest</span><span class="o">().</span><span class="na">permitAll</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Yeah, of course we also need pojo class <code>WorkflowDto.java</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Builder</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@NoArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@AllArgsConstructor</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">WorkflowDto</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">status</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">message</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">ProcessInstanceDesc</span> <span class="n">processInstance</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We will create 2 work item handler which is will be executed from <code>business-central</code>.</p>
+<p><strong>FirstWorkItemHandler</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Component</span><span class="o">(</span><span class="s">&#34;FirstWorkItemHandler&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstWorkItemHandler</span> <span class="kd">implements</span> <span class="n">WorkItemHandler</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">executeWorkItem</span><span class="o">(</span><span class="n">WorkItem</span> <span class="n">workItem</span><span class="o">,</span> <span class="n">WorkItemManager</span> <span class="n">workItemManager</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Executing work item = [FirstWorkItemHandler]&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">workItemManager</span><span class="o">.</span><span class="na">completeWorkItem</span><span class="o">(</span><span class="n">workItem</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="kc">null</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">abortWorkItem</span><span class="o">(</span><span class="n">WorkItem</span> <span class="n">workItem</span><span class="o">,</span> <span class="n">WorkItemManager</span> <span class="n">workItemManager</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Aborting work item = [FirstWorkItemHandler]&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">workItemManager</span><span class="o">.</span><span class="na">abortWorkItem</span><span class="o">(</span><span class="n">workItem</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>and <strong>SecondWorkItemHandler</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Component</span><span class="o">(</span><span class="s">&#34;SecondWorkItemHandler&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SecondWorkItemHandler</span> <span class="kd">implements</span> <span class="n">WorkItemHandler</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">executeWorkItem</span><span class="o">(</span><span class="n">WorkItem</span> <span class="n">workItem</span><span class="o">,</span> <span class="n">WorkItemManager</span> <span class="n">workItemManager</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Executing work item = [SecondWorkItemHandler]&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">workItemManager</span><span class="o">.</span><span class="na">completeWorkItem</span><span class="o">(</span><span class="n">workItem</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="kc">null</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">abortWorkItem</span><span class="o">(</span><span class="n">WorkItem</span> <span class="n">workItem</span><span class="o">,</span> <span class="n">WorkItemManager</span> <span class="n">workItemManager</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Aborting work item = [SecondWorkItemHandler]&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">workItemManager</span><span class="o">.</span><span class="na">abortWorkItem</span><span class="o">(</span><span class="n">workItem</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>For test api, we will create the controller to trigger workflow.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@RestController</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/process&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">WorkflowController</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">ProcessService</span> <span class="n">processService</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">ContainerAliasResolver</span> <span class="n">containerAliasResolver</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">RuntimeDataService</span> <span class="n">runtimeDataService</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;${jbpm.container.alias}&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">alias</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">WorkflowController</span><span class="o">(</span><span class="n">ProcessService</span> <span class="n">processService</span><span class="o">,</span> <span class="n">ContainerAliasResolver</span> <span class="n">containerAliasResolver</span><span class="o">,</span> <span class="n">RuntimeDataService</span> <span class="n">runtimeDataService</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">processService</span> <span class="o">=</span> <span class="n">processService</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">containerAliasResolver</span> <span class="o">=</span> <span class="n">containerAliasResolver</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">runtimeDataService</span> <span class="o">=</span> <span class="n">runtimeDataService</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/{processId}/execute&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">WorkflowDto</span><span class="o">&gt;</span> <span class="nf">executeWorkflow</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="n">String</span> <span class="n">processId</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;REST execute workflow&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">containerId</span> <span class="o">=</span> <span class="n">containerAliasResolver</span><span class="o">.</span><span class="na">latest</span><span class="o">(</span><span class="n">alias</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;Create process instance :: [{} | {}]&#34;</span><span class="o">,</span> <span class="n">containerId</span><span class="o">,</span> <span class="n">processId</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Long</span> <span class="n">processInstanceId</span> <span class="o">=</span> <span class="n">processService</span><span class="o">.</span><span class="na">startProcess</span><span class="o">(</span><span class="n">containerId</span><span class="o">,</span> <span class="n">processId</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ProcessInstanceDesc</span> <span class="n">processInstance</span> <span class="o">=</span> <span class="n">runtimeDataService</span><span class="o">.</span><span class="na">getProcessInstanceById</span><span class="o">(</span><span class="n">processInstanceId</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ResponseEntity</span><span class="o">.</span><span class="na">ok</span><span class="o">(</span><span class="n">WorkflowDto</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                        <span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="s">&#34;00&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="o">.</span><span class="na">message</span><span class="o">(</span><span class="s">&#34;Success&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="o">.</span><span class="na">processInstance</span><span class="o">(</span><span class="n">processInstance</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="business-process-management-bpm">Business Process Management (BPM)</h3>
+<p>In this section we will create custom <code>WorkItemHanler</code> based on our project before, which is <code>FirstWorkItemHandler</code> and <code>SecondWorkItemHandler</code>. First, we need initialize project as maven project with structure like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── src
+</span></span><span class="line"><span class="cl">│   └── main/
+</span></span><span class="line"><span class="cl">│   ├   ├── reources/
+</span></span><span class="line"><span class="cl">│   ├   ├   └── com/
+</span></span><span class="line"><span class="cl">│   └   ├   ├   └── piinalpin/
+</span></span><span class="line"><span class="cl">│   ├   ├   ├   ├   └── rnd/
+</span></span><span class="line"><span class="cl">│   ├   ├   ├   ├   ├   └── general.wid
+</span></span><span class="line"><span class="cl">│   ├   ├   ├   ├   ├   └── hello-svg.svg
+</span></span><span class="line"><span class="cl">│   └── └── └── └── └── └── hello.bpmn
+</span></span><span class="line"><span class="cl">│   ├   ├   └── META-INF/
+</span></span><span class="line"><span class="cl">│   ├   ├   ├   └── kie-deployment-descriptor.xml 
+</span></span><span class="line"><span class="cl">│   └── └── └── └── kmodule.xml
+</span></span><span class="line"><span class="cl">└── target/
+</span></span><span class="line"><span class="cl">└── pom.xml
+</span></span><span class="line"><span class="cl">└── settings.xml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Create <code>pom.xml</code> file below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>com.piinalpin.rnd<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>workitem-registry<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;name&gt;</span>${project.artifactId}<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;description&gt;</span>Demo project for KJar<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;packaging&gt;</span>kjar<span class="nt">&lt;/packaging&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.kie<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>kie-api<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;version&gt;</span>7.73.0.Final<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;groupId&gt;</span>org.kie<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;artifactId&gt;</span>kie-internal<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;version&gt;</span>7.73.0.Final<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;distributionManagement&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;repository&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;id&gt;</span>jbpm-workbench-repo<span class="nt">&lt;/id&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;name&gt;</span>JBPM Workbench Repo<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;url&gt;</span>http://localhost:8080/business-central/maven2/<span class="nt">&lt;/url&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/repository&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/distributionManagement&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;build&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;plugins&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>org.kie<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;artifactId&gt;</span>kie-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;version&gt;</span>7.73.0.Final<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;extensions&gt;</span>true<span class="nt">&lt;/extensions&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/plugin&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nt">&lt;/plugins&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/build&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/project&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Create <code>settings.xml</code> to store the credential from jbpm server to deploy our workflow.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;settings</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/SETTINGS/1.1.0&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;servers&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;server&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;id&gt;</span>jbpm-workbench-repo<span class="nt">&lt;/id&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;username&gt;</span>wbadmin<span class="nt">&lt;/username&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;password&gt;</span>wbadmin<span class="nt">&lt;/password&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/server&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servers&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/settings&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And we need define the <strong>Work Item Definition</strong> named <code>WID</code> file under <code>src/main/resources</code> directory.</p>
+<p>Create <code>general.wid</code>, <strong>name must be same with work item java class</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[
+</span></span><span class="line"><span class="cl">    [
+</span></span><span class="line"><span class="cl">        &#34;name&#34; : &#34;FirstWorkItemHandler&#34;,  
+</span></span><span class="line"><span class="cl">        &#34;displayName&#34; : &#34;Validate First Work Item&#34;, 
+</span></span><span class="line"><span class="cl">        &#34;category&#34; : &#34;General&#34;,
+</span></span><span class="line"><span class="cl">        &#34;icon&#34; : &#34;defaultservicenodeicon.png&#34;,
+</span></span><span class="line"><span class="cl">    ],
+</span></span><span class="line"><span class="cl">    [
+</span></span><span class="line"><span class="cl">        &#34;name&#34; : &#34;SecondWorkItemHandler&#34;,  
+</span></span><span class="line"><span class="cl">        &#34;displayName&#34; : &#34;Process Second Work Item&#34;, 
+</span></span><span class="line"><span class="cl">        &#34;category&#34; : &#34;General&#34;,
+</span></span><span class="line"><span class="cl">        &#34;icon&#34; : &#34;defaultservicenodeicon.png&#34;,
+</span></span><span class="line"><span class="cl">    ],
+</span></span><span class="line"><span class="cl">]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Create <code>kmodule.xml</code> under <code>src/main/resources/META-INF</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;kmodule</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.drools.org/xsd/kmodule&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span><span class="nt">/&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Create <code>kie-deployment-descriptor.xml</code> under <code>src/main/resources/META-INF</code>. <strong>Note:</strong> <code>identifier</code> and <code>name</code> must be same with work item handler on java class.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;deployment-descriptor</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&#34;&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;runtime-strategy&gt;</span>PER_PROCESS_INSTANCE<span class="nt">&lt;/runtime-strategy&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;work-item-handlers&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;work-item-handler&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;resolver&gt;</span>mvel<span class="nt">&lt;/resolver&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;identifier&gt;</span>new com.piinalpin.rnd.workitemservice.handler.FirstWorkItemHandler()<span class="nt">&lt;/identifier&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;parameters/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;name&gt;</span>FirstWorkItemHandler<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/work-item-handler&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;work-item-handler&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;resolver&gt;</span>mvel<span class="nt">&lt;/resolver&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;identifier&gt;</span>new com.piinalpin.rnd.workitemservice.handler.SecondWorkItemHandler()<span class="nt">&lt;/identifier&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;parameters/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;name&gt;</span>SecondWorkItemHandler<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/work-item-handler&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/work-item-handlers&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/deployment-descriptor&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, we can draw the workflow. Use <code>BPMN Editor</code> from VSCode extension, and draw using <code>hello.bpmn</code> workflow like below.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/bpmn.png"
+        data-srcset="/images/bpmn.png, /images/bpmn.png 1.5x, /images/bpmn.png 2x"
+        data-sizes="auto"
+        alt="/images/bpmn.png"
+        title="BPMN Editor" /></p>
+<p>And configure BPMN properties like below. Then find <code>svg</code> icon on the top right to generate <code>hello-svg.svg</code> file.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/bpmn-configure.png"
+        data-srcset="/images/bpmn-configure.png, /images/bpmn-configure.png 1.5x, /images/bpmn-configure.png 2x"
+        data-sizes="auto"
+        alt="/images/bpmn-configure.png"
+        title="BPMN Conriguration Properties" /></p>
+<p>Run the jbpm server, if use windows can double click <code>./bin/standalone.bat</code> or if use unix system can execute the <code>./bin/standalone.sh</code> file.</p>
+<p>After JBPM is running, we can deploy our kJar module.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mvn clean package <span class="o">&amp;&amp;</span> mvn deploy --settings<span class="o">=</span>settings.xml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="run-application">Run Application</h3>
+<p>We can run our <code>kie-server</code> application by execute <code>mvn spring:boot run</code>. Then we add deployment unit our kJar into our application.</p>
+<p>Go to <code>http://localhost:8080/business-central/kie-wb.jsp</code> and login with the default user from jbpm server.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">user: wbadmin
+</span></span><span class="line"><span class="cl">password: wbadmin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br/>
+<p>Will be redirect to main page and choose <strong>Deploy</strong> menu. Choose our <code>kie-server</code> and add deployment unit.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/jbpm-dashboard.png"
+        data-srcset="/images/jbpm-dashboard.png, /images/jbpm-dashboard.png 1.5x, /images/jbpm-dashboard.png 2x"
+        data-sizes="auto"
+        alt="/images/jbpm-dashboard.png"
+        title="JBPM Main Page" /></p>
+<br/>
+<p>Find our latest version for kJar module.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/jbpm-deployment-unit.png"
+        data-srcset="/images/jbpm-deployment-unit.png, /images/jbpm-deployment-unit.png 1.5x, /images/jbpm-deployment-unit.png 2x"
+        data-sizes="auto"
+        alt="/images/jbpm-deployment-unit.png"
+        title="JBPM Deployment Unit" /></p>
+<p>Then we call trigger API from postman or can directly from browser on this url <code>http://localhost:8081/api/workflow/process/hello/execute</code>. And we will got this response.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;00&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;Success&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;processInstance&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;processId&#34;</span><span class="p">:</span> <span class="s2">&#34;hello&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;processName&#34;</span><span class="p">:</span> <span class="s2">&#34;hello&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;processVersion&#34;</span><span class="p">:</span> <span class="s2">&#34;1.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;deploymentId&#34;</span><span class="p">:</span> <span class="s2">&#34;com.piinalpin.rnd:workitem-registry:0.0.18-SNAPSHOT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;initiator&#34;</span><span class="p">:</span> <span class="s2">&#34;anonymousUser&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;dataTimeStamp&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-12-09T19:02:37.020+00:00&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;processInstanceDescription&#34;</span><span class="p">:</span> <span class="s2">&#34;Hello Process Instance&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;correlationKey&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;parentId&#34;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;slaDueDate&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;slaCompliance&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;activeTasks&#34;</span><span class="p">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And for log, we can see the <code>FirstWorkItemHandler</code> and <code>SecondWorkItemHandler</code> already executed.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2023-12-10 02:06:10.530  INFO 35284 --- [nio-8081-exec-3] c.p.r.w.controller.WorkflowController    : REST execute workflow
+</span></span><span class="line"><span class="cl">2023-12-10 02:06:10.531  INFO 35284 --- [nio-8081-exec-3] c.p.r.w.controller.WorkflowController    : Create process instance :: [com.piinalpin.rnd:workitem-registry:0.0.18-SNAPSHOT | hello]
+</span></span><span class="line"><span class="cl">2023-12-10 02:06:10.704  INFO 35284 --- [nio-8081-exec-3] c.p.r.w.handler.FirstWorkItemHandler     : Executing work item = [FirstWorkItemHandler]
+</span></span><span class="line"><span class="cl">2023-12-10 02:06:10.706  INFO 35284 --- [nio-8081-exec-3] c.p.r.w.handler.SecondWorkItemHandler    : Executing work item = [SecondWorkItemHandler]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="conclusion">Conclusion</h3>
+<p>This is how we can introduce the BPM system using java Spring Boot implementation - <strong>jBPM</strong>. This was an example to demonstrate how we can define workflow and understanding work item handler.</p>
+<p>The source code can be find on my <a href="https://github.com/piinalpin/spring-boot-jbpm" target="_blank" rel="noopener noreffer">GitHub</a>.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://www.baeldung.com/jbpm-java" target="_blank" rel="noopener noreffer">A Guide to jBPM with Java</a></li>
+<li><a href="https://www.mastertheboss.com/bpm/jbpm6/how-to-create-a-custom-workitem-handler-in-jbpm/" target="_blank" rel="noopener noreffer">How to create a custom WorkItem Handler in jBPM</a></li>
+<li><a href="https://github.com/fmarchioni/mastertheboss/tree/master/jbpm/custom-wih" target="_blank" rel="noopener noreffer">JBPM 7 using a Custom WorkItemHandler</a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-12-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2023/12/build-kie-server-on-spring-boot/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://piinalpin.com/2023/12/build-kie-server-on-spring-boot/" data-title="Build Kie Server on Spring Boot" data-via="piinalpin"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://piinalpin.com/2023/12/build-kie-server-on-spring-boot/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://piinalpin.com/2023/12/build-kie-server-on-spring-boot/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2023/11/make-terminal-powerfull-using-oh-my-posh/" class="prev" rel="prev" title="Make Terminal Powerfull Using Oh-My-Posh"><i class="fas fa-angle-left fa-fw"></i>Make Terminal Powerfull Using Oh-My-Posh</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
