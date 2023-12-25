@@ -1,22 +1,2 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Message Broker - Tag - PiinAlpin Official Blog</title>
-        <link>https://piinalpin.com/tags/message-broker/</link>
-        <description>Message Broker - Tag - PiinAlpin Official Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 23 Jul 2021 20:04:22 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/message-broker/" rel="self" type="application/rss+xml" /><item>
-    <title>Messaging on Kafka-CLI With Spring Boot</title>
-    <link>https://piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</link>
-    <pubDate>Fri, 23 Jul 2021 20:04:22 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</guid>
-    <description><![CDATA[Overview Kafka is a distributed system consisting of servers and clients that communicate via a high-performance TCP network protocol. It can be deployed on bare-metal hardware, virtual machines, and containers in on-premise as well as cloud environments.
-Servers: Kafka is run as a cluster of one or more servers that can span multiple datacenters or cloud regions. Some of these servers form the storage layer, called the brokers. Other servers run Kafka Connect to continuously import and export data as event streams to integrate Kafka with your existing systems such as relational databases as well as other Kafka clusters.]]></description>
-</item><item>
-    <title>How Messages Broker Work Using RabbitMQ</title>
-    <link>https://piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</link>
-    <pubDate>Sun, 28 Mar 2021 11:20:37 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</guid>
-    <description><![CDATA[Understanding message broker works using RabbitMQ and Spring Boot with microservice architecture.]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Message Broker - Tag - PiinAlpin Official Blog</title><link>https://piinalpin.com/tags/message-broker/</link><description>Message Broker - Tag - PiinAlpin Official Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 23 Jul 2021 20:04:22 +0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/message-broker/" rel="self" type="application/rss+xml"/><item><title>Messaging on Kafka-CLI With Spring Boot</title><link>https://piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</link><pubDate>Fri, 23 Jul 2021 20:04:22 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2021/07/messaging-on-kafka-with-spring-boot/</guid><description>Overview Kafka is a distributed system consisting of servers and clients that communicate via a high-performance TCP network protocol. It can be deployed on bare-metal hardware, virtual machines, and containers in on-premise as well as cloud environments.
+Servers: Kafka is run as a cluster of one or more servers that can span multiple datacenters or cloud regions. Some of these servers form the storage layer, called the brokers. Other servers run Kafka Connect to continuously import and export data as event streams to integrate Kafka with your existing systems such as relational databases as well as other Kafka clusters.</description></item><item><title>How Messages Broker Work Using RabbitMQ</title><link>https://piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</link><pubDate>Sun, 28 Mar 2021 11:20:37 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2021/03/how-messages-broker-work-using-rabbitmq/</guid><description>Understanding message broker works using RabbitMQ and Spring Boot with microservice architecture.</description></item></channel></rss>

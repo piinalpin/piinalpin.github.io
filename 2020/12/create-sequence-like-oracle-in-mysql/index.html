@@ -1,364 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Create Sequence Like Oracle in MySQL - PiinAlpin Official Blog</title><meta name="Description" content="How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"><meta property="og:title" content="Create Sequence Like Oracle in MySQL" />
-<meta property="og:description" content="How to implement a custom sequence like Oracle in MySQL using a stored function and triggers" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-12-04T15:49:11+07:00" />
-<meta property="article:modified_time" content="2020-12-04T15:49:11+07:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Create Sequence Like Oracle in MySQL"/>
-<meta name="twitter:description" content="How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"/>
-<meta name="application-name" content="PiinAlpin Official Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin Official Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" /><link rel="prev" href="https://piinalpin.com/2020/11/simple-rest-golang/" /><link rel="next" href="https://piinalpin.com/2020/12/spring-batch-example/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Create Sequence Like Oracle in MySQL",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/"
-        },"image": ["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Sequence, SQL, MySQL, Nextval, Sequence MySQL, Custom Sequence","wordcount":  338 ,
-        "url": "https:\/\/piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/","datePublished": "2020-12-04T15:49:11+07:00","dateModified": "2020-12-04T15:49:11+07:00","publisher": {
-            "@type": "Organization",
-            "name": "Alvinditya","logo": "https:\/\/piinalpin.com\/images\/favicon.png"},"author": {
-                "@type": "Person",
-                "name": "Alvinditya Saputra"
-            },"description": "How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"
-    }
-    </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='fa fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='fa fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Create Sequence Like Oracle in MySQL</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-04">2020-12-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;338 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#step-to-create-a-custom-sequence-like-oracle-in-mysql">Step to create a custom sequence like Oracle in MySQL</a></li>
-        <li><a href="#thankyou">Thankyou</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><h3 id="prerequisites">Prerequisites</h3>
-<ul>
-<li><a href="https://www.mysql.com/" target="_blank" rel="noopener noreffer">MySQL</a></li>
-</ul>
-<h3 id="step-to-create-a-custom-sequence-like-oracle-in-mysql">Step to create a custom sequence like Oracle in MySQL</h3>
-<ol>
-<li>Set global <code>log_bin_trust_function_creator</code> to 1</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="kt">SET</span><span class="w"> </span><span class="n">GLOBAL</span><span class="w"> </span><span class="n">log_bin_trust_function_creators</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="2">
-<li>Create a sequence table</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="nf">SEQUENCE</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">UNSIGNED</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="3">
-<li>Drop function <code>nextval()</code> if exists on your database</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">DROP</span><span class="w"> </span><span class="n">FUNCTION</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">nextval</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="4">
-<li>Create a custom sequence call <code>nextval('sequence_name')</code>, and will returns the next value. If name of sequence does not exists, it will created automatically by initial value 1.</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">DELIMITER</span><span class="w"> </span><span class="o">//</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="n">FUNCTION</span><span class="w"> </span><span class="nf">nextval</span><span class="w"> </span><span class="p">(</span><span class="n">sequence_name</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">RETURNS</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">UNSIGNED</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">BEGIN</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">SEQUENCE</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">sequence_name</span><span class="p">,</span><span class="w"> </span><span class="nf">LAST_INSERT_ID</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ON</span><span class="w"> </span><span class="n">DUPLICATE</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="nf">LAST_INSERT_ID</span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">RETURN</span><span class="w"> </span><span class="nf">LAST_INSERT_ID</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">END</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="5">
-<li>Changing back delimiter to semicolon</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">DELIMITER</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="6">
-<li>Create table to test a custom sequence, default id defined by zero (0)</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="nf">HUMAN</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">UNSIGNED</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">name</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">));</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="7">
-<li>Drop nextval trigger if exists.</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">DROP</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">nextval</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="8">
-<li>Create a custom trigger for <code>nextval()</code> function
-The trigger only generated a new id if 0 is inserted. So, if you create a new table and field id with default value by zero (0) that makes it implicit.</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">nextval_human</span><span class="w"> </span><span class="k">BEFORE</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">HUMAN</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FOR</span><span class="w"> </span><span class="k">EACH</span><span class="w"> </span><span class="n">ROW</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="k">IF</span><span class="p">(</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nf">nextval</span><span class="p">(</span><span class="s1">&#39;ID_HUMAN_SEQ&#39;</span><span class="p">),</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="9">
-<li>Let&rsquo;s try a sample data on HUMAN table</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">HUMAN</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Maverick&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Al Sah-Him&#39;</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="10">
-<li>Inserted data look likes</li>
-</ol>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/human_data.png"
-        data-srcset="/images/human_data.png, /images/human_data.png 1.5x, /images/human_data.png 2x"
-        data-sizes="auto"
-        alt="/images/human_data.png"
-        title="HUMAN Data" /></p>
-<ol start="11">
-<li>Let&rsquo;s try another table <code>BOOK</code> to test a sequence</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="nf">BOOK</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">UNSIGNED</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">name</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">));</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="12">
-<li>Create <code>ID_BOOK_SEQ</code> trigger to a new sequence</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">nextval_book</span><span class="w"> </span><span class="k">BEFORE</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">BOOK</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FOR</span><span class="w"> </span><span class="k">EACH</span><span class="w"> </span><span class="n">ROW</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="k">IF</span><span class="p">(</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nf">nextval</span><span class="p">(</span><span class="s1">&#39;ID_BOOK_SEQ&#39;</span><span class="p">),</span><span class="n">new</span><span class="p">.</span><span class="n">id</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="13">
-<li>Insert data into <code>BOOK</code> table</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">BOOK</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Book 1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BK-01&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Book 2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BK-02&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Book 3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BK-03&#39;</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="14">
-<li>Show the data</li>
-</ol>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/book_data.png"
-        data-srcset="/images/book_data.png, /images/book_data.png 1.5x, /images/book_data.png 2x"
-        data-sizes="auto"
-        alt="/images/book_data.png"
-        title="BOOK Data" /></p>
-<ol start="15">
-<li>Let&rsquo;s check generated custom sequence</li>
-</ol>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/custom_sequence.png"
-        data-srcset="/images/custom_sequence.png, /images/custom_sequence.png 1.5x, /images/custom_sequence.png 2x"
-        data-sizes="auto"
-        alt="/images/custom_sequence.png"
-        title="Custom Sequence" /></p>
-<h3 id="thankyou">Thankyou</h3>
-<p><a href="https://openquery.com.au/blog/implementing-sequences-using-a-stored-function-and-triggers" target="_blank" rel="noopener noreffer">Open Query</a> - Implementing Sequences using a Stored Function and Triggers</p></div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2020-12-04</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/2020/12/create-sequence-like-oracle-in-mysql/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" data-title="Create Sequence Like Oracle in MySQL" data-via="piinalpin" data-hashtags="Sequence,SQL,MySQL,Nextval,Sequence MySQL,Custom Sequence"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/" data-hashtag="Sequence"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/"><i class="fab fa-linkedin fa-fw"></i></a></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/sequence/">Sequence</a>,&nbsp;<a href="/tags/sql/">SQL</a>,&nbsp;<a href="/tags/mysql/">MySQL</a>,&nbsp;<a href="/tags/nextval/">Nextval</a>,&nbsp;<a href="/tags/sequence-mysql/">Sequence MySQL</a>,&nbsp;<a href="/tags/custom-sequence/">Custom Sequence</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/2020/11/simple-rest-golang/" class="prev" rel="prev" title="Simple REST Application using Go/Golang"><i class="fas fa-angle-left fa-fw"></i>Simple REST Application using Go/Golang</a>
-            <a href="/2020/12/spring-batch-example/" class="next" rel="next" title="Simple Spring Batch with Quartz Scheduling">Simple Spring Batch with Quartz Scheduling<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=X-UA-Compatible content="IE=edge, chrome=1"><title>Create Sequence Like Oracle in MySQL - PiinAlpin Official Blog</title><meta name=Description content="How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"><meta property="og:title" content="Create Sequence Like Oracle in MySQL">
+<meta property="og:description" content="How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"><meta property="og:type" content="article"><meta property="og:url" content="https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-12-04T15:49:11+07:00"><meta property="article:modified_time" content="2020-12-04T15:49:11+07:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Create Sequence Like Oracle in MySQL"><meta name=twitter:description content="How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"><meta name=twitter:site content="@piinalpin"><meta name=application-name content="PiinAlpin Official Blog"><meta name=apple-mobile-web-app-title content="PiinAlpin Official Blog"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=favicon.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/><link rel=prev href=https://piinalpin.com/2020/11/simple-rest-golang/><link rel=next href=https://piinalpin.com/2020/12/spring-batch-example/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Create Sequence Like Oracle in MySQL","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/"},"image":["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"Sequence, SQL, MySQL, Nextval, Sequence MySQL, Custom Sequence","wordcount":338,"url":"https:\/\/piinalpin.com\/2020\/12\/create-sequence-like-oracle-in-mysql\/","datePublished":"2020-12-04T15:49:11+07:00","dateModified":"2020-12-04T15:49:11+07:00","publisher":{"@type":"Organization","name":"Alvinditya","logo":"https:\/\/piinalpin.com\/images\/favicon.png"},"author":{"@type":"Person","name":"Alvinditya Saputra"},"description":"How to implement a custom sequence like Oracle in MySQL using a stored function and triggers"}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"dark"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"dark"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="PiinAlpin Official Blog"><span class=header-title-pre><i class='fa fa-code fa-fw'></i> </span><span id=id-1 class=typeit></span></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About </a><a class=menu-item href=https://github.com/piinalpin title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="PiinAlpin Official Blog"><span class=header-title-pre><i class='fa fa-code fa-fw'></i> </span><span id=id-2 class=typeit></span></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About</a><a class=menu-item href=https://github.com/piinalpin title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Create Sequence Like Oracle in MySQL</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://piinalpin.com/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class=post-category>included in <a href=/categories/documentation/><i class="far fa-folder fa-fw"></i>Documentation</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-12-04>2020-12-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;338 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><ul><li><a href=#prerequisites>Prerequisites</a></li><li><a href=#step-to-create-a-custom-sequence-like-oracle-in-mysql>Step to create a custom sequence like Oracle in MySQL</a></li><li><a href=#thankyou>Thankyou</a></li></ul></li></ul></nav></div></div><div class=content id=content><h3 id=prerequisites>Prerequisites</h3><ul><li><a href=https://www.mysql.com/ target=_blank rel="noopener noreffer">MySQL</a></li></ul><h3 id=step-to-create-a-custom-sequence-like-oracle-in-mysql>Step to create a custom sequence like Oracle in MySQL</h3><ol><li>Set global <code>log_bin_trust_function_creator</code> to 1</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=kt>SET</span><span class=w> </span><span class=n>GLOBAL</span><span class=w> </span><span class=n>log_bin_trust_function_creators</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>1</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=2><li>Create a sequence table</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=k>CREATE</span><span class=w> </span><span class=k>TABLE</span><span class=w> </span><span class=k>IF</span><span class=w> </span><span class=k>NOT</span><span class=w> </span><span class=k>EXISTS</span><span class=w> </span><span class=nf>SEQUENCE</span><span class=w> </span><span class=p>(</span><span class=n>name</span><span class=w> </span><span class=kt>VARCHAR</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span><span class=w> </span><span class=k>PRIMARY</span><span class=w> </span><span class=k>KEY</span><span class=p>,</span><span class=w> </span><span class=n>value</span><span class=w> </span><span class=kt>INT</span><span class=w> </span><span class=k>UNSIGNED</span><span class=p>);</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=3><li>Drop function <code>nextval()</code> if exists on your database</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=k>DROP</span><span class=w> </span><span class=n>FUNCTION</span><span class=w> </span><span class=k>IF</span><span class=w> </span><span class=k>EXISTS</span><span class=w> </span><span class=n>nextval</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=4><li>Create a custom sequence call <code>nextval('sequence_name')</code>, and will returns the next value. If name of sequence does not exists, it will created automatically by initial value 1.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=n>DELIMITER</span><span class=w> </span><span class=o>//</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>CREATE</span><span class=w> </span><span class=n>FUNCTION</span><span class=w> </span><span class=nf>nextval</span><span class=w> </span><span class=p>(</span><span class=n>sequence_name</span><span class=w> </span><span class=kt>VARCHAR</span><span class=p>(</span><span class=mi>255</span><span class=p>))</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>RETURNS</span><span class=w> </span><span class=kt>INT</span><span class=w> </span><span class=k>UNSIGNED</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>BEGIN</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>INSERT</span><span class=w> </span><span class=k>INTO</span><span class=w> </span><span class=n>SEQUENCE</span><span class=w> </span><span class=k>VALUES</span><span class=w> </span><span class=p>(</span><span class=n>sequence_name</span><span class=p>,</span><span class=w> </span><span class=nf>LAST_INSERT_ID</span><span class=p>(</span><span class=mi>1</span><span class=p>))</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>ON</span><span class=w> </span><span class=n>DUPLICATE</span><span class=w> </span><span class=k>KEY</span><span class=w> </span><span class=k>UPDATE</span><span class=w> </span><span class=n>value</span><span class=o>=</span><span class=nf>LAST_INSERT_ID</span><span class=p>(</span><span class=n>value</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>RETURN</span><span class=w> </span><span class=nf>LAST_INSERT_ID</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>END</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=o>//</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=5><li>Changing back delimiter to semicolon</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=n>DELIMITER</span><span class=w> </span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=6><li>Create table to test a custom sequence, default id defined by zero (0)</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=k>CREATE</span><span class=w> </span><span class=k>TABLE</span><span class=w> </span><span class=k>IF</span><span class=w> </span><span class=k>NOT</span><span class=w> </span><span class=k>EXISTS</span><span class=w> </span><span class=nf>HUMAN</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>(</span><span class=n>id</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=k>UNSIGNED</span><span class=w> </span><span class=k>NOT</span><span class=w> </span><span class=no>NULL</span><span class=w> </span><span class=k>PRIMARY</span><span class=w> </span><span class=k>KEY</span><span class=w> </span><span class=k>DEFAULT</span><span class=w> </span><span class=mi>0</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>name</span><span class=w> </span><span class=kt>VARCHAR</span><span class=p>(</span><span class=mi>50</span><span class=p>));</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=7><li>Drop nextval trigger if exists.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=k>DROP</span><span class=w> </span><span class=k>TRIGGER</span><span class=w> </span><span class=k>IF</span><span class=w> </span><span class=k>EXISTS</span><span class=w> </span><span class=n>nextval</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=8><li>Create a custom trigger for <code>nextval()</code> function
+The trigger only generated a new id if 0 is inserted. So, if you create a new table and field id with default value by zero (0) that makes it implicit.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=k>CREATE</span><span class=w> </span><span class=k>TRIGGER</span><span class=w> </span><span class=n>nextval_human</span><span class=w> </span><span class=k>BEFORE</span><span class=w> </span><span class=k>INSERT</span><span class=w> </span><span class=k>ON</span><span class=w> </span><span class=n>HUMAN</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>FOR</span><span class=w> </span><span class=k>EACH</span><span class=w> </span><span class=n>ROW</span><span class=w> </span><span class=kt>SET</span><span class=w> </span><span class=n>new</span><span class=p>.</span><span class=n>id</span><span class=o>=</span><span class=k>IF</span><span class=p>(</span><span class=n>new</span><span class=p>.</span><span class=n>id</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span><span class=nf>nextval</span><span class=p>(</span><span class=s1>&#39;ID_HUMAN_SEQ&#39;</span><span class=p>),</span><span class=n>new</span><span class=p>.</span><span class=n>id</span><span class=p>);</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=9><li>Let&rsquo;s try a sample data on HUMAN table</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=k>INSERT</span><span class=w> </span><span class=k>INTO</span><span class=w> </span><span class=nf>HUMAN</span><span class=w> </span><span class=p>(</span><span class=n>name</span><span class=p>)</span><span class=w> </span><span class=k>VALUES</span><span class=w> </span><span class=p>(</span><span class=s1>&#39;Maverick&#39;</span><span class=p>),</span><span class=w> </span><span class=p>(</span><span class=s1>&#39;John Doe&#39;</span><span class=p>),</span><span class=w> </span><span class=p>(</span><span class=s1>&#39;Al Sah-Him&#39;</span><span class=p>);</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=10><li>Inserted data look likes</li></ol><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/human_data.png data-srcset="/images/human_data.png, /images/human_data.png 1.5x, /images/human_data.png 2x" data-sizes=auto alt=/images/human_data.png title="HUMAN Data"></p><ol start=11><li>Let&rsquo;s try another table <code>BOOK</code> to test a sequence</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=k>CREATE</span><span class=w> </span><span class=k>TABLE</span><span class=w> </span><span class=k>IF</span><span class=w> </span><span class=k>NOT</span><span class=w> </span><span class=k>EXISTS</span><span class=w> </span><span class=nf>BOOK</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>(</span><span class=n>id</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=k>UNSIGNED</span><span class=w> </span><span class=k>NOT</span><span class=w> </span><span class=no>NULL</span><span class=w> </span><span class=k>PRIMARY</span><span class=w> </span><span class=k>KEY</span><span class=w> </span><span class=k>DEFAULT</span><span class=w> </span><span class=mi>0</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>name</span><span class=w> </span><span class=kt>VARCHAR</span><span class=p>(</span><span class=mi>50</span><span class=p>),</span><span class=w> </span><span class=n>code</span><span class=w> </span><span class=kt>VARCHAR</span><span class=p>(</span><span class=mi>50</span><span class=p>));</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=12><li>Create <code>ID_BOOK_SEQ</code> trigger to a new sequence</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=k>CREATE</span><span class=w> </span><span class=k>TRIGGER</span><span class=w> </span><span class=n>nextval_book</span><span class=w> </span><span class=k>BEFORE</span><span class=w> </span><span class=k>INSERT</span><span class=w> </span><span class=k>ON</span><span class=w> </span><span class=n>BOOK</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>FOR</span><span class=w> </span><span class=k>EACH</span><span class=w> </span><span class=n>ROW</span><span class=w> </span><span class=kt>SET</span><span class=w> </span><span class=n>new</span><span class=p>.</span><span class=n>id</span><span class=o>=</span><span class=k>IF</span><span class=p>(</span><span class=n>new</span><span class=p>.</span><span class=n>id</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span><span class=nf>nextval</span><span class=p>(</span><span class=s1>&#39;ID_BOOK_SEQ&#39;</span><span class=p>),</span><span class=n>new</span><span class=p>.</span><span class=n>id</span><span class=p>);</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=13><li>Insert data into <code>BOOK</code> table</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=k>INSERT</span><span class=w> </span><span class=k>INTO</span><span class=w> </span><span class=nf>BOOK</span><span class=w> </span><span class=p>(</span><span class=n>name</span><span class=p>,</span><span class=w> </span><span class=n>code</span><span class=p>)</span><span class=w> </span><span class=k>VALUES</span><span class=w> </span><span class=p>(</span><span class=s1>&#39;Book 1&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;BK-01&#39;</span><span class=p>),</span><span class=w> </span><span class=p>(</span><span class=s1>&#39;Book 2&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;BK-02&#39;</span><span class=p>),</span><span class=w> </span><span class=p>(</span><span class=s1>&#39;Book 3&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;BK-03&#39;</span><span class=p>);</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=14><li>Show the data</li></ol><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/book_data.png data-srcset="/images/book_data.png, /images/book_data.png 1.5x, /images/book_data.png 2x" data-sizes=auto alt=/images/book_data.png title="BOOK Data"></p><ol start=15><li>Let&rsquo;s check generated custom sequence</li></ol><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/custom_sequence.png data-srcset="/images/custom_sequence.png, /images/custom_sequence.png 1.5x, /images/custom_sequence.png 2x" data-sizes=auto alt=/images/custom_sequence.png title="Custom Sequence"></p><h3 id=thankyou>Thankyou</h3><p><a href=https://openquery.com.au/blog/implementing-sequences-using-a-stored-function-and-triggers target=_blank rel="noopener noreffer">Open Query</a> - Implementing Sequences using a Stored Function and Triggers</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-12-04</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/2020/12/create-sequence-like-oracle-in-mysql/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/ data-title="Create Sequence Like Oracle in MySQL" data-via=piinalpin data-hashtags="Sequence,SQL,MySQL,Nextval,Sequence MySQL,Custom Sequence"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/ data-hashtag=Sequence><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/><i class="fab fa-linkedin fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/sequence/>Sequence</a>,&nbsp;<a href=/tags/sql/>SQL</a>,&nbsp;<a href=/tags/mysql/>MySQL</a>,&nbsp;<a href=/tags/nextval/>Nextval</a>,&nbsp;<a href=/tags/sequence-mysql/>Sequence MySQL</a>,&nbsp;<a href=/tags/custom-sequence/>Custom Sequence</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/2020/11/simple-rest-golang/ class=prev rel=prev title="Simple REST Application using Go/Golang"><i class="fas fa-angle-left fa-fw"></i>Simple REST Application using Go/Golang</a>
+<a href=/2020/12/spring-batch-example/ class=next rel=next title="Simple Spring Batch with Quartz Scheduling">Simple Spring Batch with Quartz Scheduling<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Piinalpin</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2023</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://piinalpin.com/ target=_blank>Alvinditya Saputra</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:20},comment:{},data:{"id-1":"PiinAlpin","id-2":"PiinAlpin"},search:{algoliaAppID:"Z6ALHE0FJ2",algoliaIndex:"test-index",algoliaSearchKey:"7308da79f682ce9c1c5b0cf4c9eb9249",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"algolia"},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:0,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>

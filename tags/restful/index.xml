@@ -1,15 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>RestFul - Tag - PiinAlpin Official Blog</title>
-        <link>https://piinalpin.com/tags/restful/</link>
-        <description>RestFul - Tag - PiinAlpin Official Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Dec 2019 01:27:15 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/restful/" rel="self" type="application/rss+xml" /><item>
-    <title>Simple Build Flask Restful Based</title>
-    <link>https://piinalpin.com/2019/12/flask-rest-api/</link>
-    <pubDate>Tue, 24 Dec 2019 01:27:15 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2019/12/flask-rest-api/</guid>
-    <description><![CDATA[<h2 id="how-to-build">How To Build</h2>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>RestFul - Tag - PiinAlpin Official Blog</title><link>https://piinalpin.com/tags/restful/</link><description>RestFul - Tag - PiinAlpin Official Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Dec 2019 01:27:15 +0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/restful/" rel="self" type="application/rss+xml"/><item><title>Simple Build Flask Restful Based</title><link>https://piinalpin.com/2019/12/flask-rest-api/</link><pubDate>Tue, 24 Dec 2019 01:27:15 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2019/12/flask-rest-api/</guid><description><![CDATA[<h2 id="how-to-build">How To Build</h2>
 <p>Make sure you have installed Python 3 on your device</p>
 <h3 id="project-structure">Project structure</h3>
 <div class="highlight"><div class="chroma">
@@ -26,16 +15,16 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* flask-rest-api/
-</span></span><span class="line"><span class="cl">  |--- app/
-</span></span><span class="line"><span class="cl">  |    |--- module/
-</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |    |    |--- const.py
-</span></span><span class="line"><span class="cl">  |    |    |--- controller.py
-</span></span><span class="line"><span class="cl">  |    |    |--- models.py
-</span></span><span class="line"><span class="cl">  |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |--- venv/
-</span></span><span class="line"><span class="cl">  |--- run.py
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">*</span> <span class="n">flask</span><span class="o">-</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|---</span> <span class="n">app</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|---</span> <span class="n">module</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="n">__init__</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="k">const</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="n">controller</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="n">models</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|---</span> <span class="n">__init__</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|---</span> <span class="n">venv</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|---</span> <span class="n">run</span><span class="o">.</span><span class="n">py</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="step-to-create-flask-rest-api">Step to create flask rest api</h3>
@@ -364,17 +353,17 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* flask-rest-api/
-</span></span><span class="line"><span class="cl">  |--- app/
-</span></span><span class="line"><span class="cl">  |    |--- db/
-</span></span><span class="line"><span class="cl">  |    |--- module/
-</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |    |    |--- const.py
-</span></span><span class="line"><span class="cl">  |    |    |--- controller.py
-</span></span><span class="line"><span class="cl">  |    |    |--- models.py
-</span></span><span class="line"><span class="cl">  |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |--- venv/
-</span></span><span class="line"><span class="cl">  |--- run.py
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">*</span> <span class="n">flask</span><span class="o">-</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|---</span> <span class="n">app</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|---</span> <span class="n">db</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|---</span> <span class="n">module</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="n">__init__</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="k">const</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="n">controller</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="n">models</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|---</span> <span class="n">__init__</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|---</span> <span class="n">venv</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|---</span> <span class="n">run</span><span class="o">.</span><span class="n">py</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="16">
@@ -578,19 +567,19 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* flask-rest-api/
-</span></span><span class="line"><span class="cl">  |--- app/
-</span></span><span class="line"><span class="cl">  |    |--- db/
-</span></span><span class="line"><span class="cl">  |    |    |--- flask-api.db
-</span></span><span class="line"><span class="cl">  |    |--- module/
-</span></span><span class="line"><span class="cl">  |    |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |    |    |--- const.py
-</span></span><span class="line"><span class="cl">  |    |    |--- controller.py
-</span></span><span class="line"><span class="cl">  |    |    |--- models.py
-</span></span><span class="line"><span class="cl">  |    |--- __init__.py
-</span></span><span class="line"><span class="cl">  |--- migrations/
-</span></span><span class="line"><span class="cl">  |--- venv/
-</span></span><span class="line"><span class="cl">  |--- run.py
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">*</span> <span class="n">flask</span><span class="o">-</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|---</span> <span class="n">app</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|---</span> <span class="n">db</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="n">flask</span><span class="o">-</span><span class="n">api</span><span class="o">.</span><span class="n">db</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|---</span> <span class="n">module</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="n">__init__</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="k">const</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="n">controller</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|</span>    <span class="o">|---</span> <span class="n">models</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span>    <span class="o">|---</span> <span class="n">__init__</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|---</span> <span class="n">migrations</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|---</span> <span class="n">venv</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|---</span> <span class="n">run</span><span class="o">.</span><span class="n">py</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="want-to-demo-online">Want to demo online?</h3>
@@ -614,6 +603,4 @@
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; Clone : git clone https://github.com/piinalpin/flask-rest-api.git
 </span></span></code></pre></td></tr></table>
 </div>
-</div>]]></description>
-</item></channel>
-</rss>
+</div>]]></description></item></channel></rss>

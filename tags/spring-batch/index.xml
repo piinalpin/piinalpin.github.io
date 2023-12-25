@@ -1,14 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Spring Batch - Tag - PiinAlpin Official Blog</title>
-        <link>https://piinalpin.com/tags/spring-batch/</link>
-        <description>Spring Batch - Tag - PiinAlpin Official Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 08 Dec 2020 14:08:21 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/spring-batch/" rel="self" type="application/rss+xml" /><item>
-    <title>Simple Spring Batch with Quartz Scheduling</title>
-    <link>https://piinalpin.com/2020/12/spring-batch-example/</link>
-    <pubDate>Tue, 08 Dec 2020 14:08:21 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2020/12/spring-batch-example/</guid>
-    <description><![CDATA[How to create spring batch with quartz scheduling and MySQL database from scratch.]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Spring Batch - Tag - PiinAlpin Official Blog</title><link>https://piinalpin.com/tags/spring-batch/</link><description>Spring Batch - Tag - PiinAlpin Official Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 08 Dec 2020 14:08:21 +0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/spring-batch/" rel="self" type="application/rss+xml"/><item><title>Simple Spring Batch with Quartz Scheduling</title><link>https://piinalpin.com/2020/12/spring-batch-example/</link><pubDate>Tue, 08 Dec 2020 14:08:21 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2020/12/spring-batch-example/</guid><description>How to create spring batch with quartz scheduling and MySQL database from scratch.</description></item></channel></rss>

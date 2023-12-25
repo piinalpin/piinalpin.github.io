@@ -1,478 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Make Terminal Powerfull Using Oh-My-Posh - PiinAlpin Official Blog</title><meta name="Description" content="Make Terminal or Powershell more powerfull using oh-my-posh and plugins."><meta property="og:title" content="Make Terminal Powerfull Using Oh-My-Posh" />
-<meta property="og:description" content="Make Terminal or Powershell more powerfull using oh-my-posh and plugins." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-11-26T18:36:21+07:00" />
-<meta property="article:modified_time" content="2023-11-26T18:36:21+07:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Make Terminal Powerfull Using Oh-My-Posh"/>
-<meta name="twitter:description" content="Make Terminal or Powershell more powerfull using oh-my-posh and plugins."/>
-<meta name="application-name" content="PiinAlpin Official Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin Official Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/" /><link rel="prev" href="https://piinalpin.com/2023/06/spring-boot-tcp-integration-ip/" /><link rel="next" href="https://piinalpin.com/2023/12/build-kie-server-on-spring-boot/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Make Terminal Powerfull Using Oh-My-Posh",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/piinalpin.com\/2023\/11\/make-terminal-powerfull-using-oh-my-posh\/"
-        },"image": ["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Terminal, Powershell, Oh-My-Posh, Oh My Posh, Bash, Zsh, Shell","wordcount":  782 ,
-        "url": "https:\/\/piinalpin.com\/2023\/11\/make-terminal-powerfull-using-oh-my-posh\/","datePublished": "2023-11-26T18:36:21+07:00","dateModified": "2023-11-26T18:36:21+07:00","publisher": {
-            "@type": "Organization",
-            "name": "Alvinditya","logo": "https:\/\/piinalpin.com\/images\/favicon.png"},"author": {
-                "@type": "Person",
-                "name": "Alvinditya Saputra"
-            },"description": "Make Terminal or Powershell more powerfull using oh-my-posh and plugins."
-    }
-    </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='fa fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='fa fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Make Terminal Powerfull Using Oh-My-Posh</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-11-26">2023-11-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;782 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#oh-my-posh">Oh My Posh</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#configuration">Configuration</a></li>
-        <li><a href="#powerful-plugin">Powerful Plugin</a>
-          <ul>
-            <li><a href="#windows">Windows</a></li>
-            <li><a href="#linux">Linux</a></li>
-          </ul>
-        </li>
-        <li><a href="#reference">Reference</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><p>Programmers use a command-line interface (CLI) to issue text-commands to the Operating System (OS), instead of clicking on a Graphical User Interface (GUI). This is because command-line inerface is much more powerful and flexible than the graphical user interface.</p>
-<p>The Terminal application is a command-line Interface (or shell). By default, the Terminal in Ubuntu and macOS runs the so-called bash shell, which supports a set of commands and utilities; and has its own programming language for writing shell scripts.</p>
-<h3 id="oh-my-posh">Oh My Posh</h3>
-<p class="">
-  <img src="/images/oh-my-posh.png" alt="Oh My Posh"/>
-</p>
-Oh My Posh is a custom prompt engine for any shell that has the ability to adjust the prompt string with a function or variable. 
-<ul>
-<li><strong>Colors:</strong> Oh My Posh enables you to use the full color set of your terminal by using colors to define and render the prompt.</li>
-<li><strong>Customizable:</strong> Easily adjust existing themes or create your own. From standard segments all the way to custom implementations.</li>
-<li><strong>Portable:</strong> No matter which shell you&rsquo;re using, or even how many, you can carry the configuration from one shell and/or machine to another for the same prompt everywhere you work.</li>
-</ul>
-<h3 id="installation">Installation</h3>
-<p><strong>Windows</strong></p>
-<p>Need have <code>powershell 7</code>, download at Microsoft Store or install on official website.</p>
-<p>Install <code>oh-my-posh</code> from winget.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">winget install JanDeDobbeleer.OhMyPosh -s winget
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>or Manual installation</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Set-ExecutionPolicy Bypass -Scope Process -Force<span class="p">;</span> Invoke-Expression <span class="o">((</span>New-Object System.Net.WebClient<span class="o">)</span>.DownloadString<span class="o">(</span><span class="s1">&#39;https://ohmyposh.dev/install.ps1&#39;</span><span class="o">))</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This installs a couple of things:</p>
-<ul>
-<li><code>oh-my-posh.exe</code> - Windows executable</li>
-<li><code>themes</code> - The latest Oh My Posh <a href="https://ohmyposh.dev/docs/themes" target="_blank" rel="noopener noreffer">themes</a></li>
-</ul>
-<p><strong>Linux</strong></p>
-<p>Recommend using <code>zsh</code> shell instead of <code>bash</code>. Install <code>oh-my-posh</code> by manual download.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -s https://ohmyposh.dev/install.sh <span class="p">|</span> bash -s
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>or using <code>Homebrew</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install jandedobbeleer/oh-my-posh/oh-my-posh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>Font Installation</strong></p>
-<p>Install <code>nerd fonts</code> from <a href="https://www.nerdfonts.com/" target="_blank" rel="noopener noreffer">official website</a>. And set <code>nerd fonts</code> on terminal profile.</p>
-<h3 id="configuration">Configuration</h3>
-<p><strong>Windows</strong></p>
-<p>Create powershell user profile <code>$PROFILE</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$PROFILE</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>We will be got an output <code>C:\Users\user\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code>. This is our <code>$PROFILE</code> location to be edited.</p>
-<p>Create new file on <code>C:\Users\user\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code>. For my device i like use <code>1_shell</code> theme.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Prompt Init</span>
-</span></span><span class="line"><span class="cl"><span class="nb">oh-my</span><span class="n">-posh</span> <span class="n">init</span> <span class="n">pwsh</span> <span class="p">-</span><span class="n">-config</span> <span class="s2">&#34;</span><span class="nv">$env:POSH_THEMES_PATH</span><span class="s2">/1_shell.omp.json&#34;</span> <span class="p">|</span> <span class="nb">Invoke-Expression</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>Linux</strong></p>
-<p>Add this below line on <code>.zshrc</code> file to load <code>oh-my-posh</code> theme engine. Because i use <code>WSL</code> i can directly load from powershell at <code>/mnt/c/Users/Maverick/AppData/Local/Programs/oh-my-posh/themes</code> directory. If not have themes yet can download first from <a href="https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/themes" target="_blank" rel="noopener noreffer">GitHub here</a>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>x-term-256color
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/bin:/usr/local/bin:/snap/bin:<span class="nv">$PATH</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Plugins</span>
-</span></span><span class="line"><span class="cl"><span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>oh-my-posh init zsh --config /mnt/c/Users/Maverick/AppData/Local/Programs/oh-my-posh/themes/1_shell.omp.json<span class="k">)</span><span class="s2">&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Usually i don&rsquo;t like use <code>transient prompt</code> so i need to remove this line.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="err">...</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;transient_prompt&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;background&#34;</span><span class="p">:</span> <span class="s2">&#34;transparent&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;foreground&#34;</span><span class="p">:</span> <span class="s2">&#34;#FEF5ED&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;template&#34;</span><span class="p">:</span> <span class="s2">&#34;\ue285 &#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="err">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Then execute <code>source .zshrc</code> or just close and reopen terminal. Oh My Posh already installed if looks like</p>
-<p class="">
-  <img src="/images/terminal-linux.png" alt="Terminal Linux"/>
-</p>
-<h3 id="powerful-plugin">Powerful Plugin</h3>
-<h4 id="windows">Windows</h4>
-<p>Install <code>Terminal-Icons</code> Module to show if directory or files</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="nb">Terminal-Icons</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Force</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Install <code>z</code> module, it can be used directly jump in some folder.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">z</span> <span class="n">-Force</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Install <code>PSReadLine</code> to auto suggestion or auto completion from history command line.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSReadLine</span> <span class="n">-AllowPrerelease</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-SkipPublisherCheck</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Update powershell profile <code>C:\Users\user\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code>. I added function <code>which</code> like on Linux command line to find where the program directory.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Aliases</span>
-</span></span><span class="line"><span class="cl"><span class="nb">Set-Alias</span> <span class="n">ll</span> <span class="nb">ls
-</span></span></span><span class="line"><span class="cl"><span class="nb">Set-Alias</span> <span class="n">j</span> <span class="n">z</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># Prompt Init</span>
-</span></span><span class="line"><span class="cl"><span class="nb">oh-my</span><span class="n">-posh</span> <span class="n">init</span> <span class="n">pwsh</span> <span class="p">-</span><span class="n">-config</span> <span class="s2">&#34;</span><span class="nv">$env:POSH_THEMES_PATH</span><span class="s2">/1_shell.omp.json&#34;</span> <span class="p">|</span> <span class="nb">Invoke-Expression</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># Import Module &amp; Configuration</span>
-</span></span><span class="line"><span class="cl"><span class="nb">Import-Module</span> <span class="nb">Terminal-Icons</span>
-</span></span><span class="line"><span class="cl"><span class="nb">Set-PSReadLineOption</span> <span class="n">-PredictionSource</span> <span class="nb">History
-</span></span></span><span class="line"><span class="cl"><span class="nb">Set-PSReadLineOption</span> <span class="n">-PredictionViewStyle</span> <span class="n">ListView</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># Function</span>
-</span></span><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">which($command</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">Get-Command</span> <span class="n">-Name</span> <span class="nv">$command</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span> <span class="p">|</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">Path</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p class="">
-  <img src="/images/powershell-psreadline.png" alt="Powershell PSReadLine"/>
-</p>
-<p class="">
-  <img src="/images/powershell-ll.png" alt="Powershell List Directory"/>
-</p>
-<p class="">
-  <img src="/images/powershell-z.png" alt="Powershell Jump Directory"/>
-</p>
-<h4 id="linux">Linux</h4>
-<p>Clone <code>zsh-autosuggestions</code> and <code>zsh-syntax-highlightings</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir .zsh
-</span></span><span class="line"><span class="cl">git clone https://github.com/zsh-users/zsh-autosuggestions.git .zsh/zsh-autosuggestions
-</span></span><span class="line"><span class="cl">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git .zsh/zsh-syntax-highlightings
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Install <code>jump shell</code> from <code>snap</code>, on my case I use <code>Ubuntu-20.04</code>. Jump integrates with your shell and learns about your navigational habits by keeping track of the directories you visit. It gives you the most visited directory for the shortest search term you type.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo snap install jump
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Install <code>ruby gem</code> and <code>colorls</code> to beautify list directory.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install ruby-full
-</span></span><span class="line"><span class="cl">sudo gem install colorls
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Finally, update <code>.zshrc</code> profile to load configuration.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Set up the prompt</span>
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>xterm-256colorexport
-</span></span><span class="line"><span class="cl"><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/bin:/usr/local/bin:/snap/bin:<span class="nv">$PATH</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Keep 1000 lines of history within the shell and save it to ~/.zsh_history:</span>
-</span></span><span class="line"><span class="cl"><span class="nv">HISTSIZE</span><span class="o">=</span><span class="m">1000</span>
-</span></span><span class="line"><span class="cl"><span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
-</span></span><span class="line"><span class="cl"><span class="nv">HISTFILE</span><span class="o">=</span>~/.zsh_history
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Aliases command line</span>
-</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;colorls -l --sort-dirs&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">la</span><span class="o">=</span><span class="s1">&#39;colorls -A --sort-dirs&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;colorls -lA --sort-dirs&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">tree</span><span class="o">=</span><span class="s1">&#39;colorls --tree --sort-dirs&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">gs</span><span class="o">=</span><span class="s1">&#39;colorls --git-status --tree --sort-dirs&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">vim</span><span class="o">=</span><span class="s1">&#39;nvim&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Plugins</span>
-</span></span><span class="line"><span class="cl"><span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>jump shell<span class="k">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>oh-my-posh init zsh --config /mnt/c/Users/maverick/AppData/Local/Programs/oh-my-posh/themes/1_shell.omp.json<span class="k">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.zsh/zsh-syntax-highlightings/zsh-syntax-highlighting.zsh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p class="">
-  <img src="/images/terminal-ubuntu-autosuggestions.png" alt="Terminal Ubuntu Auto Suggestions"/>
-</p>
-<p class="">
-  <img src="/images/terminal-ubuntu-ll.png" alt="ColorLS List Directory"/>
-</p>
-<p class="">
-  <img src="/images/terminal-ubuntu-jump.png" alt="Terminal Jump Directory"/>
-</p>
-<h3 id="reference">Reference</h3>
-<ul>
-<li><a href="https://ohmyposh.dev/docs" target="_blank" rel="noopener noreffer">OhMyPosh Docs</a></li>
-<li><a href="https://www.youtube.com/watch?v=fviSilPKIhs" target="_blank" rel="noopener noreffer">ASMR Set Up PowerShell with Oh-My-Posh on Windows 11 + Neovim Setup + Terminal Icons - No Talking</a></li>
-<li><a href="https://snapcraft.io/jump" target="_blank" rel="noopener noreffer">jump</a></li>
-<li><a href="https://github.com/athityakumar/colorls" target="_blank" rel="noopener noreffer">Color LS</a></li>
-</ul>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2023-11-26</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/2023/11/make-terminal-powerfull-using-oh-my-posh/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/" data-title="Make Terminal Powerfull Using Oh-My-Posh" data-via="piinalpin" data-hashtags="Terminal,Powershell,Oh-My-Posh,Oh My Posh,Bash,Zsh,Shell"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/" data-hashtag="Terminal"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/"><i class="fab fa-linkedin fa-fw"></i></a></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/terminal/">Terminal</a>,&nbsp;<a href="/tags/powershell/">Powershell</a>,&nbsp;<a href="/tags/oh-my-posh/">Oh My Posh</a>,&nbsp;<a href="/tags/oh-my-posh/">Oh My Posh</a>,&nbsp;<a href="/tags/bash/">Bash</a>,&nbsp;<a href="/tags/zsh/">Zsh</a>,&nbsp;<a href="/tags/shell/">Shell</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/2023/06/spring-boot-tcp-integration-ip/" class="prev" rel="prev" title="Spring Boot TCP Integration IP"><i class="fas fa-angle-left fa-fw"></i>Spring Boot TCP Integration IP</a>
-            <a href="/2023/12/build-kie-server-on-spring-boot/" class="next" rel="next" title="Build Kie Server on Spring Boot">Build Kie Server on Spring Boot<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=X-UA-Compatible content="IE=edge, chrome=1"><title>Make Terminal Powerfull Using Oh-My-Posh - PiinAlpin Official Blog</title><meta name=Description content="Make Terminal or Powershell more powerfull using oh-my-posh and plugins."><meta property="og:title" content="Make Terminal Powerfull Using Oh-My-Posh">
+<meta property="og:description" content="Make Terminal or Powershell more powerfull using oh-my-posh and plugins."><meta property="og:type" content="article"><meta property="og:url" content="https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-11-26T18:36:21+07:00"><meta property="article:modified_time" content="2023-11-26T18:36:21+07:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Make Terminal Powerfull Using Oh-My-Posh"><meta name=twitter:description content="Make Terminal or Powershell more powerfull using oh-my-posh and plugins."><meta name=twitter:site content="@piinalpin"><meta name=application-name content="PiinAlpin Official Blog"><meta name=apple-mobile-web-app-title content="PiinAlpin Official Blog"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=favicon.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/><link rel=prev href=https://piinalpin.com/2023/06/spring-boot-tcp-integration-ip/><link rel=next href=https://piinalpin.com/2023/12/build-kie-server-on-spring-boot/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Make Terminal Powerfull Using Oh-My-Posh","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/piinalpin.com\/2023\/11\/make-terminal-powerfull-using-oh-my-posh\/"},"image":["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"Terminal, Powershell, Oh-My-Posh, Oh My Posh, Bash, Zsh, Shell","wordcount":782,"url":"https:\/\/piinalpin.com\/2023\/11\/make-terminal-powerfull-using-oh-my-posh\/","datePublished":"2023-11-26T18:36:21+07:00","dateModified":"2023-11-26T18:36:21+07:00","publisher":{"@type":"Organization","name":"Alvinditya","logo":"https:\/\/piinalpin.com\/images\/favicon.png"},"author":{"@type":"Person","name":"Alvinditya Saputra"},"description":"Make Terminal or Powershell more powerfull using oh-my-posh and plugins."}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"dark"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"dark"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="PiinAlpin Official Blog"><span class=header-title-pre><i class='fa fa-code fa-fw'></i> </span><span id=id-1 class=typeit></span></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About </a><a class=menu-item href=https://github.com/piinalpin title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="PiinAlpin Official Blog"><span class=header-title-pre><i class='fa fa-code fa-fw'></i> </span><span id=id-2 class=typeit></span></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About</a><a class=menu-item href=https://github.com/piinalpin title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Make Terminal Powerfull Using Oh-My-Posh</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://piinalpin.com/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class=post-category>included in <a href=/categories/documentation/><i class="far fa-folder fa-fw"></i>Documentation</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2023-11-26>2023-11-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;782 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><ul><li><a href=#oh-my-posh>Oh My Posh</a></li><li><a href=#installation>Installation</a></li><li><a href=#configuration>Configuration</a></li><li><a href=#powerful-plugin>Powerful Plugin</a><ul><li><a href=#windows>Windows</a></li><li><a href=#linux>Linux</a></li></ul></li><li><a href=#reference>Reference</a></li></ul></li></ul></nav></div></div><div class=content id=content><p>Programmers use a command-line interface (CLI) to issue text-commands to the Operating System (OS), instead of clicking on a Graphical User Interface (GUI). This is because command-line inerface is much more powerful and flexible than the graphical user interface.</p><p>The Terminal application is a command-line Interface (or shell). By default, the Terminal in Ubuntu and macOS runs the so-called bash shell, which supports a set of commands and utilities; and has its own programming language for writing shell scripts.</p><h3 id=oh-my-posh>Oh My Posh</h3><p><img src=/images/oh-my-posh.png alt="Oh My Posh"></p>Oh My Posh is a custom prompt engine for any shell that has the ability to adjust the prompt string with a function or variable.<ul><li><strong>Colors:</strong> Oh My Posh enables you to use the full color set of your terminal by using colors to define and render the prompt.</li><li><strong>Customizable:</strong> Easily adjust existing themes or create your own. From standard segments all the way to custom implementations.</li><li><strong>Portable:</strong> No matter which shell you&rsquo;re using, or even how many, you can carry the configuration from one shell and/or machine to another for the same prompt everywhere you work.</li></ul><h3 id=installation>Installation</h3><p><strong>Windows</strong></p><p>Need have <code>powershell 7</code>, download at Microsoft Store or install on official website.</p><p>Install <code>oh-my-posh</code> from winget.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>winget install JanDeDobbeleer.OhMyPosh -s winget
+</span></span></code></pre></td></tr></table></div></div><p>or Manual installation</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Set-ExecutionPolicy Bypass -Scope Process -Force<span class=p>;</span> Invoke-Expression <span class=o>((</span>New-Object System.Net.WebClient<span class=o>)</span>.DownloadString<span class=o>(</span><span class=s1>&#39;https://ohmyposh.dev/install.ps1&#39;</span><span class=o>))</span>
+</span></span></code></pre></td></tr></table></div></div><p>This installs a couple of things:</p><ul><li><code>oh-my-posh.exe</code> - Windows executable</li><li><code>themes</code> - The latest Oh My Posh <a href=https://ohmyposh.dev/docs/themes target=_blank rel="noopener noreffer">themes</a></li></ul><p><strong>Linux</strong></p><p>Recommend using <code>zsh</code> shell instead of <code>bash</code>. Install <code>oh-my-posh</code> by manual download.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>curl -s https://ohmyposh.dev/install.sh <span class=p>|</span> bash -s
+</span></span></code></pre></td></tr></table></div></div><p>or using <code>Homebrew</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install jandedobbeleer/oh-my-posh/oh-my-posh
+</span></span></code></pre></td></tr></table></div></div><p><strong>Font Installation</strong></p><p>Install <code>nerd fonts</code> from <a href=https://www.nerdfonts.com/ target=_blank rel="noopener noreffer">official website</a>. And set <code>nerd fonts</code> on terminal profile.</p><h3 id=configuration>Configuration</h3><p><strong>Windows</strong></p><p>Create powershell user profile <code>$PROFILE</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>echo</span> <span class=nv>$PROFILE</span>
+</span></span></code></pre></td></tr></table></div></div><p>We will be got an output <code>C:\Users\user\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code>. This is our <code>$PROFILE</code> location to be edited.</p><p>Create new file on <code>C:\Users\user\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code>. For my device i like use <code>1_shell</code> theme.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=c># Prompt Init</span>
+</span></span><span class=line><span class=cl><span class=nb>oh-my</span><span class=n>-posh</span> <span class=n>init</span> <span class=n>pwsh</span> <span class=p>-</span><span class=n>-config</span> <span class=s2>&#34;</span><span class=nv>$env:POSH_THEMES_PATH</span><span class=s2>/1_shell.omp.json&#34;</span> <span class=p>|</span> <span class=nb>Invoke-Expression</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>Linux</strong></p><p>Add this below line on <code>.zshrc</code> file to load <code>oh-my-posh</code> theme engine. Because i use <code>WSL</code> i can directly load from powershell at <code>/mnt/c/Users/Maverick/AppData/Local/Programs/oh-my-posh/themes</code> directory. If not have themes yet can download first from <a href=https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/themes target=_blank rel="noopener noreffer">GitHub here</a>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>export</span> <span class=nv>TERM</span><span class=o>=</span>x-term-256color
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span><span class=nv>$HOME</span>/bin:/usr/local/bin:/snap/bin:<span class=nv>$PATH</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Plugins</span>
+</span></span><span class=line><span class=cl><span class=nb>eval</span> <span class=s2>&#34;</span><span class=k>$(</span>oh-my-posh init zsh --config /mnt/c/Users/Maverick/AppData/Local/Programs/oh-my-posh/themes/1_shell.omp.json<span class=k>)</span><span class=s2>&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Usually i don&rsquo;t like use <code>transient prompt</code> so i need to remove this line.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=err>...</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;transient_prompt&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;background&#34;</span><span class=p>:</span> <span class=s2>&#34;transparent&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;foreground&#34;</span><span class=p>:</span> <span class=s2>&#34;#FEF5ED&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;template&#34;</span><span class=p>:</span> <span class=s2>&#34;\ue285 &#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=err>...</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Then execute <code>source .zshrc</code> or just close and reopen terminal. Oh My Posh already installed if looks like</p><p><img src=/images/terminal-linux.png alt="Terminal Linux"></p><h3 id=powerful-plugin>Powerful Plugin</h3><h4 id=windows>Windows</h4><p>Install <code>Terminal-Icons</code> Module to show if directory or files</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=nb>Install-Module</span> <span class=n>-Name</span> <span class=nb>Terminal-Icons</span> <span class=n>-Repository</span> <span class=n>PSGallery</span> <span class=n>-Force</span>
+</span></span></code></pre></td></tr></table></div></div><p>Install <code>z</code> module, it can be used directly jump in some folder.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=nb>Install-Module</span> <span class=n>-Name</span> <span class=n>z</span> <span class=n>-Force</span>
+</span></span></code></pre></td></tr></table></div></div><p>Install <code>PSReadLine</code> to auto suggestion or auto completion from history command line.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=nb>Install-Module</span> <span class=n>-Name</span> <span class=n>PSReadLine</span> <span class=n>-AllowPrerelease</span> <span class=n>-Scope</span> <span class=n>CurrentUser</span> <span class=n>-Force</span> <span class=n>-SkipPublisherCheck</span>
+</span></span></code></pre></td></tr></table></div></div><p>Update powershell profile <code>C:\Users\user\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code>. I added function <code>which</code> like on Linux command line to find where the program directory.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=c># Aliases</span>
+</span></span><span class=line><span class=cl><span class=nb>Set-Alias</span> <span class=n>ll</span> <span class=nb>ls
+</span></span></span><span class=line><span class=cl><span class=nb>Set-Alias</span> <span class=n>j</span> <span class=n>z</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># Prompt Init</span>
+</span></span><span class=line><span class=cl><span class=nb>oh-my</span><span class=n>-posh</span> <span class=n>init</span> <span class=n>pwsh</span> <span class=p>-</span><span class=n>-config</span> <span class=s2>&#34;</span><span class=nv>$env:POSH_THEMES_PATH</span><span class=s2>/1_shell.omp.json&#34;</span> <span class=p>|</span> <span class=nb>Invoke-Expression</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># Import Module &amp; Configuration</span>
+</span></span><span class=line><span class=cl><span class=nb>Import-Module</span> <span class=nb>Terminal-Icons</span>
+</span></span><span class=line><span class=cl><span class=nb>Set-PSReadLineOption</span> <span class=n>-PredictionSource</span> <span class=nb>History
+</span></span></span><span class=line><span class=cl><span class=nb>Set-PSReadLineOption</span> <span class=n>-PredictionViewStyle</span> <span class=n>ListView</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># Function</span>
+</span></span><span class=line><span class=cl><span class=kd>function</span><span class=w> </span><span class=nb>which($command</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nb>Get-Command</span> <span class=n>-Name</span> <span class=nv>$command</span> <span class=n>-ErrorAction</span> <span class=n>SilentlyContinue</span> <span class=p>|</span>
+</span></span><span class=line><span class=cl>  <span class=nb>Select-Object</span> <span class=n>-ExpandProperty</span> <span class=n>Path</span> <span class=n>-ErrorAction</span> <span class=n>SilentlyContinue</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=/images/powershell-psreadline.png alt="Powershell PSReadLine"></p><p><img src=/images/powershell-ll.png alt="Powershell List Directory"></p><p><img src=/images/powershell-z.png alt="Powershell Jump Directory"></p><h4 id=linux>Linux</h4><p>Clone <code>zsh-autosuggestions</code> and <code>zsh-syntax-highlightings</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir .zsh
+</span></span><span class=line><span class=cl>git clone https://github.com/zsh-users/zsh-autosuggestions.git .zsh/zsh-autosuggestions
+</span></span><span class=line><span class=cl>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git .zsh/zsh-syntax-highlightings
+</span></span></code></pre></td></tr></table></div></div><p>Install <code>jump shell</code> from <code>snap</code>, on my case I use <code>Ubuntu-20.04</code>. Jump integrates with your shell and learns about your navigational habits by keeping track of the directories you visit. It gives you the most visited directory for the shortest search term you type.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo snap install jump
+</span></span></code></pre></td></tr></table></div></div><p>Install <code>ruby gem</code> and <code>colorls</code> to beautify list directory.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt install ruby-full
+</span></span><span class=line><span class=cl>sudo gem install colorls
+</span></span></code></pre></td></tr></table></div></div><p>Finally, update <code>.zshrc</code> profile to load configuration.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Set up the prompt</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>TERM</span><span class=o>=</span>xterm-256colorexport
+</span></span><span class=line><span class=cl><span class=nv>PATH</span><span class=o>=</span><span class=nv>$HOME</span>/bin:/usr/local/bin:/snap/bin:<span class=nv>$PATH</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Keep 1000 lines of history within the shell and save it to ~/.zsh_history:</span>
+</span></span><span class=line><span class=cl><span class=nv>HISTSIZE</span><span class=o>=</span><span class=m>1000</span>
+</span></span><span class=line><span class=cl><span class=nv>SAVEHIST</span><span class=o>=</span><span class=m>1000</span>
+</span></span><span class=line><span class=cl><span class=nv>HISTFILE</span><span class=o>=</span>~/.zsh_history
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Aliases command line</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>ls</span><span class=o>=</span><span class=s1>&#39;colorls -l --sort-dirs&#39;</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>la</span><span class=o>=</span><span class=s1>&#39;colorls -A --sort-dirs&#39;</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>ll</span><span class=o>=</span><span class=s1>&#39;colorls -lA --sort-dirs&#39;</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>tree</span><span class=o>=</span><span class=s1>&#39;colorls --tree --sort-dirs&#39;</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>gs</span><span class=o>=</span><span class=s1>&#39;colorls --git-status --tree --sort-dirs&#39;</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>vim</span><span class=o>=</span><span class=s1>&#39;nvim&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Plugins</span>
+</span></span><span class=line><span class=cl><span class=nb>eval</span> <span class=s2>&#34;</span><span class=k>$(</span>jump shell<span class=k>)</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>eval</span> <span class=s2>&#34;</span><span class=k>$(</span>oh-my-posh init zsh --config /mnt/c/Users/maverick/AppData/Local/Programs/oh-my-posh/themes/1_shell.omp.json<span class=k>)</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>source</span> ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+</span></span><span class=line><span class=cl><span class=nb>source</span> ~/.zsh/zsh-syntax-highlightings/zsh-syntax-highlighting.zsh
+</span></span></code></pre></td></tr></table></div></div><p><img src=/images/terminal-ubuntu-autosuggestions.png alt="Terminal Ubuntu Auto Suggestions"></p><p><img src=/images/terminal-ubuntu-ll.png alt="ColorLS List Directory"></p><p><img src=/images/terminal-ubuntu-jump.png alt="Terminal Jump Directory"></p><h3 id=reference>Reference</h3><ul><li><a href=https://ohmyposh.dev/docs target=_blank rel="noopener noreffer">OhMyPosh Docs</a></li><li><a href="https://www.youtube.com/watch?v=fviSilPKIhs" target=_blank rel="noopener noreffer">ASMR Set Up PowerShell with Oh-My-Posh on Windows 11 + Neovim Setup + Terminal Icons - No Talking</a></li><li><a href=https://snapcraft.io/jump target=_blank rel="noopener noreffer">jump</a></li><li><a href=https://github.com/athityakumar/colorls target=_blank rel="noopener noreffer">Color LS</a></li></ul></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2023-11-26</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/2023/11/make-terminal-powerfull-using-oh-my-posh/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/ data-title="Make Terminal Powerfull Using Oh-My-Posh" data-via=piinalpin data-hashtags="Terminal,Powershell,Oh-My-Posh,Oh My Posh,Bash,Zsh,Shell"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/ data-hashtag=Terminal><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/><i class="fab fa-linkedin fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/terminal/>Terminal</a>,&nbsp;<a href=/tags/powershell/>Powershell</a>,&nbsp;<a href=/tags/oh-my-posh/>Oh My Posh</a>,&nbsp;<a href=/tags/oh-my-posh/>Oh My Posh</a>,&nbsp;<a href=/tags/bash/>Bash</a>,&nbsp;<a href=/tags/zsh/>Zsh</a>,&nbsp;<a href=/tags/shell/>Shell</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/2023/06/spring-boot-tcp-integration-ip/ class=prev rel=prev title="Spring Boot TCP Integration IP"><i class="fas fa-angle-left fa-fw"></i>Spring Boot TCP Integration IP</a>
+<a href=/2023/12/build-kie-server-on-spring-boot/ class=next rel=next title="Build Kie Server on Spring Boot">Build Kie Server on Spring Boot<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Piinalpin</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2023</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://piinalpin.com/ target=_blank>Alvinditya Saputra</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:20},comment:{},data:{"id-1":"PiinAlpin","id-2":"PiinAlpin"},search:{algoliaAppID:"Z6ALHE0FJ2",algoliaIndex:"test-index",algoliaSearchKey:"7308da79f682ce9c1c5b0cf4c9eb9249",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"algolia"},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:0,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>

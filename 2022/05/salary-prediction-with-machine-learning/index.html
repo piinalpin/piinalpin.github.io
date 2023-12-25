@@ -1,684 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Salary Prediction with ML - Linear Regression - PiinAlpin Official Blog</title><meta name="Description" content="Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy."><meta property="og:title" content="Salary Prediction with ML - Linear Regression" />
-<meta property="og:description" content="Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-05-21T17:07:17+07:00" />
-<meta property="article:modified_time" content="2022-05-21T17:07:17+07:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Salary Prediction with ML - Linear Regression"/>
-<meta name="twitter:description" content="Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy."/>
-<meta name="application-name" content="PiinAlpin Official Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin Official Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/" /><link rel="prev" href="https://piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/" /><link rel="next" href="https://piinalpin.com/2022/10/how-to-run-redis-sentinel/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Salary Prediction with ML - Linear Regression",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/piinalpin.com\/2022\/05\/salary-prediction-with-machine-learning\/"
-        },"image": ["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Python, Machine Learning, Linear Regression, Scikit Learn","wordcount":  1342 ,
-        "url": "https:\/\/piinalpin.com\/2022\/05\/salary-prediction-with-machine-learning\/","datePublished": "2022-05-21T17:07:17+07:00","dateModified": "2022-05-21T17:07:17+07:00","publisher": {
-            "@type": "Organization",
-            "name": "Alvinditya","logo": "https:\/\/piinalpin.com\/images\/favicon.png"},"author": {
-                "@type": "Person",
-                "name": "Alvinditya Saputra"
-            },"description": "Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy."
-    }
-    </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='fa fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='fa fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Salary Prediction with ML - Linear Regression</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-21">2022-05-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1342 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#how-does-machine-learning-works">How Does Machine Learning Works?</a></li>
-        <li><a href="#machine-learning-method">Machine Learning Method</a></li>
-        <li><a href="#linear-regression">Linear Regression</a></li>
-        <li><a href="#salary-prediction-model">Salary Prediction Model</a>
-          <ul>
-            <li><a href="#cleaning-dataset">Cleaning Dataset</a></li>
-            <li><a href="#building-model">Building Model</a></li>
-            <li><a href="#prediction">Prediction</a></li>
-            <li><a href="#accuracy">Accuracy</a></li>
-            <li><a href="#implementation">Implementation</a></li>
-          </ul>
-        </li>
-        <li><a href="#conclusion">Conclusion</a></li>
-        <li><a href="#reference">Reference</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/machine-learning.jpg"
-        data-srcset="/images/machine-learning.jpg, /images/machine-learning.jpg 1.5x, /images/machine-learning.jpg 2x"
-        data-sizes="auto"
-        alt="/images/machine-learning.jpg"
-        title="Machine Learning" /></p>
-<p>Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy.</p>
-<h3 id="how-does-machine-learning-works">How Does Machine Learning Works?</h3>
-<p>Similar to how the human brain gains knowledge and understanding, machine learning relies on input, such as training data or knowledge graphs, to understand entities, domains and the connections between them. With entities defined, deep learning can begin.</p>
-<p><strong>Data is The Key</strong> : The algorithms that drive machine learning are critical to success. ML algorithms build a mathematical model based on sample data, known as “training data,” to make predictions or decisions without being explicitly programmed to do so. This can reveal trends within data that information businesses can use to improve decision making, optimize efficiency and capture actionable data at scale.</p>
-<p><strong>AI is the Goal</strong>: Machine Learning provides the foundation for AI systems that automate processes and solve data-based business problems autonomously. It enables companies to replace or augment certain human capabilities. Common machine learning applications you may find in the real world include chatbots, self-driving cars and speech recognition.</p>
-<h3 id="machine-learning-method">Machine Learning Method</h3>
-<p>Machine learning classifiers fall into three primary categories, such as:</p>
-<ul>
-<li>
-<p><strong>Supervised learning</strong>, also known as supervised machine learning, is defined by its use of labeled datasets to train algorithms that to classify data or predict outcomes accurately. As input data is fed into the model, it adjusts its weights until the model has been fitted appropriately. This occurs as part of the cross validation process to ensure that the model avoids overfitting or underfitting. Supervised learning helps organizations solve for a variety of real-world problems at scale, such as classifying spam in a separate folder from your inbox. Some methods used in supervised learning include <em><strong>neural networks</strong></em>, <em><strong>naïve bayes</strong></em>, <em><strong>linear regression</strong></em>, <em><strong>logistic regression</strong></em>, <em><strong>random forest</strong></em>, <em><strong>support vector machine (SVM)</strong></em>, and more.</p>
-</li>
-<li>
-<p><strong>Unsupervised learning</strong>, also known as unsupervised machine learning, uses machine learning algorithms to analyze and cluster unlabeled datasets. These algorithms discover hidden patterns or data groupings without the need for human intervention. Its ability to discover similarities and differences in information make it the ideal solution for exploratory data analysis, cross-selling strategies, customer segmentation, image and pattern recognition. It’s also used to reduce the number of features in a model through the process of dimensionality reduction; principal component analysis (PCA) and singular value decomposition (SVD) are two common approaches for this. Other algorithms used in unsupervised learning include neural networks, k-means clustering, probabilistic clustering methods, and more.</p>
-</li>
-<li>
-<p><strong>Semi-supervised learning</strong> offers a happy medium between supervised and unsupervised learning. During training, it uses a smaller labeled data set to guide classification and feature extraction from a larger, unlabeled data set. Semi-supervised learning can solve the problem of having not enough labeled data (or not being able to afford to label enough data) to train a supervised learning algorithm.</p>
-</li>
-</ul>
-<h3 id="linear-regression">Linear Regression</h3>
-<p>Linear regression is a basic and commonly used type of predictive analysis.  The overall idea of regression is to examine two things:</p>
-<ul>
-<li>
-<p>Does a set of predictor variables do a good job in predicting an outcome (dependent) variable?</p>
-</li>
-<li>
-<p>Which variables in particular are significant predictors of the outcome variable, and in what way do they–indicated by the magnitude and sign of the beta estimates–impact the outcome variable?  These regression estimates are used to explain the relationship between one dependent variable and one or more independent variables.</p>
-</li>
-</ul>
-<p>The simplest form of the regression equation with one dependent and one independent variable is defined by the formula :</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/linear-regression-equation.png"
-        data-srcset="/images/linear-regression-equation.png, /images/linear-regression-equation.png 1.5x, /images/linear-regression-equation.png 2x"
-        data-sizes="auto"
-        alt="/images/linear-regression-equation.png"
-        title="y = bx &#43; c" /></p>
-<p>Where:</p>
-<ul>
-<li><em>y</em> : estimated dependent variable score</li>
-<li><em>c</em> : constant</li>
-<li><em>b</em> : regression coefficient</li>
-<li><em>x</em> : score on the independent variable</li>
-</ul>
-<p>There are many names for a regression’s dependent variable.  It may be called an outcome variable, criterion variable, endogenous variable, or regressand.  The independent variables can be called exogenous variables, predictor variables, or regressors.</p>
-<p>Three major uses for regression analysis are determining the strength of predictors, forecasting an effect, and trend forecasting.</p>
-<h3 id="salary-prediction-model">Salary Prediction Model</h3>
-<p>First of all, we should provides the dataset. Dataset can be a excel file, csv file or etc. You can use my example dataset <a href="https://docs.google.com/spreadsheets/d/1FIGP3-OGfv8KR9nKObKbzPUk2N6Q7ruZxz4zSsWpd5o/edit?usp=sharing" target="_blank" rel="noopener noreffer">here</a>.</p>
-<p>Import <code>pandas</code> library for building the data frames.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Then load the dataset, like below</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;salary_dataset.xlsx&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">dataset</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><table>
-<thead>
-<tr>
-<th style="text-align:right"></th>
-<th style="text-align:right">knowledge</th>
-<th style="text-align:right">technical</th>
-<th style="text-align:right">logical</th>
-<th style="text-align:right">year_experience</th>
-<th style="text-align:right">salary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">0</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">0</td>
-<td style="text-align:right">Rp 2,500,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">1</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">0</td>
-<td style="text-align:right">Rp 2,500,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">2</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">0</td>
-<td style="text-align:right">Rp 3,000,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">3</td>
-<td style="text-align:right">40</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">0</td>
-<td style="text-align:right">Rp 2,800,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">4</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">1.1</td>
-<td style="text-align:right">Rp 4,000,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">5</td>
-<td style="text-align:right">75</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">65</td>
-<td style="text-align:right">1.2</td>
-<td style="text-align:right">Rp 4,000,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">6</td>
-<td style="text-align:right">65</td>
-<td style="text-align:right">65</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">1.1</td>
-<td style="text-align:right">Rp 3,800,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">7</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">1.5</td>
-<td style="text-align:right">Rp 4,500,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">8</td>
-<td style="text-align:right">65</td>
-<td style="text-align:right">NaN</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">1</td>
-<td style="text-align:right">Rp 3,400,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">9</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">2</td>
-<td style="text-align:right">Rp 6,000,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">10</td>
-<td style="text-align:right">75</td>
-<td style="text-align:right">75</td>
-<td style="text-align:right">85</td>
-<td style="text-align:right">1.8</td>
-<td style="text-align:right">Rp 6,000,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">11</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">2</td>
-<td style="text-align:right">Rp 7,000,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">12</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">2.2</td>
-<td style="text-align:right">Rp 7,500,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">13</td>
-<td style="text-align:right">75</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">2.9</td>
-<td style="text-align:right">Rp 7,800,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">14</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">85</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">3</td>
-<td style="text-align:right">Rp 8,400,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">15</td>
-<td style="text-align:right">75</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">75</td>
-<td style="text-align:right">2.4</td>
-<td style="text-align:right">Rp 7,500,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">16</td>
-<td style="text-align:right">85</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">90</td>
-<td style="text-align:right">3.2</td>
-<td style="text-align:right">Rp 8,200,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">17</td>
-<td style="text-align:right">85</td>
-<td style="text-align:right">80</td>
-<td style="text-align:right">85</td>
-<td style="text-align:right">3.2</td>
-<td style="text-align:right">Rp 8,000,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">18</td>
-<td style="text-align:right">85</td>
-<td style="text-align:right">90</td>
-<td style="text-align:right">90</td>
-<td style="text-align:right">2.7</td>
-<td style="text-align:right">Rp 8,000,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">19</td>
-<td style="text-align:right">90</td>
-<td style="text-align:right">90</td>
-<td style="text-align:right">90</td>
-<td style="text-align:right">3.7</td>
-<td style="text-align:right">Rp 10,000,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">20</td>
-<td style="text-align:right">NaN</td>
-<td style="text-align:right">NaN</td>
-<td style="text-align:right">NaN</td>
-<td style="text-align:right">3</td>
-<td style="text-align:right">Rp 8,000,000.00</td>
-</tr>
-</tbody>
-</table>
-<h4 id="cleaning-dataset">Cleaning Dataset</h4>
-<p>Clean null or <code>NaN</code> values from data frame using <code>dropna()</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">dataset</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><table>
-<thead>
-<tr>
-<th style="text-align:right"></th>
-<th style="text-align:right">knowledge</th>
-<th style="text-align:right">technical</th>
-<th style="text-align:right">logical</th>
-<th style="text-align:right">year_experience</th>
-<th style="text-align:right">salary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">0</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">0.0</td>
-<td style="text-align:right">Rp 2,500,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">1</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">0.0</td>
-<td style="text-align:right">Rp 2,500,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">2</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">0.0</td>
-<td style="text-align:right">Rp 3,000,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">3</td>
-<td style="text-align:right">40</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">0.0</td>
-<td style="text-align:right">Rp 2,800,000.00</td>
-</tr>
-<tr>
-<td style="text-align:right">4</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">1.1</td>
-<td style="text-align:right">Rp 4,000,000.00</td>
-</tr>
-</tbody>
-</table>
-<h4 id="building-model">Building Model</h4>
-<p>Import <code>train_test_split</code> from scikit learn to split arrays or matrices into random train and test subsets. Quick utility that wraps input validation and <code>next(ShuffleSplit().split(X, y))</code> and application to input data into a single call for splitting (and optionally subsampling) data in a oneliner.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;salary&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><table>
-<thead>
-<tr>
-<th style="text-align:right"></th>
-<th style="text-align:right">knowledge</th>
-<th style="text-align:right">technical</th>
-<th style="text-align:right">logical</th>
-<th style="text-align:right">year_experience</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">0</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">0.0</td>
-</tr>
-<tr>
-<td style="text-align:right">1</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">0.0</td>
-</tr>
-<tr>
-<td style="text-align:right">2</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">0.0</td>
-</tr>
-<tr>
-<td style="text-align:right">3</td>
-<td style="text-align:right">40</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">0.0</td>
-</tr>
-<tr>
-<td style="text-align:right">4</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">70</td>
-<td style="text-align:right">1.1</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="prediction">Prediction</h4>
-<p>Import <code>LinearRegression</code> from scikit learn and use the linear regression function. And create object from <code>LinearRegression</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">linear</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">linear</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Predict test data <code>x_test</code> with call function <code>predict()</code> and store to variable <code>y_pred</code>. The result is prediction salary with test data using <code>LinearRegression</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">y_pred</span> <span class="o">=</span> <span class="n">linear</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">y_pred</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>array([2122535.96880463, 3980638.07697809, 6537626.01871658, 1078550.87649938])</code></p>
-<h4 id="accuracy">Accuracy</h4>
-<p><code>Machine learning</code> model accuracy is the measurement used to determine which <code>model</code> is best at identifying relationships and patterns between variables in a dataset based on the input, or <code>training</code> data. The better a model can generalize to ‘unseen’ data, the better <code>predictions</code> and <code>insights</code> it can produce, which in turn deliver more business value.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">linear</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>0.8148593096952005</code></p>
-<p>Our linear regression model accuracy score is <strong>81.4%</strong></p>
-<h4 id="implementation">Implementation</h4>
-<p>Implementation a <code>Linear Regression</code> with some input from user that have value of <code>knowledge</code>, <code>techincal</code>, <code>logical</code> and <code>year of experience</code>. Assumes, you are fresh graduate with have a knowledge score is 50, technical score is 50 and logical score is 60. In this case we will use a <code>dictionary</code> data and convert it into <code>DataFrame</code> like below.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;knowledge&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;technical&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;logical&#39;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;year_experience&#39;</span><span class="p">:</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">input_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">data_dict</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl"><span class="n">input_data</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><table>
-<thead>
-<tr>
-<th style="text-align:right"></th>
-<th style="text-align:right">knowledge</th>
-<th style="text-align:right">technical</th>
-<th style="text-align:right">logical</th>
-<th style="text-align:right">year_experience</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">0</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">0.0</td>
-</tr>
-</tbody>
-</table>
-<p>And predict using <code>LinearRegression</code> function like below.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">predicted_salary</span> <span class="o">=</span> <span class="n">linear</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Convert decimal to integer</span>
-</span></span><span class="line"><span class="cl"><span class="n">predicted_salary</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">predicted_salary</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;IDR </span><span class="si">{:,.2f}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predicted_salary</span><span class="p">))</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>IDR 1,864,514.00</code></p>
-<p>The result of the prediction of the case is <strong>IDR 1,864,514.00</strong>.</p>
-<h3 id="conclusion">Conclusion</h3>
-<p>Simple <code>Linear Regression</code> help us to predict a dependent variable for salary prediction model. It can estimated of a response variable for people with values of the carier variable within the knowledges. You can download my jupyter notebook <a href="https://colab.research.google.com/drive/1JQs-x4YcAvF3hkzv6pKbMdLZXc4ItJrG?usp=sharing" target="_blank" rel="noopener noreffer">Predict Salary - Linear Regression.ipynb</a>.</p>
-<h3 id="reference">Reference</h3>
-<ul>
-<li><a href="https://www.ibm.com/cloud/learn/machine-learning" target="_blank" rel="noopener noreffer">Machine Learning</a></li>
-<li><a href="https://www.expert.ai/blog/machine-learning-definition/" target="_blank" rel="noopener noreffer">What Is Machine Learning? A Definition.</a></li>
-<li><a href="https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/what-is-linear-regression/" target="_blank" rel="noopener noreffer">What is Linear Regression?</a></li>
-</ul>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2022-05-21</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/2022/05/salary-prediction-with-machine-learning/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/" data-title="Salary Prediction with ML - Linear Regression" data-via="piinalpin" data-hashtags="Python,Machine Learning,Linear Regression,Scikit Learn"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/" data-hashtag="Python"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/"><i class="fab fa-linkedin fa-fw"></i></a></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/machine-learning/">Machine Learning</a>,&nbsp;<a href="/tags/linear-regression/">Linear Regression</a>,&nbsp;<a href="/tags/scikit-learn/">Scikit Learn</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/2022/04/api-gateway-using-spring-boot-cloud-gateway/" class="prev" rel="prev" title="Api Gateway Using Spring Boot Cloud Gateway &#43; Netflix Hystrix"><i class="fas fa-angle-left fa-fw"></i>Api Gateway Using Spring Boot Cloud Gateway &#43; Netflix Hystrix</a>
-            <a href="/2022/10/how-to-run-redis-sentinel/" class="next" rel="next" title="How to Run Redis Sentinel">How to Run Redis Sentinel<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=X-UA-Compatible content="IE=edge, chrome=1"><title>Salary Prediction with ML - Linear Regression - PiinAlpin Official Blog</title><meta name=Description content="Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy."><meta property="og:title" content="Salary Prediction with ML - Linear Regression">
+<meta property="og:description" content="Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy."><meta property="og:type" content="article"><meta property="og:url" content="https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-05-21T17:07:17+07:00"><meta property="article:modified_time" content="2022-05-21T17:07:17+07:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Salary Prediction with ML - Linear Regression"><meta name=twitter:description content="Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy."><meta name=twitter:site content="@piinalpin"><meta name=application-name content="PiinAlpin Official Blog"><meta name=apple-mobile-web-app-title content="PiinAlpin Official Blog"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=favicon.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/><link rel=prev href=https://piinalpin.com/2022/04/api-gateway-using-spring-boot-cloud-gateway/><link rel=next href=https://piinalpin.com/2022/10/how-to-run-redis-sentinel/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Salary Prediction with ML - Linear Regression","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/piinalpin.com\/2022\/05\/salary-prediction-with-machine-learning\/"},"image":["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"Python, Machine Learning, Linear Regression, Scikit Learn","wordcount":1342,"url":"https:\/\/piinalpin.com\/2022\/05\/salary-prediction-with-machine-learning\/","datePublished":"2022-05-21T17:07:17+07:00","dateModified":"2022-05-21T17:07:17+07:00","publisher":{"@type":"Organization","name":"Alvinditya","logo":"https:\/\/piinalpin.com\/images\/favicon.png"},"author":{"@type":"Person","name":"Alvinditya Saputra"},"description":"Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy."}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"dark"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"dark"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="PiinAlpin Official Blog"><span class=header-title-pre><i class='fa fa-code fa-fw'></i> </span><span id=id-1 class=typeit></span></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About </a><a class=menu-item href=https://github.com/piinalpin title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="PiinAlpin Official Blog"><span class=header-title-pre><i class='fa fa-code fa-fw'></i> </span><span id=id-2 class=typeit></span></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About</a><a class=menu-item href=https://github.com/piinalpin title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Salary Prediction with ML - Linear Regression</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://piinalpin.com/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class=post-category>included in <a href=/categories/documentation/><i class="far fa-folder fa-fw"></i>Documentation</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-05-21>2022-05-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1342 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><ul><li><a href=#how-does-machine-learning-works>How Does Machine Learning Works?</a></li><li><a href=#machine-learning-method>Machine Learning Method</a></li><li><a href=#linear-regression>Linear Regression</a></li><li><a href=#salary-prediction-model>Salary Prediction Model</a><ul><li><a href=#cleaning-dataset>Cleaning Dataset</a></li><li><a href=#building-model>Building Model</a></li><li><a href=#prediction>Prediction</a></li><li><a href=#accuracy>Accuracy</a></li><li><a href=#implementation>Implementation</a></li></ul></li><li><a href=#conclusion>Conclusion</a></li><li><a href=#reference>Reference</a></li></ul></li></ul></nav></div></div><div class=content id=content><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/machine-learning.jpg data-srcset="/images/machine-learning.jpg, /images/machine-learning.jpg 1.5x, /images/machine-learning.jpg 2x" data-sizes=auto alt=/images/machine-learning.jpg title="Machine Learning"></p><p>Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy.</p><h3 id=how-does-machine-learning-works>How Does Machine Learning Works?</h3><p>Similar to how the human brain gains knowledge and understanding, machine learning relies on input, such as training data or knowledge graphs, to understand entities, domains and the connections between them. With entities defined, deep learning can begin.</p><p><strong>Data is The Key</strong> : The algorithms that drive machine learning are critical to success. ML algorithms build a mathematical model based on sample data, known as “training data,” to make predictions or decisions without being explicitly programmed to do so. This can reveal trends within data that information businesses can use to improve decision making, optimize efficiency and capture actionable data at scale.</p><p><strong>AI is the Goal</strong>: Machine Learning provides the foundation for AI systems that automate processes and solve data-based business problems autonomously. It enables companies to replace or augment certain human capabilities. Common machine learning applications you may find in the real world include chatbots, self-driving cars and speech recognition.</p><h3 id=machine-learning-method>Machine Learning Method</h3><p>Machine learning classifiers fall into three primary categories, such as:</p><ul><li><p><strong>Supervised learning</strong>, also known as supervised machine learning, is defined by its use of labeled datasets to train algorithms that to classify data or predict outcomes accurately. As input data is fed into the model, it adjusts its weights until the model has been fitted appropriately. This occurs as part of the cross validation process to ensure that the model avoids overfitting or underfitting. Supervised learning helps organizations solve for a variety of real-world problems at scale, such as classifying spam in a separate folder from your inbox. Some methods used in supervised learning include <em><strong>neural networks</strong></em>, <em><strong>naïve bayes</strong></em>, <em><strong>linear regression</strong></em>, <em><strong>logistic regression</strong></em>, <em><strong>random forest</strong></em>, <em><strong>support vector machine (SVM)</strong></em>, and more.</p></li><li><p><strong>Unsupervised learning</strong>, also known as unsupervised machine learning, uses machine learning algorithms to analyze and cluster unlabeled datasets. These algorithms discover hidden patterns or data groupings without the need for human intervention. Its ability to discover similarities and differences in information make it the ideal solution for exploratory data analysis, cross-selling strategies, customer segmentation, image and pattern recognition. It’s also used to reduce the number of features in a model through the process of dimensionality reduction; principal component analysis (PCA) and singular value decomposition (SVD) are two common approaches for this. Other algorithms used in unsupervised learning include neural networks, k-means clustering, probabilistic clustering methods, and more.</p></li><li><p><strong>Semi-supervised learning</strong> offers a happy medium between supervised and unsupervised learning. During training, it uses a smaller labeled data set to guide classification and feature extraction from a larger, unlabeled data set. Semi-supervised learning can solve the problem of having not enough labeled data (or not being able to afford to label enough data) to train a supervised learning algorithm.</p></li></ul><h3 id=linear-regression>Linear Regression</h3><p>Linear regression is a basic and commonly used type of predictive analysis. The overall idea of regression is to examine two things:</p><ul><li><p>Does a set of predictor variables do a good job in predicting an outcome (dependent) variable?</p></li><li><p>Which variables in particular are significant predictors of the outcome variable, and in what way do they–indicated by the magnitude and sign of the beta estimates–impact the outcome variable? These regression estimates are used to explain the relationship between one dependent variable and one or more independent variables.</p></li></ul><p>The simplest form of the regression equation with one dependent and one independent variable is defined by the formula :</p><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/linear-regression-equation.png data-srcset="/images/linear-regression-equation.png, /images/linear-regression-equation.png 1.5x, /images/linear-regression-equation.png 2x" data-sizes=auto alt=/images/linear-regression-equation.png title="y = bx + c"></p><p>Where:</p><ul><li><em>y</em> : estimated dependent variable score</li><li><em>c</em> : constant</li><li><em>b</em> : regression coefficient</li><li><em>x</em> : score on the independent variable</li></ul><p>There are many names for a regression’s dependent variable. It may be called an outcome variable, criterion variable, endogenous variable, or regressand. The independent variables can be called exogenous variables, predictor variables, or regressors.</p><p>Three major uses for regression analysis are determining the strength of predictors, forecasting an effect, and trend forecasting.</p><h3 id=salary-prediction-model>Salary Prediction Model</h3><p>First of all, we should provides the dataset. Dataset can be a excel file, csv file or etc. You can use my example dataset <a href="https://docs.google.com/spreadsheets/d/1FIGP3-OGfv8KR9nKObKbzPUk2N6Q7ruZxz4zSsWpd5o/edit?usp=sharing" target=_blank rel="noopener noreffer">here</a>.</p><p>Import <code>pandas</code> library for building the data frames.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pandas</span> <span class=k>as</span> <span class=nn>pd</span>
+</span></span></code></pre></td></tr></table></div></div><p>Then load the dataset, like below</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>dataset</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>read_excel</span><span class=p>(</span><span class=s1>&#39;salary_dataset.xlsx&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>dataset</span>
+</span></span></code></pre></td></tr></table></div></div><table><thead><tr><th style=text-align:right></th><th style=text-align:right>knowledge</th><th style=text-align:right>technical</th><th style=text-align:right>logical</th><th style=text-align:right>year_experience</th><th style=text-align:right>salary</th></tr></thead><tbody><tr><td style=text-align:right>0</td><td style=text-align:right>50</td><td style=text-align:right>60</td><td style=text-align:right>50</td><td style=text-align:right>0</td><td style=text-align:right>Rp 2,500,000.00</td></tr><tr><td style=text-align:right>1</td><td style=text-align:right>60</td><td style=text-align:right>50</td><td style=text-align:right>50</td><td style=text-align:right>0</td><td style=text-align:right>Rp 2,500,000.00</td></tr><tr><td style=text-align:right>2</td><td style=text-align:right>50</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>0</td><td style=text-align:right>Rp 3,000,000.00</td></tr><tr><td style=text-align:right>3</td><td style=text-align:right>40</td><td style=text-align:right>50</td><td style=text-align:right>60</td><td style=text-align:right>0</td><td style=text-align:right>Rp 2,800,000.00</td></tr><tr><td style=text-align:right>4</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>1.1</td><td style=text-align:right>Rp 4,000,000.00</td></tr><tr><td style=text-align:right>5</td><td style=text-align:right>75</td><td style=text-align:right>70</td><td style=text-align:right>65</td><td style=text-align:right>1.2</td><td style=text-align:right>Rp 4,000,000.00</td></tr><tr><td style=text-align:right>6</td><td style=text-align:right>65</td><td style=text-align:right>65</td><td style=text-align:right>60</td><td style=text-align:right>1.1</td><td style=text-align:right>Rp 3,800,000.00</td></tr><tr><td style=text-align:right>7</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>1.5</td><td style=text-align:right>Rp 4,500,000.00</td></tr><tr><td style=text-align:right>8</td><td style=text-align:right>65</td><td style=text-align:right>NaN</td><td style=text-align:right>70</td><td style=text-align:right>1</td><td style=text-align:right>Rp 3,400,000.00</td></tr><tr><td style=text-align:right>9</td><td style=text-align:right>70</td><td style=text-align:right>80</td><td style=text-align:right>80</td><td style=text-align:right>2</td><td style=text-align:right>Rp 6,000,000.00</td></tr><tr><td style=text-align:right>10</td><td style=text-align:right>75</td><td style=text-align:right>75</td><td style=text-align:right>85</td><td style=text-align:right>1.8</td><td style=text-align:right>Rp 6,000,000.00</td></tr><tr><td style=text-align:right>11</td><td style=text-align:right>80</td><td style=text-align:right>80</td><td style=text-align:right>80</td><td style=text-align:right>2</td><td style=text-align:right>Rp 7,000,000.00</td></tr><tr><td style=text-align:right>12</td><td style=text-align:right>80</td><td style=text-align:right>80</td><td style=text-align:right>80</td><td style=text-align:right>2.2</td><td style=text-align:right>Rp 7,500,000.00</td></tr><tr><td style=text-align:right>13</td><td style=text-align:right>75</td><td style=text-align:right>70</td><td style=text-align:right>80</td><td style=text-align:right>2.9</td><td style=text-align:right>Rp 7,800,000.00</td></tr><tr><td style=text-align:right>14</td><td style=text-align:right>80</td><td style=text-align:right>85</td><td style=text-align:right>80</td><td style=text-align:right>3</td><td style=text-align:right>Rp 8,400,000.00</td></tr><tr><td style=text-align:right>15</td><td style=text-align:right>75</td><td style=text-align:right>80</td><td style=text-align:right>75</td><td style=text-align:right>2.4</td><td style=text-align:right>Rp 7,500,000.00</td></tr><tr><td style=text-align:right>16</td><td style=text-align:right>85</td><td style=text-align:right>80</td><td style=text-align:right>90</td><td style=text-align:right>3.2</td><td style=text-align:right>Rp 8,200,000.00</td></tr><tr><td style=text-align:right>17</td><td style=text-align:right>85</td><td style=text-align:right>80</td><td style=text-align:right>85</td><td style=text-align:right>3.2</td><td style=text-align:right>Rp 8,000,000.00</td></tr><tr><td style=text-align:right>18</td><td style=text-align:right>85</td><td style=text-align:right>90</td><td style=text-align:right>90</td><td style=text-align:right>2.7</td><td style=text-align:right>Rp 8,000,000.00</td></tr><tr><td style=text-align:right>19</td><td style=text-align:right>90</td><td style=text-align:right>90</td><td style=text-align:right>90</td><td style=text-align:right>3.7</td><td style=text-align:right>Rp 10,000,000.00</td></tr><tr><td style=text-align:right>20</td><td style=text-align:right>NaN</td><td style=text-align:right>NaN</td><td style=text-align:right>NaN</td><td style=text-align:right>3</td><td style=text-align:right>Rp 8,000,000.00</td></tr></tbody></table><h4 id=cleaning-dataset>Cleaning Dataset</h4><p>Clean null or <code>NaN</code> values from data frame using <code>dropna()</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>dataset</span> <span class=o>=</span> <span class=n>dataset</span><span class=o>.</span><span class=n>dropna</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>dataset</span><span class=o>.</span><span class=n>head</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><table><thead><tr><th style=text-align:right></th><th style=text-align:right>knowledge</th><th style=text-align:right>technical</th><th style=text-align:right>logical</th><th style=text-align:right>year_experience</th><th style=text-align:right>salary</th></tr></thead><tbody><tr><td style=text-align:right>0</td><td style=text-align:right>50</td><td style=text-align:right>60</td><td style=text-align:right>50</td><td style=text-align:right>0.0</td><td style=text-align:right>Rp 2,500,000.00</td></tr><tr><td style=text-align:right>1</td><td style=text-align:right>60</td><td style=text-align:right>50</td><td style=text-align:right>50</td><td style=text-align:right>0.0</td><td style=text-align:right>Rp 2,500,000.00</td></tr><tr><td style=text-align:right>2</td><td style=text-align:right>50</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>0.0</td><td style=text-align:right>Rp 3,000,000.00</td></tr><tr><td style=text-align:right>3</td><td style=text-align:right>40</td><td style=text-align:right>50</td><td style=text-align:right>60</td><td style=text-align:right>0.0</td><td style=text-align:right>Rp 2,800,000.00</td></tr><tr><td style=text-align:right>4</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>1.1</td><td style=text-align:right>Rp 4,000,000.00</td></tr></tbody></table><h4 id=building-model>Building Model</h4><p>Import <code>train_test_split</code> from scikit learn to split arrays or matrices into random train and test subsets. Quick utility that wraps input validation and <code>next(ShuffleSplit().split(X, y))</code> and application to input data into a single call for splitting (and optionally subsampling) data in a oneliner.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>sklearn.model_selection</span> <span class=kn>import</span> <span class=n>train_test_split</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>x</span> <span class=o>=</span> <span class=n>dataset</span><span class=o>.</span><span class=n>drop</span><span class=p>(</span><span class=s1>&#39;salary&#39;</span><span class=p>,</span> <span class=n>axis</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>y</span> <span class=o>=</span> <span class=n>dataset</span><span class=p>[</span><span class=s1>&#39;salary&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>x</span><span class=o>.</span><span class=n>head</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><table><thead><tr><th style=text-align:right></th><th style=text-align:right>knowledge</th><th style=text-align:right>technical</th><th style=text-align:right>logical</th><th style=text-align:right>year_experience</th></tr></thead><tbody><tr><td style=text-align:right>0</td><td style=text-align:right>50</td><td style=text-align:right>60</td><td style=text-align:right>50</td><td style=text-align:right>0.0</td></tr><tr><td style=text-align:right>1</td><td style=text-align:right>60</td><td style=text-align:right>50</td><td style=text-align:right>50</td><td style=text-align:right>0.0</td></tr><tr><td style=text-align:right>2</td><td style=text-align:right>50</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>0.0</td></tr><tr><td style=text-align:right>3</td><td style=text-align:right>40</td><td style=text-align:right>50</td><td style=text-align:right>60</td><td style=text-align:right>0.0</td></tr><tr><td style=text-align:right>4</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>70</td><td style=text-align:right>1.1</td></tr></tbody></table><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>x_train</span><span class=p>,</span> <span class=n>x_test</span><span class=p>,</span> <span class=n>y_train</span><span class=p>,</span> <span class=n>y_test</span> <span class=o>=</span> <span class=n>train_test_split</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>,</span> <span class=n>test_size</span><span class=o>=</span><span class=mf>0.2</span><span class=p>,</span> <span class=n>random_state</span><span class=o>=</span><span class=mi>42</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=prediction>Prediction</h4><p>Import <code>LinearRegression</code> from scikit learn and use the linear regression function. And create object from <code>LinearRegression</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>sklearn.linear_model</span> <span class=kn>import</span> <span class=n>LinearRegression</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>linear</span> <span class=o>=</span> <span class=n>LinearRegression</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>linear</span><span class=o>.</span><span class=n>fit</span><span class=p>(</span><span class=n>x_train</span><span class=p>,</span> <span class=n>y_train</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>Predict test data <code>x_test</code> with call function <code>predict()</code> and store to variable <code>y_pred</code>. The result is prediction salary with test data using <code>LinearRegression</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>y_pred</span> <span class=o>=</span> <span class=n>linear</span><span class=o>.</span><span class=n>predict</span><span class=p>(</span><span class=n>x_test</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>y_pred</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>array([2122535.96880463, 3980638.07697809, 6537626.01871658, 1078550.87649938])</code></p><h4 id=accuracy>Accuracy</h4><p><code>Machine learning</code> model accuracy is the measurement used to determine which <code>model</code> is best at identifying relationships and patterns between variables in a dataset based on the input, or <code>training</code> data. The better a model can generalize to ‘unseen’ data, the better <code>predictions</code> and <code>insights</code> it can produce, which in turn deliver more business value.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>linear</span><span class=o>.</span><span class=n>score</span><span class=p>(</span><span class=n>x_test</span><span class=p>,</span> <span class=n>y_test</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>0.8148593096952005</code></p><p>Our linear regression model accuracy score is <strong>81.4%</strong></p><h4 id=implementation>Implementation</h4><p>Implementation a <code>Linear Regression</code> with some input from user that have value of <code>knowledge</code>, <code>techincal</code>, <code>logical</code> and <code>year of experience</code>. Assumes, you are fresh graduate with have a knowledge score is 50, technical score is 50 and logical score is 60. In this case we will use a <code>dictionary</code> data and convert it into <code>DataFrame</code> like below.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>data_dict</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;knowledge&#39;</span><span class=p>:</span> <span class=mi>50</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;technical&#39;</span><span class=p>:</span> <span class=mi>50</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;logical&#39;</span><span class=p>:</span> <span class=mi>60</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;year_experience&#39;</span><span class=p>:</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>input_data</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>DataFrame</span><span class=p>([</span><span class=n>data_dict</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=n>input_data</span>
+</span></span></code></pre></td></tr></table></div></div><table><thead><tr><th style=text-align:right></th><th style=text-align:right>knowledge</th><th style=text-align:right>technical</th><th style=text-align:right>logical</th><th style=text-align:right>year_experience</th></tr></thead><tbody><tr><td style=text-align:right>0</td><td style=text-align:right>50</td><td style=text-align:right>50</td><td style=text-align:right>60</td><td style=text-align:right>0.0</td></tr></tbody></table><p>And predict using <code>LinearRegression</code> function like below.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>predicted_salary</span> <span class=o>=</span> <span class=n>linear</span><span class=o>.</span><span class=n>predict</span><span class=p>(</span><span class=n>input_data</span><span class=p>)[</span><span class=mi>0</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=c1># Convert decimal to integer</span>
+</span></span><span class=line><span class=cl><span class=n>predicted_salary</span> <span class=o>=</span> <span class=nb>int</span><span class=p>(</span><span class=n>predicted_salary</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;IDR </span><span class=si>{:,.2f}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>predicted_salary</span><span class=p>))</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>IDR 1,864,514.00</code></p><p>The result of the prediction of the case is <strong>IDR 1,864,514.00</strong>.</p><h3 id=conclusion>Conclusion</h3><p>Simple <code>Linear Regression</code> help us to predict a dependent variable for salary prediction model. It can estimated of a response variable for people with values of the carier variable within the knowledges. You can download my jupyter notebook <a href="https://colab.research.google.com/drive/1JQs-x4YcAvF3hkzv6pKbMdLZXc4ItJrG?usp=sharing" target=_blank rel="noopener noreffer">Predict Salary - Linear Regression.ipynb</a>.</p><h3 id=reference>Reference</h3><ul><li><a href=https://www.ibm.com/cloud/learn/machine-learning target=_blank rel="noopener noreffer">Machine Learning</a></li><li><a href=https://www.expert.ai/blog/machine-learning-definition/ target=_blank rel="noopener noreffer">What Is Machine Learning? A Definition.</a></li><li><a href=https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/what-is-linear-regression/ target=_blank rel="noopener noreffer">What is Linear Regression?</a></li></ul></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2022-05-21</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/2022/05/salary-prediction-with-machine-learning/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/ data-title="Salary Prediction with ML - Linear Regression" data-via=piinalpin data-hashtags="Python,Machine Learning,Linear Regression,Scikit Learn"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/ data-hashtag=Python><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://piinalpin.com/2022/05/salary-prediction-with-machine-learning/><i class="fab fa-linkedin fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/python/>Python</a>,&nbsp;<a href=/tags/machine-learning/>Machine Learning</a>,&nbsp;<a href=/tags/linear-regression/>Linear Regression</a>,&nbsp;<a href=/tags/scikit-learn/>Scikit Learn</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/2022/04/api-gateway-using-spring-boot-cloud-gateway/ class=prev rel=prev title="Api Gateway Using Spring Boot Cloud Gateway + Netflix Hystrix"><i class="fas fa-angle-left fa-fw"></i>Api Gateway Using Spring Boot Cloud Gateway + Netflix Hystrix</a>
+<a href=/2022/10/how-to-run-redis-sentinel/ class=next rel=next title="How to Run Redis Sentinel">How to Run Redis Sentinel<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Piinalpin</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2023</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://piinalpin.com/ target=_blank>Alvinditya Saputra</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:20},comment:{},data:{"id-1":"PiinAlpin","id-2":"PiinAlpin"},search:{algoliaAppID:"Z6ALHE0FJ2",algoliaIndex:"test-index",algoliaSearchKey:"7308da79f682ce9c1c5b0cf4c9eb9249",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"algolia"},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:0,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>

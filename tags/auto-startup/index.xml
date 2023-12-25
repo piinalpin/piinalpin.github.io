@@ -1,14 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Auto Startup - Tag - PiinAlpin Official Blog</title>
-        <link>https://piinalpin.com/tags/auto-startup/</link>
-        <description>Auto Startup - Tag - PiinAlpin Official Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Sep 2020 09:55:52 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/auto-startup/" rel="self" type="application/rss+xml" /><item>
-    <title>Auto Start SSH Tunneling on Mac</title>
-    <link>https://piinalpin.com/2020/09/auto-start-ssh-tunneling-mac/</link>
-    <pubDate>Mon, 14 Sep 2020 09:55:52 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2020/09/auto-start-ssh-tunneling-mac/</guid>
-    <description><![CDATA[Documentation for auto start SSH Tunneling when device startup on Mac]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Auto Startup - Tag - PiinAlpin Official Blog</title><link>https://piinalpin.com/tags/auto-startup/</link><description>Auto Startup - Tag - PiinAlpin Official Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Sep 2020 09:55:52 +0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/auto-startup/" rel="self" type="application/rss+xml"/><item><title>Auto Start SSH Tunneling on Mac</title><link>https://piinalpin.com/2020/09/auto-start-ssh-tunneling-mac/</link><pubDate>Mon, 14 Sep 2020 09:55:52 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2020/09/auto-start-ssh-tunneling-mac/</guid><description>Documentation for auto start SSH Tunneling when device startup on Mac</description></item></channel></rss>

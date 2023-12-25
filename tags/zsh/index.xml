@@ -1,15 +1,2 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Zsh - Tag - PiinAlpin Official Blog</title>
-        <link>https://piinalpin.com/tags/zsh/</link>
-        <description>Zsh - Tag - PiinAlpin Official Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 26 Nov 2023 18:36:21 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/zsh/" rel="self" type="application/rss+xml" /><item>
-    <title>Make Terminal Powerfull Using Oh-My-Posh</title>
-    <link>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</link>
-    <pubDate>Sun, 26 Nov 2023 18:36:21 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</guid>
-    <description><![CDATA[Programmers use a command-line interface (CLI) to issue text-commands to the Operating System (OS), instead of clicking on a Graphical User Interface (GUI). This is because command-line inerface is much more powerful and flexible than the graphical user interface.
-The Terminal application is a command-line Interface (or shell). By default, the Terminal in Ubuntu and macOS runs the so-called bash shell, which supports a set of commands and utilities; and has its own programming language for writing shell scripts.]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Zsh - Tag - PiinAlpin Official Blog</title><link>https://piinalpin.com/tags/zsh/</link><description>Zsh - Tag - PiinAlpin Official Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 26 Nov 2023 18:36:21 +0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/zsh/" rel="self" type="application/rss+xml"/><item><title>Make Terminal Powerfull Using Oh-My-Posh</title><link>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</link><pubDate>Sun, 26 Nov 2023 18:36:21 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2023/11/make-terminal-powerfull-using-oh-my-posh/</guid><description>Programmers use a command-line interface (CLI) to issue text-commands to the Operating System (OS), instead of clicking on a Graphical User Interface (GUI). This is because command-line inerface is much more powerful and flexible than the graphical user interface.
+The Terminal application is a command-line Interface (or shell). By default, the Terminal in Ubuntu and macOS runs the so-called bash shell, which supports a set of commands and utilities; and has its own programming language for writing shell scripts.</description></item></channel></rss>

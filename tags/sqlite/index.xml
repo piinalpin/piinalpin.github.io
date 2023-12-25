@@ -1,15 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>SQLite - Tag - PiinAlpin Official Blog</title>
-        <link>https://piinalpin.com/tags/sqlite/</link>
-        <description>SQLite - Tag - PiinAlpin Official Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Dec 2019 21:06:33 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/sqlite/" rel="self" type="application/rss+xml" /><item>
-    <title>Simple Django CRUD App With SQLite</title>
-    <link>https://piinalpin.com/2019/12/django-crud-sqlite/</link>
-    <pubDate>Tue, 24 Dec 2019 21:06:33 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2019/12/django-crud-sqlite/</guid>
-    <description><![CDATA[<h4 id="codename--rattlesnake">Codename : Rattlesnake</h4>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>SQLite - Tag - PiinAlpin Official Blog</title><link>https://piinalpin.com/tags/sqlite/</link><description>SQLite - Tag - PiinAlpin Official Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Dec 2019 21:06:33 +0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/sqlite/" rel="self" type="application/rss+xml"/><item><title>Simple Django CRUD App With SQLite</title><link>https://piinalpin.com/2019/12/django-crud-sqlite/</link><pubDate>Tue, 24 Dec 2019 21:06:33 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2019/12/django-crud-sqlite/</guid><description><![CDATA[<h4 id="codename--rattlesnake">Codename : Rattlesnake</h4>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Make sure you have installed Python 3 and virtual environment on your device</p>
 <h3 id="project-structure">Project structure</h3>
@@ -457,6 +446,4 @@
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; Clone : git clone https://github.com/piinalpin/django-crud-sqlite.git
 </span></span></code></pre></td></tr></table>
 </div>
-</div>]]></description>
-</item></channel>
-</rss>
+</div>]]></description></item></channel></rss>

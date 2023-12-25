@@ -1,50 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>MySQL - Tag - PiinAlpin Official Blog</title>
-        <link>https://piinalpin.com/tags/mysql/</link>
-        <description>MySQL - Tag - PiinAlpin Official Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 06 Jan 2021 09:30:18 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/mysql/" rel="self" type="application/rss+xml" /><item>
-    <title>GraphQL Server using Spring Boot with Relational Mapping</title>
-    <link>https://piinalpin.com/2021/01/graphql-spring-boot-relation/</link>
-    <pubDate>Wed, 06 Jan 2021 09:30:18 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2021/01/graphql-spring-boot-relation/</guid>
-    <description><![CDATA[Build simple GraphQL server using Spring Boot with relational mapping MySQL database and Flyway database migration from scratch.]]></description>
-</item><item>
-    <title>GraphQL Server with Spring Boot</title>
-    <link>https://piinalpin.com/2021/01/graphql-spring-boot/</link>
-    <pubDate>Tue, 05 Jan 2021 09:17:49 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2021/01/graphql-spring-boot/</guid>
-    <description><![CDATA[Build simple GraphQL server using Spring Boot with MySQL database and Flyway database migration from scratch.]]></description>
-</item><item>
-    <title>SQL Insert Generator from Excel File using Python</title>
-    <link>https://piinalpin.com/2020/12/sql-generator/</link>
-    <pubDate>Sat, 12 Dec 2020 23:21:44 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2020/12/sql-generator/</guid>
-    <description><![CDATA[How to create SQL insert generator using python with pandas and click library]]></description>
-</item><item>
-    <title>Simple Spring Batch with Quartz Scheduling</title>
-    <link>https://piinalpin.com/2020/12/spring-batch-example/</link>
-    <pubDate>Tue, 08 Dec 2020 14:08:21 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2020/12/spring-batch-example/</guid>
-    <description><![CDATA[How to create spring batch with quartz scheduling and MySQL database from scratch.]]></description>
-</item><item>
-    <title>Create Sequence Like Oracle in MySQL</title>
-    <link>https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/</link>
-    <pubDate>Fri, 04 Dec 2020 15:49:11 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/</guid>
-    <description><![CDATA[How to implement a custom sequence like Oracle in MySQL using a stored function and triggers]]></description>
-</item><item>
-    <title>Simple Flask App with Mysql</title>
-    <link>https://piinalpin.com/2019/12/flask-mysql/</link>
-    <pubDate>Thu, 26 Dec 2019 16:46:49 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2019/12/flask-mysql/</guid>
-    <description><![CDATA[<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.</p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>MySQL - Tag - PiinAlpin Official Blog</title><link>https://piinalpin.com/tags/mysql/</link><description>MySQL - Tag - PiinAlpin Official Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 06 Jan 2021 09:30:18 +0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/mysql/" rel="self" type="application/rss+xml"/><item><title>GraphQL Server using Spring Boot with Relational Mapping</title><link>https://piinalpin.com/2021/01/graphql-spring-boot-relation/</link><pubDate>Wed, 06 Jan 2021 09:30:18 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2021/01/graphql-spring-boot-relation/</guid><description>Build simple GraphQL server using Spring Boot with relational mapping MySQL database and Flyway database migration from scratch.</description></item><item><title>GraphQL Server with Spring Boot</title><link>https://piinalpin.com/2021/01/graphql-spring-boot/</link><pubDate>Tue, 05 Jan 2021 09:17:49 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2021/01/graphql-spring-boot/</guid><description>Build simple GraphQL server using Spring Boot with MySQL database and Flyway database migration from scratch.</description></item><item><title>SQL Insert Generator from Excel File using Python</title><link>https://piinalpin.com/2020/12/sql-generator/</link><pubDate>Sat, 12 Dec 2020 23:21:44 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2020/12/sql-generator/</guid><description>How to create SQL insert generator using python with pandas and click library</description></item><item><title>Simple Spring Batch with Quartz Scheduling</title><link>https://piinalpin.com/2020/12/spring-batch-example/</link><pubDate>Tue, 08 Dec 2020 14:08:21 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2020/12/spring-batch-example/</guid><description>How to create spring batch with quartz scheduling and MySQL database from scratch.</description></item><item><title>Create Sequence Like Oracle in MySQL</title><link>https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/</link><pubDate>Fri, 04 Dec 2020 15:49:11 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2020/12/create-sequence-like-oracle-in-mysql/</guid><description>How to implement a custom sequence like Oracle in MySQL using a stored function and triggers</description></item><item><title>Simple Flask App with Mysql</title><link>https://piinalpin.com/2019/12/flask-mysql/</link><pubDate>Thu, 26 Dec 2019 16:46:49 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2019/12/flask-mysql/</guid><description><![CDATA[<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Make sure you have installed Python 3 on your device</p>
 <h3 id="project-structure">Project structure</h3>
@@ -368,6 +322,4 @@
 </div><h2 id="authors">Authors</h2>
 <ul>
 <li><strong>Alvinditya Saputra</strong> - <a href="https://linkedin.com/in/piinalpin" target="_blank" rel="noopener noreffer">LinkedIn</a> <a href="https://www.instagram.com/piinalpin" target="_blank" rel="noopener noreffer">Instagram</a> <a href="https://www.twitter.com/piinalpin" target="_blank" rel="noopener noreffer">Twitter</a></li>
-</ul>]]></description>
-</item></channel>
-</rss>
+</ul>]]></description></item></channel></rss>

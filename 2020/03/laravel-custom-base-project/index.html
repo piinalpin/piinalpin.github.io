@@ -1,497 +1,185 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Laravel Custom Base Project - PiinAlpin Official Blog</title><meta name="Description" content="Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API."><meta property="og:title" content="Laravel Custom Base Project" />
-<meta property="og:description" content="Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://piinalpin.com/2020/03/laravel-custom-base-project/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-03-06T23:34:23+07:00" />
-<meta property="article:modified_time" content="2020-03-06T23:34:23+07:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Laravel Custom Base Project"/>
-<meta name="twitter:description" content="Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API."/>
-<meta name="application-name" content="PiinAlpin Official Blog">
-<meta name="apple-mobile-web-app-title" content="PiinAlpin Official Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://piinalpin.com/2020/03/laravel-custom-base-project/" /><link rel="prev" href="https://piinalpin.com/2020/02/automation-test-cypress/" /><link rel="next" href="https://piinalpin.com/2020/09/auto-start-ssh-tunneling-mac/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Laravel Custom Base Project",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/piinalpin.com\/2020\/03\/laravel-custom-base-project\/"
-        },"image": ["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "PHP, Laravel","wordcount":  593 ,
-        "url": "https:\/\/piinalpin.com\/2020\/03\/laravel-custom-base-project\/","datePublished": "2020-03-06T23:34:23+07:00","dateModified": "2020-03-06T23:34:23+07:00","publisher": {
-            "@type": "Organization",
-            "name": "Alvinditya","logo": "https:\/\/piinalpin.com\/images\/favicon.png"},"author": {
-                "@type": "Person",
-                "name": "Alvinditya Saputra"
-            },"description": "Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API."
-    }
-    </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='fa fa-code fa-fw'></i> </span><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="PiinAlpin Official Blog"><span class="header-title-pre"><i class='fa fa-code fa-fw'></i> </span><span id="id-2" class="typeit"></span></a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/piinalpin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Laravel Custom Base Project</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://piinalpin.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>Documentation</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-06">2020-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;593 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#documentation">Documentation</a></li>
-        <li><a href="#run-using-docker">Run Using Docker</a></li>
-        <li><a href="#api-documentation">API Documentation</a></li>
-        <li><a href="#license">License</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><h3 id="features">Features</h3>
-<ul>
-<li>Basic Authentication</li>
-<li>Json Web Token</li>
-<li>Custom Error Handling</li>
-<li>CORS Filter</li>
-<li>Authority Access</li>
-<li>Custom Middleware</li>
-<li>Soft Deletes Service</li>
-<li>Custom Form Validation</li>
-<li>Auto Refresh Token Every 1 Hour (Ajax)</li>
-<li>User Management</li>
-</ul>
-<h3 id="documentation">Documentation</h3>
-<ol>
-<li>Clone this project <code>https://github.com/piinalpin/laravel-base.git</code>.</li>
-<li>Change<code>.env.docker</code> file to change database configuration to your database configuration and add basic auth configuration. Then copy <code>.env.docker</code> to <code>.env</code></li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">AUTH_USERNAME=&lt;BASIC_AUTH_USERNAME&gt;
-</span></span><span class="line"><span class="cl">AUTH_PASSWORD=&lt;BASIC_AUTH_PASSWORD&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">DB_CONNECTION=mysql
-</span></span><span class="line"><span class="cl">DB_HOST=&lt;DATABASE_HOST&gt;
-</span></span><span class="line"><span class="cl">DB_PORT=&lt;DATABASE_PORT&gt;
-</span></span><span class="line"><span class="cl">DB_DATABASE=&lt;DATABASE_NAME&gt;
-</span></span><span class="line"><span class="cl">DB_USERNAME=&lt;DATABASE_USERNAME&gt;
-</span></span><span class="line"><span class="cl">DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="3">
-<li>Run <code>php artisan migrate</code> to migrate table on database.</li>
-<li>Change <code>database/AppUserSeeder.php</code> according what do you want (optional), for this case I have two default user.</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">DB</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;APP_USER&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">([</span> 
-</span></span><span class="line"><span class="cl">	<span class="s1">&#39;created_at&#39;</span> <span class="o">=&gt;</span> <span class="nx">DB</span><span class="o">::</span><span class="na">raw</span><span class="p">(</span><span class="s1">&#39;CURRENT_TIMESTAMP&#39;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">	<span class="s1">&#39;created_by&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;full_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Administrator&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin@test.com&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="nx">Hash</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;role&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ADMINISTRATOR&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="p">]);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="5">
-<li>Run <code>php artisan db:seed</code> to seed data in database.</li>
-<li>Run <code>php artisan serve</code> to run this project.</li>
-</ol>
-<h3 id="run-using-docker">Run Using Docker</h3>
-<ol>
-<li>Install Docker desktop from <a href="https://hub.docker.com/search?q=&amp;type=edition&amp;offering=community&amp;sort=updated_at&amp;order=desc" target="_blank" rel="noopener noreffer">Docker Hub</a></li>
-<li>Install MySQL Docker if you want to use MySQL as container</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -p 3306:3306 --name mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw -d mysql:latest
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="3">
-<li>Create database and add user for laravel docker, default IP Address for docker is <em>172.17.0.1</em></li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">shell&gt; docker <span class="nb">exec</span> -it mysql mysql -u root -p
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">mysql&gt; CREATE DATABASE database_name<span class="p">;</span>
-</span></span><span class="line"><span class="cl">mysql&gt; CREATE USER <span class="s1">&#39;newuser&#39;</span>@<span class="s1">&#39;172.17.0.1&#39;</span> IDENTIFIED BY <span class="s1">&#39;user_password&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">mysql&gt; GRANT ALL PRIVILEGES ON database_name.* TO <span class="s1">&#39;newuser&#39;</span>@<span class="s1">&#39;172.17.0.1&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">mysql&gt; FLUSH PRIVILEGES<span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="4">
-<li>Change <code>.env.docker</code> to change database connection for mysql docker</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">DB_CONNECTION=mysql
-</span></span><span class="line"><span class="cl">DB_HOST=172.17.0.1
-</span></span><span class="line"><span class="cl">DB_PORT=3306
-</span></span><span class="line"><span class="cl">DB_DATABASE=database_name
-</span></span><span class="line"><span class="cl">DB_USERNAME=new_user
-</span></span><span class="line"><span class="cl">DB_PASSWORD=user_password
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="5">
-<li>Run migration and seed data <code>php artisan migrate &amp;&amp; php artisan db:seed</code></li>
-<li>Build web server on docker, you can see Dockerfile for web server at <a href="https://github.com/piinalpin/laravel-base/blob/master/web.dockerfile" target="_blank" rel="noopener noreffer">web.dockerfile</a></li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build -t laravel_web:latest -f web.dockerfile .
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="7">
-<li>Build laravel application on docker, you can see Dockerfile for laravel application at <a href="https://github.com/piinalpin/laravel-base/blob/master/app.dockerfile" target="_blank" rel="noopener noreffer">app.dockerfile</a></li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build -t laravel_app:latest -f app.dockerfile .
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="8">
-<li>Create network on docker and create connection for mysql docker on your network.</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create my-network
-</span></span><span class="line"><span class="cl">docker network connect my-network mysql
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="9">
-<li>Adjust <code>docker-compose.yml</code> to run web server, application and connect to external mysql container.</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">laravel_web:latest</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./:/var/www</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;8080:80&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;443:443&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">links</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">app</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">my-network</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">app</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">laravel_app:latest</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">env_file</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;.env.docker&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;DB_HOST=172.17.0.1&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;APP_URL=http://localhost:8080/api/v1&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./:/var/www</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">my-network</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">my-network</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="10">
-<li>Run <code>docker-compose up -d</code> to deploy docker image to container and <code>docker-compose down</code> to stop it.</li>
-<li>Application should be can access at <code>localhost:8080</code></li>
-</ol>
-<h3 id="api-documentation">API Documentation</h3>
-<ul>
-<li>Login <code>/api/v1/oauth/token POST</code>
-<ul>
-<li>Header <code>Authorization: Basic</code> username and password as same as value of basic auth on <code>.env</code></li>
-<li>Form Data <code>username: admin</code> and <code>password: password</code></li>
-</ul>
-</li>
-<li>User Currently Logged In <code>/api/vi/user/me GET</code>
-<ul>
-<li>Header <code>Authorization: Bearer Token</code></li>
-</ul>
-</li>
-<li>Get All User <code>/api/vi/user GET</code>
-<ul>
-<li>Header <code>Authorization: Bearer Token</code></li>
-</ul>
-</li>
-<li>Create New User <code>/api/vi/user/me POST</code>
-<ul>
-<li>Header <code>Authorization: Bearer Token</code></li>
-<li>Request: <code>application/json</code></li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;someuser&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;someemail@test.com&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;fullName&#34;</span><span class="p">:</span> <span class="s2">&#34;Some Name&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;confirmPassword&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;SOME_ROLE&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>Get Single User <code>/api/vi/user/{id} GET</code>
-<ul>
-<li>Header <code>Authorization: Bearer Token</code></li>
-</ul>
-</li>
-<li>Update User <code>/api/vi/user/{id} POST</code>
-<ul>
-<li>Header <code>Authorization: Bearer Token</code></li>
-<li>Request: <code>application/json</code></li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;username&#34;</span><span class="p">:</span> <span class="s2">&#34;someuser&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;someemail@test.com&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;fullName&#34;</span><span class="p">:</span> <span class="s2">&#34;Some Name&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;confirmPassword&#34;</span><span class="p">:</span> <span class="s2">&#34;somepassword&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">	<span class="nt">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;SOME_ROLE&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>Delete User <code>/api/vi/user/{id} DELETE</code>
-<ul>
-<li>Header <code>Authorization: Bearer Token</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="license">License</h3>
-<p>The Laravel framework is open-sourced software licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreffer">MIT license</a>.</p>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2020-03-06</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/2020/03/laravel-custom-base-project/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://piinalpin.com/2020/03/laravel-custom-base-project/" data-title="Laravel Custom Base Project" data-via="piinalpin" data-hashtags="PHP,Laravel"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://piinalpin.com/2020/03/laravel-custom-base-project/" data-hashtag="PHP"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://piinalpin.com/2020/03/laravel-custom-base-project/"><i class="fab fa-linkedin fa-fw"></i></a></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/php/">PHP</a>,&nbsp;<a href="/tags/laravel/">Laravel</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/2020/02/automation-test-cypress/" class="prev" rel="prev" title="Automation Test Using Cypress Example"><i class="fas fa-angle-left fa-fw"></i>Automation Test Using Cypress Example</a>
-            <a href="/2020/09/auto-start-ssh-tunneling-mac/" class="next" rel="next" title="Auto Start SSH Tunneling on Mac">Auto Start SSH Tunneling on Mac<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Piinalpin</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://piinalpin.com/" target="_blank">Alvinditya Saputra</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{},"data":{"id-1":"PiinAlpin","id-2":"PiinAlpin"},"search":{"algoliaAppID":"Z6ALHE0FJ2","algoliaIndex":"test-index","algoliaSearchKey":"7308da79f682ce9c1c5b0cf4c9eb9249","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":0,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=X-UA-Compatible content="IE=edge, chrome=1"><title>Laravel Custom Base Project - PiinAlpin Official Blog</title><meta name=Description content="Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API."><meta property="og:title" content="Laravel Custom Base Project">
+<meta property="og:description" content="Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API."><meta property="og:type" content="article"><meta property="og:url" content="https://piinalpin.com/2020/03/laravel-custom-base-project/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-03-06T23:34:23+07:00"><meta property="article:modified_time" content="2020-03-06T23:34:23+07:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Laravel Custom Base Project"><meta name=twitter:description content="Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API."><meta name=twitter:site content="@piinalpin"><meta name=application-name content="PiinAlpin Official Blog"><meta name=apple-mobile-web-app-title content="PiinAlpin Official Blog"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=favicon.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://piinalpin.com/2020/03/laravel-custom-base-project/><link rel=prev href=https://piinalpin.com/2020/02/automation-test-cypress/><link rel=next href=https://piinalpin.com/2020/09/auto-start-ssh-tunneling-mac/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Laravel Custom Base Project","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/piinalpin.com\/2020\/03\/laravel-custom-base-project\/"},"image":["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"PHP, Laravel","wordcount":593,"url":"https:\/\/piinalpin.com\/2020\/03\/laravel-custom-base-project\/","datePublished":"2020-03-06T23:34:23+07:00","dateModified":"2020-03-06T23:34:23+07:00","publisher":{"@type":"Organization","name":"Alvinditya","logo":"https:\/\/piinalpin.com\/images\/favicon.png"},"author":{"@type":"Person","name":"Alvinditya Saputra"},"description":"Laravel is a web application framework with expressive, elegant syntax. This base project is to assist in the development project on the laravel based on RestFul API."}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"dark"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"dark"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="PiinAlpin Official Blog"><span class=header-title-pre><i class='fa fa-code fa-fw'></i> </span><span id=id-1 class=typeit></span></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About </a><a class=menu-item href=https://github.com/piinalpin title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="PiinAlpin Official Blog"><span class=header-title-pre><i class='fa fa-code fa-fw'></i> </span><span id=id-2 class=typeit></span></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About</a><a class=menu-item href=https://github.com/piinalpin title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Laravel Custom Base Project</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://piinalpin.com/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span>&nbsp;<span class=post-category>included in <a href=/categories/documentation/><i class="far fa-folder fa-fw"></i>Documentation</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-03-06>2020-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;593 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><ul><li><a href=#features>Features</a></li><li><a href=#documentation>Documentation</a></li><li><a href=#run-using-docker>Run Using Docker</a></li><li><a href=#api-documentation>API Documentation</a></li><li><a href=#license>License</a></li></ul></li></ul></nav></div></div><div class=content id=content><h3 id=features>Features</h3><ul><li>Basic Authentication</li><li>Json Web Token</li><li>Custom Error Handling</li><li>CORS Filter</li><li>Authority Access</li><li>Custom Middleware</li><li>Soft Deletes Service</li><li>Custom Form Validation</li><li>Auto Refresh Token Every 1 Hour (Ajax)</li><li>User Management</li></ul><h3 id=documentation>Documentation</h3><ol><li>Clone this project <code>https://github.com/piinalpin/laravel-base.git</code>.</li><li>Change<code>.env.docker</code> file to change database configuration to your database configuration and add basic auth configuration. Then copy <code>.env.docker</code> to <code>.env</code></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>AUTH_USERNAME=&lt;BASIC_AUTH_USERNAME&gt;
+</span></span><span class=line><span class=cl>AUTH_PASSWORD=&lt;BASIC_AUTH_PASSWORD&gt;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>DB_CONNECTION=mysql
+</span></span><span class=line><span class=cl>DB_HOST=&lt;DATABASE_HOST&gt;
+</span></span><span class=line><span class=cl>DB_PORT=&lt;DATABASE_PORT&gt;
+</span></span><span class=line><span class=cl>DB_DATABASE=&lt;DATABASE_NAME&gt;
+</span></span><span class=line><span class=cl>DB_USERNAME=&lt;DATABASE_USERNAME&gt;
+</span></span><span class=line><span class=cl>DB_PASSWORD=&lt;DATABASE_PASSWORD&gt;
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>Run <code>php artisan migrate</code> to migrate table on database.</li><li>Change <code>database/AppUserSeeder.php</code> according what do you want (optional), for this case I have two default user.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=nx>DB</span><span class=o>::</span><span class=na>table</span><span class=p>(</span><span class=s1>&#39;APP_USER&#39;</span><span class=p>)</span><span class=o>-&gt;</span><span class=na>insert</span><span class=p>([</span> 
+</span></span><span class=line><span class=cl>	<span class=s1>&#39;created_at&#39;</span> <span class=o>=&gt;</span> <span class=nx>DB</span><span class=o>::</span><span class=na>raw</span><span class=p>(</span><span class=s1>&#39;CURRENT_TIMESTAMP&#39;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>	<span class=s1>&#39;created_by&#39;</span> <span class=o>=&gt;</span> <span class=mi>0</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=s1>&#39;username&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;admin&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;full_name&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;Administrator&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;email&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;admin@test.com&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;password&#39;</span> <span class=o>=&gt;</span> <span class=nx>Hash</span><span class=o>::</span><span class=na>make</span><span class=p>(</span><span class=s1>&#39;password&#39;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;enabled&#39;</span> <span class=o>=&gt;</span> <span class=k>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;role&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;ADMINISTRATOR&#39;</span>
+</span></span><span class=line><span class=cl><span class=p>]);</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=5><li>Run <code>php artisan db:seed</code> to seed data in database.</li><li>Run <code>php artisan serve</code> to run this project.</li></ol><h3 id=run-using-docker>Run Using Docker</h3><ol><li>Install Docker desktop from <a href="https://hub.docker.com/search?q=&amp;type=edition&amp;offering=community&amp;sort=updated_at&amp;order=desc" target=_blank rel="noopener noreffer">Docker Hub</a></li><li>Install MySQL Docker if you want to use MySQL as container</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker run -p 3306:3306 --name mysql -e <span class=nv>MYSQL_ROOT_PASSWORD</span><span class=o>=</span>my-secret-pw -d mysql:latest
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>Create database and add user for laravel docker, default IP Address for docker is <em>172.17.0.1</em></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>shell&gt; docker <span class=nb>exec</span> -it mysql mysql -u root -p
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>mysql&gt; CREATE DATABASE database_name<span class=p>;</span>
+</span></span><span class=line><span class=cl>mysql&gt; CREATE USER <span class=s1>&#39;newuser&#39;</span>@<span class=s1>&#39;172.17.0.1&#39;</span> IDENTIFIED BY <span class=s1>&#39;user_password&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>mysql&gt; GRANT ALL PRIVILEGES ON database_name.* TO <span class=s1>&#39;newuser&#39;</span>@<span class=s1>&#39;172.17.0.1&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>mysql&gt; FLUSH PRIVILEGES<span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>Change <code>.env.docker</code> to change database connection for mysql docker</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>DB_CONNECTION=mysql
+</span></span><span class=line><span class=cl>DB_HOST=172.17.0.1
+</span></span><span class=line><span class=cl>DB_PORT=3306
+</span></span><span class=line><span class=cl>DB_DATABASE=database_name
+</span></span><span class=line><span class=cl>DB_USERNAME=new_user
+</span></span><span class=line><span class=cl>DB_PASSWORD=user_password
+</span></span></code></pre></td></tr></table></div></div><ol start=5><li>Run migration and seed data <code>php artisan migrate && php artisan db:seed</code></li><li>Build web server on docker, you can see Dockerfile for web server at <a href=https://github.com/piinalpin/laravel-base/blob/master/web.dockerfile target=_blank rel="noopener noreffer">web.dockerfile</a></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker build -t laravel_web:latest -f web.dockerfile .
+</span></span></code></pre></td></tr></table></div></div><ol start=7><li>Build laravel application on docker, you can see Dockerfile for laravel application at <a href=https://github.com/piinalpin/laravel-base/blob/master/app.dockerfile target=_blank rel="noopener noreffer">app.dockerfile</a></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker build -t laravel_app:latest -f app.dockerfile .
+</span></span></code></pre></td></tr></table></div></div><ol start=8><li>Create network on docker and create connection for mysql docker on your network.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker network create my-network
+</span></span><span class=line><span class=cl>docker network connect my-network mysql
+</span></span></code></pre></td></tr></table></div></div><ol start=9><li>Adjust <code>docker-compose.yml</code> to run web server, application and connect to external mysql container.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>web</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>laravel_web:latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>volumes</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>./:/var/www</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>restart</span><span class=p>:</span><span class=w> </span><span class=l>always</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>ports</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=s2>&#34;8080:80&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=s2>&#34;443:443&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>links</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>app</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>networks</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>my-network</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>app</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>laravel_app:latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>env_file</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;.env.docker&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>environment</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=s2>&#34;DB_HOST=172.17.0.1&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=s2>&#34;APP_URL=http://localhost:8080/api/v1&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>volumes</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>./:/var/www</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>restart</span><span class=p>:</span><span class=w> </span><span class=l>always</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>networks</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>my-network</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>networks</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>my-network</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>external</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><ol start=10><li>Run <code>docker-compose up -d</code> to deploy docker image to container and <code>docker-compose down</code> to stop it.</li><li>Application should be can access at <code>localhost:8080</code></li></ol><h3 id=api-documentation>API Documentation</h3><ul><li>Login <code>/api/v1/oauth/token POST</code><ul><li>Header <code>Authorization: Basic</code> username and password as same as value of basic auth on <code>.env</code></li><li>Form Data <code>username: admin</code> and <code>password: password</code></li></ul></li><li>User Currently Logged In <code>/api/vi/user/me GET</code><ul><li>Header <code>Authorization: Bearer Token</code></li></ul></li><li>Get All User <code>/api/vi/user GET</code><ul><li>Header <code>Authorization: Bearer Token</code></li></ul></li><li>Create New User <code>/api/vi/user/me POST</code><ul><li>Header <code>Authorization: Bearer Token</code></li><li>Request: <code>application/json</code></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;username&#34;</span><span class=p>:</span> <span class=s2>&#34;someuser&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;email&#34;</span><span class=p>:</span> <span class=s2>&#34;someemail@test.com&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;fullName&#34;</span><span class=p>:</span> <span class=s2>&#34;Some Name&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;password&#34;</span><span class=p>:</span> <span class=s2>&#34;somepassword&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;confirmPassword&#34;</span><span class=p>:</span> <span class=s2>&#34;somepassword&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;enabled&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;role&#34;</span><span class=p>:</span> <span class=s2>&#34;SOME_ROLE&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div></li><li>Get Single User <code>/api/vi/user/{id} GET</code><ul><li>Header <code>Authorization: Bearer Token</code></li></ul></li><li>Update User <code>/api/vi/user/{id} POST</code><ul><li>Header <code>Authorization: Bearer Token</code></li><li>Request: <code>application/json</code></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;username&#34;</span><span class=p>:</span> <span class=s2>&#34;someuser&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;email&#34;</span><span class=p>:</span> <span class=s2>&#34;someemail@test.com&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;fullName&#34;</span><span class=p>:</span> <span class=s2>&#34;Some Name&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;password&#34;</span><span class=p>:</span> <span class=s2>&#34;somepassword&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;confirmPassword&#34;</span><span class=p>:</span> <span class=s2>&#34;somepassword&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;enabled&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;role&#34;</span><span class=p>:</span> <span class=s2>&#34;SOME_ROLE&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div></li><li>Delete User <code>/api/vi/user/{id} DELETE</code><ul><li>Header <code>Authorization: Bearer Token</code></li></ul></li></ul><h3 id=license>License</h3><p>The Laravel framework is open-sourced software licensed under the <a href=https://opensource.org/licenses/MIT target=_blank rel="noopener noreffer">MIT license</a>.</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-03-06</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/2020/03/laravel-custom-base-project/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://piinalpin.com/2020/03/laravel-custom-base-project/ data-title="Laravel Custom Base Project" data-via=piinalpin data-hashtags=PHP,Laravel><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://piinalpin.com/2020/03/laravel-custom-base-project/ data-hashtag=PHP><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://piinalpin.com/2020/03/laravel-custom-base-project/><i class="fab fa-linkedin fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/php/>PHP</a>,&nbsp;<a href=/tags/laravel/>Laravel</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/2020/02/automation-test-cypress/ class=prev rel=prev title="Automation Test Using Cypress Example"><i class="fas fa-angle-left fa-fw"></i>Automation Test Using Cypress Example</a>
+<a href=/2020/09/auto-start-ssh-tunneling-mac/ class=next rel=next title="Auto Start SSH Tunneling on Mac">Auto Start SSH Tunneling on Mac<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Piinalpin</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2023</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://piinalpin.com/ target=_blank>Alvinditya Saputra</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:20},comment:{},data:{"id-1":"PiinAlpin","id-2":"PiinAlpin"},search:{algoliaAppID:"Z6ALHE0FJ2",algoliaIndex:"test-index",algoliaSearchKey:"7308da79f682ce9c1c5b0cf4c9eb9249",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"algolia"},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:0,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>

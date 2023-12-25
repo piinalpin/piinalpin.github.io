@@ -1,14 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Ecma Script - Tag - PiinAlpin Official Blog</title>
-        <link>https://piinalpin.com/tags/ecma-script/</link>
-        <description>Ecma Script - Tag - PiinAlpin Official Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 07 Dec 2021 10:31:30 &#43;0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/ecma-script/" rel="self" type="application/rss+xml" /><item>
-    <title>Object Relational Mapping Node JS using Sequelize</title>
-    <link>https://piinalpin.com/2021/12/orm-nodejs-sequelize/</link>
-    <pubDate>Tue, 07 Dec 2021 10:31:30 &#43;0700</pubDate>
-    <author>Author</author>
-    <guid>https://piinalpin.com/2021/12/orm-nodejs-sequelize/</guid>
-    <description><![CDATA[Object-Relational Mapping (ORM) is a technique that lets you query and manipulate data from a database using an object-oriented paradigm.]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Ecma Script - Tag - PiinAlpin Official Blog</title><link>https://piinalpin.com/tags/ecma-script/</link><description>Ecma Script - Tag - PiinAlpin Official Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 07 Dec 2021 10:31:30 +0700</lastBuildDate><atom:link href="https://piinalpin.com/tags/ecma-script/" rel="self" type="application/rss+xml"/><item><title>Object Relational Mapping Node JS using Sequelize</title><link>https://piinalpin.com/2021/12/orm-nodejs-sequelize/</link><pubDate>Tue, 07 Dec 2021 10:31:30 +0700</pubDate><author>Author</author><guid>https://piinalpin.com/2021/12/orm-nodejs-sequelize/</guid><description>Object-Relational Mapping (ORM) is a technique that lets you query and manipulate data from a database using an object-oriented paradigm.</description></item></channel></rss>
