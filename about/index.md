@@ -110,6 +110,7 @@
     <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="Github Actions"/>
     <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
     <img src="https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white" alt="Ansible"/>
+    <img src="https://img.shields.io/badge/jBPM%20and%20Drools-FFFFFF?style=for-the-badge&logo=openjdk&logoColor=black" alt="jBPM and Drools"/>
 </div>
 
 <br style="margin-bottom:20px;">
