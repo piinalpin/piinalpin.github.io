@@ -140,5 +140,3 @@
 <br>
 <b style="font-size: 1.4rem;"><samp>Github Profile Trophy</samp></b>
 <img src="https://github-profile-trophy.vercel.app/?username=piinalpin&column=8&theme=onedark&no-frame=true&no-bg=true"/>
-
-
