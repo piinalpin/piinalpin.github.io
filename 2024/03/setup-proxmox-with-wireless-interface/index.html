@@ -1,0 +1,192 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=X-UA-Compatible content="IE=edge, chrome=1"><title>Setup Proxmox With Wireless Interface - My Homelab - PiinAlpin Official Blog</title><meta name=Description content="Sharing is caring, keep learn and create an awesome codes."><meta property="og:title" content="Setup Proxmox With Wireless Interface - My Homelab">
+<meta property="og:description" content="This is my documentation on setting up a home lab server with the aim of learning how to provision a server for my learning needs and it will use wireless interface card and use VPN.
+Disable Enterprise Subscription Repository Add pve-no-subscription repository on /etc/apt/sources.list
+1 deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription Comment ceph enterprise repository on /etc/apt/sources.list.d/ceph.list
+1 # deb https://enterprice.proxmox.com/debian/ceph-quincy bookworm enterprice Comment pve enterprise repository on /etc/apt/sources.list.d/pve-enterprice.list
+1 # deb https://enterprice."><meta property="og:type" content="article"><meta property="og:url" content="https://piinalpin.com/2024/03/setup-proxmox-with-wireless-interface/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-03-12T08:46:43+07:00"><meta property="article:modified_time" content="2024-03-12T08:46:43+07:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Setup Proxmox With Wireless Interface - My Homelab"><meta name=twitter:description content="This is my documentation on setting up a home lab server with the aim of learning how to provision a server for my learning needs and it will use wireless interface card and use VPN.
+Disable Enterprise Subscription Repository Add pve-no-subscription repository on /etc/apt/sources.list
+1 deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription Comment ceph enterprise repository on /etc/apt/sources.list.d/ceph.list
+1 # deb https://enterprice.proxmox.com/debian/ceph-quincy bookworm enterprice Comment pve enterprise repository on /etc/apt/sources.list.d/pve-enterprice.list
+1 # deb https://enterprice."><meta name=twitter:site content="@piinalpin"><meta name=application-name content="PiinAlpin Official Blog"><meta name=apple-mobile-web-app-title content="PiinAlpin Official Blog"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=favicon.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://piinalpin.com/2024/03/setup-proxmox-with-wireless-interface/><link rel=prev href=https://piinalpin.com/2024/03/deploy-kubernetes-on-vagrant-with-ansible/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Setup Proxmox With Wireless Interface - My Homelab","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/piinalpin.com\/2024\/03\/setup-proxmox-with-wireless-interface\/"},"image":["https:\/\/piinalpin.com\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"Proxmox, Proxmox VE, Networking, VPN, Proxmox with WiFi Interface, Provisioning, Virtualization, Virtual Machine, Virtual Environment, Proxmox WiFi","wordcount":1098,"url":"https:\/\/piinalpin.com\/2024\/03\/setup-proxmox-with-wireless-interface\/","datePublished":"2024-03-12T08:46:43+07:00","dateModified":"2024-03-12T08:46:43+07:00","publisher":{"@type":"Organization","name":"Alvinditya","logo":"https:\/\/piinalpin.com\/images\/favicon.png"},"author":{"@type":"Person","name":"Alvinditya Saputra"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"dark"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"dark"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="PiinAlpin Official Blog"><span class=header-title-pre><i class='fa fa-code fa-fw'></i> </span><span id=id-1 class=typeit></span></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About </a><a class=menu-item href=https://github.com/piinalpin title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="PiinAlpin Official Blog"><span class=header-title-pre><i class='fa fa-code fa-fw'></i> </span><span id=id-2 class=typeit></span></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About</a><a class=menu-item href=https://github.com/piinalpin title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Setup Proxmox With Wireless Interface - My Homelab</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://piinalpin.com/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Alvinditya Saputra</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2024-03-12>2024-03-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1098 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><ul><li><a href=#disable-enterprise-subscription-repository>Disable Enterprise Subscription Repository</a></li><li><a href=#wireless-interface-configuration>Wireless Interface Configuration</a></li><li><a href=#vpn-configuration>VPN Configuration</a></li><li><a href=#references>References</a></li></ul></li></ul></nav></div></div><div class=content id=content><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/proxmox-logo.png data-srcset="/images/proxmox-logo.png, /images/proxmox-logo.png 1.5x, /images/proxmox-logo.png 2x" data-sizes=auto alt=/images/proxmox-logo.png title="Proxmox Logo"></p><p>This is my documentation on setting up a home lab server with the aim of learning how to provision a server for my learning needs and it will use wireless interface card and use VPN.</p><h3 id=disable-enterprise-subscription-repository>Disable Enterprise Subscription Repository</h3><p>Add <code>pve-no-subscription</code> repository on <code>/etc/apt/sources.list</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription
+</span></span></code></pre></td></tr></table></div></div><p>Comment <code>ceph</code> enterprise repository on <code>/etc/apt/sources.list.d/ceph.list</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># deb https://enterprice.proxmox.com/debian/ceph-quincy bookworm enterprice</span>
+</span></span></code></pre></td></tr></table></div></div><p>Comment <code>pve</code> enterprise repository on <code>/etc/apt/sources.list.d/pve-enterprice.list</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># deb https://enterprice.proxmox.com/debian/pve bookworm enterprice</span>
+</span></span></code></pre></td></tr></table></div></div><p>Do update and upgrade apt</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>apt update <span class=o>&amp;&amp;</span> apt upgrade -y
+</span></span></code></pre></td></tr></table></div></div><h3 id=wireless-interface-configuration>Wireless Interface Configuration</h3><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/lan-settings.png data-srcset="/images/lan-settings.png, /images/lan-settings.png 1.5x, /images/lan-settings.png 2x" data-sizes=auto alt=/images/lan-settings.png title="LAN Settings"></p><p>Go to your router and set static private IP for wifi network <code>go to Network -> LAN Settings</code>. In my case, I will set started DHCP from <code>192.168.1.21</code> so I can set static private IP in range from <code>192.168.1.2</code> to <code>192.168.1.20</code>. I planned to configure IP list like this:</p><ul><li><code>192.168.1.2</code> PC</li><li><code>192.168.1.3</code> Laptop</li><li><code>192.168.1.4</code> Homeserver</li></ul><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/my-private-network.png data-srcset="/images/my-private-network.png, /images/my-private-network.png 1.5x, /images/my-private-network.png 2x" data-sizes=auto alt=/images/my-private-network.png title="My Private Network"></p><p>Then remote your proxmox server and install <code>wireless-tools</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>apt install -y wireless-tools
+</span></span></code></pre></td></tr></table></div></div><p>Do a backup of the network interface first</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cp /etc/network/interfaces /etc/network/interfaces.bak
+</span></span></code></pre></td></tr></table></div></div><p>Configure network interface for wlan on <code>/etc/network/interfaces</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>auto lo
+</span></span><span class=line><span class=cl>iface lo inet loopback
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>iface enp0s31f6 inet manual
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>auto vmbr0
+</span></span><span class=line><span class=cl>iface vmbr0 inet manual
+</span></span><span class=line><span class=cl>    address 192.168.56.1/24
+</span></span><span class=line><span class=cl>    bridge-ports none
+</span></span><span class=line><span class=cl>    bridge-stp off
+</span></span><span class=line><span class=cl>    bridge-fd 0
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+</span></span><span class=line><span class=cl>    post-up iptables -t nat -A POSTROUTING -s &#39;192.168.56.0/24&#39; -o wlp3s0 -j MASQUERADE
+</span></span><span class=line><span class=cl>    post-down iptables -t nat -D POSTROUTING -s &#39;192.168.56.0/24&#39; -o wlp3s0 -j MASQUERADE
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    post-up   iptables -t raw -I PREROUTING -i fwbr+ -j CT --zone 1
+</span></span><span class=line><span class=cl>    post-down iptables -t raw -D PREROUTING -i fwbr+ -j CT --zone 1
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>auto wlp3s0
+</span></span><span class=line><span class=cl>iface wlp3s0 inet static
+</span></span><span class=line><span class=cl>    address 192.168.1.4
+</span></span><span class=line><span class=cl>    netmask 255.255.255.0
+</span></span><span class=line><span class=cl>    gateway 192.168.1.1
+</span></span><span class=line><span class=cl>    wpa-ssid &#34;&lt;YOUR_SSID&gt;&#34;
+</span></span><span class=line><span class=cl>    wpa-psk &#34;&lt;YOUR_PASSWORD&gt;&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>source /etc/network/interfaces.d/*
+</span></span></code></pre></td></tr></table></div></div><p><strong>Note</strong>:</p><ul><li><code>vmbr0</code> is VM bridge network interface, so this interface will be use for internal networking between proxmox server and VM. We can assume this interface as a <strong>gateway</strong> for VM</li><li>It will be configure to enable ipv4 forwarding using <code>wlp3s0</code> interface to get access on the internet. Please see <a href=https://pve.proxmox.com/wiki/Network_Configuration target=_blank rel="noopener noreffer"><strong>Proxmox Network Configuration</strong></a> for <strong>masquerading (NAT)</strong> with ip tables</li><li><code>enp0s31f6</code> is ethernet lan interface, adjust with actual interface</li><li><code>wlp3s0</code> is wlan interface, adjust with actual interface</li><li>Set SSID and PSK security inside the network interface to automatically connect to the WiFi</li></ul><p>Configure DNS server on <code>/etc/resolv.conf</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>search localhost
+</span></span><span class=line><span class=cl>nameserver 192.168.1.1
+</span></span><span class=line><span class=cl>nameserver 8.8.8.8
+</span></span><span class=line><span class=cl>nameserver 8.8.4.4
+</span></span></code></pre></td></tr></table></div></div><p>Finally, restart networking with this command <code>systemctl restart networking</code> and try to ping <code>google.com</code> to makesure our proxmox server have internet access using WiFi.</p><p>You can try to create new VM, I use <a href=https://ubuntu.com/download/server target=_blank rel="noopener noreffer"><code>Ubuntu Server 22.04.4 LTS</code></a> iso. And configure network like this:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Subnet      : 192.168.56.0/24
+</span></span><span class=line><span class=cl>IP Address  : 192.168.56.X
+</span></span><span class=line><span class=cl>Gateway     : 192.168.56.1
+</span></span><span class=line><span class=cl>DNS         : 192.168.56.1
+</span></span></code></pre></td></tr></table></div></div><p>Or if you still not have internet access, you can follow the <code>/etc/netplan/00-installer-config.yaml</code> below.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># This is network config written by &#39;subiquity&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>network</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>ethernets</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>ens18</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>addresses</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span>- <span class=m>192.168.56</span><span class=l>.X/24</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>nameserver</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>addresses</span><span class=p>:</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>          </span>- <span class=m>8.8.8.8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span>- <span class=m>8.8.4.4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span>- <span class=m>192.168.56.1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>search</span><span class=p>:</span><span class=w> </span><span class=p>[]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>routes</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span>- <span class=nt>to</span><span class=p>:</span><span class=w> </span><span class=m>0.0.0.0</span><span class=l>/0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span>- <span class=nt>via</span><span class=p>:</span><span class=w> </span><span class=m>192.168.56.1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=vpn-configuration>VPN Configuration</h3><p>Before use VPN we can&rsquo;t access VM directly from our PC / LAPTOP because it have different network. Our device using router network and our VM using <code>VMBridge</code> network.</p><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/networking-vpn.png data-srcset="/images/networking-vpn.png, /images/networking-vpn.png 1.5x, /images/networking-vpn.png 2x" data-sizes=auto alt=/images/networking-vpn.png title="Simple Networking with VPN"></p><p>I use VPN because I want using WiFi network instead of ethernet LAN cable. VM network is using <code>vmbr0</code> as their gateway, so it can&rsquo;t connect to VM directly from PC or LAPTOP outside internal network Proxmox VE. Thats why we need to using VPN to cover the network.</p><p>First step, we will register free DDNS (Dynamic Domain Name System). Because I don&rsquo;t have public IP so to handle that I use DDNS and using the <a href=https://www.noip.com/ target=_blank rel="noopener noreffer">NoIP</a>. Then create a hostname that will be use for VPN later. Makesure the IP/Target is current your IP public.</p><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/noip.png data-srcset="/images/noip.png, /images/noip.png 1.5x, /images/noip.png 2x" data-sizes=auto alt=/images/noip.png title=NoIP></p><p>I recommend using <code>WireGuard</code> for VPN provider because it is simple installation. We need to install and configure WireGuard VPN on <strong>Proxmox Host</strong>. You can follow the instruction from this <a href=https://github.com/Nyr/wireguard-install target=_blank rel="noopener noreffer">documentation</a> or you can follow this step below. <strong>Note:</strong> On the client side (PC / LAPTOP) must install the <code>WireGuard</code> client.</p><p>Run this script and follow the assistant.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>wget https://git.io/wireguard -O wireguard-install.sh <span class=o>&amp;&amp;</span> bash wireguard-install.sh
+</span></span></code></pre></td></tr></table></div></div><p>Select default gateway ipv4 address using wlan ip <code>192.168.1.4</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Which IPv4 address should be used?
+</span></span><span class=line><span class=cl>     1<span class=o>)</span> 192.168.1.4
+</span></span><span class=line><span class=cl>     2<span class=o>)</span> 192.168.56.1
+</span></span><span class=line><span class=cl>IPv4 address <span class=o>[</span>1<span class=o>]</span>:
+</span></span></code></pre></td></tr></table></div></div><p>If see this prompt below, you can fill in using registered hostname.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>This server is behind NAT. What is the public IPv4 address or hostname?
+</span></span><span class=line><span class=cl>Public IPv4 address / hostname <span class=o>[</span>XX.XX.XX.XX<span class=o>]</span>:
+</span></span></code></pre></td></tr></table></div></div><p>And select DNS server for the client, I will use Google <code>8.8.8.8</code> or <code>8.8.4.4</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Select a DNS server <span class=k>for</span> the client:
+</span></span><span class=line><span class=cl>   1<span class=o>)</span> Current system resolvers
+</span></span><span class=line><span class=cl>   2<span class=o>)</span> Google
+</span></span><span class=line><span class=cl>   3<span class=o>)</span> 1.1.1.1
+</span></span><span class=line><span class=cl>   4<span class=o>)</span> OpenDNS
+</span></span><span class=line><span class=cl>   5<span class=o>)</span> Quad9
+</span></span><span class=line><span class=cl>   6<span class=o>)</span> AdGuard
+</span></span><span class=line><span class=cl>DNS server <span class=o>[</span>1<span class=o>]</span>: <span class=m>2</span>
+</span></span></code></pre></td></tr></table></div></div><p>Then we will have generated <code>&lt;client_name>.conf</code> configuration file. The file should be like this. Then copy into a new file on client side and import into <code>WireGuard</code> client.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[Interface]
+</span></span><span class=line><span class=cl>Address = 10.7.0.2/24
+</span></span><span class=line><span class=cl>DNS = 8.8.8.8, 8.8.4.4
+</span></span><span class=line><span class=cl>PrivateKey = secretprivatekey=
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[Peer]
+</span></span><span class=line><span class=cl>PublicKey = secretpublickey=
+</span></span><span class=line><span class=cl>PresharedKey = secretpresharedkey=
+</span></span><span class=line><span class=cl>AllowedIPs = 0.0.0.0/0, ::/0
+</span></span><span class=line><span class=cl>Endpoint = yourddns.zapto.org:51820
+</span></span><span class=line><span class=cl>PersistentKeepalive = 25
+</span></span></code></pre></td></tr></table></div></div><p><strong>Note: We will configure DDNS and port forwarding on our router first before connecting into VPN.</strong></p><p>Go to your router <code>Application -> DDNS</code> and configure DDNS like this. Fill the <code>username</code>, <code>password</code> and <code>hostname</code> according your <code>NoIP</code> account.</p><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/ddns-config.png data-srcset="/images/ddns-config.png, /images/ddns-config.png 1.5x, /images/ddns-config.png 2x" data-sizes=auto alt=/images/ddns-config.png title=DDNS></p><p>Then go to <code>Application -> Port Mapping</code> or it can be <code>Port Forwarding</code> and configure like this. Public IP is the <code>WireGuard</code> IP which is on config file, usually if default will be use <code>10.7.0.2</code> and default port <code>51820</code>. And will be route into our private IP at <code>192.168.1.4</code> with the same port.</p><p>Because I don&rsquo;t want allow any traffic outside my port forwarding configuration, I will set range only <code>51820 to 51820</code> that means only allow port <code>51820</code> from <code>10.7.0.2</code>.</p><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/port-forwarding.png data-srcset="/images/port-forwarding.png, /images/port-forwarding.png 1.5x, /images/port-forwarding.png 2x" data-sizes=auto alt=/images/port-forwarding.png title="Port Forwarding"></p><p>Finally, we can connect into our VPN using <code>WireGuard</code> client. Once connected, we can access our Proxmox server using <code>vmbr0</code> local VM IP at <code>192.168.56.1</code> or directly access our VM via VM bridge at <code>192.168.56.X</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh username@192.168.56.X
+</span></span></code></pre></td></tr></table></div></div><h3 id=references>References</h3><ul><li><a href=https://pve.proxmox.com/wiki/Network_Configuration target=_blank rel="noopener noreffer">Proxmox Network Configuration</a></li><li><a href=https://forum.proxmox.com/threads/workaround-found-routing-issues-probably-self-inflicted-amateur-needs-help-only-for-patient-users.78669/ target=_blank rel="noopener noreffer">[WORKAROUND FOUND] Routing issues probably self-inflicted. Amateur needs help. Only for patient users.</a></li><li><a href=https://forum.proxmox.com/threads/proxmox-wifi-interface-in-bridge.125624/ target=_blank rel="noopener noreffer">Proxmox WIFI interface in bridge</a></li><li><a href=https://forum.proxmox.com/threads/port-forwarding-from-external-to-internal-isolated-lan.138540/ target=_blank rel="noopener noreffer">Port forwarding from external to internal isolated LAN</a></li><li><a href="https://www.youtube.com/watch?v=nsy9acOKnPo" target=_blank rel="noopener noreffer">OpenVPN install on Proxmox LXC - VPN tutorial</a></li><li><a href="https://www.youtube.com/watch?v=V9sWhnYQvpE" target=_blank rel="noopener noreffer">Easiest VPN on Proxmox with WireGuard</a></li><li><a href=https://github.com/Nyr/wireguard-install target=_blank rel="noopener noreffer">WireGuard Install</a></li></ul></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2024-03-12</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/2024/03/setup-proxmox-with-wireless-interface/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://piinalpin.com/2024/03/setup-proxmox-with-wireless-interface/ data-title="Setup Proxmox With Wireless Interface - My Homelab" data-via=piinalpin data-hashtags="Proxmox,Proxmox VE,Networking,VPN,Proxmox with WiFi Interface,Provisioning,Virtualization,Virtual Machine,Virtual Environment,Proxmox WiFi"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://piinalpin.com/2024/03/setup-proxmox-with-wireless-interface/ data-hashtag=Proxmox><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://piinalpin.com/2024/03/setup-proxmox-with-wireless-interface/><i class="fab fa-linkedin fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/proxmox/>Proxmox</a>,&nbsp;<a href=/tags/proxmox-ve/>Proxmox VE</a>,&nbsp;<a href=/tags/networking/>Networking</a>,&nbsp;<a href=/tags/vpn/>VPN</a>,&nbsp;<a href=/tags/proxmox-with-wifi-interface/>Proxmox with WiFi Interface</a>,&nbsp;<a href=/tags/provisioning/>Provisioning</a>,&nbsp;<a href=/tags/virtualization/>Virtualization</a>,&nbsp;<a href=/tags/virtual-machine/>Virtual Machine</a>,&nbsp;<a href=/tags/virtual-environment/>Virtual Environment</a>,&nbsp;<a href=/tags/proxmox-wifi/>Proxmox WiFi</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/2024/03/deploy-kubernetes-on-vagrant-with-ansible/ class=prev rel=prev title="Deploy Kubernetes Cluster on Vagrant With Ansible"><i class="fas fa-angle-left fa-fw"></i>Deploy Kubernetes Cluster on Vagrant With Ansible</a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Piinalpin</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://piinalpin.com/ target=_blank>Alvinditya Saputra</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:20},comment:{},data:{"id-1":"PiinAlpin","id-2":"PiinAlpin"},search:{algoliaAppID:"Z6ALHE0FJ2",algoliaIndex:"test-index",algoliaSearchKey:"7308da79f682ce9c1c5b0cf4c9eb9249",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"algolia"},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:0,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>
