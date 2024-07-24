@@ -817,7 +817,7 @@ Setup Cloud Init Template This step is describe how to create cloud init templat
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>addresses</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=m>192.168.56.101-192.168.56.254</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><p>Apply ip address pool manifest</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>kubectl apply -f ipaddresspool.yaml
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>kubectl apply -f ./.config/cluster/metallb/ipaddresspool.yaml
 </span></span></code></pre></td></tr></table></div></div><p>Create advertisement <code>l2advertisement.yaml</code> to announce the node IP</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
@@ -835,7 +835,7 @@ Setup Cloud Init Template This step is describe how to create cloud init templat
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>ipAddressPools</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>default-pool</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><p>Applu the L2 advertisement manifest</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>kubectl apply -f .cluster/metallb/l2advertisement.yaml
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>kubectl apply -f ./.config/cluster/metallb/l2advertisement.yaml
 </span></span></code></pre></td></tr></table></div></div><p><strong>Install Ingress Controller</strong></p><p>Add <code>nginx-ingress</code> repository</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>helm repo add nginx-stable https://helm.nginx.com/stable
 </span></span></code></pre></td></tr></table></div></div><p>Check and pull nginx ingress repository</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1

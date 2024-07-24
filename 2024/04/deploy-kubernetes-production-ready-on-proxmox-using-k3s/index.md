@@ -523,7 +523,7 @@ spec:
 
 Apply ip address pool manifest
 ```bash
-kubectl apply -f ipaddresspool.yaml
+kubectl apply -f ./.config/cluster/metallb/ipaddresspool.yaml
 ```
 
 Create advertisement `l2advertisement.yaml` to announce the node IP
@@ -540,7 +540,7 @@ spec:
 
 Applu the L2 advertisement manifest
 ```bash
-kubectl apply -f .cluster/metallb/l2advertisement.yaml
+kubectl apply -f ./.config/cluster/metallb/l2advertisement.yaml
 ```
 
 **Install Ingress Controller**
