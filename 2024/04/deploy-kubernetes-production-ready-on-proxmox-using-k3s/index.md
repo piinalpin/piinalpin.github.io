@@ -1,4 +1,4 @@
-# Deploy Kubernetes Production Ready on Proxmox using K3S
+# Deploy Kubernetes on Proxmox using K3S
 
 
 ![Kubernetes Cluster in Proxmox](/images/kubernetes-cluster.png)
